@@ -22,7 +22,7 @@
 
 @include('shared/footer')
 
-<script type="text/javascript" src="{{ elixir('assets/js/main.js') }}"></script>
+<script type="text/javascript" src="{{ elixir('js/app.js') }}"></script>
 <script>
     @if($navbar_inverse)
     $(function(){
