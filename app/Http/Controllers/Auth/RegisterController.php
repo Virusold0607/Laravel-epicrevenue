@@ -230,8 +230,10 @@ class RegisterController extends Controller
                     $instagram_account->follows = $record->data->counts->follows;
                     $instagram_account->save();
 
-                    $user->status->any_network_added = 'yes';
-                    $user->push();
+
+                    $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
+                    $status->any_network_added = 'yes';
+                    $status->save();
 
                     return redirect('/register/networks');
                 } else {
@@ -385,8 +387,9 @@ class RegisterController extends Controller
         $user = User::find((int) $id);
         if($user->status->email_confirm_code === $email_confirm_code)
         {
-            $user->status->email_confirmed = 'yes';
-            $user->push();
+            $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
+            $status->any_network_added = 'yes';
+            $status->save();
 
             \Auth::login($user);
 
