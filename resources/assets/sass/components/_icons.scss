@@ -1,0 +1,28 @@
+.social-icons {
+
+  width: 100%;
+  float: left;
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+}
+.social-shares {
+  .facebook {
+    background: #3B5998;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .twitter {
+    background: #1dcaff;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .gplus {
+    background: #dd4b39;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Influencers Reach",
+  "version": "0.2",
+  "authors": [
+    "Muhammad Abdullah <abdullahnaseer999@gmail.com>"
+  ],
+  "description": "Advertising website",
+  "main": "public/index.php",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "https://influencersreach.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.*",
+    "angular-chart.js": "~0.*",
+    "angular-mocks": "1.5.*",
+    "angular-route": "1.5.*",
+    "angular": "1.5.*",
+    "bootstrap-sass": "~3.3.6",
+    "Chart.js": "~1.*",
+    "components-font-awesome": "~4.*",
+    "ui-select": "angular-ui-select#~0.13.*",
+    "angular-sanitize": "~1.5.*",
+    "ng-file-upload": "12.*"
+  }
+}

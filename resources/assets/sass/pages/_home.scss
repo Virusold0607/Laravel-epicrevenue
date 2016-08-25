@@ -1,0 +1,42 @@
+.homepage {
+  .info-box {
+    .info-box-icon {
+      vertical-align: middle;
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .brand {
+    margin-bottom: 15px;
+    height: 85px;
+    line-height: 85px;
+    img {
+      padding: 0 20px;
+      max-width: 150px;
+    }
+  }
+
+  .hero {
+    margin-bottom: 0;
+  }
+
+  .hero {
+    .glyphicon-cirlce {
+      color: white;
+      border: 1px solid white;
+      border-radius: 100%;
+      padding: 30px;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+  }
+  .glyphicon-cirlce {
+    color: $brand-primary;
+    border: 1px solid $brand-gray;
+    border-radius: 100%;
+    padding: 30px;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+}
