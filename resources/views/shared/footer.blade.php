@@ -32,7 +32,7 @@
                             <a href="{{ url('/contact') }}">Contact</a>
                         </li>
                         <li>
-                            <a href="#login" data-toggle="modal">Sign In ?</a>
+                            <a href="{{ url('/login') }}">Sign In ?</a>
                         </li>
                     </ul>
                 </div>

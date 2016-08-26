@@ -1,14 +1,16 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero small">
-        <div class="container_12">
-            <h1 class="semibold hero_heading">Terms of Service</h1>
+    <div class="hero hero-txt">
+        <div class="container">
+            <h1 class="hero-heading">Terms of Service</h1>
         </div>
     </div>
 
-    <div class="box">
-        <div class="container_12">
+    <div class="clearfix"></div>
+
+    <div class="container">
+        <div class="page-container">
             <h3>1. Terms</h3>
             <p>By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark law.</p>
             <h3>2. Disclaimer</h3>

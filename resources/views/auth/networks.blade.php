@@ -139,7 +139,7 @@
             <div class="clearfix"></div>
 
             <div id="next" class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" style="display: none;">
-                <a class="btn btn-primary pull-right" href="/register/payment">Next</a>
+                <a class="btn btn-primary btn-lg pull-right" href="/register/payment">Next</a>
             </div>
 
             <div class="clearfix"></div>

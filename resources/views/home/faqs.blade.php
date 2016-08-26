@@ -1,15 +1,16 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero small">
-        <div class="container_12">
-            <h1 class="semibold hero_heading">Frequently Asked Questions</h1>
+    <div class="hero hero-txt">
+        <div class="container">
+            <h1 class="hero-heading">Frequently Asked Questions</h1>
         </div>
     </div>
 
-    <div class="box">
-        <div class="container_12">
+    <div class="clearfix"></div>
 
+    <div class="container">
+        <div class="page-container">
             <h3>Is this safe?</h3>
             <p>There is absoulutely nothing unsafe about using our platform to monetize your account and you will always be 100% in control of your account.</p>
             <br />
