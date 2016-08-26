@@ -7965,6 +7965,8 @@ body {
   background-color: #fff;
   border: #e6e6e6;
   padding: 50px; }
+  .page-container.page-top-margin {
+    margin-top: 30px; }
   .page-container .heading {
     margin-bottom: 50px;
     text-align: center; }
