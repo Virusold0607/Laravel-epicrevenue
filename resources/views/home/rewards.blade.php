@@ -31,6 +31,7 @@
                 </div>
             @endforeach
         @else
+            <div class="clearfix"></div>
             <div class="alert alert-info">Rewards Coming Soon</div>
         @endif
     </div>
