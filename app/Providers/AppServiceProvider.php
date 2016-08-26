@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
         $navbar_inverse = false;
         $pages = ['/',
             'rewards', 'influencers', 'advertisers',
-            'about', 'faqs', 'register',
+            'about', 'faqs',
             'networks', 'register/networks', 'register/payment',
             'register/complete'
         ];
