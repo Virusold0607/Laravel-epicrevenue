@@ -8132,7 +8132,8 @@ nav.navbar-inverse .navbar-nav > li > a {
       .footer ul li a {
         font-size: 1em;
         letter-spacing: .07em;
-        color: #C0CCDC; }
+        color: #a7a7a7;
+        text-decoration: none; }
   .footer .copyright {
     font-size: 12px;
     color: #a7a7a7;
@@ -8157,25 +8158,38 @@ nav.navbar-inverse .navbar-nav > li > a {
     border-bottom: 1px dashed rgba(35, 33, 33, 0.36);
     border-right: 0;
     list-style: none;
-    padding-left: 0px;
+    padding-left: 0;
     margin-bottom: 25px;
     padding-bottom: 25px;
     float: left;
     text-align: center;
     width: 100%; }
-  .footer ul li.footertitle {
-    display: inline-block;
-    float: none;
-    margin-right: 0; }
-  .footer ul li {
-    margin-bottom: 10px;
-    float: none;
-    margin-right: 10px;
-    display: inline-block; }
-  .footer ul li a {
-    font-size: 12px; }
-  .footer .obttn {
-    float: none; } }
+    .footer ul li.footertitle {
+      display: inline-block;
+      float: none;
+      margin-right: 0; }
+    .footer ul li {
+      margin-bottom: 10px;
+      float: none;
+      margin-right: 10px;
+      display: inline-block; }
+      .footer ul li a {
+        font-size: 12px; }
+  .footer .footer-brand {
+    text-align: center; }
+  .footer .social-icons {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(35, 33, 33, 0.36); }
+  .footer .footer-bottom p.text-left, .footer .footer-bottom ul li {
+    font-size: 12px;
+    text-align: center; }
+  .footer .footer-bottom ul li {
+    padding: 5px; }
+    .footer .footer-bottom ul li a {
+      font-size: 12px;
+      text-align: center; } }
 
 #timeline {
   list-style: none;

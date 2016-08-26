@@ -52,7 +52,7 @@
         <div class="container text-center">
             <h5 class="font-dark-gray"><strong>Join Us</strong></h5>
             <h2 style="margin-top:10px;">Become an Influencer</h2>
-            <img style="padding: 70px 0;" src="{{ url('/images/home/preview.png') }}">
+            <img class="img-responsive" style="padding: 70px 0; margin: 0 auto;" src="{{ url('/images/home/preview.png') }}">
 
             <div class="row text-center">
                 <div class="col-sm-4">
@@ -108,7 +108,7 @@
         </div>
 
         <div class="clearfix"></div>
-        <img src="{{ url('/images/home/curve.png') }}" alt="Graph">
+        <img class="img-responsive" src="{{ url('/images/home/curve.png') }}" alt="Graph">
         <div class="container">
             <hr>
         </div>
