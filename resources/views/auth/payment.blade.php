@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="grid_12">
-                        {!! Form::submit('Submit', array('class' => 'bttn')) !!}
+                        {!! Form::submit('Submit', array('class' => 'btn btn-primary btn-lg pull-right')) !!}
                     </div>
                 {!! Form::close() !!}
             </div>

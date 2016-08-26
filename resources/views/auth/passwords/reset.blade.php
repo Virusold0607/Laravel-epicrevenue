@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('shared.layout')
 
-@section('content')
+<!-- Main Content -->
+@section('body')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

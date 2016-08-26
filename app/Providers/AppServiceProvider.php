@@ -14,7 +14,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $navbar_inverse = false;
-        $pages = ['/', 'rewards', 'influencers', 'advertisers', 'about', 'faqs'];
+        $pages = ['/',
+            'rewards', 'influencers', 'advertisers',
+            'about', 'faqs', 'register',
+            'networks', 'register/networks', 'register/payment',
+            'register/complete'
+        ];
         foreach ($pages as $page) {
             if (request()->path() == $page)
                 $navbar_inverse = true;

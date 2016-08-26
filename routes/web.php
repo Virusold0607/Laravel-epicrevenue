@@ -27,6 +27,13 @@ Route::group(['middleware' => 'guest'], function () {
     //Invite Controller
     Route::get('/invite/{id}', 'InviteController@getId');
 
+
+    // Password Reset Routes...
+    $this->get('password/reset/', 'Auth\ForgotPasswordController@showLinkRequestForm');
+    $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+    $this->post('password/reset', 'Auth\ResetPasswordController@reset');
+    $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+
 });
 
 Route::get('/register/complete', 'Auth\RegisterController@getRegisterComplete');

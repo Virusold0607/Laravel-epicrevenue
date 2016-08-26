@@ -91,7 +91,7 @@
                         {!! app('captcha')->display() !!}
                     </div>
                 </div>
-                {!! Form::submit('Next', array('class' => 'btn btn-primary btn-lg btn-extra-padding pull-right')) !!}
+                {!! Form::submit('Next', array('class' => 'btn btn-primary btn-lg pull-right')) !!}
             {!! Form::close() !!}
 
         </div>

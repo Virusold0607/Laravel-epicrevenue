@@ -8034,21 +8034,6 @@ header.transparent-header {
   display: inline-block;
   margin-right: 2px; }
 
-.navbar .show-user-menu {
-  color: #000 !important; }
-  .navbar .show-user-menu .user-holder {
-    padding: 0 !important; }
-    .navbar .show-user-menu .user-holder * {
-      display: inline-block; }
-    .navbar .show-user-menu .user-holder .user-icon {
-      max-width: 30px;
-      width: 100%;
-      margin-right: 7px; }
-    .navbar .show-user-menu .user-holder .name {
-      color: #000; }
-  .navbar .show-user-menu .caret {
-    color: #000; }
-
 nav.navbar-inverse.non-sticky {
   margin-bottom: 0;
   background-color: transparent;

@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Laravel</title>
+    <title>Influencers Reach</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">

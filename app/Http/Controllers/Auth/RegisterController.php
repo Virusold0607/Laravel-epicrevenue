@@ -355,8 +355,11 @@ class RegisterController extends Controller
 
         $email_confirm_code = str_random(64);
 
-        $user->status->any_payment_method_added = 'yes';
-        $user->status->email_confirm_code = $email_confirm_code;
+
+        $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
+        $status->any_payment_method_added = 'yes';
+        $status->email_confirm_code = $email_confirm_code;
+        $status->save();
 
         $shouldSend = true;
         if (!is_null($user->status->email_confirm_send_at)) {
@@ -368,7 +371,7 @@ class RegisterController extends Controller
         } else {
             $user->status->email_confirm_send_at = Carbon::now();
         }
-        $user->push();
+        $user->save();
 
         if ($shouldSend) {
             Mail::send('emails.confirm', ['user' => $user, 'email_confirm_code' => $email_confirm_code], function ($m) use ($user) {
