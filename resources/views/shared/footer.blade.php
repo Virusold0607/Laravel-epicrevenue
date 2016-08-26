@@ -1,4 +1,3 @@
-<div class="container" style="height:20px;"></div>
 <div class="container">
     <hr>
 </div>
@@ -64,7 +63,6 @@
         <div class="clearfix"></div>
     </div>
 
-    <div class="container" style="height:20px;"></div>
     <div class="container">
         <hr>
     </div>

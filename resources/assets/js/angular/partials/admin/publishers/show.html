@@ -56,12 +56,12 @@
             <td><% user.user.zip %></td>
         </tr>
         <tr>
-            <td colspan="2"><h2>IG Information</h2></td>
+            <td colspan="2"><h2>Social Accounts Information</h2></td>
         </tr>
         <tr>
-            <td><b>IG Accounts:</b></td>
+            <td><b>Social Accounts:</b></td>
             <td>
-                <span ng-repeat="instagramAccount in user.user.instagram_accounts"><a href="https://instagram.com/<% instagramAccount.username %>" traget="_blank"><% instagramAccount.username %></a>, </span>
+                <span ng-repeat="social_account in user.user.social_accounts"><a href="https://instagram.com/<% social_account.username %>" traget="_blank"><% social_account.username %></a> (<% social_account.account %>), </span>
             </td>
         </tr>
 

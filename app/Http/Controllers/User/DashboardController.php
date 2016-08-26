@@ -30,6 +30,7 @@ class DashboardController extends Controller
         $data['today_leads'] = Report::ofUser($u)->lead()->today()->count();
         $data['earnings_today'] = Report::ofUser($u)->lead()->today()->sum('rate');
         $data['earnings_month'] = Report::ofUser($u)->lead()->month()->sum('rate');
+        $data['earnings_graph'] = collect(\App\Http\Helper::earnings_chart());
 
         return view('user.dashboard', $data);
     }

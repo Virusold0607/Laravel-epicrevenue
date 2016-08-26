@@ -24,7 +24,7 @@ class PublisherController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Role::findOrFail(1)->users();
+        $query = User::with('status');
 
         if($request->input('my') == 'true' && app()->environment('staging', 'production'))
             $query = $query->where('approved_by', auth()->user()->id);
@@ -41,7 +41,7 @@ class PublisherController extends Controller
 
         $query = $query->orderBy($request->input('order_by', 'id'), $request->input('order', 'dsc'));
 
-        $publishers = $query->with('status')->paginate(10);
+        $publishers = $query->paginate(10);
 
         foreach ($publishers as $publisher) {
             $publisher->total_earned = $publisher->where('id', $publisher->id)->first()->reports()->lead()->sum('rate');
@@ -58,9 +58,7 @@ class PublisherController extends Controller
      */
     public function my()
     {
-        $users = Role::find(1)
-            ->users()
-            ->where('approved_by', auth()->user()->id)
+        $users = User::where('approved_by', auth()->user()->id)
             ->orderBy('id', 'desc')
             ->paginate(10);
         return $users;
@@ -75,7 +73,7 @@ class PublisherController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $data['user'] = User::where('id', $id)->with('instagramAccounts')->firstOrFail();
+        $data['user'] = User::where('id', $id)->with('socialAccounts')->firstOrFail();
 
         $data['clicks']        = $data['user']->reports()->click()->count();
         $data['leads']         = $data['user']->reports()->lead()->count();

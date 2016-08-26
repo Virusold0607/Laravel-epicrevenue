@@ -55,13 +55,13 @@
             <td>{!! $user->zip !!}</td>
         </tr>
         <tr>
-            <td colspan="2"><h2>IG Information</h2></td>
+            <td colspan="2"><h2>Social Accounts Information</h2></td>
         </tr>
         <tr>
-            <td><b>IG Accounts:</b></td>
+            <td><b>Social Accounts:</b></td>
             <td>
-                @foreach($user->instagramAccounts as $instagramAccount)
-                    {!! $instagramAccount->username !!},
+                @foreach($user->social_accounts as $social_account)
+                    {!! $social_account->username !!} ({{ $social_account->account }}),
                 @endforeach
             </td>
         </tr>

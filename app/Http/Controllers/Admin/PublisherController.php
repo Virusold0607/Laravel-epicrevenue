@@ -23,9 +23,7 @@ class PublisherController extends Controller
      */
     public function index()
     {
-        $data['users'] = Role::findOrFail(1)
-            ->users()
-            ->with('reports', 'balance', 'balance.histories')
+        $data['users'] = User::with('reports', 'balance', 'balance.histories')
             ->orderBy('id', 'desc')
             ->paginate(10);
         return view('admin.publishers.index', $data);
@@ -38,9 +36,7 @@ class PublisherController extends Controller
      */
     public function my()
     {
-        $data['users'] = Role::find(1)
-            ->users()
-            ->where('approved_by', auth()->user()->id)
+        $data['users'] = User::where('approved_by', auth()->user()->id)
             ->with('reports', 'balance', 'balance.histories')
             ->orderBy('id', 'desc')
             ->paginate(10);

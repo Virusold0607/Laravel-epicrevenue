@@ -7957,13 +7957,7 @@ html, body {
   color: #3b454a; }
 
 body {
-  background: #ededed;
-  background: #ededed;
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #ededed), color-stop(53%, #f6f6f6), color-stop(65%, #fafafa), color-stop(78%, white));
-  background: -webkit-radial-gradient(center, ellipse cover, #ededed 0%, #f6f6f6 53%, #fafafa 65%, white 78%);
-  background: -webkit-radial-gradient(center ellipse, #ededed 0%, #f6f6f6 53%, #fafafa 65%, white 78%);
-  background: radial-gradient(ellipse at center, #ededed 0%, #f6f6f6 53%, #fafafa 65%, white 78%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=1 ); }
+  background: white; }
 
 .page-container {
   box-shadow: 0 1px 132px 10px #d6d6d6;
@@ -8825,4 +8819,34 @@ a.network_tile.disabled {
   border-radius: 4px;
   border: 1px solid #62A2F7; }
 
-/*# sourceMappingURL=main.css.map */
+.page-container.dashboard {
+  box-shadow: none; }
+
+.hero.hero-dashboard {
+  background: rgba(217, 217, 217, 0.99);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(217, 217, 217, 0.99)), color-stop(0%, rgba(237, 237, 237, 0.99)), color-stop(0%, rgba(227, 227, 227, 0.99)), color-stop(100%, rgba(255, 255, 255, 0.99)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(217, 217, 217, 0.99) 0%, rgba(237, 237, 237, 0.99) 0%, rgba(227, 227, 227, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%);
+  background: -webkit-radial-gradient(center ellipse, rgba(217, 217, 217, 0.99) 0%, rgba(237, 237, 237, 0.99) 0%, rgba(227, 227, 227, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%);
+  background: radial-gradient(ellipse at center, rgba(217, 217, 217, 0.99) 0%, rgba(237, 237, 237, 0.99) 0%, rgba(227, 227, 227, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
+  height: auto;
+  min-height: 0 !important;
+  color: #5f5f5f;
+  padding: 50px 0;
+  border-bottom: 1px solid white;
+  margin-bottom: 0; }
+  .hero.hero-dashboard * {
+    color: #000; }
+  .hero.hero-dashboard .hero-stats .hero-stat-border {
+    display: inline-block;
+    vertical-align: 8px;
+    height: 30px;
+    border: 1px solid #e3e3e3;
+    margin: 0 10px; }
+  .hero.hero-dashboard .hero-stats .hero-stat {
+    display: inline-block;
+    color: #3b454a; }
+    .hero.hero-dashboard .hero-stats .hero-stat h5 {
+      text-transform: uppercase;
+      color: #8a8e90;
+      font-weight: 600; }

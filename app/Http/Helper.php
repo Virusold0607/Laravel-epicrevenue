@@ -189,9 +189,9 @@ class Helper
             ->get();
 
         $earnings = $earnings->sortBy(function ($item, $key) {
-            return date("Y-m-d", strtotime($item['created_at']));
+            return date("M d", strtotime($item['created_at']));
         })->groupBy(function ($item, $key) {
-            return date("Y-m-d", strtotime($item['created_at']));
+            return date("M d", strtotime($item['created_at']));
         });
 
 
@@ -206,7 +206,7 @@ class Helper
 
         if(empty($chart_data))
         {
-            $chart_data[0]['date'] = date("Y-m-d");
+            $chart_data[0]['date'] = date("M d");
             $chart_data[0]['value'] = 0;
         }
 
