@@ -4,10 +4,10 @@
             <div class="col-sm-4 col-sm-offset-1 col-xs-12">
                 <h3 class="footer-brand">influencers<strong>reach</strong></h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/influencersreach"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/useinfluencers"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="https://www.google.com/+Influencersreach"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                    <a href="https://instagram.com/influencersreach/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/influencersreach"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://twitter.com/useinfluencers"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.google.com/+Influencersreach"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://instagram.com/influencersreach/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 </div>
             </div>
             <div class="row col-sm-7">

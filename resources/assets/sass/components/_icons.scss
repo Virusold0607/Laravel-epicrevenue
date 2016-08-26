@@ -1,5 +1,4 @@
 .social-icons {
-
   width: 100%;
   float: left;
 
@@ -26,3 +25,40 @@
     margin-bottom: 10px;
   }
 }
+
+.social-icons {
+  a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: $brand-gray;
+    margin: 3px;
+    width: 30px;
+    height: 30px;
+    .fa {
+      border: 1px solid $brand-gray;
+      padding: 8px 5px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+}
+//ul.add-networks > li {
+//  a.network_tile {
+//    .fa-boundry {
+//      display: inline-block;
+//      margin: 3px;
+//      width: 30px;
+//      height: 30px;
+//      .fa {
+//        border: 1px solid $brand-gray;
+//        padding: 8px 5px;
+//        -webkit-border-radius: 50%;
+//        -moz-border-radius: 50%;
+//        border-radius: 50%;
+//      }
+//    }
+//  }
+//}

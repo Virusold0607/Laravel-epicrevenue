@@ -26,7 +26,7 @@
                         <li><a href="{{ url('/contests') }}">Contests</a></li>
                         <li class="dropdown show-user-menu">
                             <a href="#" class="dropdown-toggle user-holder" data-toggle="dropdown">
-                                <img src="{{ url('/images/default-user-icon.png') }}" class="user-icon" />
+                                <img src="{{ url('/images/default-user-icon.png') }}" class="user-icon img-responsive" />
                                 <div class="name">{!! auth()->user()->firstname !!}</div>
                                 <b class="caret"></b>
                             </a>

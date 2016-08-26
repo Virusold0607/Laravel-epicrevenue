@@ -174,7 +174,8 @@ class RegisterController extends Controller
                 ) {
                     $a_user = User::findOrFail((int) auth()->user()->id);
 
-                    $social_account = SocialAccount::firstOrNew(['account_id' => (int) $data->user->id]);
+                    $social_account = SocialAccount::firstOrNew(['account' => 'instagram', 'account_id' => (int) $data->user->id]);
+                    $social_account->account = "instagram";
                     $social_account->user_id = $a_user->id;
                     $social_account->account_id = $data->user->id;
                     $social_account->profile_picture = $data->user->profile_pic_url;
@@ -232,7 +233,7 @@ class RegisterController extends Controller
 
 
                     $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
-                    $status->any_network_added = 'yes';
+                    $status->any_payment_method_added = 'yes';
                     $status->save();
 
                     return redirect('/register/networks');
@@ -375,7 +376,7 @@ class RegisterController extends Controller
             });
         }
 
-        Auth::logout();
+        auth()->logout();
 
         $request->session()->flash('complete', 'yes');
         return redirect('/register/complete');
@@ -388,10 +389,10 @@ class RegisterController extends Controller
         if($user->status->email_confirm_code === $email_confirm_code)
         {
             $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
-            $status->any_network_added = 'yes';
+            $status->email_confirmed = 'yes';
             $status->save();
 
-            \Auth::login($user);
+            auth()->login($user);
 
             return view('auth.success');
         } else {

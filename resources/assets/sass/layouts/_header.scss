@@ -60,6 +60,33 @@ header.transparent-header {
   position: absolute;
   width: 100%;
 }
+.navbar {
+  .show-user-menu {
+    background-color: #fff;
+    padding: 10px 0;
+    color: #000 !important;
+    .user-holder {
+
+      & * {
+        display: inline-block;
+      }
+
+      padding: 0 !important;
+      .user-icon {
+        max-width: 30px;
+        width: 100%;
+        margin-right: 7px;
+      }
+      .name {
+        color: #000;
+      }
+    }
+
+    .caret {
+      color: #000;
+    }
+  }
+}
 
 nav.navbar-inverse {
   &.non-sticky {
