@@ -1,14 +1,17 @@
 @extends('shared.layout')
 
 @section('body')
-<div class="hero small">
+<div class="hero hero-txt">
     <div class="container">
-        <h1 class="semibold hero_heading">Terms of Service</h1>
+        <h1 class="hero-heading">Confirmation Failed</h1>
     </div>
 </div>
-<div class="page-container">
-    <div class="container">
-    	<div class="alert alert-danger">The confirmation of your account has failed.</div>
+
+<div class="clearfix"></div>
+
+<div class="container">
+    <div class="container-fluid">
+        <div class="alert alert-danger">The confirmation of your account has failed.</div>
     </div>
 </div>
 @endsection
