@@ -6,7 +6,7 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-1 col-xs-12">
+            <div class="col-sm-4 col-xs-12">
                 <h3 class="footer-brand">influencers<strong>reach</strong></h3>
                 <div class="social-icons">
                     <a target="_blank" href="https://www.facebook.com/influencersreach"><i class="fa fa-facebook" aria-hidden="true"></i></a>
