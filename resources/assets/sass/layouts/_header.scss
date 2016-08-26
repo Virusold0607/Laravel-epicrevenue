@@ -60,10 +60,18 @@ header.transparent-header {
   position: absolute;
   width: 100%;
 }
+
 .navbar {
+
+  .nav-user-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 2px;
+  }
+
   .show-user-menu {
-    background-color: #fff;
-    padding: 10px 0;
     color: #000 !important;
     .user-holder {
 

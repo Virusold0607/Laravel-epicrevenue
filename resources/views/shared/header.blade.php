@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/" title="Influencers Reach">
-                    <img class="img-responsive" src="{{ $navbar_inverse ? url('/images/logo.png') : url('/images/logo.png') }}" alt="Influencers Reach">
+                    <img class="img-responsive" src="{{ $navbar_inverse ? url('/images/logo.png') : url('/images/logo1.png') }}" alt="Influencers Reach">
                 </a>
             </div>
 
@@ -25,11 +25,17 @@
                         <li><a href="{{ url('/reports') }}">Reports</a></li>
                         <li><a href="{{ url('/contests') }}">Contests</a></li>
                         <li class="dropdown show-user-menu">
-                            <a href="#" class="dropdown-toggle user-holder" data-toggle="dropdown">
-                                <img src="{{ url('/images/default-user-icon.png') }}" class="user-icon img-responsive" />
-                                <div class="name">{!! auth()->user()->firstname !!}</div>
-                                <b class="caret"></b>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <img src="{{ url('/images/default-user-icon.png') }}" class="img-responsive nav-user-img" />
+                                {!! auth()->user()->firstname !!}
+                                <span class="caret"></span>
                             </a>
+
+                            {{--<a href="#" class="dropdown-toggle user-holder" data-toggle="dropdown">--}}
+                                {{--<img src="{{ url('/images/default-user-icon.png') }}" class="user-icon img-responsive" />--}}
+                                {{--<div class="name">{!! auth()->user()->firstname !!}</div>--}}
+                                {{--<b class="caret"></b>--}}
+                            {{--</a>--}}
                             <ul class="dropdown-menu">
                                 <!--<li><a href="#">Tools</a></li>-->
                                 <li><a href="{{ url('/invite') }}">Invite</a></li>

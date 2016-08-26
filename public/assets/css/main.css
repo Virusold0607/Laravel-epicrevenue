@@ -8027,9 +8027,14 @@ header.transparent-header {
   position: absolute;
   width: 100%; }
 
+.navbar .nav-user-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-right: 2px; }
+
 .navbar .show-user-menu {
-  background-color: #fff;
-  padding: 10px 0;
   color: #000 !important; }
   .navbar .show-user-menu .user-holder {
     padding: 0 !important; }
