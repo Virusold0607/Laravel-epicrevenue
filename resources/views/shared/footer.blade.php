@@ -1,3 +1,8 @@
+<div class="container" style="height:20px;"></div>
+<div class="container">
+    <hr>
+</div>
+<div class="container" style="height:5px;"></div>
 <div class="footer">
     <div class="container">
         <div class="row">

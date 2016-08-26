@@ -133,10 +133,5 @@
 
 
         <div class="clearfix"></div>
-        <div class="container" style="height:30px;"></div>
-        <div class="container">
-            <hr>
-        </div>
-        <div class="container" style="height:30px;"></div>
     </div>
 @endsection

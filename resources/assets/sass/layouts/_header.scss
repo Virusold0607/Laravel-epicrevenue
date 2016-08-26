@@ -62,37 +62,12 @@ header.transparent-header {
 }
 
 .navbar {
-
   .nav-user-img {
     width: 30px;
     height: 30px;
     border-radius: 10px;
     display: inline-block;
     margin-right: 2px;
-  }
-
-  .show-user-menu {
-    color: #000 !important;
-    .user-holder {
-
-      & * {
-        display: inline-block;
-      }
-
-      padding: 0 !important;
-      .user-icon {
-        max-width: 30px;
-        width: 100%;
-        margin-right: 7px;
-      }
-      .name {
-        color: #000;
-      }
-    }
-
-    .caret {
-      color: #000;
-    }
   }
 }
 
