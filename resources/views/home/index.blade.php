@@ -14,7 +14,7 @@
     <div class="homepage">
         <div class="hero hero-lg">
             <div class="container">
-                <h1 style="color: #fff;">Monetize the reach of your social media following</h1>
+                <h1>Monetize the reach of your social media following</h1>
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
                         <h4 class="font-gray">Do you have a fan page, a niche page, a model page, or any other type of page with a large following?</h4>

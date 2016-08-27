@@ -18,6 +18,7 @@ class Kernel extends ConsoleKernel
         Commands\MailChimpSync::class,
         Commands\MailChimpClean::class,
         Commands\SettleInstagramData::class,
+        Commands\SettleUserBalances::class,
     ];
 
     /**

@@ -1,6 +1,5 @@
 var app = angular.module('admin', [
         'ui.bootstrap',
-        'chart.js',
         'ngRoute',
         'ngSanitize',
         'ui.select',

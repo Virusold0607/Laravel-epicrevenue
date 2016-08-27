@@ -1,33 +1,51 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero heading promote-page">
-        <div class="container_12">
-            <h1 class="semibold hero_heading">Promoting</h1>
-            <p>Click an approved account to see the content available to promote on it.</p> 
+    <div class="hero hero-lg">
+        <div class="container">
+            <h1 class="hero-heading">Promoting</h1>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <h4 class="font-gray">Click an approved account to see the content available to promote on it.</h4>
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
-  
-    <div class="page">
-        <div class="container_12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                @if(Session::has('success'))
-                    <div class="alert alert-success">You have successfully added your Instagram account and it is now pending review.</div>
-                @endif
-                    <div class="alert alert-info">Below are all Instagram account(s) added to your account.</div><br />
-                    @foreach($accounts as $account)
-                        <div class="grid_3 h_grid_12">
-                            <a class="tool-i" href="{!! url('/promote', [$account->id]) !!}">
-                                <div class="tool-i-title">{!! $account->username !!}</div>
-                                <div class="ig-profile"><img src="{!! $account->profile_picture !!}" /></div>
+
+    <div class="clearfix"></div>
+
+    <div class="container">
+        <div class="page-container">
+            @if(Session::has('success'))
+                <div class="alert alert-success">You have successfully added your Instagram account and it is now pending review.</div>
+            @endif
+            <div class="text">Below are all Social account(s) added to your account.</div>
+            <hr>
+            <div class="row">
+                <?php $count = 1; ?>
+                @foreach($accounts as $account)
+                    <div class="col-sm-3">
+                        <div class="container-fluid social-account-container">
+                            <a href="{!! url('/promote', [$account->id]) !!}">
+                                <h5>{!! $account->username !!}</h5>
+                                <hr>
+                                <div><img src="{!! $account->profile_picture !!}" /></div>
                             </a>
                         </div>
-                    @endforeach
-                    <div class="grid_2 h_grid_6">
-                        <a class="tool-i" href="{!! url('/networks') !!}">
-                            <div class="glyphicon glyphicon-user"></div>
-                            <div class="tool-i-titl">Add IG Account</div>
+                    </div>
+                    <?php $count++ ?>
+                    @if(($count % 4) == 1)
+                        <div class="clearfix"></div>
+                    @endif
+                @endforeach
+
+                <div class="col-sm-3">
+                    <div class="container-fluid social-account-container add-account">
+                        <a href="{!! url('/networks') !!}">
+                            <h5>Add Account</h5>
+                            <hr>
+                            <i class="fa fa-database" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>

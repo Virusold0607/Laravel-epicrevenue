@@ -1067,5 +1067,3 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 
 })(window, window.angular);
-
-//# sourceMappingURL=angular-route.js.map

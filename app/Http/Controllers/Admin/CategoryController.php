@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\PromotionCategory;
-use App\Http\Requests\CategoryAddRequest;
+use Validator;
 
 
 class CategoryController extends Controller
@@ -39,8 +39,18 @@ class CategoryController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(CategoryAddRequest $request)
+    public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|unique:promotion_categories'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin/promotions/categories')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $data = $request->all();
         $create = PromotionCategory::create($data);
         if($create){

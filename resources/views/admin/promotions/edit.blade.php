@@ -79,7 +79,7 @@
             <tr>
                 <td>Promotion category</td>
                 <td>
-                    {!! Form::select('categories[]', App\Models\PromotionCategory::orderBy('id', 'asc')->lists('name', 'id') , $promotion->categories->lists('id')->toArray(), array('id' => 'categories', 'class' => 'col-md-9 form-control', 'required'=>'required', 'multiple'=>'multiple' )) !!}
+                    {!! Form::select('categories[]', App\Models\PromotionCategory::orderBy('id', 'asc')->pluck('name', 'id') , $promotion->categories->pluck('id')->toArray(), array('id' => 'categories', 'class' => 'col-md-9 form-control', 'required'=>'required', 'multiple'=>'multiple' )) !!}
                 </td>
             </tr>
             <tr>
@@ -93,7 +93,7 @@
             <tr>
                 <td>Allowed Influencers</td>
                 <td>
-                    {!! Form::select('influencers[]', App\Models\InstagramAccount::orderBy('user_id', 'asc')->lists('username', 'id'),  $promotion->influencers->lists('id')->toArray(), array('id' => 'influencers', 'class' => 'form-control', 'required'=>'required', 'multiple'=>'multiple' )) !!}
+                    {!! Form::select('influencers[]', App\Models\InstagramAccount::orderBy('user_id', 'asc')->pluck('username', 'id'),  $promotion->influencers->pluck('id')->toArray(), array('id' => 'influencers', 'class' => 'form-control', 'required'=>'required', 'multiple'=>'multiple' )) !!}
                 </td>
             </tr>
             <tr>

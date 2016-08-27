@@ -45,4 +45,11 @@ class SocialAccount extends Model
         return $this->hasMany('App\Models\SocialAccountPost', 'account_id', 'account_id');
     }
 
+    /**
+     * The influencers that belong to the promotion.
+     */
+    public function promotions()
+    {
+        return $this->belongsToMany('App\Models\Promotion', 'promotion_influencer', 'instagram_account_id', 'promotion_id');
+    }
 }

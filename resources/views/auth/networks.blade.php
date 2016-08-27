@@ -3,7 +3,7 @@
 @section('body')
     <div class="hero small">
         <div class="container">
-            <h1 class="hero_heading">Become a Influencer</h1>
+            <h1 class="hero-heading">Become a Influencer</h1>
         </div>
     </div>
     <div class="page">

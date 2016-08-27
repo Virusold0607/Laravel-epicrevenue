@@ -178,7 +178,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
 });
 
 
-Route::group(['prefix' => 'admin/api', 'middleware' => ['api', 'admin']], function () {
+
+
+Route::group(['prefix' => 'api/admin', 'middleware' => ['api', 'admin']], function () {
     Route::get('/stats', 'Admin\Api\AdminController@index');
     Route::get('/publishers/my', 'Admin\Api\PublisherController@my');
     Route::resource('/publishers', 'Admin\Api\PublisherController');
@@ -188,11 +190,11 @@ Route::group(['prefix' => 'admin/api', 'middleware' => ['api', 'admin']], functi
     Route::get('/reports/options/{id}/{status}', 'Admin\Api\ReportsController@options');
     Route::resource('/reports', 'Admin\Api\ReportsController');
 
-    //Instagram Account controller
-    Route::resource('/instagramaccounts', 'Admin\Api\InstagramAccountsController');
-    Route::post('/instagramaccounts/approval/{instagram_id}', 'Admin\Api\InstagramAccountsController@approval');
+    //Social Account controller
+    Route::post('/socialaccounts/approval/{account_id}', 'Admin\Api\SocialAccountsController@approval');
+    Route::resource('/socialaccounts', 'Admin\Api\SocialAccountsController');
 
-    Route::resource('/instagramposts', 'Admin\Api\InstagramAccountsController');
+    Route::resource('/socialposts', 'Admin\Api\SocialAccountsController');
 
     // Contests Controller
     Route::resource('/contests', 'Admin\Api\ContestController');

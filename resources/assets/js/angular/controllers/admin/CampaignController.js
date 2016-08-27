@@ -9,7 +9,7 @@ adminControllers.controller('CampaignListController', ['$scope', '$http', '$rout
             $scope.order = typeof order !== 'undefined' ? order : 'asc';
             $scope.order_by = typeof order_by !== 'undefined' ? order_by : 'active';
 
-            $http.get('/admin/api/campaigns/?page=' + $scope.page + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order)
+            $http.get('/api/admin/campaigns/?page=' + $scope.page + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order)
                 .then(function successCallback(response) {
                     //console.log('successCallback: ');
                     //console.log(response);
@@ -46,7 +46,7 @@ adminControllers.controller('CampaignListController', ['$scope', '$http', '$rout
 adminControllers.controller('CampaignDetailController', ['$scope', '$http', '$routeParams',
     function ($scope, $http, $routeParams) {
         $scope.contestId = $routeParams.contestId;
-        $http.get('/admin/api/contests/' + $routeParams.contestId).success(function(data) {
+        $http.get('/api/admin/contests/' + $routeParams.contestId).success(function(data) {
             $scope.contest = data.contest;
             $scope.reports = data.reports;
         });
@@ -54,7 +54,7 @@ adminControllers.controller('CampaignDetailController', ['$scope', '$http', '$ro
 adminControllers.controller('CampaignCreateController', ['$scope', '$http', '$filter', '$location',
     function ($scope, $http, $filter, $location) {
 
-        $http.get('/admin/api/campaigns/create')
+        $http.get('/api/admin/campaigns/create')
             .then(function successCallback(response) {
                 //console.log('successCallback: ');
                 //console.log(response);
@@ -87,7 +87,7 @@ adminControllers.controller('CampaignCreateController', ['$scope', '$http', '$fi
         $scope.create = function(campaign, targets) {
             var data = { campaign: campaign, targets: targets };
 
-            $http.post('/admin/api/campaigns',
+            $http.post('/api/admin/campaigns',
                 data,
                 { 'Content-Type': 'application/x-www-form-urlencoded' }
             ).then(function successCallback(response) {
@@ -106,7 +106,7 @@ adminControllers.controller('CampaignCreateController', ['$scope', '$http', '$fi
 adminControllers.controller('CampaignEditController', ['$scope', '$http', '$routeParams', '$filter','$httpParamSerializerJQLike', '$location',
     function ($scope, $http, $routeParams, $filter, $httpParamSerializerJQLike, $location) {
         $scope.contestId = $routeParams.contestId;
-        $http.get('/admin/api/campaigns/' + $routeParams.contestId + '/edit').success(function(data) {
+        $http.get('/api/admin/campaigns/' + $routeParams.contestId + '/edit').success(function(data) {
             data.start_at = new Date(data.start_at);
             data.end_at = new Date(data.end_at);
             $scope.contest = data;
@@ -124,7 +124,7 @@ adminControllers.controller('CampaignEditController', ['$scope', '$http', '$rout
         $scope.update = function(contest, rewards) {
             var data = { contest: contest, rewards: rewards };
 
-            $http.put('/admin/api/campaigns/' + $routeParams.contestId,
+            $http.put('/api/admin/campaigns/' + $routeParams.contestId,
                 data,
                 { 'Content-Type': 'application/x-www-form-urlencoded' }
             ).then(function successCallback(response) {
@@ -172,7 +172,7 @@ adminControllers.controller('CampaignGalleryController', ['$scope', 'Upload', '$
             if (files && files.length) {
                 for (var i = 0; i < files.length; i++) {
                     Upload.upload({
-                        url: '/admin/api/campaigns/gallery',
+                        url: '/api/admin/campaigns/gallery',
                         method: 'PUT',
                         data: { file: files[i], 'campaignId': $routeParams.id }
                     });

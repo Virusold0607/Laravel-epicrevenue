@@ -23,8 +23,7 @@
                         <li><a href="#/publishers/my">My</a></li>
                         <li><a href="#/publishers/status">Unapproved</a></li>
                         <li class="divider"></li>
-                        <li><a href="#/instagramaccounts">IG Accounts</a></li>
-                        <li><a href="#/instagramposts/">IG Content</a></li>
+                        <li><a href="#/socialaccounts">Social Accounts</a></li>
                     </ul>
                 </li>
                 <li class="dropdown" uib-dropdown>

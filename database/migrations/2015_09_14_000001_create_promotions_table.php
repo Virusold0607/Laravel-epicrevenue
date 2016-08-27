@@ -18,7 +18,7 @@ class CreatePromotionsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('url');
-            $table->string('ages');
+            $table->string('ages')->nullable();
             $table->string('featured_img', 500);
             $table->timestamps();
         });

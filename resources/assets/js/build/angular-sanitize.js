@@ -736,5 +736,3 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
 
 
 })(window, window.angular);
-
-//# sourceMappingURL=angular-sanitize.js.map

@@ -15,7 +15,7 @@
         "laravel/socialite": "2.*",
         "drewm/mailchimp-api": "2.*",
         "google/apiclient": "2.0.*",
-        "facebook/php-sdk-v4" : "5.*",
+        "facebook/graph-sdk" : "5.*",
         "laravel/cashier": "6.*",
         "cosenary/instagram": "2.*"
     },

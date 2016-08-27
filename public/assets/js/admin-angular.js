@@ -1,6 +1,5 @@
 var app = angular.module('admin', [
         'ui.bootstrap',
-        'chart.js',
         'ngRoute',
         'ngSanitize',
         'ui.select',
@@ -40,17 +39,17 @@ app.config(['$interpolateProvider', '$routeProvider',
                 templateUrl: '/build/assets/js/partials/admin/publishers/edit.html',
                 controller: 'PublisherEditController'
             }).
-            when('/instagramaccounts/:page?', {
-                templateUrl: '/build/assets/js/partials/admin/instagramaccounts/index.html',
-                controller: 'InstagramAccountListController'
+            when('/socialaccounts/:page?', {
+                templateUrl: '/build/assets/js/partials/admin/socialaccounts/index.html',
+                controller: 'SocialAccountListController'
             }).
             when('/contests/create/', {
                 templateUrl: '/build/assets/js/partials/admin/contests/create.html',
                 controller: 'ContestCreateController'
             }).
-            when('/instagramaccounts/show/:igId/', {
-                templateUrl: '/build/assets/js/partials/admin/instagramaccounts/show.html',
-                controller: 'InstagramAccountDetailController'
+            when('/socialaccounts/show/:socialId/', {
+                templateUrl: '/build/assets/js/partials/admin/socialaccounts/show.html',
+                controller: 'SocialAccountDetailController'
             }).
             when('/contests/:page?', {
                 templateUrl: '/build/assets/js/partials/admin/contests/index.html',
@@ -96,8 +95,6 @@ app.config(['$interpolateProvider', '$routeProvider',
                 redirectTo: '/stats'
             });
     }]);
-//# sourceMappingURL=app.js.map
-
 adminControllers.controller('CampaignListController', ['$scope', '$http', '$routeParams', '$location',
     function ($scope, $http, $routeParams, $location) {
         $scope.page = 1;
@@ -109,7 +106,7 @@ adminControllers.controller('CampaignListController', ['$scope', '$http', '$rout
             $scope.order = typeof order !== 'undefined' ? order : 'asc';
             $scope.order_by = typeof order_by !== 'undefined' ? order_by : 'active';
 
-            $http.get('/admin/api/campaigns/?page=' + $scope.page + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order)
+            $http.get('/api/admin/campaigns/?page=' + $scope.page + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order)
                 .then(function successCallback(response) {
                     //console.log('successCallback: ');
                     //console.log(response);
@@ -146,7 +143,7 @@ adminControllers.controller('CampaignListController', ['$scope', '$http', '$rout
 adminControllers.controller('CampaignDetailController', ['$scope', '$http', '$routeParams',
     function ($scope, $http, $routeParams) {
         $scope.contestId = $routeParams.contestId;
-        $http.get('/admin/api/contests/' + $routeParams.contestId).success(function(data) {
+        $http.get('/api/admin/contests/' + $routeParams.contestId).success(function(data) {
             $scope.contest = data.contest;
             $scope.reports = data.reports;
         });
@@ -154,7 +151,7 @@ adminControllers.controller('CampaignDetailController', ['$scope', '$http', '$ro
 adminControllers.controller('CampaignCreateController', ['$scope', '$http', '$filter', '$location',
     function ($scope, $http, $filter, $location) {
 
-        $http.get('/admin/api/campaigns/create')
+        $http.get('/api/admin/campaigns/create')
             .then(function successCallback(response) {
                 //console.log('successCallback: ');
                 //console.log(response);
@@ -187,7 +184,7 @@ adminControllers.controller('CampaignCreateController', ['$scope', '$http', '$fi
         $scope.create = function(campaign, targets) {
             var data = { campaign: campaign, targets: targets };
 
-            $http.post('/admin/api/campaigns',
+            $http.post('/api/admin/campaigns',
                 data,
                 { 'Content-Type': 'application/x-www-form-urlencoded' }
             ).then(function successCallback(response) {
@@ -206,7 +203,7 @@ adminControllers.controller('CampaignCreateController', ['$scope', '$http', '$fi
 adminControllers.controller('CampaignEditController', ['$scope', '$http', '$routeParams', '$filter','$httpParamSerializerJQLike', '$location',
     function ($scope, $http, $routeParams, $filter, $httpParamSerializerJQLike, $location) {
         $scope.contestId = $routeParams.contestId;
-        $http.get('/admin/api/campaigns/' + $routeParams.contestId + '/edit').success(function(data) {
+        $http.get('/api/admin/campaigns/' + $routeParams.contestId + '/edit').success(function(data) {
             data.start_at = new Date(data.start_at);
             data.end_at = new Date(data.end_at);
             $scope.contest = data;
@@ -224,7 +221,7 @@ adminControllers.controller('CampaignEditController', ['$scope', '$http', '$rout
         $scope.update = function(contest, rewards) {
             var data = { contest: contest, rewards: rewards };
 
-            $http.put('/admin/api/campaigns/' + $routeParams.contestId,
+            $http.put('/api/admin/campaigns/' + $routeParams.contestId,
                 data,
                 { 'Content-Type': 'application/x-www-form-urlencoded' }
             ).then(function successCallback(response) {
@@ -272,7 +269,7 @@ adminControllers.controller('CampaignGalleryController', ['$scope', 'Upload', '$
             if (files && files.length) {
                 for (var i = 0; i < files.length; i++) {
                     Upload.upload({
-                        url: '/admin/api/campaigns/gallery',
+                        url: '/api/admin/campaigns/gallery',
                         method: 'PUT',
                         data: { file: files[i], 'campaignId': $routeParams.id }
                     });
@@ -287,7 +284,7 @@ adminControllers.controller('ContestListController', ['$scope', '$http', '$route
         $scope.page = $routeParams.page;
 
         var getRecords = function () {
-            $http.get('/admin/api/contests/?page=' + $routeParams.page).success(function(data) {
+            $http.get('/api/admin/contests/?page=' + $routeParams.page).success(function(data) {
                 $scope.contests = data.data;
 
                 $scope.totalItems = data.total;
@@ -305,7 +302,7 @@ adminControllers.controller('ContestListController', ['$scope', '$http', '$route
         $scope.orderProp = 'id';
 
         $scope.delete = function(contest) {
-            $http.delete('/admin/api/contests/' + contest.id)
+            $http.delete('/api/admin/contests/' + contest.id)
             .success(function(data) {
                 $scope.message = data;
                 getRecords();
@@ -315,7 +312,7 @@ adminControllers.controller('ContestListController', ['$scope', '$http', '$route
 adminControllers.controller('ContestDetailController', ['$scope', '$http', '$routeParams',
     function ($scope, $http, $routeParams) {
         $scope.contestId = $routeParams.contestId;
-        $http.get('/admin/api/contests/' + $routeParams.contestId).success(function(data) {
+        $http.get('/api/admin/contests/' + $routeParams.contestId).success(function(data) {
             $scope.contest = data.contest;
             $scope.reports = data.reports;
         });
@@ -343,7 +340,7 @@ adminControllers.controller('ContestCreateController', ['$scope', '$http', '$rou
         $scope.create = function(contest, rewards) {
             var data = { contest: contest, rewards: rewards };
 
-            $http.post('/admin/api/contests',
+            $http.post('/api/admin/contests',
                 data,
                 { 'Content-Type': 'application/x-www-form-urlencoded' }
             ).then(function successCallback(response) {
@@ -366,7 +363,7 @@ adminControllers.controller('ContestCreateController', ['$scope', '$http', '$rou
 adminControllers.controller('ContestEditController', ['$scope', '$http', '$routeParams', '$filter','$httpParamSerializerJQLike', '$location',
     function ($scope, $http, $routeParams, $filter, $httpParamSerializerJQLike, $location) {
         $scope.contestId = $routeParams.contestId;
-        $http.get('/admin/api/contests/' + $routeParams.contestId + '/edit').success(function(data) {
+        $http.get('/api/admin/contests/' + $routeParams.contestId + '/edit').success(function(data) {
             data.start_at = new Date(data.start_at);
             data.end_at = new Date(data.end_at);
             $scope.contest = data;
@@ -384,7 +381,7 @@ adminControllers.controller('ContestEditController', ['$scope', '$http', '$route
         $scope.update = function(contest, rewards) {
             var data = { contest: contest, rewards: rewards };
 
-            $http.put('/admin/api/contests/' + $routeParams.contestId,
+            $http.put('/api/admin/contests/' + $routeParams.contestId,
                 data,
                 { 'Content-Type': 'application/x-www-form-urlencoded' }
             ).then(function successCallback(response) {
@@ -402,93 +399,6 @@ adminControllers.controller('ContestEditController', ['$scope', '$http', '$route
                     // or server returns response with an error status.
                 });
         };
-    }]);
-adminControllers.controller('InstagramAccountListController', ['$scope', '$http', '$routeParams', '$location', '$httpParamSerializerJQLike',
-    function ($scope, $http, $routeParams, $location, $httpParamSerializerJQLike) {
-        $scope.page = $routeParams.page;
-        $http.get('/admin/api/instagramaccounts/?page=' + $routeParams.page).success(function(data) {
-            $scope.instagramaccounts = data.data;
-
-            $scope.totalItems = data.total;
-            $scope.currentPage = data.current_page;
-            $scope.maxSize = 10;
-
-        });
-
-        $scope.pageChanged = function() {
-            $location.path('/instagramaccounts/' + $scope.currentPage);
-        };
-
-        $scope.orderProp = 'id';
-
-        $scope.approval = function(id, status) {
-            $http({
-                method  : 'POST',
-                url     : '/admin/api/instagramaccounts/approval/' + id,
-                data    : $httpParamSerializerJQLike({ approve: status }),
-                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-            })
-                .success(function(data) {
-                    // if successful, bind success message to message
-                    for(var i = 0; i < $scope.instagramaccounts.length; i++) {
-                        if($scope.instagramaccounts[i].instagram_id === id) {
-                            $scope.instagramaccounts[i].approved = status;
-                            return true;
-                        }
-                    }
-                });
-
-        };
-
-    }]);
-
-adminControllers.controller('InstagramAccountDetailController', ['$scope', '$http', '$routeParams', '$httpParamSerializerJQLike',
-    function ($scope, $http, $routeParams, $httpParamSerializerJQLike) {
-        $scope.igId = $routeParams.igId;
-        $http.get('/admin/api/instagramaccounts/' + $routeParams.igId).success(function(data) {
-            $scope.ig = data;
-        });
-
-        $scope.approval = function(status) {
-            $http({
-                method  : 'POST',
-                url     : '/admin/api/instagramaccounts/approval/' + $routeParams.igId,
-                data    : $httpParamSerializerJQLike({ approve: status }),
-                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-            })
-                .success(function(data) {
-                    // if successful, bind success message to message
-                    $scope.ig.approved = status;
-                });
-
-        };
-    }]);
-adminControllers.controller('InstagramPostsListController', ['$scope', '$http', '$routeParams', '$location', '$httpParamSerializerJQLike',
-    function ($scope, $http, $routeParams, $location, $httpParamSerializerJQLike) {
-        $scope.page = $routeParams.page;
-        $http.get('/admin/api/instagramposts/?page=' + $routeParams.page).success(function(data) {
-            $scope.instagramaccounts = data.data;
-
-            $scope.totalItems = data.total;
-            $scope.currentPage = data.current_page;
-            $scope.maxSize = 10;
-
-        });
-
-        $scope.pageChanged = function() {
-            $location.path('/instagramposts/' + $scope.currentPage);
-        };
-
-        $scope.orderProp = 'id';
-
-    }]);
-
-adminControllers.controller('InstagramPostsDetailController', ['$scope', '$http', '$routeParams', '$httpParamSerializerJQLike',
-    function ($scope, $http, $routeParams, $httpParamSerializerJQLike) {
-        $scope.igId = $routeParams.igId;
-        $http.get('/admin/api/instagramaccounts/' + $routeParams.igId).success(function(data) {
-            $scope.ig = data;
-        });
     }]);
 adminControllers.controller('PublisherListController', ['$scope', '$http', '$routeParams', '$location',
     function ($scope, $http, $routeParams, $location) {
@@ -512,7 +422,7 @@ adminControllers.controller('PublisherListController', ['$scope', '$http', '$rou
                 $scope.status = false;
             }
 
-            $http.get('/admin/api/publishers/?status=' + $scope.status + '&page=' + $scope.page + '&my=' + $scope.my + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order).success(function(data) {
+            $http.get('/api/admin/publishers/?status=' + $scope.status + '&page=' + $scope.page + '&my=' + $scope.my + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order).success(function(data) {
                 $scope.publishers = data.data;
                 $scope.totalItems = data.total;
                 $scope.currentPage = data.current_page;
@@ -541,14 +451,14 @@ adminControllers.controller('PublisherListController', ['$scope', '$http', '$rou
 adminControllers.controller('PublisherDetailController', ['$scope', '$http', '$routeParams', '$httpParamSerializerJQLike',
     function ($scope, $http, $routeParams, $httpParamSerializerJQLike) {
         $scope.userId = $routeParams.userId;
-        $http.get('/admin/api/publishers/' + $routeParams.userId).success(function(data) {
+        $http.get('/api/admin/publishers/' + $routeParams.userId).success(function(data) {
             $scope.user = data;
         });
 
         $scope.approval = function(status) {
             $http({
                 method  : 'POST',
-                url     : '/admin/api/publishers/approval/' + $routeParams.userId,
+                url     : '/api/admin/publishers/approval/' + $routeParams.userId,
                 data    : $httpParamSerializerJQLike({ approve: status }),
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
             })
@@ -562,14 +472,14 @@ adminControllers.controller('PublisherDetailController', ['$scope', '$http', '$r
 adminControllers.controller('PublisherEditController', ['$scope', '$http', '$routeParams', '$httpParamSerializerJQLike',
     function ($scope, $http, $routeParams, $httpParamSerializerJQLike) {
         $scope.userId = $routeParams.userId;
-        $http.get('/admin/api/publishers/' + $routeParams.userId + '/edit').success(function(data) {
+        $http.get('/api/admin/publishers/' + $routeParams.userId + '/edit').success(function(data) {
             $scope.user = data;
         });
 
         $scope.update = function(user) {
             $http({
                 method  : 'PUT',
-                url     : '/admin/api/publishers/' + user.user.id,
+                url     : '/api/admin/publishers/' + user.user.id,
                 data    : $httpParamSerializerJQLike(user),
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
             })
@@ -591,7 +501,7 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
             $scope.order = typeof order !== 'undefined' ? order : 'dsc';
             $scope.order_by = typeof order_by !== 'undefined' ? order_by : 'reports.id';
 
-            $http.get('/admin/api/reports/?page=' + $scope.page + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order).success(function(data) {
+            $http.get('/api/admin/reports/?page=' + $scope.page + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order).success(function(data) {
                 $scope.reports = data.data;
                 $scope.totalItems = data.total;
                 $scope.currentPage = data.current_page;
@@ -621,7 +531,7 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
         $scope.update = function(id, status) {
             var data = {status: status};
 
-            $http.put('/admin/api/reports/' + id,
+            $http.put('/api/admin/reports/' + id,
                 data,
                 {'Content-Type': 'application/x-www-form-urlencoded'}
             ).then(function successCallback(response) {
@@ -641,7 +551,7 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
 
 
         $scope.destroy = function(id) {
-            $http.delete('/admin/api/reports/' + id).then(function successCallback(response) {
+            $http.delete('/api/admin/reports/' + id).then(function successCallback(response) {
                 if(response.data == 'success') {
                     for(var i = 0; i < $scope.reports.length; i++) {
                         if($scope.reports[i].id === id) {
@@ -662,14 +572,14 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
 adminControllers.controller('ReportDetailController', ['$scope', '$http', '$routeParams', '$location',
     function ($scope, $http, $routeParams, $location) {
         $scope.reportId = $routeParams.reportId;
-        $http.get('/admin/api/reports/' + $routeParams.reportId).success(function(data) {
+        $http.get('/api/admin/reports/' + $routeParams.reportId).success(function(data) {
             $scope.report = data;
         });
 
         $scope.update = function(id, status) {
             var data = {status: status};
 
-            $http.put('/admin/api/reports/' + id,
+            $http.put('/api/admin/reports/' + id,
                 data,
                 {'Content-Type': 'application/x-www-form-urlencoded'}
             ).then(function successCallback(response) {
@@ -683,7 +593,7 @@ adminControllers.controller('ReportDetailController', ['$scope', '$http', '$rout
         };
 
         $scope.destroy = function(id) {
-            $http.delete('/admin/api/reports/' + id).then(function successCallback(response) {
+            $http.delete('/api/admin/reports/' + id).then(function successCallback(response) {
                 if(response.data == 'success') {
                     $location.url('reports');
                 }
@@ -694,11 +604,98 @@ adminControllers.controller('ReportDetailController', ['$scope', '$http', '$rout
             });
         };
     }]);
+adminControllers.controller('SocialAccountListController', ['$scope', '$http', '$routeParams', '$location', '$httpParamSerializerJQLike',
+    function ($scope, $http, $routeParams, $location, $httpParamSerializerJQLike) {
+        $scope.page = $routeParams.page;
+        $http.get('/api/admin/socialaccounts/?page=' + $routeParams.page).success(function(data) {
+            $scope.socialaccounts = data.data;
+
+            $scope.totalItems = data.total;
+            $scope.currentPage = data.current_page;
+            $scope.maxSize = 10;
+
+        });
+
+        $scope.pageChanged = function() {
+            $location.path('/socialaccounts/' + $scope.currentPage);
+        };
+
+        $scope.orderProp = 'id';
+
+        $scope.approval = function(id, status) {
+            $http({
+                method  : 'POST',
+                url     : '/api/admin/socialaccounts/approval/' + id,
+                data    : $httpParamSerializerJQLike({ approve: status }),
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+                .success(function(data) {
+                    // if successful, bind success message to message
+                    for(var i = 0; i < $scope.socialaccounts.length; i++) {
+                        if($scope.socialaccounts[i].account_id === id) {
+                            $scope.socialaccounts[i].approved = status;
+                            return true;
+                        }
+                    }
+                });
+
+        };
+
+    }]);
+
+adminControllers.controller('SocialAccountDetailController', ['$scope', '$http', '$routeParams', '$httpParamSerializerJQLike',
+    function ($scope, $http, $routeParams, $httpParamSerializerJQLike) {
+        $scope.socialId = $routeParams.socialId;
+        $http.get('/api/admin/socialaccounts/' + $routeParams.socialId).success(function(data) {
+            $scope.socialAccount = data;
+        });
+
+        $scope.approval = function(status) {
+            $http({
+                method  : 'POST',
+                url     : '/api/admin/socialaccounts/approval/' + $routeParams.socialId,
+                data    : $httpParamSerializerJQLike({ approve: status }),
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+                .success(function(data) {
+                    // if successful, bind success message to message
+                    $scope.socialAccount.approved = status;
+                });
+
+        };
+    }]);
+adminControllers.controller('SocialPostsListController', ['$scope', '$http', '$routeParams', '$location', '$httpParamSerializerJQLike',
+    function ($scope, $http, $routeParams, $location, $httpParamSerializerJQLike) {
+        $scope.page = $routeParams.page;
+        $http.get('/api/admin/socialposts/?page=' + $routeParams.page).success(function(data) {
+            $scope.socialaccounts = data.data;
+
+            $scope.totalItems = data.total;
+            $scope.currentPage = data.current_page;
+            $scope.maxSize = 10;
+
+        });
+
+        $scope.pageChanged = function() {
+            $location.path('/socialposts/' + $scope.currentPage);
+        };
+
+        $scope.orderProp = 'id';
+
+    }]);
+
+adminControllers.controller('SocialPostsDetailController', ['$scope', '$http', '$routeParams', '$httpParamSerializerJQLike',
+    function ($scope, $http, $routeParams, $httpParamSerializerJQLike) {
+        $scope.igId = $routeParams.igId;
+        $http.get('/api/admin/socialaccounts/' + $routeParams.igId).success(function(data) {
+            $scope.ig = data;
+        });
+    }]);
 adminControllers.controller('StatsController', ['$scope', '$http', '$interval', '$routeParams', '$rootScope',
     function($scope, $http, $interval, $routeParams, $rootScope) {
 
         $scope.getStats = function() {
-            $http.get('/admin/api/stats').
+            $http.get('/api/admin/stats').
                 then(function (response) {
                     // this callback will be called asynchronously
                     // when the response is available
@@ -723,6 +720,3 @@ adminControllers.controller('StatsController', ['$scope', '$http', '$interval', 
         function operation() { $scope.getStats(); }
 
     }]);
-//# sourceMappingURL=angular.js.map
-
-//# sourceMappingURL=admin-angular.js.map

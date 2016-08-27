@@ -2,7 +2,7 @@ adminControllers.controller('StatsController', ['$scope', '$http', '$interval', 
     function($scope, $http, $interval, $routeParams, $rootScope) {
 
         $scope.getStats = function() {
-            $http.get('/admin/api/stats').
+            $http.get('/api/admin/stats').
                 then(function (response) {
                     // this callback will be called asynchronously
                     // when the response is available

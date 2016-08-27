@@ -1,6 +1,5 @@
 var app = angular.module('admin', [
         'ui.bootstrap',
-        'chart.js',
         'ngRoute',
         'ngSanitize',
         'ui.select',
@@ -40,17 +39,17 @@ app.config(['$interpolateProvider', '$routeProvider',
                 templateUrl: '/build/assets/js/partials/admin/publishers/edit.html',
                 controller: 'PublisherEditController'
             }).
-            when('/instagramaccounts/:page?', {
-                templateUrl: '/build/assets/js/partials/admin/instagramaccounts/index.html',
-                controller: 'InstagramAccountListController'
+            when('/socialaccounts/:page?', {
+                templateUrl: '/build/assets/js/partials/admin/socialaccounts/index.html',
+                controller: 'SocialAccountListController'
             }).
             when('/contests/create/', {
                 templateUrl: '/build/assets/js/partials/admin/contests/create.html',
                 controller: 'ContestCreateController'
             }).
-            when('/instagramaccounts/show/:igId/', {
-                templateUrl: '/build/assets/js/partials/admin/instagramaccounts/show.html',
-                controller: 'InstagramAccountDetailController'
+            when('/socialaccounts/show/:socialId/', {
+                templateUrl: '/build/assets/js/partials/admin/socialaccounts/show.html',
+                controller: 'SocialAccountDetailController'
             }).
             when('/contests/:page?', {
                 templateUrl: '/build/assets/js/partials/admin/contests/index.html',
@@ -96,4 +95,3 @@ app.config(['$interpolateProvider', '$routeProvider',
                 redirectTo: '/stats'
             });
     }]);
-//# sourceMappingURL=app.js.map

@@ -9,7 +9,7 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
             $scope.order = typeof order !== 'undefined' ? order : 'dsc';
             $scope.order_by = typeof order_by !== 'undefined' ? order_by : 'reports.id';
 
-            $http.get('/admin/api/reports/?page=' + $scope.page + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order).success(function(data) {
+            $http.get('/api/admin/reports/?page=' + $scope.page + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order).success(function(data) {
                 $scope.reports = data.data;
                 $scope.totalItems = data.total;
                 $scope.currentPage = data.current_page;
@@ -39,7 +39,7 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
         $scope.update = function(id, status) {
             var data = {status: status};
 
-            $http.put('/admin/api/reports/' + id,
+            $http.put('/api/admin/reports/' + id,
                 data,
                 {'Content-Type': 'application/x-www-form-urlencoded'}
             ).then(function successCallback(response) {
@@ -59,7 +59,7 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
 
 
         $scope.destroy = function(id) {
-            $http.delete('/admin/api/reports/' + id).then(function successCallback(response) {
+            $http.delete('/api/admin/reports/' + id).then(function successCallback(response) {
                 if(response.data == 'success') {
                     for(var i = 0; i < $scope.reports.length; i++) {
                         if($scope.reports[i].id === id) {
@@ -80,14 +80,14 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
 adminControllers.controller('ReportDetailController', ['$scope', '$http', '$routeParams', '$location',
     function ($scope, $http, $routeParams, $location) {
         $scope.reportId = $routeParams.reportId;
-        $http.get('/admin/api/reports/' + $routeParams.reportId).success(function(data) {
+        $http.get('/api/admin/reports/' + $routeParams.reportId).success(function(data) {
             $scope.report = data;
         });
 
         $scope.update = function(id, status) {
             var data = {status: status};
 
-            $http.put('/admin/api/reports/' + id,
+            $http.put('/api/admin/reports/' + id,
                 data,
                 {'Content-Type': 'application/x-www-form-urlencoded'}
             ).then(function successCallback(response) {
@@ -101,7 +101,7 @@ adminControllers.controller('ReportDetailController', ['$scope', '$http', '$rout
         };
 
         $scope.destroy = function(id) {
-            $http.delete('/admin/api/reports/' + id).then(function successCallback(response) {
+            $http.delete('/api/admin/reports/' + id).then(function successCallback(response) {
                 if(response.data == 'success') {
                     $location.url('reports');
                 }

@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
 
 
     /**
@@ -107,6 +107,21 @@ class User extends Authenticatable
 
     public function socialAccountPosts(){
         return $this->hasMany('App\Models\SocialAccountPost');
+    }
+
+
+    public function instagramAccounts(){
+        return $this->hasMany('App\Models\InstagramAccount');
+    }
+
+
+    public function instagramAccountFollows(){
+        return $this->hasMany('App\Models\InstagramAccountFollower');
+    }
+
+
+    public function instagramAccountPosts(){
+        return $this->hasMany('App\Models\InstagramAccountPost');
     }
 
     /**

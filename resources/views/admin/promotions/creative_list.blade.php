@@ -53,7 +53,7 @@
 @endif
 {!! Form::open(array('url' => 'creative'))!!}
 <div class="input-group-sm">
-    {!! Form::select('promotion_id', App\Promotion::orderBy('id', 'ASC')->lists('name', 'id') ,null, array('class' => 'form-control', 'placeholder' => 'Select Your Promotion', 'required'=>'required' )) !!}
+    {!! Form::select('promotion_id', App\Promotion::orderBy('id', 'ASC')->pluck('name', 'id') ,null, array('class' => 'form-control', 'placeholder' => 'Select Your Promotion', 'required'=>'required' )) !!}
 </div>
 <div class="input-group-sm">
     {!! Form::select('public', array('0' => 'Make it public', '1' => 'Make it private'),null, array('class' => 'form-control', 'placeholder' => 'Select Type', 'required'=>'required' )) !!}

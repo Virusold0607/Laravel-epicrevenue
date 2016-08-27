@@ -3,7 +3,7 @@ adminControllers.controller('ContestListController', ['$scope', '$http', '$route
         $scope.page = $routeParams.page;
 
         var getRecords = function () {
-            $http.get('/admin/api/contests/?page=' + $routeParams.page).success(function(data) {
+            $http.get('/api/admin/contests/?page=' + $routeParams.page).success(function(data) {
                 $scope.contests = data.data;
 
                 $scope.totalItems = data.total;
@@ -21,7 +21,7 @@ adminControllers.controller('ContestListController', ['$scope', '$http', '$route
         $scope.orderProp = 'id';
 
         $scope.delete = function(contest) {
-            $http.delete('/admin/api/contests/' + contest.id)
+            $http.delete('/api/admin/contests/' + contest.id)
             .success(function(data) {
                 $scope.message = data;
                 getRecords();
@@ -31,7 +31,7 @@ adminControllers.controller('ContestListController', ['$scope', '$http', '$route
 adminControllers.controller('ContestDetailController', ['$scope', '$http', '$routeParams',
     function ($scope, $http, $routeParams) {
         $scope.contestId = $routeParams.contestId;
-        $http.get('/admin/api/contests/' + $routeParams.contestId).success(function(data) {
+        $http.get('/api/admin/contests/' + $routeParams.contestId).success(function(data) {
             $scope.contest = data.contest;
             $scope.reports = data.reports;
         });
@@ -59,7 +59,7 @@ adminControllers.controller('ContestCreateController', ['$scope', '$http', '$rou
         $scope.create = function(contest, rewards) {
             var data = { contest: contest, rewards: rewards };
 
-            $http.post('/admin/api/contests',
+            $http.post('/api/admin/contests',
                 data,
                 { 'Content-Type': 'application/x-www-form-urlencoded' }
             ).then(function successCallback(response) {
@@ -82,7 +82,7 @@ adminControllers.controller('ContestCreateController', ['$scope', '$http', '$rou
 adminControllers.controller('ContestEditController', ['$scope', '$http', '$routeParams', '$filter','$httpParamSerializerJQLike', '$location',
     function ($scope, $http, $routeParams, $filter, $httpParamSerializerJQLike, $location) {
         $scope.contestId = $routeParams.contestId;
-        $http.get('/admin/api/contests/' + $routeParams.contestId + '/edit').success(function(data) {
+        $http.get('/api/admin/contests/' + $routeParams.contestId + '/edit').success(function(data) {
             data.start_at = new Date(data.start_at);
             data.end_at = new Date(data.end_at);
             $scope.contest = data;
@@ -100,7 +100,7 @@ adminControllers.controller('ContestEditController', ['$scope', '$http', '$route
         $scope.update = function(contest, rewards) {
             var data = { contest: contest, rewards: rewards };
 
-            $http.put('/admin/api/contests/' + $routeParams.contestId,
+            $http.put('/api/admin/contests/' + $routeParams.contestId,
                 data,
                 { 'Content-Type': 'application/x-www-form-urlencoded' }
             ).then(function successCallback(response) {

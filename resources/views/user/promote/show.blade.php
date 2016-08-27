@@ -2,8 +2,8 @@
 
 @section('body')
     <div class="hero heading promote-page">
-        <div class="container_12">
-            <h1 class="semibold promote">
+        <div class="container">
+            <h1 class="promote">
                 @<span class="upper">{!! $account->username !!}</span>
                 Total Reach <span class="highlight">{!! number_format($account->followed_by) !!} </span>
             </h1>

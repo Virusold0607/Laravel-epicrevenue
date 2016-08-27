@@ -22,8 +22,7 @@
                             <li><a href="/admin/#/publishers">View All</a></li>
                             <li><a href="/admin/#/publishers/my">My Publishers</a></li>
                             <li class="divider"></li>
-                            <li><a href="/admin/#/instagramaccounts">IG Accounts</a></li>
-                            <li><a href="/admin/#/instagramposts/">IG Content</a></li>
+                            <li><a href="/admin/#/socialaccounts">Social Accounts</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

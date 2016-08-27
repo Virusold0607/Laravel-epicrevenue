@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\UserBalance;
 use App\Models\UserBalanceHistory;
 use App\User;
 use Illuminate\Http\Request;
@@ -33,40 +34,42 @@ class PaymentController extends Controller
     {
         foreach($request->input('users') as $u)
         {
-            $user = User::where('id', (int) $u)->with('balance', 'paymentDetail')->first();
-            $paid = $user->balance->histories()->operationOf('withdraw')->sum('amount');
-            $cleared = $user->balance->histories()->operationOf('add')->cleared()->sum('amount') - $paid;
+            $user = User::where('id', (int) $u)->with('paymentDetail')->firstOrFail();
+            $balance = UserBalance::where('user_id', (int) $user->id)->firstOrFail();
+            $paid = $balance->histories()->operationOf('withdraw')->sum('amount');
+            $cleared = $balance->histories()->operationOf('add')->cleared()->sum('amount') - $paid;
             if($cleared >= $user->paymentDetail->threshold)
             {
-                $cashCleared = $user->balance->histories()->operationOf('add')->typeOf('cash')->cleared()->sum('amount') -  $user->balance->histories()->operationOf('withdraw')->typeOf('cash')->sum('amount');
-                $referralCleared =  $user->balance->histories()->operationOf('add')->typeOf('referral')->cleared()->sum('amount') -  $user->balance->histories()->operationOf('withdraw')->typeOf('referral')->sum('amount');
+                $cashCleared = $balance->histories()->operationOf('add')->typeOf('cash')->cleared()->sum('amount') -  $balance->histories()->operationOf('withdraw')->typeOf('cash')->sum('amount');
+                $referralCleared =  $balance->histories()->operationOf('add')->typeOf('referral')->cleared()->sum('amount') -  $balance->histories()->operationOf('withdraw')->typeOf('referral')->sum('amount');
 
                 if($cashCleared > 0) {
                     $log = UserBalanceHistory::create(array(
-                        'user_balance_id' => $user->balance->id,
+                        'user_balance_id' => $balance->id,
                         'type' => 'cash',
                         'operation' => 'withdraw',
                         'amount' => $cashCleared,
                         'pay_to' => $user->paymentDetail->send_to,
                         'method' => $user->paymentDetail->method
                     ));
-                    $user->balance->cash = $user->balance->cash - $cashCleared;
+                    $balance->cash = $balance->cash - $cashCleared;
 
                 }
 
                 if ($referralCleared > 0) {
                     $log = UserBalanceHistory::create(array(
-                        'user_balance_id' => $user->balance->id,
+                        'user_balance_id' => $balance->id,
                         'type' => 'referral',
                         'operation' => 'withdraw',
                         'amount' => $referralCleared,
                         'pay_to' => $user->paymentDetail->send_to,
                         'method' => $user->paymentDetail->method
                     ));
-                    $user->balance->referral = $user->balance->referral - $referralCleared;
+                    $balance->referral = $balance->referral - $referralCleared;
                 }
 
-                $user->push();
+                $user->save();
+                $balance->save();
             }
         }
 

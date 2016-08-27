@@ -11,6 +11,7 @@ use App\Models\PromotionCategory;
 use App\Models\Promotion;
 use File;
 use Storage;
+use Validator;
 
 class PromotionController extends Controller
 {
@@ -44,6 +45,20 @@ class PromotionController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name'           => 'required|string|min:3|max:255',
+            'description'    => 'required|string|max:500',
+            'url'            => 'required|string|max:255',
+            'status'         => 'required',
+            'feature_image'  => 'required|mimes:jpeg,jpg,png'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin/promotions/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         // Store Image
         $featured_img = null;
         if($request->hasFile('feature_image')) {
@@ -91,7 +106,7 @@ class PromotionController extends Controller
     public function edit($id)
     {
         $data['promotion'] = Promotion::where('id', $id)->with('categories', 'influencers')->first();
-//        dd($data['promotion']->categories->lists('id'));
+//        dd($data['promotion']->categories->pluck('id'));
         return view('admin.promotions.edit', $data);
     }
 
@@ -104,6 +119,19 @@ class PromotionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'name'           => 'required|string|min:3|max:255',
+            'description'    => 'required|string|max:500',
+            'url'            => 'required|string|max:255',
+            'status'         => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin/promotions/'.$id.'/edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $promotion = Promotion::findOrFail((int) $id);
 
         $promotion->influencers()->sync($request->input('influencers'));

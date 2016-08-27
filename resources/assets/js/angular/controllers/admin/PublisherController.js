@@ -20,7 +20,7 @@ adminControllers.controller('PublisherListController', ['$scope', '$http', '$rou
                 $scope.status = false;
             }
 
-            $http.get('/admin/api/publishers/?status=' + $scope.status + '&page=' + $scope.page + '&my=' + $scope.my + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order).success(function(data) {
+            $http.get('/api/admin/publishers/?status=' + $scope.status + '&page=' + $scope.page + '&my=' + $scope.my + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order).success(function(data) {
                 $scope.publishers = data.data;
                 $scope.totalItems = data.total;
                 $scope.currentPage = data.current_page;
@@ -49,14 +49,14 @@ adminControllers.controller('PublisherListController', ['$scope', '$http', '$rou
 adminControllers.controller('PublisherDetailController', ['$scope', '$http', '$routeParams', '$httpParamSerializerJQLike',
     function ($scope, $http, $routeParams, $httpParamSerializerJQLike) {
         $scope.userId = $routeParams.userId;
-        $http.get('/admin/api/publishers/' + $routeParams.userId).success(function(data) {
+        $http.get('/api/admin/publishers/' + $routeParams.userId).success(function(data) {
             $scope.user = data;
         });
 
         $scope.approval = function(status) {
             $http({
                 method  : 'POST',
-                url     : '/admin/api/publishers/approval/' + $routeParams.userId,
+                url     : '/api/admin/publishers/approval/' + $routeParams.userId,
                 data    : $httpParamSerializerJQLike({ approve: status }),
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
             })
@@ -70,14 +70,14 @@ adminControllers.controller('PublisherDetailController', ['$scope', '$http', '$r
 adminControllers.controller('PublisherEditController', ['$scope', '$http', '$routeParams', '$httpParamSerializerJQLike',
     function ($scope, $http, $routeParams, $httpParamSerializerJQLike) {
         $scope.userId = $routeParams.userId;
-        $http.get('/admin/api/publishers/' + $routeParams.userId + '/edit').success(function(data) {
+        $http.get('/api/admin/publishers/' + $routeParams.userId + '/edit').success(function(data) {
             $scope.user = data;
         });
 
         $scope.update = function(user) {
             $http({
                 method  : 'PUT',
-                url     : '/admin/api/publishers/' + user.user.id,
+                url     : '/api/admin/publishers/' + user.user.id,
                 data    : $httpParamSerializerJQLike(user),
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
             })

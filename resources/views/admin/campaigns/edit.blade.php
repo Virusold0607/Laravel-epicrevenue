@@ -234,7 +234,7 @@
         <tr>
             <td valign="top">Allowed countries:</td>
             <td>
-                {!! Form::select('countries[]', $countries, $campaign->countries->lists('id')->toArray(), array('id' => 'country', 'class' => 'form-control', 'multiple', 'style' => 'height:300px;')) !!}
+                {!! Form::select('countries[]', $countries, $campaign->countries->pluck('id')->toArray(), array('id' => 'country', 'class' => 'form-control', 'multiple', 'style' => 'height:300px;')) !!}
             </td>
         </tr>
         <tr>

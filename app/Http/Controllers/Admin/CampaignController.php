@@ -71,9 +71,9 @@ class CampaignController extends Controller
     public function create()
     {
         $campaign = new Campaign();
-        $campaign_categories = CampaignsCategory::all()->lists('name', 'id');
-        $countries = Country::all()->lists('short_name', 'id');
-        $networks = Postback::all()->lists('name', 'id');
+        $campaign_categories = CampaignsCategory::all()->pluck('name', 'id');
+        $countries = Country::all()->pluck('short_name', 'id');
+        $networks = Postback::all()->pluck('name', 'id');
 
         return view('admin.campaigns.create')
             ->with(array(
@@ -200,9 +200,9 @@ class CampaignController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show(int $id)
+    public function show($id)
     {
-        $campaign = Campaign::find($id);
+        $campaign = Campaign::find((int) $id);
         return view('admin.campaigns.show')->with(array('campaign' => $campaign));
     }
 
@@ -215,9 +215,9 @@ class CampaignController extends Controller
     public function edit($id)
     {
         $campaign = Campaign::find($id);
-        $campaign_categories = CampaignsCategory::all()->lists('name', 'id');
-        $countries = Country::all()->lists('short_name', 'id');
-        $networks = Postback::all()->lists('name', 'id');
+        $campaign_categories = CampaignsCategory::all()->pluck('name', 'id');
+        $countries = Country::all()->pluck('short_name', 'id');
+        $networks = Postback::all()->pluck('name', 'id');
         $campaign_targets = $campaign->targets;
 
         return view('admin.campaigns.edit')

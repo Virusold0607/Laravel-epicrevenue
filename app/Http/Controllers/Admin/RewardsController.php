@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Reward;
 use File;
+use Validator;
 
 class RewardsController extends Controller
 {
@@ -42,6 +43,19 @@ class RewardsController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name'           => 'required|string|max:255',
+            'description'    => 'required|string|max:500',
+            'points'         => 'required|integer|min:1|max:10000',
+            'image'          => 'required|mimes:jpeg,jpg,png'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin/rewards/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $data = $request->all();
         // Store Image
         $file = $request->file('image');
@@ -53,8 +67,8 @@ class RewardsController extends Controller
         
         //create promotion
         $data['image'] = $image;
-        $caeate = Reward::create($data);
-        if($caeate){
+        $create = Reward::create($data);
+        if($create){
             return redirect()->back()
                     ->with('success', 'Reward add success');
         }else{
@@ -97,6 +111,19 @@ class RewardsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'name'           => 'required|string|max:255',
+            'description'    => 'required|string|max:500',
+            'points'         => 'required|integer|min:1|max:10000',
+            'image'          => 'mimes:jpeg,jpg,png'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin/rewards/'.$id.'/edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $data = $request->all();
         $reward = Reward::find($id);
         $pre_file = $reward->image;
