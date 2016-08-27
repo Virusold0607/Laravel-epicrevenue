@@ -8171,6 +8171,8 @@ nav.navbar-inverse .navbar-nav > li > a {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px dashed rgba(35, 33, 33, 0.36); }
+  .footer .footer-bottom .container {
+    text-align: center; }
   .footer .footer-bottom p.text-left, .footer .footer-bottom ul li {
     font-size: 12px;
     text-align: center; }
@@ -8754,6 +8756,54 @@ a {
   padding: 30px;
   font-size: 30px;
   margin-bottom: 15px; }
+
+.influencers-page-content {
+  float: left;
+  width: 100%;
+  padding: 0; }
+  .influencers-page-content .nav {
+    border-bottom: 1px solid #ccc; }
+  .influencers-page-content .nav-pills > li {
+    float: left;
+    text-align: center;
+    padding: 20px 0;
+    width: 12%; }
+  .influencers-page-content .nav-pills > li > a {
+    border-radius: 6px;
+    text-align: center;
+    color: #62A2F7;
+    display: inline-block;
+    padding: 10px;
+    width: 73px;
+    margin-bottom: 5px; }
+  .influencers-page-content .nav-pills > li > a .fa {
+    font-size: 35px; }
+  .influencers-page-content .nav-pills > li.active > a,
+  .influencers-page-content .nav-pills > li.active > a:hover,
+  .influencers-page-content .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #62A2F7; }
+  .influencers-page-content .tab-content {
+    text-align: center;
+    padding: 40px 0; }
+  .influencers-page-content .tab-content h3.tab-title {
+    color: #000;
+    font-size: 30px;
+    font-weight: 300; }
+    .influencers-page-content .tab-content h3.tab-title h4.tab-sub-title {
+      font-weight: 900;
+      color: #000;
+      margin: 15px 0; }
+
+@media screen and (max-width: 768px) {
+  .influencers-page-content .nav {
+    display: none; }
+  .influencers-page-content .tab-content > .tab-pane {
+    display: block;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 30px; }
+  .influencers-page-content .tab-content > .tab-pane.fade {
+    opacity: 1; } }
 
 .or-login {
   text-transform: uppercase;

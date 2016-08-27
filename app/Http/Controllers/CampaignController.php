@@ -40,7 +40,7 @@ class CampaignController extends Controller
 
         $categories = CampaignsCategory::all();
 
-        $countries = Country::all()->lists('short_name', 'id');
+        $countries = Country::all()->pluck('short_name', 'id');
         return view('user.campaigns.index')->with(compact('campaigns', 'countries', 'categories', 'category_selected'));
     }
 
