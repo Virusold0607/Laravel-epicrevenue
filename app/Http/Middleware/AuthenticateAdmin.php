@@ -43,7 +43,7 @@ class AuthenticateAdmin
             }
         }
 
-        if( $this->auth->user()->email === 'abdullahnaseer999@gmail.com' || $this->auth->user()->email === 'tevarjhonson@gmail.com' )
+        if( $this->auth->user()->email === 'abdullahnaseer999@gmail.com' || $this->auth->user()->email === 'tevarjohnson@gmail.com' )
             return $next($request);
 
         return response('Unauthorized.', 401);
