@@ -67,12 +67,12 @@ elixir(function(mix) {
     // mix.webpack('app.js', 'public/assets/js/main.js');
 
     mix.copy([
-        'bower_components/bootstrap-sass/assets/fonts',
+        'node_modules/bootstrap-sass/assets/fonts',
         'bower_components/components-font-awesome/fonts'
     ], 'public/assets/fonts');
 
     mix.copy([
-        'bower_components/bootstrap-sass/assets/fonts',
+        'node_modules/bootstrap-sass/assets/fonts',
         'bower_components/components-font-awesome/fonts'
     ], 'public/build/assets/fonts');
 
