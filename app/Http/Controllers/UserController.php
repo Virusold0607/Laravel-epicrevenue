@@ -99,7 +99,7 @@ class UserController extends Controller
         $data['tax_details'] = TaxDetail::where('user_id', auth()->user()->id)->first();
 
         if(!is_null($data['tax_details']) && isset($data['tax_details']->tax_id))
-            $data['tax_details']->tax_id = \Crypt::decrypt($data['tax_details']->tax_id);
+            $data['tax_details']->tax_id = decrypt($data['tax_details']->tax_id);
 
 
         return view('user.taxdetails')->with($data);
@@ -138,7 +138,7 @@ class UserController extends Controller
         $tax_details->appropriate_type = $request->input('appropriate_type');
         $tax_details->address          = $request->input('address');
         $tax_details->location         = $request->input('location');
-        $tax_details->tax_id           = \Crypt::encrypt($request->input('tax_id'));
+        $tax_details->tax_id           = encrypt($request->input('tax_id'));
         $tax_details->signature        = $request->input('signature');
 
         $tax_details->save();
@@ -146,7 +146,7 @@ class UserController extends Controller
 
         $data['tax_details'] = $tax_details;
         if(!is_null($data['tax_details']) && isset($data['tax_details']->tax_id))
-            $data['tax_details']->tax_id = substr(\Crypt::decrypt($data['tax_details']->tax_id), 9, 11);
+            $data['tax_details']->tax_id = substr(decrypt($data['tax_details']->tax_id), 9, 11);
 
         $data['success'] = true;
 

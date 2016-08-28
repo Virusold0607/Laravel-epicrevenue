@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "46e8c89c2e7082c0d9ba8258a0fc1773",
-    "content-hash": "ce5457a0722c85a108ec57cef1725aab",
+    "hash": "cd47f0b8df0458e6846c5252261ca99f",
+    "content-hash": "68ce1d4efd94eb58f67b9609a9fa9843",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -1242,6 +1242,53 @@
                 "laravel"
             ],
             "time": "2016-08-26 21:40:26"
+        },
+        {
+            "name": "laravel/legacy-encrypter",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/legacy-encrypter.git",
+                "reference": "4047fc1e6a9346501ba48ba3f79509534875dea3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/legacy-encrypter/zipball/4047fc1e6a9346501ba48ba3f79509534875dea3",
+                "reference": "4047fc1e6a9346501ba48ba3f79509534875dea3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-openssl": "*",
+                "illuminate/contracts": "5.3.*",
+                "illuminate/support": "5.3.*",
+                "paragonie/random_compat": "~1.4|~2.0",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\LegacyEncrypter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The legacy version of the Laravel mcrypt encrypter.",
+            "homepage": "http://laravel.com",
+            "time": "2016-08-03 21:22:03"
         },
         {
             "name": "laravel/socialite",

@@ -18,7 +18,8 @@
         "facebook/graph-sdk" : "5.*",
         "laravel/cashier": "6.*",
         "cosenary/instagram": "2.*",
-        "predis/predis": "1.*"
+        "predis/predis": "1.*",
+        "laravel/legacy-encrypter": "1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

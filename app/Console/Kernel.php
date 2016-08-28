@@ -19,6 +19,7 @@ class Kernel extends ConsoleKernel
         Commands\MailChimpClean::class,
         Commands\SettleInstagramData::class,
         Commands\SettleUserBalances::class,
+        Commands\SettleTaxDetails::class
     ];
 
     /**

@@ -78,8 +78,6 @@ Route::group(['middleware' => []], function() {
         Route::get('/shoutouts', 'UserController@shoutouts');
         Route::get('/payouts', 'UserController@getPayouts');
         Route::post('/payouts', 'UserController@postPayouts');
-        Route::get('taxdetails', 'UserController@getTaxDetails');
-        Route::post('taxdetails', 'UserController@postTaxDetails');
         Route::get('/campaigns', 'CampaignController@index');
 
         Route::get('/campaign/{id}', 'CampaignController@show');
@@ -102,6 +100,8 @@ Route::group(['middleware' => []], function() {
         Route::post('/settings/updateInfo', 'User\SettingsController@updateInfo');
         Route::post('/settings/updateNotifications', 'User\SettingsController@updateNotifications');
         Route::post('/settings/updatePassword', 'User\SettingsController@updatePassword');
+        Route::get('/taxdetails', 'UserController@getTaxDetails');
+        Route::post('/taxdetails', 'UserController@postTaxDetails');
     });
 
     // No middlewares. Anyone can access
