@@ -7988,7 +7988,7 @@ nav.navbar-default {
     nav.navbar-default .navbar-brand img {
       max-height: 45px; }
   nav.navbar-default .nav li > a {
-    color: #b9baba;
+    color: #666;
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 600;
@@ -7999,7 +7999,7 @@ nav.navbar-default {
     text-transform: uppercase;
     border: 0; }
     nav.navbar-default .dropdown-menu li > a {
-      color: #b9baba;
+      color: #666;
       text-align: left;
       font-weight: 600;
       font-size: 12px;
@@ -8010,7 +8010,7 @@ nav.navbar-default {
         filter: alpha(opacity=80);
         opacity: 0.9; }
   nav.navbar-default .navbar-nav > li > a {
-    color: #b9baba;
+    color: #666;
     -webkit-transition: opacity 2s ease-in-out;
     transition: opacity 2s ease-in-out; }
     nav.navbar-default .navbar-nav > li > a:hover {
@@ -8473,7 +8473,7 @@ div#notification-status-indicator {
   padding: 6px 20px; }
 
 .help-block {
-  color: #b9baba; }
+  color: #666; }
 
 a {
   text-decoration: none;
@@ -8489,13 +8489,15 @@ a {
   min-height: 500px;
   padding: 200px 0;
   background: #333;
-  background-image: url(/images/hero1.jpg);
+  background-image: url(/images/hero.jpg);
   background-size: cover;
   text-align: center;
   margin-bottom: 100px; }
   .hero.hero-lg {
     min-height: 600px;
     padding: 200px 0; }
+    .hero.hero-lg h4 {
+      line-height: 1.5; }
   .hero.hero-md {
     min-height: 500px;
     padding: 175px 0; }
@@ -8523,17 +8525,17 @@ a {
       margin-top: 0;
       color: black; }
   .hero .font-gray {
-    color: #b9baba;
+    color: #666;
     line-height: 1.5; }
   .hero .font-dark-gray {
-    color: #9a9a9a;
+    color: #4d4d4d;
     line-height: 1.5; }
 
 .btn-gray {
   color: white;
-  background-color: #b9baba; }
+  background-color: #666; }
   .btn-gray:hover {
-    background-color: #868787; }
+    background-color: #333333; }
 
 .btn-extra-padding {
   padding: 22px 50px; }
@@ -8708,21 +8710,25 @@ a {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  color: #b9baba;
+  color: #666;
   margin: 3px;
   width: 30px;
   height: 30px; }
   .social-icons a .fa {
-    border: 1px solid #b9baba;
+    border: 1px solid #666;
     padding: 8px 5px;
     border-radius: 50%;
     width: 100%; }
 
 .font-gray {
-  color: #b9baba; }
+  color: #666; }
 
 .font-dark-gray {
-  color: #9a9a9a;
+  color: #4d4d4d;
+  line-height: 1.5; }
+
+.font-light-gray {
+  color: #b9baba;
   line-height: 1.5; }
 
 .homepage .info-box .info-box-icon {
@@ -8751,7 +8757,7 @@ a {
 
 .homepage .glyphicon-cirlce {
   color: #3097D1;
-  border: 1px solid #b9baba;
+  border: 1px solid #666;
   border-radius: 100%;
   padding: 30px;
   font-size: 30px;
@@ -8841,7 +8847,7 @@ ul.add-networks li {
   border-right: solid 1px #E8F0F8;
   border-radius: 0;
   border-bottom: solid 1px #E8F0F8;
-  color: #9a9a9a;
+  color: #4d4d4d;
   text-align: center; }
   ul.add-networks li a {
     cursor: pointer;
