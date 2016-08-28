@@ -10,6 +10,7 @@
             <p>Available below are graphics and text provided by us or our Advertisers for you to promote on this account.</p>
         </div>
     </div>
+    <div class="clearfix"></div>
     <div class="page-container no-shadow">
         <div class="container">
             <div class="panel panel-default">
@@ -28,7 +29,7 @@
                             @foreach($promotions as $p)
                                 <div class="col-sm-3">
                                     <div class="ig-post" style="text-align:left;">
-                                        {!! Html::image('/promote/image/' . $p->id, 'picture')!!}
+                                        {!! Html::image('/promote/image/' . $p->id, 'picture', ['class' => 'img-responsive'])!!}
                                         <div class="ig-post-title"><b>BIO url:</b>
                                             <?php
                                             $url = $p->url;
