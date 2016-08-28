@@ -20,7 +20,7 @@
                         <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
                         <li><a href="{{ url('/promote') }}">Promote</a></li>
                         <li><a href="{{ url('/campaigns') }}">Campaigns</a></li>
-                        <li><a href="{{ url('/reach/') }}">Reach</a></li>
+                        {{--<li><a href="{{ url('/reach/') }}">Reach</a></li>--}}
                         <li><a href="{{ url('/rewards') }}">Rewards</a></li>
                         <li><a href="{{ url('/reports') }}">Reports</a></li>
                         <li><a href="{{ url('/contests') }}">Contests</a></li>

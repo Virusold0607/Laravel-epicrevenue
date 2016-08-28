@@ -72,9 +72,9 @@ Route::group(['middleware' => []], function() {
         Route::get('/reports', 'User\ReportsController@index');
         // Report for specific id
         Route::get('/report/{id}', 'User\ReportsController@show');
-        Route::get('/reach/{id?}', 'User\ReachController@getReach');
-        Route::get('/followers/{id?}', 'User\ReachController@getFollowers');
-        Route::get('/engagements/{id?}/{engagements?}', 'User\ReachController@getEngagements');
+//        Route::get('/reach/{id?}', 'User\ReachController@getReach');
+//        Route::get('/followers/{id?}', 'User\ReachController@getFollowers');
+//        Route::get('/engagements/{id?}/{engagements?}', 'User\ReachController@getEngagements');
         Route::get('/shoutouts', 'UserController@shoutouts');
         Route::get('/payouts', 'UserController@getPayouts');
         Route::post('/payouts', 'UserController@postPayouts');
