@@ -16,9 +16,9 @@ require('laravel-elixir-vue');
 elixir(function(mix) {
 
     elixir.config.sourcemaps = false;
-    var admin = true;
+    var admin = false;
 
-    mix.sass('app.scss', 'public/assets/css/main.css');
+    mix.sass('app.scss', 'public/assets/css/main.css').version('assets/css/main.css');
 
     if(admin) {
         mix.sass('admin.scss', 'resources/assets/css/admin.css');
@@ -71,8 +71,8 @@ elixir(function(mix) {
 
     // mix.webpack('app.js', 'public/assets/js/main.js');
 
-    mix.version([
-        'assets/css/main.css',
-        // 'assets/js/main.js',
-    ]);
+    // mix.version([
+    //     'assets/css/main.css',
+    //     // 'assets/js/main.js',
+    // ]);
 });
