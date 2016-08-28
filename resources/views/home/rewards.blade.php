@@ -5,7 +5,7 @@
         <div class="container">
             <h1>Get Rewards When You Monetize With Us!</h1>
             @unless(auth()->check())
-                <h4 class="font-light-gray">Along with our weekly and monthly contest, Our influencers have the ability to use points earned from getting leads, inviting people, coupon codes we randomly give out and more to earn points which they can then use to redeem rewards below.</h4>
+                <h4>Along with our weekly and monthly contest, Our influencers have the ability to use points earned from getting leads, inviting people, coupon codes we randomly give out and more to earn points which they can then use to redeem rewards below.</h4>
             @endunless
         </div>
     </div><!-- End .hero -->

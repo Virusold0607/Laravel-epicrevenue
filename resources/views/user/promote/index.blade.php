@@ -6,7 +6,7 @@
             <h1 class="hero-heading">Promoting</h1>
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
-                    <h4 class="font-light-gray">Click an approved account to see the content available to promote on it.</h4>
+                    <h4>Click an approved account to see the content available to promote on it.</h4>
                 </div>
             </div>
             <div class="clearfix"></div>

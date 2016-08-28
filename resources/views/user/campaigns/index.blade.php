@@ -5,18 +5,18 @@
         <div class="container">
             @if(auth()->check())
                 <h1 class="hero-heading">Campaigns</h1>
-                <p class="font-light-gray">Search this page for a campaign to promote on your account.</p>
+                <h4>Search this page for a campaign to promote on your account.</h4>
             @else
-                <div class="campaigns-join">
-                    <div class="grid_8 h_grid_12">
+                <div class="campaigns-join row">
+                    <div class="col-sm-8">
                         <span class="title">Influencers Reach is the best way to monetize your social accounts</span>
                         <p>Find services, products, apps and more you think will appeal to your following and make money everytime you promote.</p>
                     </div>
-                    <div class="grid_1">
+                    <div class="col-sm-1">
                         <div style="display:block;width:1px;">&nbsp;</div>
                     </div>
-                    <div class="grid_3 h_grid_12">
-                        <a href="{{ url('/register') }}" class="bttn">Create your Free Account</a>
+                    <div class="col-sm-3">
+                        <a href="{{ url('/register') }}" class="btn btn-primary">Create your Free Account</a>
                         <span class="bttn-t">and get started in minutes</span>
                     </div>
                 </div>
