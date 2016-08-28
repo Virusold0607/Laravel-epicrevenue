@@ -10,11 +10,11 @@
             <p>Available below are graphics and text provided by us or our Advertisers for you to promote on this account.</p>
         </div>
     </div>
-    <div class="page">
-        <div class="container_12">
+    <div class="page-container no-shadow">
+        <div class="container">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Available Promotions</h3>
+                    <h2 class="panel-title">Available Promotions</h2>
                 </div>
                 <div class="panel-body">
                     <div class="alert alert-info">Unsure of how to post promo?
@@ -23,24 +23,31 @@
                         </a>
                     </div>
                     @if(count($promotions) > 0)
-                        @foreach($promotions as $p)
-                            <div class="grid_3 h_grid_12">
-                                <div class="ig-post" style="text-align:left;">
-                                    {!! Html::image('/promote/image/' . $p->id, 'picture')!!}
-                                    <div class="ig-post-title"><b>BIO url:</b>
-                                        <?php
+                        <div class="row">
+                            <?php $count = 1; ?>
+                            @foreach($promotions as $p)
+                                <div class="col-sm-3">
+                                    <div class="ig-post" style="text-align:left;">
+                                        {!! Html::image('/promote/image/' . $p->id, 'picture')!!}
+                                        <div class="ig-post-title"><b>BIO url:</b>
+                                            <?php
                                             $url = $p->url;
                                             if( str_contains($url, '{pubid}') )
                                                 $url = str_replace("{pubid}", auth()->user()->id, $url);
-                                        ?>
-                                        <input onClick="this.setSelectionRange(0, this.value.length)" class="form-control" type="text" value="{!! $url !!}" />
-                                    </div>
-                                    <div class="ig-post-title"><b>Optional Caption:</b>
-                                        <textarea onClick="this.setSelectionRange(0, this.value.length)" class="form-control" rows="4" id="comment">{!! $p->description !!}</textarea>
+                                            ?>
+                                            <input onClick="this.setSelectionRange(0, this.value.length)" class="form-control" type="text" value="{!! $url !!}" />
+                                        </div>
+                                        <div class="ig-post-title"><b>Optional Caption:</b>
+                                            <textarea onClick="this.setSelectionRange(0, this.value.length)" class="form-control" rows="4" id="comment">{!! $p->description !!}</textarea>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                                <?php $count++ ?>
+                                @if(($count % 4) == 1)
+                                    <div class="clearfix"></div>
+                                @endif
+                            @endforeach
+                        </div>
                     @else
                         <div class="alert alert-danger">There is no content available to post on this account yet.</div>
                     @endif
