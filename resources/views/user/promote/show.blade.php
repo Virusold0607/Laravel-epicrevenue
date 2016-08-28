@@ -13,21 +13,20 @@
     <div class="clearfix"></div>
     <div class="page-container no-shadow">
         <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Available Promotions</h2>
-                </div>
-                <div class="panel-body">
-                    <div class="alert alert-info">Unsure of how to post promo?
-                        <a target="_blank" href="http://blog.influencersreach.com/2015/07/27/how-to-post-a-promo-from-mobile-device/">
-                            Click here to view this tutorial.
-                        </a>
-                    </div>
-                    @if(count($promotions) > 0)
-                        <div class="row">
-                            <?php $count = 1; ?>
-                            @foreach($promotions as $p)
-                                <div class="col-sm-3">
+            <h2>Available Promotions</h2>
+            <hr>
+            {{--<div class="alert alert-info">Unsure of how to post promo?--}}
+            {{--<a target="_blank" href="http://blog.influencersreach.com/2015/07/27/how-to-post-a-promo-from-mobile-device/">--}}
+            {{--Click here to view this tutorial.--}}
+            {{--</a>--}}
+            {{--</div>--}}
+            @if(count($promotions) > 0)
+                <div class="row">
+                    <?php $count = 1; ?>
+                    @foreach($promotions as $p)
+                        <div class="col-sm-3">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
                                     <div class="ig-post" style="text-align:left;">
                                         {!! Html::image('/promote/image/' . $p->id, 'picture', ['class' => 'img-responsive'])!!}
                                         <div class="ig-post-title"><b>BIO url:</b>
@@ -43,17 +42,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php $count++ ?>
-                                @if(($count % 4) == 1)
-                                    <div class="clearfix"></div>
-                                @endif
-                            @endforeach
+                            </div>
                         </div>
-                    @else
-                        <div class="alert alert-danger">There is no content available to post on this account yet.</div>
-                    @endif
+                        <?php $count++ ?>
+                        @if(($count % 4) == 1)
+                            <div class="clearfix"></div>
+                        @endif
+                    @endforeach
                 </div>
-            </div>
+            @else
+                <div class="alert alert-danger">There is no content available to post on this account yet.</div>
+            @endif
         </div>
     </div>
 @endsection
