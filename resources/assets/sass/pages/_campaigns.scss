@@ -1,0 +1,45 @@
+.category_panel_div {
+  float: left;
+  width: 100%;
+  margin-top: 30px;
+  border-right: 1px solid #e0e0e0;
+  padding-right: 15px;
+}
+.category_item_div {
+  float: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.category_item_div .num {
+  float: right;
+  background-color: #00a5db;
+  color: #fff;
+  border-radius: 15px;
+  min-width: 28px;
+  text-align: center;
+  padding: 2px 12px;
+}
+.category_item_div.category_selected {
+  border-color: #28b204;
+  color: #28b204;
+}
+.category_item_div:hover {
+  border-color: #28b204;
+  color: #28b204;
+  cursor: pointer;
+}
+
+.camp-box {
+  p {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  background-color: white;
+  box-shadow: 0 1px 40px 0 #d6d6d6;
+  margin: 20px 10px;
+  padding: 20px;
+}

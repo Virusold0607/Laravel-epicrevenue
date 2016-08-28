@@ -66,15 +66,15 @@ elixir(function(mix) {
 
     // mix.webpack('app.js', 'public/assets/js/main.js');
 
-    mix.copy([
-        'node_modules/bootstrap-sass/assets/fonts',
-        'bower_components/components-font-awesome/fonts'
-    ], 'public/assets/fonts');
-
-    mix.copy([
-        'node_modules/bootstrap-sass/assets/fonts',
-        'bower_components/components-font-awesome/fonts'
-    ], 'public/build/assets/fonts');
+    // mix.copy([
+    //     'node_modules/bootstrap-sass/assets/fonts',
+    //     'bower_components/components-font-awesome/fonts'
+    // ], 'public/assets/fonts');
+    //
+    // mix.copy([
+    //     'node_modules/bootstrap-sass/assets/fonts',
+    //     'bower_components/components-font-awesome/fonts'
+    // ], 'public/build/assets/fonts');
 
     // mix.version([
     //     'assets/css/main.css',

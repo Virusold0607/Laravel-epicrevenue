@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
         $pages = ['/',
             'rewards', 'influencers', 'advertisers',
             'networks', 'register/networks', 'register/payment',
-            'promote'
+            'promote', 'campaigns'
         ];
         foreach ($pages as $page) {
             if (request()->path() == $page)

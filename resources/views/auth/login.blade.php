@@ -4,7 +4,7 @@
     <div class="container page-container page-top-margin">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                <form class="form-horizontal form-custom" role="form" method="POST" action="{{ url('/login') }}">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

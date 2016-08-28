@@ -1,68 +1,70 @@
 @extends('shared.layout')
 @section('body')
-    <div class="hero small">
-        <div class="container_12">
-            <h1 class="semibold hero_heading">{{ $campaign->name }}</h1>
-            <div class="get-piad">Get paid <b>$ {{ $campaign->rate }}</b> per lead.</div>
+    <div class="hero hero-txt">
+        <div class="container">
+            <h1 class="hero-heading">{{ $campaign->name }}</h1>
+            <p class="get-piad">Get paid <b>${{ $campaign->rate }}</b> per lead.</p>
         </div>
     </div>
-    <div class="page">
-        <div class="container light">
+    <div class="page-container background-gray">
+        <div class="container">
             @if($daily_cap_status)
-                <center><font color="red">This campaign has reached its daily cap ({{ $campaign->daily_cap }} leads a day). It will reset at midnight.</font></center><br />
+                <div class="alert alert-danger">This campaign has reached its daily cap ({{ $campaign->daily_cap }} leads a day). It will reset at midnight.</div>
             @endif
             <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
-                <div class="c-info-holder row">
-                    <div class="c-info-head">
-                        <div class="c-info-category">
-                            <div class="col-xs-12"><b>Category:</b> {{ $campaign->category->name }}</div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Category: {{ $campaign->category->name }}</h4>
+                        <hr>
+                        <div class="c-info-post">{{ $campaign->description }}</div>
+                        <div class="c-info-req">
+                            <h5><strong>Requirements:</strong></h5>
+                            <div>$f{{ $campaign->requirements }}</div>
                         </div>
-                    </div>
-                    <div class="c-info-post">{{ $campaign->description }}</div>
-                    <div class="c-info-req">
-                        <h5>Requirements</h5>
-                        $f{{ $campaign->requirements }}
-                    </div>
-                    {{--<div class="c-info-link">--}}
+                        {{--<div class="c-info-link">--}}
                         {{--<h5>Promotion Link</h5>--}}
                         {{--<div class="alert alert-info" role="alert">Below is the URL to promote this campaign. <strong>You are only allowed to promote on the approved accounts <a href="{{ url('/promote/') }}">here</a></strong>.</div>--}}
-                    {{--</div>--}}
+                        {{--</div>--}}
 
-                    @unless($daily_cap_status)
-                    <div class="input-group" style="display: none;" id="promotionalLink">
-                        <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
-                        <input type="text" class="form-control" id="exampleInputAmount" value="{{ url('/track/'. $campaign->id . '/' . \Auth::user()->id) }}">
-                    </div>
-                    @endunless
-                    <div class="clearfix" style="margin: 5px;"></div>
-                    @if(auth()->check())
-                        <div class="">
-                            <button id="generateBtn" type="button" class="btn btn-primary col-xs-12" data-toggle="modal" data-target="#myModal">Generate Your Unique Promotional Link</button>
-                        </div>
+                        @unless($daily_cap_status)
+                            <div style="display: none;" id="promotionalLink">
+                                <hr>
+                                <div class="input-group">
+                                    <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
+                                    <input type="text" class="form-control" id="exampleInputAmount" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
+                                </div>
+                            </div>
+                        @endunless
+                        <div class="clearfix" style="margin: 5px;"></div>
+                        @if(auth()->check())
+                            <div class="">
+                                <button id="generateBtn" type="button" class="btn btn-primary col-xs-12" data-toggle="modal" data-target="#myModal">Generate Your Unique Promotional Link</button>
+                            </div>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <h4 class="center">By generating your referral link you agree that:</h4>
-                                        <div>
-                                            <p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> When promoting a campaign, you must include the promotional link generated by InfluencersReach. You understand that this is the only way you can get paid for unique verified clicks and downloads. You are welcome to use a url shortener to make the link smaller.</p>
-                                            <p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Your post, including the text and images, should always be relevant to the campaign.</p>
-                                            <p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Click fraud (fake clicks) using bots or other automated services will automatically enroll you on the "Industry-wide Blacklist" banning you permanently from using InfluencersReach.</p>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h4 class="center">By generating your referral link you agree that:</h4>
+                                            <div>
+                                                <p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> When promoting a campaign, you must include the promotional link generated by InfluencersReach. You understand that this is the only way you can get paid for unique verified clicks and downloads. You are welcome to use a url shortener to make the link smaller.</p>
+                                                <p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Your post, including the text and images, should always be relevant to the campaign.</p>
+                                                <p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Click fraud (fake clicks) using bots or other automated services will automatically enroll you on the "Industry-wide Blacklist" banning you permanently from using InfluencersReach.</p>
+                                            </div>
+                                            <div>
+                                                <div class="alert alert-info" role="alert"><strong>You are only allowed to promote on the approved accounts <a href="{{ url('/promote/') }}">here</a></strong>.</div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <div class="alert alert-info" role="alert"><strong>You are only allowed to promote on the approved accounts <a href="{{ url('/promote/') }}">here</a></strong>.</div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default btn-md" data-dismiss="modal">CANCEL</button>
+                                            <button type="button" class="btn btn-primary btn-md" data-dismiss="modal" id="okBtn" style="padding-left: 15px; padding-right: 15px;"> OK </button>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default btn-md" data-dismiss="modal">CANCEL</button>
-                                        <button type="button" class="btn btn-primary btn-md" data-dismiss="modal" id="okBtn" style="padding-left: 15px; padding-right: 15px;"> OK </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
