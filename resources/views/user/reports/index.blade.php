@@ -1,85 +1,73 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="dash-stats">
-        <div class="container_12">
-            <div class="grid_2 h_grid_6">
-                <div class="sbox">
-                    <div class="title">Today Clicks</div>
-                    <div class="amount"><span id="today_clicks"></span>{!! $today_clicks !!}</div>
-                </div>
-            </div>
-            <div class="grid_2 h_grid_6">
-                <div class="sbox">
-                    <div class="title">Today Leads</div>
-                    <div class="amountg"><span id="today_leads"></span>{!! $today_leads !!}</div>
-                </div>
-            </div>
-            <div class="grid_2 h_grid_6">
-                <div class="sbox">
-                    <div class="title">Today EPC</div>
-                    <div class="amount"><span id="today_epc"></span>
-                        @if($today_leads === 0 || $today_clicks === 0)
-                            n/a
-                        @else
-                            {!! "$".number_format($today_leads / $today_clicks, 2)."" !!}
-                        @endif
-                    </div>
-                </div>
-            </div>
-            <div class="grid_2 h_grid_6">
-                <div class="sbox">
-                    <div class="title">Today Calculate CR</div>
-                    <div class="amount"><span id="today_epc"></span>
-                        @if($today_leads === 0 || $today_clicks === 0)
-                            n/a
-                        @else
-                            {!! number_format($today_clicks / $today_leads)."%" !!}
-                        @endif
-                    </div>
-                </div>
-            </div>
 
-            <div class="grid_2 h_grid_6">
-                <div class="sbox">
-                    <div class="title">Today Earnings</div>
-                    <div class="amountg">$<span id="today_earnings"></span>{!! \App\Http\Helper::earnings_today() !!}</div>
+    <div class="hero hero-dashboard">
+        <div class="container">
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3>{!! $today_clicks !!}</h3>
+                    <h5 class="font-dark-gray">Today Clicks</h5>
                 </div>
-            </div>
-            <div class="grid_2 h_grid_6">
-                <div class="sbox">
-                    <div class="title">Month Earnings</div>
-                    <div class="amount">$<span id="month_earnings"></span>{!! \App\Http\Helper::earnings_monthly() !!}</div>
+                <div class="hero-stat-border"></div>
+                <div class="hero-stat">
+                    <h3>{!! $today_leads !!}</h3>
+                    <h5 class="font-dark-gray">Today Leads</h5>
+                </div>
+                <div class="hero-stat-border"></div>
+                <div class="hero-stat">
+                    <h3>
+                        @if($today_clicks === 0)
+                            n/a
+                        @else
+                            {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
+                        @endif
+                    </h3>
+                    <h5 class="font-dark-gray">Today EPC</h5>
+                </div>
+                <div class="hero-stat-border"></div>
+                <div class="hero-stat">
+                    <h3>
+                        @if($today_leads + $today_clicks >= 0)
+                            {!! "n/a" !!}
+                        @else
+                            {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
+                        @endif
+                    </h3>
+                    <h5 class="font-dark-gray">Today Calculate CR</h5>
+                </div>
+                <div class="hero-stat-border"></div>
+                <div class="hero-stat">
+                    <h3>${!! number_format($earnings_today, 2) !!}</h3>
+                    <h5 class="font-dark-gray">Today Earnings</h5>
+                </div>
+                <div class="hero-stat-border"></div>
+                <div class="hero-stat">
+                    <h3>${!! number_format($earnings_month, 2) !!}</h3>
+                    <h5 class="font-dark-gray">Month Earnings</h5>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="clearfix"></div>
 
-    <div class="page wide loggedin_pub">
+    <div class="page-container dashboard">
         <div class="container">
-            <div class="col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Earning Activity</div>
-                    <div class="panel-body">
-                        <div id="earningsActivity" style="width: 100%; height: 300px;"> </div>
-                    </div>
-                </div>
+            <h2>Earning Activity</h2>
+
+            <div>
+                <canvas id="myChart" width="400" height="400"></canvas>
             </div>
-            {{--<div class="grid_5 h_grid_12">--}}
-                {{--<div class="panel panel-default">--}}
-                    {{--<div class="panel-heading">Month Geo Distribution</div>--}}
-                    {{--<div class="panel-body">--}}
-                        {{--<div id="regions_div" style="width: 100%;"></div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+
+            <div class="clearfix"></div>
+            <div class="container" style="height: 50px;"></div>
 
             <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">Sort Reports</div>
                     <div class="panel-body">
-                    {!! Form::open(array('url' => 'reports', 'method' => 'get')) !!}
+                        {!! Form::open(array('url' => 'reports', 'method' => 'get')) !!}
                         <table class="table">
                             <tr>
                                 <b>Start date:</b>
@@ -99,7 +87,7 @@
                                 </td>
                             </tr>
 
-                                <b>End date:</b>
+                            <b>End date:</b>
 
                             <tr>
                                 <td>
@@ -125,38 +113,45 @@
                             </tr>
                         </table>
                         {!! Form::submit('Sort Reports', array('class' => 'bttn')) !!}
-                    {!! Form::close() !!}
-                    <br />
+                        {!! Form::close() !!}
+                        <br />
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-12 semibold">
+            <div class="col-xs-12">
                 <div class="panel panel-default">
-                        <div class="panel-heading">Reports</div>
-                        <div class="panel-body">
+                    <div class="panel-heading">Reports</div>
+                    <div class="panel-body">
+                            @if(count($reports))
                             <table class="table table-hover table-bordered table-striped">
                                 <thead>
-                                    <tr>
-                                        <th>Campaign</th>
-                                        <th>Date</th>
-                                        <th>Actions</th>
-                                    </tr>
+                                <tr>
+                                    <th>Campaign</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($reports as $report)
-                                        <tr>
-                                            <td>{!! $report->campaign->name !!}</td>
-                                            <td>{!! $report->created_at !!}</td>
-                                            <td><a href="{!! url('/report/' . $report->id) !!}">View</a></td>
-                                        </tr>
-                                    @endforeach
+                                @foreach($reports as $report)
+                                    <tr>
+                                        <td>{!! $report->campaign->name !!}</td>
+                                        <td>{!! $report->created_at !!}</td>
+                                        <td><a href="{!! url('/report/' . $report->id) !!}">View</a></td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                             {!! $reports->render() !!}
-                        </div>
+                            @else
+                                <div class="alert alert-danger" role="alert">There are no reports found.</div>
+                            @endif
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
+            <hr>
         </div>
     </div><!--end page-->
 
@@ -164,103 +159,51 @@
 
 @section('scripts')
 
-    <script src='https://influencersreach.com/assets/amcharts/amcharts.js' type='text/javascript'></script>
-    <script src='https://influencersreach.com/assets/amcharts/serial.js' type='text/javascript'></script>
-    <script src='https://influencersreach.com/assets/amcharts/themes/light.js' type='text/javascript'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js" type='text/javascript'></script>
     <script>
-        var chart = AmCharts.makeChart("earningsActivity", {
-            "type": "serial",
-            "theme": "light",
-            "marginRight": 10,
-            "autoMarginOffset": 10,
-            "dataDateFormat": "YYYY-MM-DD",
-            "valueAxes": [{
-                "id": "v1",
-                "axisAlpha": 0,
-                "position": "left"
-            }],
-            "balloon": {
-                "borderThickness": 1,
-                "shadowAlpha": 0
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {!! json_encode($earnings_graph->pluck('date')) !!},
+                datasets: [
+                    {
+                        label: "Earnings",
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "#3b76ed",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "#3b76ed",
+                        pointBackgroundColor: "#3b76ed",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "#3b76ed",
+                        pointHoverBorderColor: "#3b76ed",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: {{ json_encode($earnings_graph->pluck('value')) }},
+                        spanGaps: false,
+                    }
+                ]
             },
-            "graphs": [{
-                "id": "g1",
-                "bullet": "round",
-                "bulletBorderAlpha": 1,
-                "bulletColor": "#FFFFFF",
-                "bulletSize": 5,
-                "hideBulletsCount": 50,
-                "lineThickness": 2,
-                "title": "red line",
-                "useLineColorForBulletBorder": true,
-                "valueField": "value",
-                "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[category]]</span><br>[[value]]</div>"
-            }],
-            "chartScrollbar": {
-                "graph": "g1",
-                "oppositeAxis":false,
-                "offset":30,
-                "scrollbarHeight": 50,
-                "backgroundAlpha": 0,
-                "selectedBackgroundAlpha": 0.1,
-                "selectedBackgroundColor": "#888888",
-                "graphFillAlpha": 0,
-                "graphLineAlpha": 0.5,
-                "selectedGraphFillAlpha": 0,
-                "selectedGraphLineAlpha": 1,
-                "autoGridCount":true,
-                "color":"#AAAAAA"
-            },
-            "chartCursor": {
-                "pan": true,
-                "valueLineEnabled": true,
-                "valueLineBalloonEnabled": true,
-                "cursorAlpha":0,
-                "valueLineAlpha":0.2
-            },
-            "categoryField": "date",
-            "categoryAxis": {
-                "parseDates": true,
-                "dashLength": 1,
-                "minorGridEnabled": true
-            },
-            "export": {
-                "enabled": true
-            },
-            "dataProvider": {!! json_encode(\App\Http\Helper::earnings_chart()) !!}
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
         });
-
-        chart.addListener("rendered", zoomChart);
-
-        zoomChart();
-
-        function zoomChart() {
-            chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
-        }
     </script>
-
-
-    {{--@if(!empty($country_html))--}}
-        {{--<script type="text/javascript" src="https://www.google.com/jsapi"></script>--}}
-        {{--<script type="text/javascript">--}}
-            {{--google.load("visualization", "1", {packages:["geochart"]});--}}
-            {{--google.setOnLoadCallback(drawRegionsMap);--}}
-
-            {{--function drawRegionsMap() {--}}
-
-                {{--var data = google.visualization.arrayToDataTable([--}}
-                    {{--['Country', 'Popularity'],--}}
-                    {{--<?php echo $country_html; ?>--}}
-                  {{--]);--}}
-
-                {{--var options = {};--}}
-
-                {{--var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));--}}
-
-                {{--chart.draw(data, options);--}}
-            {{--}--}}
-        {{--</script>--}}
-    {{--@endif--}}
 
     <script>
         function load() {

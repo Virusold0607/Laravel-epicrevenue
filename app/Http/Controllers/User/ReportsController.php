@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\Report;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -22,7 +23,7 @@ class ReportsController extends Controller
     public function index(Request $request)
     {
         $date = Carbon::now();
-
+        $data['request'] = $request;
 
 //        $query = DB::statement("SELECT COUNT( `id` ) AS `tot`, CONCAT(`today`,'/',`month`) AS `mon_year` FROM `reports` WHERE `status`='1' AND `created_at` BETWEEN '".date('Y-m-d 00:00:00',strtotime("-".$day_differnce." days"))."' AND '".date('Y-m-d H:i:s')."' AND `user_id`='".Auth::user()->id."' GROUP BY `mon_year`");
 //        $reports = Report::where('user_id', Auth::user()->id)
@@ -32,20 +33,25 @@ class ReportsController extends Controller
 //            ->get();
 //        dd($reports);
 
-        $today_clicks = Helper::today_clicks();
-        $today_leads = Helper::today_leads();
+        $user = User::where('id', auth()->user()->id)->first();
+        $u = $user->id;
+        $data['today_clicks'] = Helper::today_clicks();
+        $data['today_leads'] = Helper::today_leads();
+        $data['earnings_today'] = Helper::earnings_today();
+        $data['earnings_month'] = Helper::earnings_monthly();
+        $data['earnings_graph'] = collect(Helper::earnings_chart());
 
-        $reports = Report::where('user_id', Auth::user()->id)->with('countries')->get()->groupBy('country');
+        $data['reports'] = Report::where('user_id', auth()->user()->id)->with('countries')->get()->groupBy('country');
 
-        $country_html = "";
-        if (!$reports->isEmpty())
+        $data['country_html'] = "";
+        if (!$data['reports']->isEmpty())
         {
-            foreach ($reports as $key => $value) {
+            foreach ($data['reports'] as $key => $value) {
                 $arrCountry[] = "['" . $key . "',  " . count($value) . "]";
             }
 
             if (is_array($arrCountry) && !$arrCountry) {
-                $country_html = implode(",", $arrCountry);
+                $data['country_html'] = implode(",", $arrCountry);
             }
         }
 
@@ -53,23 +59,23 @@ class ReportsController extends Controller
         {
             $start = Carbon::create($request->startYear, $request->startMonth, $request->startDay, 0, 0, 0);
             $end = Carbon::create($request->endYear, $request->endMonth, $request->endDay, 0, 0, 0);
-            $query = Report::where('user_id', Auth::user()->id)
+            $query = Report::where('user_id', auth()->user()->id)
                 ->whereBetween('created_at', array($start->toDateTimeString(), $end->toDateTimeString()))
                 ->orderBy('id', 'desc')
                 ->with('campaign');
             if($request->showBy === 'all')
-                $reports = $query->paginate(50);
+                $data['reports'] = $query->paginate(50);
             else
-                $reports = $query->where('status', (int) $request->showBy)->paginate(50);
+                $data['reports'] = $query->where('status', (int) $request->showBy)->paginate(50);
         } else {
-            $reports = Report::where('user_id', Auth::user()->id)
+            $data['reports'] = Report::where('user_id', Auth::user()->id)
                 ->whereBetween('created_at', array($date->startOfDay()->toDateTimeString(), $date->endOfDay()->toDateTimeString()))
                 ->orderBy('id', 'desc')
                 ->with('campaign')
                 ->paginate(50);
         }
 
-        return view('user.reports.index', compact('today_clicks', 'today_leads', 'country_html', 'reports', 'request'));
+        return view('user.reports.index', $data);
     }
 
 

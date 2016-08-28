@@ -25,12 +25,11 @@ class DashboardController extends Controller
     public function index()
     {
         $user = User::where('id', auth()->user()->id)->first();
-        $u = $user->id;
-        $data['today_clicks'] = Report::ofUser($u)->click()->today()->count();
-        $data['today_leads'] = Report::ofUser($u)->lead()->today()->count();
-        $data['earnings_today'] = Report::ofUser($u)->lead()->today()->sum('rate');
-        $data['earnings_month'] = Report::ofUser($u)->lead()->month()->sum('rate');
-        $data['earnings_graph'] = collect(\App\Http\Helper::earnings_chart());
+        $data['today_clicks'] = Helper::today_clicks();
+        $data['today_leads'] = Helper::today_leads();
+        $data['earnings_today'] = Helper::earnings_today();
+        $data['earnings_month'] = Helper::earnings_monthly();
+        $data['earnings_graph'] = collect(Helper::earnings_chart());
 
         return view('user.dashboard', $data);
     }

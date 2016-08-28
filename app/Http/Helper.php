@@ -139,7 +139,7 @@ class Helper
     public static function today_clicks()
     {
         $date = Carbon::now();
-        return Report::where('user_id', Auth::user()->id)
+        return Report::where('user_id', auth()->user()->id)
             ->whereBetween('created_at', array($date->startOfDay()->toDateTimeString(), $date->endOfDay()->toDateTimeString()))
             ->where('status', 1)
             ->count();
@@ -148,7 +148,7 @@ class Helper
     public static function today_leads()
     {
         $date = Carbon::now();
-        return Report::where('user_id', Auth::user()->id)
+        return Report::where('user_id', auth()->user()->id)
             ->whereBetween('created_at', array($date->startOfDay()->toDateTimeString(), $date->endOfDay()->toDateTimeString()))
             ->where('status', 2)
             ->count();
@@ -157,7 +157,7 @@ class Helper
     public static function earnings_today()
     {
         $date = Carbon::now();
-        return Report::where('user_id', Auth::user()->id)
+        return Report::where('user_id', auth()->user()->id)
             ->whereBetween('created_at', array($date->startOfDay()->toDateTimeString(), $date->endOfDay()->toDateTimeString()))
             ->where('status', 2)
             ->sum('rate');
@@ -166,7 +166,7 @@ class Helper
     public static function earnings_monthly()
     {
         $date = Carbon::now();
-        return Report::where('user_id', Auth::user()->id)
+        return Report::where('user_id', auth()->user()->id)
             ->whereBetween('created_at', array($date->startOfMonth()->toDateTimeString(), $date->endOfMonth()->toDateTimeString()))
             ->where('status', 2)
             ->sum('rate');
@@ -175,7 +175,7 @@ class Helper
     public static function earnings_yearly()
     {
         $date = Carbon::now();
-        return Report::where('user_id', Auth::user()->id)
+        return Report::where('user_id', auth()->user()->id)
             ->whereBetween('created_at', array($date->startOfYear()->toDateTimeString(), $date->endOfYear()->toDateTimeString()))
             ->where('status', 2)
             ->sum('rate');
