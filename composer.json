@@ -17,7 +17,8 @@
         "google/apiclient": "2.0.*",
         "facebook/graph-sdk" : "5.*",
         "laravel/cashier": "6.*",
-        "cosenary/instagram": "2.*"
+        "cosenary/instagram": "2.*",
+        "predis/predis": "1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
