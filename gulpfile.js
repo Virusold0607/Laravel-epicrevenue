@@ -18,7 +18,7 @@ elixir(function(mix) {
     elixir.config.sourcemaps = false;
     var admin = false;
 
-    mix.sass('app.scss', 'public/assets/css/main.css').version('assets/css/main.css');
+    mix.sass('app.scss', 'public/assets/css/main.css');
 
     if(admin) {
         mix.sass('admin.scss', 'resources/assets/css/admin.css');
@@ -60,16 +60,21 @@ elixir(function(mix) {
             'assets/js/admin-angular.js'
         ]);
 
-        mix.copy([
-            'bower_components/bootstrap-sass/assets/fonts',
-            'bower_components/components-font-awesome/fonts'
-        ], 'public/build/assets/fonts');
-
         mix.copy(['resources/assets/js/angular/partials'], 'public/build/assets/js/partials');
 
     }
 
     // mix.webpack('app.js', 'public/assets/js/main.js');
+
+    mix.copy([
+        'bower_components/bootstrap-sass/assets/fonts',
+        'bower_components/components-font-awesome/fonts'
+    ], 'public/assets/fonts');
+
+    mix.copy([
+        'bower_components/bootstrap-sass/assets/fonts',
+        'bower_components/components-font-awesome/fonts'
+    ], 'public/build/assets/fonts');
 
     // mix.version([
     //     'assets/css/main.css',

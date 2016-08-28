@@ -184,8 +184,11 @@ class Helper
 
     public static function earnings_chart()
     {
-        $earnings = Report::where('user_id', Auth::user()->id)
+        $start = Carbon::now()->subMonth()->toDateTimeString();
+        $end = Carbon::now()->toDateTimeString();
+        $earnings = Report::where('user_id', auth()->user()->id)
             ->where('status', 2)
+            ->whereBetween('created_at', [$start, $end])
             ->get();
 
         $earnings = $earnings->sortBy(function ($item, $key) {
