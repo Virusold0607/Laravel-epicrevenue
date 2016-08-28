@@ -1,9 +1,9 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero heading promote-page">
+    <div class="hero">
         <div class="container">
-            <h1 class="promote">
+            <h1 class="hero-heading">
                 @<span class="upper">{!! $account->username !!}</span>
                 Total Reach <span class="highlight">{!! number_format($account->followed_by) !!} </span>
             </h1>
@@ -54,5 +54,8 @@
                 <div class="alert alert-danger">There is no content available to post on this account yet.</div>
             @endif
         </div>
+    </div>
+    <div class="container">
+        <hr>
     </div>
 @endsection

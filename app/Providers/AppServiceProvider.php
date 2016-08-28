@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
             'promote', 'campaigns'
         ];
         foreach ($pages as $page) {
-            if (request()->path() == $page)
+            if (request()->path() == $page || starts_with(request()->path(), $page))
                 $navbar_inverse = true;
         }
 
