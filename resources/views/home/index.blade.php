@@ -134,4 +134,7 @@
 
         <div class="clearfix"></div>
     </div>
+    <div class="container">
+        <hr>
+    </div>
 @endsection

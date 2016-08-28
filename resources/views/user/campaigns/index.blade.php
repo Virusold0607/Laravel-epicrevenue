@@ -112,4 +112,8 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <hr>
+    </div>
 @endsection
