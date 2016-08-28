@@ -8544,6 +8544,34 @@ a {
     .hero.hero-txt .hero-heading, .hero.hero-txt * {
       margin-top: 0;
       color: black; }
+  .hero.hero-dashboard {
+    background: rgba(217, 217, 217, 0.99);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(217, 217, 217, 0.99)), color-stop(0%, rgba(237, 237, 237, 0.99)), color-stop(0%, rgba(227, 227, 227, 0.99)), color-stop(100%, rgba(255, 255, 255, 0.99)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(217, 217, 217, 0.99) 0%, rgba(237, 237, 237, 0.99) 0%, rgba(227, 227, 227, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%);
+    background: -webkit-radial-gradient(center ellipse, rgba(217, 217, 217, 0.99) 0%, rgba(237, 237, 237, 0.99) 0%, rgba(227, 227, 227, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%);
+    background: radial-gradient(ellipse at center, rgba(217, 217, 217, 0.99) 0%, rgba(237, 237, 237, 0.99) 0%, rgba(227, 227, 227, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
+    height: auto;
+    min-height: 0 !important;
+    color: #5f5f5f;
+    padding: 75px 0;
+    border-bottom: 1px solid white;
+    margin-bottom: 0; }
+    .hero.hero-dashboard * {
+      color: #000; }
+    .hero.hero-dashboard .hero-stats .hero-stat-border {
+      display: inline-block;
+      vertical-align: 8px;
+      height: 30px;
+      border: 1px solid #e3e3e3;
+      margin: 0 10px; }
+    .hero.hero-dashboard .hero-stats .hero-stat {
+      display: inline-block;
+      color: #3b454a; }
+      .hero.hero-dashboard .hero-stats .hero-stat h5 {
+        text-transform: uppercase;
+        color: #444;
+        font-weight: 600; }
   .hero .font-gray {
     color: #666;
     line-height: 1.5; }
@@ -8899,35 +8927,6 @@ a.network_tile.disabled {
 
 .page-container.dashboard {
   box-shadow: none; }
-
-.hero.hero-dashboard {
-  background: rgba(217, 217, 217, 0.99);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(217, 217, 217, 0.99)), color-stop(0%, rgba(237, 237, 237, 0.99)), color-stop(0%, rgba(227, 227, 227, 0.99)), color-stop(100%, rgba(255, 255, 255, 0.99)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(217, 217, 217, 0.99) 0%, rgba(237, 237, 237, 0.99) 0%, rgba(227, 227, 227, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%);
-  background: -webkit-radial-gradient(center ellipse, rgba(217, 217, 217, 0.99) 0%, rgba(237, 237, 237, 0.99) 0%, rgba(227, 227, 227, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%);
-  background: radial-gradient(ellipse at center, rgba(217, 217, 217, 0.99) 0%, rgba(237, 237, 237, 0.99) 0%, rgba(227, 227, 227, 0.99) 0%, rgba(255, 255, 255, 0.99) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
-  height: auto;
-  min-height: 0 !important;
-  color: #5f5f5f;
-  padding: 50px 0;
-  border-bottom: 1px solid white;
-  margin-bottom: 0; }
-  .hero.hero-dashboard * {
-    color: #000; }
-  .hero.hero-dashboard .hero-stats .hero-stat-border {
-    display: inline-block;
-    vertical-align: 8px;
-    height: 30px;
-    border: 1px solid #e3e3e3;
-    margin: 0 10px; }
-  .hero.hero-dashboard .hero-stats .hero-stat {
-    display: inline-block;
-    color: #3b454a; }
-    .hero.hero-dashboard .hero-stats .hero-stat h5 {
-      text-transform: uppercase;
-      color: #444;
-      font-weight: 600; }
 
 .social-account-container {
   border: 1px solid #eeeeee;
