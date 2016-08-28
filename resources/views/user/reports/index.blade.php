@@ -68,51 +68,36 @@
                     <div class="panel-heading">Sort Reports</div>
                     <div class="panel-body">
                         {!! Form::open(array('url' => 'reports', 'method' => 'get')) !!}
-                        <table class="table">
-                            <tr>
-                                <b>Start date:</b>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <?php $start_month = array(1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'August', 9 => 'September', 10 => 'October', 11 => 'November', 12 => 'December'); ?>
-                                    {!! Form::select('startMonth', $start_month, $request->has('startMonth') ? $request->startMonth : \Carbon\Carbon::now()->month) !!}
-                                </td>
-                                <td>
-                                    <?php $start_day = array(1 => '01', 2 => '02', 3 => '03', 4 => '04', 5 => '05', 6 => '06', 7 =>  '07', 8 => '08', 9 => '09', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 =>  '18', 19 => '19', 20 => '20', 21 => '21', 22 => '22', 23 => '23', 24 => '24', 25 => '25', 26 => '26', 27 => '27', 28 => '28', 29 => '29', 30 => '30', 31 => '31'); ?>
-                                    {!! Form::select('startDay', $start_day, $request->has('startDay') ? $request->startDay : \Carbon\Carbon::now()->day) !!}
-                                </td>
-                                <td>
-                                    <?php $start_year = array('2015' => '2015', '2016' => '2016', '2017' => '2017'); ?>
-                                    {!! Form::select('startYear', $start_year, $request->has('startYear') ? $request->startYear : \Carbon\Carbon::now()->year) !!}
-                                </td>
-                            </tr>
+                        <b>Start date:</b>
+                        <?php $start_month = array(1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'August', 9 => 'September', 10 => 'October', 11 => 'November', 12 => 'December'); ?>
+                        {!! Form::select('startMonth', $start_month, $request->has('startMonth') ? $request->startMonth : \Carbon\Carbon::now()->month) !!}
 
-                            <b>End date:</b>
+                        <?php $start_day = array(1 => '01', 2 => '02', 3 => '03', 4 => '04', 5 => '05', 6 => '06', 7 =>  '07', 8 => '08', 9 => '09', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 =>  '18', 19 => '19', 20 => '20', 21 => '21', 22 => '22', 23 => '23', 24 => '24', 25 => '25', 26 => '26', 27 => '27', 28 => '28', 29 => '29', 30 => '30', 31 => '31'); ?>
+                        {!! Form::select('startDay', $start_day, $request->has('startDay') ? $request->startDay : \Carbon\Carbon::now()->day) !!}
 
-                            <tr>
-                                <td>
-                                    <?php $end_month = array(1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'August', 9 => 'September', 10 => 'October', 11 => 'November', 12 => 'December'); ?>
-                                    {!! Form::select('endMonth', $end_month, $request->has('endMonth') ? $request->endMonth : \Carbon\Carbon::now()->month) !!}
-                                </td>
-                                <td>
-                                    <?php $end_day = array(1 => '01', 2 => '02', 3 => '03', 4 => '04', 5 => '05', 6 => '06', 7 =>  '07', 8 => '08', 9 => '09', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 =>  '18', 19 => '19', 20 => '20', 21 => '21', 22 => '22', 23 => '23', 24 => '24', 25 => '25', 26 => '26', 27 => '27', 28 => '28', 29 => '29', 30 => '30', 31 => '31'); ?>
-                                    {!! Form::select('endDay', $end_day, $request->has('endDay') ? $request->endDay : \Carbon\Carbon::now()->day) !!}
-                                </td>
-                                <td>
-                                    <?php $end_year = array('2015' => '2015', '2016' => '2016', '2017' => '2017'); ?>
-                                    {!! Form::select('endYear', $end_year, $request->has('endYear') ? $request->endYear : \Carbon\Carbon::now()->year) !!}
-                                </td>
-                            </tr>
-                            <tr>
-                                <b>Show all by:</b>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    {!! Form::select('showBy', ['all' => 'All Reports', 1 => 'Clicks', 2 => 'Leads', 3 => 'Reversals'], $request->has('showBy') ? $request->showBy : 'all') !!}
-                                </td>
-                            </tr>
-                        </table>
-                        {!! Form::submit('Sort Reports', array('class' => 'bttn')) !!}
+                        <?php $start_year = array('2015' => '2015', '2016' => '2016', '2017' => '2017'); ?>
+                        {!! Form::select('startYear', $start_year, $request->has('startYear') ? $request->startYear : \Carbon\Carbon::now()->year) !!}
+                        <div class="clearfix"></div>
+                        <hr>
+
+                        <b>End date:</b>
+
+                        <?php $end_month = array(1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'August', 9 => 'September', 10 => 'October', 11 => 'November', 12 => 'December'); ?>
+                        {!! Form::select('endMonth', $end_month, $request->has('endMonth') ? $request->endMonth : \Carbon\Carbon::now()->month) !!}
+
+                        <?php $end_day = array(1 => '01', 2 => '02', 3 => '03', 4 => '04', 5 => '05', 6 => '06', 7 =>  '07', 8 => '08', 9 => '09', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 =>  '18', 19 => '19', 20 => '20', 21 => '21', 22 => '22', 23 => '23', 24 => '24', 25 => '25', 26 => '26', 27 => '27', 28 => '28', 29 => '29', 30 => '30', 31 => '31'); ?>
+                        {!! Form::select('endDay', $end_day, $request->has('endDay') ? $request->endDay : \Carbon\Carbon::now()->day) !!}
+
+                        <?php $end_year = array('2015' => '2015', '2016' => '2016', '2017' => '2017'); ?>
+                        {!! Form::select('endYear', $end_year, $request->has('endYear') ? $request->endYear : \Carbon\Carbon::now()->year) !!}
+                        <div class="clearfix"></div>
+                        <hr>
+                        <b>Show all by:</b>
+
+                        {!! Form::select('showBy', ['all' => 'All Reports', 1 => 'Clicks', 2 => 'Leads', 3 => 'Reversals'], $request->has('showBy') ? $request->showBy : 'all') !!}
+                        <div class="clearfix"></div>
+                        <hr>
+                        {!! Form::submit('Sort Reports', array('class' => 'btn btn-primary')) !!}
                         {!! Form::close() !!}
                         <br />
                     </div>
@@ -123,7 +108,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Reports</div>
                     <div class="panel-body">
-                            @if(count($reports))
+                        @if(count($reports))
                             <table class="table table-hover table-bordered table-striped">
                                 <thead>
                                 <tr>
@@ -143,9 +128,9 @@
                                 </tbody>
                             </table>
                             {!! $reports->render() !!}
-                            @else
-                                <div class="alert alert-danger" role="alert">There are no reports found.</div>
-                            @endif
+                        @else
+                            <div class="alert alert-danger" role="alert">There are no reports found.</div>
+                        @endif
                     </div>
                 </div>
             </div>

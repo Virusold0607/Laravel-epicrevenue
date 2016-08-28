@@ -24,7 +24,7 @@
 @endsection
 
 @section('body')
-    <div class="page wide">
+    <div class="page-container no-shadow">
         <div class="container">
             @if(isset($success))
                 <div class="alert alert-success" role="alert">Tax details (xxx-xx-xx{!! $tax_details->tax_id !!}) submitted on {!! \Carbon\Carbon::now()->format('d/m/y') !!}. You can update your tax details at any time by re-submitting the form below.</div>

@@ -1,13 +1,13 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero small">
-        <div class="container_12">
-            <h1 class="semibold hero_heading">Report # {!! $report->id !!}</h1>
+    <div class="hero hero-txt">
+        <div class="container">
+            <h1 class="hero-heading">Report # {!! $report->id !!}</h1>
         </div>
     </div>
-    <div class="page wide">
-        <div class="container_12">
+    <div class="page-container">
+        <div class="container">
 
             <table class="table table-hover table-bordered">
                 <tr>
@@ -58,6 +58,11 @@
                 </tr>
             </table><br />
 
+            <hr>
+
+            <div>
+                <a class="btn btn-primary btn-lg" href="{!! url('/reports')  !!}">Go Back</a>
+            </div>
         </div>
     </div>
 
