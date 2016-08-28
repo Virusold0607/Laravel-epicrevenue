@@ -13,11 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\InstagramPostsStore::class,
-        Commands\InstagramFollowsStore::class,
         Commands\MailChimpSync::class,
         Commands\MailChimpClean::class,
-        Commands\SettleInstagramData::class,
         Commands\SettleUserBalances::class,
         Commands\SettleTaxDetails::class
     ];
@@ -33,12 +30,9 @@ class Kernel extends ConsoleKernel
 //        ->sendOutputTo($filePath)
 //        ->emailOutputTo('abdullahnaseer999@gmail.com')
 
-//        $schedule->command('instagram:follows')->daily();
-
-//        $schedule->command('instagram:posts')->everyFiveMinutes();
-
         $schedule->command('mailchimp:sync')->daily();
         $schedule->command('mailchimp:clean')->weekly();
+        $schedule->command('settle:balances')->daily();
     }
 
     /**
