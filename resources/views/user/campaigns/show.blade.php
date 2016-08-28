@@ -63,6 +63,11 @@
                     </div>
                 </div>
             @endif
+
+            <hr>
+            <div>
+                <a class="btn btn-primary btn-lg" href="{!! url('/campaigns')  !!}">Go Back</a>
+            </div>
         </div>
     </div>
     <div class="container">
