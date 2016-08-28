@@ -29,7 +29,7 @@
 
     <div class="clearfix"></div>
 
-    <div class="page-container">
+    <div class="page-container no-shadow">
         <div class="container">
             <div class="row">
                 @if(is_null($tax_details))
@@ -99,5 +99,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <hr>
     </div>
 @endsection
