@@ -4,8 +4,8 @@
     <div class="hero">
         <div class="container">
             <h1>Are you ready to maximize your revenue?</h1>
+            <h4>Trusted by more than <span class="green">< Total Publishers ></span> accounts</h4>
         </div>
-        <div>Trusted by more than <span class="green">< Total Publishers ></span> accounts</div>
     </div><!-- End .hero -->
 
     <div class="container">
