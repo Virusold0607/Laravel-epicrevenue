@@ -5,14 +5,13 @@
 .hero {
   &.hero-dashboard {
     background: rgba(217,217,217,0.99);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 70%);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(217,217,217,0.99)), color-stop(0%, rgba(237,237,237,0.99)), color-stop(0%, rgba(227,227,227,0.99)), color-stop(100%, rgba(255,255,255,0.99)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
-    background: radial-gradient(ellipse at center, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 70%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 70%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 70%);
+    background: radial-gradient(ellipse at center, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 70%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
-
 
     height: auto;
     min-height: 0 !important;
@@ -39,7 +38,7 @@
         color: #3b454a;
         h5 {
           text-transform: uppercase;
-          color: #8a8e90;
+          color: #444;
           font-weight: 600;
         }
       }
