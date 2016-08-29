@@ -435,7 +435,7 @@ class ApiController extends Controller
             $campaigns = Campaign::where('active', 'yes')
                 ->where('incent', 'yes')
                 ->leftJoin('reports', 'campaigns.id', '=', 'reports.campaign_id')
-                ->selectRaw('campaigns.id, campaigns., sum(reports.status) as count')
+                ->selectRaw('campaigns.*, sum(reports.status) as count')
                 ->groupBy('campaigns.id')
                 ->with('targets')
                 ->orderBy('count', 'desc')
