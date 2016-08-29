@@ -34,16 +34,11 @@ elixir(function(mix) {
         mix.scripts(['ng-file-upload/ng-file-upload.min.js'], 'resources/assets/js/build/ng-file-upload.js','bower_components/');
 
         mix.scripts([
-            'bower_components/angular-chart.js/dist/angular-chart.js'
-        ], 'resources/assets/js/build/chart.js', 'bower_components/');
-
-        mix.scripts([
             'resources/assets/js/build/ui-bootstrap.js',
             'resources/assets/js/build/angular-route.js',
             'resources/assets/js/build/ui-select.js',
             'resources/assets/js/build/angular-sanitize.js',
-            'resources/assets/js/build/ng-file-upload.js',
-        'resources/assets/js/build/chart.js'
+            'resources/assets/js/build/ng-file-upload.js'
         ], 'public/assets/js/admin.js');
 
         mix.scripts(['angular/app.js','angular/routes.js'], 'resources/assets/js/build/angular/admin/app.js');
@@ -54,17 +49,14 @@ elixir(function(mix) {
             'resources/assets/js/build/angular/admin/angular.js'
         ], 'public/assets/js/admin-angular.js');
 
-        mix.version([
-            'assets/css/admin.css',
-            'assets/js/admin.js',
-            'assets/js/admin-angular.js'
-        ]);
+        // mix.version([
+        //     'assets/css/admin.css',
+        //     'assets/js/admin.js',
+        //     'assets/js/admin-angular.js'
+        // ]);
 
         mix.copy(['resources/assets/js/angular/partials'], 'public/build/assets/js/partials');
-
     }
-
-    // mix.webpack('app.js', 'public/assets/js/main.js');
 
     // mix.copy([
     //     'node_modules/bootstrap-sass/assets/fonts',
@@ -75,6 +67,8 @@ elixir(function(mix) {
     //     'node_modules/bootstrap-sass/assets/fonts',
     //     'bower_components/components-font-awesome/fonts'
     // ], 'public/build/assets/fonts');
+
+    // mix.webpack('app.js', 'public/assets/js/main.js');
 
     // mix.version([
     //     'assets/css/main.css',
