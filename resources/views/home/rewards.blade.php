@@ -1,7 +1,7 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero">
+    <div class="hero hero-dashboard">
         <div class="container">
             <h1 class="hero-heading">Get Rewards When You Monetize With Us!</h1>
             @unless(auth()->check())
@@ -9,6 +9,8 @@
             @endunless
         </div>
     </div><!-- End .hero -->
+    <div class="clearfix"></div>
+    <div class="container" style="height:30px;"></div>
     <div class="container">
         @if(count($rewards)> 0)
             <div class="row">

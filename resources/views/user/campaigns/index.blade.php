@@ -1,7 +1,7 @@
 @extends('shared.layout')
 @section('body')
 
-    <div class="hero">
+    <div class="hero hero-dashboard">
         <div class="container">
             @if(auth()->check())
                 <h1 class="hero-heading">Campaigns</h1>
@@ -23,6 +23,8 @@
             @endif
         </div>
     </div>
+
+    <div class="clearfix"></div>
 
     <div class="page-container no-shadow">
         <div class="container">

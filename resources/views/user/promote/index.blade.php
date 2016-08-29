@@ -1,7 +1,8 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero">
+
+    <div class="hero hero-dashboard">
         <div class="container">
             <h1 class="hero-heading">Promoting</h1>
             <div class="row">
