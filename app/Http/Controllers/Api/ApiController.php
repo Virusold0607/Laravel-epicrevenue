@@ -436,7 +436,7 @@ class ApiController extends Controller
                 ->where('incent', 'yes')
                 ->leftJoin('reports', function ($join) {
                     $join->on('campaigns.id', '=', 'reports.campaign_id'); })
-                ->selectRaw('campaigns.id, sum(reports.status) as count')
+                ->selectRaw('campaigns.*, campaigns., sum(reports.status) as count')
                 ->groupBy('campaigns.id')
                 ->with('targets')
                 ->orderBy('count', 'desc')
