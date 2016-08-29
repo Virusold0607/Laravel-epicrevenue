@@ -434,9 +434,8 @@ class ApiController extends Controller
         {
             $campaigns = Campaign::where('active', 'yes')
                 ->where('incent', 'yes')
-                ->leftJoin('reports', function ($join) {
-                    $join->on('campaigns.id', '=', 'reports.campaign_id'); })
-                ->selectRaw('campaigns.*, campaigns., sum(reports.status) as count')
+                ->leftJoin('reports', 'campaigns.id', '=', 'reports.campaign_id')
+                ->selectRaw('campaigns.id, campaigns., sum(reports.status) as count')
                 ->groupBy('campaigns.id')
                 ->with('targets')
                 ->orderBy('count', 'desc')
@@ -525,8 +524,7 @@ class ApiController extends Controller
             $campaigns = Campaign::where('active', 'yes')
                 ->where('incent', 'yes')
                 ->with('targets')
-                ->leftJoin('reports', function ($join) {
-                    $join->on('campaigns.id', '=', 'reports.campaign_id'); })
+                ->leftJoin('reports', 'campaigns.id', '=', 'reports.campaign_id')
                 ->selectRaw('campaigns.*, sum(reports.status) as count')
                 ->groupBy('campaigns.id')
                 ->orderBy('count', 'desc')
