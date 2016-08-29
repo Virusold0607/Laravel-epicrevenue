@@ -31,17 +31,17 @@
                     <div class="col-sm-4">
                         <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
                         <h4>#SEEMORE</h4>
-                        <p class="font-light-gray">See visually how your account grows, analyze your audience, target better.</p>
+                        <p class="">See visually how your account grows, analyze your audience, target better.</p>
                     </div>
                     <div class="col-sm-4">
                         <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
                         <h4>#MAKEMORE</h4>
-                        <p class="font-light-gray">Paid to post, paid to drive leads, plus a lot more ways to generate revenue.</p>
+                        <p class="">Paid to post, paid to drive leads, plus a lot more ways to generate revenue.</p>
                     </div>
                     <div class="col-sm-4">
                         <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
                         <h4>#DOMORE</h4>
-                        <p class="font-light-gray">Use our services, team and exclusive services to grow your brand.</p>
+                        <p class="">Use our services, team and exclusive services to grow your brand.</p>
                     </div>
                 </div>
             </div>
