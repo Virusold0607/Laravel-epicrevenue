@@ -27,7 +27,6 @@ class ApiController extends Controller
         return $api->key;
     }
 
-
     public function checkerJs()
     {
         $js = '
@@ -99,7 +98,6 @@ class ApiController extends Controller
         $response->header('Content-Type', "text/javascript");
         return $response;
     }
-
 
     public function wallCss()
     {
@@ -250,8 +248,6 @@ class ApiController extends Controller
         return $response;
     }
 
-
-
     public function mobileCss()
     {
         $css = "@import url(" . "//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" . ");
@@ -340,7 +336,6 @@ class ApiController extends Controller
         $response->header('Content-Type', "text/css");
         return $response;
     }
-
 
     public function campaignCheck(Request $request)
     {
@@ -439,11 +434,11 @@ class ApiController extends Controller
         {
             $campaigns = Campaign::where('active', 'yes')
                 ->where('incent', 'yes')
-                ->with('targets')
                 ->leftJoin('reports', function ($join) {
                     $join->on('campaigns.id', '=', 'reports.campaign_id'); })
                 ->selectRaw('campaigns.*, sum(reports.status) as count')
                 ->groupBy('campaigns.id')
+                ->with('targets')
                 ->orderBy('count', 'desc')
                 ->get();
 
