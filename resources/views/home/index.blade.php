@@ -52,10 +52,10 @@
         <div class="container text-center">
             <h5 class="font-gray"><strong>Join Us</strong></h5>
             <h2 style="margin-top:10px;">Become an Influencer</h2>
-            <img class="img-responsive" style="padding: 70px 0;margin: 0 auto;width: 250px;" src="http://i.imgur.com/e2tD9Ik.png">
+            <img class="img-responsive" style="padding: 70px 0;margin: 0 auto;width: 250px;" src="https://i.imgur.com/e2tD9Ik.png">
 
             <div class="clearfix"></div>
-            <div class="container" style="height: 50px;"></div>
+
             <div>
                 <a href="{{ url('/register') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Sign Up Now</a> <a href="{{ url('/influencers') }}" class="btn btn-gray btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Learn More</a>
             </div>
