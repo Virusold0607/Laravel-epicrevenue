@@ -54,40 +54,6 @@
             <h2 style="margin-top:10px;">Become an Influencer</h2>
             <img class="img-responsive" style="padding: 70px 0;margin: 0 auto;width: 250px;" src="http://i.imgur.com/e2tD9Ik.png">
 
-            <div class="row text-center">
-                <div class="col-sm-4">
-                    <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
-                    <h4>The best network</h4>
-                    <p class="font-light-gray">We offer what your favorite network offers and tons more. We have features they dont have, we have higher conversion rate, we pay you faster, and we offer top of the line support.</p>
-                </div>
-                <div class="col-sm-4">
-                    <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
-                    <h4>Advanced Security</h4>
-                    <p class="font-light-gray">Our network runs on an SSL secured connection meaning all information is transferred securely. Along with that your personal information is encrpyted with bank level encryption.</p>
-                </div>
-                <div class="col-sm-4">
-                    <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
-                    <h4>Features</h4>
-                    <p class="font-light-gray">Track your page growth and engagement, easily find influencers to do shoutouts with, these are some of the things you can do as an influencer.</p>
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-sm-4">
-                    <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
-                    <h4>Optimization</h4>
-                    <p class="font-light-gray">We have a custom properiety system that automatically optimizate ALL traffic you send. Desktop and mobile traffic is intelligently sent to the best campaign.</p>
-                </div>
-                <div class="col-sm-4">
-                    <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
-                    <h4>Weekly Payments!</h4>
-                    <p class="font-light-gray">Every Friday if your balance to be paid is over your set threshold you will be paid. No need to request the payment it will automatically be sent to your selected payment method.</p>
-                </div>
-                <div class="col-sm-4">
-                    <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
-                    <h4>Creatives & Landing Pages</h4>
-                    <p class="font-light-gray">Have an idea of something you want to promote? Let our team know and they create it for you. Setup a custom shop, page, etc.</p>
-                </div>
-            </div>
-
             <div class="clearfix"></div>
             <div class="container" style="height: 50px;"></div>
             <div>
