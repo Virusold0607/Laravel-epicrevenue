@@ -63,11 +63,12 @@ header.transparent-header {
 
 .navbar {
   .nav-user-img {
+    display: inline-block;
     width: 30px;
     height: 30px;
     border-radius: 10px;
-    display: inline-block;
     margin-right: 2px;
+    border: 1px solid #666666;
   }
 }
 
