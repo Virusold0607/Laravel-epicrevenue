@@ -11,7 +11,7 @@
 
     <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600,700" rel='stylesheet' type='text/css'>
     {{--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">--}}
-    <link rel="stylesheet" href="{{ elixir('/assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ elixir('assets/css/main.css') }}">
     @yield('styles')
 </head>
 <body @if(isset($bodyid))id="{{ $bodyid }}"@endif>
@@ -22,7 +22,7 @@
 
 @include('shared/footer')
 
-<script type="text/javascript" src="{{ elixir('/assets/js/main.js') }}"></script>
+<script type="text/javascript" src="{{ elixir('assets/js/main.js') }}"></script>
 <script>
     @if($navbar_inverse)
     $(function(){
