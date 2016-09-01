@@ -24,7 +24,7 @@
     </div>
 </footer>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 <script type="text/javascript" src="{{ elixir('/assets/js/admin.js') }}"></script>
 <script type="text/javascript" src="{{ elixir('/assets/js/admin-angular.js') }}"></script>
 

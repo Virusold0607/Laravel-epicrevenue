@@ -23,7 +23,7 @@
     "angular-mocks": "1.5.*",
     "angular-route": "1.5.*",
     "angular": "1.5.*",
-    "bootstrap-sass": "~3.3.6",
+    "bootstrap-sass": "3.3.*",
     "Chart.js": "~1.*",
     "components-font-awesome": "~4.*",
     "ui-select": "angular-ui-select#~0.13.*",

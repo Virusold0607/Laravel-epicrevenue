@@ -47,16 +47,6 @@
 }
 
 
-.hero {
-  .glyphicon-cirlce {
-    color: white;
-    border: 1px solid white;
-    border-radius: 100%;
-    padding: 30px;
-    font-size: 30px;
-    margin-bottom: 15px;
-  }
-}
 .glyphicon-cirlce {
   color: $brand-primary;
   border: 1px solid $brand-primary;
@@ -68,5 +58,12 @@
 
   .fa {
     font-size: 35px;
+  }
+}
+
+.hero {
+  .glyphicon-cirlce {
+    color: white;
+    border: 1px solid white;
   }
 }

@@ -1,13 +1,6 @@
 @extends('shared/layout')
 
 @section('styles')
-    <style>
-        .why-img {
-            width: 100px;
-            margin: 0 auto;
-            display: block;
-        }
-    </style>
 @endsection
 
 @section('body')
@@ -29,17 +22,17 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-sm-4">
-                        <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
+                        <div class="glyphicon-cirlce"><span class="fa fa-list"></span></div>
                         <h4>#SEEMORE</h4>
                         <p class="">See visually how your account grows, analyze your audience, target better.</p>
                     </div>
                     <div class="col-sm-4">
-                        <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
+                        <div class="glyphicon-cirlce"><span class="fa fa-list"></span></div>
                         <h4>#MAKEMORE</h4>
                         <p class="">Paid to post, paid to drive leads, plus a lot more ways to generate revenue.</p>
                     </div>
                     <div class="col-sm-4">
-                        <div><span class="glyphicon glyphicon-th-list glyphicon-cirlce"></span></div>
+                        <div class="glyphicon-cirlce"><span class="fa fa-list"></span></div>
                         <h4>#DOMORE</h4>
                         <p class="">Use our services, team and exclusive services to grow your brand.</p>
                     </div>
