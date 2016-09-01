@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('styles')
-    <link rel="stylesheet" href="{{ elixir('/assets/css/admin.css') }}">
+    <link rel="stylesheet" href="{{ elixir('assets/css/admin.css') }}">
 </head>
 <body>
 @include('admin.shared.angular-header')
@@ -25,8 +25,8 @@
 </footer>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-<script type="text/javascript" src="{{ elixir('/assets/js/admin.js') }}"></script>
-<script type="text/javascript" src="{{ elixir('/assets/js/admin-angular.js') }}"></script>
+<script type="text/javascript" src="{{ elixir('assets/js/admin.js') }}"></script>
+<script type="text/javascript" src="{{ elixir('assets/js/admin-angular.js') }}"></script>
 
 @yield('scripts')
 

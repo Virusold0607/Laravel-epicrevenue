@@ -50,12 +50,6 @@ elixir(function(mix) {
             'resources/assets/js/build/angular/admin/angular.js'
         ], 'public/assets/js/admin-angular.js');
 
-        mix.version([
-            'assets/css/admin.css',
-            'assets/js/admin.js',
-            'assets/js/admin-angular.js'
-        ]);
-
         mix.copy(['resources/assets/js/angular/partials'], 'public/build/assets/js/partials');
     }
 
@@ -71,9 +65,12 @@ elixir(function(mix) {
         ], 'public/build/assets/fonts');
     }
 
-    mix.webpack('app.js', 'public/assets/js/main.js');
+    // mix.webpack('app.js', 'public/assets/js/main.js');
 
     mix.version([
+        'assets/css/admin.css',
+        'assets/js/admin.js',
+        'assets/js/admin-angular.js',
         'assets/css/main.css',
         'assets/js/main.js'
     ]);
