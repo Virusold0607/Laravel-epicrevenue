@@ -93,7 +93,7 @@
             <tr>
                 <td>Allowed Influencers</td>
                 <td>
-                    {!! Form::select('influencers[]', App\Models\InstagramAccount::orderBy('user_id', 'asc')->pluck('username', 'id'),  $promotion->influencers->pluck('id')->toArray(), array('id' => 'influencers', 'class' => 'form-control', 'required'=>'required', 'multiple'=>'multiple' )) !!}
+                    {!! Form::select('influencers[]', App\Models\SocialAccount::orderBy('user_id', 'asc')->pluck('username', 'id'),  $promotion->influencers->pluck('id')->toArray(), array('id' => 'influencers', 'class' => 'form-control', 'required'=>'required', 'multiple'=>'multiple' )) !!}
                 </td>
             </tr>
             <tr>

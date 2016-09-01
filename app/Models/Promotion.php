@@ -28,7 +28,7 @@ class Promotion extends Model
 	 */
 	public function influencers()
 	{
-		return $this->belongsToMany('App\Models\SocialAccount', 'promotion_influencer', 'promotion_id', 'account_id')->withTimestamps();
+		return $this->belongsToMany('App\Models\SocialAccount', 'promotion_influencer', 'promotion_id', 'instagram_account_id')->withTimestamps();
 	}
 
 	/**
