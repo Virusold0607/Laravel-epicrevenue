@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Promote;
-use App\Models\InstagramAccount;
 use App\Models\Promotion;
 use File;
 use Auth;
