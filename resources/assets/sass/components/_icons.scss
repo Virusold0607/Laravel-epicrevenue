@@ -46,24 +46,10 @@
   }
 }
 
+.ir-icon {
 
-.glyphicon-cirlce {
-  color: $brand-primary;
-  border: 1px solid $brand-primary;
-  border-radius: 100%;
-  padding: 30px;
-  font-size: 30px;
-  width: 120px;
-  margin: 0 auto;
-
-  .fa {
-    font-size: 35px;
-  }
-}
-
-.hero {
-  .glyphicon-cirlce {
-    color: white;
-    border: 1px solid white;
+  img {
+    margin: 0 auto;
+    padding-bottom: 8px;
   }
 }
