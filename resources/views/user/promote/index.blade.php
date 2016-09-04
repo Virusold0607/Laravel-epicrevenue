@@ -5,11 +5,9 @@
     <div class="hero hero-dashboard">
         <div class="container">
             <h1 class="hero-heading">Promoting</h1>
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <h4>Click an approved account to see the content advertisers have submitted for you to promote.</h4>
-                </div>
-            </div>
+                <p class="hero-p">
+                    Click an approved account to see the content advertisers have submitted for you to promote.
+                </p>
             <div class="clearfix"></div>
         </div>
     </div>
