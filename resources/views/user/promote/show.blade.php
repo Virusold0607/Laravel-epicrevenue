@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="clearfix"></div>
-    <div class="page-container no-shadow">
+    <div class="page-container no-shadow no-border">
         <div class="container">
             <h2>Available Promotions</h2>
             <hr>
