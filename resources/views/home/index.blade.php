@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
-                <a href="{{ url('/register') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Create an account!</a>
+                <a href="{{ url('/register') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Become an Influencer</a>
             </div>
         </div><!-- End .hero -->
 
@@ -50,7 +50,7 @@
             <div class="clearfix"></div>
 
             <div>
-                <a href="{{ url('/register') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Sign Up Now</a> <a href="{{ url('/influencers') }}" class="btn btn-gray btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Learn More</a>
+                <a href="{{ url('/register') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Apply Now</a> <a href="{{ url('/influencers') }}" class="btn btn-gray btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Learn More</a>
             </div>
         </div>
 
