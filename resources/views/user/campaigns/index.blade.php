@@ -26,7 +26,7 @@
 
     <div class="clearfix"></div>
 
-    <div class="page-container no-shadow">
+    <div class="page-container no-shadow no-border">
         <div class="container">
             <!-- search -->
 
