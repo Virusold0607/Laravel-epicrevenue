@@ -7,7 +7,7 @@
             <h1 class="hero-heading">Promoting</h1>
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
-                    <h4>Click an approved account to see the content available to promote on it.</h4>
+                    <h4>Click an approved account to see the content advertisers have submitted for you to promote.</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -16,12 +16,12 @@
 
     <div class="clearfix"></div>
 
-    <div class="container">
-        <div class="page-container">
-            @if(Session::has('success'))
-                <div class="alert alert-success">You have successfully added your Instagram account and it is now pending review.</div>
+    <div class="page-container">
+        <div class="container">
+            @if(session()->has('success'))
+                <div class="alert alert-success">You have successfully added your Social account and it is now pending review.</div>
             @endif
-            <div class="text">Below are all Social account(s) added to your account.</div>
+            <div class="text">We allow advertisers to offer specific content to promote per account select one to see whats available.</div>
             <hr>
             <div class="row">
                 <?php $count = 1; ?>
