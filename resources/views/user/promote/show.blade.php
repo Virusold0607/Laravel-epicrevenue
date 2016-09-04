@@ -5,7 +5,7 @@
         <div class="container">
             <h1 class="hero-heading">
                 @<span class="upper">{!! $account->username !!}</span>
-                Total Reach <span class="highlight">{!! number_format($account->followed_by) !!} </span>
+                {{--Total Reach <span class="highlight">{!! number_format($account->followed_by) !!} </span>--}}
             </h1>
             <p>Available below are graphics and text provided by us or our Advertisers for you to promote on this account.</p>
         </div>

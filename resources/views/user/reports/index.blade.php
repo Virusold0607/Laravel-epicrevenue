@@ -52,7 +52,7 @@
 
     <div class="clearfix"></div>
 
-    <div class="page-container dashboard">
+    <div class="page-container dashboard no-border">
         <div class="container">
             <h2>Earning Activity</h2>
 
