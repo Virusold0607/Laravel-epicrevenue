@@ -51,7 +51,7 @@
                     @endforeach
                 </div>
             @else
-                <div class="alert alert-danger">There is no specialized content available to post on this account yet. View our <a href="{!! url('/campaigns') !!}">campaigns</a> page to find products or services you can promote.</div>
+                <div class="alert alert-danger">There are no specialized content available to post on this account yet. View our <a href="{!! url('/campaigns') !!}">campaigns</a> page to find products or services you can promote.</div>
             @endif
         </div>
     </div>
