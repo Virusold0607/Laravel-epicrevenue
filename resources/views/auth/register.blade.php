@@ -4,7 +4,6 @@
     <div class="hero hero-dashboard">
         <div class="container">
             <h1 class="hero-heading">Apply to InfluencersReach</h1>
-            <h4>Along with our weekly and monthly contest, Our influencers have the ability to use points earned from getting leads, inviting people, coupon codes we randomly give out and more to earn points which they can then use to redeem rewards below.</h4>
         </div>
     </div><!-- End .hero -->
     <div class="clearfix"></div>
@@ -49,7 +48,7 @@
             </div>
         </div>
 
-        {!! Form::model($user, array('url' => '/register', 'method' => 'post', 'class' => 'col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2','style' => '')) !!}
+        {!! Form::model($user, array('url' => '/influencers/apply', 'method' => 'post', 'class' => 'col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2','style' => '')) !!}
         <div class="panel panel-default networks">
             <div class="panel-heading">Account Details</div>
             <div class="panel-body">

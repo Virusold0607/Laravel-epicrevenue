@@ -312,7 +312,7 @@ class RegisterController extends Controller
 
         $this->guard()->login($user, true);
 
-        return redirect('/register/networks');
+        return redirect('/influencers/apply/networks');
     }
 
     /**
@@ -382,7 +382,7 @@ class RegisterController extends Controller
         auth()->logout();
 
         $request->session()->flash('complete', 'yes');
-        return redirect('/register/complete');
+        return redirect('/influencers/apply/complete');
     }
 
 
@@ -418,7 +418,7 @@ class RegisterController extends Controller
             'password'  => 'required|confirmed|min:6|max:50',
             'terms'     => 'accepted',
             'privacy'   => 'accepted',
-//            'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|captcha'
         ]);
     }
 

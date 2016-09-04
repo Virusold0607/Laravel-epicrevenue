@@ -2,13 +2,13 @@
 
 @section('body')
     <div class="hero small">
-        <div class="container_12">
-            <h1 class="semibold hero_heading">Become an Influencer</h1>
+        <div class="container">
+            <h1 class="hero-heading">Become an Influencer</h1>
         </div>
     </div>
 
     <div class="page wide">
-        <div class="container regular">
+        <div class="container">
 
             <ul id='timeline'>
                 <div id='timeline2' style="width:90%"></div>
@@ -35,7 +35,7 @@
                 </li>
             </ul>
             <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                {!! Form::open(array('url' => '/register/payment', 'method' => 'post', 'class' => 'form-register')) !!}
+                {!! Form::open(array('url' => '/influencers/apply/payment', 'method' => 'post', 'class' => 'form-register')) !!}
                     {{-- Was there an error? --}}
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">

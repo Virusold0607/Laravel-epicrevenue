@@ -21,8 +21,8 @@ Route::get('/track/{campaign_id}/{user_id}/{subid1?}/{subid2?}/{subid3?}/{subid4
 // Routes for guest users
 Route::group(['middleware' => 'guest'], function () {
     // Registration routes...
-    Route::get('/register', 'Auth\RegisterController@getRegister');
-    Route::post('/register', 'Auth\RegisterController@postRegister');
+    Route::get('/influencers/apply', 'Auth\RegisterController@getRegister');
+    Route::post('/influencers/apply', 'Auth\RegisterController@postRegister');
 
     //Invite Controller
     Route::get('/invite/{id}', 'InviteController@getId');
@@ -36,19 +36,19 @@ Route::group(['middleware' => 'guest'], function () {
 
 });
 
-Route::get('/register/complete', 'Auth\RegisterController@getRegisterComplete');
+Route::get('/influencers/apply/complete', 'Auth\RegisterController@getRegisterComplete');
 Route::get('/emailconfirm/{id}/{email_confirm_code}', 'Auth\RegisterController@confirmEmail');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/login/check', 'Auth\LoginController@checkpoint');
 
     // Registration
-    Route::get('/register/networks', 'Auth\RegisterController@getRegisterNetworks');
-    Route::post('/register/networks', 'Auth\RegisterController@postRegisterNetworks');
-    Route::post('/register/networks/instagram/{username}', 'Auth\RegisterController@handleInstagramVerification');
-    Route::get('/register/networks/{service}/callback', 'Auth\RegisterController@getRegisterSocialAccount');
-    Route::get('/register/payment', 'Auth\RegisterController@getRegisterPayment');
-    Route::post('/register/payment', 'Auth\RegisterController@postRegisterPayment');
+    Route::get('/influencers/apply/networks', 'Auth\RegisterController@getRegisterNetworks');
+    Route::post('/influencers/apply/networks', 'Auth\RegisterController@postRegisterNetworks');
+    Route::post('/influencers/apply/networks/instagram/{username}', 'Auth\RegisterController@handleInstagramVerification');
+    Route::get('/influencers/apply/networks/{service}/callback', 'Auth\RegisterController@getRegisterSocialAccount');
+    Route::get('/influencers/apply/payment', 'Auth\RegisterController@getRegisterPayment');
+    Route::post('/influencers/apply/payment', 'Auth\RegisterController@postRegisterPayment');
 
     Route::get('/register/facebook/callback', 'Auth\RegisterController@handleFacebookCallback');
     Route::get('/register/twitter/callback', 'Auth\RegisterController@handleTwitterCallback');

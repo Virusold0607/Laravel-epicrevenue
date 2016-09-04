@@ -1,9 +1,9 @@
 @extends('shared/layout')
 
 @section('body')
-    <div class="hero small">
-        <div class="container_12">
-            <h1 class="semibold hero_heading">Reset Password</h1>
+    <div class="hero hero-txt">
+        <div class="container">
+            <h1 class="hero-heading">Reset Password</h1>
         </div>
     </div>
 

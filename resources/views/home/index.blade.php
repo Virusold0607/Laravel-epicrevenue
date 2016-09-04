@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
-                <a href="{{ url('/register') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Become an Influencer</a>
+                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Become an Influencer</a>
             </div>
         </div><!-- End .hero -->
 
@@ -50,7 +50,7 @@
             <div class="clearfix"></div>
 
             <div>
-                <a href="{{ url('/register') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Apply Now</a> <a href="{{ url('/influencers') }}" class="btn btn-gray btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Learn More</a>
+                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Apply Now</a> <a href="{{ url('/influencers') }}" class="btn btn-gray btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Learn More</a>
             </div>
         </div>
 
@@ -63,7 +63,7 @@
             <h2 style="margin-top:10px; margin-bottom: 20px;">Track your reach</h2>
             <p>From our tracking panel you will be able to see how much clicks your page is driving as well as the amount of revenue being generated <b>in real-time</b>.</p>
             <div class="col-xs-12" style="height:20px;"></div>
-            <a href="{{ url('/register') }}" class="btn btn-default btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Join Now!</a>
+            <a href="{{ url('/influencers/apply') }}" class="btn btn-default btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Join Now!</a>
         </div>
 
         <div class="clearfix"></div>
