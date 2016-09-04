@@ -16,7 +16,7 @@
 
     <div class="clearfix"></div>
 
-    <div class="page-container">
+    <div class="page-container no-border">
         <div class="container">
             @if(session()->has('success'))
                 <div class="alert alert-success">You have successfully added your Social account and it is now pending review.</div>

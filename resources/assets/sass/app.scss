@@ -45,6 +45,10 @@ body {
     box-shadow: none;
   }
 
+  &.no-border {
+    border: none;
+  }
+
   &.background-gray {
     background: #f8f8f8;
   }
