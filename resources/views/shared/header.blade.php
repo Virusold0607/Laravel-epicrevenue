@@ -54,7 +54,7 @@
                         {{--<li><a href="{{ url('/contact') }}">Contact Us</a></li>--}}
 
                         <li><a href="{{ url('/login') }}" class="sign_in">Sign in</a></li>
-                        <li><a class="sign_up" href="{{ url('/register') }}">Sign Up</a></li>
+                        <li><a class="sign_up" href="{{ url('/influencers/apply') }}">Sign Up</a></li>
                     @endif
                 </ul>
             </div>

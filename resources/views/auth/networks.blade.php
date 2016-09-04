@@ -139,7 +139,7 @@
             <div class="clearfix"></div>
 
             <div id="next" class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" style="display: none;">
-                <a class="btn btn-primary btn-lg pull-right" href="/register/payment">Next</a>
+                <a class="btn btn-primary btn-lg pull-right" href="/influencers/apply/payment">Next</a>
             </div>
 
             <div class="clearfix"></div>
@@ -151,6 +151,12 @@
 @section('scripts')
     <script type="text/javascript">
         $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
             $('#instagram_btn').click(function () {
                 console.log('click');
                 $('#igPanel').slideDown('slow');
@@ -161,7 +167,7 @@
 
                 var username = $('#ig_username').val();
                 console.log('username: '+username);
-                $.post( "/register/networks/instagram/" + username , function( data )  {
+                $.post( "/influencers/apply/networks/instagram/" + username , function( data )  {
                     if(data == 'success') {
                         $( "#ig_result" ).removeClass("alert alert-danger");
                         $( "#ig_result" ).addClass("alert alert-success");

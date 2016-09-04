@@ -45,9 +45,9 @@ class CheckStatus
         } elseif ($this->auth->check()) {
             $status = AccountStatus::where('user_id', $this->auth->user()->id)->first();
             if ($status->any_network_added === 'no') {
-                return redirect('/register/networks/?middleware_error=1');
+                return redirect('/influencers/apply/networks/?middleware_error=1');
             } elseif ($status->any_payment_method_added === 'no') {
-                return redirect('/register/payment/?middleware_error=1');
+                return redirect('/influencers/apply/payment/?middleware_error=1');
             } elseif ($status->email_confirmed !== 'yes') {
                 $middleware_error = 'You have not confirmed your email. Confirm Your email now to confirm your account!';
                 return redirect('/login/check/?middleware_error=You have not confirmed your email. Confirm Your email now to confirm your account!');
