@@ -139,7 +139,7 @@
 
                 var username = $('#ig_username').val();
                 console.log('username: '+username);
-                $.post( "/register/networks/instagram/" + username , function( data )  {
+                $.post( "/influencers/apply/networks/instagram/" + username , function( data )  {
                     if(data == 'success') {
                         $( "#ig_result" ).removeClass("alert alert-danger");
                         $( "#ig_result" ).addClass("alert alert-success");
