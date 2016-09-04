@@ -1,14 +1,16 @@
 @extends('shared/layout')
 
 @section('body')
-    <div class="hero hero-txt">
+    <div class="hero hero-dashboard">
         <div class="container">
-            <h1 class="hero-heading">Become a Influencer</h1>
+            <h1 class="hero-heading">Apply to InfluencersReach</h1>
+            <h4>Along with our weekly and monthly contest, Our influencers have the ability to use points earned from getting leads, inviting people, coupon codes we randomly give out and more to earn points which they can then use to redeem rewards below.</h4>
         </div>
-    </div>
+    </div><!-- End .hero -->
+    <div class="clearfix"></div>
+    <div class="container" style="height:60px;"></div>
 
     <div class="container">
-
         <ul id='timeline'>
             <span id='timeline2' style="width:25%"></span>
             <li class='work'>
