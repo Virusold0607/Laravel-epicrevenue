@@ -123,6 +123,12 @@
 @section('scripts')
     <script type="text/javascript">
         $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
             $('#instagram_btn').click(function () {
                 console.log('click');
                 $('#igPanel').slideDown('slow');
