@@ -132,8 +132,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     // Admin
     Route::get('/', 'Admin\AdminController@index');
 
-    Route::get('/postbacks/{id}/delete', 'Admin\PostbackController@destroy');
     Route::resource('/postbacks', 'Admin\PostbackController');
+    Route::get('/postbacks/{id}/delete', 'Admin\PostbackController@destroy');
 
     // Campaigns
     Route::get('/campaigns/categories', 'Admin\CampaignController@categories');
