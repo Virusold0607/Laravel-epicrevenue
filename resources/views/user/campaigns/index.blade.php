@@ -5,7 +5,7 @@
         <div class="container">
             @if(auth()->check())
                 <h1 class="hero-heading">Campaigns</h1>
-                <h4>Search this page for a campaign to promote on your account.</h4>
+                <p class="hero-p">Search this page for a campaign to promote on your account.</p>
             @else
                 <div class="campaigns-join row">
                     <div class="col-sm-8">
