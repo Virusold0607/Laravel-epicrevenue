@@ -63,11 +63,9 @@
                             <a href="{{ url('/campaigns/') }}"><div class="category_item_div @if($category_selected === 0) category_selected @endif">All categories <span class="num">{!! \App\Models\Campaign::mobile()->incent()->active()->count() !!}</span></div></a>
                         </h4>
                         @foreach($categories as $category)
-                            @if($category->campaigns()->mobile()->incent()->active()->count())
-                                <h4>
-                                    <a href="{{ url('/campaigns?category='.$category->id) }}"><div class="category_item_div @if($category_selected === $category->id) category_selected @endif">{{ $category->name }}<span class="num">{!! $category->campaigns()->mobile()->incent()->active()->count() !!}</span></div></a>
-                                </h4>
-                            @endif
+                            <h4>
+                                <a href="{{ url('/campaigns?category='.$category->id) }}"><div class="category_item_div @if($category_selected === $category->id) category_selected @endif">{{ $category->name }}<span class="num">{!! $category->campaigns()->mobile()->incent()->active()->count() !!}</span></div></a>
+                            </h4>
                         @endforeach
                     </div>
                 </div>

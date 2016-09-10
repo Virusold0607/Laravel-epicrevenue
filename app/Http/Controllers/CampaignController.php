@@ -37,7 +37,16 @@ class CampaignController extends Controller
         }
 
         $campaigns = $campaigns->incent()->mobile()->get();
-        $categories = CampaignsCategory::whereIn('id', Campaign::active()->incent()->mobile()->select('category_id')->get()->pluck('category_id')->toArray());
+        $categories = CampaignsCategory::whereIn(
+            'id',
+            Campaign::active()
+                ->incent()
+                ->mobile()
+                ->select('category_id')
+                ->get()
+                ->pluck('category_id')
+                ->toArray()
+        )->get();
 
         $countries = Country::all()->pluck('short_name', 'id');
         return view('user.campaigns.index')->with(compact('campaigns', 'countries', 'categories', 'category_selected'));
@@ -51,7 +60,7 @@ class CampaignController extends Controller
      */
     public function show($id)
     {
-        $campaign = Campaign::where('id', $id)->with('category', 'reports')->first();
+        $campaign = Campaign::where('id', $id)->incent()->mobile()->active()->with('category', 'reports')->firstOrFail();
         $daily_cap_status = TrackController::checkDailyCap($campaign);
         return view('user.campaigns.show')->with(array('campaign' => $campaign, 'daily_cap_status' => $daily_cap_status));
     }
