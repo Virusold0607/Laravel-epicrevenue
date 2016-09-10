@@ -30,29 +30,25 @@
         <div class="container">
             <!-- search -->
 
+            {!! Form::open(array('url' => '/campaigns/', 'method' => 'get')) !!}
             <div class="row">
                 <div class="col-sm-4">
-                    {!! Form::open(array('url' => '/campaigns/', 'method' => 'get')) !!}
-                    <div class="input-group" style="margin-bottom:5px;">
-                        <input type="text" class="form-control" name="search" placeholder="Search... Ex product name">
-                        <span class="input-group-btn">
-                              <input class="btn btn-default" type="submit" value="Search" />
-                          </span>
+                    <div class="" style="margin-bottom:5px;">
+                        <input type="text" class="form-control" name="search" placeholder="Search... Ex product name" value="{{ request()->input('search', '') }}">
                     </div>
-                    {!! Form::close() !!}
                 </div>
 
                 <div class="col-sm-4">
-                    {!! Form::open(array('url' => '/campaigns/', 'method' => 'get', 'class' => 'row')) !!}
-                    <div class="col-xs-9">
-                        {!! Form::select('country', $countries, \Request::input('country'), array('id' => 'country', 'class' => 'dropdown form-control')) !!}
+                    <div class="">
+                        {!! Form::select('country', $countries, request()->input('country'), array('id' => 'country', 'class' => 'dropdown form-control')) !!}
                     </div>
-                    <div class="col-xs-3">
-                        <input class="btn btn-default" type="submit" value="Sort" />
-                    </div>
-                    {!! Form::close() !!}
+                </div>
+
+                <div class="col-xs-4">
+                    <input class="btn btn-primary" type="submit" value="Sort" />
                 </div>
             </div>
+            {!! Form::close() !!}
 
             <div class="clearfix"></div>
 
@@ -72,6 +68,7 @@
                 <div class="col-md-9 col-sm-8">
                     <div class="campaigns">
                         @if(is_null($campaigns))
+                            <div class="container" style="height: 20px; clear: both"></div>
                             <div class="alert alert-danger" role="alert">
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                 <span class="sr-only">Error:</span>
@@ -79,6 +76,7 @@
                             </div>
                         @else
                             @if($campaigns->isEmpty())
+                                <div class="container" style="height: 20px; clear: both"></div>
                                 <div class="alert alert-danger" role="alert">
                                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>

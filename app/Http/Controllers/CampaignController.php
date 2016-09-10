@@ -21,22 +21,24 @@ class CampaignController extends Controller
     public function index(Request $request)
     {
         $category_selected = 0;
+        $campaigns = Campaign::incent()->mobile()->active();
         if ($request->has('category')) {
             $category_selected = (int) $request->category;
-            $campaign_categories = CampaignsCategory::find($category_selected);
-            if(!is_null($campaign_categories))
-                $campaigns = $campaign_categories->campaigns()->active();
-        } elseif($request->has('search')) {
-            $campaigns = Campaign::where('name', 'like', '%'.$request->search.'%')->active();
-        } elseif($request->has('country')) {
+            $campaigns = $campaigns->where('category_id', $category_selected);
+        }
+        if($request->has('search')) {
+            $campaigns = $campaigns->where('name', 'like', '%'.$request->search.'%');
+        }
+        if($request->has('country')) {
             $code = (int) $request->country;
-            $campaigns = Campaign::leftJoin('campaign_countries', 'campaigns.id', '=', 'campaign_countries.campaign_id')
-                ->where('campaign_countries.country_id', '=', $code)->active();
-        } else {
-            $campaigns = Campaign::active();
+            if($code) {
+                $campaigns = $campaigns
+                    ->leftJoin('campaign_countries', 'campaigns.id', '=', 'campaign_countries.campaign_id')
+                    ->where('campaign_countries.country_id', '=', $code);
+            }
         }
 
-        $campaigns = $campaigns->incent()->mobile()->get();
+        $campaigns = $campaigns->get();
         $categories = CampaignsCategory::whereIn(
             'id',
             Campaign::active()
@@ -48,7 +50,13 @@ class CampaignController extends Controller
                 ->toArray()
         )->get();
 
-        $countries = Country::all()->pluck('short_name', 'id');
+        $countries = Country::all();
+        $country = new Country();
+        $country->short_name = 'All Countries';
+        $country->id = 0;
+        $countries = $countries->push($country)
+                                ->sortBy('id')
+                                ->pluck('short_name', 'id');
         return view('user.campaigns.index')->with(compact('campaigns', 'countries', 'categories', 'category_selected'));
     }
 
