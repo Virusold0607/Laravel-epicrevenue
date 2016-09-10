@@ -22,23 +22,22 @@ class CampaignController extends Controller
     {
         $category_selected = 0;
         if ($request->has('category')) {
-            $category_selected = (int)$request->category;
-            $campaigns = CampaignsCategory::find($category_selected);
-            if(!is_null($campaigns))
-                $campaigns = $campaigns->campaigns()->active()->get();
+            $category_selected = (int) $request->category;
+            $campaign_categories = CampaignsCategory::find($category_selected);
+            if(!is_null($campaign_categories))
+                $campaigns = $campaign_categories->campaigns()->active();
         } elseif($request->has('search')) {
-            $campaigns = Campaign::where('name', 'like', '%'.$request->search.'%')->active()->get();
+            $campaigns = Campaign::where('name', 'like', '%'.$request->search.'%')->active();
         } elseif($request->has('country')) {
             $code = (int) $request->country;
             $campaigns = Campaign::leftJoin('campaign_countries', 'campaigns.id', '=', 'campaign_countries.campaign_id')
-                ->where('campaign_countries.country_id', '=', $code)
-                ->where('campaigns.active', '=', 'yes')
-                ->get();
+                ->where('campaign_countries.country_id', '=', $code)->active();
         } else {
-            $campaigns = Campaign::active()->get();
+            $campaigns = Campaign::active();
         }
 
-        $categories = CampaignsCategory::all();
+        $campaigns = $campaigns->incent()->mobile()->get();
+        $categories = CampaignsCategory::whereIn('id', Campaign::active()->incent()->mobile()->select('category_id')->get()->pluck('category_id')->toArray());
 
         $countries = Country::all()->pluck('short_name', 'id');
         return view('user.campaigns.index')->with(compact('campaigns', 'countries', 'categories', 'category_selected'));

@@ -1,12 +1,13 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero">
+    <div class="hero hero-dashboard">
         <div class="container">
             <h1 class="hero-heading">Add Social Account</h1>
         </div>
     </div>
-    <div class="page">
+    <div class="clearfix"></div>
+    <div class="page-container no-border">
         <div class="container">
 
             <form action="/networks" method="post" class="form-register networks col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">

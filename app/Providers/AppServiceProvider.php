@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
         $navbar_inverse = false;
         $pages = [
             '/', 'influencers', 'advertisers',
-            'networks', 'influencers/apply/networks', 'influencers/apply/payment',
+            'influencers/apply/networks', 'influencers/apply/payment',
         ];
         foreach ($pages as $page) {
 //            if (request()->path() == $page || starts_with(request()->path(), $page))
