@@ -97,5 +97,21 @@ class Campaign extends Model
     {
         return $query->where('incent', 'yes');
     }
+
+
+    /**
+     * Scope a query to only include active campaigns.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeIncentAndMobile($query, $condition = true)
+    {
+        if($condition) {
+            $where = [['incent' , '=', 'yes'], ['mobile' , '=', 'yes']];
+        } else {
+            $where = [['incent' , '!=', 'yes'], ['mobile' , '!=', 'yes']];
+        }
+        return $query->where($where);
+    }
 }
 

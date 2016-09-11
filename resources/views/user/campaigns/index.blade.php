@@ -56,11 +56,11 @@
                 <div class="col-md-3 col-sm-4">
                     <div class="category_panel_div">
                         <h4>
-                            <a href="{{ url('/campaigns/') }}"><div class="category_item_div @if($category_selected === 0) category_selected @endif">All categories <span class="num">{!! \App\Models\Campaign::mobile()->active()->count() !!}</span></div></a>
+                            <a href="{{ url('/campaigns/') }}"><div class="category_item_div @if($category_selected === 0) category_selected @endif">All categories <span class="num">{!! \App\Models\Campaign::incentAndMobile(false)->active()->count() !!}</span></div></a>
                         </h4>
                         @foreach($categories as $category)
                             <h4>
-                                <a href="{{ url('/campaigns?category='.$category->id) }}"><div class="category_item_div @if($category_selected === $category->id) category_selected @endif">{{ $category->name }}<span class="num">{!! $category->campaigns()->mobile()->active()->count() !!}</span></div></a>
+                                <a href="{{ url('/campaigns?category='.$category->id) }}"><div class="category_item_div @if($category_selected === $category->id) category_selected @endif">{{ $category->name }}<span class="num">{!! $category->campaigns()->incentAndMobile(false)->active()->count() !!}</span></div></a>
                             </h4>
                         @endforeach
                     </div>
