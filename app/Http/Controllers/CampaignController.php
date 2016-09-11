@@ -21,7 +21,7 @@ class CampaignController extends Controller
     public function index(Request $request)
     {
         $category_selected = 0;
-        $campaigns = Campaign::incent()->mobile()->active();
+        $campaigns = Campaign::mobile()->active();
         if ($request->has('category')) {
             $category_selected = (int) $request->category;
             $campaigns = $campaigns->where('category_id', $category_selected);
@@ -42,7 +42,6 @@ class CampaignController extends Controller
         $categories = CampaignsCategory::whereIn(
             'id',
             Campaign::active()
-                ->incent()
                 ->mobile()
                 ->select('category_id')
                 ->get()
@@ -68,7 +67,7 @@ class CampaignController extends Controller
      */
     public function show($id)
     {
-        $campaign = Campaign::where('id', $id)->incent()->mobile()->active()->with('category', 'reports')->firstOrFail();
+        $campaign = Campaign::where('id', $id)->mobile()->active()->with('category', 'reports')->firstOrFail();
         $daily_cap_status = TrackController::checkDailyCap($campaign);
         return view('user.campaigns.show')->with(array('campaign' => $campaign, 'daily_cap_status' => $daily_cap_status));
     }
