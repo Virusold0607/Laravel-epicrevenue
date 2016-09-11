@@ -17,12 +17,8 @@
             <div class="c-info-post">{{ $campaign->description }}</div>
             <div class="c-info-req">
                 <h5><strong>Requirements:</strong></h5>
-                <div>$f{{ $campaign->requirements }}</div>
+                <div>{{ $campaign->requirements }}</div>
             </div>
-            {{--<div class="c-info-link">--}}
-            {{--<h5>Promotion Link</h5>--}}
-            {{--<div class="alert alert-info" role="alert">Below is the URL to promote this campaign. <strong>You are only allowed to promote on the approved accounts <a href="{{ url('/promote/') }}">here</a></strong>.</div>--}}
-            {{--</div>--}}
 
             <div class="container" style="height: 20px;"></div>
             @unless($daily_cap_status)
