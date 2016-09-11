@@ -64,7 +64,7 @@
                             {!! Form::open(array('url' => 'admin/campaigns/rates', 'method' => 'put')) !!}
                                 {!! Form::hidden('return_path', 'admin/campaigns/rates') !!}
                                 {!! Form::hidden('rate_id', $r->id) !!}
-                                {!! Form::number('rate', $r->rate, array('required' => 'required')) !!}
+                                {!! Form::number('rate', $r->rate, array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01', 'required' => 'required')) !!}
                                 {!! Form::select('rate_status', [ 0 => 'Pending', 'yes' => 'Approved', 'no' => 'Denied']) !!}
                                 {!! Form::submit('Update') !!}
                             {!! Form::close() !!}
