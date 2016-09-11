@@ -11,7 +11,7 @@
             <tr>
                 <td valign="top"><b>Select campaign(s):</b></td>
                 <td>
-                    {!! Form::select('campaigns[]', $campaigns->lists('name', 'id'), null, array('multiple', 'required' => 'required', 'style' => 'width: 500px; height: 300px;')) !!}
+                    {!! Form::select('campaigns[]', $campaigns->pluck('name', 'id'), null, array('multiple', 'required' => 'required', 'style' => 'width: 500px; height: 300px;')) !!}
                 </td>
             </tr>
             <tr>
