@@ -30,8 +30,8 @@
                 <div class="alert alert-success" role="alert">Tax details (xxx-xx-xx{!! $tax_details->tax_id !!}) submitted on {!! \Carbon\Carbon::now()->format('d/m/y') !!}. You can update your tax details at any time by re-submitting the form below.</div>
             @endif
             <div class="alert alert-info" role="alert">
-                <h2>Request for Taxpayer Identification Number and Certification</h2>
-                <h3>InfluencersReach LLC</h3>
+                <h4>Request for Taxpayer Identification Number and Certification</h4>
+                <h5>InfluencersReach LLC</h5>
                 <p>All tax IDs are encrypted before they are stored in our database. Your privacy is important to us.</p>
             </div>
             <div class="panel panel-default">
