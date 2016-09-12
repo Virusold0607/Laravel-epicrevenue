@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CampaignRate;
 use App\Models\CampaignsCategory;
 use Illuminate\Http\Request;
 
@@ -68,8 +69,9 @@ class CampaignController extends Controller
     public function show($id)
     {
         $campaign = Campaign::where('id', $id)->incentAndMobile(false)->active()->with('category', 'reports')->firstOrFail();
+        $custom_rate = CampaignRate::where(['active' => 'yes', 'campaign_id' => (int) $id, 'user_id' => (int) auth()->user()->id])->first();
         $daily_cap_status = TrackController::checkDailyCap($campaign);
-        return view('user.campaigns.show')->with(array('campaign' => $campaign, 'daily_cap_status' => $daily_cap_status));
+        return view('user.campaigns.show')->with(array('campaign' => $campaign, 'daily_cap_status' => $daily_cap_status, 'custom_rate' => $custom_rate));
     }
 
 }

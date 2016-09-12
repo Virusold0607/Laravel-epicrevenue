@@ -3,7 +3,11 @@
     <div class="hero hero-gradient">
         <div class="container">
             <h1 class="hero-heading">{{ $campaign->name }}</h1>
-            <p class="get-piad">Get paid <b>${{ $campaign->rate }}</b> per lead.</p>
+            @if( !is_null( $custom_rate ) )
+                <p class="get-piad">Get paid <span style="text-decoration: line-through;">${{ $campaign->rate }} </span><b>${{ $custom_rate->rate }}</b> per lead.</p>
+            @else
+                <p class="get-piad">Get paid <b>${{ $campaign->rate }}</b> per lead. </p>
+            @endif
         </div>
     </div>
     <div class="clearfix"></div>
