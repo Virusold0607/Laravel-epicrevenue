@@ -31,7 +31,6 @@
             @endif
             <div class="alert alert-info" role="alert">
                 <h4>Request for Taxpayer Identification Number and Certification</h4>
-                <h5>InfluencersReach LLC</h5>
                 <p>All tax IDs are encrypted before they are stored in our database. Your privacy is important to us.</p>
             </div>
             <div class="panel panel-default">

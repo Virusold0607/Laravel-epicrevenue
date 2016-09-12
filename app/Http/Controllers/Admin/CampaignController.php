@@ -55,9 +55,9 @@ class CampaignController extends Controller
     {
         $rate = CampaignRate::findOrFail( (int) $request->input('rate_id') );
         if($request->input('rate_status') === 'yes' || $request->input('rate_status') === 'no')
-            $request->active = $request->input('rate_status');
+            $rate->active = $request->input('rate_status');
         else
-            $request->active =  null;
+            $rate->active =  null;
         $rate->rate = (float) $request->input('rate');
         $rate->save();
         return redirect($request->input('return_path'));
