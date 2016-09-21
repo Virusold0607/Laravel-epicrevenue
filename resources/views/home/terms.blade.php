@@ -26,6 +26,8 @@
             <h3>7. Governing Law</h3>
             <p>Any claim relating to Influencers Reach's web site shall be governed by the laws of the State of New York without regard to its conflict of law provisions.</p>
             <p>General Terms and Conditions applicable to Use of a Web Site.</p>
+            <h3>8. Taxes</h3>
+            <p>Commissions & earnings generated through Influencers Reach may be subject to tax liability. Any tax reporting or tax liability from Influencers Reach earnings is the sole responsibility of the Publisher. Publishers that submit tax details to Influencers Reach authorize that their tax details may be shared with IRS authorized e-file providers to file tax forms such as form 1099.</p>
         </div>
     </div>
 @endsection
