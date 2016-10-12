@@ -19,8 +19,8 @@
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     <IfModule mod_headers.c>
-        Header set Access-Control-Allow-Origin "*"
-        Header set Access-Control-Allow-Headers "Content-Type"
-        Header set Access-Control-Allow-Methods "GET,POST"
+        Header add Access-Control-Allow-Origin "*"
+        Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type"
+        Header add Access-Control-Allow-Methods "PUT, GET, POST"
     </IfModule>
 </IfModule>
