@@ -410,10 +410,10 @@ class ApiController extends Controller
 
     public function wallJson(Request $request, $key)
     {
-//        header('Access-Control-Allow-Origin: *');
-//        header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-//        header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
-//        header('Access-Control-Allow-Credentials: true');
+       header('Access-Control-Allow-Origin: *');
+       header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+       header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
+       header('Access-Control-Allow-Credentials: true');
 
         $target_country = (int) $request->input('target_country', 1);
         $target_device = (int) $request->input('target_device', 1);
