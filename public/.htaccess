@@ -18,7 +18,4 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    Header add Access-Control-Allow-Origin "*"
-    Header add Access-Control-Allow-Methods: "GET,OPTIONS"
-    Header add Access-Control-Allow-Headers: "Origin,Content-Type,Accept,Authorization,X-Request-With"
 </IfModule>

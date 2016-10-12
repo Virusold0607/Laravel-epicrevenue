@@ -506,6 +506,11 @@ class ApiController extends Controller
 
     public function wall(Request $request, $key)
     {
+       header('Access-Control-Allow-Origin: *');
+       header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+       header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
+       header('Access-Control-Allow-Credentials: true');
+       
         $url = $request->input('url');
         $leads_needed = (int) $request->input('ln', 1);
         $agent  = new Agent();
