@@ -423,7 +423,7 @@ class ApiController extends Controller
         $leads_needed = (int) $request->input('ln', null);
         $agent  = new Agent();
         $matchedTargets = $unMatchedTargets = $withNoTargets = array();
-        $geoIP = geoip()->getLocation($request->getClientIp());
+        $geoIP = \GeoIP::getLocation($request->getClientIp());
 
         $api = UserApi::where('key', $key)->first();
         if(is_null($api))
@@ -515,7 +515,7 @@ class ApiController extends Controller
         $leads_needed = (int) $request->input('ln', 1);
         $agent  = new Agent();
         $matchedTargets = $unMatchedTargets = $withNoTargets = array();
-        $geoIP = geoip()->getLocation($request->getClientIp());
+        $geoIP = \GeoIP::getLocation($request->getClientIp());
 
         $string = '<link href="'.url('/api/wall/IR-mobile-wall.css').'" rel="stylesheet" type="text/css"/>';
         $string .= '<div class="ir-apps-container">'; // Start Container
