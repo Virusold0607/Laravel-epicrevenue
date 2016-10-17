@@ -183,7 +183,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
-        Torann\GeoIP\GeoIPServiceProvider::class,
+        \Torann\GeoIP\GeoIPServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
 
     ],
@@ -237,7 +237,7 @@ return [
         'Html'       => Collective\Html\HtmlFacade::class,
         'Socialite'  => Laravel\Socialite\Facades\Socialite::class,
         'Instagram'  => MetzWeb\Instagram\Instagram::class,
-        'GeoIP'      => Torann\GeoIP\GeoIPFacade::class,
+        'GeoIP'      => \Torann\GeoIP\Facades\GeoIP::class,
         'Agent'      => Jenssegers\Agent\Facades\Agent::class,
     ],
 
