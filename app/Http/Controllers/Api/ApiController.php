@@ -425,6 +425,8 @@ class ApiController extends Controller
         $matchedTargets = $unMatchedTargets = $withNoTargets = array();
         $geoIP = \GeoIP::getLocation($request->getClientIp());
 
+        dd((array) $geoIP);
+
         $api = UserApi::where('key', $key)->first();
         if(is_null($api))
         {
