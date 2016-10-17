@@ -446,9 +446,9 @@ class ApiController extends Controller
                 if($campaign->activeTargets->isEmpty()) {
                     $withNoTargets[] = (int) $campaign->id;
                 } else {
-                    $target_matched = $this->getTargetMostMatched($campaign->activeTargets, $agent, $geoIP);
+                    $target_matched = $this->getTargetMostMatched($campaign->activeTargets, $agent, (array) $geoIP);
                     $target = $campaign->targets()->where('id', (int) $target_matched)->first();
-                    $match_target = $this->matchTarget($target, $agent, $geoIP, $target_device, $target_country, $target_os);
+                    $match_target = $this->matchTarget($target, $agent, (array) $geoIP, $target_device, $target_country, $target_os);
                     if (($match_target['device'] === true || is_null($match_target['device'])) &&
                         ($match_target['country'] === true || is_null($match_target['country'])) &&
                         ($match_target['os'] === true || is_null($match_target['os'])) )
@@ -551,9 +551,9 @@ class ApiController extends Controller
                 if($campaign->activeTargets->isEmpty()) {
                     $withNoTargets[] = (int) $campaign->id;
                 } else {
-                    $target_matched = $this->getTargetMostMatched($campaign->activeTargets, $agent, $geoIP);
+                    $target_matched = $this->getTargetMostMatched($campaign->activeTargets, $agent, (array) $geoIP);
                     $target = $campaign->targets()->where('id', (int) $target_matched)->first();
-                    $match_target = $this->matchTarget($target, $agent, $geoIP);
+                    $match_target = $this->matchTarget($target, $agent, (array) $geoIP);
                     if (($match_target['device'] === true || is_null($match_target['device'])) &&
                         ($match_target['country'] === true || is_null($match_target['country'])) &&
                         ($match_target['os'] === true || is_null($match_target['os'])) )
