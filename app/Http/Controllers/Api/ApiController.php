@@ -425,8 +425,6 @@ class ApiController extends Controller
         $matchedTargets = $unMatchedTargets = $withNoTargets = array();
         $geoIP = \GeoIP::getLocation($request->getClientIp());
 
-        dd((array) $geoIP);
-
         $api = UserApi::where('key', $key)->first();
         if(is_null($api))
         {
@@ -448,9 +446,9 @@ class ApiController extends Controller
                 if($campaign->activeTargets->isEmpty()) {
                     $withNoTargets[] = (int) $campaign->id;
                 } else {
-                    $target_matched = $this->getTargetMostMatched($campaign->activeTargets, $agent, (array) $geoIP);
+                    $target_matched = $this->getTargetMostMatched($campaign->activeTargets, $agent, $geoIP);
                     $target = $campaign->targets()->where('id', (int) $target_matched)->first();
-                    $match_target = $this->matchTarget($target, $agent, (array) $geoIP, $target_device, $target_country, $target_os);
+                    $match_target = $this->matchTarget($target, $agent, $geoIP, $target_device, $target_country, $target_os);
                     if (($match_target['device'] === true || is_null($match_target['device'])) &&
                         ($match_target['country'] === true || is_null($match_target['country'])) &&
                         ($match_target['os'] === true || is_null($match_target['os'])) )
@@ -553,9 +551,9 @@ class ApiController extends Controller
                 if($campaign->activeTargets->isEmpty()) {
                     $withNoTargets[] = (int) $campaign->id;
                 } else {
-                    $target_matched = $this->getTargetMostMatched($campaign->activeTargets, $agent, (array) $geoIP);
+                    $target_matched = $this->getTargetMostMatched($campaign->activeTargets, $agent,  $geoIP);
                     $target = $campaign->targets()->where('id', (int) $target_matched)->first();
-                    $match_target = $this->matchTarget($target, $agent, (array) $geoIP);
+                    $match_target = $this->matchTarget($target, $agent, $geoIP);
                     if (($match_target['device'] === true || is_null($match_target['device'])) &&
                         ($match_target['country'] === true || is_null($match_target['country'])) &&
                         ($match_target['os'] === true || is_null($match_target['os'])) )
@@ -677,7 +675,7 @@ class ApiController extends Controller
             return 'Unknown';
     }
 
-    private function matchTarget($campaign_target, Agent $agent, Array $geoIP, $target_device = true, $target_country = true, $target_os = true)
+    private function matchTarget($campaign_target, Agent $agent, $geoIP, $target_device = true, $target_country = true, $target_os = true)
     {
         if ($this->getDevice($agent) === $campaign_target->device || !$target_device)
             $target['device'] = true;
@@ -686,7 +684,7 @@ class ApiController extends Controller
         else
             $target['device'] = false;
 
-        if ($geoIP['country'] == $campaign_target->country || !$target_country)
+        if ($geoIP->country == $campaign_target->country || !$target_country)
             $target['country'] = true;
         elseif (is_null($campaign_target->country) || empty($campaign_target->country))
             $target['country'] = null;
@@ -704,7 +702,7 @@ class ApiController extends Controller
     }
 
 
-    private function getTargetMostMatched($campaign_targets, Agent $agent, Array $geoIP, $target_device = true, $target_country = true, $target_os = true)
+    private function getTargetMostMatched($campaign_targets, Agent $agent, $geoIP, $target_device = true, $target_country = true, $target_os = true)
     {
         // Make Sure We have atleast one target for campaign
         if($campaign_targets->isEmpty())
@@ -718,7 +716,7 @@ class ApiController extends Controller
                 $targets[$i]['device'] = true;
             else
                 $targets[$i]['device'] = false;
-            if($geoIP['country'] == $campaign_target->country || !$target_country)
+            if($geoIP->country == $campaign_target->country || !$target_country)
                 $targets[$i]['country'] = true;
             else
                 $targets[$i]['country'] = false;
@@ -754,7 +752,7 @@ class ApiController extends Controller
         foreach($campaign_countries as $allowed_country)
         {
             if($target_country) {
-                if($allowed_country->short_name === $geoIP['country'])
+                if($allowed_country->short_name === $geoIP->country)
                     return true;
             } else {
                 return true;
