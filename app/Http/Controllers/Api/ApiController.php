@@ -493,7 +493,7 @@ class ApiController extends Controller
             $campaigns->forget($keys);
 
 
-            dd($geoIP);
+            dd(collect($geoIP));
             $data['user_id'] = (int) $api->user_id;
             $data['campaigns'] = $campaigns;
             $data['url'] = $url;
