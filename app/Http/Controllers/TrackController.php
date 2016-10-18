@@ -144,14 +144,14 @@ class TrackController extends Controller
         $report->ref_url     = $request->server('HTTP_REFERER');
         $report->user_agent  = $request->server('HTTP_USER_AGENT');
 
-        if(! is_null($geoIP['city']))
-            $report->city        = $geoIP['city'];
-        if(! is_null($geoIP['state']))
-            $report->state       = $geoIP['state'];
-        if(! is_null($geoIP['country']))
-            $report->country     = $geoIP['isoCode'];
-        if(! is_null($geoIP['postal_code']))
-            $report->postal      = $geoIP['postal_code'];
+        if(! is_null($geoIP->city))
+            $report->city        = $geoIP->city;
+        if(! is_null($geoIP->state))
+            $report->state       = $geoIP->state;
+        if(! is_null($geoIP->country))
+            $report->country     = $geoIP->isoCode;
+        if(! is_null($geoIP->postal_code))
+            $report->postal      = $geoIP->postal_code;
 
         $report->credit_hash = $user->id . $campaign->id . strtotime(\Carbon\Carbon::now()) . str_random();
         $report->subid1      = $subid1;
@@ -230,7 +230,7 @@ class TrackController extends Controller
             return 'Unknown';
     }
 
-    private function matchTarget($campaign_target, Agent $agent, Array $geoIP)
+    private function matchTarget($campaign_target, Agent $agent, $geoIP)
     {
         if ($this->getDevice($agent) === $campaign_target->device)
             $target['device'] = true;
@@ -239,7 +239,7 @@ class TrackController extends Controller
         else
             $target['device'] = false;
 
-        if ($geoIP['country'] == $campaign_target->country)
+        if ($geoIP->country == $campaign_target->country)
             $target['country'] = true;
         elseif (is_null($campaign_target->country) || empty($campaign_target->country))
             $target['country'] = null;
@@ -257,7 +257,7 @@ class TrackController extends Controller
     }
 
 
-    private function getTargetMostMatched($campaign_targets, Agent $agent, Array $geoIP)
+    private function getTargetMostMatched($campaign_targets, Agent $agent, $geoIP)
     {
         // Make Sure We have atleast one target for campaign
         if($campaign_targets->isEmpty())
@@ -271,7 +271,7 @@ class TrackController extends Controller
                 $targets[$i]['device'] = true;
             else
                 $targets[$i]['device'] = false;
-            if($geoIP['country'] == $campaign_target->country)
+            if($geoIP->country == $campaign_target->country)
                 $targets[$i]['country'] = true;
             else
                 $targets[$i]['country'] = false;
@@ -306,7 +306,7 @@ class TrackController extends Controller
     {
         foreach($campaign_countries as $allowed_country)
         {
-            if($allowed_country->short_name == $geoIP['country'])
+            if($allowed_country->short_name == $geoIP->country)
                 return true;
         }
         return false;
