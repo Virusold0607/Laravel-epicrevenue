@@ -492,12 +492,13 @@ class ApiController extends Controller
             }
             $campaigns->forget($keys);
 
-
-            dd($geoIP[0]);
+            foreach((array) $geoIP as $index => $geo){
+                $location = (array) $geo;
+            }
             $data['user_id'] = (int) $api->user_id;
             $data['campaigns'] = $campaigns;
             $data['url'] = $url;
-            $data['location'] = (array) $geoIP->location;
+            $data['location'] = (array) $location;
             $data['leads_needed'] = $leads_needed;
             $data['device'] = $this->getDevice($agent);
         }
