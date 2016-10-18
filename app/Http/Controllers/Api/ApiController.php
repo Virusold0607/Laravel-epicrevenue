@@ -496,7 +496,7 @@ class ApiController extends Controller
             $data['user_id'] = (int) $api->user_id;
             $data['campaigns'] = $campaigns;
             $data['url'] = $url;
-            $data['location'] = $geoIP;
+            $data['location'] = (array) $geoIP;
             $data['leads_needed'] = $leads_needed;
             $data['device'] = $this->getDevice($agent);
         }
