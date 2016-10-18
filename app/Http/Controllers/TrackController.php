@@ -149,7 +149,7 @@ class TrackController extends Controller
         if(! is_null($geoIP->state))
             $report->state       = $geoIP->state;
         if(! is_null($geoIP->country))
-            $report->country     = $geoIP->isoCode;
+            $report->country     = !is_null( $geoIP->isoCode ) ? $geoIP->isoCode : !is_null( $geoIP->country ) ? $geoIP->country : "Unknown";
         if(! is_null($geoIP->postal_code))
             $report->postal      = $geoIP->postal_code;
 
