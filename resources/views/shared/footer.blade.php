@@ -5,7 +5,7 @@
             <div class="col-sm-4 col-xs-12">
                 <h3 class="footer-brand">influencers<strong>reach</strong></h3>
             </div>
-            <div class="row col-sm-8">
+            <div class="col-sm-8">
                 <div class="col-sm-4 col-xs-12">
                     <ul>
                         <li class="footertitle">Navigation</li>
