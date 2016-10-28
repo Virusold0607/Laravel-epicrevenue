@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/test', function () {
-    dd(\Carbon::now());
-});
-
 
 // Track Controller
 Route::get('/track/postback/{veri_slot}', 'TrackController@postback');
