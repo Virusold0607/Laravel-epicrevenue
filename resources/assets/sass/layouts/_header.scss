@@ -54,6 +54,12 @@ nav.navbar-default {
       opacity: 0.9;
     }
   }
+
+  @media screen and (max-width: $screen-sm) {
+    .navbar-nav > li {
+      width: 100%;      
+    }
+  }
 }
 
 header.transparent-header {

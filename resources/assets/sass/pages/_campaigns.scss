@@ -1,11 +1,3 @@
-@media screen and (max-width: $screen-sm) {
-  .campaigns {
-    clear: both;
-    .camp-box {
-        margin: 20px 0;
-    }
-  }
-}
 .category_panel_div {
   float: left;
   width: 100%;
@@ -49,5 +41,15 @@
   p {
     line-height: 1.5;
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .campaigns {
+    clear: both;
+    .camp-box {
+        margin: 15px 0;
+        padding: 7px;
+    }
   }
 }
