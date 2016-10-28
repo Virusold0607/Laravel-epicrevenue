@@ -1,3 +1,11 @@
+@media screen and (min-width: 770px) {
+  .campaigns {
+    clear: both;
+    .camp-box {
+        margin: 20px 0;
+    }
+  }
+}
 .category_panel_div {
   float: left;
   width: 100%;

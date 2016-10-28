@@ -20,6 +20,12 @@ body {
   //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
 }
 
+@media screen and (min-width: 770px) {
+  .page-container {
+    padding: 50px 20px;
+  }
+}
+
 .page-container {
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
   -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
