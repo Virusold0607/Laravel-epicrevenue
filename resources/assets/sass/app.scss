@@ -20,7 +20,7 @@ body {
   //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (max-width: 770px) {
   .page-container {
     padding: 50px 20px;
   }
