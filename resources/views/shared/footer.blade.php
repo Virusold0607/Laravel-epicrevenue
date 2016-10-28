@@ -2,12 +2,12 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-xs-12">
+            <div class="col-sm-4 col-xs-12 hidden-sm">
                 <h3 class="footer-brand">influencers<strong>reach</strong></h3>
             </div>
             <div class="col-sm-8">
                 <div class="col-sm-4 col-xs-12">
-                    <ul>
+                    <ul class="border-dashed">
                         <li class="footertitle">Navigation</li>
                         <li>
                             <a href="{{ url('/about') }}">About</a>
@@ -24,7 +24,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-4 col-xs-12">
-                    <ul>
+                    <ul class="border-dashed">
                         <li class="footertitle">Legal</li>
                         <li>
                             <a href="{{ url('/privacy') }} ">Privacy Policy</a>

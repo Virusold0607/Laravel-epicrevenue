@@ -84,7 +84,9 @@
 
   .footer {
     ul {
-      border-bottom: 1px dashed rgba(35, 33, 33, 0.36);
+      &.border-dashed {
+        border-bottom: 1px dashed rgba(35, 33, 33, 0.36);
+      }
       border-right: 0;
       list-style: none;
       padding-left: 0;
@@ -117,7 +119,6 @@
       text-align: center;
       margin-bottom: 20px;
       padding-bottom: 20px;
-      border-bottom: 1px dashed rgba(35, 33, 33, 0.36);
     }
 
 

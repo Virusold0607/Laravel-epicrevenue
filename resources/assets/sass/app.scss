@@ -64,7 +64,7 @@ body {
   }
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: $screen-sm) {
   .page-container {
     padding: 50px 20px;
   }
