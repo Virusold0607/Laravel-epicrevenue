@@ -2,7 +2,7 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-xs-12 hidden-sm">
+            <div class="col-sm-4 col-xs-12 hidden-sm hidden-xs">
                 <h3 class="footer-brand">influencers<strong>reach</strong></h3>
             </div>
             <div class="col-sm-8">
