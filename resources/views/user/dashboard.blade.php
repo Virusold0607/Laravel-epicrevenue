@@ -34,7 +34,7 @@
                             {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
                         @endif
                     </h3>
-                    <h5 class="font-dark-gray">Today Calculate CR</h5>
+                    <h5 class="font-dark-gray">Today CR</h5>
                 </div>
                 <div class="hero-stat-border"></div>
                 <div class="hero-stat">
