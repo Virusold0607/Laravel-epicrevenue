@@ -32,9 +32,9 @@ class InviteController extends Controller
         return view('user.invite')->with(compact('referrals', 'active', 'inactive', 'earn'));
     }
 	
-	public function getId($id){
-		
-		return redirect('/register')->withCookie(cookie()->forever('refer', $id));
+	public function getId($id)
+    {	
+		return redirect('/influencers/register')->withCookie(cookie()->forever('refer', $id));
 	}
 
 	public function showCo(){
