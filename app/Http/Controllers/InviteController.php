@@ -34,7 +34,7 @@ class InviteController extends Controller
 	
 	public function getId($id)
     {	
-		return redirect('/influencers/register')->withCookie(cookie()->forever('refer', $id));
+		return redirect('/influencers/apply')->withCookie(cookie()->forever('refer', $id));
 	}
 
 	public function showCo(){
