@@ -1,5 +1,6 @@
 @import "variables";
 
+@import "node_modules/material-design-lite/src/material-design-lite";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "bower_components/components-font-awesome/scss/font-awesome";
 
@@ -91,3 +92,5 @@ body {
 @import "pages/dashboard";
 @import "pages/promote";
 @import "pages/campaigns";
+
+@import "template";
