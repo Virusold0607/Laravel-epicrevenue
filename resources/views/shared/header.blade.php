@@ -58,7 +58,7 @@
             @endif
         </div>
         <span class="android-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+            <img class="android-logo-image" src="/images/logo1.png">
         </span>
     </div>
 </div>

@@ -65,6 +65,11 @@ a img{
   height: 45px;
   width: auto;
 }
+@media screen and (min-width: 786px) {
+  .android-logo-image {
+    height: 38px;
+  }
+}
 
 
 .android-header {
@@ -554,6 +559,10 @@ a img{
   justify-content: flex-end;
   padding: 16px;
   height: 151px;
+  color: #ffffff;
+}
+a.mdl-navigation__link {
+  text-decoration: none;
 }
 
 li.mdl-menu__item > a.mdl-navigation__link {
@@ -561,4 +570,10 @@ li.mdl-menu__item > a.mdl-navigation__link {
     height: 100%;
     display: block;
     padding-top: 12px;
+}
+
+@media screen and (min-width: 786px) {
+  .android-header .mdl-layout__drawer-button{
+      display: none;
+  }
 }
