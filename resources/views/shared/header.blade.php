@@ -1,4 +1,4 @@
-<div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+<div class="android-header mdl-layout__header mdl-layout__header--waterfall is-casting-shadow">
     <div class="mdl-layout__header-row">
         <span class="android-title mdl-layout-title">
             <img class="android-logo-image" src="/images/logo1.png">
