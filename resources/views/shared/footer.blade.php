@@ -34,17 +34,6 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-4 col-xs-12">
-                    <ul>
-                        <li class="footertitle">Get Connected</li>
-                        <li class="social-icons">
-                            <a target="_blank" href="https://www.facebook.com/influencersreach"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a target="_blank" href="https://twitter.com/useinfluencers"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a target="_blank" href="https://www.google.com/+Influencersreach"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                            <a target="_blank" href="https://instagram.com/influencersreach/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
 
             </div>
         </div>

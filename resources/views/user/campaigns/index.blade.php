@@ -2,7 +2,7 @@
 @section('body')
 
     <div class="hero hero-dashboard">
-        <div class="container">
+        <div class="">
             @if(auth()->check())
                 <h1 class="hero-heading">Campaigns</h1>
                 <p class="hero-p">Search this page for a campaign to promote on your account.</p>
@@ -56,13 +56,37 @@
                 <div class="col-md-3 col-sm-4">
                     <div class="category_panel_div">
                         <h4>
-                            <a href="{{ url('/campaigns/') }}"><div class="category_item_div @if($category_selected === 0) category_selected @endif">All categories <span class="num">{!! \App\Models\Campaign::incentAndMobile(false)->active()->count() !!}</span></div></a>
+                            @if($category_selected !== 0)
+                                <a href="#">
+                                    <div class="category_item_div category_selected">
+                                        {!! \App\Models\Campaign::where('id', (int) $category_selected)->incentAndMobile(false)->active()->first()->name !!} <span class="caret" id="campaigns_button"></span>
+                                    </div>
+                                </a>
+                            @else
+                                <a href="#" id="campaigns_button">
+                                    <div class="category_item_div @if($category_selected === 0) category_selected @endif">
+                                        All categories <span class="caret"></span>
+                                    </div>
+                                </a>
+                            @endif
                         </h4>
-                        @foreach($categories as $category)
+                        <div id="campaigns_list" style="display:none;">
                             <h4>
-                                <a href="{{ url('/campaigns?category='.$category->id) }}"><div class="category_item_div @if($category_selected === $category->id) category_selected @endif">{{ $category->name }}<span class="num">{!! $category->campaigns()->incentAndMobile(false)->active()->count() !!}</span></div></a>
+                                <a href="{{ url('/campaigns/') }}">
+                                    <div class="category_item_div @if($category_selected === 0) category_selected @endif">
+                                        All categories <span class="num">{!! \App\Models\Campaign::incentAndMobile(false)->active()->count() !!}</span>
+                                    </div>
+                                </a>
                             </h4>
-                        @endforeach
+                            @foreach($categories as $category)
+                                <a href="{{ url('/campaigns?category='.$category->id) }}">
+                                    <h4>
+                                        <div class="category_item_div @if($category_selected === $category->id) category_selected @endif">{{ $category->name }}<span class="num">{!! $category->campaigns()->incentAndMobile(false)->active()->count() !!}</span>
+                                        </div>
+                                    </h4>
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-8">
@@ -114,4 +138,22 @@
     <div class="container">
         <hr>
     </div>
+@endsection
+
+
+@section('scripts')
+        <script>
+        $(document).ready(function() {
+                var campaigns_show = false;
+                $("#campaigns_button").click(function() {
+                    if(!campaigns_show){
+                        $('#campaigns_list').toggle('show');
+                        var campaigns_show = true;
+                    }else{
+                        $('#campaigns_list').toggle('hide');
+                        var campaigns_show = false;
+                    }
+                });
+        });
+        </script>
 @endsection
