@@ -50,43 +50,27 @@
             </div>
             {!! Form::close() !!}
 
+            <div class="row campaign_categories_mobile">
+                <div class="col-sm-4">
+                    <div class="">
+                        {!! Form::select('category', $categories->pluck('name', 'id'), request()->input('category', 0), array('id' => 'category', 'class' => 'dropdown form-control')) !!}
+                    </div>
+                </div>
+            </div>        
+
             <div class="clearfix"></div>
 
             <div class="col-sm-12 row">
-                <div class="col-md-3 col-sm-4">
+                <div class="col-md-3 col-sm-4 campaign_categories_desktop">
                     <div class="category_panel_div">
-                        <h4>
-                            @if($category_selected !== 0)
-                                <a href="#">
-                                    <div class="category_item_div category_selected">
-                                        {!! \App\Models\Campaign::where('id', (int) $category_selected)->incentAndMobile(false)->active()->first()->name !!} <span class="caret" id="campaigns_button"></span>
+                        @foreach($categories as $category)
+                            <a href="{{ url('/campaigns?category='.$category->id) }}">
+                                <h4>
+                                    <div class="category_item_div @if($category_selected === $category->id) category_selected @endif">{{ $category->name }}<span class="num">@if($category->id !== 0){!! $category->campaigns()->incentAndMobile(false)->active()->count() !!} @else {!! \App\Models\Campaign::incentAndMobile(false)->active()->count() !!}@endif</span>
                                     </div>
-                                </a>
-                            @else
-                                <a href="#" id="campaigns_button">
-                                    <div class="category_item_div @if($category_selected === 0) category_selected @endif">
-                                        All categories <span class="caret"></span>
-                                    </div>
-                                </a>
-                            @endif
-                        </h4>
-                        <div id="campaigns_list" style="display:none;">
-                            <h4>
-                                <a href="{{ url('/campaigns/') }}">
-                                    <div class="category_item_div @if($category_selected === 0) category_selected @endif">
-                                        All categories <span class="num">{!! \App\Models\Campaign::incentAndMobile(false)->active()->count() !!}</span>
-                                    </div>
-                                </a>
-                            </h4>
-                            @foreach($categories as $category)
-                                <a href="{{ url('/campaigns?category='.$category->id) }}">
-                                    <h4>
-                                        <div class="category_item_div @if($category_selected === $category->id) category_selected @endif">{{ $category->name }}<span class="num">{!! $category->campaigns()->incentAndMobile(false)->active()->count() !!}</span>
-                                        </div>
-                                    </h4>
-                                </a>
-                            @endforeach
-                        </div>
+                                </h4>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-8">
@@ -108,7 +92,7 @@
                                 </div>
                             @endif
                             @foreach($campaigns as $campaign)
-                                <div class="camp-box row container-fluid">
+                                <div class="camp-box row">
                                     <div class="col-sm-3">
                                         <img class="img-responsive" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
                                     </div>
@@ -140,20 +124,12 @@
     </div>
 @endsection
 
-
 @section('scripts')
         <script>
         $(document).ready(function() {
-                var campaigns_show = false;
-                $("#campaigns_button").click(function() {
-                    if(!campaigns_show){
-                        $('#campaigns_list').toggle('show');
-                        var campaigns_show = true;
-                    }else{
-                        $('#campaigns_list').toggle('hide');
-                        var campaigns_show = false;
-                    }
-                });
+            $('#category').on('change', function() {
+                window.location = "{{ env('APP_URL', 'https://influencersreach.com') }}/campaigns?category="+$(this).val();
+            });
         });
         </script>
 @endsection

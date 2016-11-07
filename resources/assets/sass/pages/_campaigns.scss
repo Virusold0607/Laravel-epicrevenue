@@ -12,6 +12,9 @@
   width: 100%;
   margin-bottom: 20px;
 }
+.category_item {
+  font-size: 18px;
+}
 .category_item_div .num {
   float: right;
   background-color: #3b76ed;
@@ -29,6 +32,18 @@
   border-color: #28b204;
   color: #28b204;
   cursor: pointer;
+}
+
+@media screen and (min-width: $screen-sm) {
+  .campaign_categories_mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .campaign_categories_desktop {
+    display: none;
+  }
 }
 
 .camp-box {

@@ -50,6 +50,13 @@ class CampaignController extends Controller
                 ->toArray()
         )->get();
 
+
+        $category = new CampaignsCategory();
+        $category->name = 'All Categories';
+        $category->id = 0;
+        $categories = $categories->push($category)
+                                ->sortBy('id');
+
         $countries = Country::all();
         $country = new Country();
         $country->short_name = 'All Countries';
