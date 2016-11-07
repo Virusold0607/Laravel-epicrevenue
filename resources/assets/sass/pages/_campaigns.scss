@@ -59,12 +59,18 @@
   }
 }
 
+@media screen and (max-width: $screen-sm){
+  .camp-box .col-sm-9 {
+    padding: 0;
+  }
+}
+
 @media screen and (max-width: $screen-sm) {
   .campaigns {
     clear: both;
     .camp-box {
         margin: 15px 0;
-        padding: 7px;
+        padding: 10px;
     }
   }
 }
