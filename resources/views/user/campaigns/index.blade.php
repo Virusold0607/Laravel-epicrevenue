@@ -71,7 +71,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-md-9 col-sm-8">
+                <div class="col-md-9 col-sm-8" style="padding:0;">
                     <div class="campaigns">
                         @if(is_null($campaigns))
                             <div class="container" style="height: 20px; clear: both"></div>
