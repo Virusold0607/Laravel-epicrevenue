@@ -44,19 +44,17 @@
                     </div>
                 </div>
 
+                <div class="col-sm-4 campaign_categories_mobile">
+                    <div class="">
+                        {!! Form::select('category', $categories->pluck('name', 'id'), request()->input('category', 0), array('id' => 'category', 'class' => 'dropdown form-control')) !!}
+                    </div>
+                </div>
+
                 <div class="col-xs-4">
                     <input class="btn btn-primary" type="submit" value="Sort" />
                 </div>
             </div>
             {!! Form::close() !!}
-
-            <div class="row campaign_categories_mobile">
-                <div class="col-sm-4">
-                    <div class="">
-                        {!! Form::select('category', $categories->pluck('name', 'id'), request()->input('category', 0), array('id' => 'category', 'class' => 'dropdown form-control')) !!}
-                    </div>
-                </div>
-            </div>        
 
             <div class="clearfix"></div>
 
