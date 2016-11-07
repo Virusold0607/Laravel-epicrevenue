@@ -121,13 +121,3 @@
         <hr>
     </div>
 @endsection
-
-@section('scripts')
-        <script>
-        $(document).ready(function() {
-            $('#category').on('change', function() {
-                window.location = "{{ env('APP_URL', 'https://influencersreach.com') }}/campaigns?category="+$(this).val();
-            });
-        });
-        </script>
-@endsection
