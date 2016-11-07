@@ -84,6 +84,7 @@ a img{
   .android-header .mdl-layout__drawer-button {
     background: transparent;
     color: #767777;
+    right: 0;
   }
 
   .android-header .mdl-navigation__link {
@@ -472,7 +473,8 @@ a img{
   .android-mobile-title {
     display: block !important;
     position: absolute;
-    left: calc(50% - 70px);
+    /*left: calc(50% - 70px);*/
+    left: 10px;
     top: 12px;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }

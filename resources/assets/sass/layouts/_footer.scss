@@ -1,6 +1,12 @@
 .home .footer {
   border-top: 0;
 }
+
+@media screen and (max-width: $screen-sm) {
+  .footer {
+    display: none;
+  }
+}
 .footer {
   float: left;
   width: 100%;
