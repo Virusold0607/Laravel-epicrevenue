@@ -1,3 +1,21 @@
+.mdl-layout__header--waterfall.is-casting-shadow{
+  box-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
+
+.nav-user {
+  & > * {
+    display: inline-block;
+  }
+  img {
+    width: 25px;
+  }
+}
+
+.mdl-layout-title.rm-padding-left {
+  padding-left: 10px;
+  height: 90px;
+}
+/*
 nav.navbar-default {
   margin-bottom: 0;
   background-color: #fff;
@@ -137,19 +155,4 @@ nav.navbar-inverse {
       opacity: 0.9;
     }
   }
-}
-
-
-.nav-user {
-  & > * {
-    display: inline-block;
-  }
-  img {
-    width: 25px;
-  }
-}
-
-.mdl-layout-title.rm-padding-left {
-  padding-left: 10px;
-  height: 90px;
-}
+}*/

@@ -60,6 +60,15 @@
         <span class="android-mobile-title mdl-layout-title">
             <img class="android-logo-image" src="/images/logo1.png">
         </span>
+        <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li class="mdl-menu__item"><a href="{{ url('/invite') }}" class="mdl-typography--text-uppercase">Invite</a></li>
+            <li class="mdl-menu__item"><a href="{{ url('/payouts') }}" class="mdl-typography--text-uppercase">Payouts</a></li>
+            <li class="mdl-menu__item"><a href="{{ url('/settings') }}" class="mdl-typography--text-uppercase">Settings</a></li>
+            <li class="mdl-menu__item"><a href="{{ url('/logout') }}" class="mdl-typography--text-uppercase">Logout</a></li>
+        </ul>
     </div>
 </div>
 
