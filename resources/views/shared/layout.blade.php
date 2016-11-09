@@ -17,7 +17,7 @@
 </head>
 <body @if(isset($bodyid))id="{{ $bodyid }}"@endif>
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout @if($is_mobile) mdl-js-layout @endif mdl-layout--fixed-header">
     @include('shared/header')
 
     <div class="mdl-layout__content">

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Jenssegers\Agent\Agent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,7 +25,14 @@ class AppServiceProvider extends ServiceProvider
                 $navbar_inverse = true;
         }
 
+        
+        $is_mobile = false;
+        $agent = new Agent();
+        if($agent->isMobile() || $agent->isTablet())
+            $is_mobile = true;
+
         view()->share('navbar_inverse', $navbar_inverse);
+        view()->share('is_mobile', $is_mobile);
     }
 
     /**

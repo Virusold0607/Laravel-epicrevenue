@@ -37,6 +37,13 @@ a img{
   padding: 0;
 }
 
+@media screen and (max-height: 400px) {
+  .mdl-layout__content {
+    flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+  }
+}
+
 .android-search-box .mdl-textfield__input {
   color: rgba(0, 0, 0, 0.87);
 }
