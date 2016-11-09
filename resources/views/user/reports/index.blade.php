@@ -63,7 +63,7 @@
             <div class="clearfix"></div>
             <div class="container" style="height: 50px;"></div>
 
-            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 no-padding">
                 <div class="panel panel-default">
                     <div class="panel-heading">Sort Reports</div>
                     <div class="panel-body">
@@ -104,7 +104,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12">
+            <div class="col-xs-12 no-padding">
                 <div class="panel panel-default">
                     <div class="panel-heading">Reports</div>
                     <div class="panel-body">

@@ -67,9 +67,17 @@ body {
 
 @media screen and (max-width: $screen-sm) {
   .page-container {
-    padding: 50px 20px;
+    padding: 50px 0px;
   }
 }
+/*
+@media screen and (max-width: $screen-sm) {
+  .mobile-adjustment.container {
+      padding-left: 0;
+      padding-right: 0;
+  }
+}*/
+
 
 @import "layouts/header";
 @import "layouts/footer";
