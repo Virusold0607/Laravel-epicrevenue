@@ -26,8 +26,8 @@
 
     <div class="clearfix"></div>
 
-    <div class="page-container no-shadow no-border">
-        <div class="">
+    <div class="page-container no-shadow no-border campaigns-page">
+        <div class="container">
             <!-- search -->
 
             {!! Form::open(array('url' => '/campaigns/', 'method' => 'get')) !!}

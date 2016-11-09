@@ -146,8 +146,8 @@
         <a class="mdl-navigation__link" href="{{ url('/contact') }}">Contact</a>
         <div class="android-drawer-separator"></div>
         <span class="mdl-navigation__link" href="">Find us</span>
-        <a class="mdl-navigation__link" href="#">InfluencersReach on Facebook</a>
-        <a class="mdl-navigation__link" href="#">InfluencersReach on Twitter</a>
+        <a class="mdl-navigation__link" href="https://twitter.com/useinfluencers/" target="_blank">InfluencersReach on Facebook</a>
+        <a class="mdl-navigation__link" href="https://facebook.com/influencersreach/" target="_blank">InfluencersReach on Twitter</a>
     </nav>
 </div>
 
