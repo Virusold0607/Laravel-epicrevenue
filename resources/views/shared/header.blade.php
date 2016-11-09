@@ -92,20 +92,22 @@
 
     @if(auth()->check())
         <header class="drawer-header">
-            <img src="{{ url('/images/default-user-icon.png') }}" class="avatar">
-            <div class="avatar-dropdown">
-                <span>{{ auth()->user()->firstname }}</span>
-                <div class="mdl-layout-spacer"></div>
-                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                    <i class="material-icons" role="presentation">arrow_drop_down</i>
-                    <span class="visuallyhidden">Account</span>
-                </button>
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                    <li class="mdl-menu__item"><a href="{{ url('/invite') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Invite</a></li>
-                    <li class="mdl-menu__item"><a href="{{ url('/payouts') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Payouts</a></li>
-                    <li class="mdl-menu__item"><a href="{{ url('/settings') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Settings</a></li>
-                    <li class="mdl-menu__item"><a href="{{ url('/logout') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Logout</a></li>
-                </ul>
+            <div>
+                <img src="{{ url('/images/default-user-icon.png') }}" class="avatar">
+                <div class="avatar-dropdown">
+                    <span>{{ auth()->user()->firstname }}</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">arrow_drop_down</i>
+                        <span class="visuallyhidden">Account</span>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                        <li class="mdl-menu__item"><a href="{{ url('/invite') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Invite</a></li>
+                        <li class="mdl-menu__item"><a href="{{ url('/payouts') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Payouts</a></li>
+                        <li class="mdl-menu__item"><a href="{{ url('/settings') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Settings</a></li>
+                        <li class="mdl-menu__item"><a href="{{ url('/logout') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Logout</a></li>
+                    </ul>
+                </div>
             </div>
         </header>
     @else

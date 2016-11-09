@@ -545,21 +545,24 @@ a img{
   border-radius: 24px;
 }
 .avatar-dropdown {
-  display: flex;
+  display: inline-flex;
   position: relative;
   flex-direction: row;
   align-items: center;
-  width: 100%;
+  padding-left: 7px;
 }
 .drawer-header {
   background-color: #4c71b7;
   box-sizing: border-box;
-  display: flex;
+  display: inline;
   flex-direction: column;
   justify-content: flex-end;
   padding: 16px;
-  height: 151px;
+  /*height: 151px;*/
   color: #ffffff;
+}
+.drawer-header > div {
+  padding-top: 10px;
 }
 a.mdl-navigation__link {
   text-decoration: none;
