@@ -8,14 +8,11 @@
     width: 49%;
     margin: 0 auto;
     text-align: center;
+  }
+  .user-stat-group {
     border-bottom: 0.5px solid #ccc;
   }
-  .user-stat:nth-child(1) {
-    border-top: 0.5px solid #ccc;
-  }
-  .user-stat:nth-child(2) {
-    border-top: 0.5px solid #ccc;
-  }
+
   .user-stat:nth-child(even) {
     border-left: 0.5px solid #ccc;
   }
