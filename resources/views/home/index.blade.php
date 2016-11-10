@@ -20,7 +20,7 @@
 
         <div class="hero hero-sm" style="background-image: none;background-color: #3b76ed;">
             <div class="container">
-                <div class="row text-center">
+                <div class="row text-center offers">
                     <div class="col-sm-4">
                         <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-1.png" alt="See More"></div>
                         <h4>#SEEMORE</h4>
