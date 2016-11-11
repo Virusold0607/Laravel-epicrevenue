@@ -85,8 +85,7 @@ class CampaignStats extends Command
         {
             $date = Carbon::parse( Carbon::now()->subDays($i - 1)->toDateString() );
 
-            $campaigns = Campaign::where('id', 10)->get();
-            // $campaigns = Campaign::all();
+            $campaigns = Campaign::all();
 
             foreach($campaigns as $campaign)
             {
