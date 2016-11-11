@@ -40,7 +40,7 @@ class CampaignStats extends Command
      */
     public function handle()
     {
-        $this->lastDay();
+        $this->all();
     }
 
 
@@ -59,7 +59,7 @@ class CampaignStats extends Command
                 $stats = new Stats();
 
             $stats->campaign_id = (int) $campaign->id;
-            $stats->clicks = $campaign->reports()->date($date)->click()->count();
+            $stats->clicks = $campaign->reports()->date($date)->count();
             $stats->leads = $stats->clicks + $campaign->reports()->date($date)->lead()->count();
             $stats->date = $date->toDateString();
 
@@ -94,7 +94,7 @@ class CampaignStats extends Command
                     $stats = new Stats();
 
                 $stats->campaign_id = (int) $campaign->id;
-                $stats->clicks = $stats->leads + $campaign->reports()->date($date)->click()->count();
+                $stats->clicks = $stats->leads + $campaign->reports()->date($date)->count();
                 $stats->leads = $campaign->reports()->date($date)->lead()->count();
                 $stats->date = $date->toDateString();
 
