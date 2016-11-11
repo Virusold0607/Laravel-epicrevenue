@@ -20,6 +20,8 @@ class CreateCampaignStatsTable extends Migration
             $table->integer('clicks');
             $table->integer('leads');
             $table->decimal('cr', 4);
+            $table->decimal('revenue', 4);
+            $table->decimal('profit', 4);
             $table->timestamps();
 
             // $table->foreign('campaign_id')
