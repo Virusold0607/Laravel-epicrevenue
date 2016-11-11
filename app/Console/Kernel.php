@@ -34,6 +34,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('mailchimp:sync')->daily();
         $schedule->command('mailchimp:clean')->weekly();
         $schedule->command('settle:balances')->daily();
+        $schedule->command('campaigns:stats')->daily();
     }
 
     /**
