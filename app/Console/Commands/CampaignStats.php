@@ -60,8 +60,8 @@ class CampaignStats extends Command
                 $stats = new Stats();
 
             $stats->campaign_id = (int) $campaign->id;
+            $stats->leads = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->count();
             $stats->clicks = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->count();
-            $stats->leads = (int) $stats->clicks + Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->count();
             $stats->date = $date->toDateString();
 
             $q = ($stats->clicks);
@@ -93,8 +93,8 @@ class CampaignStats extends Command
                     $stats = new Stats();
 
                 $stats->campaign_id = (int) $campaign->id;
+                $stats->leads = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->count();
                 $stats->clicks = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->count();
-                $stats->leads = (int) $stats->clicks + Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->count();
                 $stats->date = $date->toDateString();
 
                 $q = ($stats->clicks);

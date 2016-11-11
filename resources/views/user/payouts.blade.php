@@ -1,31 +1,57 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero hero-dashboard">
-        <div class="container">
-            <div class="hero-stats">
-                <div class="hero-stat">
+
+    @unless($is_mobile)
+        <div class="hero hero-dashboard">
+            <div class="container">
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <h3>${!! number_format($unpaid,2)  !!}</h3>
+                        <h5 class="font-dark-gray">Unpaid Earnings</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>${!! number_format(($cleared),2) !!}</h3>
+                        <h5 class="font-dark-gray">Cleared for Payment</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>${!! number_format(($paid),2) !!}</h3>
+                        <h5 class="font-dark-gray">Paid Earnings</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>${!! number_format($lifetime,2) !!}</h3>
+                        <h5 class="font-dark-gray">Lifetime Earnings</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @else 
+        <div class="user-stats">
+            <div class="user-stat-group top-border">
+                <div class="user-stat">
                     <h3>${!! number_format($unpaid,2)  !!}</h3>
                     <h5 class="font-dark-gray">Unpaid Earnings</h5>
                 </div>
-                <div class="hero-stat-border"></div>
-                <div class="hero-stat">
+                <div class="user-stat">
                     <h3>${!! number_format(($cleared),2) !!}</h3>
                     <h5 class="font-dark-gray">Cleared for Payment</h5>
                 </div>
-                <div class="hero-stat-border"></div>
-                <div class="hero-stat">
+            </div>
+            <div class="user-stat-group">
+                <div class="user-stat">
                     <h3>${!! number_format(($paid),2) !!}</h3>
                     <h5 class="font-dark-gray">Paid Earnings</h5>
                 </div>
-                <div class="hero-stat-border"></div>
-                <div class="hero-stat">
+                <div class="user-stat">
                     <h3>${!! number_format($lifetime,2) !!}</h3>
                     <h5 class="font-dark-gray">Lifetime Earnings</h5>
                 </div>
             </div>
         </div>
-    </div>
+    @endunless
 
     <div class="clearfix"></div>
 

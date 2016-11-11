@@ -2,20 +2,68 @@
 
 @section('body')
 
-    <div class="hero hero-dashboard">
-        <div class="container">
-            <div class="hero-stats">
-                <div class="hero-stat">
+    @unless($is_mobile)
+        <div class="hero hero-dashboard">
+            <div class="container">
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <h3>{!! $today_clicks !!}</h3>
+                        <h5 class="font-dark-gray">Today Clicks</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>{!! $today_leads !!}</h3>
+                        <h5 class="font-dark-gray">Today Leads</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>
+                            @if($today_clicks === 0)
+                                n/a
+                            @else
+                                {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
+                            @endif
+                        </h3>
+                        <h5 class="font-dark-gray">Today EPC</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>
+                            @if($today_leads + $today_clicks >= 0)
+                                {!! "n/a" !!}
+                            @else
+                                {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
+                            @endif
+                        </h3>
+                        <h5 class="font-dark-gray">Today CR</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>${!! number_format($earnings_today, 2) !!}</h3>
+                        <h5 class="font-dark-gray">Today Earnings</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>${!! number_format($earnings_month, 2) !!}</h3>
+                        <h5 class="font-dark-gray">Month Earnings</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @else 
+        <div class="user-stats">
+            <div class="user-stat-group top-border">
+                <div class="user-stat">
                     <h3>{!! $today_clicks !!}</h3>
                     <h5 class="font-dark-gray">Today Clicks</h5>
                 </div>
-                <div class="hero-stat-border"></div>
-                <div class="hero-stat">
+                <div class="user-stat">
                     <h3>{!! $today_leads !!}</h3>
                     <h5 class="font-dark-gray">Today Leads</h5>
                 </div>
-                <div class="hero-stat-border hidden-sm hidden-xs"></div>
-                <div class="hero-stat">
+            </div>
+            <div class="user-stat-group">
+                <div class="user-stat">
                     <h3>
                         @if($today_clicks === 0)
                             n/a
@@ -25,8 +73,7 @@
                     </h3>
                     <h5 class="font-dark-gray">Today EPC</h5>
                 </div>
-                <div class="hero-stat-border"></div>
-                <div class="hero-stat">
+                <div class="user-stat">
                     <h3>
                         @if($today_leads + $today_clicks >= 0)
                             {!! "n/a" !!}
@@ -36,20 +83,20 @@
                     </h3>
                     <h5 class="font-dark-gray">Today CR</h5>
                 </div>
-                <div class="hero-stat-border hidden-sm hidden-xs"></div>
-                <div class="hero-stat">
+            </div>
+            <div class="user-stat-group">
+                <div class="user-stat">
                     <h3>${!! number_format($earnings_today, 2) !!}</h3>
                     <h5 class="font-dark-gray">Today Earnings</h5>
                 </div>
-                <div class="hero-stat-border"></div>
-                <div class="hero-stat">
+                <div class="user-stat">
                     <h3>${!! number_format($earnings_month, 2) !!}</h3>
                     <h5 class="font-dark-gray">Month Earnings</h5>
                 </div>
             </div>
         </div>
-    </div>
-
+    @endunless
+    
     <div class="clearfix"></div>
 
     <div class="page-container dashboard no-border">
