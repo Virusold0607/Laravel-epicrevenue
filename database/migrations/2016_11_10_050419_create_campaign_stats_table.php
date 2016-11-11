@@ -16,7 +16,7 @@ class CreateCampaignStatsTable extends Migration
         Schema::create('campaign_stats', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('campaign_id')->index();
-            $table->timestamp('date');
+            $table->date('date');
             $table->integer('clicks');
             $table->integer('leads');
             $table->decimal('cr', 4);

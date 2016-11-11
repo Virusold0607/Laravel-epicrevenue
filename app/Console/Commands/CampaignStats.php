@@ -40,8 +40,45 @@ class CampaignStats extends Command
      */
     public function handle()
     {
+        $this->all();
+    }
+
+
+    private function lastDay()
+    {
         $date = Carbon::yesterday();
 
+        $campaigns = Campaign::where('created_at','<', $date->toDateTimeString())->get();
+
+        $bar = $this->output->createProgressBar(count($campaigns));    
+
+        foreach($campaigns as $campaign)
+        {
+            $stats = Stats::where('campaign_id', (int) $campaign->id)->where('date', $date->toDateTimeString())->first();
+            if(is_null($stats))
+                $stats = new Stats();
+
+            $stats->campaign_id = (int) $campaign->id;
+            $stats->clicks = $campaign->reports()->date($date)->click()->count();
+            $stats->leads = $stats->clicks + $campaign->reports()->date($date)->lead()->count();
+            $stats->date = $date->toDateTimeString();
+
+            $q = ($stats->clicks);
+            if($q == 0)
+                $q = 1;
+            $stats->cr = ($stats->leads / $q)  * 100;
+            $stats->save();
+
+            $bar->advance();            
+        }
+
+        $bar->finish();
+    }
+
+
+    private function all()
+    {
+        $date = Carbon::yesterday();
 
         $bar = $this->output->createProgressBar(800);    
         for($i = 800; $i >= 1; $i--)
@@ -57,11 +94,11 @@ class CampaignStats extends Command
                     $stats = new Stats();
 
                 $stats->campaign_id = (int) $campaign->id;
-                $stats->clicks = $campaign->reports()->date($date)->click()->count();
+                $stats->clicks = $stats->leads + $campaign->reports()->date($date)->click()->count();
                 $stats->leads = $campaign->reports()->date($date)->lead()->count();
                 $stats->date = $date->toDateTimeString();
 
-                $q = ($stats->leads + $stats->clicks);
+                $q = ($stats->clicks);
                 if($q == 0)
                     $q = 1;
                 $stats->cr = ($stats->leads / $q)  * 100;

@@ -141,7 +141,7 @@ class Helper
         $date = Carbon::now();
         return Report::where('user_id', auth()->user()->id)
             ->whereBetween('created_at', array($date->startOfDay()->toDateTimeString(), $date->endOfDay()->toDateTimeString()))
-            ->where('status', 1)
+            // ->where('status', 1)
             ->count();
     }
 

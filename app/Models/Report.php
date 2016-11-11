@@ -153,6 +153,7 @@ class Report extends Model
      */
     public function scopeDate($query, $date)
     {
+        $date = Carbon::parse($date->toDateString());
         $between = [$date->toDateTimeString(), $date->addDay()->subSecond()->toDateTimeString()];
         return $query->whereBetween('created_at', $between);
     }
