@@ -63,8 +63,8 @@ class CampaignStats extends Command
             $stats->campaign_id = (int) $campaign->id;
             $stats->leads = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->count();
             $stats->clicks = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->count();
-            $stats->revenue = Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->sum('network_rate');
-            $stats->profit = $stats->revenue - Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->sum('rate');
+            $stats->revenue = (int) ("0" + Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->sum('network_rate') );
+            $stats->profit = (int) ("0" + $stats->revenue - Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->sum('rate') );
             $stats->date = $date->toDateString();
 
             $q = ($stats->clicks);
@@ -98,8 +98,8 @@ class CampaignStats extends Command
                 $stats->campaign_id = (int) $campaign->id;
                 $stats->leads = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->count();
                 $stats->clicks = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->count();
-                $stats->revenue = Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->sum('network_rate');
-                $stats->profit = $stats->revenue - Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->sum('rate');
+                $stats->revenue = (int) ("0" + Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->sum('network_rate') );
+                $stats->profit = (int) ("0" + $stats->revenue - Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->sum('rate') );
                 $stats->date = $date->toDateString();
 
                 $q = ($stats->clicks);

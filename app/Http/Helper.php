@@ -9,6 +9,7 @@ use App\Models\UserBalanceHistory;
 use Carbon\Carbon;
 use Auth;
 use Illuminate\Http\Request;
+use App\Models\CampaignStats as Stats;
 
 class Helper
 {
@@ -217,8 +218,13 @@ class Helper
     }
 
 
-    public static function top_campaigns(Carbon $start, Carbon $end)
+    public static function top_campaigns( Carbon $date )
     {
-        $reports = 's';
+        $campaigns = Stats::where( 'date', $date->toDateString() )
+                    ->orderBy('cr')
+                    // ->take(10)
+                    ->get();
+
+        dd($campaigns->pluck('cr', 'campaign_id'));
     }
 }
