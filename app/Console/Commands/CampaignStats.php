@@ -61,7 +61,7 @@ class CampaignStats extends Command
             $stats->campaign_id = (int) $campaign->id;
             $stats->clicks = $campaign->reports()->date($date)->click()->count();
             $stats->leads = $stats->clicks + $campaign->reports()->date($date)->lead()->count();
-            $stats->date = $date->toDateTimeString();
+            $stats->date = $date->toDateString();
 
             $q = ($stats->clicks);
             if($q == 0)
@@ -96,7 +96,7 @@ class CampaignStats extends Command
                 $stats->campaign_id = (int) $campaign->id;
                 $stats->clicks = $stats->leads + $campaign->reports()->date($date)->click()->count();
                 $stats->leads = $campaign->reports()->date($date)->lead()->count();
-                $stats->date = $date->toDateTimeString();
+                $stats->date = $date->toDateString();
 
                 $q = ($stats->clicks);
                 if($q == 0)
