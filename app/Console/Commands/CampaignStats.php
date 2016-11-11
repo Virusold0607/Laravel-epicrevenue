@@ -41,7 +41,7 @@ class CampaignStats extends Command
      */
     public function handle()
     {
-        $this->all();
+        $this->lastDay();
     }
 
 

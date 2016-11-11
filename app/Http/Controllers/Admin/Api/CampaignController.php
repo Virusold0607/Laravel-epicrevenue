@@ -36,8 +36,8 @@ class CampaignController extends Controller
         $campaigns = $query->paginate(10);
 
         foreach($campaigns as $c):
-            $c->clicks = $c->reports()->click()->count();
-//            $c->unique_clicks = $c->reports()->click()->get()->unique(function ($item) { return $item['campaign_id']. ' ' .$item['ip']; })->count();
+            $c->clicks = $c->reports()->count();
+//            $c->unique_clicks = $c->reports()->get()->unique(function ($item) { return $item['campaign_id']. ' ' .$item['ip']; })->count();
             $c->leads = $c->reports()->lead()->count();
             $c->reversals = $c->reports()->reversal()->count();
         endforeach;
