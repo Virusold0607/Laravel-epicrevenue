@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\Campaign;
+use App\Models\Report;
 use App\Models\CampaignStats as Stats;
 use Carbon\Carbon;
 
@@ -59,8 +60,8 @@ class CampaignStats extends Command
                 $stats = new Stats();
 
             $stats->campaign_id = (int) $campaign->id;
-            $stats->clicks = $campaign->reports()->date($date)->count();
-            $stats->leads = $stats->clicks + $campaign->reports()->date($date)->lead()->count();
+            $stats->clicks = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->count();
+            $stats->leads = (int) $stats->clicks + Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->count();
             $stats->date = $date->toDateString();
 
             $q = ($stats->clicks);
@@ -78,8 +79,6 @@ class CampaignStats extends Command
 
     private function all()
     {
-        $date = Carbon::yesterday();
-
         $bar = $this->output->createProgressBar(800);    
         for($i = 800; $i >= 1; $i--)
         {
@@ -94,8 +93,8 @@ class CampaignStats extends Command
                     $stats = new Stats();
 
                 $stats->campaign_id = (int) $campaign->id;
-                $stats->clicks = $stats->leads + $campaign->reports()->date($date)->count();
-                $stats->leads = $campaign->reports()->date($date)->lead()->count();
+                $stats->clicks = (int) Report::where('campaign_id', (int) $campaign->id)->date($date)->count();
+                $stats->leads = (int) $stats->clicks + Report::where('campaign_id', (int) $campaign->id)->date($date)->lead()->count();
                 $stats->date = $date->toDateString();
 
                 $q = ($stats->clicks);
