@@ -47,9 +47,9 @@ class CampaignStats extends Command
 
     private function lastDay()
     {
-        $date = Carbon::yesterday();
+        $date = Carbon::now()->subDay();
 
-        $campaigns = Campaign::where('created_at','<', $date->toDateTimeString())->get();
+        $campaigns = Campaign::all();
 
         $bar = $this->output->createProgressBar(count($campaigns));    
 
@@ -82,9 +82,9 @@ class CampaignStats extends Command
         $bar = $this->output->createProgressBar(800);    
         for($i = 800; $i >= 1; $i--)
         {
-            $date = Carbon::today()->subDays($i);
+            $date = Carbon::now()->subDays($i - 1);
 
-            $campaigns = Campaign::where('created_at','<', $date->toDateTimeString())->get();
+            $campaigns = Campaign::all();
 
             foreach($campaigns as $campaign)
             {
