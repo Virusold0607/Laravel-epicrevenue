@@ -52,7 +52,7 @@
         </div>
     @else 
         <div class="user-stats">
-            <div class="user-stat-group">
+            <div class="user-stat-group top-border">
                 <div class="user-stat">
                     <h3>{!! $today_clicks !!}</h3>
                     <h5 class="font-dark-gray">Today Clicks</h5>

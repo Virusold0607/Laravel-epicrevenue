@@ -147,6 +147,17 @@ class Report extends Model
     }
 
     /**
+     * Scope a query to only include reports of specific time.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeDate($query, $date)
+    {
+        $between = [$date->toDateTimeString(), $date->addDay()->subSecond()->toDateTimeString()];
+        return $query->whereBetween('created_at', $between);
+    }
+
+    /**
      * Scope a query to only include today reports.
      *
      * @return \Illuminate\Database\Eloquent\Builder

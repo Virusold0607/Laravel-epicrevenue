@@ -215,4 +215,10 @@ class Helper
 
         return $chart_data;
     }
+
+
+    public static function top_campaigns(Carbon $start, Carbon $end)
+    {
+        $reports = 's';
+    }
 }

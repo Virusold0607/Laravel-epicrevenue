@@ -16,7 +16,8 @@ class Kernel extends ConsoleKernel
         Commands\MailChimpSync::class,
         Commands\MailChimpClean::class,
         Commands\SettleUserBalances::class,
-        Commands\SettleTaxDetails::class
+        Commands\SettleTaxDetails::class,
+        Commands\CampaignStats::class
     ];
 
     /**

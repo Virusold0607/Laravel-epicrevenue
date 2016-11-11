@@ -23,6 +23,13 @@ class Campaign extends Model
     }
 
 
+    /**
+     * Get the stats for the campaign.
+     */
+    public function stats()
+    {
+        return $this->hasMany('App\Models\CampaignStats', 'campaign_id');
+    }
 
     /**
      * The countries that belong to the campaign.
