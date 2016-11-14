@@ -220,11 +220,11 @@ class Helper
 
     public static function top_campaigns( Carbon $date )
     {
-        $campaigns = Stats::where( 'date', '>', $date->subDays(7)->toDateString() )
+      $campaigns = Stats::where( 'date', '>', $date->subDays(7)->toDateString() )
                     ->groupBy('campaign_id')
                     ->orderBy('cr', 'desc')
                     ->selectRaw('*,sum(cr) as cr_sum')
-                    ->with('campagin')
+                    ->with('campaign')
                     ->get()
                     ->pluck("campaign", "campaign_id");
 
