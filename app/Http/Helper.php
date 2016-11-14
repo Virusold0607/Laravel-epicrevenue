@@ -224,11 +224,16 @@ class Helper
                     ->groupBy('campaign_id')
                     ->orderBy('cr', 'desc')
                     ->selectRaw('*,sum(cr) as cr_sum')
-                    ->take(5)
-                    ->with('campaign')
+                    ->with('campagin')
                     ->get()
                     ->pluck("campaign", "campaign_id");
 
-        return $campaigns;
+        foreach($campaigns as $campaign)
+        {
+            if($campaign->incent == 'yes')
+                $campaigns->forget($campaign->id);
+        }
+
+        return $campaigns->take(5);
     }
 }
