@@ -123,8 +123,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
                                 <div class="caption">
-                                    <a href="/campaign/{!! $campaign->id !!}"><h3>{{ $campaign->name }}</h3></a>
-                                    <p>{{ $campaign->description }}</p>
+                                    <a href="/campaign/{!! $campaign->id !!}"><h4>{{ $campaign->name }}</h4></a>
                                     <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
                                 </div>
                             </div>
