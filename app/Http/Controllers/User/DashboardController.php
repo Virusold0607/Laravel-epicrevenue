@@ -30,6 +30,7 @@ class DashboardController extends Controller
         $data['earnings_today'] = Helper::earnings_today();
         $data['earnings_month'] = Helper::earnings_monthly();
         $data['earnings_graph'] = collect(Helper::earnings_chart());
+        $data['top_campaigns'] = Helper::top_campaigns(Carbon::now());
 
         return view('user.dashboard', $data);
     }

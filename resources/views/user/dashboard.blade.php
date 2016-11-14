@@ -107,6 +107,34 @@
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>
         </div>
+
+        <div class="clearfix"></div>
+
+        @if($is_mobile)
+            <div class="container" style="height: 50px;"></div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Top campaigns</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        @foreach($top_campaigns as $campaign)
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <a href="/campaign/{!! $campaign->id !!}"><h3>{{ $campaign->name }}</h3></a>
+                                    <p>{{ $campaign->description }}</p>
+                                    <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+        @endif
     </div>
 
 @endsection

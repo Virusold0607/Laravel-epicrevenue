@@ -11,12 +11,6 @@
 |
 */
 
-
-Route::get('/test', function()
-{
-    return \App\Http\Helper::top_campaigns(\Carbon\Carbon::yesterday());
-});
-
 // Track Controller
 Route::get('/track/postback/{veri_slot}', 'TrackController@postback');
 Route::get('/track/{campaign_id}/{user_id}/{subid1?}/{subid2?}/{subid3?}/{subid4?}/{subid5?}', 'TrackController@track')
