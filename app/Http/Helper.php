@@ -230,7 +230,7 @@ class Helper
 
         foreach($campaigns as $campaign)
         {
-            if($campaign->incent == 'yes')
+            if($campaign->incent == 'yes' || $campaign->active == 'no')
                 $campaigns->forget($campaign->id);
         }
 
