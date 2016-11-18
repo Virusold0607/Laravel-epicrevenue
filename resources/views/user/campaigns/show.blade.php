@@ -35,6 +35,19 @@
                 </div>
             @endunless
             <div class="clearfix" style="margin: 5px;"></div>
+
+            @unless(is_null($images))
+                <div class="row">
+                    @foreach($images as $file)
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="thumbnail">
+                                <img src="/campaign/gallery/image/{!! $campaign->id . '/' . $file !!}" alt="...">
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endunless
+
             @if(auth()->check())
                 <div class="">
                     <button id="generateBtn" type="button" class="btn btn-primary btn-extra-padding" data-toggle="modal" data-target="#myModal">Generate Your Unique Promotional Link</button>
