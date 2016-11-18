@@ -111,8 +111,8 @@ class CampaignGalleryController extends Controller
     public function update(Request $request, $id)
     {
         $campaign = Campaign::findOrFail((int) $id);
-
-        $rules = ['images' => 'required|array|max:50'];
+    
+        $rules = ['images' => 'array|max:50'];
 
         $nbr = count($request->input('images')) - 1;
         foreach(range(0, $nbr) as $index) {
