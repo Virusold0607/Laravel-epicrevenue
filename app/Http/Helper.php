@@ -185,7 +185,7 @@ class Helper
 
     public static function earnings_chart()
     {
-        $start = Carbon::now()->subMonth()->toDateTimeString();
+        $start = Carbon::now()->subDays(7)->toDateTimeString();
         $end = Carbon::now()->toDateTimeString();
         $earnings = Report::where('user_id', auth()->user()->id)
             ->where('status', 2)
