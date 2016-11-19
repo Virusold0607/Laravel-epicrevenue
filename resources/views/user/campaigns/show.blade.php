@@ -32,6 +32,7 @@
                         <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
                         <input type="text" class="form-control" id="exampleInputAmount" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
                     </div>
+                    <hr>
                 </div>
             @endunless
             <div class="clearfix" style="margin: 5px;"></div>
@@ -45,6 +46,7 @@
             <div class="clearfix" style="margin: 10px;"></div>
 
             @unless(is_null($images))
+                <h5><strong>Promotional Images:</strong></h5>
                 <div class="row">
                     @foreach($images as $file)
                         <div class="col-sm-6 col-md-4 col-lg-3">
