@@ -195,7 +195,7 @@
     <script>
         var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: {!! json_encode($earnings_graph->pluck('date')) !!},
                 datasets: [

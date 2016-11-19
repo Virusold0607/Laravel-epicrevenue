@@ -115,7 +115,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Top campaigns</h3>
+                    <h3 class="panel-title"><strong>Top campaigns</strong></h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -143,7 +143,7 @@
     <script>
         var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: {!! json_encode($earnings_graph->pluck('date')) !!},
                 datasets: [
