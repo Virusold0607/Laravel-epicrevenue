@@ -2,13 +2,32 @@
   float: left;
   width: 100%;
   min-height: 500px;
-  padding: 200px 0;
-  background: #333;
+  background: #110e25;
   //background-image: linear-gradient(rgba(0, 0, 0, 0.65) 35%, rgba(0, 0, 0, 0.73) 80%), url(/images/hero1.jpg);
-  background-image: url(/images/hero.jpg);
+  //background-image: url(/images/hero.jpg);
   background-size: cover;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
+
+  &.hero-homepage {
+    background-image: url('/images/hero-homepage.png');
+  }
+  &.hero-curved {
+    background-image: url('/images/i.png');
+  }
+
+  &.hero-influencers {
+    & h1 {
+      padding: 20px 0 20px 0;
+      margin-top: 70px;
+      font-size: 50px;
+    }
+    background-image: url('/images/curves.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat:no-repeat;
+  }
+  
   &.hero-lg {
     min-height: 600px;
     padding: 200px 0;

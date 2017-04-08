@@ -5,7 +5,7 @@
 
 @section('body')
     <div class="homepage">
-        <div class="hero hero-lg">
+        <div class="hero hero-lg hero-homepage">
             <div class="container">
                 <h1>Monetize the reach of your social media following</h1>
                 <div class="row">
@@ -18,33 +18,50 @@
             </div>
         </div><!-- End .hero -->
 
-        <div class="hero hero-sm" style="background-image: none;background-color: #3b76ed;">
+        <div class="container">
+            <h1 class="text-center"><strong>Become an Influencer</strong></h1>
+        </div>
+
+        <div class="hero hero-curved" style="background-color: transparent;">
+            <div class="container" style="height: 250px;"></div>
             <div class="container">
                 <div class="row text-center offers">
                     <div class="col-sm-4">
-                        <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-1.png" alt="See More"></div>
+                        <div class="ir-icon"><img class="img-responsive" src="/images/home/f.png" alt="See More"></div>
                         <h4>#SEEMORE</h4>
                         <p class="">See visually how your account grows, analyze your audience, target better.</p>
                     </div>
                     <div class="col-sm-4">
-                        <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-2.png" alt="MAKEMORE"></div>
+                        <div class="ir-icon"><img class="img-responsive" src="/images/home/g.png" alt="MAKEMORE"></div>
                         <h4>#MAKEMORE</h4>
                         <p class="">Paid to post, paid to drive leads, plus a lot more ways to generate revenue.</p>
                     </div>
                     <div class="col-sm-4">
-                        <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-3.png" alt="DOMORE"></div>
+                        <div class="ir-icon"><img class="img-responsive" src="/images/home/h.png" alt="DOMORE"></div>
                         <h4>#DOMORE</h4>
                         <p class="">Use our services, team and exclusive services to grow your brand.</p>
                     </div>
                 </div>
+            </div>
+            <div class="container" style="height: 300px;"></div>
+            <h1 class="text-center"><strong style="color: #000">Become an Influencer</strong></h1>
+            <div class="container" style="height: 150px;"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-2">
+                <ul>
+                    <li>Lead Generation</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <img src="/images/" alt="">
             </div>
         </div>
         <div class="clearfix"></div>
         <div class="container" style="height: 50px;"></div>
 
         <div class="container text-center">
-            <h5 class="font-gray"><strong>Join Us</strong></h5>
-            <h2 style="margin-top:10px;">Become an Influencer</h2>
             <img class="img-responsive" style="padding: 70px 0;margin: 0 auto;width: 250px;" src="https://i.imgur.com/YIisQ4r.png">
 
             <div class="clearfix"></div>

@@ -23,7 +23,7 @@
     <div class="mdl-layout__content">
         @yield('body')
 
-        <footer class="android-footer mdl-mega-footer">
+        <footer class="footer">
             @include('shared/footer')
         </footer>
     </div>
