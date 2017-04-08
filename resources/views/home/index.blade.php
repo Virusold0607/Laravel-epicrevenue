@@ -7,14 +7,17 @@
     <div class="homepage">
         <div class="hero hero-lg hero-homepage">
             <div class="container">
-                <h1>Monetize the reach of your social media following</h1>
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
+                    <div class="col-sm-8">
+                        <h1 style="text-transform: uppercase;">Monetize the reach of your social media following</h1>
+                        <div class="container" style="height: 20px;"></div>
                         <h4>Do you have a fan page, a niche page, a model page, or any other type of page with a large following?</h4>
+                        <div class="container" style="height: 8px;"></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
-                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Become an Influencer</a>
+                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <div class="container" style="height: 250px;"></div>
             </div>
         </div><!-- End .hero -->
 

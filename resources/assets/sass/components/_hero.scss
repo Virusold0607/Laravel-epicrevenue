@@ -8,9 +8,12 @@
   background-size: cover;
   text-align: center;
   margin-bottom: 150px;
-
+  
   &.hero-homepage {
     background-image: url('/images/hero-homepage.png');
+    & * {
+      text-align: left;
+    }
   }
   &.hero-curved {
     background-image: url('/images/i.png');
