@@ -40,7 +40,7 @@
                     <li>Rewards Program & Contests</li>
                 </ul>
                 <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>LEARN MORE</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="{{ url('/') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>LEARN MORE</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -74,51 +74,40 @@
             <h1 class="line-heading center">Become an Influencer</h1>
         </div>
         <div class="clearfix"></div>
-        <div class="clearfix"></div>
+        <div class="container" style="height: 30px;"></div>
         <div class="row">
             <div class="col-sm-4 col-sm-offset-2">
-                <ul>
+                <ul class="home-list">
                     <li>Lead Generation</li>
-                    <li>Over 200 live promotions</li>
+                    <li>Flat Rate Sales</li>
+                    <li>Millions of Conversion</li>
+                    <li>1000k+ Active Publishers</li>
+                    <li>No Monthly Fees</li>
+                    <li>Dedicated Account Managers</li>
                 </ul>
+                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="{{ url('/') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>LEARN MORE</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
-            <div class="col-sm-6">
-                <img src="/images/" alt="">
+            <div class="col-sm-5 col-sm-offset-1">
+                <img class="img-responsive" src="/images/home/laptop.png" alt="">
             </div>
         </div>
         <div class="clearfix"></div>
         <div class="container" style="height: 50px;"></div>
 
         <div class="container text-center">
-            <img class="img-responsive" style="padding: 70px 0;margin: 0 auto;width: 250px;" src="https://i.imgur.com/YIisQ4r.png">
-
-            <div class="clearfix"></div>
-
-            <div>
-                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Apply Now</a> <a href="{{ url('/influencers') }}" class="btn btn-gray btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Learn More</a>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-        <div class="container">
-            <hr>
-        </div>
-        <div class="container text-center">
-            <h5 class="font-dark-gray"><strong>Track</strong></h5>
-            <h2 style="margin-top:10px; margin-bottom: 20px;">Track your reach</h2>
-            <p>From our tracking panel you will be able to see how much clicks your page is driving as well as the amount of revenue being generated <b>in real-time</b>.</p>
+            <h1 class="line-heading center" style="font-weight: normal">Track your reach</h1>
+            <div class="container" style="height: 30px;"></div>
+            <p class="text-left col-sm-10" style="font-size: 16px;">From our tracking panel you will be able to see how much clicks your page is driving as well as the amount of revenue being generated <b>in real-time</b>.</p>
             <div class="col-xs-12" style="height:20px;"></div>
-            <a href="{{ url('/influencers/apply') }}" class="btn btn-default btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Join Now!</a>
+            <div class="clearfix"></div>
+            <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
 
         <div class="clearfix"></div>
-        <img class="img-responsive" src="{{ url('/images/home/curve.png') }}" alt="Graph">
-        <div class="container">
-            <hr>
-        </div>
 
         <div class="container text-center">
-            <h2 style="padding: 70px 0;">Brands we've promoted</h2>
+            <h1 class="line-heading center" style="font-weight: normal">Brands we've promoted</h1>
             <div class="row">
                 <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/ICM-Logo.png') }}" alt=""/></div>
                 <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/booking.png') }}" alt=""/></div>
