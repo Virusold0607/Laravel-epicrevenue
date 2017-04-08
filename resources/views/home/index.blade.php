@@ -5,7 +5,7 @@
 
 @section('body')
     <div class="homepage">
-        <div class="hero hero-lg hero-homepage" style="max-height: 1035px;">
+        <div class="hero hero-lg hero-homepage" style="max-height: 1000px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
@@ -29,7 +29,7 @@
         <div class="clearfix"></div>
 
         <div class="hero hero-curved" style="background-color: transparent;">
-            <div class="container" style="height: 250px;"></div>
+            <div class="container" style="height: 300px;"></div>
             <div class="container">
                 <div class="row text-center offers">
                     <div class="col-sm-4">
@@ -49,14 +49,15 @@
                     </div>
                 </div>
             </div>
-            <div class="container" style="height: 300px;"></div>
             <div class="clearfix"></div>
-            <div class="container text-center">
-                <h1 class="line-heading center">Become an Influencer</h1>
-            </div>
-            <div class="clearfix"></div>
-            <div class="container" style="height: 150px;"></div>
+            <div class="container" style="height: 500px;"></div>
         </div>
+        <div class="clearfix"></div>
+        <div class="container" style="height: 100px;"></div>
+        <div class="container text-center">
+            <h1 class="line-heading center">Become an Influencer</h1>
+        </div>
+        <div class="clearfix"></div>
         <div class="clearfix"></div>
         <div class="row">
             <div class="col-sm-4 col-sm-offset-2">
