@@ -25158,6 +25158,12 @@ h1.line-heading.center {
   margin-bottom: 0;
 }
 
+.homepage ul.home-list li {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 5px;
+}
+
 .maximize-earning {
   padding-top: 120px;
   padding-bottom: 232px;

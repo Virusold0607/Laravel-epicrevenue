@@ -27,7 +27,23 @@
             <h1 class="line-heading center">Become an Influencer</h1>
         </div>
         <div class="clearfix"></div>
-
+        <div class="container" style="height: 40px;"></div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-2">
+                <img class="img-responsive" src="/images/home/e.png" alt="">
+            </div>
+            <div class="col-sm-6">
+                <ul class="home-list">
+                    <li>Over 200 Live Promotions</li>
+                    <li>Gurantted Top Payouts</li>
+                    <li>Free Training & Tools</li>
+                    <li>Rewards Program & Contests</li>
+                </ul>
+                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>LEARN MORE</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
         <div class="hero hero-curved" style="background-color: transparent;">
             <div class="container" style="height: 300px;"></div>
             <div class="container">
@@ -63,6 +79,7 @@
             <div class="col-sm-4 col-sm-offset-2">
                 <ul>
                     <li>Lead Generation</li>
+                    <li>Over 200 live promotions</li>
                 </ul>
             </div>
             <div class="col-sm-6">
