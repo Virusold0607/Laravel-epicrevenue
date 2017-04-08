@@ -5,25 +5,28 @@
 
 @section('body')
     <div class="homepage">
-        <div class="hero hero-lg hero-homepage">
+        <div class="hero hero-lg hero-homepage" style="max-height: 1035px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
                         <h1 style="text-transform: uppercase;">Monetize the reach of your social media following</h1>
-                        <div class="container" style="height: 20px;"></div>
+                        <img src="/images/line-white.png" alt="">
+                        <div class="container" style="height: 10px;"></div>
                         <h4>Do you have a fan page, a niche page, a model page, or any other type of page with a large following?</h4>
                         <div class="container" style="height: 8px;"></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <div class="container" style="height: 250px;"></div>
+                <div class="container" style="height: 400px;"></div>
             </div>
         </div><!-- End .hero -->
 
-        <div class="container">
-            <h1 class="text-center"><strong>Become an Influencer</strong></h1>
+        <div class="clearfix"></div>
+        <div class="container text-center">
+            <h1 class="line-heading center">Become an Influencer</h1>
         </div>
+        <div class="clearfix"></div>
 
         <div class="hero hero-curved" style="background-color: transparent;">
             <div class="container" style="height: 250px;"></div>
@@ -47,7 +50,11 @@
                 </div>
             </div>
             <div class="container" style="height: 300px;"></div>
-            <h1 class="text-center"><strong style="color: #000">Become an Influencer</strong></h1>
+            <div class="clearfix"></div>
+            <div class="container text-center">
+                <h1 class="line-heading center">Become an Influencer</h1>
+            </div>
+            <div class="clearfix"></div>
             <div class="container" style="height: 150px;"></div>
         </div>
         <div class="clearfix"></div>

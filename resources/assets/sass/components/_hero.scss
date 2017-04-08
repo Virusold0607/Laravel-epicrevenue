@@ -2,35 +2,14 @@
   float: left;
   width: 100%;
   min-height: 500px;
-  background: #110e25;
+  background-color: #110e25;
   //background-image: linear-gradient(rgba(0, 0, 0, 0.65) 35%, rgba(0, 0, 0, 0.73) 80%), url(/images/hero1.jpg);
   //background-image: url(/images/hero.jpg);
-  background-size: cover;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   text-align: center;
   margin-bottom: 150px;
-  
-  &.hero-homepage {
-    background-image: url('/images/hero-homepage.png');
-    & * {
-      text-align: left;
-    }
-  }
-  &.hero-curved {
-    background-image: url('/images/i.png');
-  }
 
-  &.hero-influencers {
-    & h1 {
-      padding: 20px 0 20px 0;
-      margin-top: 70px;
-      font-size: 50px;
-    }
-    background-image: url('/images/curves.png');
-    background-size: cover;
-    background-position: bottom;
-    background-repeat:no-repeat;
-  }
-  
   &.hero-lg {
     min-height: 600px;
     padding: 200px 0;
@@ -51,6 +30,30 @@
     min-height: 300px;
     padding: 125px 0;
   }
+
+  &.hero-homepage {
+    background-image: url('/images/hero-homepage.png');
+    padding: 200px 0 0 0 ;
+    & * {
+      text-align: left;
+    }
+  }
+  &.hero-curved {
+    background-image: url('/images/i.png');
+  }
+
+  &.hero-influencers {
+    & h1 {
+      padding: 20px 0 20px 0;
+      margin-top: 70px;
+      font-size: 50px;
+    }
+    background-image: url('/images/curves.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat:no-repeat;
+  }
+
 
   &.hero-gradient {
     background: rgba(255,255,255,0.99);

@@ -24681,35 +24681,11 @@ a:hover {
   float: left;
   width: 100%;
   min-height: 500px;
-  background: #110e25;
-  background-size: cover;
+  background-color: #110e25;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   text-align: center;
   margin-bottom: 150px;
-}
-
-.hero.hero-homepage {
-  background-image: url("/images/hero-homepage.png");
-}
-
-.hero.hero-homepage * {
-  text-align: left;
-}
-
-.hero.hero-curved {
-  background-image: url("/images/i.png");
-}
-
-.hero.hero-influencers {
-  background-image: url("/images/curves.png");
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
-
-.hero.hero-influencers h1 {
-  padding: 20px 0 20px 0;
-  margin-top: 70px;
-  font-size: 50px;
 }
 
 .hero.hero-lg {
@@ -24734,6 +24710,32 @@ a:hover {
 .hero.hero-xs {
   min-height: 300px;
   padding: 125px 0;
+}
+
+.hero.hero-homepage {
+  background-image: url("/images/hero-homepage.png");
+  padding: 200px 0 0 0;
+}
+
+.hero.hero-homepage * {
+  text-align: left;
+}
+
+.hero.hero-curved {
+  background-image: url("/images/i.png");
+}
+
+.hero.hero-influencers {
+  background-image: url("/images/curves.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.hero.hero-influencers h1 {
+  padding: 20px 0 20px 0;
+  margin-top: 70px;
+  font-size: 50px;
 }
 
 .hero.hero-gradient {
@@ -25117,6 +25119,22 @@ a:hover {
   color: #333;
   background-color: #fff;
   border-color: #eee;
+}
+
+h1.line-heading {
+  background-image: url("/images/line1.png"), url("/images/line.png");
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, no-repeat;
+  padding: 16px 0;
+  font-weight: bold;
+  font-size: 65px;
+  letter-spacing: -0.13px;
+  color: #1C1C1C;
+}
+
+h1.line-heading.center {
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .homepage .info-box .info-box-icon {
