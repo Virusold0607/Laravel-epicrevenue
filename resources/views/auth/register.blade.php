@@ -96,13 +96,11 @@
                         </div>
                         <div class="container" style="height: 20px;"></div>
 
-                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin: 0 auto;display: block;">
-                            Next
-                        </button>
+                        <input type="submit" value="Next" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin: 0 auto;display: block;" />
                         <div class="container" style="height: 30px;"></div>
                     </div>
 
-                    {{--{!! Form::submit('Next', array('class' => 'btn btn-primary btn-lg pull-right')) !!}--}}
+{{--                    {!! Form::submit('Next', array('class' => 'btn btn-primary btn-lg pull-right')) !!}--}}
                 {!! Form::close() !!}
             </div>
         </div>

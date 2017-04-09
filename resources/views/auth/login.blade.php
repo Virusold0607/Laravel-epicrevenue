@@ -79,9 +79,7 @@
                             </div>
 
                             <div class="clearfix"></div>
-                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored text-center">
-                                Sign In
-                            </button>
+                            <input type="submit" value="Sign In" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin: 0 auto;display: block;" />
 
                             <div class="clearfix"></div>
                             <a class="btn btn-link text-center" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
