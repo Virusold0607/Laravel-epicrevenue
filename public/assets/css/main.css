@@ -24950,6 +24950,13 @@ h1.line-heading.center {
   font-weight: bold;
 }
 
+.register {
+  background-image: url("/images/curves-lg.png");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .or-login {
   text-transform: uppercase;
   color: #a5a5a5;
