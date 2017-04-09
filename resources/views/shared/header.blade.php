@@ -60,6 +60,8 @@
         <span class="android-mobile-title mdl-layout-title">
             <img class="android-logo-image" src="/images/logo1.png">
         </span>
+
+        @if(auth()->check())
         <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
             <i class="material-icons">more_vert</i>
         </button>
@@ -69,6 +71,7 @@
             <li class="mdl-menu__item"><a href="{{ url('/settings') }}" class="mdl-typography--text-uppercase">Settings</a></li>
             <li class="mdl-menu__item"><a href="{{ url('/logout') }}" class="mdl-typography--text-uppercase">Logout</a></li>
         </ul>
+        @endif
     </div>
 </div>
 

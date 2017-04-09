@@ -25220,16 +25220,23 @@ h1.line-heading.center {
   margin-bottom: 20px;
 }
 
-.form-login .mdl-textfield, .form-login .mdl-checkbox-center {
+.login-page {
+  background-image: url("/images/curves.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-page .form-login .mdl-textfield, .login-page .form-login .mdl-checkbox-center {
   display: block;
   margin: 0 auto;
 }
 
-.form-login .mdl-textfield {
+.login-page .form-login .mdl-textfield {
   width: 400px;
 }
 
-.form-login .mdl-button, .form-login .btn-link {
+.login-page .form-login .mdl-button, .login-page .form-login .btn-link {
   display: block;
   margin: 10px auto;
 }
