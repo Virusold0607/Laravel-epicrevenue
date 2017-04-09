@@ -10,3 +10,17 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
+.form-login {
+  .mdl-textfield, .mdl-checkbox-center {
+    display: block;
+    margin: 0 auto;
+  }
+  .mdl-textfield {
+    width: 400px;
+  }
+  .mdl-button, .btn-link {
+    display: block;
+    margin: 10px auto;
+  }
+}

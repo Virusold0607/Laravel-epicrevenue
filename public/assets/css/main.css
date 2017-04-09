@@ -25220,6 +25220,20 @@ h1.line-heading.center {
   margin-bottom: 20px;
 }
 
+.form-login .mdl-textfield, .form-login .mdl-checkbox-center {
+  display: block;
+  margin: 0 auto;
+}
+
+.form-login .mdl-textfield {
+  width: 400px;
+}
+
+.form-login .mdl-button, .form-login .btn-link {
+  display: block;
+  margin: 10px auto;
+}
+
 ul.add-networks li {
   width: 33.33333%;
   display: inline-block;
