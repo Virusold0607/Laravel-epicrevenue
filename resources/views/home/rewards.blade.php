@@ -1,7 +1,6 @@
 @extends('shared.layout')
 
 @section('body')
-
     <div class="hero hero-transparent">
         <div class="container">
             <h1 class="hero-heading">Get Rewards When You Monetize With Us</h1>
