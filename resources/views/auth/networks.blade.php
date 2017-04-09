@@ -7,31 +7,28 @@
         </div>
     </div>
     <div class="page">
+
         <div class="container">
-            <ul id='timeline'>
-                <div id='timeline2' style="width:60%"></div>
-                <li class='work'>
-                    <input class='radio' id='work5' name='works' type='radio' checked>
-                    <div class="relative">
-                        <span class='date checked'>Account Details</span>
-                        <span class='circle checked'>1</span>
+            <div class="row" id="timeline">
+                <div class="col-xs-4">
+                    <h4 class="text-center" style="height: 40px;">Account Details</h4>
+                    <div>
+                        <img src="/images/register/tick.png" alt="Step 1" style="margin: 0 auto; display: block;">
                     </div>
-                </li>
-                <li class='work'>
-                    <input class='radio' id='work4' name='works' type='radio'>
-                    <div class="relative">
-                        <span class='date checked'>Networks</span>
-                        <span class='circle checked'>2</span>
+                </div>
+                <div class="col-xs-4">
+                    <h4 class="text-center" style="height: 40px;">Networks</h4>
+                    <div>
+                        <img src="/images/register/2.png" alt="Step 2" style="margin: 0 auto; display: block;">
                     </div>
-                </li>
-                <li class='work'>
-                    <input class='radio' id='work3' name='works' type='radio'>
-                    <div class="relative">
-                        <span class='date'>Payment Method</span>
-                        <span class='circle'>3</span>
+                </div>
+                <div class="col-xs-4">
+                    <h4 class="text-center" style="height: 40px;">Payment Methods</h4>
+                    <div>
+                        <img src="/images/register/3g.png" alt="Step 3" style="margin: 0 auto; display: block;">
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
 
             <form action="/influencers/apply/networks" method="post" class="form-register networks col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                 <div class="">

@@ -54,6 +54,18 @@
     background-repeat:no-repeat;
   }
 
+  &.hero-transparent {
+    background: transparent;
+    height: initial;
+    min-height:initial;
+    & .hero-heading {
+      font-size: 50px;
+      color: #000;
+    }
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+
 
   &.hero-gradient {
     background: rgba(255,255,255,0.99);

@@ -9,31 +9,26 @@
 
     <div class="page wide">
         <div class="container">
-
-            <ul id='timeline'>
-                <div id='timeline2' style="width:90%"></div>
-                <li class='work'>
-                    <input class='radio' id='work5' name='works' type='radio' checked>
-                    <div class="relative">
-                        <span class='date checked'>Account Details</span>
-                        <span class='circle checked'>1</span>
+                <div class="row" id="timeline">
+                    <div class="col-xs-4">
+                        <h4 class="text-center" style="height: 40px;">Account Details</h4>
+                        <div>
+                            <img src="/images/register/tick.png" alt="Step 1" style="margin: 0 auto; display: block;">
+                        </div>
                     </div>
-                </li>
-                <li class='work'>
-                    <input class='radio' id='work4' name='works' type='radio'>
-                    <div class="relative">
-                        <span class='date checked'>Networks</span>
-                        <span class='circle checked'>2</span>
+                    <div class="col-xs-4">
+                        <h4 class="text-center" style="height: 40px;">Networks</h4>
+                        <div>
+                            <img src="/images/register/tick.png" alt="Step 2" style="margin: 0 auto; display: block;">
+                        </div>
                     </div>
-                </li>
-                <li class='work'>
-                    <input class='radio' id='work3' name='works' type='radio'>
-                    <div class="relative">
-                        <span class='date checked'>Payment Method</span>
-                        <span class='circle checked'>3</span>
+                    <div class="col-xs-4">
+                        <h4 class="text-center" style="height: 40px;">Payment Methods</h4>
+                        <div>
+                            <img src="/images/register/3.png" alt="Step 3" style="margin: 0 auto; display: block;">
+                        </div>
                     </div>
-                </li>
-            </ul>
+                </div>
             <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                 {!! Form::open(array('url' => '/influencers/apply/payment', 'method' => 'post', 'class' => 'form-register')) !!}
                     {{-- Was there an error? --}}

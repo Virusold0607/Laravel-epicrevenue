@@ -1,7 +1,7 @@
 <div class="android-header mdl-layout__header mdl-layout__header--waterfall is-casting-shadow">
     <div class="mdl-layout__header-row">
         <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="/images/logo1.png">
+            <img class="android-logo-image logo-img" src="/images/logo1.png">
         </span>
         <!-- Add spacer, to align navigation to the right in desktop -->
         <div class="android-header-spacer mdl-layout-spacer"></div>
