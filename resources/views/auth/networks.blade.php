@@ -1,11 +1,14 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero small">
+    <div class="hero hero-transparent">
         <div class="container">
             <h1 class="hero-heading">Become a Influencer</h1>
         </div>
-    </div>
+    </div><!-- End .hero -->
+    <div class="clearfix"></div>
+    <div class="container" style="height:60px;"></div>
+
     <div class="page">
 
         <div class="container">
