@@ -101,7 +101,7 @@
         <div class="container text-center">
             <h1 class="line-heading center" style="font-weight: normal">Track your reach</h1>
             <div class="container" style="height: 30px;"></div>
-            <p class="text-left col-sm-10" style="font-size: 16px;">From our tracking panel you will be able to see how much clicks your page is driving as well as the amount of revenue being generated <b>in real-time</b>.</p>
+            <p class="text-left col-sm-10" style="font-size: 19px; font-weight: 600;">From our tracking panel you will be able to see how much clicks your page is driving as well as the amount of revenue being generated <b>in real-time</b>.</p>
             <div class="col-xs-12" style="height:20px;"></div>
             <div class="clearfix"></div>
             <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
