@@ -45,20 +45,23 @@
         </div>
         <div class="clearfix"></div>
         <div class="hero hero-curved" style="background-color: transparent;">
-            <div class="container" style="height: 300px;"></div>
+            <div class="container visible-lg-block" style="height: 300px;"></div>
+            <div class="container visible-md-block" style="height: 200px;"></div>
+            <div class="container visible-sm-block" style="height: 100px;"></div>
+            <div class="container visible-xd-block" style="height: 50px;"></div>
             <div class="container">
                 <div class="row text-center offers">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="margin-top: 20px;margin-bottom: 50px;">
                         <div class="ir-icon"><img class="img-responsive" src="/images/home/f.png" alt="See More"></div>
                         <h4>#SEEMORE</h4>
                         <p class="">See visually how your account grows, analyze your audience, target better.</p>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="margin-top: 20px;margin-bottom: 50px;">
                         <div class="ir-icon"><img class="img-responsive" src="/images/home/g.png" alt="MAKEMORE"></div>
                         <h4>#MAKEMORE</h4>
                         <p class="">Paid to post, paid to drive leads, plus a lot more ways to generate revenue.</p>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="margin-top: 20px;margin-bottom: 50px;">
                         <div class="ir-icon"><img class="img-responsive" src="/images/home/h.png" alt="DOMORE"></div>
                         <h4>#DOMORE</h4>
                         <p class="">Use our services, team and exclusive services to grow your brand.</p>

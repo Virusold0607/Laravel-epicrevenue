@@ -24443,16 +24443,32 @@ a:hover {
 }
 
 .hero.hero-homepage {
-  background-image: url("/images/hero-homepage.png");
+  background-image: url("/images/home/hero-homepage.png");
   padding: 200px 0 0 0;
+  background-color: #fff;
 }
 
 .hero.hero-homepage * {
   text-align: left;
 }
 
+@media screen and (max-width: 768px) {
+  .hero.hero-homepage {
+    background-image: url("/images/home/hero-homepage-bottom.m.png"), url("/images/home/hero-homepage.m.png");
+    background-position: bottom, center;
+    background-size: contain,cover;
+  }
+}
+
 .hero.hero-curved {
-  background-image: url("/images/i.png");
+  background-image: url("/images/home/hero-homepage-1.png");
+  background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .hero.hero-curved {
+    background-image: url("/images/home/hero-homepage-1.m.png");
+  }
 }
 
 .hero.hero-influencers {

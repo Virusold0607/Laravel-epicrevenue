@@ -32,14 +32,32 @@
   }
 
   &.hero-homepage {
-    background-image: url('/images/hero-homepage.png');
+    background-image: url('/images/home/hero-homepage.png');
     padding: 200px 0 0 0 ;
+    background-color: #fff;
     & * {
       text-align: left;
     }
+
   }
+
+  @media screen and (max-width: $screen-sm) {
+    &.hero-homepage {
+      background-image: url('/images/home/hero-homepage-bottom.m.png'), url('/images/home/hero-homepage.m.png');
+      background-position: bottom, center;
+      background-size: contain,cover;
+    }
+  }
+
   &.hero-curved {
-    background-image: url('/images/i.png');
+    background-image: url('/images/home/hero-homepage-1.png');
+    background-color: #fff;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    &.hero-curved {
+      background-image: url('/images/home/hero-homepage-1.m.png');
+    }
   }
 
   &.hero-influencers {
