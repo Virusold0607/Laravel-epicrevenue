@@ -41,24 +41,25 @@
 
   }
 
-  @media screen and (max-width: $screen-sm) {
-    &.hero-homepage {
-      background-image: url('/images/home/hero-homepage-bottom.m.png'), url('/images/home/hero-homepage.m.png');
-      background-position: bottom, center;
-      background-size: contain,cover;
-    }
-  }
-
   &.hero-curved {
     background-image: url('/images/home/hero-homepage-1.png');
     background-color: #fff;
   }
 
   @media screen and (max-width: $screen-sm) {
+    &.hero-homepage {
+      background-image: url('/images/home/hero-homepage-bottom.m.png'), url('/images/home/hero-homepage.m.png');
+      background-position: bottom, center;
+      background-size: contain,cover;
+    }
+
     &.hero-curved {
-      background-image: url('/images/home/hero-homepage-1.m.png');
+      background-image: url('/images/home/hero-homepage-1-bottom.m.png'), url('/images/home/hero-homepage-1.m.png');
+      background-position: bottom, top center;
+      background-size: contain,cover;
     }
   }
+
 
   &.hero-influencers {
     & h1 {

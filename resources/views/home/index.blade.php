@@ -45,10 +45,10 @@
         </div>
         <div class="clearfix"></div>
         <div class="hero hero-curved" style="background-color: transparent;">
-            <div class="container visible-lg-block" style="height: 300px;"></div>
-            <div class="container visible-md-block" style="height: 200px;"></div>
-            <div class="container visible-sm-block" style="height: 100px;"></div>
-            <div class="container visible-xd-block" style="height: 50px;"></div>
+            <div class="container visible-lg-block" style="height: 200px;"></div>
+            <div class="container visible-md-block" style="height: 150px;"></div>
+            <div class="container visible-sm-block" style="height: 80px;"></div>
+            <div class="container visible-xs-block" style="height: 100px;"></div>
             <div class="container">
                 <div class="row text-center offers">
                     <div class="col-sm-4" style="margin-top: 20px;margin-bottom: 50px;">
