@@ -32,9 +32,12 @@
   }
 
   &.hero-homepage {
-    background-image: url('/images/home/hero-homepage.png');
     padding: 200px 0 0 0 ;
     background-color: #fff;
+
+    background-image: url('/images/home/hero-homepage-bottom.png'), url('/images/home/hero-homepage.png');
+    background-position: bottom, center;
+    background-size: contain,cover;
     & * {
       text-align: left;
     }
