@@ -84,8 +84,47 @@
       margin-top: 70px;
       font-size: 50px;
     }
+    & .cameraman {
+      position: absolute;
+      left: 50%;
+      img {
+        position: relative;
+        left: -50%;
+        max-width:500px;
+      }
+    }
+
+
+    @media screen and (max-width: $screen-sm){
+      & .cameraman {
+        img {
+          max-width: 470px;
+        }
+      }
+    }
+    @media screen and (max-width: 400px){
+      & .cameraman {
+        img {
+          padding-top: 60px;
+          max-width: 400px;
+        }
+      }
+    }
+    @media screen and (max-width: 350px){
+      .cameraman {
+        img {
+          padding-top: 60px;
+          max-width: 300px;
+        }
+      }
+      & {
+        min-height: 500px;
+      }
+    }
+
+    min-height: 600px;
     background-image: url('/images/curves.png');
-    background-size: cover;
+    background-size: contain;
     background-position: bottom;
     background-repeat:no-repeat;
   }

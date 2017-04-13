@@ -5,8 +5,8 @@
         <div class="container">
             <h1>INFLUENCERS</h1>
             <br />
-            <div style="position: absolute; left: 50%;">
-                <img style="position: relative; left: -50%;" src="/images/cameraman.png" alt="">
+            <div class="cameraman">
+                <img src="/images/cameraman.png" alt="">
             </div>
         </div>
     </div><!-- End .hero -->

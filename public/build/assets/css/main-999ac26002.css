@@ -24483,8 +24483,9 @@ a:hover {
 }
 
 .hero.hero-influencers {
+  min-height: 600px;
   background-image: url("/images/curves.png");
-  background-size: cover;
+  background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
 }
@@ -24493,6 +24494,40 @@ a:hover {
   padding: 20px 0 20px 0;
   margin-top: 70px;
   font-size: 50px;
+}
+
+.hero.hero-influencers .cameraman {
+  position: absolute;
+  left: 50%;
+}
+
+.hero.hero-influencers .cameraman img {
+  position: relative;
+  left: -50%;
+  max-width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero.hero-influencers .cameraman img {
+    max-width: 470px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero.hero-influencers .cameraman img {
+    padding-top: 60px;
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .hero.hero-influencers .cameraman img {
+    padding-top: 60px;
+    max-width: 300px;
+  }
+  .hero.hero-influencers {
+    min-height: 500px;
+  }
 }
 
 .hero.hero-transparent {
