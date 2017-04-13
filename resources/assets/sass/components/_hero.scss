@@ -35,9 +35,9 @@
     padding: 200px 0 0 0 ;
     background-color: #fff;
 
-    background-image: url('/images/home/hero-homepage-bottom.png'), url('/images/home/hero-homepage.png');
-    background-position: bottom, center;
-    background-size: contain,cover;
+    background-image: url('/images/home/hero-homepage.png');
+    background-position: left;
+    background-size: cover;
     & * {
       text-align: left;
     }
@@ -51,15 +51,15 @@
 
   @media screen and (max-width: $screen-sm) {
     &.hero-homepage {
-      background-image: url('/images/home/hero-homepage-bottom.m.png'), url('/images/home/hero-homepage.m.png');
-      background-position: bottom, center;
-      background-size: contain,cover;
+      background-image: url('/images/home/hero-homepage.m.png');
+      background-position: left;
+      background-size: cover;
     }
 
     &.hero-curved {
-      background-image: url('/images/home/hero-homepage-1-bottom.m.png'), url('/images/home/hero-homepage-1.m.png');
-      background-position: bottom, top center;
-      background-size: contain,cover;
+      background-image: url('/images/home/hero-homepage-1.m.png');
+      background-position: top center;
+      background-size: cover;
     }
   }
 
