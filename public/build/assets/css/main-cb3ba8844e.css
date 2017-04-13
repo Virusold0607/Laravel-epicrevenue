@@ -24457,6 +24457,7 @@ a:hover {
 
 .hero.hero-curved {
   margin-top: 50px;
+  margin-bottom: 50px;
   background: url("/images/home/hero-homepage-1-top.png"), url("/images/home/hero-homepage-1-bottom.png"), -webkit-radial-gradient(50% 109.84%, circle farthest-side, #142933 0%, #171432 5.39%, #0e0c1f 100%);
   background: url("/images/home/hero-homepage-1-top.png"), url("/images/home/hero-homepage-1-bottom.png"), -webkit-gradient(radial, 50% 109.84%, 0, 50% 109.84%, 623.8, color-stop(0, #142933), color-stop(0.0539, #171432), color-stop(1, #0e0c1f));
   background: url("/images/home/hero-homepage-1-top.png"), url("/images/home/hero-homepage-1-bottom.png"), -ms-radial-gradient(50% 109.84%, circle farthest-side, #142933 0%, #171432 5.39%, #0e0c1f 100%);
