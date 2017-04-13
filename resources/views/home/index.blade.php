@@ -48,16 +48,19 @@
                         <div class="ir-icon"><img class="img-responsive" src="/images/home/f.png" alt="See More"></div>
                         <h4>#SEEMORE</h4>
                         <p class="">See visually how your account grows, analyze your audience, target better.</p>
+                        <a class="btn btn-white" href="#">Learn More</a>
                     </div>
                     <div class="col-sm-4" style="margin-top: 20px;margin-bottom: 50px;">
                         <div class="ir-icon"><img class="img-responsive" src="/images/home/g.png" alt="MAKEMORE"></div>
                         <h4>#MAKEMORE</h4>
                         <p class="">Paid to post, paid to drive leads, plus a lot more ways to generate revenue.</p>
+                        <a class="btn btn-white" href="#">Learn More</a>
                     </div>
                     <div class="col-sm-4" style="margin-top: 20px;margin-bottom: 50px;">
                         <div class="ir-icon"><img class="img-responsive" src="/images/home/h.png" alt="DOMORE"></div>
                         <h4>#DOMORE</h4>
                         <p class="">Use our services, team and exclusive services to grow your brand.</p>
+                        <a class="btn btn-white" href="#">Learn More</a>
                     </div>
                 </div>
             </div>

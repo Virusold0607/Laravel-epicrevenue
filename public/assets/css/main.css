@@ -24632,6 +24632,11 @@ a:hover {
   background-color: #333333;
 }
 
+.btn-white {
+  background-color: #fff;
+  color: #000;
+}
+
 .btn-extra-padding {
   padding: 22px 50px;
 }
