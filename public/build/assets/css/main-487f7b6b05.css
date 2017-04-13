@@ -24456,8 +24456,17 @@ a:hover {
 }
 
 .hero.hero-curved {
-  background-image: url("/images/home/hero-homepage-1.png");
-  background-color: #fff;
+  background: url("/images/home/hero-homepage-1-top.png"), url("/images/home/hero-homepage-1-bottom.png"), -webkit-radial-gradient(50% 109.84%, circle farthest-side, #142933 0%, #171432 5.39%, #0e0c1f 100%);
+  background: url("/images/home/hero-homepage-1-top.png"), url("/images/home/hero-homepage-1-bottom.png"), -webkit-gradient(radial, 50% 109.84%, 0, 50% 109.84%, 623.8, color-stop(0, #142933), color-stop(0.0539, #171432), color-stop(1, #0e0c1f));
+  background: url("/images/home/hero-homepage-1-top.png"), url("/images/home/hero-homepage-1-bottom.png"), -ms-radial-gradient(50% 109.84%, circle farthest-side, #142933 0%, #171432 5.39%, #0e0c1f 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Stlye=2);";
+  background-position: right top, left bottom;
+  background-repeat: no-repeat;
+}
+
+.hero.hero-curved > .container {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 @media screen and (max-width: 768px) {
@@ -24467,9 +24476,9 @@ a:hover {
     background-size: cover;
   }
   .hero.hero-curved {
-    background-image: url("/images/home/hero-homepage-1.m.png");
-    background-position: top center;
-    background-size: cover;
+    background: url("/images/home/hero-homepage-1-top.m.png"), url("/images/home/hero-homepage-1-bottom.m.png"), -webkit-radial-gradient(50% 109.84%, circle farthest-side, #142933 0%, #171432 5.39%, #0e0c1f 100%);
+    background: url("/images/home/hero-homepage-1-top.m.png"), url("/images/home/hero-homepage-1-bottom.m.png"), -webkit-gradient(radial, 50% 109.84%, 0, 50% 109.84%, 623.8, color-stop(0, #142933), color-stop(0.0539, #171432), color-stop(1, #0e0c1f));
+    background: url("/images/home/hero-homepage-1-top.m.png"), url("/images/home/hero-homepage-1-bottom.m.png"), -ms-radial-gradient(50% 109.84%, circle farthest-side, #142933 0%, #171432 5.39%, #0e0c1f 100%);
   }
 }
 
