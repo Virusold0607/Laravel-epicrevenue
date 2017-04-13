@@ -24899,7 +24899,10 @@ h1.line-heading {
   background-image: url("/images/line1.png"), url("/images/line.png");
   background-position: right bottom, left top;
   background-repeat: no-repeat, no-repeat;
+  display: inline-block;
   padding: 16px 0;
+  margin-bottom: 20px;
+  text-align: left;
   font-weight: bold;
   font-size: 65px;
   letter-spacing: -0.13px;
@@ -24907,8 +24910,7 @@ h1.line-heading {
 }
 
 h1.line-heading.center {
-  display: inline-block;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
 }
 
 .homepage .info-box .info-box-icon {

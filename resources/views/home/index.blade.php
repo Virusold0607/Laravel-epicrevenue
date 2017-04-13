@@ -20,8 +20,8 @@
         </div><!-- End .hero -->
 
         <div class="clearfix"></div>
-        <div class="container text-center">
-            <h1 class="line-heading center">Become an Influencer</h1>
+        <div class="container">
+            <h1 class="line-heading">Become an Influencer</h1>
         </div>
         <div class="clearfix"></div>
         <div class="container" style="height: 40px;"></div>
@@ -66,23 +66,25 @@
             <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
-        <div class="container text-center">
-            <h1 class="line-heading center">Become an Influencer</h1>
+        <div class="container">
+            <h1 class="line-heading">Become an Advertiser</h1>
         </div>
         <div class="clearfix"></div>
-        <div class="container" style="height: 30px;"></div>
+
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-2">
-                <ul class="home-list">
-                    <li>Lead Generation</li>
-                    <li>Flat Rate Sales</li>
-                    <li>Millions of Conversion</li>
-                    <li>1000k+ Active Publishers</li>
-                    <li>No Monthly Fees</li>
-                    <li>Dedicated Account Managers</li>
-                </ul>
-                <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="{{ url('/') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>LEARN MORE</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            <div class="col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1">
+                <div class="container">
+                    <ul class="home-list">
+                        <li>Lead Generation</li>
+                        <li>Flat Rate Sales</li>
+                        <li>Millions of Conversion</li>
+                        <li>1000k+ Active Publishers</li>
+                        <li>No Monthly Fees</li>
+                        <li>Dedicated Account Managers</li>
+                    </ul>
+                    <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <a href="{{ url('/') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>LEARN MORE</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                </div>
             </div>
             <div class="col-sm-5 col-sm-offset-1">
                 <img class="img-responsive" src="/images/home/laptop.png" alt="">
@@ -91,9 +93,8 @@
         <div class="clearfix"></div>
         <div class="container" style="height: 50px;"></div>
 
-        <div class="container text-center">
-            <h1 class="line-heading center" style="font-weight: normal">Track your reach</h1>
-            <div class="container" style="height: 30px;"></div>
+        <div class="container">
+            <h1 class="line-heading" style="font-weight: normal">Track your reach</h1>
             <p class="text-left col-sm-10" style="font-size: 19px; font-weight: 600;">From our tracking panel you will be able to see how much clicks your page is driving as well as the amount of revenue being generated <b>in real-time</b>.</p>
             <div class="col-xs-12" style="height:20px;"></div>
             <div class="clearfix"></div>
