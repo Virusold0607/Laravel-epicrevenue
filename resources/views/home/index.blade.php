@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
-                        <h1 style="text-transform: uppercase;">Monetize the reach of your social media following</h1>
+                        <h1 style="text-transform: uppercase; font-weight: bold; line-height: 1.7;">Monetize the reach of your social media following</h1>
                         <img src="/images/line-white.png" alt="">
                         <h4>Do you have a fan page, a niche page, a model page, or any other type of page with a large following?</h4>
                     </div>
@@ -20,7 +20,7 @@
         </div><!-- End .hero -->
 
         <div class="clearfix"></div>
-        <div class="container">
+        <div class="container text-center">
             <h1 class="line-heading">Become an Influencer</h1>
         </div>
         <div class="clearfix"></div>
@@ -83,7 +83,6 @@
                         <li>Dedicated Account Managers</li>
                     </ul>
                     <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                    <a href="{{ url('/') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>LEARN MORE</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 </div>
             </div>
             <div class="col-sm-5 col-sm-offset-1">
@@ -94,26 +93,23 @@
         <div class="container" style="height: 50px;"></div>
 
         <div class="container">
-            <h1 class="line-heading" style="font-weight: normal">Track your reach</h1>
+            <h1 class="line-heading" style="font-weight: normal">Track your promotion</h1>
             <p class="text-left col-sm-10" style="font-size: 19px; font-weight: 600;">From our tracking panel you will be able to see how much clicks your page is driving as well as the amount of revenue being generated <b>in real-time</b>.</p>
             <div class="col-xs-12" style="height:20px;"></div>
             <div class="clearfix"></div>
-            <a href="{{ url('/influencers/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>JOIN NOW</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            <a href="#" class="btn btn-primary btn-lg btn-sm-txt btn-extra-margin btn-radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Learn More</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
 
         <div class="clearfix"></div>
-        <div class="container" style="height: 100px;"></div>
 
         <div class="container">
             <img class="img-responsive" src="/images/home/j.png" alt="Earnings Graph" style="margin: 0 auto;">
         </div>
 
         <div class="clearfix"></div>
-        <div class="container" style="height: 100px;"></div>
 
         <div class="container text-left">
             <h1 class="line-heading center" style="font-weight: normal; font-size: 50px;">Brands we've promoted</h1>
-            <div class="container" style="height: 50px;"></div>
             <div class="row">
                 <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/amazon.png') }}" alt=""/></div>
                 <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/king.png') }}" alt=""/></div>
