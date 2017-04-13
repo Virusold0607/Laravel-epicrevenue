@@ -24443,7 +24443,8 @@ a:hover {
 }
 
 .hero.hero-homepage {
-  padding: 200px 0 0 0;
+  padding: 130px 0 0 0;
+  margin-bottom: 50px;
   background-color: #fff;
   background-image: url("/images/home/hero-homepage.png");
   background-position: left;
@@ -24912,10 +24913,6 @@ h1.line-heading.center {
 .homepage .brand img {
   padding: 0 20px;
   max-width: 150px;
-}
-
-.homepage .hero {
-  margin-bottom: 0;
 }
 
 .homepage ul.home-list li {
