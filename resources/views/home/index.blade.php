@@ -109,7 +109,7 @@
         <div class="clearfix"></div>
 
         <div class="container text-left">
-            <h1 class="line-heading center" style="font-weight: normal; font-size: 50px;">Brands we've promoted</h1>
+            <h1 class="line-heading margin-30" style="font-weight: normal; font-size: 50px;">Brands we've promoted</h1>
             <div class="row">
                 <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/amazon.png') }}" alt=""/></div>
                 <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/king.png') }}" alt=""/></div>
