@@ -12528,6 +12528,10 @@ desktop-display {
     padding-bottom: 25px;
   }
   .home-banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
     background: url(/images/header.png) repeat center center;
     background-size: cover !important;
   }
