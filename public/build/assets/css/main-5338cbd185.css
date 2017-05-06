@@ -11846,13 +11846,8 @@ div#notification-status-indicator {
   border-bottom: 1px solid #eee;
 }
 
-.track .container {
-  max-width: 1170px;
-}
-
 .track p {
   font-size: 28px;
-  text-align: left;
   margin-bottom: 40px;
 }
 
