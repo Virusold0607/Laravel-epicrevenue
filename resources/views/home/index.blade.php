@@ -21,10 +21,10 @@
                     <h2 class="page-title-1">Become	an	Influencer</h2>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <img src="/images/become.png" class="img-responsive">
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-7">
                         <div class="become-an-influencer-text">
                             <ul>
                                 <li>Over	200	Live	Promotions</li>
