@@ -127,7 +127,7 @@
 
         <div class="partners">
             <div class="container">
-                <div class="text-left">
+                <div class="text-center">
                     <h2 class="page-title-2">Brands we’ve promoted</h2>
                 </div>
                 <ul class="row partner-list">
