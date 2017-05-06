@@ -119,9 +119,9 @@
                 <div class="button-box text-center">
                     <a href="#" class="btn btn-default btn-lg black-button">JOIN	US</a>
                 </div>
-                <div class="grap">
-                    <img src="/images/grap.png" class="img-responsive">
-                </div>
+                {{--<div class="grap">--}}
+                    {{--<img src="/images/grap.png" class="img-responsive">--}}
+                {{--</div>--}}
             </div>
         </div>
 

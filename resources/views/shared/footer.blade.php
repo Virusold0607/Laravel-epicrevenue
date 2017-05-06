@@ -9,11 +9,11 @@
                         <div class="footer-navigation">
                             <h4>Navigation</h4>
                             <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Sign Up</a></li>
-                                <li><a href="#">FAQ’s</a></li>
-                                <li><a href="#">Rewards</a></li>
-                                <li><a href="#">Sign In</a></li>
+                                <li><a href="{{ url('/about') }}">About</a></li>
+                                <li><a href="{{ url('/influencers/apply') }}">Sign Up</a></li>
+                                <li><a href="{{ url('/faqs') }}">FAQ’s</a></li>
+                                <li><a href="{{ url('/rewards') }}">Rewards</a></li>
+                                <li><a href="{{ url('/login') }}">Sign In</a></li>
                             </ul>
                         </div>
                     </div>
@@ -21,10 +21,10 @@
                         <div class="footer-navigation">
                             <h4>Legal</h4>
                             <ul>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Cookies</a></li>
-                                <li class="full"><a href="#">Terms of Service</a></li>
-                                <li class="full"><a href="#">User Agreement</a></li>
+                                <li><a href="{{ url('/privacy') }}">Privacy Policy</a></li>
+                                <li><a href="{{ url('/privacy') }}">Cookies</a></li>
+                                <li class="full"><a href="{{ url('/terms') }}">Terms of Service</a></li>
+                                <li class="full"><a href="{{ url('/privacy') }}">User Agreement</a></li>
                             </ul>
                         </div>
                     </div>

@@ -11840,7 +11840,10 @@ div#notification-status-indicator {
 
 .track {
   text-align: center;
-  padding-bottom: 120px;
+  margin-bottom: 120px;
+  padding-top: 120px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .track .container {

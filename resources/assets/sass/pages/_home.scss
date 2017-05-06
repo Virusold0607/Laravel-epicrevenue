@@ -174,8 +174,12 @@
 .become-an-advertiser{margin-top:-80px;}
 
 .track {
-	text-align:center;
-	padding-bottom:120px;
+	text-align: center;
+	margin-bottom: 120px;
+	padding-top: 120px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+
 	.container{
 		max-width:1170px;
 	}
