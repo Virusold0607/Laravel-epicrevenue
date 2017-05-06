@@ -1,3 +1,46 @@
+/*! Font */
+$fontfamily:"Karla";
+
+/*! Text Color */
+$bodycolor:"#333";
+$gray-color:#c5c5c5;
+$white-color:white;
+$black-color:#000000;
+$dark-gray-color:#5d5d5d;
+$blue-color:#4c71b7;
+$red-color:#f91e3e;
+$footer-text-color:#b7b6bc;
+
+/*! Backgrounds */
+$black-background:#000000;
+$blue-background:#4c71b7;
+$dark-blue-background:#0e0c20;
+$white-background-color:white;
+$red-background-color:#f91e3e;
+$gray-background-color:#f4f4f4;
+$no-background:none;
+$no-background-color:transparent;
+
+/*! Borders */
+$gray-border-color:#dfdfdf;
+$gray-border-colorhover:#3e96a9;
+$no-border:none;
+$no-border-color:transparent;
+
+
+/*! Mix */
+$fadding: all 0.5s ease;
+$text-shadow-blue:1px 2px 1px #20748d;
+$text-shadow-orange:1px 2px 1px #d62b06;
+$box-shaddow:0 3px 8px rgba(0,0,0,.2);
+$radius-box:0 0 7px 7px;
+
+/*! Buttons */
+$button-border-radius:40px;
+$button-border-padding:15px 50px;
+
+
+
 $brand-color: #4c71b7;
 $brand-gray: #666;
 $brand-light-gray: #444;
@@ -40,3 +83,30 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+@mixin antialiasing( $type:antialiased ) {
+    /* antialiased, none, subpixel-antialiased*/
+    -webkit-font-smoothing: $type;
+    font-smoothing: $type;
+    font-smooth: always;
+}
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-gradient($top-color: #1c4f5d, $right-color: #4c9eae, $bottom-color: #4c9eae, $left-color: #1c4f5d) {
+    border-color: $top-color $right-color $bottom-color $left-color;
+    border-style: solid;
+    border-width: 1px;
+}
+
+@mixin gradient-horizontal($start-color: #4ca6ba, $end-color: #3e96a9, $start-percent: 0%, $end-percent: 100%) {
+    background: $start-color; /* Old browsers */
+    background: -moz-linear-gradient(top,  $start-color, $start-percent, $end-color, $end-percent); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,   $start-color, $start-percent, $end-color, $end-percent); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,   $start-color, $start-percent, $end-color, $end-percent); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 ); /* IE6-9 */
+}

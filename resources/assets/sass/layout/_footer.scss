@@ -1,0 +1,33 @@
+/*! Footer Styles */
+
+.footer{
+	padding:90px 0;
+	background:$dark-blue-background;
+	h4{
+		font-size:20px;
+		color:$white-color;
+		margin:0 0 20px;
+		font-family: 'HelveticaNeueMedium';
+	}
+	p{
+		padding-right:120px;
+	}
+	p,a{
+		color:$footer-text-color;
+		font-size:17px;
+	}
+	ul{
+		padding:0;
+		margin:0;
+	}
+	li{
+		list-style:none;
+		width:45%;
+		display:inline-block;
+	}
+	li.full{
+		width:100%;
+	}
+	
+	
+}

@@ -28,6 +28,7 @@
     "components-font-awesome": "~4.*",
     "ui-select": "angular-ui-select#~0.13.*",
     "angular-sanitize": "~1.5.*",
-    "ng-file-upload": "12.*"
+    "ng-file-upload": "12.*",
+    "slick-carousel": "1.6.*"
   }
 }

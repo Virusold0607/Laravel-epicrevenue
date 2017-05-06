@@ -109,6 +109,19 @@
         </div>
 
         <div class="clearfix"></div>
+        <div class="row stat-boxes text-center">
+            <div class="col-md-3 stat-box">
+                <h5>Today Clicks</h5>
+                <h2>{!! $today_clicks !!}</h2>
+            </div>
+            <div class="col-md-3 stat-box">
+                <h5>Today Leads</h5>
+                <h2>{!! $today_leads !!}</h2>
+            </div>
+        </div>
+
+
+        <div class="clearfix"></div>
 
         @if($is_mobile)
             <div class="container" style="height: 50px;"></div>

@@ -1,0 +1,69 @@
+/*! Start Header Styles */
+
+.header{
+	border-bottom: 1px solid #eee;
+	.logo{
+		padding-top:10px;
+		padding-bottom:10px;
+		img{
+			max-width:276px;
+		}
+	}
+	#navbar{
+		transition:$fadding;
+	}
+	.navbar-inverse{
+		background:$no-background;
+		border:none;
+		float: right;
+		margin:0;
+		padding-top:18px;
+		
+	}
+	.navbar-inverse .navbar-nav > li > a{
+		font-family:$fontfamily;
+		font-size:14px;
+		margin-left:20px;
+		&:hover{
+			color:$black-color;	
+
+		}
+	}
+	.navbar-nav > li.active a{
+		background: $no-background;	
+		color:$black-color;
+		font-weight:700;
+		font-size:20px;
+		position:relative;
+		&:hover{
+			background:$no-background;
+		}	
+	}
+
+	.navbar-nav > li.active a:after{
+		content:"";
+		position:absolute;
+		height:5px;
+		width:34px;
+		position:absolute;
+		display:block;
+		left:50%;
+		top:100%;
+		margin-top:-5px;
+		background:$black-background;
+		margin-left:-14px;
+		
+	}
+	.extra-link{
+		float:right;
+		padding-top:22px;
+		a{
+			color:$dark-gray-color;
+			font-size:26px;
+			display:inline-block;
+			margin-left:40px;			
+		}
+		
+	}	
+
+}

@@ -1,0 +1,68 @@
+.influencer{
+	padding-bottom:0;
+	background:#fff;
+	.influencer-header-graphic{
+		text-align:center;
+		img{
+			display:inline-block;
+			position:relative;
+			left:50px;
+		}
+	}
+	.influencer-header-graphic2{
+		margin-top: -146px;
+		position: relative;
+		z-index: 1111;
+		img{
+			left:0px;
+		}
+	}
+	.influencer-maximize{
+		padding-bottom:160px;
+		padding-top:60px;
+		background:url(../images/right-shadow.png) no-repeat left bottom;
+		background-size:auto 100%;
+		background-position:right top;
+		.page-title-3::before{
+			left:20px;
+			right:0;
+		}
+		.page-title-3::after{
+			bottom:70px;
+		}
+		p{
+			font-size:28px;
+		}
+	}
+	.influencer-feature {
+		margin-top:-80px;
+		h3{
+			font-size:36px;
+			margin-bottom:100px;
+		}
+		.container {
+			padding-bottom:60px;
+			background:url(../images/bottom-shadow.png) no-repeat left bottom;
+		}
+	}
+	.feature-box{
+		margin-bottom:80px;
+		img{
+			display:inline-block;
+			margin-bottom:60px;
+		}
+		h4{
+			font-size:24px;
+			margin-bottom:40px;
+		}
+		p{
+			font-size:16px;
+			padding:0 50px;
+		}
+		
+	}
+
+	
+	
+	
+}

@@ -17,7 +17,7 @@ elixir(function(mix) {
 
     elixir.config.sourcemaps = false;
     var admin = false;
-    var copy = false;
+    var copy = true;
 
     mix.sass('app.scss', 'public/assets/css/main.css');
 
@@ -56,12 +56,14 @@ elixir(function(mix) {
     if(copy) {
         mix.copy([
             'node_modules/bootstrap-sass/assets/fonts',
-            'bower_components/components-font-awesome/fonts'
+            'bower_components/components-font-awesome/fonts',
+            'resources/assets/fonts'
         ], 'public/assets/fonts');
 
         mix.copy([
             'node_modules/bootstrap-sass/assets/fonts',
-            'bower_components/components-font-awesome/fonts'
+            'bower_components/components-font-awesome/fonts',
+            'resources/assets/fonts'
         ], 'public/build/assets/fonts');
     }
 

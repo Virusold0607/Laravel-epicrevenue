@@ -1,76 +1,196 @@
-.category_panel_div {
-  float: left;
-  width: 100%;
-  margin-top: 30px;
+.campaigns{
+	background:#eff0f1;
+	padding-bottom:40px;
 }
-.category_item_div {
-  float: left;
-  font-size: 14px;
-  font-weight: 600;
-  color: #000;
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 20px;
-}
-.category_item {
-  font-size: 18px;
-}
-.category_item_div .num {
-  float: right;
-  background-color: #3b76ed;
-  color: #fff;
-  border-radius: 15px;
-  min-width: 28px;
-  text-align: center;
-  padding: 2px 12px;
-}
-.category_item_div.category_selected {
-  border-color: #28b204;
-  color: #28b204;
-}
-.category_item_div:hover {
-  border-color: #28b204;
-  color: #28b204;
-  cursor: pointer;
+.campaigns-header{
+	.home-body{
+		h1{
+			text-align:center;
+			&:after{
+				display:none;
+			}
+		}
+		p{
+			text-align:center;
+		}
+	}
 }
 
-@media screen and (min-width: $screen-sm) {
-  .campaign_categories_mobile {
-    display: none;
-  }
+.campaigns-menu{
+	$fontfamily:"Karla";
+	background:$white-background-color;
+	margin-top:-60px;
+	padding-top:60px;
+	margin-bottom:50px;
+	padding-bottom:0px;
+	border-radius:$radius-box;
+	box-shadow:$box-shaddow;
+	ul{
+		font-size:20px;
+		list-style:none;
+		padding:0;
+		margin:0;
+		li{
+			position:relative;
+			padding:0;
+			margin:0 0 2px;
+			a{
+				padding:20px 40px;
+				display:block;
+				color:$black-color;	
+				&:hover
+				{
+					background:$gray-background-color;
+					text-decoration:none !important;
+					
+				}
+				span{
+					background:$red-background-color;
+					color:$white-color;
+					display:inline-block;
+					padding:1px 20px;
+					font-size:19px;
+					float:right;
+					border-radius:15px;
+				}			
+			}
+
+		}
+		li.active{
+			background:$gray-background-color;
+			&:after{
+				position:absolute;
+				content:"";
+				width:7px;
+				height:100%;
+				background:$red-background-color;
+				left:0;
+				top:0;
+			}
+		}
+	}
 }
-
-@media screen and (max-width: $screen-sm) {
-  .campaign_categories_desktop {
-    display: none;
-  }
+.campaign-list-section{
+	padding-left:30px;
+	.campaign-box{
+		box-shadow:	$box-shaddow;
+		background:$white-background-color;
+		margin-bottom:30px;
+		overflow:hidden;
+		border-radius:5px !important;
+		h3{
+			color:$black-color;
+			font-size:24px;
+			margin-bottom:20px;
+			padding-top:10px;
+		}
+		p{
+			color:$gray-color;
+			font-size:17px;
+			line-height:26px;
+			margin-bottom:30px;
+		}
+		.campaign-box-des{
+			font-size:18px;
+			span{
+				color:$red-color;
+				margin-left:5px;
+			}
+			.premote-button{
+				float:right;
+				background:$dark-blue-background;
+				color:$white-color;
+				border:none !important;
+				font-size:18px;
+				position:relative;
+				top:-10px;
+				margin-right:30px !important;
+			}
+		}
+	}
 }
-
-.camp-box {
-  background-color: #fff;
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  margin: 20px 10px;
-  padding: 20px;
-  border: 1px solid #eee;
-
-  p {
-    line-height: 1.5;
-    font-size: 14px;
-  }
+.find-campaigns{
+	max-width:790px;
+	margin:auto;
 }
-
-@media screen and (max-width: $screen-sm){
-  .camp-box .col-sm-9 {
-    padding: 0;
-  }
+.custom-select{
+	background:$white-background-color;
+	position:relative;
+	padding:15px 20px;
+	border-radius:5px;
+	overflow:hidden;
+	select{
+		border: none;
+		background:none;
+		-webkit-appearance: none;
+    	-moz-appearance: none;
+		width:100%;
+		font-size:18px;
+		color:$black-color;
+	}
+	span{
+		position:absolute;
+		color:$black-color;
+		right:20px;
+		top:12px;
+		font-size:24px;
+	}
+	.sbSelector{
+		width:100%;
+		font-size:18px;
+		color:$black-color;
+		display:block;
+		text-decoration:none !important;
+	}
+	.sbOptions{
+		padding:10px 0 0;
+		margin-bottom:0;
+		text-align:left;
+		font-size:18px;
+		a{
+			text-decoration:none;
+			color:$black-color;
+		}
+		.active{
+			display:none;
+		}
+	}
 }
-
-@media screen and (max-width: $screen-sm) {
-  .campaigns {
-    clear: both;
-    .camp-box {
-        margin: 15px 0;
-        padding: 10px;
-    }
-  }
+.custom-input{
+	background:$white-background-color;
+	position:relative;
+	padding:13px 20px;
+	border-radius:5px;
+	overflow:hidden;
+	input{
+		background:none;
+		width:100%;
+		border:none;
+		color:$black-color;
+		font-size:18px;
+	}
+	button{
+		position:absolute;
+		right:0;
+		top:0;
+		bottom:0;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8878fb+0,6055b2+100 */
+		background: #8878fb; /* Old browsers */
+		background: -moz-linear-gradient(top, #8878fb 0%, #6055b2 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #8878fb 0%,#6055b2 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #8878fb 0%,#6055b2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8878fb', endColorstr='#6055b2',GradientType=0 ); /* IE6-9 */
+		color:$white-color;
+		border:none;
+		padding:0 20px;
+		font-size:26px;
+	}	
+}
+.campaigns-header .home-body h1{
+	font-size:60px;
+	margin-bottom:25px;
+}
+.campaigns-header .home-body  p{
+	font-size:24px;
+	margin-bottom:80px;
 }

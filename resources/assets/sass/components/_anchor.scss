@@ -1,13 +1,5 @@
-a {
-  color: #4c71b7;
-  text-decoration: none;
-  -webkit-transition: opacity 0.3s ease;
-  -moz-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  -ms-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-  &:hover {
-    opacity: 0.5;
-    color: $brand-color;
-  }
+a, button{
+  transition:$fadding;
+  outline: 0 !important;
+  outline: none !important;
 }

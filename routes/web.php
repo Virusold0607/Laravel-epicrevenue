@@ -20,7 +20,7 @@ Route::get('/track/{campaign_id}/{user_id}/{subid1?}/{subid2?}/{subid3?}/{subid4
 // Routes for guest users
 Route::group(['middleware' => 'guest'], function () {
     // Registration routes...
-    Route::get('/influencers/apply', 'Auth\RegisterController@getRegister');
+    Route::get('/influencers/apply', 'Auth\RegisterController@getRegister')->name('register');
     Route::post('/influencers/apply', 'Auth\RegisterController@postRegister');
 
     //Invite Controller
@@ -55,7 +55,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 // Authentication Routes...
-Route::get('login', 'Auth\LoginController@showLoginForm');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 
@@ -104,7 +104,7 @@ Route::group(['middleware' => []], function() {
     });
 
     // No middlewares. Anyone can access
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'HomeController@index')->name('home');
     Route::get('/contact', 'HomeController@getContact');
     Route::post('/contact', 'HomeController@postContact');
     Route::get('/influencers', 'HomeController@influencers');
@@ -202,4 +202,8 @@ Route::group(['prefix' => 'api/admin', 'middleware' => ['api', 'admin']], functi
     Route::resource('/campaigns', 'Admin\Api\CampaignController');
 });
 
-
+Route::get('/test', function()
+{
+    auth()->logout();
+    auth()->loginUsingId(1);
+});
