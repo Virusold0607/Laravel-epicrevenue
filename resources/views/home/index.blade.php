@@ -21,7 +21,7 @@
                     <h2 class="page-title-1">Become	an	Influencer</h2>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6>
+                    <div class="col-sm-6">
                         <img src="/images/become.png" class="img-responsive">
                     </div>
                     <div class="col-sm-6">
