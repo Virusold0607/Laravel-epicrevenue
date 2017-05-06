@@ -11,7 +11,7 @@
                 <div class="container">
                     <h1>MONETIZE THE REACH OF YOUR  <br/>SOCIAL MEDIA FOLLOWING</h1>
                     <p>Do you have a fan page, a niche page, <br>a model page, or any other type of page with a large following?</p>
-                    <a href="#" class="btn btn-default btn-lg blue-button">JOIN NOW</a>
+                    <a href="{{ route('register') }}" class="btn btn-default btn-lg blue-button">JOIN NOW</a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                                 <li>Rewards	Program	&	Contests</li>
                             </ul>
                             <div class="button-box">
-                                <a href="#" class="btn btn-default btn-lg blue-button">APPLY  NOW</a>
+                                <a href="{{ route('register') }}" class="btn btn-default btn-lg blue-button">APPLY  NOW</a>
                                 <a href="#" class="btn btn-default btn-lg black-button">LEARN  MORE</a>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                                 <li>Dedicated	Account	Managers</li>
                             </ul>
                             <div class="button-box">
-                                <a href="#" class="btn btn-default btn-lg blue-button">APPLY  NOW</a>
+                                <a href="{{ route('register') }}" class="btn btn-default btn-lg blue-button">APPLY  NOW</a>
                                 <a href="#" class="btn btn-default btn-lg black-button">LEARN  MORE</a>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                 </div>
                 <p>From	our	tracking	panel	you	will	be	able	to	see	how	much	clicks	your	page	is	driving as	well	as	the	amount	of	revenue	being	generated	in	real-time.</p>
                 <div class="button-box text-center">
-                    <a href="#" class="btn btn-default btn-lg black-button">JOIN	US</a>
+                    <a href="{{ route('register') }}" class="btn btn-default btn-lg black-button">JOIN	US</a>
                 </div>
                 {{--<div class="grap">--}}
                     {{--<img src="/images/grap.png" class="img-responsive">--}}
