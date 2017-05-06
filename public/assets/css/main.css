@@ -11165,6 +11165,37 @@ div#notification-status-indicator {
   right: 5px;
 }
 
+.date {
+  text-align: center;
+  top: -50px;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  line-height: 20px;
+  position: absolute;
+  font-weight: bold;
+  color: #000;
+}
+
+.circle {
+  margin: 0 auto;
+  top: -17px;
+  left: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #76BD21;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  padding: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 0;
+  text-indent: -3px;
+}
+
 .font-gray {
   color: #666;
 }
@@ -11399,6 +11430,63 @@ div#notification-status-indicator {
 .btn-white {
   background-color: #fff;
   color: #000;
+}
+
+.form-custom .form-control {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  height: 55px;
+  padding: 6px 20px;
+}
+
+.form-custom .help-block {
+  color: #666;
+}
+
+.form-login {
+  /* enable absolute positioning */
+  /* style glyph */
+  /* align glyph */
+  /* add padding  */
+}
+
+.form-login .form-group {
+  margin-bottom: 0;
+}
+
+.form-login .form-control {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.form-login .glyphicon {
+  color: #ccc;
+}
+
+.form-login .inner-addon {
+  position: relative;
+}
+
+.form-login .inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+.form-login .left-addon .glyphicon {
+  left: 0px;
+}
+
+.form-login .right-addon .glyphicon {
+  right: 0px;
+}
+
+.form-login .left-addon input {
+  padding-left: 30px;
+}
+
+.form-login .right-addon input {
+  padding-right: 30px;
 }
 
 /*! Start Header Styles */
