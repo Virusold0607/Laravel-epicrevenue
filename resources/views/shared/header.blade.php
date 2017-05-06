@@ -16,21 +16,21 @@
                     <div id="navbar" class="navbar-collapse  collapse">
                         @if(auth()->check())
                             <ul class="nav navbar-nav">
-                                <li class="{{ request()->is('/dashboard') ? 'active' : '' }}"><a href="{{url('/dashboard')}}">DASHBOARD</a></li>
-                                <li class="{{ request()->is('/promote') ? 'active' : '' }}"><a href="{{ url('/promote') }}">PROMOTE</a></li>
-                                <li class="{{ request()->is('/campaigns') ? 'active' : '' }}"><a href="{{ url('/campaigns') }}">Campaigns</a></li>
-                                <li class="{{ request()->is('/rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
-                                <li class="{{ request()->is('/reports') ? 'active' : '' }}"><a href="{{ url('/reports') }}">REPORTS</a></li>
-                                <li class="{{ request()->is('/contests') ? 'active' : '' }}"><a href="{{ url('/contests') }}">CONTESTS</a></li>
+                                <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a href="{{url('/dashboard')}}">DASHBOARD</a></li>
+                                <li class="{{ request()->is('promote') ? 'active' : '' }}"><a href="{{ url('/promote') }}">PROMOTE</a></li>
+                                <li class="{{ request()->is('campaigns') ? 'active' : '' }}"><a href="{{ url('/campaigns') }}">Campaigns</a></li>
+                                <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
+                                <li class="{{ request()->is('reports') ? 'active' : '' }}"><a href="{{ url('/reports') }}">REPORTS</a></li>
+                                <li class="{{ request()->is('contests') ? 'active' : '' }}"><a href="{{ url('/contests') }}">CONTESTS</a></li>
                             </ul>
                         @else
                         <ul class="nav navbar-nav">
                             <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{url('/')}}">HOME</a></li>
-                            <li class="{{ request()->is('/influencers') ? 'active' : '' }}"><a href="{{ url('/influencers') }}">INFLUENCERS</a></li>
-                            <li class="{{ request()->is('/advertisers') ? 'active' : '' }}"><a href="{{ url('/advertisers') }}">ADVERTISERS</a></li>
-                            <li class="{{ request()->is('/rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
-                            <li class="{{ request()->is('/login') ? 'active' : '' }}"><a href="{{ url('/login') }}">SIGN IN</a></li>
-                            <li class="{{ request()->is('/influencers/apply') ? 'active' : '' }}"><a href="{{ url('/influencers/apply') }}">SIGN UP</a></li>
+                            <li class="{{ request()->is('influencers') ? 'active' : '' }}"><a href="{{ url('/influencers') }}">INFLUENCERS</a></li>
+                            <li class="{{ request()->is('advertisers') ? 'active' : '' }}"><a href="{{ url('/advertisers') }}">ADVERTISERS</a></li>
+                            <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
+                            <li class="{{ request()->is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">SIGN IN</a></li>
+                            <li class="{{ request()->is('influencers/apply') ? 'active' : '' }}"><a href="{{ url('/influencers/apply') }}">SIGN UP</a></li>
                         </ul>
                         @endif
                     </div>
