@@ -96,7 +96,7 @@
                         </div>
                         <div class="container" style="height: 20px;"></div>
 
-                        <input type="submit" value="Next" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin: 0 auto;display: block;" />
+                        <button type="submit" class="btn btn-primary btn-lg" style="margin: 0 auto;display: block; " >&nbsp;&nbsp;&nbsp;Next&nbsp;&nbsp;&nbsp;</button>
                         <div class="container" style="height: 30px;"></div>
                     </div>
 

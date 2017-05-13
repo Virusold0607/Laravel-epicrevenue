@@ -22,6 +22,14 @@
                                 <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
                                 <li class="{{ request()->is('reports') ? 'active' : '' }}"><a href="{{ url('/reports') }}">REPORTS</a></li>
                                 <li class="{{ request()->is('contests') ? 'active' : '' }}"><a href="{{ url('/contests') }}">CONTESTS</a></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ auth()->user()->firstname }} <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Settings</a></li>
+                                        <li><a href="#">Invite</a></li>
+                                        <li><a href="#">Logout</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         @else
                         <ul class="nav navbar-nav">

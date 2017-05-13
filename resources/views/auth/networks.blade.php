@@ -11,6 +11,7 @@
 
     <div class="page">
 
+    <div class="">
         <div class="container">
             <div class="row" id="timeline">
                 <div class="col-xs-4">
@@ -33,7 +34,7 @@
                 </div>
             </div>
 
-            <form action="/influencers/apply/networks" method="post" class="form-register networks col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <form action="/influencers/apply/networks" method="post" class="form-register networks col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" style="margin-top: 80px;">
                 <div class="">
 
                     {{-- Was there an error? --}}
@@ -144,6 +145,7 @@
 
             <div class="clearfix"></div>
         </div>
+    </div>
     </div>
 @endsection
 

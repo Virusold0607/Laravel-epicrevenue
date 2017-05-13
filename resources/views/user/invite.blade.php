@@ -1,102 +1,123 @@
 @extends('shared.layout')
 
 @section('body')
-
-    @unless($is_mobile)
-        <div class="hero hero-dashboard">
+    <div class="main dashboard payouts">
+        <div class="gray-background">
             <div class="container">
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <h3>{!! $active !!}</h3>
-                        <h5 class="font-dark-gray">Active Referrals</h5>
-                    </div>
-                    <div class="hero-stat-border"></div>
-                    <div class="hero-stat">
-                        <h3>${!! number_format( $earn , 2 ) !!}</h3>
-                        <h5 class="font-dark-gray">Earned from Referrals</h5>
-                    </div>
-                    <div class="hero-stat-border"></div>
-                    <div class="hero-stat">
-                        <h3>{!! $inactive !!}</h3>
-                        <h5 class="font-dark-gray">Inactive Referrals</h5>
-                    </div>
-                    <div class="hero-stat-border"></div>
-                    <div class="hero-stat">
-                        <h3>{!! $inactive + $active !!}</h3>
-                        <h5 class="font-dark-gray">Total Referrals</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @else 
-        <div class="user-stats">
-            <div class="user-stat-group top-border">
-                <div class="user-stat">
-                        <h3>{!! $active !!}</h3>
-                        <h5 class="font-dark-gray">Active Referrals</h5>
-                </div>
-                <div class="user-stat">
-                        <h3>${!! number_format( $earn , 2 ) !!}</h3>
-                        <h5 class="font-dark-gray">Earned from Referrals</h5>
-                </div>
-            </div>
-            <div class="user-stat-group">
-                <div class="user-stat">
-                        <h3>{!! $inactive !!}</h3>
-                        <h5 class="font-dark-gray">Inactive Referrals</h5>
-                </div>
-                <div class="user-stat">
-                        <h3>{!! $inactive + $active !!}</h3>
-                        <h5 class="font-dark-gray">Total Referrals</h5>
-                </div>
-            </div>
-        </div>
-    @endunless
+                <div class="dashboard-statistics small-container desktop-display">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="dashboard-box box-shadow">
+                                <span>ACTIVE </br>REFERRALS</span>
+                                <strong>{!! $active !!}</strong>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="dashboard-box box-shadow">
+                                <span>EARNED FROM </br>REFERRALS</span>
+                                <strong>${!! number_format( $earn , 2 ) !!}</strong>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="dashboard-box box-shadow">
+                                <span>INACTIVE </br>REFERRALS</span>
+                                <strong>{!! $inactive !!}</strong>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="dashboard-box box-shadow">
+                                <span>TOTAL </br>REFERRALS</span>
+                                <strong>{!! $active + $inactive !!}</strong>
+                            </div>
+                        </div>
 
-    <div class="clearfix"></div>
-    <div class="page-container no-shadow">
-        <div class="container">
-            <div class="text">For every user you refer you earn 5% off every lead they get, this is a real great way to get your friends or others invloved while earning money when they join. Below you can find your referral link and a list of all the users you refered.</div>
-            <hr>
-            <div class="container" style="height: 15px;"></div>
 
-            <div class="form-custom">
-                <h3>Your referral link: </h3>
-                <input class="form-control" value="{!! url('/invite/' . auth()->user()->id) !!}" style="width: 600px; " />
+                    </div>
+                </div>
+
+                <div class="dashboard-statistics mobile-only">
+
+                    <div class="dashboard-slider">
+                        <div class="dashboard-slider-items">
+                            <div class="dashboard-box box-shadow">
+                                <span>ACTIVE </br>REFERRALS</span>
+                                <strong>{!! $active !!}</strong>
+                            </div>
+                        </div>
+                        <div class="dashboard-slider-items">
+                            <div class="dashboard-box box-shadow">
+                                <span>EARNED FROM </br>REFERRALS</span>
+                                <strong>${!! number_format( $earn , 2 ) !!}</strong>
+                            </div>
+                        </div>
+                        <div class="dashboard-slider-items">
+                            <div class="dashboard-box box-shadow">
+                                <span>INACTIVE </br>REFERRALS</span>
+                                <strong>{!! $inactive !!}</strong>
+                            </div>
+                        </div>
+                        <div class="dashboard-slider-items">
+                            <div class="dashboard-box box-shadow">
+                                <span>TOTAL </br>REFERRALS</span>
+                                <strong>{!! $inactive + $active !!}</strong>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
-            <br /><br />
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <!--<th>Email</th>-->
-                        <th>Date Joined</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @if(count($referrals) >0)
-                        @foreach($referrals as $r)
-                            <tr>
-                                <td>{!! $r->id !!} </td>
-                                <!--<td>'.$row->email_address.'</td>-->
-                                <td>{!! $r->created_at !!}</td>
-                            </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td colspan="2">You have no referrals.</td>
-                        </tr>
-                    @endif
-                    </tbody>
-                </table>
-            </div><!-- end .table-responsive -->
+            <div class="white-background">
+                <div class="container">
+                    <div class="small-container default-padding">
+                        <div class="small-container referral-box">
+                            <div class="referral-text">
+                                For	every	user	you	refer	you	earn	5%	off	every	lead	they	get,	this	is	a	real	great	way	to	get	your	friends	or	others	invloved	while	earning	money	when	they	join.	Below	you	can	find	your	referral	link	and	a	list	of	all	the	users	you	refered.
+                            </div>
+                            <div class="small-container">
+                                <label>Your	Referral	Link	:</label>
+                                <div class="referral-form">
+                                    <input type="text" value="https://influencersreach.com/invite/{!! auth()->id() !!}">
+                                    <button>COPY</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="payout-table">
+                    <div class="box-shadow">
+                        @if(count($referrals) >0)
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="empty-cell"></th>
+                                    <th>ID</th>
+                                    <th>DATE JOINED</th>
+                                    <th>AMOUNT</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($referrals as $r)
+                                        <tr>
+                                            <td><span>.</span></td>
+                                            <td>{!! $r->id !!} </td>
+                                            <td>4th	September	2015</td>
+                                            <td>{!! $r->created_at !!}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        @else
+                            <div class="alert alert-danger">You not have any referrals.</div>
+                        @endif
+                    </div>
+                </div>
 
+            </div>
         </div>
     </div>
-
-    <div class="container">
-        <hr>
-    </div>
-
 @endsection

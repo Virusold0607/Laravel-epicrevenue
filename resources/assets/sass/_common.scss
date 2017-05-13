@@ -1,0 +1,101 @@
+/*! General Styles */
+body {
+	background-color:$white-background-color;
+	font-family:$fontfamily;
+	color:$bodycolor;
+}
+.container{
+	width: auto;
+	padding:0 30px;
+	max-width:1440px
+}
+.btn-lg{
+	font-size:22px;
+}
+.blue-button{
+	background-color:$blue-background;
+	border:none !important;
+	color:$white-color;
+	letter-spacing:2px;
+	padding:$button-border-padding !important;
+	border-radius:$button-border-radius;
+}
+.black-button{
+	background-color:$black-background;
+	border:none !important;
+	color:$white-color !important;
+	letter-spacing:2px;
+	padding:$button-border-padding !important;
+	border-radius:$button-border-radius;
+}
+
+.no-padding > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+.color-blue{
+	color:$blue-color;
+}
+.color-black{
+	color:$black-color;
+}
+
+.color-gray{
+	color:$gray-color;
+}
+.box-shadow{
+	box-shadow:$box-shaddow-lighter;
+	background:$white-background-color;
+}
+.box-shadow2{
+	box-shadow:$box-shaddow2;
+	background:$white-background-color;
+}
+.white-background{
+	background:$white-background-color;	
+}
+.default-padding{
+	padding:70px 0;
+}
+.small-round{
+	border-radius:7px !important;
+}
+.no-shadow{
+	box-shadow:none !important;
+}
+.no-pad-top{
+	padding-top:0 !important;
+}
+.margin-bottom-30{
+	margin-top:0 !important;
+	margin-bottom:35px !important;
+}
+.no-mar-bottom{
+	margin:0 !important;
+}
+.font-large{
+	font-size:18px !important;
+}
+.gray-bold-line{
+	background:$light-gray-color;
+	margin:40px 0 30px;
+	height:30px;
+}
+.long-button{
+	display:block;
+	padding:10px 25px;
+}
+.sky-blue-background{
+	background:$skyblue-background-color;
+	color:$white-color;
+}
+.padding-bottom-60{
+	padding-bottom:60px !important;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+*:focus {
+    outline: none;
+}

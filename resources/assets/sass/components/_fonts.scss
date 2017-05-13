@@ -12,17 +12,17 @@
 
 @font-face {
   font-family: "helvetica-neue";
-  src: url('../fonts/helvetnl.eot');
-  src: url('../fonts/helvetnl.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/helvetnl.svg#Helvetica Neue') format('svg'),
-  url('../fonts/helvetnl.woff') format('woff'),
-  url('../fonts/helvetnl.ttf') format('truetype');
+  src: url('/fonts/helvetnl.eot');
+  src: url('/fonts/helvetnl.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/helvetnl.svg#Helvetica Neue') format('svg'),
+  url('/fonts/helvetnl.woff') format('woff'),
+  url('/fonts/helvetnl.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'HelveticaNeueMedium';
-  src: url('../fonts/HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),  url('../fonts/HelveticaNeueMedium.woff') format('woff'), url('../fonts/HelveticaNeueMedium.ttf')  format('truetype'), url('../fonts/HelveticaNeueMedium.svg#HelveticaNeueMedium') format('svg');
+  src: url('/fonts/HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),  url('/fonts/HelveticaNeueMedium.woff') format('woff'), url('/fonts/HelveticaNeueMedium.ttf')  format('truetype'), url('/fonts/HelveticaNeueMedium.svg#HelveticaNeueMedium') format('svg');
   font-weight: normal;
   font-style: normal;
 }

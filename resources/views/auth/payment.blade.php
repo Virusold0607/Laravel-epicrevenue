@@ -1,13 +1,18 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero small">
+    <div class="hero hero-transparent">
         <div class="container">
-            <h1 class="hero-heading">Become an Influencer</h1>
+            <h1 class="hero-heading">Become a Influencer</h1>
         </div>
-    </div>
+    </div><!-- End .hero -->
+    <div class="clearfix"></div>
+    <div class="container" style="height:60px;"></div>
 
     <div class="page wide">
+        <div class="">
+
+        </div>
         <div class="container">
                 <div class="row" id="timeline">
                     <div class="col-xs-4">
@@ -55,15 +60,15 @@
                                 <div id="pay_option_panel">
                                     <div class="pay_option_div">
                                         {!! Form::radio('payment_method', 'paypal') !!}
-                                        <img src="{{ url('/images/register/paypal.png') }}" alt="Paypal" class="pay_option_img"> Paypal
+                                        <img src="{{ url('/images/register/paypal.png') }}" alt="Paypal" class="pay_option_img img-responsive"> Paypal
                                     </div>
                                     <div class="pay_option_div">
                                         {!! Form::radio('payment_method', 'check') !!}
-                                        <img src="{{ url('/images/register/cheque-icon.png') }}" alt="Cheque" class="pay_option_img"> Check
+                                        <img src="{{ url('/images/register/cheque-icon.png') }}" alt="Cheque" class="pay_option_img img-responsive"> Check
                                     </div>
                                     <div class="pay_option_div">
                                         {!! Form::radio('payment_method', 'gift_card') !!}
-                                        <img src="{{ url('/images/register/gift-card.jpg') }}" alt="Gift Card" class="pay_option_img"> Gift Card
+                                        <img src="{{ url('/images/register/gift-card.jpg') }}" alt="Gift Card" class="pay_option_img "> Gift Card
                                     </div>
                                 </div>
                                 <span id="description_txt">Details</span><span style="color: red">*</span>

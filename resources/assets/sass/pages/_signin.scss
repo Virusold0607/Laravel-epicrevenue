@@ -1,0 +1,48 @@
+.signup-bg{
+	background:url(/images/setting-bg.png) no-repeat left bottom;
+	background-size: 100% auto;
+	min-height:600px;
+	.signup-content{
+		padding:80px 40px;
+		h1{
+			margin-bottom:80px;
+			font-size:60px;
+		}
+		.signup-small-container{
+			max-width:455px;
+			margin:auto;
+			.signup-form{
+				padding:0;
+				li{
+					list-style:none;
+					margin-bottom:40px;
+					input{
+						width:100%;
+						border:none;
+						background:none;
+						font-size:18px;
+						border-bottom:$gray-color solid 2px;
+						padding:5px;
+					}
+					.input-checkbox{
+						display:inline-block;
+						position: relative;
+						label{
+							background:url(/images/checkbox.png) no-repeat left center;
+							padding-left:32px;
+
+							}						
+						input{
+							position:absolute;
+							opacity:0;
+							&:checked + label{
+								background:url(/images/checkbox-checked.png) no-repeat left center;
+							}
+						}
+					}
+					
+				}
+			}
+		}
+	}
+}

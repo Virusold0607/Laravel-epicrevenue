@@ -134,12 +134,15 @@
 		right:20px;
 		top:12px;
 		font-size:24px;
+		z-index:0
 	}
 	.sbSelector{
 		width:100%;
 		font-size:18px;
 		color:$black-color;
 		display:block;
+		position:relative;
+		z-index:1;		
 		text-decoration:none !important;
 	}
 	.sbOptions{

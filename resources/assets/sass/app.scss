@@ -1,8 +1,15 @@
+// Fonts
+//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
 @import "variables";
 
+// Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "bower_components/components-font-awesome/scss/font-awesome";
 
+@import "node_modules/font-awesome/scss/font-awesome";
+
+@import "slickSlider";
 @import "components/anchor";
 @import "components/hero";
 @import "components/notification11";
@@ -23,17 +30,17 @@
 @import "pages/networks";
 @import "pages/promote";
 @import "pages/register";
+@import "pages/login";
+@import "pages/signin";
+@import "pages/payments";
+@import "pages/payouts";
+@import "pages/signin";
+@import "pages/reports";
+@import "pages/login";
+@import "pages/signin";
+@import "pages/setting";
+@import "pages/invites";
 
 @import "responsive";
 
-/*! General Styles */
-body {
-  background-color:$white-background-color;
-  font-family:$fontfamily;
-  color:$bodycolor;
-}
-.container{
-  width: auto;
-  padding:0 30px;
-  max-width:1440px
-}
+@import "common";
