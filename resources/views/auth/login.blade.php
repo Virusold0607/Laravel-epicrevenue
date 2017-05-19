@@ -2,8 +2,8 @@
 
 @section('body')
     <div class="main dashboard payouts">
-        {{--<div class="container">--}}
-            <div class="signup-bg">
+        <div class="signup-bg">
+            <div class="container">
                 <form class="signup-content form-login" role="form" method="POST" action="{{ url('/login') }}">
                     {{ csrf_field() }}
                     <h1 class="text-center">Signin</h1>
@@ -33,13 +33,13 @@
                                 <button class="btn default-btn black-button small-round font-large">SIGN	IN</button>
                             </li>
                             <li class="text-center font-large">
-                                <a class="color-black" href="#">Forgot	your	Password?</a>
+                                <a class="color-black" href="{!! url('/password/reset/') !!}">Forgot	your	Password?</a>
                             </li>
                         </ul>
                     </div>
                 </form>
             </div>
-        {{--</div>--}}
+        </div>
     </div>
 @endsection
 

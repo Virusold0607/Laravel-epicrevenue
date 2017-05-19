@@ -7,6 +7,7 @@
 			display:inline-block;
 			position:relative;
 			left:50px;
+			max-width:276px;
 		}
 	}
 	.influencer-header-graphic2{
@@ -15,12 +16,13 @@
 		z-index: 1111;
 		img{
 			left:0px;
+			max-width:100%;
 		}
 	}
 	.influencer-maximize{
 		padding-bottom:160px;
 		padding-top:60px;
-		background:url(../images/right-shadow.png) no-repeat left bottom;
+		background:url(/images/right-shadow.png) no-repeat left bottom;
 		background-size:auto 100%;
 		background-position:right top;
 		.page-title-3::before{
@@ -42,7 +44,7 @@
 		}
 		.container {
 			padding-bottom:60px;
-			background:url(../images/bottom-shadow.png) no-repeat left bottom;
+			background:url(/images/bottom-shadow.png) no-repeat left bottom;
 		}
 	}
 	.feature-box{

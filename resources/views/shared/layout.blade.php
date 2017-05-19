@@ -10,7 +10,6 @@
     @if(isset($meta->keywords))<meta name="keywords" itemprop="keywords" content="{{ $meta->keywords }}" />@endif
 
     <!-- Bootstrap core CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ elixir('assets/css/main.css') }}">
     @yield('styles')
 </head>

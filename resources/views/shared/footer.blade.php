@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 pull-right">
+            <div class="col-lg-8 col-sm-6 pull-right">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="footer-navigation">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-lg-4 col-sm-6">
                 <div class="footer-about">
                     <h4>About InfluencersReach</h4>
                     <p>Mauris elementum, erat eget rhoncus scelerisque, arcu quam tempus felis, molestie facilisis nulla libero id nibh. Cras arcu sapien, porttitor id pretium in, feugiat ut diam.Aenean ex dui, mollis posuere enim id.</p>

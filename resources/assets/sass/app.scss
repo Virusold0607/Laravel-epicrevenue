@@ -1,8 +1,12 @@
 // Fonts
 //@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Karla:300,400,700);
+
 
 // Variables
 @import "variables";
+
+@import "common";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -25,22 +29,14 @@
 @import "pages/home";
 @import "pages/campaigns";
 @import "pages/influencer";
-@import "pages/login";
 @import "pages/dashboard";
-@import "pages/networks";
-@import "pages/promote";
-@import "pages/register";
-@import "pages/login";
-@import "pages/signin";
-@import "pages/payments";
 @import "pages/payouts";
-@import "pages/signin";
+@import "pages/invites";
 @import "pages/reports";
-@import "pages/login";
 @import "pages/signin";
 @import "pages/setting";
-@import "pages/invites";
+@import "pages/payments";
+@import "pages/signup";
+@import "pages/signup-networks";
 
 @import "responsive";
-
-@import "common";

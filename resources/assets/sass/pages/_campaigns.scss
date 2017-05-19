@@ -113,52 +113,7 @@
 	max-width:790px;
 	margin:auto;
 }
-.custom-select{
-	background:$white-background-color;
-	position:relative;
-	padding:15px 20px;
-	border-radius:5px;
-	overflow:hidden;
-	select{
-		border: none;
-		background:none;
-		-webkit-appearance: none;
-    	-moz-appearance: none;
-		width:100%;
-		font-size:18px;
-		color:$black-color;
-	}
-	span{
-		position:absolute;
-		color:$black-color;
-		right:20px;
-		top:12px;
-		font-size:24px;
-		z-index:0
-	}
-	.sbSelector{
-		width:100%;
-		font-size:18px;
-		color:$black-color;
-		display:block;
-		position:relative;
-		z-index:1;		
-		text-decoration:none !important;
-	}
-	.sbOptions{
-		padding:10px 0 0;
-		margin-bottom:0;
-		text-align:left;
-		font-size:18px;
-		a{
-			text-decoration:none;
-			color:$black-color;
-		}
-		.active{
-			display:none;
-		}
-	}
-}
+
 .custom-input{
 	background:$white-background-color;
 	position:relative;

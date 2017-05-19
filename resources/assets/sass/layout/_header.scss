@@ -45,7 +45,6 @@
 		position:absolute;
 		height:5px;
 		width:34px;
-		position:absolute;
 		display:block;
 		left:50%;
 		top:100%;
@@ -80,7 +79,7 @@
 				a{
 					font-size:13px;
 					margin:0;
-					&:hvoer{
+					&:hover{
 						color:$black-color;
 					}
 				}
