@@ -124,7 +124,7 @@
                             <label>Start Date</label>
                             <div class="custom-select">
                                 {!! Form::date('startDate',request()->input('startDate', null), array('min' => "2015-01-01", 'max' => \Carbon\Carbon::now()->toDateString())) !!}
-                                <span><i class="fa fa-angle-down"></i></span>
+                                {{--<span><i class="fa fa-angle-down"></i></span>--}}
                             </div>
                         </li>
                         <li>
@@ -132,7 +132,7 @@
                             <div class="custom-select">
                                 {!! Form::date('endDate', request()->input('endDate', null), array('min' => "2015-01-01", 'max' => \Carbon\Carbon::now()->toDateString())) !!}
 
-                                <span><i class="fa fa-angle-down"></i></span>
+                                {{--<span><i class="fa fa-angle-down"></i></span>--}}
                             </div>
                         </li>
                         <li>
