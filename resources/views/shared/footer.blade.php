@@ -1,9 +1,9 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-sm-6 pull-right">
+            <div class="col-lg-8 col-sm-6 pull-right" style="z-index: 1;">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="z-index: 1;">
                         <div class="footer-navigation">
                             <h4>Navigation</h4>
                             <ul>
@@ -15,7 +15,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="z-index: 1;">
                         <div class="footer-navigation">
                             <h4>Legal</h4>
                             <ul>
