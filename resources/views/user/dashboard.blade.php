@@ -155,7 +155,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach(\App\Models\Campaign::orderBy('created_at', 'desc')->take(10)->get() as $c)
+                                @foreach($top_campaigns as $c)
                                     <tr>
                                         <td><span>.</span></td>
                                         <td>{!! $c->name !!}</td>
@@ -177,7 +177,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach(\App\Models\Campaign::orderBy('created_at', 'desc')->take(10)->get() as $c)
+                                @foreach($top_campaigns as $c)
                                     <tr>
                                         <td><span>.</span></td>
                                         <td>{!! $c->name !!}</td>
