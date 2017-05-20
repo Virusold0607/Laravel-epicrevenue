@@ -5,9 +5,17 @@
                 <div class="logo"><a href="{{url('/')}}"><img src="/images/logo.png" alt="logo" class="img-responsive"></a></div>
             </div>
             <div class="col-sm-8 pull-right text-right">
-                <div class="extra-link hidden">
-                    <a href="#"><i class="fa fa-user"></i></a>
-                    <a href="#"><i class="fa fa-cog"></i></a>
+                <div class="extra-link">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{!! url('/invite') !!}">Page 1-2</a></li>
+                                <li><a href="{!! url('/logout') !!}">Logout</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{!! url('/settings') !!}"><i class="fa fa-cog"></i></a></li>
+                    </ul>
                 </div>
                 <nav class="navbar navbar-inverse navbar-static-top custum-nav">
                     <div class="navbar-header">
