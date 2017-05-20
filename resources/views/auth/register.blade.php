@@ -63,7 +63,6 @@
                                 </div>
                             @endif
 
-
                             <div class="row">
                                 <div class="col-sm-6">
                                     {!! Form::label('firstname', 'Firstname', array()) !!}

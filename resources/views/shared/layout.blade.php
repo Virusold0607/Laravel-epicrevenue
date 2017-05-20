@@ -23,6 +23,43 @@
     @include('shared/footer')
 </div>
 <script type="text/javascript" src="{{ elixir('assets/js/main.js') }}"></script>
+<script type="text/javascript" src="/assets/js/slick.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.selectbox-0.2.js"></script>
+<script>
+    $(document).ready(function(e) {
+        $(".dashboard-slider").slick({
+            centerMode: true,
+            centerPadding: '3px',
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 2
+                    }
+                }
+            ]
+
+        });
+        i = -1;
+        $(".tab-pane").each(function(index, element) {
+            i++;
+            var getCode = $(this).html();
+            $(this).parents(".dashboard-tabs").children(".nav-tabs").find("li").eq(i).append(getCode);
+        });
+
+    });
+</script>
+<script>
+    $(document).ready(function(e) {
+        $(".custom-select select").selectbox();
+        $(".custom-select .sbOptions li:first-child").addClass("active");
+    });
+</script>
+
 @yield('scripts')
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
