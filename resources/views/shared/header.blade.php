@@ -30,7 +30,7 @@
                                 <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
                                 <li class="{{ request()->is('reports') ? 'active' : '' }}"><a href="{{ url('/reports') }}">REPORTS</a></li>
                                 <li class="{{ request()->is('contests') ? 'active' : '' }}"><a href="{{ url('/contests') }}">CONTESTS</a></li>
-                                <li class="dropdown mobile-only">
+                                <li class="dropdown hidden-lg hidden-md hidden-sm">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ auth()->user()->firstname }} <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ url('/settings') }}">Settings</a></li>
