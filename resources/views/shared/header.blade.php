@@ -10,8 +10,8 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{!! url('/invite') !!}">Page 1-2</a></li>
-                                <li><a href="{!! url('/logout') !!}">Logout</a></li>
+                                <li style="z-index: 1;"><a href="{!! url('/invite') !!}">Invite</a></li>
+                                <li style="z-index: 1;"><a href="{!! url('/logout') !!}">Logout</a></li>
                             </ul>
                         </li>
                         <li><a href="{!! url('/settings') !!}"><i class="fa fa-cog"></i></a></li>
@@ -26,18 +26,18 @@
                             <ul class="nav navbar-nav">
                                 <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a href="{{url('/dashboard')}}">DASHBOARD</a></li>
                                 <li class="{{ request()->is('promote') ? 'active' : '' }}"><a href="{{ url('/promote') }}">PROMOTE</a></li>
-                                <li class="{{ request()->is('campaigns') ? 'active' : '' }}"><a href="{{ url('/campaigns') }}">Campaigns</a></li>
+                                {{--<li class="{{ request()->is('campaigns') ? 'active' : '' }}"><a href="{{ url('/campaigns') }}">Campaigns</a></li>--}}
                                 <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
                                 <li class="{{ request()->is('reports') ? 'active' : '' }}"><a href="{{ url('/reports') }}">REPORTS</a></li>
                                 <li class="{{ request()->is('contests') ? 'active' : '' }}"><a href="{{ url('/contests') }}">CONTESTS</a></li>
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ auth()->user()->firstname }} <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{ url('/settings') }}">Settings</a></li>
-                                        <li><a href="{{ url('/invite') }}">Invite</a></li>
-                                        <li><a href="{{ url('/logout') }}">Logout</a></li>
-                                    </ul>
-                                </li>
+                                {{--<li class="dropdown">--}}
+                                    {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ auth()->user()->firstname }} <span class="caret"></span></a>--}}
+                                    {{--<ul class="dropdown-menu">--}}
+                                        {{--<li><a href="{{ url('/settings') }}">Settings</a></li>--}}
+                                        {{--<li><a href="{{ url('/invite') }}">Invite</a></li>--}}
+                                        {{--<li><a href="{{ url('/logout') }}">Logout</a></li>--}}
+                                    {{--</ul>--}}
+                                {{--</li>--}}
                             </ul>
                         @else
                         <ul class="nav navbar-nav">
