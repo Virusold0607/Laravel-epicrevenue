@@ -5,7 +5,7 @@
                 <div class="logo"><a href="{{url('/')}}"><img src="/images/logo.png" alt="logo" class="img-responsive"></a></div>
             </div>
             <div class="col-sm-8 pull-right text-right">
-                <div class="extra-link">
+                <div class="extra-link desktop-display">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i></a>
@@ -30,14 +30,14 @@
                                 <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
                                 <li class="{{ request()->is('reports') ? 'active' : '' }}"><a href="{{ url('/reports') }}">REPORTS</a></li>
                                 <li class="{{ request()->is('contests') ? 'active' : '' }}"><a href="{{ url('/contests') }}">CONTESTS</a></li>
-                                {{--<li class="dropdown">--}}
-                                    {{--<a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ auth()->user()->firstname }} <span class="caret"></span></a>--}}
-                                    {{--<ul class="dropdown-menu">--}}
-                                        {{--<li><a href="{{ url('/settings') }}">Settings</a></li>--}}
-                                        {{--<li><a href="{{ url('/invite') }}">Invite</a></li>--}}
-                                        {{--<li><a href="{{ url('/logout') }}">Logout</a></li>--}}
-                                    {{--</ul>--}}
-                                {{--</li>--}}
+                                <li class="dropdown mobile-only">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ auth()->user()->firstname }} <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ url('/settings') }}">Settings</a></li>
+                                        <li><a href="{{ url('/invite') }}">Invite</a></li>
+                                        <li><a href="{{ url('/logout') }}">Logout</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         @else
                         <ul class="nav navbar-nav">
