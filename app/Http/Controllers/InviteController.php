@@ -27,7 +27,8 @@ class InviteController extends Controller
         $active = User::where('referral_id', Auth::user()->id)->where('approved', 'yes')->count();
         $inactive = User::where('referral_id', Auth::user()->id)->where('approved', 'no')->count();
 
-        $earn = UserBalance::where('user_id', Auth::user()->id)->first()->histories()->where('type', 'referral')->sum('amount');
+        $users = UserBalance::where('user_id', Auth::user()->id)->first()->histories()->where('type', 'referral');
+        $earn = $users->sum('amount');
 
         return view('user.invite')->with(compact('referrals', 'active', 'inactive', 'earn'));
     }
