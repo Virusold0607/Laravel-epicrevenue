@@ -25,7 +25,7 @@
                         @if(auth()->check())
                             <ul class="nav navbar-nav">
                                 <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a href="{{url('/dashboard')}}">DASHBOARD</a></li>
-                                <li class="{{ request()->is('promote') ? 'active' : '' }}"><a href="{{ url('/promote') }}">PROMOTE</a></li>
+                                <li class="{{ request()->is('promotions') ? 'active' : '' }}"><a href="{{ url('/promotions') }}">PROMOTE</a></li>
                                 {{--<li class="{{ request()->is('campaigns') ? 'active' : '' }}"><a href="{{ url('/campaigns') }}">Campaigns</a></li>--}}
                                 <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
                                 <li class="{{ request()->is('reports') ? 'active' : '' }}"><a href="{{ url('/reports') }}">REPORTS</a></li>
