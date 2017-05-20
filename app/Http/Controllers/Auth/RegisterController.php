@@ -347,14 +347,15 @@ class RegisterController extends Controller
                 ->withInput();
         }
 
-        $payment = new PaymentDetail();
+        $payment = PaymentDetail::where('user_id', (int) $user->id)->first();
+        if(is_null($payment))
+            $payment = new PaymentDetail();
         $payment->user_id = $user->id;
         $payment->method = $request->payment_method;
         $payment->send_to = $request->payment_method_detail;
         $payment->save();
 
         $email_confirm_code = str_random(64);
-
 
         $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
         $status->any_payment_method_added = 'yes';

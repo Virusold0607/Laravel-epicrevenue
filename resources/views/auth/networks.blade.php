@@ -70,7 +70,7 @@
 
                         <div class="row">
                             <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2">
+                                <div class="payments-box box-shadow2" id="instagram">
                                     <div id="instagram_btn" data-popup="true" class="payment-thumbnail @if(!empty(session('instagram_name')))selected @endif">
                                         <img src="/images/social-media1.png" />
                                         @if(!empty(session('instagram_name')))
@@ -81,39 +81,48 @@
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2">
+                                <div class="payments-box box-shadow2" id="facebook">
                                     <div class="payment-thumbnail">
                                         <img src="/images/social-media2.png" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2">
+                                <div class="payments-box box-shadow2" id="twitter">
                                     <div class="payment-thumbnail">
                                         <img src="/images/social-media3.png" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2">
+                                <div class="payments-box box-shadow2" id="youtube">
                                     <div class="payment-thumbnail">
                                         <img src="/images/social-media4.png" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2">
+                                <div class="payments-box box-shadow2" id="tumblr">
                                     <div class="payment-thumbnail">
                                         <img src="/images/social-media5.png" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2">
+                                <div class="payments-box box-shadow2" id="vibe">
                                     <div class="payment-thumbnail">
                                         <img src="/images/social-media6.png" />
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="setting-form singup-section" id="notAvailable" style="display: none;">
+                        <div class="netwrok-action">
+                            <div class="alert alert-info">
+                                This option is not available yet. We are working on it.
                             </div>
                         </div>
                     </div>
@@ -158,9 +167,79 @@
                 }
             });
 
-            $('#instagram_btn').click(function () {
+            $('#instagram').click(function(){
+                $('#instagram').removeClass('selected');
+                $('#facebook').removeClass('selected');
+                $('#twitter').removeClass('selected');
+                $('#youtube').removeClass('selected');
+                $('#tumblr').removeClass('selected');
+                $('#vibe').removeClass('selected');
+
+                $('#instagram').addClass('selected');
                 $('#igPanel').slideDown('slow');
+                $('#notAvailable').slideUp('slow');
             });
+            $('#facebook').click(function(){
+                $('#instagram').removeClass('selected');
+                $('#facebook').removeClass('selected');
+                $('#twitter').removeClass('selected');
+                $('#youtube').removeClass('selected');
+                $('#tumblr').removeClass('selected');
+                $('#vibe').removeClass('selected');
+
+                $('#facebook').addClass('selected');
+                $('#igPanel').slideUp('slow');
+                $('#notAvailable').slideDown('slow');
+            });
+            $('#twitter').click(function(){
+                $('#instagram').removeClass('selected');
+                $('#facebook').removeClass('selected');
+                $('#twitter').removeClass('selected');
+                $('#youtube').removeClass('selected');
+                $('#tumblr').removeClass('selected');
+                $('#vibe').removeClass('selected');
+
+                $('#twitter').addClass('selected');
+                $('#igPanel').slideUp('slow');
+                $('#notAvailable').slideDown('slow');
+            });
+            $('#youtube').click(function(){
+                $('#instagram').removeClass('selected');
+                $('#facebook').removeClass('selected');
+                $('#twitter').removeClass('selected');
+                $('#youtube').removeClass('selected');
+                $('#tumblr').removeClass('selected');
+                $('#vibe').removeClass('selected');
+
+                $('#youtube').addClass('selected');
+                $('#igPanel').slideUp('slow');
+                $('#notAvailable').slideDown('slow');
+            });
+            $('#tumblr').click(function(){
+                $('#instagram').removeClass('selected');
+                $('#facebook').removeClass('selected');
+                $('#twitter').removeClass('selected');
+                $('#youtube').removeClass('selected');
+                $('#tumblr').removeClass('selected');
+                $('#vibe').removeClass('selected');
+
+                $('#tumblr').addClass('selected');
+                $('#igPanel').slideUp('slow');
+                $('#notAvailable').slideDown('slow');
+            });
+            $('#vibe').click(function(){
+                $('#instagram').removeClass('selected');
+                $('#facebook').removeClass('selected');
+                $('#twitter').removeClass('selected');
+                $('#youtube').removeClass('selected');
+                $('#tumblr').removeClass('selected');
+                $('#vibe').removeClass('selected');
+
+                $('#vibe').addClass('selected');
+                $('#igPanel').slideUp('slow');
+                $('#notAvailable').slideDown('slow');
+            });
+
 
             $('#instagram_verify').click(function(){
                 $( "#ig_result" ).html( "Verifying..." );
