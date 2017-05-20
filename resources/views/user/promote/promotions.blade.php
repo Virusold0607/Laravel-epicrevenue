@@ -4,7 +4,7 @@
 
     <div class="hero hero-dashboard">
         <div class="container">
-            <h1 class="hero-heading">Promote Page</h1>
+            <h1 class="hero-heading">Promoting</h1>
                 <p class="hero-p">
                     Click an approved account to see the content advertisers have submitted for you to promote.
                 </p>
