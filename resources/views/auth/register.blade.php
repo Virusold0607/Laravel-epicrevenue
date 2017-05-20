@@ -50,7 +50,7 @@
                             </ul>
                         </div>
 
-                        <h2>ADD	PAYMENT	METHODS</h2>
+                        <h2 style="padding-left: 5%;">Account Details</h2>
                         <div class="setting-form singup-section">
                             {{-- Was there an error? --}}
                             @if (count($errors) > 0)
