@@ -23,8 +23,6 @@
     @include('shared/footer')
 </div>
 <script type="text/javascript" src="{{ elixir('assets/js/main.js') }}"></script>
-<script type="text/javascript" src="/assets/js/slick.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.selectbox-0.2.js"></script>
 <script>
     $(document).ready(function(e) {
         $(".dashboard-slider").slick({

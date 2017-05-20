@@ -157,7 +157,7 @@
 		padding-bottom: 25px;
 	}
 	.home-banner{
-		background:url(/images/header.png) repeat center center ;
+		background:url(../images/header.png) repeat center center ;
 		background-size:cover !important;
 	}
 	.home-banner .home-body{
@@ -229,7 +229,7 @@
 		background:#0e0c1f;
 		margin:30% 0 0;
 		&:before{
-			background:url(/images/service-top.png) no-repeat right top;
+			background:url(../images/service-top.png) no-repeat right top;
 			background-size: cover;
 			content:"";
 			display:block;
@@ -242,7 +242,7 @@
 			width:auto;
 		}
 		&:after{
-			background:url(/images/service-bottom.png) no-repeat left top;
+			background:url(../images/service-bottom.png) no-repeat left top;
 			background-size: cover;
 			content:"";
 			display:block;
@@ -272,7 +272,7 @@
 
 	#navbar:before{
 		content:"";
-		background:#4a71b6  url(/images/logo1.png) no-repeat 20px 25px;
+		background:#4a71b6  url(../images/logo1.png) no-repeat 20px 25px;
 		background-size:210px auto !important;
 		position:absolute;
 		left:0;
@@ -308,7 +308,7 @@
 		margin:auto;
 	}
 	.home-banner.campaigns-header{
-		background:url(/images/campaigns-header.png) repeat center bottom ;
+		background:url(../images/campaigns-header.png) repeat center bottom ;
 		background-size:cover !important;
 		text-align:center;
 	}
@@ -567,7 +567,7 @@
 		text-align:center;
 	}
 	.signup-bg{
-		background:url(/images/setting-bg.png) no-repeat center bottom !important;
+		background:url(../images/setting-bg.png) no-repeat center bottom !important;
 		background-size: 120% auto !important;
 	}
 	.dashboard .dashboard-tabs .nav-tabs {
@@ -701,7 +701,7 @@
 		margin-bottom:15px;
 	}
 	.services{
-		background:url(/images/services-bg.png) no-repeat  center center;
+		background:url(../images/services-bg.png) no-repeat  center center;
 		background-size: cover;
 		padding-bottom:300px;
 	}
