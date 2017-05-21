@@ -25,13 +25,21 @@
                 <?php $count = 1; ?>
                 @foreach($accounts as $account)
                     <div class="col-sm-3">
-                        <div class="container-fluid social-account-container">
-                            <a href="{!! url('/promotions', [$account->id]) !!}">
-                                <h5>{!! $account->username !!}</h5>
-                                <hr>
-                                <div><img src="{!! $account->profile_picture !!}" /></div>
-                            </a>
-                        </div>
+                        <a class="thumbnail" href="{!! url('/promotions', [$account->id]) !!}">
+                            <img src="{!! $account->profile_picture !!}" alt="{!! $account->username !!}">
+                            <div class="caption">
+                                <h3>{!! $account->username !!}</h3>
+                                {{--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>--}}
+                            </div>
+                        </a>
+
+                        {{--<div class="container-fluid social-account-container">--}}
+                            {{--<a href="{!! url('/promotions', [$account->id]) !!}">--}}
+                                {{--<h5>{!! $account->username !!}</h5>--}}
+                                {{--<hr>--}}
+                                {{--<div><img src="{!! $account->profile_picture !!}" /></div>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
                     </div>
                     <?php $count++ ?>
                     @if(($count % 4) == 1)
