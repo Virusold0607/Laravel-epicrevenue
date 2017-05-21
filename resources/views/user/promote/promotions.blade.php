@@ -26,7 +26,7 @@
                 @foreach($accounts as $account)
                     <div class="col-sm-3">
                         <a class="thumbnail" href="{!! url('/promotions', [$account->id]) !!}">
-                            <img src="{!! $account->profile_picture !!}" alt="{!! $account->username !!}">
+                            <img class="img-responsive" src="{!! $account->profile_picture !!}" alt="{!! $account->username !!}">
                             <div class="caption">
                                 <h3>{!! $account->username !!}</h3>
                                 {{--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>--}}
