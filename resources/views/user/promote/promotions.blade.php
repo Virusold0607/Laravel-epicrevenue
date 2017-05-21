@@ -49,10 +49,10 @@
 
                 <div class="col-sm-3">
                     <a class="thumbnail text-center" href="{!! url('/promotions', [$account->id]) !!}">
-                        <i class="fa fa-database" aria-hidden="true" style="font-size: 50px; padding: 10px;"></i>
+                        <i class="fa fa-database" aria-hidden="true" style="font-size: 100px; padding: 10px;"></i>
 {{--                        <img class="img-responsive" src="{!! $account->profile_picture !!}" alt="Add Account">--}}
-                        <hr>
                         <div class="caption">
+                            <hr>
                             <h3>Add Account</h3>
                             {{--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>--}}
                         </div>
