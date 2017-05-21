@@ -19,7 +19,7 @@
             @if(session()->has('success'))
                 <div class="alert alert-success">You have successfully added your Social account and it is now pending review.</div>
             @endif
-            <div class="text">We allow advertisers to offer specific content to promote per account select one to see whats available.</div>
+            <h4 class="text">We allow advertisers to offer specific content to promote per account select one to see whats available.</h4>
             <hr>
             <div class="row">
                 <?php $count = 1; ?>
