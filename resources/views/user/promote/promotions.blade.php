@@ -48,13 +48,21 @@
                 @endforeach
 
                 <div class="col-sm-3">
-                    <div class="container-fluid social-account-container add-account">
-                        <a href="{!! url('/networks') !!}">
-                            <h5>Add Account</h5>
-                            <hr>
-                            <i class="fa fa-database" aria-hidden="true"></i>
-                        </a>
-                    </div>
+                    <a class="thumbnail" href="{!! url('/promotions', [$account->id]) !!}">
+                        <i class="fa fa-database" aria-hidden="true"></i>
+{{--                        <img class="img-responsive" src="{!! $account->profile_picture !!}" alt="Add Account">--}}
+                        <div class="caption">
+                            <h3>Add Account</h3>
+                            {{--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>--}}
+                        </div>
+                    </a>
+                    {{--<div class="container-fluid social-account-container add-account">--}}
+                        {{--<a href="{!! url('/networks') !!}">--}}
+                            {{--<h5>Add Account</h5>--}}
+                            {{--<hr>--}}
+                            {{--<i class="fa fa-database" aria-hidden="true"></i>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
                 </div>
             </div>
         </div>
