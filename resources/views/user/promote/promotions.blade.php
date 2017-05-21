@@ -48,8 +48,8 @@
                 @endforeach
 
                 <div class="col-sm-3">
-                    <a class="thumbnail" href="{!! url('/promotions', [$account->id]) !!}">
-                        <i class="fa fa-database" aria-hidden="true"></i>
+                    <a class="thumbnail text-center" href="{!! url('/promotions', [$account->id]) !!}">
+                        <i class="fa fa-database" aria-hidden="true" style="font-size: 50px; padding: 10px;"></i>
 {{--                        <img class="img-responsive" src="{!! $account->profile_picture !!}" alt="Add Account">--}}
                         <div class="caption">
                             <h3>Add Account</h3>
