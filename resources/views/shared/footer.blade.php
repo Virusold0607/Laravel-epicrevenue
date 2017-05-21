@@ -8,10 +8,14 @@
                             <h4>Navigation</h4>
                             <ul>
                                 <li><a href="{{ url('/about') }}">About</a></li>
+                                @if(auth()->check())
                                 <li><a href="{{ url('/influencers/apply') }}">Sign Up</a></li>
+                                @endif
                                 <li><a href="{{ url('/faqs') }}">FAQ’s</a></li>
                                 <li><a href="{{ url('/rewards') }}">Rewards</a></li>
+                                @if(auth()->check())
                                 <li><a href="{{ url('/login') }}">Sign In</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
