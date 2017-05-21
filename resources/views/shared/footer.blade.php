@@ -31,7 +31,7 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="footer-about">
                     <h4>About InfluencersReach</h4>
-                    <p>Mauris elementum, erat eget rhoncus scelerisque, arcu quam tempus felis, molestie facilisis nulla libero id nibh. Cras arcu sapien, porttitor id pretium in, feugiat ut diam.Aenean ex dui, mollis posuere enim id.</p>
+                    {{--<p>Mauris elementum, erat eget rhoncus scelerisque, arcu quam tempus felis, molestie facilisis nulla libero id nibh. Cras arcu sapien, porttitor id pretium in, feugiat ut diam.Aenean ex dui, mollis posuere enim id.</p>--}}
                 </div>
             </div>
         </div>

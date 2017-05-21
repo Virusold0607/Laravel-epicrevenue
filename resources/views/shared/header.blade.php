@@ -5,6 +5,7 @@
                 <div class="logo"><a href="{{url('/')}}"><img src="/images/logo.png" alt="logo" class="img-responsive"></a></div>
             </div>
             <div class="col-sm-8 pull-right text-right">
+                @if(auth()->check())
                 <div class="extra-link desktop-display">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
@@ -17,6 +18,7 @@
                         <li><a href="{!! url('/settings') !!}"><i class="fa fa-cog"></i></a></li>
                     </ul>
                 </div>
+                @endif
                 <nav class="navbar navbar-inverse navbar-static-top custum-nav">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>

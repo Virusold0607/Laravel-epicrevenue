@@ -26,7 +26,7 @@
                 @foreach($accounts as $account)
                     <div class="col-sm-3">
                         <div class="container-fluid social-account-container">
-                            <a href="{!! url('/promote', [$account->id]) !!}">
+                            <a href="{!! url('/promotions', [$account->id]) !!}">
                                 <h5>{!! $account->username !!}</h5>
                                 <hr>
                                 <div><img src="{!! $account->profile_picture !!}" /></div>
