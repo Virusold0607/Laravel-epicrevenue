@@ -31,7 +31,7 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="footer-about">
                     <h4>About InfluencersReach</h4>
-                    {{--<p>Mauris elementum, erat eget rhoncus scelerisque, arcu quam tempus felis, molestie facilisis nulla libero id nibh. Cras arcu sapien, porttitor id pretium in, feugiat ut diam.Aenean ex dui, mollis posuere enim id.</p>--}}
+                    <p>Our network operates the largest influencer network in the world. Using our platform advertisers can target the largest markets to the narrowest niches through social media. With our unique advertising options advertisers only pay for quality leads.</p>
                 </div>
             </div>
         </div>
