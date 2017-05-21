@@ -87,7 +87,7 @@ Route::group(['middleware' => []], function() {
         Route::get('/invite', 'InviteController@index');
 
         //Promote
-        Route::get('/promote', 'User\PromoteController@index');
+        Route::get('/promote', 'User\PromoteController@promotions');
         Route::get('/promotions', 'User\PromoteController@promotions');
         Route::get('/promotions/{id}', 'User\PromoteController@show');
 
