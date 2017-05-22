@@ -30,8 +30,8 @@ body {
 }
 
 .no-padding > [class*='col-'] {
-	padding-right:0;
-	padding-left:0;
+    padding-right:0;
+    padding-left:0;
 }
 .color-blue{
 	color:$blue-color;
@@ -52,7 +52,7 @@ body {
 	background:$white-background-color;
 }
 .white-background{
-	background:$white-background-color;
+	background:$white-background-color;	
 }
 .default-padding{
 	padding:70px 0;
@@ -94,10 +94,10 @@ body {
 }
 
 textarea:focus, input:focus{
-	outline: none;
+    outline: none;
 }
 *:focus {
-	outline: none;
+    outline: none;
 }
 .custom-select{
 	background:$white-background-color;
@@ -109,7 +109,7 @@ textarea:focus, input:focus{
 		border: none;
 		background:none;
 		-webkit-appearance: none;
-		-moz-appearance: none;
+    	-moz-appearance: none;
 		width:100%;
 		font-size:18px;
 		color:$black-color;
@@ -128,7 +128,7 @@ textarea:focus, input:focus{
 		color:$black-color;
 		display:block;
 		position:relative;
-		z-index:1;
+		z-index:1;		
 		text-decoration:none !important;
 	}
 	.sbOptions{
@@ -148,6 +148,6 @@ textarea:focus, input:focus{
 }
 
 .signup-bg .signup-content .signup-small-container .signup-form li input:focus{
-	box-shadow:$box-shaddow-lighter;
+		box-shadow:$box-shaddow-lighter;
 	background:$white-background-color;
 }

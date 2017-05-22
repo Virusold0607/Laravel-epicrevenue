@@ -7,11 +7,11 @@
 			display:inline-block;
 			position:relative;
 			left:50px;
-			max-width:276px;
+			max-width:25%;
 		}
 	}
 	.influencer-header-graphic2{
-		margin-top: -146px;
+		margin-top: -12%;
 		position: relative;
 		z-index: 1111;
 		img{
@@ -22,7 +22,7 @@
 	.influencer-maximize{
 		padding-bottom:160px;
 		padding-top:60px;
-		background:url(/images/right-shadow.png) no-repeat left bottom;
+		background:url(../images/right-shadow.png) no-repeat left bottom;
 		background-size:auto 100%;
 		background-position:right top;
 		.page-title-3::before{
@@ -44,7 +44,7 @@
 		}
 		.container {
 			padding-bottom:60px;
-			background:url(/images/bottom-shadow.png) no-repeat left bottom;
+			background:url(../images/bottom-shadow.png) no-repeat left bottom;
 		}
 	}
 	.feature-box{

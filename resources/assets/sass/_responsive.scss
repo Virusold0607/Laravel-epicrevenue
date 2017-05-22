@@ -4,8 +4,19 @@
 .mobile-only{
 	display:none;
 }
+#navbar .setting-menu{
+	display:none;
+}
+.alert-box{
+	text-align:center;
+}
+.alert-box .alert-text{
+	text-align:left;
+}
 @media(max-width:767px){
-
+	#navbar .setting-menu{
+		display: block;
+	}
 	html .logo img{
 
 		max-width:216px !important;
@@ -157,7 +168,7 @@
 		padding-bottom: 25px;
 	}
 	.home-banner{
-		background:url(/images/header.png) repeat center center ;
+		background:url(../images/header.png) repeat center center ;
 		background-size:cover !important;
 	}
 	.home-banner .home-body{
@@ -229,7 +240,7 @@
 		background:#0e0c1f;
 		margin:30% 0 0;
 		&:before{
-			background:url(/images/service-top.png) no-repeat right top;
+			background:url(../images/service-top.png) no-repeat right top;
 			background-size: cover;
 			content:"";
 			display:block;
@@ -242,7 +253,7 @@
 			width:auto;
 		}
 		&:after{
-			background:url(/images/service-bottom.png) no-repeat left top;
+			background:url(../images/service-bottom.png) no-repeat left top;
 			background-size: cover;
 			content:"";
 			display:block;
@@ -272,7 +283,7 @@
 
 	#navbar:before{
 		content:"";
-		background:#4a71b6  url(/images/logo1.png) no-repeat 20px 25px;
+		background:#4a71b6  url(../images/logo1.png) no-repeat 20px 25px;
 		background-size:210px auto !important;
 		position:absolute;
 		left:0;
@@ -308,7 +319,7 @@
 		margin:auto;
 	}
 	.home-banner.campaigns-header{
-		background:url(/images/campaigns-header.png) repeat center bottom ;
+		background:url(../images/campaigns-header.png) repeat center bottom ;
 		background-size:cover !important;
 		text-align:center;
 	}
@@ -567,7 +578,7 @@
 		text-align:center;
 	}
 	.signup-bg{
-		background:url(/images/setting-bg.png) no-repeat center bottom !important;
+		background:url(../images/setting-bg.png) no-repeat center bottom !important;
 		background-size: 120% auto !important;
 	}
 	.dashboard .dashboard-tabs .nav-tabs {
@@ -577,6 +588,7 @@
 	.dashboard-tabs .nav-tabs > li{
 		float:none;
 		display:inline-block;
+		width:100%;
 	}
 	.dashboard .dashboard-tabs .nav-tabs a,
 	.dashboard .dashboard-tabs .nav-tabs table{
@@ -596,6 +608,51 @@
 	.custom-select .sbSelector{
 		text-align:left;
 	}
+
+	.footer .pull-right{
+		float:none !important;
+	}
+
+	#navbar .extra-link {
+		display: block;
+		font-size: 14px;
+		position: absolute;
+		right: -3px;
+		top: -119px;
+		width: auto;
+	}
+	.header .extra-link .nav > li{
+		display:inline-block;
+		margin-left:20px;
+		vertical-align:top;
+	}
+	.header .extra-link .nav > li a{
+		margin:0 !important;
+		padding:0;
+		display:block;
+		text-align:center;
+		white-space:normal !important;
+		color:#fff;
+		margin-left:10px !important;
+	}
+	.header .extra-link .navbar-nav .open .dropdown-menu{
+		position:absolute;
+		width:100px !important;
+		background:#fff !important;
+		left:50%;
+		min-width:100px !important;
+		margin-left:-60px !important;
+	}
+	.header .extra-link .navbar-nav .open .dropdown-menu li a{
+		margin:0 !important;
+	}
+
+	.header .extra-link .dropdown-menu li + li,
+	#navbar > ul.nav  li + li{
+		border-top:#eed solid 1px;
+	}
+
+
 }
 
 
@@ -647,6 +704,7 @@
 		position: absolute;
 		right: 6px;
 		top: -82px;
+		z-index:11111;
 	}
 	.campaigns-menu ul{
 		font-size:17px;
@@ -701,7 +759,7 @@
 		margin-bottom:15px;
 	}
 	.services{
-		background:url(/images/services-bg.png) no-repeat  center center;
+		background:url(../images/services-bg.png) no-repeat  center center;
 		background-size: cover;
 		padding-bottom:300px;
 	}
@@ -758,6 +816,13 @@
 	.add-networks .payment-thumbnail img {
 		height: auto;
 		max-width: 50px;
+	}
+
+	.influencer .home-banner  .influencer-header-graphic img {
+		max-width: 22%;
+	}
+	.influencer .influencer-header-graphic2 {
+		margin-top: -15%;
 	}
 
 }

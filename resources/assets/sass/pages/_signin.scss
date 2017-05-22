@@ -1,5 +1,5 @@
 .signup-bg{
-	background:url(/images/setting-bg.png) no-repeat left bottom;
+	background:url(../images/setting-bg.png) no-repeat left bottom;
 	background-size: 100% auto;
 	min-height:600px;
 	.signup-content{
@@ -47,21 +47,22 @@
 								line-height:20px;
 								border-radius:3px;
 								overflow:hidden;
-								display: inline-block;
-								font: normal normal normal 14px/1 FontAwesome;
-								text-rendering: auto;
-								-webkit-font-smoothing: antialiased;
-								-moz-osx-font-smoothing: grayscale;
-								transform: translate(0, 0);
-								font-size:13px;
-								line-height:19px;
+								  display: inline-block;
+								  font: normal normal normal 14px/1 FontAwesome;
+								  text-rendering: auto;
+								  -webkit-font-smoothing: antialiased;
+								  -moz-osx-font-smoothing: grayscale;
+								  transform: translate(0, 0);
+								  font-size:13px;
+								  line-height:19px;	
+								  							
 							}
-						}
+							}						
 						input{
 							position:absolute;
 							opacity:0;
 							&:checked + label{
-								/*background:url(/images/checkbox-checked.png) no-repeat left center;*/
+								/*background:url(../images/checkbox-checked.png) no-repeat left center;*/
 								&:after{
 									background:#4c71b7;
 								}								
