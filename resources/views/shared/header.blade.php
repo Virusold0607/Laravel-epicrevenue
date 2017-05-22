@@ -6,18 +6,18 @@
             </div>
             <div class="col-sm-8 pull-right text-right">
                 @if(auth()->check())
-                <div class="extra-link desktop-display">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i></a>
-                            <ul class="dropdown-menu">
-                                <li style="z-index: 1;"><a href="{!! url('/invite') !!}">Invite</a></li>
-                                <li style="z-index: 1;"><a href="{!! url('/logout') !!}">Logout</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{!! url('/settings') !!}"><i class="fa fa-cog"></i></a></li>
-                    </ul>
-                </div>
+                    <div class="extra-link">
+                        <ul class="nav navbar-nav setting-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{!! url('/invite') !!}">Invite</a></li>
+                                    <li><a href="{!! url('/logout') !!}">Logout</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{!! url('/settings') !!}"><i class="fa fa-cog"></i></a></li>
+                        </ul>
+                    </div>
                 @endif
                 <nav class="navbar navbar-inverse navbar-static-top custum-nav">
                     <div class="navbar-header">
