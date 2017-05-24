@@ -39,8 +39,8 @@ class PromoteController extends Controller
      */
     public function index()
     {
-        $accounts = SocialAccount::where('user_id', auth()->user()->id)->get();
-        return view('user.promote.index', compact('accounts'));
+//        $accounts = SocialAccount::where('user_id', auth()->user()->id)->get();
+        return view('user.promote.index');
     }
 
     /**
