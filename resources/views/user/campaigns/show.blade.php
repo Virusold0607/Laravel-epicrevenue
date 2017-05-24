@@ -39,7 +39,7 @@
 
             @if(auth()->check())
                 <div class="">
-                    <button id="generateBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Generate Your Unique Promotional Link</button>
+                    <button id="generateBtn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Generate Your Unique Promotional Link</button>
                 </div>
             @endif
 
