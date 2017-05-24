@@ -14,7 +14,7 @@
     <div class="clearfix"></div>
 
     <div class="page-container no-border">
-        <div class="container">
+        <div class="container" style="margin-top: 20px;">
             <div class="row">
                 <div class="col-sm-3">
                     <a class="thumbnail text-center" href="{!! url('/promotions') !!}">
