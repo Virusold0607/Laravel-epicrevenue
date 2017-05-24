@@ -1,5 +1,5 @@
 .signup-bg{
-	background:url(../images/setting-bg.png) no-repeat left bottom;
+	background:url(/images/setting-bg.png) no-repeat left bottom;
 	background-size: 100% auto;
 	min-height:600px;
 	.signup-content{
@@ -28,7 +28,7 @@
 						display:inline-block;
 						position: relative;
 						label{
-						/*background:url(../images/checkbox.png) no-repeat left center;*/
+						/*background:url(/images/checkbox.png) no-repeat left center;*/
 							padding-left:32px;
 							font-weight:normal;
 							position:relative;
@@ -62,7 +62,7 @@
 							position:absolute;
 							opacity:0;
 							&:checked + label{
-								/*background:url(../images/checkbox-checked.png) no-repeat left center;*/
+								/*background:url(/images/checkbox-checked.png) no-repeat left center;*/
 								&:after{
 									background:#4c71b7;
 								}								

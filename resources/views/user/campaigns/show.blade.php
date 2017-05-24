@@ -60,9 +60,10 @@
 
             <hr>
 
-            <div>
+            <div class="pull-right">
                 <a class="btn btn-primary btn-lg" href="{!! url('/campaigns')  !!}">Go Back</a>
             </div>
+            <div class="clearfix"></div>
         </div>
     </div>
     <div class="container">
