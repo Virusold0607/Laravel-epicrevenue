@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <a class="thumbnail text-center" href="{!! url('/promotions') !!}">
-                        <i class="fa fa-database" aria-hidden="true" style="font-size: 100px; padding: 10px;"></i>
+                        <i class="fa fa-user-secret" aria-hidden="true" style="font-size: 100px; padding: 10px;"></i>
                         {{--                        <img class="img-responsive" src="{!! $account->profile_picture !!}" alt="Add Account">--}}
                         <div class="caption">
                             <hr>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-sm-3">
                     <a class="thumbnail text-center" href="{!! url('/campaigns') !!}">
-                        <i class="fa fa-database" aria-hidden="true" style="font-size: 100px; padding: 10px;"></i>
+                        <i class="fa fa-area-chart" aria-hidden="true" style="font-size: 100px; padding: 10px;"></i>
                         {{--                        <img class="img-responsive" src="{!! $account->profile_picture !!}" alt="Add Account">--}}
                         <div class="caption">
                             <hr>
