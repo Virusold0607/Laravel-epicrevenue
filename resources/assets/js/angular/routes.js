@@ -9,6 +9,10 @@ app.config(['$interpolateProvider', '$routeProvider',
                 templateUrl: '/build/assets/js/partials/admin/stats.html',
                 controller: 'StatsController'
             }).
+            when('/publishers/create', {
+                templateUrl: '/build/assets/js/partials/admin/publishers/create.html',
+                controller: 'PublisherCreateController'
+            }).
             when('/publishers/:page?', {
                 templateUrl: '/build/assets/js/partials/admin/publishers/index.html',
                 controller: 'PublisherListController'

@@ -132,6 +132,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     // Admin
     Route::get('/', 'Admin\AdminController@index');
 
+
     Route::resource('/postbacks', 'Admin\PostbackController');
     Route::get('/postbacks/{id}/delete', 'Admin\PostbackController@destroy');
 
@@ -182,6 +183,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
 
 Route::group(['prefix' => 'api/admin', 'middleware' => ['api', 'admin']], function () {
     Route::get('/stats', 'Admin\Api\AdminController@index');
+    Route::post('/publishers', 'Admin\PublisherController@store');
     Route::get('/publishers/my', 'Admin\Api\PublisherController@my');
     Route::resource('/publishers', 'Admin\Api\PublisherController');
     Route::post('/publishers/approval/{id}', 'Admin\Api\PublisherController@approval');
