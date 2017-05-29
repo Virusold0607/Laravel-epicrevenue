@@ -6,8 +6,11 @@ use App\Http\Helper;
 use App\Models\AccountStatus;
 use App\Models\CampaignRate;
 use App\Models\Campaign;
+use App\Models\EmailNotification;
 use App\Models\Report;
 use App\Models\Role;
+use App\Models\UserApi;
+use App\Models\UserBalance;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -213,9 +216,27 @@ class PublisherController extends Controller
         }
 
         $user = User::create($request->all());
+        $user->password = bcrypt('demopass');
         $user->approved = true;
         $user->approved_by = 1;
         $user->save();
+
+        $status = new AccountStatus();
+        $status->user_id = $user->id;
+        $status->save();
+
+        $balance = new UserBalance();
+        $balance->user_id = $user->id;
+        $balance->save();
+
+        $email = new EmailNotification();
+        $email->user_id = $user->id;
+        $email->save();
+
+        $api = new UserApi();
+        $api->user_id = $user->id;
+        $api->key = str_random() . $user->id ;
+        $api->save();
 
         $status = AccountStatus::firstOrNew(['user_id' => (int)$user->id]);
 //        $status->any_network_added = 'yes';
