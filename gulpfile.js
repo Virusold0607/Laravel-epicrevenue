@@ -16,7 +16,7 @@ require('laravel-elixir-vue');
 elixir(function(mix) {
 
     elixir.config.sourcemaps = false;
-    var admin = true;
+    var admin = false;
     var copy = true;
 
     mix.sass('app.scss', 'public/assets/css/main.css');

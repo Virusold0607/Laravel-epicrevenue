@@ -91,10 +91,8 @@ adminControllers.controller('PublisherEditController', ['$scope', '$http', '$rou
 
 
 
-adminControllers.controller('PublisherCreateController', ['$scope', '$http', '$routeParams', '$httpParamSerializerJQLike',
-    function ($scope, $http, $routeParams, $httpParamSerializerJQLike) {
-        $scope.userId = $routeParams.userId;
-
+adminControllers.controller('PublisherCreateController', ['$scope', '$http',
+    function ($scope, $http) {
         $scope.user = {};
         $scope.user.socialAccounts = {};
 
