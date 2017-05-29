@@ -497,8 +497,8 @@ adminControllers.controller('PublisherEditController', ['$scope', '$http', '$rou
 
 
 
-adminControllers.controller('PublisherCreateController', ['$scope', '$http',
-    function ($scope, $http) {
+adminControllers.controller('PublisherCreateController', ['$scope', '$http', '$httpParamSerializerJQLike',
+    function ($scope, $http, $httpParamSerializerJQLike) {
         $scope.user = {};
         $scope.user.socialAccounts = {};
 
