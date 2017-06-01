@@ -173,6 +173,9 @@ class TrackController extends Controller
 */
             
         session(['ip' => $request->getClientIp()]);
+
+        return redirect()->away(url($redirect_url));
+
         if ($agent->isMobile() || $agent->isTablet())
         {
             return '
