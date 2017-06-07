@@ -30,7 +30,11 @@
                     <hr>
                     <div class="input-group">
                         <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
-                        <input type="text" class="form-control" id="exampleInputAmount" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
+                        <input type="text" class="form-control" id="exampleInputAmount" value="{{ "http://anatrk.com" . ('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
+                        <input type="text" class="form-control" id="exampleInputAmount" value="{{ "http://reachurl.com" . ('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
                     </div>
                     <hr>
                 </div>

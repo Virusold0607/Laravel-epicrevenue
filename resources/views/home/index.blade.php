@@ -22,7 +22,12 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
-                        <img src="/images/become.png" class="img-responsive">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6q3qpxKgioM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+
+                        {{--<iframe width="560" height="315" src="https://www.youtube.com/embed/6q3qpxKgioM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>--}}
+                        {{--<img src="/images/become.png" class="img-responsive">--}}
                     </div>
                     <div class="col-sm-6">
                         <div class="become-an-influencer-text">
