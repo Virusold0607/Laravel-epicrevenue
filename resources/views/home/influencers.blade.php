@@ -48,7 +48,7 @@
                                     <img src="/images/influencer5.png" class="img-responsive">
                                 </div>
                                 <h4>FEATURES</h4>
-                                <p>Track your page growth and engagement, easily find influencers to do shoutouts with, these are some of the things you can do as an influencer.</p>
+                                <p>Track your page growth and engagement, easily find influencers to do shoutouts with, these are some of the things you can do as an influencer on influencersreach.com.</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
