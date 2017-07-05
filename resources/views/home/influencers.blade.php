@@ -24,7 +24,7 @@
                 <h3>FEATURES</h3>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-4 col-sm-6" style="min-height: 510px;">
                             <div class="feature-box">
                                 <div class="feature-box-image">
                                     <img src="/images/influencer3.png" class="img-responsive">
@@ -33,7 +33,7 @@
                                 <p>We offer what your favorite network offers and tons more. We have features they dont have, we have higher conversion rate, we pay you faster, and we offer top of the line support.</p>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-4 col-sm-6" style="min-height: 510px;">
                             <div class="feature-box">
                                 <div class="feature-box-image">
                                     <img src="/images/influencer4.png" class="img-responsive">
@@ -42,16 +42,16 @@
                                 <p>Our network runs on an SSL secured connection meaning all information is transferred securely. Along with that your personal information is encrpyted with bank level encryption. </p>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-4 col-sm-6" style="min-height: 510px;">
                             <div class="feature-box">
                                 <div class="feature-box-image">
                                     <img src="/images/influencer5.png" class="img-responsive">
                                 </div>
                                 <h4>FEATURES</h4>
-                                <p>Track your page growth and engagement, easily find influencers to do shoutouts with, these are some of the things you can do as an influencer on influencersreach.com.</p>
+                                <p>Track your page growth and engagement, easily find influencers to do shoutouts with, these are some of the things you can do as an influencer.</p>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-4 col-sm-6" style="min-height: 510px;">
                             <div class="feature-box">
                                 <div class="feature-box-image">
                                     <img src="/images/influencer6.png" class="img-responsive">
@@ -60,7 +60,7 @@
                                 <p>We have a custom properiety system that automatically optimizate ALL traffic you send. Desktop and mobile traffic is intelligently sent to the best campaign.</p>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-4 col-sm-6" style="min-height: 510px;">
                             <div class="feature-box">
                                 <div class="feature-box-image">
                                     <img src="/images/influencer7.png" class="img-responsive">
@@ -69,7 +69,7 @@
                                 <p>Every Friday if your balance to be paid is over your set threshold you will be paid. No need to request the payment it will automatically be sent to your selected payment method.</p>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-4 col-sm-6" style="min-height: 510px;">
                             <div class="feature-box">
                                 <div class="feature-box-image">
                                     <img src="/images/influencer8.png" class="img-responsive">
