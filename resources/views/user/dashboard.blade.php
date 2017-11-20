@@ -138,7 +138,7 @@
                                     <td><span>.</span></td>
                                     <td>{!! $c->name !!}</td>
                                     <td class="color-blue">{!! $c->rate !!}</td>
-                                    <td class="color-gray">{!! number_format(($c->reports()->lead()->count() / 100) * $c->reports()->count(),2)  !!}</td>
+                                    <td class="color-gray">{!! number_format( ($c->reports()->lead()->count() / $c->reports()->count()) * 100, 2)  !!}</td>
                                 </tr>
                                 @endforeach
                                 </tbody>
@@ -160,7 +160,7 @@
                                         <td><span>.</span></td>
                                         <td>{!! $c->name !!}</td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! number_format(($c->reports()->lead()->count() / 100) * $c->reports()->count(),2)  !!}</td>
+                                        <td class="color-gray">{!! number_format( ($c->reports()->lead()->count() / $c->reports()->count()) * 100, 2)  !!}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -182,7 +182,7 @@
                                         <td><span>.</span></td>
                                         <td>{!! $c->name !!}</td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! number_format(($c->reports()->lead()->count() / 100) * $c->reports()->count(),2)  !!}</td>
+                                        <td class="color-gray">{!! number_format( ($c->reports()->lead()->count() / $c->reports()->count()) * 100, 2)  !!}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
