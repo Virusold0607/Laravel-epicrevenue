@@ -160,7 +160,7 @@
                                         <td><span></span></td>
                                         <td>{!! $c->name !!}</td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! $cr  !!}</td>
+                                        <td class="color-gray">{!! $c->cr  !!}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -182,7 +182,7 @@
                                         <td><span></span></td>
                                         <td>{!! $c->name !!}</td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! $cr  !!}</td>
+                                        <td class="color-gray">{!! $c->cr  !!}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
