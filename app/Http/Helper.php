@@ -237,6 +237,6 @@ class Helper
           $c->cr = number_format( ($c->leads / $clicks) * 100,2);
       }
 
-        return $campaigns->take(10);
+        return $campaigns->sortByDesc('cr')->take(10);
     }
 }
