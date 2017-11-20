@@ -115,7 +115,7 @@
 
                 <div class="dashboard-tabs">
 
-                    <ul class="nav nav-tabs row no-padding">
+                    <ul class="nav nav-tabs row no-padding" style="list-style: none;">
                         <li class="col-sm-4 active"><a data-toggle="tab" href="#home"><span>Latest</span>Promotions <img src="/images/tabs1.png" class="img-responsive"></a></li>
                         <li class="col-sm-4"><a data-toggle="tab" href="#menu1"><span>Highest	Converting</span>Promotions <img src="/images/tabs2.png" class="img-responsive"></a></li>
                         <li class="col-sm-4"><a data-toggle="tab" href="#menu2"><span>Highest	EPC</span>Promotions <img src="/images/tabs3.png" class="img-responsive"></a></li>
@@ -160,7 +160,7 @@
                                         <td><span>.</span></td>
                                         <td>{!! $c->name !!}</td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! number_format( ($c->reports()->lead()->count() / ($c->reports()->count() == 0 ? 1 : $c->reports()->count())) * 100,2)  !!}</td>
+                                        <td class="color-gray">{!! number_format( ($c->leads / ($c->reports()->count() == 0 ? 1 : $c->reports()->count())) * 100,2)  !!}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -182,7 +182,7 @@
                                         <td><span>.</span></td>
                                         <td>{!! $c->name !!}</td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! number_format( ($c->reports()->lead()->count() / ($c->reports()->count() == 0 ? 1 : $c->reports()->count())) * 100,2)  !!}</td>
+                                        <td class="color-gray">{!! number_format( ($c->leads / ($c->reports()->count() == 0 ? 1 : $c->reports()->count())) * 100,2)  !!}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
