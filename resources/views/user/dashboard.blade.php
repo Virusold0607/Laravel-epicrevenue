@@ -42,7 +42,7 @@
                                 <strong>@if($today_leads + $today_clicks >= 0)
                                         {!! "n/a" !!}
                                     @else
-                                        {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
+                                        {!! number_format( ($today_leads / ($today_leads + $today_clicks)) * 100, 0)."%" !!}
                                     @endif</strong>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                 <strong>@if($today_leads + $today_clicks >= 0)
                                         {!! "n/a" !!}
                                     @else
-                                        {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
+                                        {!! number_format(($today_leads / ($today_leads + $today_clicks)) * 100, 2)."%" !!}
                                     @endif</strong>
                             </div>
                         </div>
