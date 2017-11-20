@@ -226,15 +226,15 @@ class Helper
                     ->orderBy('cr', 'desc')
                     ->selectRaw('*,sum(cr) as cr_sum')
                     ->with('campaign')
-                    ->where('campaign.active', 'yes')
+//                    ->where('campaign.active', 'yes')
                     ->get()
                     ->pluck("campaign", "campaign_id");
 
-//        foreach($campaigns as $campaign)
-//        {
-//            if($campaign->incent == 'yes' || $campaign->active == 'no')
-//                $campaigns->forget($campaign->id);
-//        }
+        foreach($campaigns as $campaign)
+        {
+            if($campaign->incent == 'yes' || $campaign->active == 'no')
+                $campaigns->forget($campaign->id);
+        }
 
         return $campaigns->take(5);
     }
