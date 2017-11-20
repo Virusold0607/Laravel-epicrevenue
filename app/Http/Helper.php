@@ -221,16 +221,6 @@ class Helper
 
     public static function top_campaigns( Carbon $date )
     {
-//      $campaigns = Stats::
-////                    where( 'date', '>', $date->subDays(7)->toDateString() )->
-//                    groupBy('campaign_id')
-//                    ->orderBy('cr', 'desc')
-//                    ->selectRaw('*,sum(cr) as cr_sum')
-//                    ->with('campaign')
-////                    ->where('campaign.active', 'yes')
-//                    ->get()
-//                    ->pluck("campaign", "campaign_id");
-
       $campaigns = Campaign::
           join('reports', 'campaigns.id', '=', 'reports.campaign_id')
           ->where('reports.status', 2)
@@ -247,6 +237,6 @@ class Helper
           $c->cr = number_format( ($c->leads / $clicks) * 100,2);
       }
 
-        return $campaigns->orderBy('cr','desc')->take(10);
+        return $campaigns->take(10);
     }
 }
