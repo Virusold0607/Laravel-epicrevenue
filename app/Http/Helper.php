@@ -240,6 +240,13 @@ class Helper
           ->orderBy('leads', 'desc')
           ->get();
 
+      foreach ($campaigns as $c)
+      {
+          $x = $c->reports()->count();
+          $clicks = ($x == 0 ? 1 : $x);
+          $c->cr = number_format( ($c->leads / $clicks) * 100,2);
+      }
+
         return $campaigns->take(5);
     }
 }

@@ -160,7 +160,7 @@
                                         <td><span></span></td>
                                         <td>{!! $c->name !!}</td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! number_format( ($c->leads / ($c->reports()->count() == 0 ? 1 : $c->reports()->count())) * 100,2)  !!}</td>
+                                        <td class="color-gray">{!! $cr  !!}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -182,7 +182,7 @@
                                         <td><span></span></td>
                                         <td>{!! $c->name !!}</td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! number_format( ($c->leads / ($c->reports()->count() == 0 ? 1 : $c->reports()->count())) * 100,2)  !!}</td>
+                                        <td class="color-gray">{!! $cr  !!}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
