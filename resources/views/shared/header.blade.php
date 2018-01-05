@@ -11,11 +11,12 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i></a>
                                 <ul class="dropdown-menu">
+                                    <li><a href="{!! url('/settings') !!}">Settings</a></li>
                                     <li><a href="{!! url('/invite') !!}">Invite</a></li>
                                     <li><a href="{!! url('/logout') !!}">Logout</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{!! url('/settings') !!}"><i class="fa fa-cog"></i></a></li>
+                            {{--<li><a href="{!! url('/settings') !!}"><i class="fa fa-cog"></i></a></li>--}}
                         </ul>
                     </div>
                 @endif
