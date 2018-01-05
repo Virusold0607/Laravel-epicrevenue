@@ -137,10 +137,10 @@
                             <div class="campaign-list-section">
                                 <div class="campaign-box">
                                     <div class="row">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-12">
                                             <div class="campaign-box-imag"><img src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" class="img-responsive"></div>
                                         </div>
-                                        <div class="col-sm-8">
+                                        <div class="col-sm-12">
                                             <div class="campaign-box-des">
                                                 <h3>{{ $campaign->name }}</h3>
                                                 <p>{{ $campaign->description }}</p>
