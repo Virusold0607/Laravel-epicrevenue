@@ -25,27 +25,27 @@
                                 <strong>{!! $today_leads !!}</strong>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-sm-4">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY EPC</span>
-                                <strong>
-                                    @if($today_clicks === 0)
-                                        n/a
-                                    @else
-                                        {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
-                                    @endif</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-sm-4">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY CR</span>
-                                <strong>@if($today_leads + $today_clicks >= 0)
-                                        {!! "n/a" !!}
-                                    @else
-                                        {!! number_format( ($today_leads / ($today_clicks)) * 100, 0)."%" !!}
-                                    @endif</strong>
-                            </div>
-                        </div>
+                        {{--<div class="col-lg-2 col-sm-4">--}}
+                            {{--<div class="dashboard-box box-shadow">--}}
+                                {{--<span>TODAY EPC</span>--}}
+                                {{--<strong>--}}
+                                    {{--@if($today_clicks === 0)--}}
+                                        {{--n/a--}}
+                                    {{--@else--}}
+                                        {{--{!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}--}}
+                                    {{--@endif</strong>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-lg-2 col-sm-4">--}}
+                            {{--<div class="dashboard-box box-shadow">--}}
+                                {{--<span>TODAY CR</span>--}}
+                                {{--<strong>@if($today_leads + $today_clicks >= 0)--}}
+                                        {{--{!! "n/a" !!}--}}
+                                    {{--@else--}}
+                                        {{--{!! number_format( ($today_leads / ($today_clicks)) * 100, 0)."%" !!}--}}
+                                    {{--@endif</strong>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         <div class="col-lg-2 col-sm-4">
                             <div class="dashboard-box box-shadow">
                                 <span>TODAY EARNINGS</span>
