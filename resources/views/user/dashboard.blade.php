@@ -180,7 +180,7 @@
                                 @foreach($top_campaigns as $c)
                                     <tr>
                                         <td><span></span></td>
-                                        <td>{!! $c->name !!}</td>
+                                        <td><a href="{{ url('/campaign/'.$c->id) }}">{!! $c->name !!}</a></td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
                                         <td class="color-gray">{!! $c->cr  !!}</td>
                                     </tr>
