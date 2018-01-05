@@ -23,7 +23,7 @@ class CampaignController extends Controller
     {
         $category_selected = 0;
         $campaigns = Campaign::incentAndMobile(false)->active();
-        if ($request->has('category')) {
+        if ($request->has('category') && (int) $request->input('category') > 0) {
             $category_selected = (int) $request->category;
             $campaigns = $campaigns->where('category_id', $category_selected);
         }
