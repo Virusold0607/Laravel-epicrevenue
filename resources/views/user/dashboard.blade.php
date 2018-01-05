@@ -136,7 +136,7 @@
                                 @foreach(\App\Models\Campaign::orderBy('created_at', 'desc')->take(10)->get() as $c)
                                 <tr>
                                     <td><span></span></td>
-                                    <td>{!! $c->name !!}</td>
+                                    <td><a href="{{ url('/campaign/'.$c->id) }}">{!! $c->name !!}</a></td>
                                     <td class="color-blue">{!! $c->rate !!}</td>
                                     <td class="color-gray">{!! number_format( ($c->reports()->lead()->count() / ($c->reports()->count() == 0 ? 1 : $c->reports()->count())) * 100,2)  !!}</td>
                                 </tr>
@@ -158,7 +158,7 @@
                                 @foreach($top_campaigns as $c)
                                     <tr>
                                         <td><span></span></td>
-                                        <td>{!! $c->name !!}</td>
+                                        <td><a href="{{ url('/campaign/'.$c->id) }}">{!! $c->name !!}</a></td>
                                         <td class="color-blue">{!! $c->rate !!}</td>
                                         <td class="color-gray">{!! $c->cr  !!}</td>
                                     </tr>
