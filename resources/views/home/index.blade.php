@@ -91,7 +91,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-5 pull-right">
-                        <img src="/images/become2.png" class="img-responsive">
+                        <img src="images/influencer2.png" class="img-responsive">
                     </div>
                     <div class="col-sm-7">
                         <div class="become-an-influencer-text">
