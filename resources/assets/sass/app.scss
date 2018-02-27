@@ -41,3 +41,11 @@
 @import "pages/signup-networks";
 
 @import "responsive";
+
+
+
+@media(min-width:767px) {
+  .pull-right-laptop {
+    float: right !important;
+  }
+}

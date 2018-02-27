@@ -90,7 +90,7 @@
                     <h2 class="page-title-2">Become	an	Advertiser</h2>
                 </div>
                 <div class="row">
-                    <div class="col-sm-5 pull-right">
+                    <div class="col-sm-5 pull-right-laptop">
                         <img src="images/influencer2.png" class="img-responsive">
                     </div>
                     <div class="col-sm-7">

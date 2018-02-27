@@ -28,6 +28,12 @@
 				background:#fff;
 				margin:25px 0px;
 			}
+
+			@media(max-width:767px){
+				&:after{
+					margin:25px auto;
+				}
+			}
 		}		
 		p{
 			font-size:18px;
