@@ -123,7 +123,7 @@
 
                     <div class="tab-content row no-padding">
                         <div id="home" class="tab-pane fade in active">
-                            <table class="table">
+                            <table class="table table-responsive">
                                 <thead>
                                 <tr>
                                     <th class="empty-cell"></th>
@@ -145,7 +145,7 @@
                             </table>
                         </div>
                         <div id="menu1" class="tab-pane fade">
-                            <table class="table">
+                            <table class="table table-responsive">
                                 <thead>
                                 <tr>
                                     <th class="empty-cell"></th>
@@ -167,7 +167,7 @@
                             </table>
                         </div>
                         <div id="menu2" class="tab-pane fade">
-                            <table class="table">
+                            <table class="table table-responsive">
                                 <thead>
                                 <tr>
                                     <th class="empty-cell"></th>
