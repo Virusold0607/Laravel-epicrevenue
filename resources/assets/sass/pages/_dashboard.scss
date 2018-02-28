@@ -30,35 +30,43 @@
 		}
 	}
 	.dashboard-tabs{
-		.nav-tabs{
-			background:#ededed;
-			border-radius:7px 7px 0 0;
-			border:none;
-			overflow:hidden;
-			a{
-				font-size:30px;				
-				color:$black-color;
-				border-radius:7px 7px 0 0;
-				padding-left:30px;
-				display:block;
-				line-height:30px;
-				padding-top:18px;
-				padding-bottom:18px;
-				position:relative;
-				box-shadow:4px 0px 8px rgba(0, 0, 0, 0.1);
-				border:none !important;
-				span{
-					color:$blue-color;
-					display:block;
+		.nav-tabs {
+			background: #ededed;
+			border-radius: 7px 7px 0 0;
+			border: none;
+			overflow: hidden;
+			a {
+				font-size: 30px;
+				color: $black-color;
+				border-radius: 7px 7px 0 0;
+				padding-left: 30px;
+				display: block;
+				line-height: 30px;
+				padding-top: 18px;
+				padding-bottom: 18px;
+				position: relative;
+				box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.1);
+				border: none !important;
+				span {
+					color: $blue-color;
+					display: block;
 				}
-				img{
-					position:absolute;
-					right:23px;
-					top:20px;
+				img {
+					position: absolute;
+					right: 23px;
+					top: 20px;
 				}
 			}
-			table{
-				display:none;
+			table {
+				display: none;
+			}
+
+			@media(max-width:767px)
+			{
+				td a {
+					font-size: 22px;
+					padding-left: 0;
+				}
 			}
 		}
 	}

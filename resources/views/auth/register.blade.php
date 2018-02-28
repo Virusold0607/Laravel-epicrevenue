@@ -46,7 +46,7 @@
                             <ul class="reminder-list">
                                 <li>Using	any	other	name	than	your	own	is	forbidden.</li>
                                 <li>You	may	not	have	multiple	accounts,	you	will	be	banned.</li>
-                                <li>For	faster	approval	you	may	Kik	“influencersreach”.</li>
+                                {{--<li>For	faster	approval	you	may	Kik	“influencersreach”.</li>--}}
                             </ul>
                         </div>
 
