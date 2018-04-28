@@ -42,8 +42,14 @@
 	}
 }
 .become-an-influencer{
-	padding-bottom:160px;
-	font-size:28px;
+	padding-bottom: 160px;
+	font-size: 28px;
+	float: left;
+	width: 100%;
+	padding: 100px 0;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 100px;
+
 	.container{
 		max-width:1170px;
 	}
@@ -124,6 +130,7 @@
 }
 
 .page-title-3{
+
 	display:inline-block;
 	font-size:65px;
 	margin:0 0 70px;
@@ -143,30 +150,37 @@
 		background-color:$blue-background;
 	}
 	&:after{
-		display:block;
-		content:"";
-		height:5px;
-		width:77px;
-		position:absolute;
-		left:100%;
-		bottom:0;
-		background-color:$blue-background;
+		//display:block;
+		//content:"";
+		//height:5px;
+		//width:77px;
+		//position:absolute;
+		//left:100%;
+		//bottom:0;
+		//background-color:$blue-background;
+		width: 77px;
+		left: 40%;
+		bottom: 0;
 	}
 }
 
 .services{
-	position:relative;
-	text-align:center;
-	color:$white-color;
+	position: relative;
+	color: #fff;
+	background: $white-color;
+	float: left;
+	width: 100%;
+	padding: 150px 0;
+
 	img{
 		display:inline-block;
 	}
 	.services-wrp{
-		position:absolute;
-		left:0;
-		top:22%;
-		right:0;
-		bottom:0;
+		//position:absolute;
+		//left:0;
+		//top:22%;
+		//right:0;
+		//bottom:0;
 		img{
 			margin-bottom:30px;
 		}
@@ -177,11 +191,20 @@
 	}
 }
 
-.become-an-advertiser{margin-top:-80px;}
+.become-an-advertiser{
+	margin-bottom: 100px;
+}
 
 .track {
-	text-align:center;
-	padding-bottom:120px;
+	padding: 100px 0;
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 100px;
+
+	//text-align:center;
+	//padding-bottom:120px;
+
 	.container{
 		max-width:1170px;
 	}
