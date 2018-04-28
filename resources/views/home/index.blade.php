@@ -48,7 +48,7 @@
 
         </div>
         <div class="services">
-            <img src="/images/services-bg.png" class="img-responsive">
+            {{--<img src="/images/services-bg.png" class="img-responsive">--}}
             <div class="services-wrp">
                 <div class="container">
                     <div class="row">
