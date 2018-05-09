@@ -67,7 +67,7 @@ class CampaignVideoController extends Controller
             $files->forget([0,1]); // Remove . and ..
             return view('admin.campaignvideos.show', ['campaign' => $campaign, 'files' => $files]);
         }
-        return abort(404);
+        return redirect('/admin/campaigns/video/'.$id.'/edit');
     }
 
 
@@ -86,7 +86,7 @@ class CampaignVideoController extends Controller
             $response->header('Content-Type', $filetype);
             return $response;
         }
-        return redirect('/admin/campaigns/video/'.$id.'/edit');
+        return abort(404);
     }
 
     /**
