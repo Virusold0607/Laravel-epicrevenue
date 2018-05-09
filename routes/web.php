@@ -118,6 +118,7 @@ Route::group(['middleware' => []], function() {
 
     // Campaign Controller
     Route::get('/campaign/gallery/image/{id}/{filename}', 'Admin\CampaignGalleryController@showImage');
+    Route::get('/campaign/gallery/video/{id}/{filename}', 'Admin\CampaignVideoController@showVideo');
     Route::get('/campaign/image/{name}', 'Admin\CampaignController@featureImage');
 
     Route::get('/promote/image/{id}', 'User\PromoteController@featureImage');
@@ -146,6 +147,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/campaigns/networkblock', 'Admin\CampaignController@networkblock');
     Route::get('/campaigns/gallery/image/{id}/{filename}/delete', 'Admin\CampaignGalleryController@destroy');
     Route::resource('/campaigns/gallery', 'Admin\CampaignGalleryController',
+        ['only' => ['edit', 'update', 'show']]);
+    Route::get('/campaigns/gallery/video/{id}/{filename}/delete', 'Admin\CampaignVideoController@destroy');
+    Route::resource('/campaigns/video', 'Admin\CampaignVideoController',
         ['only' => ['edit', 'update', 'show']]);
     Route::resource('/campaigns', 'Admin\CampaignController');
 

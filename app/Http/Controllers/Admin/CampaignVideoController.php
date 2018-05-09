@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CampaignGalleryController extends Controller
+class CampaignVideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -61,11 +61,11 @@ class CampaignGalleryController extends Controller
     public function show($id)
     {
         $campaign = Campaign::findOrFail((int) $id);
-        $destinationPath = storage_path() . '/app/images/campaign/' . $campaign->id . '/gallery';
+        $destinationPath = storage_path() . '/app/images/campaign/' . $campaign->id . '/videos';
         if( \File::exists($destinationPath) ) {
             $files = collect( scandir($destinationPath) );
             $files->forget([0,1]); // Remove . and ..
-            return view('admin.campaigngallery.show', ['campaign' => $campaign, 'files' => $files]);
+            return view('admin.campaignvideos.show', ['campaign' => $campaign, 'files' => $files]);
         }
         return abort(404);
     }
@@ -77,9 +77,9 @@ class CampaignGalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showImage($id, $filename)
+    public function showVideo($id, $filename)
     {
-        $path = storage_path() . '/app/images/campaign/' . (int) $id . '/gallery/'. $filename;
+        $path = storage_path() . '/app/images/campaign/' . (int) $id . '/videos/'. $filename;
         if( \File::exists($path) ) {
             $filetype = \File::type($path);
             $response = response()->make(\File::get($path), 200);
@@ -98,7 +98,7 @@ class CampaignGalleryController extends Controller
     public function edit($id)
     {
         $campaign = Campaign::find((int) $id);
-        return view('admin.campaigngallery.edit', ['campaign' => $campaign]);
+        return view('admin.campaignvideos.edit', ['campaign' => $campaign]);
     }
 
     /**
@@ -111,30 +111,30 @@ class CampaignGalleryController extends Controller
     public function update(Request $request, $id)
     {
         $campaign = Campaign::findOrFail((int) $id);
-    
+
         $rules = [
-            'images' => 'array|max:50',
-            'images.*' => 'image|max:4000',
-            ];
+            'videos' => 'array|max:50',
+            'videos.*' => 'mimes:mp4,ogx,oga,ogv,ogg,webm|max:40000',
+        ];
 
         $validator = \Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return redirect('/admin/campaigns/gallery/'.$id.'/edit')
+            return redirect('/admin/campaigns/video/'.$id.'/edit')
                 ->withErrors($validator)
                 ->withInput();
         }
 
-        $images = $request->file('images');
-        foreach ($images as $image) {
-            $destinationPath = storage_path() . '/app/images/campaign/' . $campaign->id . '/gallery';
-            $filename = strval(time()) . "." . $image->getClientOriginalExtension();
-            if(!$image->move($destinationPath, $filename)) {
+        $files = $request->file('videos');
+        foreach ($files as $file) {
+            $destinationPath = storage_path() . '/app/images/campaign/' . $campaign->id . '/videos';
+            $filename = strval(time()) . "." . $file->getClientOriginalExtension();
+            if(!$file->move($destinationPath, $filename)) {
                 return response()->json(['message' => 'Error saving the file.'], 400);
             }
         }
 
-        return redirect('/admin/campaigns/gallery/'.$id);
+        return redirect('/admin/campaigns/video/'.$id);
     }
 
     /**
@@ -146,13 +146,13 @@ class CampaignGalleryController extends Controller
      */
     public function destroy($id, $filename)
     {
-        $path = storage_path() . '/app/images/campaign/' . $id . '/gallery/'.$filename;
+        $path = storage_path() . '/app/images/campaign/' . $id . '/videos/'.$filename;
         $delete = unlink($path);
         if ($delete)
         {
-            return redirect('/admin/campaigns/gallery/'.$id);
+            return redirect('/admin/campaigns/video/'.$id);
         }
-        return redirect('/admin/campaigns/gallery/'.$id.'/edit')
-            ->withErrors(['file' => 'Image not deleted. Some thing goes wrong']);
+        return redirect('/admin/campaigns/video/'.$id.'/edit')
+            ->withErrors(['file' => 'Video not deleted. Some thing goes wrong']);
     }
 }
