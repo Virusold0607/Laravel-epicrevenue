@@ -10,7 +10,8 @@
 
 @section('body')
     <h2>Campaign #{!! $campaign->id !!} <small><a href="{!! url('/admin/campaigns/'.$campaign->id.'/edit') !!}">edit</a></small></h2>
-    <h3><a href="{!! url('/admin/campaigns/video/'.$campaign->id.'/edit') !!}">Upload Videos</a></h3>
+    <a href="{!! url('/admin/campaigns/video/'.$campaign->id.'/edit') !!}" class="btn btn-primary">Upload Videos</a>
+
     <div class="container">
         {{-- Was there an error? --}}
         @if (count($errors) > 0)

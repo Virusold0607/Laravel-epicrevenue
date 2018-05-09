@@ -86,7 +86,7 @@ class CampaignVideoController extends Controller
             $response->header('Content-Type', $filetype);
             return $response;
         }
-        return abort(404);
+        return redirect('/admin/campaigns/video/'.$id.'/edit');
     }
 
     /**

@@ -86,7 +86,7 @@ class CampaignGalleryController extends Controller
             $response->header('Content-Type', $filetype);
             return $response;
         }
-        return abort(404);
+        return redirect('/admin/campaigns/gallery/'.$id.'/edit');
     }
 
     /**
