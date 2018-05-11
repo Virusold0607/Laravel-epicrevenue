@@ -50,6 +50,7 @@
 
             <div class="clearfix" style="margin: 10px;"></div>
 
+            @unless($images->isEmpty())
                 <h5><strong>Promotional Images:</strong></h5>
                 <div class="row">
                     @foreach($images as $file)
@@ -60,6 +61,23 @@
                         </div>
                     @endforeach
                 </div>
+            @endunless
+
+            @unless($videos->isEmpty())
+                <h5><strong>Promotional Images:</strong></h5>
+                <div class="row">
+                    @foreach($videos as $file)
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="thumbnail">
+                                <video controls style="width: 100%;">
+                                    <source src="/campaign/gallery/video/{!! $campaign->id . '/' . $file !!}" type="video/{{ pathinfo($file, PATHINFO_EXTENSION) }}">
+                                    Your browser does not support the video element.
+                                </video>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endunless
 
             <hr>
 
