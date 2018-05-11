@@ -50,7 +50,7 @@
 
             <div class="clearfix" style="margin: 10px;"></div>
 
-            @unless(is_null($images))
+            @unless($images->isEmpty())
                 <h5><strong>Promotional Images:</strong></h5>
                 <div class="row">
                     @foreach($images as $file)
