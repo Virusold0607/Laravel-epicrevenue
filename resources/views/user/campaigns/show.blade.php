@@ -50,7 +50,7 @@
 
             <div class="clearfix" style="margin: 10px;"></div>
 
-            @unless($images->isEmpty() || $videos->isEmpty())
+            @unless($images->isEmpty() && $videos->isEmpty())
                 <h2>Creatives</h2>
                 <hr>
 
