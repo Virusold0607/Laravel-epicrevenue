@@ -64,7 +64,7 @@
             @endunless
 
             @unless($videos->isEmpty())
-                <h5><strong>Promotional Images:</strong></h5>
+                <h5><strong>Promotional Videos:</strong></h5>
                 <div class="row">
                     @foreach($videos as $file)
                         <div class="col-sm-6 col-md-4 col-lg-3">
