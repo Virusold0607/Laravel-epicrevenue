@@ -106,8 +106,8 @@ Route::group(['middleware' => []], function() {
 
     // No middlewares. Anyone can access
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/contact', 'HomeController@getContact');
-    Route::post('/contact', 'HomeController@postContact');
+    //Route::get('/contact', 'HomeController@getContact');
+    //Route::post('/contact', 'HomeController@postContact');
     Route::get('/influencers', 'HomeController@influencers');
     Route::get('/advertisers', 'HomeController@advertisers');
     Route::get('/about', 'HomeController@about');
