@@ -34,7 +34,7 @@
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="footer-about">
-                    <h4>About InfluencersReach</h4>
+                    <h4>About Epic Revenue</h4>
                     <p>Our network operates the largest influencer network in the world. Using our platform advertisers can target the largest markets to the narrowest niches through social media. With our unique advertising options advertisers only pay for quality leads.</p>
                 </div>
             </div>
