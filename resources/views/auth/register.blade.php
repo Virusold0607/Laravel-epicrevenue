@@ -7,7 +7,7 @@
             <div class="container">
                 {!! Form::model($user, array('url' => '/influencers/apply', 'method' => 'post', 'class' => 'signup-content','style' => '')) !!}
                 {{--<div class="signup-content">--}}
-                    <h1 class="text-center">Apply	to	InfluencersReach</h1>
+                    <h1 class="text-center">Apply	to	Epic Revenue</h1>
 
                     <div class="payment-steps">
                         <ul>
@@ -46,7 +46,7 @@
                             <ul class="reminder-list">
                                 <li>Using	any	other	name	than	your	own	is	forbidden.</li>
                                 <li>You	may	not	have	multiple	accounts,	you	will	be	banned.</li>
-                                {{--<li>For	faster	approval	you	may	Kik	“influencersreach”.</li>--}}
+                                {{--<li>For	faster	approval	you	may	Kik	“epicrevenue”.</li>--}}
                             </ul>
                         </div>
 
