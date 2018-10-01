@@ -5,7 +5,7 @@
         <div class="signup-bg">
             <div class="container">
                 <div class="signup-content">
-                    <h1 class="text-center">Apply	to	InfluencersReach</h1>
+                    <h1 class="text-center">Apply to Epic Revenue</h1>
                     <div class="small-container sub-heading"><h2>REMINDERS</h2></div>
                     <div class="payment-steps">
                         <ul>
