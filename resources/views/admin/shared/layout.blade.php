@@ -20,7 +20,7 @@
         <footer class="footer">
             <div class="container">
                 <p class="text-muted">Your IP Address (<i>{{ $_SERVER['REMOTE_ADDR'] }}</i>) has been logged.</p>
-                <p class="text-muted">Copyright &copy; 2015 influencersreach.com All Rights Reserved.</p>
+                <p class="text-muted">Copyright &copy; 2018 epicrevenue.com All Rights Reserved.</p>
             </div>
         </footer>
 
