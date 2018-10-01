@@ -18,7 +18,7 @@
         <div class="become-an-influencer">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="page-title-1">Become	an	Influencer</h2>
+                    <h2 class="page-title-1">Become	an	Publisher</h2>
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
