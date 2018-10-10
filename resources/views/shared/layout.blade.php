@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@if(isset($meta->title)){{ $meta->title }} |@endif Influencers Reach</title>
+    <title>@if(isset($meta->title)){{ $meta->title }} |@endif Epic Revenue</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @if(isset($meta->description))<meta name="description" itemprop="description" content="{{ $meta->description }}" />@endif
     @if(isset($meta->keywords))<meta name="keywords" itemprop="keywords" content="{{ $meta->keywords }}" />@endif
