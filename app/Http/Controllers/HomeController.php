@@ -66,7 +66,7 @@ class HomeController extends Controller
         Mail::send('emails.contact', ['request' => $request], function ($m) use ($request) {
 //            $m->from($request->email, $request->name);
             $m->to("abdullahnaseer999@gmail.com", "Muhammad Abdullah")->subject($request->subject);
-            $m->to("support@epicrevenue.com", "Influencers Reach")->subject($request->subject);
+            $m->to("support@epicrevenue.com", "Epic Revenue")->subject($request->subject);
         });
 
         $request->session()->flash('success', 'Email sent successfully!!!');
