@@ -77,7 +77,7 @@
                             <div class="small-container">
                                 <label>Your	Referral	Link	:</label>
                                 <div class="referral-form">
-                                    <input type="text" value="https://influencersreach.com/invite/{{auth()->id()}}">
+                                    <input type="text" value="https://epicrevenue.com/invite/{{auth()->id()}}">
                                     <button>COPY</button>
                                 </div>
                             </div>
