@@ -15,7 +15,7 @@
             <p>We are a team of marketing experts, We have years of experience promoting products, trials, software, etc. </p>
 
             <h3>Want to talk? Email us.</h3>
-            <p><a href="mailto:support@influencersreach.com">support@epicrevenue.com</a></p>
+            <p><a href="mailto:support@epicrevenue.com">support@epicrevenue.com</a></p>
 
         </div>
     </div>
