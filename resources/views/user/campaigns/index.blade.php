@@ -9,7 +9,7 @@
             {{--@else--}}
                 {{--<div class="campaigns-join row">--}}
                     {{--<div class="col-sm-8">--}}
-                        {{--<span class="title">Influencers Reach is the best way to monetize your social accounts</span>--}}
+                        {{--<span class="title">Epic Revenue is the best way to monetize your social accounts</span>--}}
                         {{--<p>Find services, products, apps and more you think will appeal to your following and make money everytime you promote.</p>--}}
                     {{--</div>--}}
                     {{--<div class="col-sm-1">--}}
