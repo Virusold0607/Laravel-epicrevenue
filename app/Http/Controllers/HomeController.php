@@ -22,7 +22,7 @@ class HomeController extends Controller
         $meta = [
             'title' => 'Register',
             'description' => 'Have a large reach on social media? Monetize your following with our various campaigns and exclusive promotions.',
-            'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
+            'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
         return view('home.index')->with(['bodyid' => 'sticky', 'meta' => $meta]);
     }
@@ -37,7 +37,7 @@ class HomeController extends Controller
         $meta = [
             'title' => 'Contact',
             'description' => 'Contact Us',
-            'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
+            'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
         return view('home.contact')->with(['meta' => $meta]);
     }
@@ -66,7 +66,7 @@ class HomeController extends Controller
         Mail::send('emails.contact', ['request' => $request], function ($m) use ($request) {
 //            $m->from($request->email, $request->name);
             $m->to("abdullahnaseer999@gmail.com", "Muhammad Abdullah")->subject($request->subject);
-            $m->to("support@influencersreach.com", "Influencers Reach")->subject($request->subject);
+            $m->to("support@epicrevenue.com", "Influencers Reach")->subject($request->subject);
         });
 
         $request->session()->flash('success', 'Email sent successfully!!!');
@@ -84,7 +84,7 @@ class HomeController extends Controller
         $meta = [
             'title' => 'Influencers',
             'description' => 'Influencers',
-            'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
+            'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
         return view('home.influencers')->with(['bodyid' => 'sticky', 'meta' => $meta]);
     }
@@ -99,7 +99,7 @@ class HomeController extends Controller
         $meta = [
             'title' => 'Advertisers',
             'description' => 'Advertisers',
-            'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
+            'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
         return view('home.advertisers')->with(['bodyid' => 'sticky', 'meta' => $meta]);
     }
@@ -114,7 +114,7 @@ class HomeController extends Controller
         $meta = [
             'title' => 'About us',
             'description' => 'About us',
-            'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
+            'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
         return view('home.about')->with(['meta' => $meta]);
     }
@@ -130,7 +130,7 @@ class HomeController extends Controller
         $meta = [
             'title' => 'Rewards',
             'description' => 'Rewards',
-            'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
+            'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
         return view('home.rewards')->with(['bodyid' => 'sticky', 'meta' => $meta, 'rewards' => $rewards]);
     }
@@ -146,7 +146,7 @@ class HomeController extends Controller
         $meta = [
             'title' => 'Frequently Asked Questions',
             'description' => 'Frequently Asked Questions',
-            'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
+            'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
         return view('home.faqs')->with(['meta' => $meta]);
     }
@@ -161,7 +161,7 @@ class HomeController extends Controller
         $meta = [
             'title' => 'Privacy Policy',
             'description' => 'Privacy Policy',
-            'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
+            'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
         return view('home.privacy')->with(['meta' => $meta]);
     }
@@ -176,7 +176,7 @@ class HomeController extends Controller
         $meta = [
             'title' => 'Terms of Service',
             'description' => 'Terms of Service',
-            'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
+            'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
         return view('home.terms')->with(['meta' => $meta]);
     }
