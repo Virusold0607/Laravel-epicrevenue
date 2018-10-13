@@ -1,20 +1,16 @@
 /*! Start Home Page Styles */
 
 .home-banner{
-	position:relative;
-	text-align:center;
-	color:$white-color;
-	margin-bottom:60px;
+	text-align: center;
+    color: #fff;
+    margin-bottom: 60px;
+    float: left;
+    width: 100%;
 	img{
 		display:inline-block;
 	}
 	.home-body{
-		position:absolute;
-		right:0;
-		top:0;
-		text-align:left;
-		bottom:0;
-		left:0;
+		
 		h1{
 			padding-top:15%;
 			color:$white-color;
