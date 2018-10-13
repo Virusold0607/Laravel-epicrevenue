@@ -1,6 +1,5 @@
 .signup-bg{
-	background:url(/images/setting-bg.png) no-repeat left bottom;
-	background-size: 100% auto;
+	background: #fafafa;
 	min-height:600px;
 	.signup-content{
 		padding:80px 40px;
@@ -19,7 +18,7 @@
 					input{
 						width:100%;
 						border:none;
-						background:none;
+						background:#ffffff;
 						font-size:18px;
 						border-bottom:$gray-color solid 2px;
 						padding:5px;
