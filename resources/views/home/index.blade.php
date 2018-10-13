@@ -6,7 +6,7 @@
 @section('body')
     <div class="main home">
         <div class="home-banner">
-            <img src="/images/header.png" class="img-responsive">
+
             <div class="home-body">
                 <div class="container">
                     <h1>MONETIZE THE REACH OF YOUR  <br/>SOCIAL MEDIA FOLLOWING</h1>
