@@ -9,7 +9,7 @@
             <img src="/images/header.png" class="img-responsive">
             <div class="home-body">
                 <div class="container">
-                    <h1>MONETIZE11 THE REACH OF YOUR  <br/>SOCIAL MEDIA FOLLOWING</h1>
+                    <h1>MONETIZE THE REACH OF YOUR  <br/>SOCIAL MEDIA FOLLOWING</h1>
                     <p>Do you have a fan page, a niche page, <br>a model page, or any other type of page with a large following?</p>
                     <a href="{{ route('register') }}" class="btn btn-default btn-lg blue-button">JOIN NOW</a>
                 </div>
