@@ -65,12 +65,13 @@ class RegisterController extends Controller
             'apiSecret'   => env('INSTAGRAM_SECRET'),
             'apiCallback' => env('INSTAGRAM_CALLBACK')
         ));
-
+    /*
         $this->fb = new \Facebook\Facebook([
             'app_id' => env('FB_ID'),
             'app_secret' => env('FB_SECRET'),
             'default_graph_version' => 'v2.7',
         ]);
+    */
     }
 
 
@@ -82,9 +83,6 @@ class RegisterController extends Controller
      */
     public function getRegister()
     {
-        echo "aa";
-        return;
-
         $user = new User();
         return view('auth.register')->with(compact('user'));
     }
@@ -284,10 +282,6 @@ class RegisterController extends Controller
      */
     public function postRegister(Request $request)
     {
-        echo "aaa";
-
-        return;
-        
         $this->validator($request->all())->validate();
 
         $user =  $this->create( $request->all() );
