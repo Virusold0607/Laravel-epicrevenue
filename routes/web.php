@@ -60,7 +60,8 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 
 // Registration routes...
-Route::get('/publisher/apply', function(){ return view('auth.register');});
+//Route::get('/publisher/apply', function(){ return view('auth.register');});
+Route::get('/publisher/apply', 'Auth\RegisterController@getRegister')->name('register');
 Route::post('/publisher/apply', 'Auth\RegisterController@postRegister');
 
 //Auth::routes();
