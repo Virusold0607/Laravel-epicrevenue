@@ -20,8 +20,8 @@ Route::get('/track/{campaign_id}/{user_id}/{subid1?}/{subid2?}/{subid3?}/{subid4
 // Routes for guest users
 Route::group(['middleware' => 'guest'], function () {
     // Registration routes...
-    Route::get('/publisher/apply', function(){ return view('auth.register');});
-    Route::post('/publisher/apply', 'Auth\RegisterController@postRegister');
+    //Route::get('/publisher/apply', function(){ return view('auth.register');});
+    //Route::post('/publisher/apply', 'Auth\RegisterController@postRegister');
 
     //Invite Controller
     Route::get('/invite/{id}', 'InviteController@getId');
@@ -58,6 +58,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
+
+// Registration routes...
+Route::get('/publisher/apply', function(){ return view('auth.register');});
+Route::post('/publisher/apply', 'Auth\RegisterController@postRegister');
 
 //Auth::routes();
 

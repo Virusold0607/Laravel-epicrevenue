@@ -5,7 +5,7 @@
     <div class="main dashboard payouts">
         <div class="signup-bg">
             <div class="container">
-                <form class="signup-content form-login" role="form" method="POST" action="{{ route('register') }}">
+                <form class="signup-content form-login" role="form" method="POST" action="{{ url('/publisher/register') }}">
 
                     {{--<div class="signup-content">--}}
                     <h1 class="text-center">Apply	to	Epic Revenue</h1>
