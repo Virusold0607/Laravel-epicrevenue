@@ -19,6 +19,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $meta = [
             'title' => 'Register',
             'description' => 'Have a large reach on social media? Monetize your following with our various campaigns and exclusive promotions.',

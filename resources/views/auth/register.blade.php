@@ -5,7 +5,8 @@
     <div class="main dashboard payouts">
         <div class="signup-bg">
             <div class="container">
-                {!! Form::model($user, array('url' => '/influencers/apply', 'method' => 'post', 'class' => 'signup-content','style' => '')) !!}
+                <form class="signup-content form-login" role="form" method="POST" action="{{ url('/publisher/apply') }}">
+
                 {{--<div class="signup-content">--}}
                     <h1 class="text-center">Apply	to	Epic Revenue</h1>
 
@@ -123,8 +124,10 @@
                             </div>
                         </div>
                     </div>
-                {!! Form::close() !!}
+                </form>
             </div>
         </div>
     </div>
+
+
 @endsection

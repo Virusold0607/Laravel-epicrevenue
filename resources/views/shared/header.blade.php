@@ -49,7 +49,7 @@
                             <li class="{{ request()->is('advertisers') ? 'active' : '' }}"><a href="{{ url('/advertisers') }}">ADVERTISERS</a></li>
                             <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
                             <li class="{{ request()->is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">SIGN IN</a></li>
-                            <li class="{{ request()->is('influencers/apply') ? 'active' : '' }}"><a href="{{ url('/influencers/apply') }}">SIGN UP</a></li>
+                            <li class="{{ request()->is('publisher/apply') ? 'active' : '' }}"><a href="{{ url('/publisher/apply') }}">SIGN UP</a></li>
                         </ul>
                         @endif
                     </div>

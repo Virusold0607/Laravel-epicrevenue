@@ -82,8 +82,6 @@ class RegisterController extends Controller
      */
     public function getRegister()
     {
-        echo "teset";
-        return; 
         $user = new User();
         return view('auth.register')->with(compact('user'));
     }
@@ -421,7 +419,7 @@ class RegisterController extends Controller
             'password'  => 'required|confirmed|min:6|max:50',
             'terms'     => 'accepted',
             'privacy'   => 'accepted',
-            'g-recaptcha-response' => 'required|captcha'
+            //'g-recaptcha-response' => 'required|captcha'
         ]);
     }
 
