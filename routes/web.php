@@ -56,7 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 // Authentication Routes...
 //Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::get('login', function () {     return view('auth.register');});
+Route::get('login', function () {     return view('auth.login');});
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 
