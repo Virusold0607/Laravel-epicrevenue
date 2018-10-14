@@ -20,7 +20,7 @@ Route::get('/track/{campaign_id}/{user_id}/{subid1?}/{subid2?}/{subid3?}/{subid4
 // Routes for guest users
 Route::group(['middleware' => 'guest'], function () {
     // Registration routes...
-    Route::get('/publisher/apply', 'Auth\RegisterController@getRegister')->name('register');
+    Route::get('/publisher/apply', 'Auth\LoginController@showLoginForm')->name('register');
     Route::post('/publisher/apply', 'Auth\RegisterController@postRegister');
 
     //Invite Controller
