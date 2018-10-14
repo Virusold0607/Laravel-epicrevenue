@@ -7,7 +7,7 @@
             <div class="container">
                 <form class="signup-content form-login" role="form" method="POST" action="{{ route('register') }}">
 
-                {{--<div class="signup-content">--}}
+                    {{--<div class="signup-content">--}}
                     <h1 class="text-center">Apply	to	Epic Revenue</h1>
 
                     <div class="payment-steps">
@@ -111,7 +111,9 @@
                                                 </div>
                                             </li>
                                             <li class="text-center">
+                                            <!--
                                                 {!! app('captcha')->display() !!}
+                                            -->
                                                 {{--<img src="/images/captcha.png" />--}}
                                             </li>
                                             <li class="text-center">
