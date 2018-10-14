@@ -7,7 +7,7 @@
             <div class="home-body">
                 <div class="container">
                     <h1>Recieve Quality Traffic and Track Your Performance</h1>
-                    <h4 class="trusted text-center">Trusted by more than <strong class="green">{{ \App\User::count() }}</strong> accounts</h4>
+                    <h4 class="trusted text-center">Trusted by more than <strong class="green">{{ $users }}</strong> accounts</h4>
                 </div>
             </div>
         </div>

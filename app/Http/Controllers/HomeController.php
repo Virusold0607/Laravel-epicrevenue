@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Validator;
 use Mail;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Reward;
@@ -97,12 +98,14 @@ class HomeController extends Controller
      */
     public function advertisers()
     {
+        $users = User::where('id', '!=', 0)->count();
+        
         $meta = [
             'title' => 'Advertisers',
             'description' => 'Advertisers',
             'keywords'    => 'influencers reach,epicrevenue, monetize,instagram, make money, epicrevenue.com, payment proof, youtube,leads,apps'
         ];
-        return view('home.advertisers')->with(['bodyid' => 'sticky', 'meta' => $meta]);
+        return view('home.advertisers')->with(['bodyid' => 'sticky', 'meta' => $meta, 'users' => $users]);
     }
 
     /**
