@@ -60,7 +60,7 @@ Route::get('login', function () {     return view('auth.login');});
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 
-Route::get('register', function () {     return view('auth.register');});
+Route::get('register', function () {     echo "test";});
 
 //Auth::routes();
 
