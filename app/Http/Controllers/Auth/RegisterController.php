@@ -84,7 +84,7 @@ class RegisterController extends Controller
     {
         echo "aa";
         return;
-        
+
         $user = new User();
         return view('auth.register')->with(compact('user'));
     }
@@ -284,6 +284,9 @@ class RegisterController extends Controller
      */
     public function postRegister(Request $request)
     {
+        echo "aaa";
+
+        return;
         $this->validator($request->all())->validate();
 
         $user =  $this->create( $request->all() );
