@@ -1,14 +1,14 @@
 {
-  "name": "Influencers Reach",
+  "name": "Epic Revenue",
   "version": "0.2",
   "authors": [
-    "Muhammad Abdullah <abdullahnaseer999@gmail.com>"
+    "Tevar Johnson <tevarjohnson@gmail.com>"
   ],
   "description": "Advertising website",
   "main": "public/index.php",
   "moduleType": [],
   "license": "MIT",
-  "homepage": "https://influencersreach.com",
+  "homepage": "https://epicrevenue.com",
   "private": true,
   "ignore": [
     "**/.*",
@@ -28,6 +28,7 @@
     "components-font-awesome": "~4.*",
     "ui-select": "angular-ui-select#~0.13.*",
     "angular-sanitize": "~1.5.*",
-    "ng-file-upload": "12.*"
+    "ng-file-upload": "12.*",
+    "slick-carousel": "1.6.*"
   }
 }
