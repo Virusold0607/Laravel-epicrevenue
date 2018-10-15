@@ -1,105 +1,23 @@
-.dashboard{
-	.grap{
-		padding-top:80px;
-		padding-bottom:40px;
-	}
-	.gray-background{
-		background:$lightblue-background-color;
-		box-shadow: $box-shaddow-inner;
-		padding-top:60px;
-		padding-bottom:60px;
-		position:relative;
-		
-	}
-	.dashboard-box{
-		background: #fff;
-		padding: 30% 10px;
-		text-align: center;
-		/* border-radius: 5px; */
-		margin-bottom: 60px;
-		font-size: 19px;
-		span{
-			display:block;
-			color:$blue-color;
-		}
-		strong{
-			display:block;
-			font-weight:normal;
-			color:$black-color;
-			font-size:36px;
-		}
-	}
-	.dashboard-tabs{
-		.nav-tabs {
-			background: #ededed;
-			border-radius: 7px 7px 0 0;
-			border: none;
-			overflow: hidden;
-			a {
-				font-size: 30px;
-				color: $black-color;
-				border-radius: 7px 7px 0 0;
-				padding-left: 30px;
-				display: block;
-				line-height: 30px;
-				padding-top: 18px;
-				padding-bottom: 18px;
-				position: relative;
-				box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.1);
-				border: none !important;
-				span {
-					color: $blue-color;
-					display: block;
-				}
-				img {
-					position: absolute;
-					right: 23px;
-					top: 20px;
-				}
-			}
-			table {
-				display: none;
-			}
+.page-container.dashboard {
+  box-shadow: none;
+}
 
-			@media(max-width:767px)
-			{
-				td a {
-					font-size: 22px;
-					padding-left: 0;
-				}
-			}
-		}
-	}
-	.tab-content{
-		background:#fff;
-		.tab-pane{
-			padding:30px 30px 15px;
-			.table{
-				th{
-					border:none;
-					font-size:26px;
-				}
-				.empty-cell{
-					width:30px;
-				}
-				td{
-					font-size:20px;
-					&:first-child{
-						font-size:40px;	
-					}
-					span{
-						display:block;
-						line-height:30px;
-						margin-top:-12px;
-					}
-				}
-				
-			}
-		}
-	}
-	tbody tr:first-child td,
-	tbody td:first-child{
-		border: none;
-	}
+.user-stats {
+  .user-stat {
+    display: inline-block;
+    width: 49%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .user-stat-group {
+    border-bottom: 0.5px solid #ccc;
+  }
 
+  .user-stat-group.top-border {
+    border-top: 0.5px solid #ccc;
+  }
+
+  .user-stat:nth-child(even) {
+    border-left: 0.5px solid #ccc;
+  }
 }

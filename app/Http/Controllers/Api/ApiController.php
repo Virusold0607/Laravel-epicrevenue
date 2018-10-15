@@ -410,10 +410,10 @@ class ApiController extends Controller
 
     public function wallJson(Request $request, $key)
     {
-       header('Access-Control-Allow-Origin: *');
-       header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-       header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
-       header('Access-Control-Allow-Credentials: true');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+        header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
+        header('Access-Control-Allow-Credentials: true');
 
         $target_country = (int) $request->input('target_country', 1);
         $target_device = (int) $request->input('target_device', 1);
@@ -434,12 +434,14 @@ class ApiController extends Controller
         {
             $campaigns = Campaign::where('active', 'yes')
                 ->where('incent', 'yes')
-                ->leftJoin('reports', 'campaigns.id', '=', 'reports.campaign_id')
-                ->selectRaw('campaigns.*, sum(reports.status) as count')
                 ->groupBy('campaigns.id')
-                ->with('targets')
-                ->orderBy('count', 'desc')
+                ->with('targets', 'category')
                 ->get();
+
+            foreach ($campaigns as $campaign) {
+                $campaign->count = $campaign->reports()->sum('status');
+            }
+            $campaigns = $campaigns->sortByDesc('count');
 
             foreach($campaigns as $key => $campaign)
             {
@@ -471,6 +473,9 @@ class ApiController extends Controller
                 unset($campaign->targets);
                 $campaign->featured_img = url('/campaign/image/' . $campaign->id);
             }
+
+            if($request->input('snapaid', 0))
+                $campaigns = $campaigns->where('is_for_snapaid', true);
 
             if($request->input('mobile', 0)) {
                 $campaigns = $campaigns->where('mobile', 'yes');
@@ -508,10 +513,10 @@ class ApiController extends Controller
 
     public function wall(Request $request, $key)
     {
-       header('Access-Control-Allow-Origin: *');
-       header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-       header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
-       header('Access-Control-Allow-Credentials: true');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+        header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
+        header('Access-Control-Allow-Credentials: true');
        
         $url = $request->input('url');
         $leads_needed = (int) $request->input('ln', 1);

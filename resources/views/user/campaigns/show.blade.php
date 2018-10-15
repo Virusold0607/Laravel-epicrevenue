@@ -12,7 +12,7 @@
     </div>
     <div class="clearfix"></div>
     <div class="page-container no-shadow no-border">
-        <div class="container text-center">
+        <div class="container">
             @if($daily_cap_status)
                 <div class="alert alert-danger">This campaign has reached its daily cap ({{ $campaign->daily_cap }} leads a day). It will reset at midnight.</div>
             @endif
@@ -26,70 +26,43 @@
 
             <div class="container" style="height: 20px;"></div>
             @unless($daily_cap_status)
-                <div style="" id="promotionalLink">
+                <div style="display: none;" id="promotionalLink">
                     <hr>
                     <div class="input-group">
                         <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
-                        <input type="text" class="form-control" id="exampleInputAmount" value="{{ "http://anatrk.com" . ('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
-                    </div>
-                    <br>
-                    <div class="input-group">
-                        <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
-                        <input type="text" class="form-control" id="exampleInputAmount" value="{{ "http://reachurl.com" . ('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
+                        <input type="text" class="form-control" id="exampleInputAmount" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
                     </div>
                     <hr>
                 </div>
             @endunless
             <div class="clearfix" style="margin: 5px;"></div>
 
-            {{--@if(auth()->check())--}}
-                {{--<div class="">--}}
-                    {{--<button id="generateBtn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Generate Your Unique Promotional Link</button>--}}
-                {{--</div>--}}
-            {{--@endif--}}
+            @if(auth()->check())
+                <div class="">
+                    <button id="generateBtn" type="button" class="btn btn-primary btn-extra-padding" data-toggle="modal" data-target="#myModal">Generate Your Unique Promotional Link</button>
+                </div>
+            @endif
 
             <div class="clearfix" style="margin: 10px;"></div>
 
-            @unless($images->isEmpty() && $videos->isEmpty())
-                <h2>Creatives</h2>
-                <hr>
-
-                @unless($images->isEmpty())
-                    <h5><strong>Promotional Images:</strong></h5>
-                    <div class="row">
-                        @foreach($images as $file)
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-                                <div class="thumbnail">
-                                    <img src="/campaign/gallery/image/{!! $campaign->id . '/' . $file !!}" alt="...">
-                                </div>
+            @unless(is_null($images))
+                <h5><strong>Promotional Images:</strong></h5>
+                <div class="row">
+                    @foreach($images as $file)
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="thumbnail">
+                                <img src="/campaign/gallery/image/{!! $campaign->id . '/' . $file !!}" alt="...">
                             </div>
-                        @endforeach
-                    </div>
-                @endunless
-
-                @unless($videos->isEmpty())
-                    <h5><strong>Promotional Videos:</strong></h5>
-                    <div class="row">
-                        @foreach($videos as $file)
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-                                <div class="thumbnail">
-                                    <video controls style="width: 100%;">
-                                        <source src="/campaign/gallery/video/{!! $campaign->id . '/' . $file !!}" type="video/{{ pathinfo($file, PATHINFO_EXTENSION) }}">
-                                        Your browser does not support the video element.
-                                    </video>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                @endunless
+                        </div>
+                    @endforeach
+                </div>
             @endunless
 
             <hr>
 
-            <div class="">
+            <div>
                 <a class="btn btn-primary btn-lg" href="{!! url('/campaigns')  !!}">Go Back</a>
             </div>
-            <div class="clearfix"></div>
         </div>
     </div>
     <div class="container">

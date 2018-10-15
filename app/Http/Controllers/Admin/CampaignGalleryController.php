@@ -67,7 +67,7 @@ class CampaignGalleryController extends Controller
             $files->forget([0,1]); // Remove . and ..
             return view('admin.campaigngallery.show', ['campaign' => $campaign, 'files' => $files]);
         }
-        return redirect('/admin/campaigns/gallery/'.$id.'/edit');
+        return abort(404);
     }
 
 
@@ -112,11 +112,12 @@ class CampaignGalleryController extends Controller
     {
         $campaign = Campaign::findOrFail((int) $id);
     
-        $rules = [
-            'images' => 'array|max:50',
-            'images.*' => 'image|max:4000',
-            ];
+        $rules = ['images' => 'array|max:50'];
 
+        $nbr = count($request->input('images')) - 1;
+        foreach(range(0, $nbr) as $index) {
+            $rules['images.' . $index] = 'image|max:4000';
+        }
         $validator = \Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {

@@ -31,6 +31,7 @@ class CreateCampaignsTable extends Migration
             $table->longText('tracking');
             $table->string('url');
             $table->integer('network_id');
+            $table->boolean('is_for_snapaid')->default(false);
             $table->string('featured_img')->nullable();
             $table->timestamps();
         });

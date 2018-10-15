@@ -55,10 +55,10 @@ class ReportsController extends Controller
             }
         }
 
-        if ($request->has('startDate') || $request->has('endDate') || $request->has('showBy'))
+        if ($request->has('startMonth') || $request->has('startDay') || $request->has('startYear') || $request->has('endMonth') || $request->has('endDay') || $request->has('endYear') || $request->has('showBy'))
         {
-            $start = Carbon::parse($request->input('startDate'));
-            $end = Carbon::parse($request->input('endDate'));
+            $start = Carbon::create($request->startYear, $request->startMonth, $request->startDay, 0, 0, 0);
+            $end = Carbon::create($request->endYear, $request->endMonth, $request->endDay, 0, 0, 0);
             $query = Report::where('user_id', auth()->user()->id)
                 ->whereBetween('created_at', array($start->toDateTimeString(), $end->toDateTimeString()))
                 ->orderBy('id', 'desc')

@@ -17,14 +17,194 @@ use App\Http\Controllers\Controller;
 
 class CampaignController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index()
+    public function getOgadsImport(Request $request)
     {
-        $data['campaigns'] = Campaign::orderBy('active')->with('reports')->paginate(10);
+//        dd($request->all());
+        $country = $request->input('country', null);
+        $device = $request->input('device', null);
+
+        $network = Postback::where('name', 'ogmobi')->firstOrFail();
+
+        $client = new \GuzzleHttp\Client(['base_uri' => 'https://mobverify.com' ]);
+        $response = $client->request('GET', '/api/v1/?affiliateid=10148&ctype=1' . ((!is_null($device)&!empty($device)) ? '&device=' . $device : '') . ((!is_null($country)&!empty($country)) ? '&country=' . $country : ''));
+
+        $offers = json_decode($response->getBody())->offers;
+        $o = collect();
+
+        foreach ($offers as $offer)
+        {
+//            if($network->campaigns()->where('network_campaign_id','%like%', $offer->offerid)->get()->isEmpty())
+                $o->push($offer);
+        }
+
+        $countries = Country::all();
+        return view('admin.campaigns.ogadsImport', ['offers' => $o, 'countries' => $countries]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function postOgadsImportSelected(Request $request)
+    {
+        $country = $request->input('country', null);
+        $device = $request->input('device', null);
+
+        $selectedOffers = collect($request->input('offers', []));
+        $client = new \GuzzleHttp\Client(['base_uri' => 'https://mobverify.com' ]);
+        $response = $client->request('GET', '/api/v1/?affiliateid=10148&ctype=1' . ((!is_null($device)&!empty($device)) ? '&device=' . $device : '') . ((!is_null($country)&!empty($country)) ? '&country=' . $country : ''));
+
+        $allOffers = collect(json_decode($response->getBody())->offers);
+
+        $offers = $allOffers->whereIn('offerid', $selectedOffers);
+        $this->mergeAndFormatOffers($offers);
+
+        return redirect('/admin/campaigns/');
+    }
+
+
+    private function mergeAndFormatOffers($selectedOffers)
+    {
+        $category = CampaignsCategory::where('name', 'Mobile Apps')->first();
+        $network = Postback::where('name', 'ogmobi')->first();
+
+        $offers = collect();
+        foreach ($selectedOffers as $offer) {
+            $o = new Campaign();
+            $o->user_id = auth()->user()->id;
+            $o->category_id = $category->id;
+            $o->network_id = $network->id;
+            $o->name = substr($offer->name, 0, strpos($offer->name, " -"));
+            $o->description = $offer->description;
+            $o->requirements = "";
+            $o->tracking = "";
+            $o->network_campaign_id = $offer->offerid;
+            $o->cap = 0;
+            $o->daily_cap = 1000;
+            $o->is_for_snapaid = true;
+            $o->mobile = 'yes';
+            $o->incent = 'yes';
+            $o->active = 'yes';
+
+            $destinationPath = storage_path() . '/app/images/campaign/';
+            $fileExt = substr($offer->picture, strrpos($offer->picture, '.') + 1);
+            $filename = strval(time()).".".$fileExt;
+            $path = ($destinationPath.$filename);
+            $offer->picture = preg_replace('/\s+/','%20', $offer->picture);
+
+            file_put_contents(
+                $path, file_get_contents( $offer->picture )
+            );
+
+            $o->featured_img = $filename;
+
+            $allowedCountries = $this->translateCountriesFromISO2(explode(',', $offer->country));
+
+            $targetsCheck = true;
+            $check = $offers->whereIn('name', $o->name)->first();
+            $dbTarget = CampaignTarget::where('network_campaign_id', $offer->offerid)->first();
+            $dbCampaign = Campaign::where('name', $o->name)->first();
+            if (!is_null($dbTarget)) {
+                $campaign = $dbTarget->campaign;
+                $campaign->network_campaign_id .= "," . $o->network_campaign_id;
+                $campaign->save();
+                $campaign->countries()->attach($allowedCountries->pluck('id')->toArray());
+                $campaign_id = $campaign->id;
+                $targetsCheck = false;
+            } elseif (!is_null($dbCampaign)) {
+                $campaign = $dbCampaign;
+                $campaign->network_campaign_id .= "," . $o->network_campaign_id;
+                $campaign->save();
+                $campaign->countries()->attach($allowedCountries->pluck('id')->toArray());
+                $campaign_id = $campaign->id;
+            } elseif(!is_null($check)){
+                $campaign = $check;
+                $campaign->network_campaign_id .= "," . $o->network_campaign_id;
+                $campaign->save();
+                $campaign->countries()->attach($allowedCountries->pluck('id')->toArray());
+                $campaign_id = $campaign->id;
+            } else {
+                $o->url = $offer->link . "&".$network->ch_slot . "={hash}";
+                $o->rate = ($offer->payout / 100) * 70;
+                $o->network_rate = $offer->payout;
+                $o->save();
+                $o->countries()->attach($allowedCountries->pluck('id')->toArray());
+                $offers->push($o);
+                $campaign_id = $o->id;
+            }
+
+            if($targetsCheck)
+            {
+                $devices = explode(',',$offer->device);
+
+                CampaignTarget::where('network_campaign_id', $offer->offerid)->delete();
+                foreach ($allowedCountries as $country)
+                {
+                    foreach ($devices as $device)
+                    {
+                        if(!is_null($device))
+                        {
+                            $cc = new CampaignTarget();
+                            $cc->campaign_id      = $campaign_id;
+
+                            if($device == 'iPhone' || $device == 'iPad')
+                                $cc->operating_system = 'iOS';
+                            elseif ($device == 'Android')
+                                $cc->operating_system = 'AndroidOS';
+
+                            $cc->rate             = ($offer->payout / 100) * 70;
+                            $cc->network_rate     = $offer->payout;
+                            $cc->url              = $offer->link . "&".$network->ch_slot . "={hash}";
+                            $cc->country          = $country->short_name;
+                            $cc->network_campaign_id = $offer->offerid;
+
+                            if($device == 'iPhone' || $device == 'Android')
+                                $cc->device = "Mobile";
+                            elseif ($device == 'iPad')
+                                $cc->device = "Tablet";
+                            elseif($device == "Desktop")
+                                $cc->device = "Desktop";
+
+                            $cc->active    = 'yes';
+                            $cc->save();
+                        }
+                    }
+                }
+            }
+        }
+        return $offers;
+    }
+
+    private function translateCountriesFromISO2($countries)
+    {
+        $c = collect();
+        foreach ($countries as $country)
+        {
+            $x = Country::where('iso2', $country)->first();
+            if(!is_null($x))
+                $c->push($x);
+        }
+        return ($c);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index($network_id = null)
+    {
+        $data['campaigns'] = Campaign::orderBy('active')->with('reports');
+        if(!is_null($network_id))
+            $data['campaigns']->where('network_id', (int) $network_id);
+        $data['campaigns'] = $data['campaigns']->paginate(10);
         return view('admin.campaigns.index', $data);
     }
 
@@ -100,7 +280,7 @@ class CampaignController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name'           => 'required|string|max:255',
-            'description'    => 'required|string|max:500',
+            'description'    => 'required|string|max:1000',
             'requirements'   => 'required|string|max:500',
             'cap'            => 'required|integer|max:100000000',
             'daily_cap'      => 'required|integer'.$cap_rule,
@@ -145,6 +325,9 @@ class CampaignController extends Controller
             $c->incent       = 'yes';
         else
             $c->incent      = 'no';
+        if($request->has('is_for_snapaid'))
+            $c->is_for_snapaid      = true;
+
         $c->name             = $request->name;
         $c->description      = $request->description;
         $c->requirements     = $request->requirements;
@@ -248,7 +431,7 @@ class CampaignController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name'           => 'required|string|max:255',
-            'description'    => 'required|string|max:500',
+            'description'    => 'required|string|max:1000',
             'requirements'   => 'required|string|max:500',
             'cap'            => 'required|integer|max:100000000',
             'daily_cap'      => 'required|integer'.$cap_rule,

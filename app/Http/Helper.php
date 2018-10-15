@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-use App\Models\Campaign;
 use App\User;
 use App\Models\Report;
 use App\Models\UserBalance;
@@ -221,22 +220,20 @@ class Helper
 
     public static function top_campaigns( Carbon $date )
     {
-      $campaigns = Campaign::
-          join('reports', 'campaigns.id', '=', 'reports.campaign_id')
-          ->where('reports.status', 2)
-          ->active()
-          ->groupBy('campaign_id')
-          ->selectRaw('campaigns.*, count(reports.id) as leads')
-          ->orderBy('leads', 'desc')
-          ->get();
+      $campaigns = Stats::where( 'date', '>', $date->subDays(7)->toDateString() )
+                    ->groupBy('campaign_id')
+                    ->orderBy('cr', 'desc')
+                    ->selectRaw('*,sum(cr) as cr_sum')
+                    ->with('campaign')
+                    ->get()
+                    ->pluck("campaign", "campaign_id");
 
-      foreach ($campaigns as $c)
-      {
-          $x = $c->reports()->count();
-          $clicks = ($x == 0 ? 1 : $x);
-          $c->cr = number_format( ($c->leads / $clicks) * 100,2);
-      }
+        foreach($campaigns as $campaign)
+        {
+            if(isset($campaign->incent) && ($campaign->incent == 'yes' || $campaign->active == 'no'))
+                $campaigns->forget($campaign->id);
+        }
 
-        return $campaigns->sortByDesc('cr')->take(10);
+        return $campaigns->take(5);
     }
 }

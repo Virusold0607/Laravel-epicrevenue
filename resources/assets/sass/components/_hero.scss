@@ -2,14 +2,13 @@
   float: left;
   width: 100%;
   min-height: 500px;
-  background-color: #110e25;
+  padding: 200px 0;
+  background: #333;
   //background-image: linear-gradient(rgba(0, 0, 0, 0.65) 35%, rgba(0, 0, 0, 0.73) 80%), url(/images/hero1.jpg);
-  //background-image: url(/images/hero.jpg);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
+  background-image: url(/images/hero.jpg);
+  background-size: cover;
   text-align: center;
-  margin-bottom: 150px;
-
+  margin-bottom: 100px;
   &.hero-lg {
     min-height: 600px;
     padding: 200px 0;
@@ -30,117 +29,6 @@
     min-height: 300px;
     padding: 125px 0;
   }
-
-  &.hero-homepage {
-    padding: 130px 0 0 0 ;
-    margin-bottom: 50px;
-    background-color: #fff;
-
-    background-image: url('/images/home/hero-homepage.png');
-    background-position: left;
-    background-size: cover;
-    & * {
-      text-align: left;
-    }
-
-  }
-
-  &.hero-curved {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background : url('/images/home/hero-homepage-1-top.png'), url('/images/home/hero-homepage-1-bottom.png'), -moz-radial-gradient(50% 109.84%, circle farthest-side, rgba(20, 41, 51, 1) 0%, rgba(23, 20, 50, 1) 5.39%, rgba(14, 12, 31, 1) 100%);
-    background : url('/images/home/hero-homepage-1-top.png'), url('/images/home/hero-homepage-1-bottom.png'), -webkit-radial-gradient(50% 109.84%, circle farthest-side, rgba(20, 41, 51, 1) 0%, rgba(23, 20, 50, 1) 5.39%, rgba(14, 12, 31, 1) 100%);
-    background : url('/images/home/hero-homepage-1-top.png'), url('/images/home/hero-homepage-1-bottom.png'), -webkit-gradient(radial,50% 109.84% ,0 , 50% 109.84%, 623.8 ,color-stop(0,rgba(20, 41, 51, 1) ),color-stop(0.0539,rgba(23, 20, 50, 1) ),color-stop(1,rgba(14, 12, 31, 1) ));
-    background : url('/images/home/hero-homepage-1-top.png'), url('/images/home/hero-homepage-1-bottom.png'), -o-radial-gradient(50% 109.84%, circle farthest-side, rgba(20, 41, 51, 1) 0%, rgba(23, 20, 50, 1) 5.39%, rgba(14, 12, 31, 1) 100%);
-    background : url('/images/home/hero-homepage-1-top.png'), url('/images/home/hero-homepage-1-bottom.png'), -ms-radial-gradient(50% 109.84%, circle farthest-side, rgba(20, 41, 51, 1) 0%, rgba(23, 20, 50, 1) 5.39%, rgba(14, 12, 31, 1) 100%);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Stlye=2);";
-
-    //background-image: url('/images/home/hero-homepage-1-top.png'), url('/images/home/hero-homepage-1-bottom.png');
-    background-position: right top, left bottom;
-    background-repeat: no-repeat;
-
-    & > .container {
-      margin-top: 100px;
-      margin-bottom: 100px;
-    }
-  }
-
-  @media screen and (max-width: $screen-sm) {
-    &.hero-homepage {
-      background-image: url('/images/home/hero-homepage.m.png');
-      background-position: left;
-      background-size: cover;
-    }
-
-    &.hero-curved {
-      background-size: contain, contain;
-    }
-  }
-
-
-  &.hero-influencers {
-    & h1 {
-      padding: 20px 0 20px 0;
-      margin-top: 70px;
-      font-size: 50px;
-    }
-    & .cameraman {
-      position: absolute;
-      left: 50%;
-      img {
-        position: relative;
-        left: -50%;
-        max-width:500px;
-      }
-    }
-
-
-    @media screen and (max-width: $screen-sm){
-      & .cameraman {
-        img {
-          max-width: 470px;
-        }
-      }
-    }
-    @media screen and (max-width: 400px){
-      & .cameraman {
-        img {
-          padding-top: 60px;
-          max-width: 400px;
-        }
-      }
-    }
-    @media screen and (max-width: 350px){
-      .cameraman {
-        img {
-          padding-top: 60px;
-          max-width: 300px;
-        }
-      }
-      & {
-        min-height: 500px;
-      }
-    }
-
-    min-height: 600px;
-    background-image: url('/images/curves.png');
-    background-size: contain;
-    background-position: bottom;
-    background-repeat:no-repeat;
-  }
-
-  &.hero-transparent {
-    background: transparent;
-    height: initial;
-    min-height:initial;
-    & .hero-heading {
-      font-size: 50px;
-      color: #000;
-    }
-    margin-top: 70px;
-    margin-bottom: 50px;
-  }
-
 
   &.hero-gradient {
     background: rgba(255,255,255,0.99);

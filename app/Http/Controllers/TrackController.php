@@ -36,8 +36,8 @@ class TrackController extends Controller
             return "Sorry, Something went wrong!!!";
         }
 
-        if($report->subid1 === 'tunebin') {
-            $this->handleTunebinPostback($report);
+        if((bool) $report->campaign->is_for_snapaid) {
+            $this->handleSnapaidPostback($report);
         }
 
         $report->status = 2;
@@ -47,21 +47,12 @@ class TrackController extends Controller
     }
 
 
-    private function handleTunebinPostback($report)
+    private function handleSnapaidPostback($report)
     {
-        $url = "https://tunebin.net/api/postback";
+        $url = "https://snapaid.org/track/postback/". $report->credit_hash;
 
         $client = new \GuzzleHttp\Client();
-        $res = $client->request('POST', $url,
-            ['query' =>
-                [
-                    'secret' => '72nHKxRRc7IRs20rB6H003M7Tas2OeL1',
-                    'subid1' => $report->subid1,
-                    'subid2' => $report->subid2,
-                    'subid3' => $report->subid3,
-                    'rate'   => $report->rate
-                ]
-            ]);
+        $res = $client->request('GET', $url);
         $data = $res->getBody();
 
         return $data;
@@ -73,7 +64,10 @@ class TrackController extends Controller
         $campaign = Campaign::where('id', $campaign_id)->active()->with(['reports', 'countries', 'targets', 'rates'])->first();
         $report = new Report();
 
-        $geoIP = \GeoIP::getLocation();
+        if(is_null($request->input('ip', null)))
+            $geoIP = \GeoIP::getLocation();
+        else
+            $geoIP = \GeoIP::getLocation(urldecode($request->input('ip')));
 
         // Check if campaign exist or inactive
         if(is_null($campaign))
@@ -97,7 +91,7 @@ class TrackController extends Controller
         }
 
         $agent  = new Agent();
-        $agent->setUserAgent($request->server('HTTP_USER_AGENT'));
+        $agent->setUserAgent($request->input('user_agent', urldecode($request->server('HTTP_USER_AGENT'))));
         $device = $this->getDevice($agent);
 
         $campaign_targets = $campaign->targets()->active()->get();
@@ -160,7 +154,26 @@ class TrackController extends Controller
         $report->subid4      = $subid4;
         $report->subid5      = $subid5;
 
+        if($report->subid1 == 'snapaid')
+            $report->postback_url = "http://snapaid.org/api/postback";
+
         $report->save();
+
+        if(!is_null($request->input('callback', null)))
+        {
+            $url = urldecode($request->input('callback'));
+            $client = new \GuzzleHttp\Client();
+            $res = $client->request('GET', $url,
+                ['query' =>
+                    [
+                        'credit_hash' => $report->credit_hash,
+                        'rate'   => $report->rate,
+                        'network_rate'=> $report->network_rate
+                    ]
+                ]);
+            $data = $res->getBody();
+
+        }
 
         if( str_contains($redirect_url, '{hash}') )
             $redirect_url = str_replace("{hash}", $report->credit_hash, $redirect_url);
@@ -173,9 +186,6 @@ class TrackController extends Controller
 */
             
         session(['ip' => $request->getClientIp()]);
-
-        return redirect()->away(url($redirect_url));
-
         if ($agent->isMobile() || $agent->isTablet())
         {
             return '

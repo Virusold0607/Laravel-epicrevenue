@@ -2,177 +2,171 @@
 
 @section('body')
 
-    <div class="main dashboard">
-
-        <div class="gray-background reports">
+    @unless($is_mobile)
+        <div class="hero hero-dashboard">
             <div class="container">
-                <div class="dashboard-statistics desktop-display">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-4 col-sm-4">
-                            <div class="dashboard-box box-shadow no-mar-bottom">
-                                <span>TODAY CLICKS</span>
-                                <strong>{!! $today_clicks !!}</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4">
-                            <div class="dashboard-box box-shadow no-mar-bottom">
-                                <span>TODAY LEADS</span>
-                                <strong>{!! $today_leads !!}</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4">
-                            <div class="dashboard-box box-shadow no-mar-bottom">
-                                <span>TODAY EPC</span>
-                                <strong>
-                                    @if($today_clicks === 0)
-                                        n/a
-                                    @else
-                                        {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
-                                    @endif</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4">
-                            <div class="dashboard-box box-shadow no-mar-bottom">
-                                <span>TODAY CR</span>
-                                <strong>@if($today_leads + $today_clicks >= 0)
-                                        {!! "n/a" !!}
-                                    @else
-                                        {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
-                                    @endif</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4">
-                            <div class="dashboard-box box-shadow no-mar-bottom">
-                                <span>TODAY EARNINGS</span>
-                                <strong>${!! number_format($earnings_today, 2) !!}</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-4">
-                            <div class="dashboard-box box-shadow no-mar-bottom">
-                                <span>MONTH EARNINGS</span>
-                                <strong>${!! number_format($earnings_month, 2) !!}</strong>
-                            </div>
-                        </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <h3>{!! $today_clicks !!}</h3>
+                        <h5 class="font-dark-gray">Today Clicks</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>{!! $today_leads !!}</h3>
+                        <h5 class="font-dark-gray">Today Leads</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>
+                            @if($today_clicks === 0)
+                                n/a
+                            @else
+                                {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
+                            @endif
+                        </h3>
+                        <h5 class="font-dark-gray">Today EPC</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>
+                            @if($today_leads + $today_clicks >= 0)
+                                {!! "n/a" !!}
+                            @else
+                                {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
+                            @endif
+                        </h3>
+                        <h5 class="font-dark-gray">Today CR</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>${!! number_format($earnings_today, 2) !!}</h3>
+                        <h5 class="font-dark-gray">Today Earnings</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>${!! number_format($earnings_month, 2) !!}</h3>
+                        <h5 class="font-dark-gray">Month Earnings</h5>
                     </div>
                 </div>
-
-                <div class="dashboard-statistics mobile-only">
-                    <div class="row dashboard-slider">
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY CLICKS</span>
-                                <strong>{!! $today_clicks !!}</strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY LEADS</span>
-                                <strong>{!! $today_leads !!}</strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY EPC</span>
-                                <strong>@if($today_clicks === 0)
-                                        n/a
-                                    @else
-                                        {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
-                                    @endif</strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY CR</span>
-                                <strong>@if($today_leads + $today_clicks >= 0)
-                                        {!! "n/a" !!}
-                                    @else
-                                        {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
-                                    @endif</strong></strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY EARNINGS</span>
-                                <strong>${!! number_format($earnings_today, 2) !!}</strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>MONTH EARNINGS</span>
-                                <strong>${!! number_format($earnings_month, 2) !!}</strong>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
             </div>
         </div>
+    @else 
+        <div class="user-stats">
+            <div class="user-stat-group top-border">
+                <div class="user-stat">
+                    <h3>{!! $today_clicks !!}</h3>
+                    <h5 class="font-dark-gray">Today Clicks</h5>
+                </div>
+                <div class="user-stat">
+                    <h3>{!! $today_leads !!}</h3>
+                    <h5 class="font-dark-gray">Today Leads</h5>
+                </div>
+            </div>
+            <div class="user-stat-group">
+                <div class="user-stat">
+                    <h3>
+                        @if($today_clicks === 0)
+                            n/a
+                        @else
+                            {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
+                        @endif
+                    </h3>
+                    <h5 class="font-dark-gray">Today EPC</h5>
+                </div>
+                <div class="user-stat">
+                    <h3>
+                        @if($today_leads + $today_clicks >= 0)
+                            {!! "n/a" !!}
+                        @else
+                            {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
+                        @endif
+                    </h3>
+                    <h5 class="font-dark-gray">Today CR</h5>
+                </div>
+            </div>
+            <div class="user-stat-group">
+                <div class="user-stat">
+                    <h3>${!! number_format($earnings_today, 2) !!}</h3>
+                    <h5 class="font-dark-gray">Today Earnings</h5>
+                </div>
+                <div class="user-stat">
+                    <h3>${!! number_format($earnings_month, 2) !!}</h3>
+                    <h5 class="font-dark-gray">Month Earnings</h5>
+                </div>
+            </div>
+        </div>
+    @endunless
+    
+    <div class="clearfix"></div>
 
+    <div class="page-container dashboard no-border">
         <div class="container">
-            <div class="grap">
+            <h2>Earning Activity</h2>
+
+            <div>
                 <canvas id="myChart" width="400" height="400"></canvas>
-                {{--<img src="images/grap.png" class="img-responsive">--}}
             </div>
 
-            <div class="payment-method small-form-container ">
-                <div class="payment-method-content">
-                    <h3 class="text-center margin-bottom-30">SORT REPORTS</h3>
-                    {!! Form::open(array('url' => 'reports', 'method' => 'get')) !!}
-                    <ul class="form-style">
-                        <li>
-                            <label>Start Date</label>
-                            <div class="custom-select">
-                                {!! Form::date('startDate',request()->input('startDate', null), array('min' => "2015-01-01", 'max' => \Carbon\Carbon::now()->toDateString())) !!}
-                                {{--<span><i class="fa fa-angle-down"></i></span>--}}
-                            </div>
-                        </li>
-                        <li>
-                            <label>End	Date</label>
-                            <div class="custom-select">
-                                {!! Form::date('endDate', request()->input('endDate', null), array('min' => "2015-01-01", 'max' => \Carbon\Carbon::now()->toDateString())) !!}
+            <div class="clearfix"></div>
+            <div class="container" style="height: 50px;"></div>
 
-                                {{--<span><i class="fa fa-angle-down"></i></span>--}}
-                            </div>
-                        </li>
-                        <li>
-                            <label>Show	all	by</label>
-                            <div class="custom-select">
-                                {!! Form::select('showBy', ['all' => 'All Reports', 1 => 'Clicks', 2 => 'Leads', 3 => 'Reversals'], $request->has('showBy') ? $request->showBy : 'all') !!}
-                                <span><i class="fa fa-angle-down"></i></span>
-                            </div>
-                        </li>
-                        <li class="action-button">
-                            <button class="btn default-btn black-button small-round">SORT</button>
-                        </li>
-                    </ul>
-                    {!! Form::close() !!}
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 no-padding">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Sort Reports</div>
+                    <div class="panel-body">
+                        {!! Form::open(array('url' => 'reports', 'method' => 'get')) !!}
+                        <b>Start date:</b>
+                        <?php $start_month = array(1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'August', 9 => 'September', 10 => 'October', 11 => 'November', 12 => 'December'); ?>
+                        {!! Form::select('startMonth', $start_month, $request->has('startMonth') ? $request->startMonth : \Carbon\Carbon::now()->month) !!}
+
+                        <?php $start_day = array(1 => '01', 2 => '02', 3 => '03', 4 => '04', 5 => '05', 6 => '06', 7 =>  '07', 8 => '08', 9 => '09', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 =>  '18', 19 => '19', 20 => '20', 21 => '21', 22 => '22', 23 => '23', 24 => '24', 25 => '25', 26 => '26', 27 => '27', 28 => '28', 29 => '29', 30 => '30', 31 => '31'); ?>
+                        {!! Form::select('startDay', $start_day, $request->has('startDay') ? $request->startDay : \Carbon\Carbon::now()->day) !!}
+
+                        <?php $start_year = array('2015' => '2015', '2016' => '2016', '2017' => '2017'); ?>
+                        {!! Form::select('startYear', $start_year, $request->has('startYear') ? $request->startYear : \Carbon\Carbon::now()->year) !!}
+                        <div class="clearfix"></div>
+                        <hr>
+
+                        <b>End date:</b>
+
+                        <?php $end_month = array(1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'August', 9 => 'September', 10 => 'October', 11 => 'November', 12 => 'December'); ?>
+                        {!! Form::select('endMonth', $end_month, $request->has('endMonth') ? $request->endMonth : \Carbon\Carbon::now()->month) !!}
+
+                        <?php $end_day = array(1 => '01', 2 => '02', 3 => '03', 4 => '04', 5 => '05', 6 => '06', 7 =>  '07', 8 => '08', 9 => '09', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 =>  '18', 19 => '19', 20 => '20', 21 => '21', 22 => '22', 23 => '23', 24 => '24', 25 => '25', 26 => '26', 27 => '27', 28 => '28', 29 => '29', 30 => '30', 31 => '31'); ?>
+                        {!! Form::select('endDay', $end_day, $request->has('endDay') ? $request->endDay : \Carbon\Carbon::now()->day) !!}
+
+                        <?php $end_year = array('2015' => '2015', '2016' => '2016', '2017' => '2017'); ?>
+                        {!! Form::select('endYear', $end_year, $request->has('endYear') ? $request->endYear : \Carbon\Carbon::now()->year) !!}
+                        <div class="clearfix"></div>
+                        <hr>
+                        <b>Show all by:</b>
+
+                        {!! Form::select('showBy', ['all' => 'All Reports', 1 => 'Clicks', 2 => 'Leads', 3 => 'Reversals'], $request->has('showBy') ? $request->showBy : 'all') !!}
+                        <div class="clearfix"></div>
+                        <hr>
+                        {!! Form::submit('Sort Reports', array('class' => 'btn btn-primary')) !!}
+                        {!! Form::close() !!}
+                        <br />
+                    </div>
                 </div>
             </div>
 
-        </div>
-
-        <div class="gray-background no-shadow no-pad-top">
-            <div class="container">
-                <div class="payout-table">
-                    <div class="small-container">
-                        <h3 class="table-title text-center margin-bottom-30">SORT	REPORTS</h3>
-                    </div>
-                    <div class="box-shadow">
-                        <div class="table-responsive">
-                            <table class="table">
+            <div class="col-xs-12 no-padding">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Reports</div>
+                    <div class="panel-body">
+                        @if(count($reports))
+                            <table class="table table-hover table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th class="empty-cell"></th>
-                                    <th>ID</th>
-                                    <th>DATE</th>
-                                    <th>ACTIONS</th>
+                                    <th>Campaign</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($reports as $report)
                                     <tr>
-                                        <td><span>.</span></td>
                                         <td>{!! $report->campaign->name !!}</td>
                                         <td>{!! $report->created_at !!}</td>
                                         <td><a href="{!! url('/report/' . $report->id) !!}">View</a></td>
@@ -180,12 +174,19 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                        </div>
+                            {!! $reports->render() !!}
+                        @else
+                            <div class="alert alert-danger" role="alert">There are no reports found.</div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="container">
+            <hr>
+        </div>
+    </div><!--end page-->
+
 @endsection
 
 @section('scripts')

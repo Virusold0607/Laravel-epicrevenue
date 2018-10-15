@@ -59,6 +59,13 @@
             </tr>
 
             <tr>
+                <td>For Snapaid?:</td>
+                <td>
+                    {!! Form::checkbox('is_for_snapaid', null) !!} <small>Check this box to make it available for snapaid</small>
+                </td>
+            </tr>
+
+            <tr>
                 <td valign="top">Campaign requirements:</td>
                 <td>
                     {!! Form::textarea('requirements', null, array('class' => 'form-control', 'cols' => '30', 'rows' => '6')) !!}
@@ -112,6 +119,12 @@
                     {!! Form::text('url', null, array('class' => 'form-control', 'size' => '70')) !!} <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{hash}'; return false;">Add Credit Hash</a> | <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{pubid}'; return false;">Add PubID</a>
 
                     <small>({hash} = credit hash, {pubid} = publisher id), {email} = email for prepop</small>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">Postback URL:</td>
+                <td>
+                    {!! Form::text('postback_url', null, array('class' => 'form-control', 'size' => '70')) !!}
                 </td>
             </tr>
             <tr>

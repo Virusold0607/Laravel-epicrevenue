@@ -5,6 +5,8 @@
     background-color: darken($brand-gray, 20%);
   }
 }
+
+
 .btn-extra-padding {
   padding: 22px 50px;
 }
@@ -173,31 +175,3 @@
   color: #fff;
   background-color: #0d2c4a;
 }
-
-
-.btn-lg{
-  font-size:22px;
-}
-
-.blue-button{
-  background-color:$blue-background;
-  border:none !important;
-  color:$white-color;
-  letter-spacing:2px;
-  padding:$button-border-padding !important;
-  border-radius:$button-border-radius;
-}
-.black-button{
-  background-color:$black-background;
-  border:none !important;
-  color:$white-color;
-  letter-spacing:2px;
-  padding:$button-border-padding !important;
-  border-radius:$button-border-radius;
-}
-
-.btn-white {
-  background-color: #fff;
-  color: #000;
-}
-

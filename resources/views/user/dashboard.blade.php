@@ -2,200 +2,140 @@
 
 @section('body')
 
-    <div class="main dashboard">
-        <div class="container">
-            <div class="grap">
-                <canvas id="myChart" width="400" height="400"></canvas>
-                {{--<img src="images/grap.png" class="img-responsive">--}}
-            </div>
-        </div>
-        <div class="gray-background">
+    @unless($is_mobile)
+        <div class="hero hero-dashboard">
             <div class="container">
-                <div class="dashboard-statistics desktop-display">
-                    <div class="row">
-                        <div class="col-lg-2 col-sm-4">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY CLICKS</span>
-                                <strong>{!! $today_clicks !!}</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-sm-4">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY LEADS</span>
-                                <strong>{!! $today_leads !!}</strong>
-                            </div>
-                        </div>
-                        {{--<div class="col-lg-2 col-sm-4">--}}
-                            {{--<div class="dashboard-box box-shadow">--}}
-                                {{--<span>TODAY EPC</span>--}}
-                                {{--<strong>--}}
-                                    {{--@if($today_clicks === 0)--}}
-                                        {{--n/a--}}
-                                    {{--@else--}}
-                                        {{--{!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}--}}
-                                    {{--@endif</strong>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-lg-2 col-sm-4">--}}
-                            {{--<div class="dashboard-box box-shadow">--}}
-                                {{--<span>TODAY CR</span>--}}
-                                {{--<strong>@if($today_leads + $today_clicks >= 0)--}}
-                                        {{--{!! "n/a" !!}--}}
-                                    {{--@else--}}
-                                        {{--{!! number_format( ($today_leads / ($today_clicks)) * 100, 0)."%" !!}--}}
-                                    {{--@endif</strong>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        <div class="col-lg-2 col-sm-4">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY EARNINGS</span>
-                                <strong>${!! number_format($earnings_today, 2) !!}</strong>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-sm-4">
-                            <div class="dashboard-box box-shadow">
-                                <span>MONTH EARNINGS</span>
-                                <strong>${!! number_format($earnings_month, 2) !!}</strong>
-                            </div>
-                        </div>
-
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <h3>{!! $today_clicks !!}</h3>
+                        <h5 class="font-dark-gray">Today Clicks</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>{!! $today_leads !!}</h3>
+                        <h5 class="font-dark-gray">Today Leads</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>
+                            @if($today_clicks === 0)
+                                n/a
+                            @else
+                                {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
+                            @endif
+                        </h3>
+                        <h5 class="font-dark-gray">Today EPC</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>
+                            @if($today_leads + $today_clicks >= 0)
+                                {!! "n/a" !!}
+                            @else
+                                {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
+                            @endif
+                        </h3>
+                        <h5 class="font-dark-gray">Today CR</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>${!! number_format($earnings_today, 2) !!}</h3>
+                        <h5 class="font-dark-gray">Today Earnings</h5>
+                    </div>
+                    <div class="hero-stat-border"></div>
+                    <div class="hero-stat">
+                        <h3>${!! number_format($earnings_month, 2) !!}</h3>
+                        <h5 class="font-dark-gray">Month Earnings</h5>
                     </div>
                 </div>
-
-                <div class="dashboard-statistics mobile-only">
-                    <div class="row dashboard-slider">
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY CLICKS</span>
-                                <strong>{!! $today_clicks !!}</strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY LEADS</span>
-                                <strong>{!! $today_leads !!}</strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY EPC</span>
-                                <strong>
-                                    @if($today_clicks === 0)
-                                        n/a
-                                    @else
-                                        {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
-                                    @endif</strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY CR</span>
-                                <strong>@if($today_leads + $today_clicks >= 0)
-                                        {!! "n/a" !!}
-                                    @else
-                                        {!! number_format(($today_leads / ($today_clicks)) * 100, 2)."%" !!}
-                                    @endif</strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>TODAY EARNINGS</span>
-                                <strong>${!! number_format($earnings_today, 2) !!}</strong>
-                            </div>
-                        </div>
-                        <div class="dashboard-slider-items">
-                            <div class="dashboard-box box-shadow">
-                                <span>MONTH EARNINGS</span>
-                                <strong>${!! number_format($earnings_month, 2) !!}</strong>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="dashboard-tabs">
-
-                    <ul class="nav nav-tabs row no-padding" style="list-style: none;">
-                        <li class="col-sm-4 active"><a data-toggle="tab" href="#home"><span>Latest</span>Promotions <img src="/images/tabs1.png" class="img-responsive"></a></li>
-                        <li class="col-sm-4"><a data-toggle="tab" href="#menu1"><span>Highest	Converting</span>Promotions <img src="/images/tabs2.png" class="img-responsive"></a></li>
-                        <li class="col-sm-4"><a data-toggle="tab" href="#menu2"><span>Highest	EPC</span>Promotions <img src="/images/tabs3.png" class="img-responsive"></a></li>
-                    </ul>
-
-                    <div class="tab-content row no-padding">
-                        <div id="home" class="tab-pane fade in active">
-                            <table class="table table-responsive">
-                                <thead>
-                                <tr>
-                                    <th class="empty-cell"></th>
-                                    <th>OFFERS</th>
-                                    <th>PAYOUT</th>
-                                    <th>CR</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach(\App\Models\Campaign::orderBy('created_at', 'desc')->take(10)->get() as $c)
-                                <tr>
-                                    <td><span></span></td>
-                                    <td><a href="{{url('/campaign/'.$c->id)}}">{!! $c->name !!}</a></td>
-                                    <td class="color-blue">{!! $c->rate !!}</td>
-                                    <td class="color-gray">{!! number_format( ($c->reports()->lead()->count() / ($c->reports()->count() == 0 ? 1 : $c->reports()->count())) * 100,2)  !!}</td>
-                                </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="menu1" class="tab-pane fade">
-                            <table class="table table-responsive">
-                                <thead>
-                                <tr>
-                                    <th class="empty-cell"></th>
-                                    <th>OFFERS</th>
-                                    <th>PAYOUT</th>
-                                    <th>CR</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($top_campaigns as $c)
-                                    <tr>
-                                        <td><span></span></td>
-                                        <td><a href="{{url('/campaign/'.$c->id)}}">{!! $c->name !!}</a></td>
-                                        <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! $c->cr  !!}</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="menu2" class="tab-pane fade">
-                            <table class="table table-responsive">
-                                <thead>
-                                <tr>
-                                    <th class="empty-cell"></th>
-                                    <th>OFFERS</th>
-                                    <th>PAYOUT</th>
-                                    <th>CR</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($top_campaigns as $c)
-                                    <tr>
-                                        <td><span></span></td>
-                                        <td><a href="{{url('/campaign/'.$c->id)}}">{!! $c->name !!}</a></td>
-                                        <td class="color-blue">{!! $c->rate !!}</td>
-                                        <td class="color-gray">{!! $c->cr  !!}</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
         </div>
-    </div>
+    @else 
+        <div class="user-stats">
+            <div class="user-stat-group top-border">
+                <div class="user-stat">
+                    <h3>{!! $today_clicks !!}</h3>
+                    <h5 class="font-dark-gray">Today Clicks</h5>
+                </div>
+                <div class="user-stat">
+                    <h3>{!! $today_leads !!}</h3>
+                    <h5 class="font-dark-gray">Today Leads</h5>
+                </div>
+            </div>
+            <div class="user-stat-group">
+                <div class="user-stat">
+                    <h3>
+                        @if($today_clicks === 0)
+                            n/a
+                        @else
+                            {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
+                        @endif
+                    </h3>
+                    <h5 class="font-dark-gray">Today EPC</h5>
+                </div>
+                <div class="user-stat">
+                    <h3>
+                        @if($today_leads + $today_clicks >= 0)
+                            {!! "n/a" !!}
+                        @else
+                            {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
+                        @endif
+                    </h3>
+                    <h5 class="font-dark-gray">Today CR</h5>
+                </div>
+            </div>
+            <div class="user-stat-group">
+                <div class="user-stat">
+                    <h3>${!! number_format($earnings_today, 2) !!}</h3>
+                    <h5 class="font-dark-gray">Today Earnings</h5>
+                </div>
+                <div class="user-stat">
+                    <h3>${!! number_format($earnings_month, 2) !!}</h3>
+                    <h5 class="font-dark-gray">Month Earnings</h5>
+                </div>
+            </div>
+        </div>
+    @endunless
+
     <div class="clearfix"></div>
+
+    <div class="page-container dashboard no-border">
+        <div class="container">
+            <h2>Earning Activity</h2>
+
+            <div>
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        @if($is_mobile)
+            <div class="container" style="height: 50px;"></div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Top campaigns</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        @foreach($top_campaigns as $campaign)
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <a href="/campaign/{!! $campaign->id !!}"><h4>{{ $campaign->name }}</h4></a>
+                                    <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+        @endif
+    </div>
+
 @endsection
 
 @section('scripts')
@@ -211,18 +151,18 @@
                         label: "Earnings",
                         fill: false,
                         lineTension: 0.1,
-                        backgroundColor: "rgba(75,192,192,0.4)",
-                        borderColor: "#3b76ed",
+                        backgroundColor: "#ca6e6e",
+                        borderColor: "#960000",
                         borderCapStyle: 'butt',
                         borderDash: [],
                         borderDashOffset: 0.0,
                         borderJoinStyle: 'miter',
-                        pointBorderColor: "#3b76ed",
-                        pointBackgroundColor: "#3b76ed",
+                        pointBorderColor: "#960000",
+                        pointBackgroundColor: "#960000",
                         pointBorderWidth: 1,
                         pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "#3b76ed",
-                        pointHoverBorderColor: "#3b76ed",
+                        pointHoverBackgroundColor: "#960000",
+                        pointHoverBorderColor: "#960000",
                         pointHoverBorderWidth: 2,
                         pointRadius: 1,
                         pointHitRadius: 10,

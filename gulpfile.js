@@ -16,7 +16,7 @@ require('laravel-elixir-vue');
 elixir(function(mix) {
 
     elixir.config.sourcemaps = false;
-    var admin = false;
+    var admin = true;
     var copy = true;
 
     mix.sass('app.scss', 'public/assets/css/main.css');
@@ -56,18 +56,16 @@ elixir(function(mix) {
     if(copy) {
         mix.copy([
             'node_modules/bootstrap-sass/assets/fonts',
-            'bower_components/components-font-awesome/fonts',
-            'resources/assets/fonts'
+            'bower_components/components-font-awesome/fonts'
         ], 'public/assets/fonts');
 
         mix.copy([
             'node_modules/bootstrap-sass/assets/fonts',
-            'bower_components/components-font-awesome/fonts',
-            'resources/assets/fonts'
+            'bower_components/components-font-awesome/fonts'
         ], 'public/build/assets/fonts');
     }
 
-    mix.webpack(['app.js', 'jquery.selectbox-0.2.js', 'slick.min.js'], 'public/assets/js/main.js');
+    mix.webpack('app.js', 'public/assets/js/main.js');
 
     mix.version([
         'assets/css/admin.css',

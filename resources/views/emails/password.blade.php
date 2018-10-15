@@ -42,7 +42,7 @@ body {
 <div class='ir-email-container'>
                     
     <div class='ir-email-top'>
-        <img src="{{ url('/images/logo.png') }}" />
+        <img src="{{ url('/images/logo1.png') }}" />
     </div>
 
     <div class='ir-email-subject'>Hello {{ $user->firstname }}</div>
@@ -60,7 +60,7 @@ body {
     </div>
 
     <div class='ir-email-footer'>
-        <p> This message was sent to {{ $user->email }}. If you don't want to receive these emails from InfluencersReach in the future, you can edit your profile or <a href="{{ url('/email/unsubscribe') }}">unsubscribe</a>.</p>
+        <p> This message was sent to {{ $user->email }}. If you don't want to receive these emails from AdsAndAffiliates in the future, you can edit your profile or <a href="{{ url('/email/unsubscribe') }}">unsubscribe</a>.</p>
     </div>
 </div>
 

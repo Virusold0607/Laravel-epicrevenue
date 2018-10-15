@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => "noreply@epicrevenue.com",
-        'name' => "Epic Revenue"
+        'address' => "noreply@influencersreach.com",
+        'name' => "Influencers Reach"
     ],
 
     /*

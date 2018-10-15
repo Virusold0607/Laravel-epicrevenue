@@ -39,19 +39,8 @@ class PromoteController extends Controller
      */
     public function index()
     {
-//        $accounts = SocialAccount::where('user_id', auth()->user()->id)->get();
-        return view('user.promote.index');
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function promotions()
-    {
         $accounts = SocialAccount::where('user_id', auth()->user()->id)->get();
-        return view('user.promote.promotions', compact('accounts'));
+        return view('user.promote.index', compact('accounts'));
 
     }
 

@@ -4,164 +4,96 @@
 @endsection
 
 @section('body')
-    <div class="main home">
-        <div class="home-banner">
-
-            <div class="home-body">
-                <div class="container">
-                    <h1>MONETIZE THE REACH OF YOUR  <br/>SOCIAL MEDIA FOLLOWING</h1>
-                    <p>Do you have a fan page, a niche page, <br>a model page, or any other type of page with a large following?</p>
-                    <a href="{{ route('register') }}" class="btn btn-default btn-lg blue-button">JOIN NOW</a>
-                </div>
-            </div>
-        </div>
-        <div class="become-an-influencer">
+    <div class="homepage">
+        <div class="hero hero-lg">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="page-title-1">Become	an	Publisher</h2>
-                </div>
+                <h1>Monetize the reach of your social media following</h1>
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6q3qpxKgioM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                        </div>
-
-                        {{--<iframe width="560" height="315" src="https://www.youtube.com/embed/6q3qpxKgioM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>--}}
-                        {{--<img src="/images/become.png" class="img-responsive">--}}
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="become-an-influencer-text">
-                            <ul>
-                                <li>Over	200	Live	Promotions</li>
-                                <li>Guaranteed Top Payouts</li>
-                                <li>Free	Training	&	Tools</li>
-                                <li>Rewards	Program	&	Contests</li>
-                            </ul>
-                            <div class="button-box">
-                                <a href="{{ route('register') }}" class="btn btn-default btn-lg blue-button">APPLY  NOW</a>
-                                <a href="#" class="btn btn-default btn-lg black-button">LEARN  MORE</a>
-                            </div>
-                        </div>
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h4>Do you have a fan page, a niche page, a model page, or any other type of page with a large following?</h4>
                     </div>
                 </div>
+                <div class="clearfix"></div>
+                <a href="{{ url('/affiliate/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Become an Affiliate</a>
             </div>
+        </div><!-- End .hero -->
 
-        </div>
-        <div class="services">
-            {{--<img src="/images/services-bg.png" class="img-responsive">--}}
-            <div class="services-wrp">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="service-box">
-                                <div class="service-img">
-                                    <img src="/images/service1.png" class="img-responsive">
-                                </div>
-                                <h3>#SEE MORE</h3>
-                                <p>See visually how your account grows, </br>analyze your audience, target better.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="service-box">
-                                <div class="service-img">
-                                    <img src="/images/service2.png" class="img-responsive">
-                                </div>
-                                <h3>#MAKE MORE</h3>
-                                <p>Paid to post, paid to drive leads, </br>plus a lot more ways to generate revenue.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="service-box">
-                                <div class="service-img">
-                                    <img src="/images/service3.png" class="img-responsive">
-                                </div>
-                                <h3>#DO MORE</h3>
-                                <p>Use our services, </br>team and exclusive services to grow your brand.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="become-an-influencer become-an-advertiser">
+        <div class="hero hero-sm" style="background-image: none;background-color: #960000;">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="page-title-2">Become	an	Advertiser</h2>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 pull-right-laptop">
-                        <img src="images/influencer2.png" class="img-responsive">
+                <div class="row text-center offers">
+                    <div class="col-sm-4">
+                        <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-1.png" alt="See More"></div>
+                        <h4>#SEEMORE</h4>
+                        <p class="">See visually how your account grows, analyze your audience, target better.</p>
                     </div>
-                    <div class="col-sm-7">
-                        <div class="become-an-influencer-text">
-                            <ul>
-                                <li>Lead	Generation</li>
-                                <li>Flat-Rate	Sales</li>
-                                <li>Million	of	Conversions</li>
-                                <li>1000k+	Active	Publishers</li>
-                                <li>No	Monthly	Fees</li>
-                                <li>Dedicated	Account	Managers</li>
-                            </ul>
-                            <div class="button-box">
-                                <a href="{{ route('register') }}" class="btn btn-default btn-lg blue-button">APPLY  NOW</a>
-                                <a href="#" class="btn btn-default btn-lg black-button">LEARN  MORE</a>
-                            </div>
-                        </div>
+                    <div class="col-sm-4">
+                        <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-2.png" alt="MAKEMORE"></div>
+                        <h4>#MAKEMORE</h4>
+                        <p class="">Paid to post, paid to drive leads, plus a lot more ways to generate revenue.</p>
                     </div>
-
+                    <div class="col-sm-4">
+                        <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-3.png" alt="DOMORE"></div>
+                        <h4>#DOMORE</h4>
+                        <p class="">Use our services, team and exclusive services to grow your brand.</p>
+                    </div>
                 </div>
             </div>
-
         </div>
+        <div class="clearfix"></div>
+        <div class="container" style="height: 50px;"></div>
 
-        <div class="track">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="page-title-3">Track	your	Reach</h2>
-                </div>
-                <p>From	our	tracking	panel	you	will	be	able	to	see	how	much	clicks	your	page	is	driving as	well	as	the	amount	of	revenue	being	generated	in	real-time.</p>
-                <div class="button-box text-center">
-                    <a href="{{ route('register') }}" class="btn btn-default btn-lg black-button">JOIN	US</a>
-                </div>
-                {{--<div class="grap">--}}
-                    {{--<img src="/images/grap.png" class="img-responsive">--}}
-                {{--</div>--}}
+        <div class="container text-center">
+            <h5 class="font-gray"><strong>Join Us</strong></h5>
+            <h2 style="margin-top:10px;">Become an Affiliate</h2>
+            <img class="img-responsive" style="padding: 70px 0;margin: 0 auto;width: 250px;" src="https://i.imgur.com/YIisQ4r.png">
+
+            <div class="clearfix"></div>
+
+            <div>
+                <a href="{{ url('/affiliate/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Apply Now</a> <a href="{{ url('/influencers') }}" class="btn btn-gray btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Learn More</a>
             </div>
         </div>
 
-        <div class="partners">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="page-title-2">Brands we’ve promoted</h2>
-                </div>
-                <ul class="row partner-list">
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="#"><img src="/images/partener1.png" class="img-responsive"></a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="#"><img src="/images/partener2.png" class="img-responsive"></a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="#"><img src="/images/partener3.png" class="img-responsive"></a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="#"><img src="/images/partener4.png" class="img-responsive"></a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="#"><img src="/images/partener5.png" class="img-responsive"></a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="#"><img src="/images/partener6.png" class="img-responsive"></a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="#"><img src="/images/partener7.png" class="img-responsive"></a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="#"><img src="/images/partener8.png" class="img-responsive"></a>
-                    </li>
-                </ul>
+        <div class="clearfix"></div>
+        <div class="container">
+            <hr>
+        </div>
+        <div class="container text-center">
+            <h5 class="font-dark-gray"><strong>Track</strong></h5>
+            <h2 style="margin-top:10px; margin-bottom: 20px;">Track your reach</h2>
+            <p>From our tracking panel you will be able to see how much clicks your page is driving as well as the amount of revenue being generated <b>in real-time</b>.</p>
+            <div class="col-xs-12" style="height:20px;"></div>
+            <a href="{{ url('/affiliate/apply') }}" class="btn btn-default btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Join Now!</a>
+        </div>
+
+        <div class="clearfix"></div>
+        <img class="img-responsive" src="{{ url('/images/home/curve.png') }}" alt="Graph">
+        <div class="container">
+            <hr>
+        </div>
+
+        <div class="container text-center">
+            <h2 style="padding: 70px 0;">Brands we've promoted</h2>
+            <div class="row">
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/ICM-Logo.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/booking.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/expedia.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/groupon.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/king.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/netflix.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/nook.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/skout.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/wordswithfriends.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/amazon.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/pocket.png') }}" alt=""/></div>
+                <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/dena.png') }}" alt=""/></div>
             </div>
         </div>
+
+
+        <div class="clearfix"></div>
+    </div>
+    <div class="container">
+        <hr>
     </div>
 @endsection

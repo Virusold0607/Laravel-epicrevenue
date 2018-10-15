@@ -16,6 +16,7 @@ class CreateUserApisTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('key');
+            $table->string('secret_key');
             $table->timestamps();
 
             $table->foreign('user_id')

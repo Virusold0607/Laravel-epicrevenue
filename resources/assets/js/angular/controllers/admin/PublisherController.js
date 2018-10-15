@@ -88,25 +88,3 @@ adminControllers.controller('PublisherEditController', ['$scope', '$http', '$rou
 
         };
     }]);
-
-
-
-adminControllers.controller('PublisherCreateController', ['$scope', '$http', '$httpParamSerializerJQLike',
-    function ($scope, $http, $httpParamSerializerJQLike) {
-        $scope.user = {};
-        $scope.user.socialAccounts = {};
-
-        $scope.create = function(user) {
-            $http({
-                method  : 'POST',
-                url     : '/api/admin/publishers/',
-                data    : $httpParamSerializerJQLike(user),
-                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-            })
-                .success(function(data) {
-                    // if successful, bind success message to message
-                    $scope.message = data;
-                });
-
-        };
-    }]);

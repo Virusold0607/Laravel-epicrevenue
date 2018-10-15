@@ -3,14 +3,10 @@
 namespace App\Http\Controllers\Admin\Api;
 
 use App\Http\Helper;
-use App\Models\AccountStatus;
 use App\Models\CampaignRate;
 use App\Models\Campaign;
-use App\Models\EmailNotification;
 use App\Models\Report;
 use App\Models\Role;
-use App\Models\UserApi;
-use App\Models\UserBalance;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -18,9 +14,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Models\SocialAccount;
-use GuzzleHttp\Exception\ClientException;
-use Mockery\CountValidator\Exception;
 
 class PublisherController extends Controller
 {
@@ -195,98 +188,4 @@ class PublisherController extends Controller
         }
         return 'fail';
     }
-
-
-    /**
-     *
-     *
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        $validator = \Validator::make($request->all(), [
-            'firstname'         => 'required|string|min:3|max:255',
-            'lastname'          => 'required|string|min:3|max:255',
-            'email'             => 'required|unique:users|email|max:255',
-            'instagramAccounts' => 'required'
-        ]);
-
-        if ($validator->fails()) {
-            return $validator->errors();
-        }
-
-        $user = User::create($request->all());
-        $user->password = bcrypt('demopass');
-        $user->approved = true;
-        $user->approved_by = 1;
-        $user->save();
-
-        $status = new AccountStatus();
-        $status->user_id = $user->id;
-        $status->save();
-
-        $balance = new UserBalance();
-        $balance->user_id = $user->id;
-        $balance->save();
-
-        $email = new EmailNotification();
-        $email->user_id = $user->id;
-        $email->save();
-
-        $api = new UserApi();
-        $api->user_id = $user->id;
-        $api->key = str_random() . $user->id ;
-        $api->save();
-
-        $status = AccountStatus::firstOrNew(['user_id' => (int)$user->id]);
-//        $status->any_network_added = 'yes';
-        $status->save();
-
-        $instagramAccounts = explode(",", $request->input('instagramAccounts'));
-
-        foreach ($instagramAccounts as $i) {
-            $url = "https://www.instagram.com/" . strtolower($i) . "/?__a=1";
-
-            try {
-                $client = new \GuzzleHttp\Client();
-                $res = $client->request('GET', $url, []);
-            } catch (ClientException $e) {
-                return response()->json('failed');
-            } catch (Exception $e) {
-                return response()->json('failed');
-            }
-
-            if ($res->getStatusCode() === 200) {
-                $data = json_decode($res->getBody());
-
-                $a_user = $user;
-
-                $social_account = SocialAccount::firstOrNew(['account' => 'instagram', 'account_id' => (int)$data->user->id]);
-                $social_account->account = "instagram";
-                $social_account->user_id = $a_user->id;
-                $social_account->account_id = $data->user->id;
-                $social_account->profile_picture = $data->user->profile_pic_url;
-                $social_account->username = $data->user->username;
-                $social_account->bio = $data->user->biography;
-                $social_account->website = $data->user->external_url;
-                $social_account->name = $data->user->full_name;
-                $social_account->followed_by = $data->user->followed_by->count;
-                $social_account->follows = $data->user->follows->count;
-                $social_account->approved = true;
-                $social_account->save();
-
-                $status = AccountStatus::firstOrNew(['user_id' => (int)$a_user->id]);
-                $status->any_network_added = 'yes';
-                $status->save();
-
-//                return response()->json('success');
-
-            } else {
-                return response()->json('failed');
-            }
-        }
-
-        return "Success";
-    }
-
 }

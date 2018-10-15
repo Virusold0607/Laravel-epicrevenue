@@ -1,52 +1,104 @@
-// Fonts
-//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-@import url(https://fonts.googleapis.com/css?family=Karla:300,400,700);
-@import url("https://use.typekit.net/wyt0fsl.css");
-
-
-// Variables
 @import "variables";
 
-
-// Bootstrap
+@import "mdl/material-design-lite";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
-@import "node_modules/font-awesome/scss/font-awesome";
-
-@import "common";
-
-@import "slickSlider";
-@import "components/anchor";
-@import "components/hero";
-@import "components/notification11";
-@import "components/timeline";
-@import "components/fonts";
-@import "components/buttons";
-@import "components/form";
-
-@import "layout/header";
-@import "layout/footer";
-
-@import "pages/awards";
-@import "pages/home";
-@import "pages/campaigns";
-@import "pages/influencer";
-@import "pages/dashboard";
-@import "pages/payouts";
-@import "pages/invites";
-@import "pages/reports";
-@import "pages/signin";
-@import "pages/setting";
-@import "pages/payments";
-@import "pages/signup";
-@import "pages/signup-networks";
-
-@import "responsive";
+@import "bower_components/components-font-awesome/scss/font-awesome";
 
 
+html, body {
+  font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #3b454a;
+}
+body {
+  background: white;
+  //background: rgba(217,217,217,0.99);
+  //background: -moz-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(217,217,217,0.99)), color-stop(0%, rgba(237,237,237,0.99)), color-stop(0%, rgba(227,227,227,0.99)), color-stop(100%, rgba(255,255,255,0.99)));
+  //background: -webkit-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //background: -o-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //background: -ms-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //background: radial-gradient(ellipse at center, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
+}
 
-@media(min-width:767px) {
-  .pull-right-laptop {
-    float: right !important;
+.page-container {
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  background-color: #fff;
+  padding: 50px;
+  border: 1px solid #eee;
+
+  //background: rgba(217,217,217,0.99);
+  //background: -moz-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(217,217,217,0.99)), color-stop(0%, rgba(237,237,237,0.99)), color-stop(0%, rgba(227,227,227,0.99)), color-stop(100%, rgba(255,255,255,0.99)));
+  //background: -webkit-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //background: -o-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //background: -ms-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //background: radial-gradient(ellipse at center, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
+  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
+
+  &.page-top-margin {
+    margin-top: 30px;
+  }
+
+  &.no-shadow {
+    box-shadow: none;
+  }
+
+  &.no-border {
+    border: none;
+  }
+
+  &.background-gray {
+    background: #f8f8f8;
+  }
+
+  .heading {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  p {
+    line-height: 2;
+    word-spacing: 2px;
+    font-size: 13.2px;
   }
 }
+
+@media screen and (max-width: $screen-sm) {
+  .page-container {
+    padding: 50px 0px;
+  }
+}
+/*
+@media screen and (max-width: $screen-sm) {
+  .mobile-adjustment.container {
+      padding-left: 0;
+      padding-right: 0;
+  }
+}*/
+
+
+@import "layouts/header";
+@import "layouts/footer";
+
+@import "components/timeline";
+@import "components/notification11";
+@import "components/form";
+@import "components/anchor";
+@import "components/hero";
+@import "components/buttons";
+@import "components/modal";
+@import "components/icons";
+@import "components/fonts";
+@import "components/panel";
+
+@import "pages/home";
+@import "pages/influencers";
+@import "pages/login";
+@import "pages/networks";
+@import "pages/dashboard";
+@import "pages/promote";
+@import "pages/campaigns";
+
+@import "template";

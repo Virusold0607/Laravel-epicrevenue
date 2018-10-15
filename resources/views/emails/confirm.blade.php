@@ -42,13 +42,13 @@ body {
 <div class='ir-email-container'>
                     
     <div class='ir-email-top'>
-        <img src="{!! url('/images/logo.png') !!}" />
+        <img src="{!! url('/images/logo1.png') !!}" />
     </div>
                             
     <div class='ir-email-subject'>Hello {{ $user->firstname }}</div>
                         
     <div class='ir-email-message'>
-    <p>Thank you for applying at InfluencersReach! To continue, you will need to confirm you received this email by clicking the link below.<p>
+    <p>Thank you for applying at AdsAndAffiliates! To continue, you will need to confirm you received this email by clicking the link below.<p>
 
     <p>
     Please confirm your account by clicking or copying url below into your browser:<br /> 
@@ -61,7 +61,7 @@ body {
     </div>
 
     <div class='ir-email-footer'>
-        <p> This message was sent to {{ $user->email }}. If you don't want to receive these emails from InfluencersReach in the future, you can edit your profile or <a href="{{ url('/email/unsubscribe') }}">unsubscribe</a>.</p>
+        <p> This message was sent to {{ $user->email }}. If you don't want to receive these emails from AdsAndAffiliates in the future, you can edit your profile or <a href="{{ url('/email/unsubscribe') }}">unsubscribe</a>.</p>
     </div>
 </div>
 

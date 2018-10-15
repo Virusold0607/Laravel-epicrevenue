@@ -1,16 +1,11 @@
-@font-face {
-	font-family: "helvetica-neue";
-	src: url('/assets/fonts/helvetnl.eot');
-	src: url('/assets/fonts/helvetnl.eot?#iefix') format('embedded-opentype'),
-	url('/assets/fonts/helvetnl.svg#Helvetica Neue') format('svg'),
-	url('/assets/fonts/helvetnl.woff') format('woff'),
-	url('/assets/fonts/helvetnl.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+.font-gray {
+  color: $brand-gray;
 }
-@font-face {
-	font-family: '/assets/fonts/HelveticaNeueMedium';
-	src: url('/assets/fonts/HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),  url('/assets/fonts/HelveticaNeueMedium.woff') format('woff'), url('/assets/fonts/HelveticaNeueMedium.ttf')  format('truetype'), url('/fonts/HelveticaNeueMedium.svg#HelveticaNeueMedium') format('svg');
-	font-weight: normal;
-	font-style: normal;
+.font-dark-gray {
+  color: $brand-dark-gray;
+  line-height: 1.5;
+}
+.font-light-gray {
+  color: $brand-light-gray;
+  line-height: 1.5;
 }

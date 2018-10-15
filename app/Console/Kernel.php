@@ -17,7 +17,8 @@ class Kernel extends ConsoleKernel
         Commands\MailChimpClean::class,
         Commands\SettleUserBalances::class,
         Commands\SettleTaxDetails::class,
-        Commands\CampaignStats::class
+        Commands\CampaignStats::class,
+        Commands\OdadsSync::class
     ];
 
     /**
@@ -35,6 +36,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('mailchimp:clean')->weekly();
         $schedule->command('settle:balances')->daily();
         $schedule->command('campaigns:stats')->daily();
+        $schedule->command('ogads:sync')->hourly();
     }
 
     /**

@@ -60,7 +60,7 @@
 
             <hr>
 
-            <div style="margin-bottom: 20px;">
+            <div>
                 <a class="btn btn-primary btn-lg" href="{!! url('/reports')  !!}">Go Back</a>
             </div>
         </div>

@@ -1,83 +1,43 @@
-/*! Font */
-$fontfamily:"Karla";
-
-/*! Text Color */
-$bodycolor:"#333";
-$gray-color:#c5c5c5;
-$white-color:white;
-$black-color:#000000;
-$dark-gray-color:#5d5d5d;
-$light-gray-color:#eff0f1;
-$blue-color:#4c71b7;
-$red-color:#f91e3e;
-$footer-text-color:#b7b6bc;
-
-$brand-color: #4c71b7;
+$brand-primary: #960000;
+$brand-color: #960000;
 $brand-gray: #666;
 $brand-light-gray: #444;
 $brand-dark-gray: darken(#666, 10%);//#9a9a9a;
 $brand-gray-footer: #666;
 
-/*! Backgrounds */
-$black-background:#000000;
-$blue-background:#4c71b7;
-$dark-blue-background:#0e0c20;
-$white-background-color:white;
-$red-background-color:#f91e3e;
-$gray-background-color:#f4f4f4;
-$lightblue-background-color:#eff2f7;
-$skyblue-background-color:#7d5dfb;
-$no-background:none;
-$no-background-color:transparent;
+// Body
+$body-bg: #f5f8fa;
 
-/*! Borders */
-$gray-border-color:#dfdfdf;
-$gray-border-colorhover:#3e96a9;
-$no-border:none;
-$no-border-color:transparent;
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border: $laravel-border-color;
+$navbar-default-border: $laravel-border-color;
+$panel-default-border: $laravel-border-color;
+$panel-inner-border: $laravel-border-color;
 
+// Brands
+$brand-primary: #960000;
+$brand-info: #8eb4cb;
+$brand-success: #2ab27b;
+$brand-warning: #cbb956;
+$brand-danger:  #bf5329;
 
-/*! Mix */
-$fadding: all 0.5s ease;
-$text-shadow-blue:1px 2px 1px #20748d;
-$text-shadow-orange:1px 2px 1px #d62b06;
-$box-shaddow:0 3px 8px rgba(0,0,0,.2);
-$box-shaddow2:0 3px 8px rgba(0,0,0,.2);
-$box-shaddow-lighter:0 6px 8px rgba(0, 0, 0, 0.1);
-$box-shaddow-inner:inset 0px 8px 8px rgba(0,0,0,.1);
-$radius-box:0 0 7px 7px;
+// Typography
+$font-family-sans-serif: "Raleway", sans-serif;
+$font-size-base: 14px;
+$line-height-base: 1.6;
+$text-color: #636b6f;
 
-/*! Buttons */
-$button-border-radius:40px;
-$button-border-padding:15px 50px;
-a, button{
-  transition:$fadding;
-  outline: 0 !important;
-  outline: none !important;
-}
-@mixin antialiasing( $type:antialiased ) {
-  /* antialiased, none, subpixel-antialiased*/
-  -webkit-font-smoothing: $type;
-  font-smoothing: $type;
-  font-smooth: always;
-}
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
-}
+// Navbar
+$navbar-default-bg: #fff;
 
-@mixin border-gradient($top-color: #1c4f5d, $right-color: #4c9eae, $bottom-color: #4c9eae, $left-color: #1c4f5d) {
-  border-color: $top-color $right-color $bottom-color $left-color;
-  border-style: solid;
-  border-width: 1px;
-}
+// Buttons
+$btn-default-color: $text-color;
 
-@mixin gradient-horizontal($start-color: #4ca6ba, $end-color: #3e96a9, $start-percent: 0%, $end-percent: 100%) {
-  background: $start-color; /* Old browsers */
-  background: -moz-linear-gradient(top,  $start-color, $start-percent, $end-color, $end-percent); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,   $start-color, $start-percent, $end-color, $end-percent); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,   $start-color, $start-percent, $end-color, $end-percent); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 ); /* IE6-9 */
-}
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #fff;

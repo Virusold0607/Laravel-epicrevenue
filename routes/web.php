@@ -20,8 +20,8 @@ Route::get('/track/{campaign_id}/{user_id}/{subid1?}/{subid2?}/{subid3?}/{subid4
 // Routes for guest users
 Route::group(['middleware' => 'guest'], function () {
     // Registration routes...
-    Route::get('/publisher/apply', 'Auth\RegisterController@getRegister')->name('register');
-    Route::post('/publisher/apply', 'Auth\RegisterController@postRegister');
+    Route::get('/affiliate/apply', 'Auth\RegisterController@getRegister');
+    Route::post('/affiliate/apply', 'Auth\RegisterController@postRegister');
 
     //Invite Controller
     Route::get('/invite/{id}', 'InviteController@getId');
@@ -35,19 +35,21 @@ Route::group(['middleware' => 'guest'], function () {
 
 });
 
-Route::get('/influencers/apply/complete', 'Auth\RegisterController@getRegisterComplete');
+Route::get('/affiliate/apply/complete', 'Auth\RegisterController@getRegisterComplete');
 Route::get('/emailconfirm/{id}/{email_confirm_code}', 'Auth\RegisterController@confirmEmail');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/login/check', 'Auth\LoginController@checkpoint');
 
     // Registration
-    Route::get('/influencers/apply/networks', 'Auth\RegisterController@getRegisterNetworks');
-    Route::post('/influencers/apply/networks', 'Auth\RegisterController@postRegisterNetworks');
-    Route::post('/influencers/apply/networks/instagram/{username}', 'Auth\RegisterController@handleInstagramVerification');
-    Route::get('/influencers/apply/networks/{service}/callback', 'Auth\RegisterController@getRegisterSocialAccount');
-    Route::get('/influencers/apply/payment', 'Auth\RegisterController@getRegisterPayment');
-    Route::post('/influencers/apply/payment', 'Auth\RegisterController@postRegisterPayment');
+    Route::get('/affiliate/apply/networks', 'Auth\RegisterController@getRegisterNetworks');
+    Route::post('/affiliate/apply/networks', 'Auth\RegisterController@postRegisterNetworks');
+    Route::get('/affiliate/apply/address', 'Auth\RegisterController@getRegisterAddress');
+    Route::post('/affiliate/apply/address', 'Auth\RegisterController@postRegisterAddress');
+    Route::post('/affiliate/apply/networks/instagram/{username}', 'Auth\RegisterController@handleInstagramVerification');
+    Route::get('/affiliate/apply/networks/{service}/callback', 'Auth\RegisterController@getRegisterSocialAccount');
+    Route::get('/affiliate/apply/payment', 'Auth\RegisterController@getRegisterPayment');
+    Route::post('/affiliate/apply/payment', 'Auth\RegisterController@postRegisterPayment');
 
     Route::get('/register/facebook/callback', 'Auth\RegisterController@handleFacebookCallback');
     Route::get('/register/twitter/callback', 'Auth\RegisterController@handleTwitterCallback');
@@ -55,10 +57,9 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 // Authentication Routes...
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('login', 'Auth\LoginController@showLoginForm');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
-
 
 //Auth::routes();
 
@@ -82,15 +83,16 @@ Route::group(['middleware' => []], function() {
 
         Route::get('/campaign/{id}', 'CampaignController@show');
 
-        Route::resource('/contests', 'ContestController');
+//        Route::resource('/contests', 'ContestController');
+
+        Route::resource('/tools/snapmoney', 'User\Tools\SnapMoneyController');
 
         // Invite
         Route::get('/invite', 'InviteController@index');
 
         //Promote
-        Route::get('/promote', 'User\PromoteController@index');
-        Route::get('/promotions', 'User\PromoteController@promotions');
-        Route::get('/promotions/{id}', 'User\PromoteController@show');
+//        Route::get('/promote', 'User\PromoteController@index');
+//        Route::get('/promote/{id}', 'User\PromoteController@show');
 
         Route::get('/networks', 'User\PromoteController@networks');
 
@@ -106,10 +108,10 @@ Route::group(['middleware' => []], function() {
     });
 
     // No middlewares. Anyone can access
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index');
     //Route::get('/contact', 'HomeController@getContact');
     //Route::post('/contact', 'HomeController@postContact');
-    Route::get('/influencers', 'HomeController@influencers');
+    Route::get('/affiliates', 'HomeController@influencers');
     Route::get('/advertisers', 'HomeController@advertisers');
     Route::get('/about', 'HomeController@about');
     Route::get('/rewards', 'HomeController@rewards');
@@ -119,7 +121,6 @@ Route::group(['middleware' => []], function() {
 
     // Campaign Controller
     Route::get('/campaign/gallery/image/{id}/{filename}', 'Admin\CampaignGalleryController@showImage');
-    Route::get('/campaign/gallery/video/{id}/{filename}', 'Admin\CampaignVideoController@showVideo');
     Route::get('/campaign/image/{name}', 'Admin\CampaignController@featureImage');
 
     Route::get('/promote/image/{id}', 'User\PromoteController@featureImage');
@@ -134,11 +135,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     // Admin
     Route::get('/', 'Admin\AdminController@index');
 
-
     Route::resource('/postbacks', 'Admin\PostbackController');
     Route::get('/postbacks/{id}/delete', 'Admin\PostbackController@destroy');
 
     // Campaigns
+    Route::get('/campaigns/ogads/import/', 'Admin\CampaignController@getOgadsImport');
+    Route::post('/campaigns/ogads/import/', 'Admin\CampaignController@postOgadsImportSelected');
     Route::get('/campaigns/categories', 'Admin\CampaignController@categories');
     Route::get('/campaigns/rates', 'Admin\CampaignController@getRates');
     Route::post('/campaigns/rates', 'Admin\CampaignController@postRates');
@@ -149,9 +151,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/campaigns/gallery/image/{id}/{filename}/delete', 'Admin\CampaignGalleryController@destroy');
     Route::resource('/campaigns/gallery', 'Admin\CampaignGalleryController',
         ['only' => ['edit', 'update', 'show']]);
-    Route::get('/campaigns/gallery/video/{id}/{filename}/delete', 'Admin\CampaignVideoController@destroy');
-    Route::resource('/campaigns/video', 'Admin\CampaignVideoController',
-        ['only' => ['edit', 'update', 'show']]);
+    Route::get('/campaigns/{network_id?}', 'Admin\CampaignController@index');
     Route::resource('/campaigns', 'Admin\CampaignController');
 
     // Campaign Reports
@@ -188,7 +188,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
 
 Route::group(['prefix' => 'api/admin', 'middleware' => ['api', 'admin']], function () {
     Route::get('/stats', 'Admin\Api\AdminController@index');
-    Route::post('/publishers', 'Admin\PublisherController@store');
     Route::get('/publishers/my', 'Admin\Api\PublisherController@my');
     Route::resource('/publishers', 'Admin\Api\PublisherController');
     Route::post('/publishers/approval/{id}', 'Admin\Api\PublisherController@approval');
@@ -208,10 +207,7 @@ Route::group(['prefix' => 'api/admin', 'middleware' => ['api', 'admin']], functi
 
 
     Route::resource('/campaigns', 'Admin\Api\CampaignController');
+
 });
 
-Route::get('/test', function()
-{
-    auth()->logout();
-    auth()->loginUsingId(1);
-});
+

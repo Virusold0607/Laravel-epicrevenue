@@ -1,162 +1,152 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="main dashboard payouts">
-        <div class="signup-bg">
-            <div class="container">
-                <div class="signup-content">
-                    <h1 class="text-center">Apply to Epic Revenue</h1>
-                    <div class="small-container sub-heading"><h2>REMINDERS</h2></div>
-                    <div class="payment-steps">
-                        <ul>
-                            <li class="active">
-                                <span class="payment-label">Account	Details</span>
-                                <div class="graphic">
-                                    <span>2</span>
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="dots step1"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-                            </li>
-                            <li class="active">
-                                <span class="payment-label">Networks</span>
-                                <div class="graphic">
-                                    <span>2</span>
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="dots step2"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-                            </li>
-                            <li>
-                                <span class="payment-label">Payment	Methods</span>
-                                <div class="graphic">
-                                    <span>3</span>
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                                </div>
-                            </li>
-                        </ul>
+    <div class="hero small">
+        <div class="container">
+            <h1 class="hero-heading">Become a Affiliate</h1>
+        </div>
+    </div>
+    <div class="page">
+        <div class="container">
+            <ul id='timeline'>
+                <div id='timeline2' style="width:60%"></div>
+                <li class='work'>
+                    <input class='radio' id='work5' name='works' type='radio' checked>
+                    <div class="relative">
+                        <span class='date checked'>Account Details</span>
+                        <span class='circle checked'>1</span>
                     </div>
-                    <div class="small-container add-networks">
-                        <h2>ADD	NETWORKS</h2>
+                </li>
+                <li class='work'>
+                    <input class='radio' id='work4' name='works' type='radio'>
+                    <div class="relative">
+                        <span class='date checked'>Networks</span>
+                        <span class='circle checked'>2</span>
+                    </div>
+                </li>
+                <li class='work'>
+                    <input class='radio' id='work3' name='works' type='radio'>
+                    <div class="relative">
+                        <span class='date'>Payment Method</span>
+                        <span class='circle'>3</span>
+                    </div>
+                </li>
+            </ul>
 
-                        <div class="alert-box text-center">
-                            {{-- Was there an error? --}}
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            @if (isset($error))
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($error as $e)
-                                            <li>{!! $e !!}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+            <form action="/affiliate/apply/networks" method="post" class="form-register networks col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <div class="">
 
-                            <div class="alert-text text-left">
-                                Heads up! Payments are sent out weekly to your selected payment method if the amount <br>"CLEARED FOR PAYMENT" is above your set payment threshold.
-                            </div>
-
+                    {{-- Was there an error? --}}
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
+                    @endif
+                    @if (isset($error))
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($error as $e)
+                                    <li>{!! $e !!}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
-                        <div class="row">
-                            <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2" id="instagram">
-                                    <div id="instagram_btn" data-popup="true" class="payment-thumbnail @if(!empty(session('instagram_name')))selected @endif">
-                                        <img src="/images/social-media1.png" />
-                                        @if(!empty(session('instagram_name')))
-                                            {{ session('instagram_name') }}
-                                        @endif
-                                    </div>
-                                    {{--<p>Connected as {{ session('instagram_name') }}</p>--}}
-                                </div>
-                            </div>
-                            <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2" id="facebook">
-                                    <div class="payment-thumbnail">
-                                        <img src="/images/social-media2.png" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2" id="twitter">
-                                    <div class="payment-thumbnail">
-                                        <img src="/images/social-media3.png" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2" id="youtube">
-                                    <div class="payment-thumbnail">
-                                        <img src="/images/social-media4.png" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2" id="tumblr">
-                                    <div class="payment-thumbnail">
-                                        <img src="/images/social-media5.png" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-2 col-xs-6">
-                                <div class="payments-box box-shadow2" id="vibe">
-                                    <div class="payment-thumbnail">
-                                        <img src="/images/social-media6.png" />
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="panel panel-default networks">
+                        <div class="panel-heading">Add Networks</div>
+                        <div class="panel-body">
+                            <div class="alert alert-info">AdsAndAffiliates does <b>NOT</b> collect any passwords associated with your social media accounts.</div>
+                            <ul class="add-networks">
+                                <li>
+                                    @if(empty(session('instagram_name')))
+                                        <a id="instagram_btn" data-popup="true" class="network_tile instagram">
+                                            <span class="fa fa-instagram"></span>
+                                            <span class="title">Instagram</span>
+                                            <!--<span class="niche-icon size-25 add" data-gravity="s" data-offset="20" data-toggle="tooltip" original-title="Add another account?"></span>-->
+                                        </a>
+                                    @else
+                                        <p>Connected as {{ session('instagram_name') }}</p>
+                                    @endif
+                                </li>
+                                <li>
+                                    <a id="facebook_btn" data-popup="true" class="network_tile facebook disabled" href="#">
+                                        <span class="fa fa-facebook"></span>
+                                        <span class="title">Facebook</span>
+                                        <!--<span class="niche-icon size-25 add" data-gravity="s" data-offset="20" data-toggle="tooltip" original-title="Add another account?"></span>-->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="twitter_btn" data-popup="true" class="network_tile twitter disabled" href="#">
+                                        <span class="fa fa-twitter"></span>
+                                        <span class="title">Twitter</span>
+                                        <!--<span class="niche-icon size-25 add" data-gravity="s" data-offset="20" data-toggle="tooltip" original-title="Add another account?"></span>-->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-popup="true" class="network_tile twitter disabled" href="#">
+                                        <span class="fa fa-youtube"></span>
+                                        <span class="title">Youtube</span>
+                                        <!--<span class="niche-icon size-25 add" data-gravity="s" data-offset="20" data-toggle="tooltip" original-title="Add another account?"></span>-->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-popup="true" class="network_tile twitter disabled" href="#">
+                                        <span class="fa fa-tumblr"></span>
+                                        <span class="title">Tumblr</span>
+                                        <!--<span class="niche-icon size-25 add" data-gravity="s" data-offset="20" data-toggle="tooltip" original-title="Add another account?"></span>-->
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-popup="true" class="network_tile twitter disabled" href="#">
+                                        <span class="fa fa-vine"></span>
+                                        <span class="title">Vine</span>
+                                        <!--<span class="niche-icon size-25 add" data-gravity="s" data-offset="20" data-toggle="tooltip" original-title="Add another account?"></span>-->
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                    <hr>
+                    {{--<a href="{{ url('/register/payment') }}" class="btn btn-default">Skip</a>--}}
+                </div>
+            </form>
 
+            <div class="clearfix"></div>
 
-                    <div class="setting-form singup-section" id="notAvailable" style="display: none;">
-                        <div class="netwrok-action">
-                            <div class="alert alert-info">
-                                This option is not available yet. We are working on it.
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" id="igPanel" style="display: none;">
+                <div class="panel panel-default networks">
+                    <div class="panel-heading">Add Instagram account</div>
+                    <div class="panel-body">
+                        <p>Please set your BIO url to “http://reachurl.com/verify/ig/{!! auth()->user()->id !!}” and click verify so we can confirm account ownership, You may remove or change it back afterwards.</p>
+                        <div class="form-stacked">
+                            <div class="form-group">
+                                {!! Form::text('ig_username', null, array('id' => 'ig_username','class' => 'form-control' ,'placeholder' => 'Instagram username')) !!}
+                            </div>
+                            <div class="form-group" style="margin-top: 10px;">
+                                <button class="btn btn-primary" id ="instagram_verify">Verify</button>
                             </div>
                         </div>
+                        <div id="ig_result"></div>
                     </div>
-
-                    <div class="setting-form singup-section" id="igPanel" style="display: none;">
-                        <div class="netwrok-action">
-                            <div class="row">
-                                <div class="col-sm-12">
-
-                                    <h2>ADD	INSTAGRAM	ACCOUNT</h2>
-                                    <p>Please	set	your	BIO	url	to <a href="http://reachurl.com/verify/ig/{{ auth()->id() }}">http://reachurl.com/verify/ig/{{ auth()->id() }}</a> and	click	verify	so we	can	confirm	account	ownership,	You	may	remove	or	change	it	back	afterwards.</p>
-                                    <div class="input-text">
-                                        {!! Form::text('ig_username', null, array('id' => 'ig_username','class' => '' ,'placeholder' => 'Instagram username')) !!}
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-12 text-center">
-                                    <a class="btn default-btn black-button small-round font-large" id ="instagram_verify" href="#next">VERIFY</a>
-                                </div>
-
-                                <div id="ig_result"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 text-right" id ="next" style="display: none;">
-                        <a href="/influencers/apply/payment" class="btn default-btn black-button small-round font-large">NEXT</a>
-                    </div>
-
                 </div>
             </div>
+
+
+            <div class="clearfix"></div>
+
+            <div id="next" class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" style="display: none;">
+                <a class="btn btn-primary btn-lg pull-right" href="/affiliate/apply/payment">Next</a>
+            </div>
+
+            <div class="clearfix"></div>
         </div>
     </div>
 @endsection
+
 
 @section('scripts')
     <script type="text/javascript">
@@ -167,85 +157,17 @@
                 }
             });
 
-            $('#instagram').click(function(){
-                $('#instagram').removeClass('selected');
-                $('#facebook').removeClass('selected');
-                $('#twitter').removeClass('selected');
-                $('#youtube').removeClass('selected');
-                $('#tumblr').removeClass('selected');
-                $('#vibe').removeClass('selected');
-
-                $('#instagram').addClass('selected');
+            $('#instagram_btn').click(function () {
+                console.log('click');
                 $('#igPanel').slideDown('slow');
-                $('#notAvailable').slideUp('slow');
             });
-            $('#facebook').click(function(){
-                $('#instagram').removeClass('selected');
-                $('#facebook').removeClass('selected');
-                $('#twitter').removeClass('selected');
-                $('#youtube').removeClass('selected');
-                $('#tumblr').removeClass('selected');
-                $('#vibe').removeClass('selected');
-
-                $('#facebook').addClass('selected');
-                $('#igPanel').slideUp('slow');
-                $('#notAvailable').slideDown('slow');
-            });
-            $('#twitter').click(function(){
-                $('#instagram').removeClass('selected');
-                $('#facebook').removeClass('selected');
-                $('#twitter').removeClass('selected');
-                $('#youtube').removeClass('selected');
-                $('#tumblr').removeClass('selected');
-                $('#vibe').removeClass('selected');
-
-                $('#twitter').addClass('selected');
-                $('#igPanel').slideUp('slow');
-                $('#notAvailable').slideDown('slow');
-            });
-            $('#youtube').click(function(){
-                $('#instagram').removeClass('selected');
-                $('#facebook').removeClass('selected');
-                $('#twitter').removeClass('selected');
-                $('#youtube').removeClass('selected');
-                $('#tumblr').removeClass('selected');
-                $('#vibe').removeClass('selected');
-
-                $('#youtube').addClass('selected');
-                $('#igPanel').slideUp('slow');
-                $('#notAvailable').slideDown('slow');
-            });
-            $('#tumblr').click(function(){
-                $('#instagram').removeClass('selected');
-                $('#facebook').removeClass('selected');
-                $('#twitter').removeClass('selected');
-                $('#youtube').removeClass('selected');
-                $('#tumblr').removeClass('selected');
-                $('#vibe').removeClass('selected');
-
-                $('#tumblr').addClass('selected');
-                $('#igPanel').slideUp('slow');
-                $('#notAvailable').slideDown('slow');
-            });
-            $('#vibe').click(function(){
-                $('#instagram').removeClass('selected');
-                $('#facebook').removeClass('selected');
-                $('#twitter').removeClass('selected');
-                $('#youtube').removeClass('selected');
-                $('#tumblr').removeClass('selected');
-                $('#vibe').removeClass('selected');
-
-                $('#vibe').addClass('selected');
-                $('#igPanel').slideUp('slow');
-                $('#notAvailable').slideDown('slow');
-            });
-
 
             $('#instagram_verify').click(function(){
                 $( "#ig_result" ).html( "Verifying..." );
 
                 var username = $('#ig_username').val();
-                $.post( "/influencers/apply/networks/instagram/" + username , function( data )  {
+                console.log('username: '+username);
+                $.post( "/affiliate/apply/networks/instagram/" + username , function( data )  {
                     if(data == 'success') {
                         $( "#ig_result" ).removeClass("alert alert-danger");
                         $( "#ig_result" ).addClass("alert alert-success");
@@ -257,6 +179,7 @@
                         $( "#ig_result" ).html( "We are unable to verify your account " + username + "." );
                     }
                 });
+
             });
         });
     </script>

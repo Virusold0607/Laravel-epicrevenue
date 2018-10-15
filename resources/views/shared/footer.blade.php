@@ -1,43 +1,61 @@
+<div class="container" style="height:5px;"></div>
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-sm-6 pull-right" style="z-index: 1;">
-                <div class="row">
-                    <div class="col-sm-6" style="z-index: 1;">
-                        <div class="footer-navigation">
-                            <h4>Navigation</h4>
-                            <ul>
-                                <li><a href="{{ url('/about') }}">About</a></li>
-                                @if(!auth()->check())
-                                <li><a href="{{ url('/influencers/apply') }}">Sign Up</a></li>
-                                @endif
-                                <li><a href="{{ url('/faqs') }}">FAQ’s</a></li>
-                                <li><a href="{{ url('/rewards') }}">Rewards</a></li>
-                                @if(!auth()->check())
-                                <li><a href="{{ url('/login') }}">Sign In</a></li>
-                                @endif
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6" style="z-index: 1;">
-                        <div class="footer-navigation">
-                            <h4>Legal</h4>
-                            <ul>
-                                <li><a href="{{ url('/privacy') }}">Privacy Policy</a></li>
-                                <li><a href="{{ url('/privacy') }}">Cookies</a></li>
-                                <li class="full"><a href="{{ url('/terms') }}">Terms of Service</a></li>
-                                <li class="full"><a href="{{ url('/privacy') }}">User Agreement</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-sm-4 col-xs-12 hidden-sm hidden-xs">
+                <h3 class="footer-brand">influencers<strong>reach</strong></h3>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="footer-about">
-                    <h4>About Epic Revenue</h4>
-                    <p>Our network operates the largest influencer network in the world. Using our platform advertisers can target the largest markets to the narrowest niches through social media. With our unique advertising options advertisers only pay for quality leads.</p>
+            <div class="col-sm-8">
+                <div class="col-sm-4 col-xs-12">
+                    <ul class="border-dashed">
+                        <li class="footertitle">Navigation</li>
+                        <li>
+                            <a href="{{ url('/about') }}">About</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/faqs') }}">FAQ's</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/contact') }}">Contact</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/login') }}">Sign In ?</a>
+                        </li>
+                    </ul>
                 </div>
+                <div class="col-sm-4 col-xs-12">
+                    <ul class="border-dashed">
+                        <li class="footertitle">Legal</li>
+                        <li>
+                            <a href="{{ url('/privacy') }} ">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/terms') }} ">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="container">
+        <hr>
+    </div>
+    <div class="container" style="height:10px;"></div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="text-left">
+                Created and maintained by AdsAndAffiliates &copy;{{ date("Y") }}
+            </p>
+            <ul class="text-right pull-right">
+                <li><a href="#">USER AGREEMENT</a></li>
+                <li><a href="{{ url('/privacy') }}">PRIVACY</a></li>
+                <li><a href="#">COOKIES</a></li>
+                <li><a href="{{ url('/terms') }}">TERMS OF SERVICES</a></li>
+            </ul>
         </div>
     </div>
 </div>

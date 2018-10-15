@@ -65,13 +65,12 @@ class RegisterController extends Controller
             'apiSecret'   => env('INSTAGRAM_SECRET'),
             'apiCallback' => env('INSTAGRAM_CALLBACK')
         ));
-    /*
+
         $this->fb = new \Facebook\Facebook([
             'app_id' => env('FB_ID'),
             'app_secret' => env('FB_SECRET'),
             'default_graph_version' => 'v2.7',
         ]);
-    */
     }
 
 
@@ -113,7 +112,6 @@ class RegisterController extends Controller
 
         return view('auth.networks', $data);
     }
-
 
     public function redirectToProvider($provider)
     {
@@ -308,12 +306,13 @@ class RegisterController extends Controller
 
         $api = new UserApi();
         $api->user_id = $user->id;
-        $api->key = str_random() . $user->id ;
+        $api->key = str_random() . $user->id;
+        $api->secret_key = str_random(32) . $user->id;
         $api->save();
 
         $this->guard()->login($user, true);
 
-        return redirect('/influencers/apply/networks');
+        return redirect('/affiliate/apply/address');
     }
 
     /**
@@ -326,6 +325,54 @@ class RegisterController extends Controller
     {
 
     }
+
+
+    public function getRegisterAddress(Request $request)
+    {
+        $data['user'] = Auth::user();
+        if($request->has('middleware_error')){
+            $data['error']['middleware'] = "You have to complete this step.";
+        }
+        return view('auth.address', $data);
+    }
+
+    public function postRegisterAddress(Request $request)
+    {
+        $user = Auth::user();
+
+        $validator = Validator::make((array)$request->all(), array(
+            'address1' => 'required|min:7|max:255',
+            'address2' => 'max:255',
+            'city' => 'required|min:3|max:50',
+            'state' => 'required|min:3|max:50',
+            'zip' => 'required|min:3|max:10',
+            'phone' => 'min:7|max:50',
+            'whatsapp' => 'min:7|max:50',
+            'skype' => 'min:7|max:50',
+        ));
+
+        if ($validator->fails()) {
+            return redirect('/affiliate/apply/address')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $user->address1 = $request->input('address1');
+        $user->address2 = $request->input('address2');
+        $user->city = $request->input('city');
+        $user->state = $request->input('state');
+        $user->zip = $request->input('zip');
+        $user->whatsapp = $request->input('whatsapp');
+        $user->skype = $request->input('skype');
+        $user->save();
+
+        $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
+        $status->is_contact_info_added = 'yes';
+        $status->save();
+
+        return redirect('/affiliate/apply/payment');
+    }
+
 
     /**
      * Handle a registration payment request for the application.
@@ -343,20 +390,19 @@ class RegisterController extends Controller
         ));
 
         if ($validator->fails()) {
-            return redirect('/register/payment')
+            return redirect('/affiliate/apply/payment')
                 ->withErrors($validator)
                 ->withInput();
         }
 
-        $payment = PaymentDetail::where('user_id', (int) $user->id)->first();
-        if(is_null($payment))
-            $payment = new PaymentDetail();
+        $payment = new PaymentDetail();
         $payment->user_id = $user->id;
         $payment->method = $request->payment_method;
         $payment->send_to = $request->payment_method_detail;
         $payment->save();
 
         $email_confirm_code = str_random(64);
+
 
         $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
         $status->any_payment_method_added = 'yes';
@@ -384,7 +430,7 @@ class RegisterController extends Controller
         auth()->logout();
 
         $request->session()->flash('complete', 'yes');
-        return redirect('/influencers/apply/complete');
+        return redirect('/affiliate/apply/complete');
     }
 
 
@@ -420,7 +466,7 @@ class RegisterController extends Controller
             'password'  => 'required|confirmed|min:6|max:50',
             'terms'     => 'accepted',
             'privacy'   => 'accepted',
-            //'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|captcha'
         ]);
     }
 

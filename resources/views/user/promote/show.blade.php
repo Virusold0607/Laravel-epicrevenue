@@ -16,7 +16,7 @@
             <h2>Available Promotions</h2>
             <hr>
             {{--<div class="alert alert-info">Unsure of how to post promo?--}}
-            {{--<a target="_blank" href="http://blog.epicrevenue.com/2015/07/27/how-to-post-a-promo-from-mobile-device/">--}}
+            {{--<a target="_blank" href="http://blog.influencersreach.com/2015/07/27/how-to-post-a-promo-from-mobile-device/">--}}
             {{--Click here to view this tutorial.--}}
             {{--</a>--}}
             {{--</div>--}}

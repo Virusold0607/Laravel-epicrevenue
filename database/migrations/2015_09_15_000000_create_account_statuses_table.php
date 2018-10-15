@@ -16,6 +16,7 @@ class CreateAccountStatusesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->enum('any_network_added', ['yes', 'no'])->default('no');
+            $table->enum('is_contact_info_added', ['yes', 'no'])->default('no');
             $table->enum('any_payment_method_added', ['yes', 'no'])->default('no');
             $table->enum('email_confirmed', ['yes', 'no'])->default('no');
             $table->timestamp('email_confirm_send_at')->nullable()->default(null);

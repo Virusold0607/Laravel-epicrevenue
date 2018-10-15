@@ -1,53 +1,125 @@
 @extends('shared/layout')
 
+
 @section('body')
-    <div class="main dashboard payouts">
-        <div class="signup-bg">
-            <div class="container">
-                <form class="signup-content form-login" role="form" method="POST" action="{{ url('/login') }}">
+    @if($is_mobile)
+<div class="container page-top-margin" style="padding-top: 15px; margin-bottom: 50px;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form class="form-horizontal form-login" role="form" method="POST" action="{{ url('/login') }}">
                     {{ csrf_field() }}
-                    <h1 class="text-center">Signin</h1>
-                    <div class="signup-small-container">
-                        <ul class="signup-form">
-                            <li class="{{ $errors->has('email') ? ' is-invalid' : '' }}">
-                                <input type="text" placeholder="Email" value="{{ old('email') }}" type="email" name="email" id="email" />
+                        <h2>Login</h2>
+                    
+                        <div class="container">
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label class="control-label"></label>
+                                <div class="inner-addon left-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" />
+                                </div>
 
                                 @if ($errors->has('email'))
-                                    <span class="help-text" style="color: red;">{{ $errors->first('email') }}</span>
+                                    <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
                                 @endif
-                            </li>
-                            <li class="{{ $errors->has('password') ? ' is-invalid' : '' }}">
-                                <input placeholder="Password" type="password" name="password" id="password" />
+                            </div>
+
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label class="control-label"></label>
+                                <div class="inner-addon left-addon">
+                                    <i class="glyphicon glyphicon-lock"></i>
+                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                                </div>
 
                                 @if ($errors->has('password'))
-                                    <span style="color: red;">{{ $errors->first('password') }}</span>
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
                                 @endif
-                            </li>
-                            <li class="text-center">
-                                <div class="input-checkbox">
-                                    <input id="forget" type="checkbox" name="remember" class="custom-select" checked />
-                                    <label for="forget" class="font-large">Remember Me</label>
+                            </div>
+
+                        </div>
+                        <div class="container-fluid" style="height: 15px;"></div>
+                        <div class="text-left" style="display: inline-block;padding-top: 6px;">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
+                                <input type="checkbox" id="remember" class="mdl-checkbox__input">
+                                <span class="mdl-checkbox__label">Remember Me</span>
+                            </label>
+                        </div>
+                        <div class="text-right" style="display: inline-block;position: absolute;right:0;">
+                            <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                        </div>
+                        <div class="container-fluid" style="height: 15px;"></div>
+                        
+                        <!-- Colored raised button -->
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #3b76ed;width: 100%">
+                        Login
+                        </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    @else
+    <div class="container page-top-margin" style="padding-top: 15px; margin-bottom: 50px;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form class="form-horizontal form-login" role="form" method="POST" action="{{ url('/login') }}">
+                    {{ csrf_field() }}
+                        <h2>Login</h2>
+                    
+                        <div class="container-fluid">
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label class="control-label"></label>
+                                <div class="inner-addon left-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" />
                                 </div>
-                            </li>
-                            <li class="text-center">
-                                <button class="btn default-btn black-button small-round font-large">SIGN	IN</button>
-                            </li>
-                            <li class="text-center font-large">
-                                <a class="color-black" href="{!! url('/password/reset/') !!}">Forgot	your	Password?</a>
-                            </li>
-                        </ul>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label class="control-label"></label>
+                                <div class="inner-addon left-addon">
+                                    <i class="glyphicon glyphicon-lock"></i>
+                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                                </div>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember"> Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-sign-in"></i> Login
+                                </button>
+
+                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script>
-        $(document).ready(function(e) {
-            $(".custom-select select").selectbox();
-            $(".custom-select .sbOptions li:first-child").addClass("active");
-        });
-    </script>
+    @endif
 @endsection

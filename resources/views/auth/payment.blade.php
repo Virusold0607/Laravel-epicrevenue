@@ -1,128 +1,96 @@
 @extends('shared.layout')
 
 @section('body')
-
-    <div class="main dashboard payouts">
-        <div class="signup-bg">
-            <div class="container">
-                <div class="signup-content">
-                    <h1 class="text-center">Apply	to	InfluencersReach</h1>
-
-                    <div class="payment-steps">
-                        <ul>
-                            <li class="active">
-                                <span class="payment-label">Account	Details</span>
-                                <div class="graphic">
-                                    <span>2</span>
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="dots step1"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-                            </li>
-                            <li class="active">
-                                <span class="payment-label">Networks</span>
-                                <div class="graphic">
-                                    <span>2</span>
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="dots step2"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-                            </li>
-                            <li>
-                                <span class="payment-label">Payment	Methods</span>
-                                <div class="graphic">
-                                    <span>3</span>
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="small-container">
-                        <h2>ADD	PAYMENT	METHODS</h2>
-                            {{-- Was there an error? --}}
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            @if (isset($middleware_error))
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        <li>{!! $middleware_error !!}</li>
-                                    </ul>
-                                </div>
-                            @endif
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="payments-box box-shadow2" id="giftBox">
-                                        <div class="payment-thumbnail">
-                                            <img src="/images/payment-options1.png" />
-                                        </div>
-                                        <span>GIFT	CARDS</span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="payments-box box-shadow2 selected" id="paypalBox">
-                                        <div class="payment-thumbnail">
-                                            <img src="/images/payment-options2.png" />
-                                        </div>
-                                        <span>PAY	WITH	PAYPAL</span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="payments-box box-shadow2" id="checkBox">
-                                        <div class="payment-thumbnail">
-                                            <img src="/images/payment-options3.png" />
-                                        </div>
-                                        <span>CHEQUE</span>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-
-                    <div class="signup-small-container small-container payments-box-terms">
-                        <h2 id="description_txt">Please type in your Paypal email</h2>
-
-                        {!! Form::open(array('url' => '/influencers/apply/payment', 'method' => 'post', 'class' => 'form-register')) !!}
-
-                        <input type="hidden" name="payment_method" id="payment_method" value="" />
-
-                        <ul class="signup-form">
-                            <li class="input-text">
-                                {!! Form::text('payment_method_detail') !!}
-                            </li>
-                            {{--<li>--}}
-                                {{--<div class="terms">--}}
-                                    {{--Lorem	ipsum	dolor	sit	amet,	consectetur	adipiscing	elit.	Vestibulum	id	semper	mi.	Donec	tincidunt	lectus	id	nisi	maximus,	quis	cursus	orci	mattis.	Ut	sollicitudin	dui	eget	nulla	semper,	sit	amet	commodo	nunc	maximus.	Cras	fermentum	ipsum	sit	amet	commodo	nunc	maximus.	Cras	fermentum	ipsum	ut	mi	accumsan.--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-
-                            <li class="text-center">
-                                <button type="submit" class="btn default-btn black-button small-round font-large">SUBMIT</button>
-                            </li>
-
-                        </ul>
-
-                        {!! Form::close() !!}
-                    </div>
-                </div>
-            </div>
+    <div class="hero small">
+        <div class="container">
+            <h1 class="hero-heading">Become an Affiliate</h1>
         </div>
     </div>
 
+    <div class="page wide">
+        <div class="container">
+
+            <ul id='timeline'>
+                <div id='timeline2' style="width:90%"></div>
+                <li class='work'>
+                    <input class='radio' id='work5' name='works' type='radio' checked>
+                    <div class="relative">
+                        <span class='date checked'>Account Details</span>
+                        <span class='circle checked'>1</span>
+                    </div>
+                </li>
+                <li class='work'>
+                    <input class='radio' id='work4' name='works' type='radio'>
+                    <div class="relative">
+                        <span class='date checked'>Address</span>
+                        <span class='circle checked'>2</span>
+                    </div>
+                </li>
+                <li class='work'>
+                    <input class='radio' id='work3' name='works' type='radio'>
+                    <div class="relative">
+                        <span class='date checked'>Payment Method</span>
+                        <span class='circle checked'>3</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                {!! Form::open(array('url' => '/affiliate/apply/payment', 'method' => 'post', 'class' => 'form-register')) !!}
+                    {{-- Was there an error? --}}
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if (isset($middleware_error))
+                        <div class="alert alert-danger">
+                            <ul>
+                                <li>{!! $middleware_error !!}</li>
+                            </ul>
+                        </div>
+                    @endif
+                    <div class="panel panel-default networks">
+                        <div class="panel-heading">How do you want to be paid?</div>
+                        <div class="panel-body">
+                            <div class="">
+                                <div id="pay_option_panel">
+                                    <div class="pay_option_div">
+                                        {!! Form::radio('payment_method', 'paypal') !!}
+                                        <img src="{{ url('/images/register/paypal.png') }}" alt="Paypal" class="pay_option_img"> Paypal
+                                    </div>
+                                    <div class="pay_option_div">
+                                        {!! Form::radio('payment_method', 'check') !!}
+                                        <img src="{{ url('/images/register/cheque-icon.png') }}" alt="Cheque" class="pay_option_img"> Check
+                                    </div>
+                                    <div class="pay_option_div">
+                                        {!! Form::radio('payment_method', 'gift_card') !!}
+                                        <img src="{{ url('/images/register/gift-card.jpg') }}" alt="Gift Card" class="pay_option_img"> Gift Card
+                                    </div>
+                                </div>
+                                <span id="description_txt">Details</span><span style="color: red">*</span>
+                                <br />
+                                {!! Form::text('payment_method_detail', null, array('class' => 'form-control', 'maxlength' => '255')) !!}
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid_12">
+                        {!! Form::submit('Submit', array('class' => 'btn btn-primary btn-lg pull-right')) !!}
+                    </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')
     <script>
-        function updateDetails(str) {
-//            str = $('input[name=payment_method]:checked', '#pay_option_panel').val();
+        function updateDetails() {
+            str = $('input[name=payment_method]:checked', '#pay_option_panel').val();
             //myele = $('input[name=payment_method_detail]');
             myele = $('#description_txt');
             if (str=="paypal")
@@ -153,34 +121,6 @@
             $('img').click(function(){
                 //$('input:radio[name=payment_method]').attr("checked", false);
                 $(this).prev().click();
-            });
-
-            $('#checkBox').click(function(){
-                $('#checkBox').removeClass('selected');
-                $('#paypalBox').removeClass('selected');
-                $('#giftBox').removeClass('selected');
-
-                $('#payment_method').val("check");
-                $('#checkBox').addClass('selected');
-                updateDetails('check');
-            });
-            $('#paypalBox').click(function(){
-                $('#checkBox').removeClass('selected');
-                $('#paypalBox').removeClass('selected');
-                $('#giftBox').removeClass('selected');
-
-                $('#payment_method').val("paypal");
-                $('#paypalBox').addClass('selected');
-                updateDetails('paypal');
-            });
-            $('#giftBox').click(function(){
-                $('#checkBox').removeClass('selected');
-                $('#paypalBox').removeClass('selected');
-                $('#giftBox').removeClass('selected');
-
-                $('#payment_method').val("gift_card");
-                $('#giftBox').addClass('selected');
-                updateDetails('gift_card');
             });
         });
 

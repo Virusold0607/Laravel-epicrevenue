@@ -60,11 +60,13 @@
         <tr ng-repeat="publisher in publishers | filter:query">
             <td><a href="#/publishers/show/<% publisher.id %>"><% publisher.id %></a></td>
             <td>
-                <p ng-if="publisher.status.any_network_added == 'yes'" class="text-success"><strong>Network => <% publisher.status.any_network_added %></strong></p>
+                <!--<p ng-if="publisher.status.any_network_added == 'yes'" class="text-success"><strong>Network => <% publisher.status.any_network_added %></strong></p>-->
+                <p ng-if="publisher.status.is_contact_info_added == 'yes'" class="text-success"><strong>Address => <% publisher.status.is_contact_info_added %></strong></p>
                 <p ng-if="publisher.status.email_confirmed == 'yes'" class="text-success"><strong>Email => <% publisher.status.email_confirmed %></strong></p>
                 <p ng-if="publisher.approved == 'yes' && status != true" class="text-success"><strong>Approved => <% publisher.approved %></strong></p>
 
-                <p ng-if="publisher.status.any_network_added == 'no'" class="text-danger"><strong>Network => <% publisher.status.any_network_added %></strong></p>
+                <!--<p ng-if="publisher.status.any_network_added == 'no'" class="text-danger"><strong>Network => <% publisher.status.any_network_added %></strong></p>-->
+                <p ng-if="publisher.status.is_contact_info_added == 'no'" class="text-danger"><strong>Address => <% publisher.status.is_contact_info_added %></strong></p>
                 <p ng-if="publisher.status.email_confirmed == 'no'" class="text-danger"><strong>Email => <% publisher.status.email_confirmed %></strong></p>
                 <p ng-if="publisher.approved == 'no' && status != true" class="text-danger"><strong>Approved => <% publisher.approved %></strong></p>
             </td>

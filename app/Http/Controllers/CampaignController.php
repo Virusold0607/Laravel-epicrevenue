@@ -23,7 +23,7 @@ class CampaignController extends Controller
     {
         $category_selected = 0;
         $campaigns = Campaign::incentAndMobile(false)->active();
-        if ($request->has('category') && (int) $request->input('category') > 0) {
+        if ($request->has('category')) {
             $category_selected = (int) $request->category;
             $campaigns = $campaigns->where('category_id', $category_selected);
         }
@@ -78,7 +78,7 @@ class CampaignController extends Controller
         $campaign = Campaign::where('id', $id)->incentAndMobile(false)->active()->with('category', 'reports')->firstOrFail();
         $custom_rate = CampaignRate::where(['active' => 'yes', 'campaign_id' => (int) $id, 'user_id' => (int) auth()->user()->id])->first();
         $daily_cap_status = TrackController::checkDailyCap($campaign);
-        $images = $videos = collect([]);
+        $images = null;
 
         $destinationPath = storage_path() . '/app/images/campaign/' . $campaign->id . '/gallery';
         if( \File::exists($destinationPath) ) {
@@ -87,16 +87,7 @@ class CampaignController extends Controller
             $images = $files;
         }
 
-        $destinationPath = storage_path() . '/app/images/campaign/' . $campaign->id . '/videos';
-        if( \File::exists($destinationPath) ) {
-            $files = collect( scandir($destinationPath) );
-            $files->forget([0,1]); // Remove . and ..
-            $videos = $files;
-        }
-
-        $data = array('campaign' => $campaign, 'daily_cap_status' => $daily_cap_status, 'custom_rate' => $custom_rate, 'images' => $images, 'videos' => $videos);
-
-        return view('user.campaigns.show')->with($data);
+        return view('user.campaigns.show')->with(array('campaign' => $campaign, 'daily_cap_status' => $daily_cap_status, 'custom_rate' => $custom_rate, 'images' => $images));
     }
 
 }
