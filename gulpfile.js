@@ -68,6 +68,7 @@ elixir(function(mix) {
     }
 
     //mix.webpack(['app.js', 'jquery.selectbox-0.2.js', 'slick.min.js'], 'public/assets/js/main.js');
+    //mix.webpack(['app.js', 'jquery.selectbox-0.2.js', 'slick.min.js'], 'public/assets/js/main.js');
 
     mix.version([
         'assets/css/admin.css',
