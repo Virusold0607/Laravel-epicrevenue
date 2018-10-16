@@ -139,6 +139,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/postbacks/{id}/delete', 'Admin\PostbackController@destroy');
 
     // Campaigns
+    Route::get('/campaigns/create', 'Admin\CampaignController@create');
     Route::get('/campaigns/ogads/import/', 'Admin\CampaignController@getOgadsImport');
     Route::post('/campaigns/ogads/import/', 'Admin\CampaignController@postOgadsImportSelected');
     Route::get('/campaigns/categories', 'Admin\CampaignController@categories');
@@ -153,6 +154,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
         ['only' => ['edit', 'update', 'show']]);
     Route::get('/campaigns/{network_id?}', 'Admin\CampaignController@index');
     Route::resource('/campaigns', 'Admin\CampaignController');
+
 
     // Campaign Reports
     Route::get('/reports/options/{id}/{status}', 'Admin\ReportsController@options');
