@@ -21,7 +21,7 @@ class CampaignController extends Controller
      */
     public function index(Request $request)
     {
-        $campaigns = Campaign::incentAndMobile(false);
+       // $campaigns = Campaign::incentAndMobile(false);
 
         return; 
 
