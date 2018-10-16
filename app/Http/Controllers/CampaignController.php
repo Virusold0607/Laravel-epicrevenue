@@ -21,8 +21,13 @@ class CampaignController extends Controller
      */
     public function index(Request $request)
     {
+        $campaigns = Campaign::incentAndMobile(false)->active();
+
+        return; 
+        
         $category_selected = 0;
-        //$campaigns = Campaign::incentAndMobile(false)->active();
+        $campaigns = Campaign::incentAndMobile(false)->active();
+
         $campaigns = Campaign::active();
         if ($request->has('category')) {
             $category_selected = (int) $request->category;
