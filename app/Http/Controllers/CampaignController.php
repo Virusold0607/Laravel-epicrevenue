@@ -77,7 +77,8 @@ class CampaignController extends Controller
      */
     public function show($id)
     {
-        $campaign = Campaign::where('id', $id)->incentAndMobile(false)->active()->with('category', 'reports')->firstOrFail();
+        //$campaign = Campaign::where('id', $id)->incentAndMobile(false)->active()->with('category', 'reports')->firstOrFail();
+		$campaign = Campaign::where('id', $id)->active()->with('category', 'reports')->firstOrFail();
         $custom_rate = CampaignRate::where(['active' => 'yes', 'campaign_id' => (int) $id, 'user_id' => (int) auth()->user()->id])->first();
         $daily_cap_status = TrackController::checkDailyCap($campaign);
         $images = null;
