@@ -77,8 +77,7 @@ a img{
 
 
 .android-logo-image {
-  height: 80px;
-  width: auto;
+  width: 200px;
 }
 @media screen and (max-width: 786px) {
   .android-logo-image {
@@ -133,14 +132,12 @@ a img{
 
   .android-navigation .mdl-navigation__link {
     display: inline-block;
-    height: 60px;
-    line-height: 68px;
-    background-color: transparent !important;
-    border-bottom: 4px solid transparent;
-  }
+    background-color: transparent!important;
+    border-bottom: 0;
+}
 
     .android-navigation .mdl-navigation__link:hover {
-      border-bottom: 4px solid #960000;
+      border-bottom: 0;
     }
 
   .android-search-box {
