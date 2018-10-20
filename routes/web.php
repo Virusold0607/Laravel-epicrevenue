@@ -129,7 +129,7 @@ Route::group(['middleware' => []], function() {
 
 
 
-
+Route::get('/campaigns/{network_id?}', 'Admin\CampaignController@index');
 // Only admin and owner has access
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     // Admin
