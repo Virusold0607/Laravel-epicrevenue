@@ -16,32 +16,7 @@
                     <a href="{{ url('/rewards') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Rewards</a>
                     <a href="{{ url('/reports') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Reports</a>
 {{--                    <a href="{{ url('/contests') }}" class="mdl-navigation__link mdl-typography--text-uppercase">Contests</a>--}}
-                    <!--<a href="#" class="mdl-navigation__link mdl-typography--text-uppercase nav-user" 
-                        data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{ url('/images/default-user-icon.png') }}" class="img-responsive nav-user-img" />
-                        <div>{!! auth()->user()->firstname !!}</div><span class="caret"></span>
-                    </a>-->
-                    <!--<li class="dropdown show-user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img src="{{ url('/images/default-user-icon.png') }}" class="img-responsive nav-user-img" />
-                    {!! auth()->user()->firstname !!}
-                    <span class="caret"></span>
-                    </a>
 
-                    {{--<a href="#" class="dropdown-toggle user-holder" data-toggle="dropdown">--}}
-                    {{--<img src="{{ url('/images/default-user-icon.png') }}" class="user-icon img-responsive" />--}}
-                    {{--<div class="name">{!! auth()->user()->firstname !!}</div>--}}
-                    {{--<b class="caret"></b>--}}
-                    {{--</a>--}}
-                    <ul class="dropdown-menu">
-                    {{--<li><a href="#">Tools</a></li>--}}
-                    <li><a href="{{ url('/invite') }}">Invite</a></li>
-                    <li><a href="{{ url('/payouts') }}">Payouts</a></li>
-                    <li><a href="{{ url('/settings') }}">Settings</a></li>
-                    <li class="divider"></li>
-                    <li><a href="{{ url('/logout') }}">Logout</a></li>
-                    </ul>
-                    </li>-->
                 </nav>
             @else
                 <nav class="android-navigation mdl-navigation">
@@ -73,22 +48,6 @@
 </div>
 
 <div class="android-drawer mdl-layout__drawer">
-    <!--<header class="demo-drawer-header">
-        <img src="images/user.jpg" class="demo-avatar">
-        <div class="demo-avatar-dropdown">
-        <span>hello@example.com</span>
-        <div class="mdl-layout-spacer"></div>
-        <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons" role="presentation">arrow_drop_down</i>
-        <span class="visuallyhidden">Accounts</span>
-        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
-        <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="accbtn" data-upgraded=",MaterialMenu,MaterialRipple">
-        <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple">hello@example.com<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
-        <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple">info@example.com<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
-        <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">add</i>Add another account...<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
-        </ul></div>
-        </div>
-    </header>-->
 
     @if(auth()->check())
         <header class="drawer-header">
@@ -113,7 +72,6 @@
     @else
         <span class="mdl-layout-title rm-padding-left" style="height:90px;">
             <img src="/images/logo1.png" class="android-logo-image">
-            <!--<img class="android-logo-image" src="images/android-logo-white.png">-->
         </span>
     @endif
     <nav class="mdl-navigation">
@@ -153,67 +111,3 @@
     </nav>
 </div>
 
-<!--
-<header class="{{ $navbar_inverse ? 'transparent-header' : '' }}" id="navbar-header">
-    <nav class="navbar {{ $navbar_inverse ? 'navbar-inverse non-sticky navbar-fixed-top' : 'navbar-default' }}" role="navigation" id="navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/" title="Influencers Reach">
-                    <img class="img-responsive" src="{{ $navbar_inverse ? url('/images/logo.png') : url('/images/logo1.png') }}" alt="Influencers Reach">
-                </a>
-            </div>
-
-            {{-- Collect the nav links, forms, and other content for toggling --}}
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    @if(auth()->check())
-                        <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-                        {{--<li><a href="{{ url('/promote') }}">Promote</a></li>--}}
-                        <li><a href="{{ url('/campaigns') }}">Campaigns</a></li>
-                        {{--<li><a href="{{ url('/reach/') }}">Reach</a></li>--}}
-                        <li><a href="{{ url('/rewards') }}">Rewards</a></li>
-                        <li><a href="{{ url('/reports') }}">Reports</a></li>
-                        {{--<li><a href="{{ url('/contests') }}">Contests</a></li>--}}
-                        <li class="dropdown show-user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{ url('/images/default-user-icon.png') }}" class="img-responsive nav-user-img" />
-                                {!! auth()->user()->firstname !!}
-                                <span class="caret"></span>
-                            </a>
-
-                            {{--<a href="#" class="dropdown-toggle user-holder" data-toggle="dropdown">--}}
-                                {{--<img src="{{ url('/images/default-user-icon.png') }}" class="user-icon img-responsive" />--}}
-                                {{--<div class="name">{!! auth()->user()->firstname !!}</div>--}}
-                                {{--<b class="caret"></b>--}}
-                            {{--</a>--}}
-                            <ul class="dropdown-menu">
-                                {{--<li><a href="#">Tools</a></li>--}}
-                                <li><a href="{{ url('/invite') }}">Invite</a></li>
-                                <li><a href="{{ url('/payouts') }}">Payouts</a></li>
-                                <li><a href="{{ url('/settings') }}">Settings</a></li>
-                                <li class="divider"></li>
-                                <li><a href="{{ url('/logout') }}">Logout</a></li>
-                            </ul>
-                        </li>
-                    @else
-                        <li><a href="{{ url('') }}">Home</a></li>
-                        <li><a href="{{ url('/influencers') }}">Influencers</a></li>
-                        <li><a href="{{ url('/advertisers') }}">Advertisers</a></li>
-                        {{--<li><a href="{{ url('/shoutouts') }}">Shoutouts</a></li>--}}
-                        <li><a href="{{ url('/rewards') }}">Rewards</a></li>
-                        {{--<li><a href="{{ url('/contact') }}">Contact Us</a></li>--}}
-
-                        <li><a href="{{ url('/login') }}" class="sign_in">Sign in</a></li>
-                        <li><a class="sign_up" href="{{ url('/affiliate/apply') }}">Sign Up</a></li>
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>-->
