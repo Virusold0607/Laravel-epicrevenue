@@ -8,10 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Influencers Reach</title>
+    <title>Epic Revenue</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/wyt0fsl.css">
 
     <!-- Scripts -->
     <script>
