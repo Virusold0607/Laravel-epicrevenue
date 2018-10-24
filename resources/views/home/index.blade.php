@@ -21,11 +21,11 @@
         <div class="hero first-promo">
             <div class="container">
                 <div class="col-md-5 col-xs-12">
-                <div class="video"><iframe width="100%" height="215" src="https://www.youtube.com/embed/4fn9u9YtrdY?controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                <div class="video"><img src="https://i.imgur.com/PsT06Bp.jpg" /></div>
                 </div>
                 <div class="col-md-7 col-xs-12">
-                <h1 class="promo-title">Bust A Cheater</h1>
-                <p>Promote this service and get paid $18 per person you get to purchase the $0.95 trial.</p>
+                <h1 class="promo-title">Fiverr</h1>
+                <p>Promote this service and get paid $15 per person that orders a $5 gig.</p>
                 <div class="apply-now-button">Promote Now</div>
                 </div>
             </div>
