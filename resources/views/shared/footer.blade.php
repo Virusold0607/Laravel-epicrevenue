@@ -55,7 +55,7 @@
     <div class="footer-bottom">
         <div class="container">
             <p class="text-left">
-                Created and maintained by AdsAndAffiliates &copy; {{ date("Y") }}
+                Created and maintained by Epic Revenue &copy; {{ date("Y") }}
             </p>
             <ul class="text-right pull-right">
                 <li><a href="#">USER AGREEMENT</a></li>
