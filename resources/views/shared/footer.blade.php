@@ -33,7 +33,17 @@
                         </li>
                     </ul>
                 </div>
-
+                <div class="col-sm-4 col-xs-12">
+                    <ul class="border-dashed">
+                        <li class="footertitle">Legal</li>
+                        <li>
+                            <a href="https://epicrevenue.com/privacy ">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="https://epicrevenue.com/terms ">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
