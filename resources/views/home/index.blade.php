@@ -7,10 +7,10 @@
     <div class="homepage">
         <div class="hero hero-lg">
             <div class="container">
-                <h1>Promote & Get Paid</h1>
+                <h1>Monetize the reach of your social media following</h1>
                 <div class="row">
                     <div class="col-sm-8">
-                        <h4>Do you have a large following? Apply to our network and start promoting today.</h4>
+                        <h4>Do you have a large following ? Apply to our network and start promoting today.</h4>
                     </div>
                 </div>
                 <div class="clearfix"></div>
