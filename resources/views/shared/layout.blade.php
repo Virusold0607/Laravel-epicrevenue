@@ -9,7 +9,7 @@
     @if(isset($meta->description))<meta name="description" itemprop="description" content="{{ $meta->description }}" />@endif
     @if(isset($meta->keywords))<meta name="keywords" itemprop="keywords" content="{{ $meta->keywords }}" />@endif
 
-    <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600,700" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.typekit.net/wyt0fsl.css">
     {{--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{ elixir('assets/css/main.css') }}">
