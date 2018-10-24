@@ -53,7 +53,7 @@
 
     @if(auth()->check())
         <header class="drawer-header">
-            <div>
+            <div class="container">
                 <img src="{{ url('/images/default-user-icon.png') }}" class="avatar">
                 <div class="avatar-dropdown">
                     <span>{{ auth()->user()->firstname }}</span>
