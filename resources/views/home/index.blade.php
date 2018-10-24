@@ -18,7 +18,7 @@
             </div>
         </div><!-- End .hero -->
 
-        <div class="hero hero-sm" style="background-image: none;background-color: #960000;">
+        <div class="hero first-promo">
             <div class="container">
                 
             </div>
