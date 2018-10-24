@@ -156,7 +156,14 @@
         background:#000000;
     }
     .hero-lg {
-        padding:100px 0;
+        padding:100px 0 !important;
+    }
+
+}
+@media (max-width: 468px) {
+
+    .hero-lg {
+        padding:100px 0 !important;
     }
 
 }
