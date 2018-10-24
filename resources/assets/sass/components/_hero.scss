@@ -5,7 +5,6 @@
   background: #333;
   background-image: url(/images/hero.jpg);
   background-size: cover;
-  text-align: center;
   margin-bottom: 100px;
   &.hero-lg {
     padding: 200px 0;
@@ -57,12 +56,10 @@
 
   & * {
     color: white;
-    text-align: center;
   }
   .hero-heading {
     margin-top: 35px;
     color: white;
-    text-align: center;
   }
   .hero-p {
     color: #666;
