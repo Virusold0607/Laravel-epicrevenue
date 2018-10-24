@@ -1,4 +1,3 @@
-<div class="container" style="height:5px;"></div>
 <div class="footer">
     <div class="container">
         <div class="row">
@@ -37,13 +36,11 @@
 
             </div>
         </div>
-        <div class="clearfix"></div>
+
     </div>
 
-    <div class="container">
-        <hr>
-    </div>
-    <div class="container" style="height:10px;"></div>
+
+
 
     <div class="footer-bottom">
         <div class="container">
