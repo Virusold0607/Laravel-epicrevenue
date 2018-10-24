@@ -153,11 +153,12 @@
 
 .first-promo {
     background: url(http://assets.tidal.com/images/index2/promos/calvinharris/normani-x-calvinharris-bg.a0ac5251.jpg) #333;
+    background-size: cover;
 }
 
 
 @media (max-width: 700px) {
-    .hero {
+    .hero.main-promo {
         background:#000000;
     }
     .hero-lg {
