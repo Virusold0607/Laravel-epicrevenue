@@ -21,7 +21,7 @@
         <div class="hero first-promo">
             <div class="container">
                 <div class="col-md-5 col-xs-12">
-                <div class="video"><img src="https://i.imgur.com/PsT06Bp.jpg" /></div>
+                <div class="home-promo-photo"><img src="https://i.imgur.com/PsT06Bp.jpg" /></div>
                 </div>
                 <div class="col-md-7 col-xs-12">
                 <h1 class="promo-title">Fiverr</h1>
