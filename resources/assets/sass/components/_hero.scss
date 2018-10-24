@@ -3,8 +3,6 @@
   width: 100%;
   padding: 200px 0;
   background: #333;
-  background-image: url(/images/hero.jpg);
-  background-size: cover;
   margin-bottom: 100px;
   &.hero-lg {
     padding: 200px 0;
@@ -149,6 +147,11 @@
       margin: 20px auto; 
     }
   }
+}
+
+.main-promo {
+    background-image: url(/images/hero.jpg);
+    background-size: cover;
 }
 
 .first-promo {
