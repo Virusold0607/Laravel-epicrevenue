@@ -21,7 +21,7 @@
         <div class="hero first-promo">
             <div class="container">
                 <div class="col-md-5 col-xs-12">
-                <div class="video"><iframe width="100%" height="215" src="https://www.youtube.com/embed/4fn9u9YtrdY?controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                <div class="video"><iframe width="auto" height="215" src="https://www.youtube.com/embed/4fn9u9YtrdY?controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                 </div>
                 <div class="col-md-7 col-xs-12"><h1 class="promo-title">Cheaters Promo</h1><h4 class="promo-title">Hosted By: Chris Stylez</h1></div>
             </div>
