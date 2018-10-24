@@ -26,7 +26,7 @@
                 <div class="col-md-7 col-xs-12">
                 <h1 class="promo-title">Bust A Cheater</h1>
                 <p>Promote this service and get paid $18 per person you get to purchase the $0.95 trial.</p>
-                <div class="apply-now-button>Promote Now</div>
+                <div class="apply-now-button">Promote Now</div>
                 </div>
             </div>
         </div>
