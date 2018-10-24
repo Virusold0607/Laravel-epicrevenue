@@ -30,7 +30,19 @@
                 </div>
             </div>
         </div>
-
+        <div class="hero second-promo">
+            <div class="container">
+                <div class="col-md-5 col-xs-12">
+                <div class="video"><iframe width="100%" height="215" src="https://www.youtube.com/embed/4fn9u9YtrdY?controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-7 col-xs-12">
+                <h1 class="promo-title">Bust A Cheater</h1>
+                <p>Promote this service and get paid $18 per person you get to purchase the $0.95 trial.</p>
+                <div class="apply-now-button">Promote Now</div>
+                </div>
+            </div>
+        </div>
+<!--
 <div class="hero second-promo">
         <div class="container text-center">
             <h5 class="font-gray"><strong>Join Us</strong></h5>
@@ -44,7 +56,7 @@
             </div>
         </div>
 </div>
-
+-->
 <div class="hero third-promo">
         <div class="container text-center">
             <h2 style="padding: 70px 0;">Brands we've promoted</h2>
