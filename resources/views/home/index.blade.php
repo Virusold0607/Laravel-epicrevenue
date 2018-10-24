@@ -9,7 +9,7 @@
             <div class="container">
                 <h1>Monetize the reach of your social media following</h1>
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
+                    <div class="col-sm-8">
                         <h4>Do you have a fan page, a niche page, a model page, or any other type of page with a large following?</h4>
                     </div>
                 </div>
@@ -20,27 +20,10 @@
 
         <div class="hero hero-sm" style="background-image: none;background-color: #960000;">
             <div class="container">
-                <div class="row text-center offers">
-                    <div class="col-sm-4">
-                        <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-1.png" alt="See More"></div>
-                        <h4>#SEEMORE</h4>
-                        <p class="">See visually how your account grows, analyze your audience, target better.</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-2.png" alt="MAKEMORE"></div>
-                        <h4>#MAKEMORE</h4>
-                        <p class="">Paid to post, paid to drive leads, plus a lot more ways to generate revenue.</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/header-Icon-3.png" alt="DOMORE"></div>
-                        <h4>#DOMORE</h4>
-                        <p class="">Use our services, team and exclusive services to grow your brand.</p>
-                    </div>
-                </div>
+                
             </div>
         </div>
-        <div class="clearfix"></div>
-        <div class="container" style="height: 50px;"></div>
+
 
         <div class="container text-center">
             <h5 class="font-gray"><strong>Join Us</strong></h5>
@@ -54,23 +37,7 @@
             </div>
         </div>
 
-        <div class="clearfix"></div>
-        <div class="container">
-            <hr>
-        </div>
-        <div class="container text-center">
-            <h5 class="font-dark-gray"><strong>Track</strong></h5>
-            <h2 style="margin-top:10px; margin-bottom: 20px;">Track your reach</h2>
-            <p>From our tracking panel you will be able to see how much clicks your page is driving as well as the amount of revenue being generated <b>in real-time</b>.</p>
-            <div class="col-xs-12" style="height:20px;"></div>
-            <a href="{{ url('/affiliate/apply') }}" class="btn btn-default btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Join Now!</a>
-        </div>
 
-        <div class="clearfix"></div>
-        <img class="img-responsive" src="{{ url('/images/home/curve.png') }}" alt="Graph">
-        <div class="container">
-            <hr>
-        </div>
 
         <div class="container text-center">
             <h2 style="padding: 70px 0;">Brands we've promoted</h2>
