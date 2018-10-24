@@ -1,4 +1,5 @@
 <div class="android-header mdl-layout__header mdl-layout__header--waterfall is-casting-shadow">
+    <div class="container">
     <div class="mdl-layout__header-row" style="height: initial;">
         <span class="android-title mdl-layout-title">
             <img class="android-logo-image" src="/images/logo1.png">
@@ -44,6 +45,7 @@
             <li class="mdl-menu__item"><a href="{{ url('/settings') }}" class="mdl-typography--text-uppercase">Settings</a></li>
             <li class="mdl-menu__item"><a href="{{ url('/logout') }}" class="mdl-typography--text-uppercase">Logout</a></li>
         </ul>
+    </div>
     </div>
 </div>
 
