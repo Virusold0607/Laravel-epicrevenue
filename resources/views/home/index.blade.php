@@ -24,7 +24,7 @@
             </div>
         </div>
 
-
+<div class="hero second-promo">
         <div class="container text-center">
             <h5 class="font-gray"><strong>Join Us</strong></h5>
             <h2 style="margin-top:10px;">Become an Affiliate</h2>
@@ -36,9 +36,9 @@
                 <a href="{{ url('/affiliate/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Apply Now</a> <a href="{{ url('/influencers') }}" class="btn btn-gray btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Learn More</a>
             </div>
         </div>
+</div>
 
-
-
+<div class="hero third-promo">
         <div class="container text-center">
             <h2 style="padding: 70px 0;">Brands we've promoted</h2>
             <div class="row">
@@ -55,6 +55,7 @@
                 <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/pocket.png') }}" alt=""/></div>
                 <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/dena.png') }}" alt=""/></div>
             </div>
+        </div>
         </div>
 
 
