@@ -20,10 +20,10 @@
 
         <div class="hero first-promo">
             <div class="container">
-                <div class="col-md-4 col-xs-12">
+                <div class="col-md-5 col-xs-12">
                 <div class="embed-responsive"><iframe width="560" height="315" src="https://www.youtube.com/embed/4fn9u9YtrdY?controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                 </div>
-                <div class="col-md-8 col-xs-12"><h1 class="promo-title">Cheaters Promo</h1><h4 class="promo-title">Hosted By: Chris Stylez</h1></div>
+                <div class="col-md-7 col-xs-12"><h1 class="promo-title">Cheaters Promo</h1><h4 class="promo-title">Hosted By: Chris Stylez</h1></div>
             </div>
         </div>
 
