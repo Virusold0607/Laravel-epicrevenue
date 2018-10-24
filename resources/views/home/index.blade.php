@@ -26,7 +26,7 @@
                 <div class="col-md-8 col-xs-12">
                 <h1 class="promo-title">Fiverr</h1>
                 <p>Promote this service and get paid $15 per person that orders a $5 gig.</p>
-                <div class="apply-now-button">Promote Now</div>
+                <a href="{{ url('/affiliate/apply') }}" class="apply-now-button btn">Promote Now</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <div class="col-md-8 col-xs-12">
                 <h1 class="promo-title">Bust A Cheater</h1>
                 <p>Promote this service and get paid $18 per person you get to purchase the $0.95 trial.</p>
-                <div class="apply-now-button">Promote Now</div>
+                <a href="{{ url('/affiliate/apply') }}" class="apply-now-button btn">Promote Now</a>
                 </div>
             </div>
         </div>
