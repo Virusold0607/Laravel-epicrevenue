@@ -1,4 +1,4 @@
-1@extends('shared/layout')
+@extends('shared/layout')
 
 @section('styles')
 @endsection
