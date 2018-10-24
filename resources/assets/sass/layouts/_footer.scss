@@ -1,7 +1,9 @@
 .home .footer {
   border-top: 0;
 }
-
+.footer-bottom {
+    padding-top: 50px; float: left; width: 100%;
+}
 @media screen and (max-width: $screen-sm) {
   .footer {
     display: none;
@@ -129,7 +131,7 @@
 
 
     .footer-bottom {
-        padding-top: 50px; float: left; width: 100%;
+        
       .container {
         text-align: center;
       }
