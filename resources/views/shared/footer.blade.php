@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4 col-xs-12 hidden-sm hidden-xs">
-                <h3 class="footer-brand">Epic Revenue</h3>
+                <h3 class="footer-brand"><img class="android-logo-image" src="/images/logo1.png"></h3>
             </div>
             <div class="col-sm-8">
                 <div class="col-sm-4 col-xs-12">
