@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-8 col-xs-12">
                 <h1 class="promo-title">Booking.com</h1>
-                <p>Promote this service and earn 4% of each sale. Send a $1000 booking earn $40.</p>
+                <p>Promote this service and earn 4% of each sale. Example send a $1000 booking earn $40.</p>
                 <a href="{{ url('/affiliate/apply') }}" class="apply-now-button btn">Promote Now</a>
                 </div>
             </div>
