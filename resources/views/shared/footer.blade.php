@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-xs-12 hidden-sm hidden-xs">
+            <div class="col-sm-4 col-xs-12">
                 <img class="footer-logo-image" src="/images/footer-logo.png">
             </div>
             <div class="col-sm-8">
@@ -57,12 +57,6 @@
             <p class="text-left">
                 Created and maintained by Epic Revenue &copy; {{ date("Y") }}
             </p>
-            <ul class="text-right pull-right">
-                <li><a href="#">USER AGREEMENT</a></li>
-                <li><a href="{{ url('/privacy') }}">PRIVACY</a></li>
-                <li><a href="#">COOKIES</a></li>
-                <li><a href="{{ url('/terms') }}">TERMS OF SERVICES</a></li>
-            </ul>
         </div>
     </div>
 </div>
