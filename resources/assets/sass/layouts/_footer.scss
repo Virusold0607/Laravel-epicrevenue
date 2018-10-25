@@ -13,7 +13,7 @@
 }
 
 .footer {
-  background:#000000;
+  background:#FFFFFF;
   float: left;
   width: 100%;
   padding: 60px 0;
@@ -27,7 +27,7 @@
     p.text-left {
       display: inline-block;
       padding-top: 10px;
-      color:#ffffff;
+      color:#000000;
     }
     ul {
       display: inline-block;
@@ -66,14 +66,14 @@
       a {
         font-size: 0.9em;
         letter-spacing: .04em;
-        color: #ffffff;
+        color: #000000;
         text-decoration: none;
       }
     }
   }
   .copyright {
     font-size: 12px;
-    color: $brand-gray-footer;
+    color: #000000;
     text-align: left;
     padding: 25px 0;
     float: left;
