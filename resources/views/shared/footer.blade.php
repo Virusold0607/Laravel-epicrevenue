@@ -55,7 +55,7 @@
     <div class="footer-bottom">
         <div class="container">
             <p class="text-left">
-                Created and maintained by Epic Revenue &copy; {{ date("Y") }}
+                Created by <a href="https://ggxcompany.com">GG x Company</a>, maintained by Epic Revenue &copy; {{ date("Y") }}
             </p>
         </div>
     </div>
