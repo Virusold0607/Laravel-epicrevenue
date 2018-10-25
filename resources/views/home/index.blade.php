@@ -33,6 +33,18 @@
         <div class="hero second-promo">
             <div class="container">
                 <div class="col-md-4 col-xs-12">
+                <div class="home-promo-photo"><img src="https://i.imgur.com/2BvzlcG.jpg" /></div>
+                </div>
+                <div class="col-md-8 col-xs-12">
+                <h1 class="promo-title">Booking.com</h1>
+                <p>Promote this service and earn 4% of each sale. Send a $1000 booking earn $40.</p>
+                <a href="{{ url('/affiliate/apply') }}" class="apply-now-button btn">Promote Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero third-promo">
+            <div class="container">
+                <div class="col-md-4 col-xs-12">
                 <div class="video"><iframe width="100%" height="215" src="https://www.youtube.com/embed/4fn9u9YtrdY?controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                 </div>
                 <div class="col-md-8 col-xs-12">
@@ -42,22 +54,8 @@
                 </div>
             </div>
         </div>
-<!--
-<div class="hero second-promo">
-        <div class="container text-center">
-            <h5 class="font-gray"><strong>Join Us</strong></h5>
-            <h2 style="margin-top:10px;">Become an Affiliate</h2>
-            <img class="img-responsive" style="padding: 70px 0;margin: 0 auto;width: 250px;" src="https://i.imgur.com/YIisQ4r.png">
 
-            <div class="clearfix"></div>
-
-            <div>
-                <a href="{{ url('/affiliate/apply') }}" class="btn btn-primary btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Apply Now</a> <a href="{{ url('/influencers') }}" class="btn btn-gray btn-lg btn-sm-txt btn-extra-padding btn-extra-margin btn-radius">Learn More</a>
-            </div>
-        </div>
-</div>
--->
-<div class="hero third-promo">
+<div class="hero fourth-promo">
         <div class="container text-center">
             <h2 style="padding: 70px 0;">Brands we've promoted</h2>
             <div class="row">
@@ -78,6 +76,6 @@
         </div>
 
 
-        <div class="clearfix"></div>
+
     </div>
 @endsection
