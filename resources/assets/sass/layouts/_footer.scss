@@ -4,12 +4,9 @@
 .footer-bottom {
     padding-top: 50px; float: left; width: 100%;
 }
-@media screen and (max-width: $screen-sm) {
-  .footer {
-    display: none;
-  }
-}
+
 .footer {
+  background:#000000;
   float: left;
   width: 100%;
   padding: 60px 0;
