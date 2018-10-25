@@ -5,7 +5,7 @@
 
 @section('body')
     <div class="homepage">
-        <div class="hero main-promo hero-lg">
+        <div class="hero main-promo">
             <div class="container">
                 <h1>Monetize the reach of your social media following</h1>
                 <div class="row">
