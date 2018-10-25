@@ -187,7 +187,14 @@
     padding: 14px 20px;
     margin-top: 10px;
 }
-
+.apply-now-button {
+    background: #fff;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    padding: 7px 40px;
+}
 @media (max-width: 700px) {
     .hero.main-promo {
         background:#000000;
