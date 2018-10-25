@@ -22,8 +22,9 @@
 }
 
 @media (max-width: 767px)
-    .navbar  {
-        width: 100%;
+    .header #navbar {
+    width: 100%;
+    padding: 0; 
     }
 
 }
