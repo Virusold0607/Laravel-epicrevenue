@@ -1,27 +1,13 @@
 .hero {
   float: left;
   width: 100%;
-  padding: 200px 0;
+  padding: 100px 0;
   background: #000;
-  &.hero-lg {
-    padding: 200px 0;
-
-    & h4 {
+  & h4 {
       line-height: 1.5;
     }
   }
-  &.hero-md {
-    min-height: 500px;
-    padding: 175px 0;
-  }
-  &.hero-sm {
-    min-height: 400px;
-    padding: 150px 0;
-  }
-  &.hero-xs {
-    min-height: 300px;
-    padding: 125px 0;
-  }
+ 
 
   &.hero-gradient {
     background: rgba(255,255,255,0.99);
