@@ -1,7 +1,10 @@
-.mdl-layout__header--waterfall.is-casting-shadow{
-  box-shadow: 0 1px 6px rgba(0,0,0,0.35);
-}
 
+.header {
+    float: left;
+    width: 100%;
+    background: #000;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
 .nav-user {
   & > * {
     display: inline-block;
@@ -11,11 +14,8 @@
   }
 }
 
-.mdl-layout-title.rm-padding-left {
-  padding-left: 10px;
-  height: 90px;
-}
-/*
+
+
 nav.navbar-default {
   margin-bottom: 0;
   background-color: #fff;
@@ -155,4 +155,4 @@ nav.navbar-inverse {
       opacity: 0.9;
     }
   }
-}*/
+}
