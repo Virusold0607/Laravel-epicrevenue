@@ -9,6 +9,7 @@
   padding: 60px 0;
   color: $brand-gray-footer;
   border-top: 1px solid #eee;
+  margin-top:50px;
 
   .footer-brand {
     color: #960000;
@@ -87,6 +88,7 @@
 @media screen and (max-width: $screen-sm) {
 
   .footer {
+      
     ul {
       &.border-dashed {
         border-bottom: 1px dashed rgba(35, 33, 33, 0.36);
