@@ -3,7 +3,7 @@
 @section('body')
     <div class="hero hero-dashboard">
         <div class="container">
-            <h1 class="hero-heading">Apply to AdsAndAffiliates</h1>
+            <h1 class="hero-heading">Apply to promote</h1>
         </div>
     </div><!-- End .hero -->
     <div class="clearfix"></div>
