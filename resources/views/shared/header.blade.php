@@ -29,7 +29,6 @@
                 <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{url('/')}}">HOME</a></li>
                 <li class="{{ request()->is('affiliates') ? 'active' : '' }}"><a href="{{ url('/affiliates') }}">Affiliates</a></li>
                 <li class="{{ request()->is('advertisers') ? 'active' : '' }}"><a href="{{ url('/advertisers') }}">ADVERTISERS</a></li>
-                <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
                 <li class="{{ request()->is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">SIGN IN</a></li>
                 <li class="{{ request()->is('affiliate/apply') ? 'active' : '' }}"><a href="{{ url('/affiliate/apply') }}">SIGN UP</a></li>
             </ul>
