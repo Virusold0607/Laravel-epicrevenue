@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-8 col-xs-12">
                 <h1 class="promo-title">Bust A Cheater</h1>
-                <p>Promote this service and get paid $18 per person you get to purchase the $0.95 trial.</p>
+                <p>Promote this service and get paid $24 per person that purchases the $0.95 trial.</p>
                 <a href="{{ url('/affiliate/apply') }}" class="apply-now-button btn">Promote Now</a>
                 </div>
             </div>
