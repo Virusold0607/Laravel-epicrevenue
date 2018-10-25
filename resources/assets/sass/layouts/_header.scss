@@ -20,3 +20,10 @@
 .navbar-toggle .icon-bar {
     background: #fff;
 }
+
+@media (max-width: 767px)
+    .navbar  {
+        width: 100%;
+    }
+
+}
