@@ -17,17 +17,16 @@
 </head>
 <body @if(isset($bodyid))id="{{ $bodyid }}"@endif>
 
-<div class="mdl-layout @if($is_mobile) mdl-js-layout @endif mdl-layout--fixed-header">
+
     @include('shared/header')
 
-    <div class="mdl-layout__content">
-        @yield('body')
 
-        <footer class="android-footer mdl-mega-footer">
-            @include('shared/footer')
-        </footer>
-    </div>
-</div>
+    @yield('body')
+
+
+    @include('shared/footer')
+
+
 <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 <script type="text/javascript" src="{{ elixir('assets/js/main.js') }}"></script>
 <script>
@@ -93,11 +92,6 @@
     });
 </script>
 @yield('scripts')
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-37796498-17', 'auto'); ga('send', 'pageview');
-</script>
+
 </body>
 </html>
