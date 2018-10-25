@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <div class="logo"><a href="{{url('/')}}"><img src="/images/logo.png" alt="logo" class="img-responsive"></a></div>
+                <div class="logo"><a href="{{url('/')}}"><img src="/images/logo1.png" alt="logo" class="img-responsive"></a></div>
             </div>
             <div class="col-sm-8 pull-right text-right">
                 @if(auth()->check())
@@ -45,11 +45,11 @@
                         @else
                         <ul class="nav navbar-nav">
                             <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{url('/')}}">HOME</a></li>
-                            <li class="{{ request()->is('influencers') ? 'active' : '' }}"><a href="{{ url('/influencers') }}">INFLUENCERS</a></li>
+                            <li class="{{ request()->is('affiliates') ? 'active' : '' }}"><a href="{{ url('/affiliates') }}">Affiliates</a></li>
                             <li class="{{ request()->is('advertisers') ? 'active' : '' }}"><a href="{{ url('/advertisers') }}">ADVERTISERS</a></li>
                             <li class="{{ request()->is('rewards') ? 'active' : '' }}"><a href="{{ url('/rewards') }}">REWARDS</a></li>
                             <li class="{{ request()->is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">SIGN IN</a></li>
-                            <li class="{{ request()->is('influencers/apply') ? 'active' : '' }}"><a href="{{ url('/influencers/apply') }}">SIGN UP</a></li>
+                            <li class="{{ request()->is('affiliate/apply') ? 'active' : '' }}"><a href="{{ url('/affiliate/apply') }}">SIGN UP</a></li>
                         </ul>
                         @endif
                     </div>
@@ -59,7 +59,7 @@
         </div>
     </div>
 </div>
-
+<!--
 <div class="android-header mdl-layout__header mdl-layout__header--waterfall is-casting-shadow">
     <div class="container">
     <div class="mdl-layout__header-row" style="height: initial;">
@@ -174,4 +174,4 @@
         <a class="mdl-navigation__link" href="https://facebook.com/influencersreach/" target="_blank">AdsAndAffiliates on Twitter</a>
     </nav>
 </div>
-
+-->
