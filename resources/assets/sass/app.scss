@@ -29,6 +29,8 @@ body {
   padding: 50px;
   margin: 50px 0;
   border: 1px solid #eee;
+  float:left;
+  width:100%;
 
   //background: rgba(217,217,217,0.99);
   //background: -moz-radial-gradient(center, ellipse cover, rgba(217,217,217,0.99) 0%, rgba(237,237,237,0.99) 0%, rgba(227,227,227,0.99) 0%, rgba(255,255,255,0.99) 100%);
@@ -68,16 +70,10 @@ body {
 
 @media screen and (max-width: $screen-sm) {
   .page-container {
-    padding: 50px 0px;
+    padding: 50px 15px;
   }
 }
-/*
-@media screen and (max-width: $screen-sm) {
-  .mobile-adjustment.container {
-      padding-left: 0;
-      padding-right: 0;
-  }
-}*/
+
 
 
 @import "layouts/header";
