@@ -54,7 +54,7 @@
     @endunless
 
     <div class="clearfix"></div>
-    <div class="page-container no-shadow">
+    <div class="page-container no-shadow no-border">
         <div class="container">
             <div class="text">For every user you refer you earn 5% off every lead they get, this is a real great way to get your friends or others invloved while earning money when they join. Below you can find your referral link and a list of all the users you refered.</div>
             <hr>
