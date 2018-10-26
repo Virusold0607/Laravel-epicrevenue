@@ -37,11 +37,7 @@
                 </div>
             @endunless
             @endif
-            <div class="clearfix" style="margin: 5px;"></div>
-
-       
-
-            <div class="clearfix" style="margin: 10px;"></div>
+ 
 
             @unless(is_null($images))
                 <h5><strong>Promotional Images:</strong></h5>
