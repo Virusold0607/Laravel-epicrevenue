@@ -25,6 +25,7 @@
             </div>
 
             <div class="container" style="height: 20px;"></div>
+            @if(auth()->check())
             @unless($daily_cap_status)
                 <div id="promotionalLink">
                     <hr>
@@ -35,13 +36,10 @@
                     <hr>
                 </div>
             @endunless
+            @endif
             <div class="clearfix" style="margin: 5px;"></div>
 
-            //@if(auth()->check())
-                <div class="">
-                    <button id="generateBtn" type="button" class="btn btn-primary btn-extra-padding" data-toggle="modal" data-target="#myModal">Generate Your Unique Promotional Link</button>
-                </div>
-            //@endif
+       
 
             <div class="clearfix" style="margin: 10px;"></div>
 
