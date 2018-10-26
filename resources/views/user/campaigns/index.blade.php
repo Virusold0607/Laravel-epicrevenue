@@ -1,7 +1,7 @@
 @extends('shared.layout')
 @section('body')
 
-    <div class="hero hero-dashboard">
+    <div class="hero hero-txt">
         <div class="container">
             @if(auth()->check())
                 <h1 class="hero-heading">Campaigns</h1>
