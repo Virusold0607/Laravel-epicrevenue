@@ -1,6 +1,6 @@
 @extends('shared.layout')
 @section('body')
-    <div class="hero hero-gradient">
+    <div class="hero hero-txt">
         <div class="container">
             <h1 class="hero-heading">{{ $campaign->name }}</h1>
             @if( !is_null( $custom_rate ) )
