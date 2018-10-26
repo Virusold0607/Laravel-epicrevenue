@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-md-8 col-xs-12">
                 <h1 class="promo-title">Survey Voices </h1>
-                <p>Promote this website and get paid $2.40 per person from the US that joins and confirm their email.</p>
+                <p>Promote this website and get paid $2.40 per person that joins and confirm their email.</p>
                 <a href="{{ url('/affiliate/apply') }}" class="apply-now-button btn">Promote Now</a>
                 </div>
             </div>
