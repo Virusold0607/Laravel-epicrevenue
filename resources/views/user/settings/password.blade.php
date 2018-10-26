@@ -6,7 +6,7 @@
             <h1 class="hero-heading">Change Password</h1>
         </div>
     </div>
-    <div class="page-container background-gray no-shadow">
+    <div class="page-container no-shadow no-border">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
