@@ -1,7 +1,7 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero hero-dashboard">
+    <div class="hero hero-txt">
         <div class="container">
             <h1 class="hero-heading">Get Rewards When You Monetize With Us!</h1>
             @unless(auth()->check())
