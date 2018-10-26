@@ -17,6 +17,10 @@
     letter-spacing: 0.4px;
     text-transform: uppercase;
 }
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: #f00;
+    color: #ffffff;
+}
 .navbar {
     margin:0;
 }
