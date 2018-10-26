@@ -45,6 +45,18 @@
         <div class="hero third-promo">
             <div class="container">
                 <div class="col-md-4 col-xs-12">
+                <div class="home-promo-photo"><img src="https://i.imgur.com/TEZxtCk.png" /></div>
+                </div>
+                <div class="col-md-8 col-xs-12">
+                <h1 class="promo-title">Survey Voices </h1>
+                <p>Promote this service and get paid $2.40 per person that joins the website.</p>
+                <a href="{{ url('/affiliate/apply') }}" class="apply-now-button btn">Promote Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero fourth-promo">
+            <div class="container">
+                <div class="col-md-4 col-xs-12">
                 <div class="video"><iframe width="100%" height="215" src="https://www.youtube.com/embed/4fn9u9YtrdY?controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                 </div>
                 <div class="col-md-8 col-xs-12">
@@ -54,8 +66,7 @@
                 </div>
             </div>
         </div>
-
-<div class="hero fourth-promo">
+<div class="hero fifth-promo">
         <div class="container text-center">
             <h2 style="padding: 70px 0;">Brands we've promoted</h2>
             <div class="row">
@@ -73,7 +84,7 @@
                 <div class="col-md-2 col-sm-3 col-xs-6 brand"><img class="img-responsive" src="{{ url('/images/home/clients/dena.png') }}" alt=""/></div>
             </div>
         </div>
-        </div>
+</div>
 
 
 
