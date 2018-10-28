@@ -1,11 +1,15 @@
 @extends('shared.layout')
 
 @section('body')
-    <div class="hero small">
+<div class="hero hero-auth">
         <div class="container">
-            <h1 class="hero-heading">Become an Affiliate</h1>
+            <h2>Become an Affiliate</h2>
         </div>
-    </div>
+    </div><!-- End .hero -->
+    <div class="clearfix"></div>
+    <div class="container" style="height:60px;"></div>
+
+
 
     <div class="page wide">
         <div class="container">
