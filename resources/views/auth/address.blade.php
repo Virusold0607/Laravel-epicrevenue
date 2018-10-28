@@ -1,13 +1,14 @@
 @extends('shared/layout')
 
 @section('body')
-    <div class="hero hero-dashboard">
+    <div class="hero hero-auth">
         <div class="container">
-            <h1 class="hero-heading">Become a Affiliate</h1>
+            <h2>Become an Affiliate</h2>
         </div>
     </div><!-- End .hero -->
     <div class="clearfix"></div>
     <div class="container" style="height:60px;"></div>
+
 
     <div class="container">
         <ul id='timeline'>
