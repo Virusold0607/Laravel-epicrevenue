@@ -1,7 +1,7 @@
 @extends('shared/layout')
 
 @section('body')
-    <div class="hero hero-dashboard">
+    <div class="hero hero-auth">
         <div class="container">
             <h2>Apply to promote</h2>
         </div>
