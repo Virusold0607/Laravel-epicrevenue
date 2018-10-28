@@ -8,10 +8,11 @@
     </div>
 
     <div class="clearfix"></div>
-
+<div class="page-container dashboard no-border">
     <div class="container">
         <div class="container-fluid">
             <div class="alert alert-success">{!! $message !!}</div>
         </div>
     </div>
+</div>
 @endsection
