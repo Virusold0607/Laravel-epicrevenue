@@ -200,7 +200,7 @@ class TrackController extends Controller
                     <body>
                         <br/>
                         <br/>
-                        <h1>LOADING THE APP STORE</h1>
+                        <h1>LOADING...</h1>
                         <div class="spinner"></div>
                         <h3>If you are not redirected,<br/><br/><a href="'.url($redirect_url).'" class="ir-redirect">Click here</a></h3>
                         <meta http-equiv="refresh" content="2; url='.url($redirect_url).'">
