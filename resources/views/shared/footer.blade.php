@@ -1,10 +1,10 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 col-xs-12">
+            <div class="col-sm-7 col-xs-12">
                 <img class="footer-logo-image" src="/images/footer-logo.png">
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-5">
                 <div class="col-sm-6 col-xs-12">
                     <ul class="border-dashed">
                         <li class="footertitle">Navigation</li>
