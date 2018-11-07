@@ -59,7 +59,7 @@
     <div class="footer-bottom">
         <div class="container">
             <p class="text-left">
-                Created by <a href="https://ggxcompany.com">GG x Company</a> &copy; {{ date("Y") }}
+                Created by <a href="https://ggxcompany.com">GG x Company</a> & <a href="https://servicedbyone.com">Serviced By ONE</a> &copy; {{ date("Y") }}
             </p>
         </div>
     </div>
