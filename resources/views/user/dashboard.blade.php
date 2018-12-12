@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-sm-4 col-md-3">
                         <div class="hero-stat">
-                            <h3>{!! $month_clicks !!}</h3>
+                            <h3>{!! $today_clicks !!}</h3>
                             <h5 class="font-dark-gray">Month Clicks</h5>
                         </div>
                    </div>
@@ -80,7 +80,7 @@
                             @if($month_clicks === 0)
                                 n/a
                             @else
-                                {!! "$".number_format($earnings_month / $month_clicks, 2)."" !!}
+                                {!! "$".number_format($earnings_month / $today_clicks, 2)."" !!}
                             @endif
                         </h3>
                         <h5 class="font-dark-gray">Month EPC</h5>
