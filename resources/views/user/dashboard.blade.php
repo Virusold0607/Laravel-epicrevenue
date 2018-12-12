@@ -69,7 +69,7 @@
                    </div>
                    <div class="col-sm-4 col-md-3">
                     <div class="hero-stat">
-                        <h3>{!! $month_leads !!}</h3>
+                        <h3>{!! $today_leads !!}</h3>
                         <h5 class="font-dark-gray">Month Leads</h5>
                     </div>
                     </div>
