@@ -25,8 +25,10 @@
 .hero.hero-dashboard .hero-stats .hero-stat {
     display: inline-block;
     color: #3b454a;
-    background: #ffffff;
+    background: #fff;
     padding: 5px 10px;
-    -webkit-box-shadow: 0 0 5px 0 hsla(0,0%,80%,.75);
-    box-shadow: 0 0 5px 0 hsla(0,0%,80%,.75);
+    box-shadow: 0 0 5px 0 rgba(204,204,204,.75);
+    margin-right: 10px;
+    border: 1px solid #f5f5f5;
+    border-radius: 6px;
 }
