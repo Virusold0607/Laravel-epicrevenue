@@ -77,7 +77,7 @@
                     <div class="col-sm-4 col-md-3">
                     <div class="hero-stat">
                         <h3>
-                            @if($month_clicks === 0)
+                            @if($today_clicks === 0)
                                 n/a
                             @else
                                 {!! "$".number_format($earnings_month / $today_clicks, 2)."" !!}
