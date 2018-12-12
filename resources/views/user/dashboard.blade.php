@@ -40,6 +40,7 @@
                     </div>
                     </div>
                     
+                    <!--
                     <div class="col-sm-4 col-md-3">
                     <div class="hero-stat">
                         <h3>
@@ -52,13 +53,40 @@
                         <h5 class="font-dark-gray">Today CR</h5>
                     </div>
                     </div>
+                    -->
+                    
+                    <div class="col-sm-4 col-md-3">
+                        <div class="hero-stat">
+                            <h3>${!! number_format($earnings_month, 2) !!}</h3>
+                            <h5 class="font-dark-gray">Month Earnings</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <div class="hero-stat">
+                            <h3>{!! $month_clicks !!}</h3>
+                            <h5 class="font-dark-gray">Month Clicks</h5>
+                        </div>
+                   </div>
+                   <div class="col-sm-4 col-md-3">
+                    <div class="hero-stat">
+                        <h3>{!! $month_leads !!}</h3>
+                        <h5 class="font-dark-gray">Month Leads</h5>
+                    </div>
+                    </div>
                     
                     <div class="col-sm-4 col-md-3">
                     <div class="hero-stat">
-                        <h3>${!! number_format($earnings_month, 2) !!}</h3>
-                        <h5 class="font-dark-gray">Month Earnings</h5>
+                        <h3>
+                            @if($month_clicks === 0)
+                                n/a
+                            @else
+                                {!! "$".number_format($earnings_month / $month_clicks, 2)."" !!}
+                            @endif
+                        </h3>
+                        <h5 class="font-dark-gray">Month EPC</h5>
                     </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
