@@ -21,3 +21,12 @@
     border-left: 0.5px solid #ccc;
   }
 }
+
+.hero.hero-dashboard .hero-stats .hero-stat {
+    display: inline-block;
+    color: #3b454a;
+    background: #ffffff;
+    padding: 5px 10px;
+    -webkit-box-shadow: 0 0 5px 0 hsla(0,0%,80%,.75);
+    box-shadow: 0 0 5px 0 hsla(0,0%,80%,.75);
+}
