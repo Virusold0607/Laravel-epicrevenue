@@ -6,6 +6,14 @@
         <div class="hero hero-dashboard">
             <div class="container">
                 <div class="row hero-stats">
+
+                   <div class="col-sm-4 col-md-3">
+                    <div class="hero-stat">
+                        <h3>${!! number_format($earnings_today, 2) !!}</h3>
+                        <h5 class="font-dark-gray">Today Earnings</h5>
+                    </div>
+                    </div>
+                    
                     <div class="col-sm-4 col-md-3">
                         <div class="hero-stat">
                             <h3>{!! $today_clicks !!}</h3>
@@ -42,13 +50,6 @@
                             @endif
                         </h3>
                         <h5 class="font-dark-gray">Today CR</h5>
-                    </div>
-                    </div>
-                   
-                   <div class="col-sm-4 col-md-3">
-                    <div class="hero-stat">
-                        <h3>${!! number_format($earnings_today, 2) !!}</h3>
-                        <h5 class="font-dark-gray">Today Earnings</h5>
                     </div>
                     </div>
                     
