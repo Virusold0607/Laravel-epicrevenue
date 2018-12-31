@@ -5,6 +5,7 @@
 
         <div class="hero hero-dashboard">
             <div class="container">
+                <div class="row hero-stats">
                 <div class="col-sm-4 col-md-3 col-xs-6">
                     <div class="hero-stat">
                         <h3>{!! $today_clicks !!}</h3>
@@ -50,7 +51,7 @@
                     </div>
                 </div>
 
-               
+            </div>  
             </div>
         </div>
 
