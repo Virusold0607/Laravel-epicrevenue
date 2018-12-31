@@ -20,6 +20,9 @@
     padding: 0px 15px;
     text-transform:uppercase;
 }
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #960000;
+}
 .nav>li>a:focus, .nav>li>a:hover {
     background-color: #960000;
     color: #ffffff;
@@ -60,6 +63,6 @@
         background-color: #fff;
     }
     .navbar-collapse {
-    box-shadow: 0;
+    box-shadow: 0 !important;
     }
 }
