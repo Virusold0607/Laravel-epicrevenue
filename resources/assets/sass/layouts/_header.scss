@@ -4,18 +4,21 @@
     background: #000;
     box-shadow: 0 1px 6px rgba(0,0,0,.35);
     border-bottom: 1px solid #00000091;
+    padding: 15px 0;
+}
+.header .navbar {
+    min-height:auto;
 }
 .header .navbar .logo {
     width: 200px;
     float: left;
-    padding: 26px 0;
 }
 .header .navbar-nav>li>a {
     color: #fff;
     font-weight: 700;
     letter-spacing: .4px;
     border-right: 1px solid #222;
-    padding: 25px 15px;
+    padding: 0px 15px;
     text-transform:uppercase;
 }
 .nav>li>a:focus, .nav>li>a:hover {
