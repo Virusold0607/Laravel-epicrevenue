@@ -65,6 +65,10 @@
     .navbar-collapse {
     box-shadow: none;
     }
+    .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: transparent;
+    border-bottom:5px solid #960000;
+    }
     .nav .open>a.dropdown-toggle, .nav .open>a.dropdown-toggle:focus {
     background-color: transparent !important;
     }
