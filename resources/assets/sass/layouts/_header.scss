@@ -51,5 +51,12 @@
         padding: 15px 0;
         border-top: 1px dashed #ffffff;
     }
-
+    .dropdown-menu>li>a {
+        font-weight: 700;
+        color: #000;
+        padding: 5px;
+    }   
+    .navbar-nav .open .dropdown-menu {
+        background-color: #fff;
+    }
 }
