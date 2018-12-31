@@ -44,5 +44,12 @@
     .header .navbar .logo {
         padding: 10px 0;
     }
+    .header .navbar-nav>li {
+        width:100%;
+    }
+    .header .navbar-nav>li>a {
+        padding: 15px 0;
+        border-top: 1px dashed #ffffff;
+    }
 
 }
