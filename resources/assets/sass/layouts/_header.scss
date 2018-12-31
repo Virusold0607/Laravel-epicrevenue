@@ -65,7 +65,10 @@
     .navbar-collapse {
     box-shadow: none;
     }
-    .nav .open>a.dropdown-toggle {
-    padding: 15px 10px;
-    }   
+    .nav .open>a {
+    background-color: transparent;
+    }
+    .open .dropdown-menu>li>a {
+    padding: 10px;
+    }
 }
