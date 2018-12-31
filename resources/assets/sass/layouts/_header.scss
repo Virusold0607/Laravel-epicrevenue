@@ -29,7 +29,7 @@
 }
 .navbar-toggle {
     border: 2px solid #fff;
-    margin-right: 0px;
+    margin: 0px;
 }
 .navbar-toggle .icon-bar {
     background: #fff;
@@ -38,8 +38,11 @@
 @media (max-width: 767px)
 {
     .header #navbar {
-    width: 100%;
+        width: 100%;
     //padding: 0; 
+    }
+    .header .navbar .logo {
+        padding: 10px 0;
     }
 
 }
