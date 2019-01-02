@@ -10,7 +10,7 @@
                 <h1>Monetize the reach of your social media following</h1>
                 <div class="row">
                     <div class="col-sm-8">
-                        <h4>Monetize, track, manage, and optimize your reach all in one place.</h4>
+                        <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
                     </div>
                 </div>
                 <div class="clearfix"></div>
