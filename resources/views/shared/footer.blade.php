@@ -35,19 +35,7 @@
                         </li>
                     </ul>
                 </div>
-                <!--
-                <div class="col-sm-4 col-xs-12">
-                    <ul class="border-dashed">
-                        <li class="footertitle">Legal</li>
-                        <li>
-                            <a href="https://epicrevenue.com/privacy ">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="https://epicrevenue.com/terms ">Terms of Service</a>
-                        </li>
-                    </ul>
-                </div>
-                -->
+
             </div>
         </div>
 
@@ -59,7 +47,7 @@
     <div class="footer-bottom">
         <div class="container">
             <p class="text-left">
-                Created by <a href="https://ggxcompany.com">GG x Company</a> & <a href="https://servicedbyone.com">Serviced By ONE</a> &copy; {{ date("Y") }}
+                Funded by <a href="https://ggxcompany.com">GG x Company</a> Created by <a href="https://servicedbyone.com">Serviced By ONE</a> &copy; {{ date("Y") }}
             </p>
         </div>
     </div>
