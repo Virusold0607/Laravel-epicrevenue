@@ -109,9 +109,7 @@
                         </div>
                         <div class="container-fluid">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="btn btn-primary"></i> Login
-                                </button>
+                                <button type="submit" class="btn btn-primary">Login</button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                             </div>
