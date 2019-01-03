@@ -29,8 +29,10 @@
     margin:0;
 }
 .navbar-toggle {
-    border: 2px solid #fff;
-    margin: 0px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    top: 10px;
 }
 .navbar-toggle .icon-bar {
     background: #fff;
