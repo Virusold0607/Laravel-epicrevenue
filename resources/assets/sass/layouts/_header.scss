@@ -35,7 +35,92 @@
 .navbar-toggle .icon-bar {
     background: #fff;
 }
+.nk-icon-burger {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 18px;
+  color: #000000;
+}
 
+.nk-icon-burger>span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 0;
+  border-bottom: 2px solid;
+  top: 50%;
+  transition: 0.3s 0.2s width, 0.3s opacity, 0.2s transform;
+  will-change: width, opacity, transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.nk-icon-burger .nk-t-1 {
+  margin-top: -8px;
+}
+
+.nk-icon-burger .nk-t-2 {
+  margin-top: -1px;
+}
+
+.nk-icon-burger .nk-t-3 {
+  margin-top: 6px;
+}
+
+.nk-icon-burger:hover .nk-t-1,
+a:hover>.nk-icon-burger .nk-t-1 {
+  animation: nk-icon-burger-animation 0.4s ease-in-out;
+}
+
+.nk-icon-burger:hover .nk-t-2,
+a:hover>.nk-icon-burger .nk-t-2 {
+  animation: nk-icon-burger-animation 0.4s 0.1s ease-in-out;
+}
+
+.nk-icon-burger:hover .nk-t-3,
+a:hover>.nk-icon-burger .nk-t-3 {
+  animation: nk-icon-burger-animation 0.4s 0.2s ease-in-out;
+}
+
+@keyframes nk-icon-burger-animation {
+  0%,
+  100% {
+    transform: translateX(0)
+  }
+  50% {
+    width: 14px;
+    transform: translateX(3px)
+  }
+}
+
+.nk-icon-close {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
+
+.nk-icon-close:before,
+.nk-icon-close:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 21px;
+  height: 0;
+  border-bottom: 2px solid;
+  top: 50%;
+  left: 0;
+  transform-origin: 50% 50%;
+}
+
+.nk-icon-close:before {
+  transform: rotate(45deg);
+}
+
+.nk-icon-close:after {
+  transform: rotate(-45deg);
+}
 @media (max-width: 767px)
 {
     .header #navbar {
