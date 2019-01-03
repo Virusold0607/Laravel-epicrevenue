@@ -4,7 +4,10 @@
           <a href="{{url('/')}}"><img src="/images/logo1.png" alt="logo" class="logo img-responsive"></a>
 
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> 
+            <!--<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> -->
+            <span class="navbar-toggler-icon nk-icon-burger"> <span class="nk-t-1"></span> <span class="nk-t-2"></span> <span class="nk-t-3"></span> </span>
+            </button>
         </div>
         <div id="navbar" class="navbar-collapse collapse pull-right">
             @if(auth()->check())
