@@ -3,7 +3,7 @@
 @section('body')
     <div class="hero hero-auth">
         <div class="container">
-            <h2>Apply to promote</h2>
+            <h2>Apply to Epic Revenue</h2>
         </div>
     </div><!-- End .hero -->
     <div class="clearfix"></div>
