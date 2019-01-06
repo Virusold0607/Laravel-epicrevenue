@@ -47,7 +47,7 @@
     <div class="footer-bottom">
         <div class="container">
             <p class="text-left">
-                Funded by <a href="https://ggxcompany.com">GG x Company</a> and Created by <a href="https://servicedbyone.com">Serviced By ONE</a>
+                <a href="https://ggxcompany.com">Funded by GG x Company</a> and <a href="https://servicedbyone.com">Created by Serviced By ONE</a>
                 <br />
                 &copy; {{ date("Y")}}. All rights reserved  
             </p>
