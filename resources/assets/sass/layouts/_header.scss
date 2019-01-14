@@ -127,7 +127,11 @@ a:hover>.nk-icon-burger .nk-t-3 {
 {
     .header #navbar {
         width: 100%;
-    //padding: 0; 
+        background: #fff;
+        padding:0px;
+    }
+    .header .navbar-nav {
+    margin: 0;
     }
     .header .navbar .logo {
         padding: 10px 0;
@@ -136,8 +140,9 @@ a:hover>.nk-icon-burger .nk-t-3 {
         width:100%;
     }
     .header .navbar-nav>li>a {
-        padding: 15px 0;
-        border-top: 1px dashed #ffffff;
+        color:#000000;
+        padding: 15px;
+        border-bottom: 1px solid #000000;
     }
     .dropdown-menu>li>a {
         font-weight: 700;
