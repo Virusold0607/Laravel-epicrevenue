@@ -3,7 +3,7 @@
     width: 100%;
     background: #000;
     box-shadow: 0 1px 6px rgba(0,0,0,.35);
-    border-bottom: 1px solid #00000091;
+
     padding: 15px 0;
 }
 .header .navbar {
@@ -125,6 +125,9 @@ a:hover>.nk-icon-burger .nk-t-3 {
 }
 @media (max-width: 767px)
 {
+    .header {
+        border-bottom: 1px solid #333333;
+    }
     .header #navbar {
         width: 100%;
         background: #fff;
