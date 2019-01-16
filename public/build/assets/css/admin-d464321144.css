@@ -10994,3 +10994,16 @@ body > .ui-select-bootstrap.open {
   height: 20px;
   border-radius: 5px;
 }
+
+.admin-panel-stats {
+    display: inline-block;
+    color: #3b454a;
+    background: #fff;
+    padding: 5px 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border: 1px solid #eee;
+    margin-right: 10px;
+    border-radius: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
