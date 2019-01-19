@@ -62,7 +62,6 @@
 
     <div class="page-container dashboard no-border">
         <div class="container">
-            <h2>Earning Activity</h2>
 
             <div>
                 <canvas id="myChart" width="400" height="400"></canvas>
@@ -104,7 +103,7 @@
     <script>
         var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: {!! json_encode($earnings_graph->pluck('date')) !!},
                 datasets: [
