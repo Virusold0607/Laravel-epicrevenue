@@ -60,7 +60,7 @@
 
     <div class="clearfix"></div>
 
-    <div class="page-container dashboard no-border">
+    <div class="page-container dashboard">
         <div class="container">
 
             <div>
