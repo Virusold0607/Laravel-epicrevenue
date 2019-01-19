@@ -27,6 +27,7 @@
                         <h5 class="font-dark-gray">Today EPC</h5>
                     </div>
                 </div>
+                <!--
                 <div class="col-sm-4 col-md-3 col-xs-6">
                     <div class="hero-stat">
                         <h3> @if($today_leads + $today_clicks >= 0)
@@ -37,19 +38,21 @@
                         <h5 class="font-dark-gray">Today CR</h5>
                     </div>
                 </div>
+                -->
                 <div class="col-sm-4 col-md-3 col-xs-6">
                     <div class="hero-stat">
                         <h3>${!! number_format($earnings_today, 2) !!}</h3>
                         <h5 class="font-dark-gray">Today Earnings</h5>
                     </div>
                 </div>
+                <!--
                 <div class="col-sm-4 col-md-3 col-xs-6">
                     <div class="hero-stat">
                         <h3>${!! number_format($earnings_month, 2) !!}</h3>
                         <h5 class="font-dark-gray">Month Earnings</h5>
                     </div>
                 </div>
-
+                -->
             </div>  
             </div>
         </div>
