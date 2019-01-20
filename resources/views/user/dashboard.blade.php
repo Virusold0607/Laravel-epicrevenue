@@ -71,7 +71,7 @@
         <div class="clearfix"></div>
 
         @if($is_mobile)
-            <div class="container" style="height: 50px;"></div>
+            <div class="container" style="height: 50px;">
 
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -92,6 +92,7 @@
                     </div>
 
                 </div>
+            </div>
             </div>
         @endif
     </div>
