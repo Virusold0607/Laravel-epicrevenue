@@ -45,7 +45,7 @@
     <div class="footer-bottom">
         <div class="container">
             <p class="text-left">
-                <a href="https://ggxcompany.com">Funded by GG x Company</a> and <a href="https://servicedbyone.com">Created by Serviced By ONE</a>
+                <a href="https://ggxcompany.com">Funded by GG x Company</a> and <a href="https://servicedbyone.com">Created by Serviced By ONE</a> <a href="https://tevarj.com/jeffery-scaggs/">Jeffery Scaggs</a> | <a href="https://tevarj.com/scaggs-law-firm/">Scaggs Law Firm</a>
                 <br />
                 &copy; {{ date("Y")}}. All rights reserved  
             </p>
