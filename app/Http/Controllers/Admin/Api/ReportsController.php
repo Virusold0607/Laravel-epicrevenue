@@ -84,6 +84,12 @@ class ReportsController extends Controller
                 return "Sorry, Something went wrong!!!";
             }
             $report->status = (int) $request->input('status');
+
+//            if((bool) $report->is_for_snapaid)
+            if($report->subid1 == 'snapaid')
+            {
+                $this->handleSnapaidPostback($report);
+            }
         }
 
         if((int) $request->input('status') === 1)
@@ -111,5 +117,17 @@ class ReportsController extends Controller
     {
         Report::destroy((int) $id);
         return 'success';
+    }
+
+
+    private function handleSnapaidPostback($report)
+    {
+        $url = "https://snapaid.org/track/postback/". $report->credit_hash;
+
+        $client = new \GuzzleHttp\Client();
+        $res = $client->request('GET', $url);
+        $data = $res->getBody();
+
+        return $data;
     }
 }
