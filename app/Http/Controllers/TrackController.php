@@ -35,11 +35,13 @@ class TrackController extends Controller
         {
             return "Sorry, Something went wrong!!!";
         }
-/*
-        if((bool) $report->campaign->is_for_snapaid) {
+
+//        if((bool) $report->is_for_snapaid)
+        if($report->subid1 == 'snapaid')
+        {
             $this->handleSnapaidPostback($report);
         }
-*/
+
         $report->status = 2;
         $report->save();
 
