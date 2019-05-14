@@ -33,6 +33,8 @@
                         <li><a href="{{ url('/admin/campaigns/create') }}">Create</a></li>
                         <li><a href="{{ url('/admin/campaigns/categories') }}">Categories</a></li>
                         <li class="divider"></li>
+                        <li><a href="{{ url('/admin/campaigns/featured') }}">Homepage Featured</a></li>
+                        <li class="divider"></li>
                         <li><a href="{{ url('/admin/campaigns/rates') }}">Custom rates</a></li>
                     </ul>
                 </li>

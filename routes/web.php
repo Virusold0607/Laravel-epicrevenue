@@ -146,6 +146,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/campaigns/rates', 'Admin\CampaignController@getRates');
     Route::post('/campaigns/rates', 'Admin\CampaignController@postRates');
     Route::put('/campaigns/rates', 'Admin\CampaignController@putRates');
+    Route::get('/campaigns/featured', 'Admin\CampaignController@getFeatured');
+    Route::post('/campaigns/featured', 'Admin\CampaignController@postFeatured');
     Route::get('/campaigns/subidblock', 'Admin\CampaignController@subidblock');
     Route::get('/campaigns/singleblock', 'Admin\CampaignController@singleblock');
     Route::get('/campaigns/networkblock', 'Admin\CampaignController@networkblock');

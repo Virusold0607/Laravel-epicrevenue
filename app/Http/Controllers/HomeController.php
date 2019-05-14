@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HomepageFeaturedCampaign;
 use Illuminate\Http\Request;
 
 use Validator;
@@ -24,7 +25,12 @@ class HomeController extends Controller
             'description' => 'Have a large reach on social media? Monetize your following with our various campaigns and exclusive promotions.',
             'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
         ];
-        return view('home.index')->with(['bodyid' => 'sticky', 'meta' => $meta]);
+        return view('home.index')->with(
+            [
+                'bodyid' => 'sticky',
+                'meta' => $meta,
+                'featured_campaigns' => HomepageFeaturedCampaign::all()
+            ]);
     }
 
     /**

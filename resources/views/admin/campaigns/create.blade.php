@@ -38,9 +38,45 @@
             </tr>
 
             <tr>
-                <td>Feature image:</td>
+                <td>Featured image:</td>
                 <td>
-                    {!! Form::file('feature_image') !!}
+                    {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
+                    <img id="featured_image_output" class="img-responsive" style="max-height:300px;"/>
+                    <script>
+                        var loadFile = function(event, id) {
+                            var output = document.getElementById(id);
+                            output.src = URL.createObjectURL(event.target.files[0]);
+                        };
+                    </script>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Homepage Featured image:</td>
+                <td>
+                    {!! Form::file('homepage_featured_image', ['onchange' => 'loadFile(event, "homepage_featured_image_output")']) !!}
+                    <img id="homepage_featured_image_output" class="img-responsive" style="max-height:300px;"/>
+                    <script>
+                        var loadFile = function(event, id) {
+                            var output = document.getElementById(id);
+                            output.src = URL.createObjectURL(event.target.files[0]);
+                        };
+                    </script>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Homepage Featured Image Background:</td>
+                <td>
+                    {!! Form::file('homepage_featured_image_background', ['onchange' => 'loadFile(event, "homepage_featured_image_background_output")']) !!}
+                    <img id="homepage_featured_image_background_output" class="img-responsive" style="max-height:300px;"/>
+                    <script>
+                        var loadFile = function(event, id) {
+                            var output = document.getElementById(id);
+                            output.src = URL.createObjectURL(event.target.files[0]);
+                        };
+                    </script>
                 </td>
             </tr>
 

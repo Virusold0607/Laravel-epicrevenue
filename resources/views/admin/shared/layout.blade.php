@@ -8,8 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @yield('styles')
         <!--<link rel="stylesheet" href="{{ elixir('assets/css/admin.css') }}">-->
-        <link rel="stylesheet" href="https://epicrevenue.com/assets/css/admin.css">">
-        
+        <link rel="stylesheet" href="https://epicrevenue.com/assets/css/admin.css">
     </head>
     <body>
         @include('admin.shared.header')

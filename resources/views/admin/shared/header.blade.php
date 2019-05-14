@@ -32,6 +32,8 @@
                             <li><a href="{{ url('/admin/campaigns/create') }}">Add campaign</a></li>
                             <li><a href="{{ url('/admin/campaigns/categories') }}">Categories</a></li>
                             <li class="divider"></li>
+                            <li><a href="{{ url('/admin/campaigns/featured') }}">Homepage Featured</a></li>
+                            <li class="divider"></li>
                             <li><a href="{{ url('/admin/campaigns/rates') }}">Custom rates</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ url('/admin/campaigns/block/?subids') }}">SubID's block</a></li>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CampaignRate;
 use App\Models\CampaignsCategory;
+use App\Models\HomepageFeaturedCampaign;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -92,5 +93,4 @@ class CampaignController extends Controller
 
         return view('user.campaigns.show')->with(array('campaign' => $campaign, 'daily_cap_status' => $daily_cap_status, 'custom_rate' => $custom_rate, 'images' => $images));
     }
-
 }

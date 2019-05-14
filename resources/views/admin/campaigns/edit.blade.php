@@ -38,9 +38,60 @@
         </tr>
 
         <tr>
-            <td>Feature image:</td>
+            <td>Featured image:</td>
             <td>
-                {!! Form::file('feature_image') !!}
+                {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
+
+                @if(is_null($campaign->homepage_featured_image_background))
+                    <img id="featured_image_output" class="img-responsive" style="max-height:300px;" />
+                @else
+                    <img id="featured_image_output" class="img-responsive" style="max-height:300px;" src="{{ url('/storage/images/campaign/'.$campaign->featured_img) }}" alt="{{ $campaign->name }}" />
+                @endif
+                <script>
+                    var loadFile = function(event, id) {
+                        var output = document.getElementById(id);
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                </script>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>Homepage Featured image:</td>
+            <td>
+                {!! Form::file('homepage_featured_image', ['onchange' => 'loadFile(event, "homepage_featured_image_output")']) !!}
+
+                @if(is_null($campaign->homepage_featured_image_background))
+                    <img id="homepage_featured_image_output" class="img-responsive" style="max-height:300px;" />
+                @else
+                    <img id="homepage_featured_image_output" class="img-responsive" style="max-height:300px;" src="{{ url('/storage/images/campaign/'.$campaign->homepage_featured_image) }}" alt="{{ $campaign->name }}" />
+                @endif
+                <script>
+                    var loadFile = function(event, id) {
+                        var output = document.getElementById(id);
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                </script>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Homepage Featured Image Background:</td>
+            <td>
+                {!! Form::file('homepage_featured_image_background', ['onchange' => 'loadFile(event, "homepage_featured_image_background_output")']) !!}
+
+                @if(is_null($campaign->homepage_featured_image_background))
+                    <img id="homepage_featured_image_background_output" class="img-responsive" style="max-height:300px;" />
+                @else
+                    <img id="homepage_featured_image_background_output" class="img-responsive" style="max-height:300px;" src="{{ url('/storage/images/campaign/'.$campaign->homepage_featured_image_background) }}" alt="{{ $campaign->name }}" />
+                @endif
+                <script>
+                    var loadFile = function(event, id) {
+                        var output = document.getElementById(id);
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                </script>
             </td>
         </tr>
 
