@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-md-8 col-xs-12">
                         <h1 class="promo-title">{{$campaign->campaign->name}}</h1>
-                        <p>{{$campaign->campaign->description}}</p>
+                        <p>{!! $campaign->campaign->description !!}</p>
                         <a href="{{ url('/affiliate/apply') }}" class="apply-now-button btn">Promote Now</a>
                     </div>
                 </div>
