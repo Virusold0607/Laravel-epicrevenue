@@ -21,7 +21,7 @@
         @foreach($featured_campaigns as $campaign)
             @if(empty($campaign->campaign->homepage_featured_image_background))
                 @if(empty($campaign->campaign->homepage_featured_image))
-                    @php($bg = '/campaign/image/'. $campaign->id)
+                    @php($bg = '/campaign/image/'. $campaign->campaign->id)
                 @else
                     @php($bg = "/storage/images/campaign/" . $campaign->campaign->homepage_featured_image)
                 @endif
@@ -34,7 +34,7 @@
                         <div class="home-promo-photo">
                             @if(empty($campaign->campaign->homepage_featured_image_background))
                                 @if(empty($campaign->campaign->homepage_featured_image))
-                                    @php($image = '/campaign/image/'. $campaign->id)
+                                    @php($image = '/campaign/image/'. $campaign->campaign->id)
                                 @else
                                     @php($image = "/storage/images/campaign/" . $campaign->campaign->homepage_featured_image)
                                 @endif
@@ -45,8 +45,8 @@
                         </div>
                     </div>
                     <div class="col-md-8 col-xs-12">
-                        <h1 class="promo-title">{{$campaign->name}}</h1>
-                        <p>{{$campaign->description}}</p>
+                        <h1 class="promo-title">{{$campaign->campaign->name}}</h1>
+                        <p>{{$campaign->campaign->description}}</p>
                         <a href="{{ url('/affiliate/apply') }}" class="apply-now-button btn">Promote Now</a>
                     </div>
                 </div>
