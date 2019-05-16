@@ -66,11 +66,11 @@ class RegisterController extends Controller
             'apiCallback' => env('INSTAGRAM_CALLBACK')
         ));
 
-        $this->fb = new \Facebook\Facebook([
-            'app_id' => env('FB_ID'),
-            'app_secret' => env('FB_SECRET'),
-            'default_graph_version' => 'v2.7',
-        ]);
+//        $this->fb = new \Facebook\Facebook([
+//            'app_id' => env('FB_ID'),
+//            'app_secret' => env('FB_SECRET'),
+//            'default_graph_version' => 'v2.7',
+//        ]);
     }
 
 
