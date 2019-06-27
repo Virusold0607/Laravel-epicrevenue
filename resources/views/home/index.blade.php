@@ -32,14 +32,14 @@
                 <div class="container">
                     <div class="col-md-4 col-xs-12">
                         <div class="home-promo-photo">
-                            @if(empty($campaign->campaign->homepage_featured_image_background))
-                                @if(empty($campaign->campaign->homepage_featured_image))
+                            @if(empty($campaign->campaign->homepage_featured_image))
+                                @if(empty($campaign->campaign->homepage_featured_image_background))
                                     @php($image = '/campaign/image/'. $campaign->campaign->id)
                                 @else
-                                    @php($image = "/storage/images/campaign/" . $campaign->campaign->homepage_featured_image)
+                                    @php($image = "/storage/images/campaign/" . $campaign->campaign->homepage_featured_image_background)
                                 @endif
                             @else
-                                @php($image = "/storage/images/campaign/" . $campaign->campaign->homepage_featured_image_background)
+                                @php($image = "/storage/images/campaign/" . $campaign->campaign->homepage_featured_image)
                             @endif
                             <img src="{!! url($image) !!}" alt="Campaign Image" />
                         </div>
