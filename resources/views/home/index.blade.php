@@ -28,7 +28,7 @@
             @else
                 @php($bg = "/storage/images/campaign/" . $campaign->campaign->homepage_featured_image_background)
             @endif
-            <div class="hero" style="background: url('{!! url($bg) !!}') #000;">
+            <div class="hero" style="background: url('{!! url($bg) !!}') #000; background-size:cover;">
                 <div class="container">
                     <div class="col-md-4 col-xs-12">
                         <div class="home-promo-photo">
