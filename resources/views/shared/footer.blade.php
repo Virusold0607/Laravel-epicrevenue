@@ -45,7 +45,7 @@
     <div class="footer-bottom">
         <div class="container">
             <p class="text-left">
-                Funded by <a href="https://ggxcompany.com">GGM & Co</a> and Created by <a href="https://servicebyone.com">Service By ONE</a> <span style="color:#ffffff!important;opacity:0;"><a href="https://tevarj.com/jeffrey-scaggs/">Jeffrey Scaggs</a><a href="https://tevarj.com/scaggs-law-firm/">Scaggs Law Firm</a></span>
+                Funded by <a href="https://ggxcompany.com">G.G.M & Company</a> and Created by <a href="https://servicebyone.com">Service By ONE</a> <span style="color:#ffffff!important;opacity:0;"><a href="https://tevarj.com/jeffrey-scaggs/">Jeffrey Scaggs</a><a href="https://tevarj.com/scaggs-law-firm/">Scaggs Law Firm</a></span>
                 <br />
                 &copy; {{ date("Y")}}. All rights reserved  
             </p>
