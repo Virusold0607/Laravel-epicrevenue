@@ -74,7 +74,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/admin/support/') }}">Support Tickets</a></li>
                             <li class="divider"></li>
-                            <li><a href="{{ url('/admin/postback/') }}">Postback Manager</a></li>
+                            <li><a href="{{ url('/admin/postbacks/') }}">Postback Manager</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ url('/admin/payments/') }}">Payments</a></li>
                         </ul>
