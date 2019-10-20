@@ -20,8 +20,8 @@
     text-transform:uppercase;
 }
 .nav>li>a:focus, .nav>li>a:hover {
-    background-color: #960000;
-    color: #ffffff;
+    color: #fff;
+    border-bottom: 2px solid #ffffff;
 }
 
 .navbar {
