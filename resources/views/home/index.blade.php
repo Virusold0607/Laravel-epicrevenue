@@ -7,7 +7,7 @@
     <div class="homepage">
         <div class="hero main-promo">
             <div class="container">
-                <h1>Monetize the reach of your social media following</h1>
+                <h1>Monetize the reach of your following</h1>
                 <div class="row">
                     <div class="col-sm-8">
                         <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
