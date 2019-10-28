@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
-                <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn ">Become an Affiliate</a>
+                <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn ">Become a Partner</a>
             </div>
         </div><!-- End .hero -->
 
