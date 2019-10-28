@@ -75,9 +75,9 @@
                     {!! Form::password('password_confirmation', array('class' => 'form-control')) !!}
                 </div>
 
-                {!! Form::checkbox('terms', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/about/terms') }}" target="_blank" title="Terms of Service">Terms of Service</a>.
+                {!! Form::checkbox('terms', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/terms') }}" target="_blank" title="Terms of Service">Terms of Service</a>.
                 <br />
-                {!! Form::checkbox('privacy', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/about/privacy') }}" target="_blank" title="Privacy Policy">Privacy Policy</a>.
+                {!! Form::checkbox('privacy', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/privacy') }}" target="_blank" title="Privacy Policy">Privacy Policy</a>.
                 <br /><br />
                 {!! app('captcha')->display() !!}
             </div>
