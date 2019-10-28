@@ -14,13 +14,8 @@
                         <li>
                             <a href="{{ url('/faqs') }}">FAQ's</a>
                         </li>
-                        <!--
                         <li>
                             <a href="{{ url('/contact') }}">Contact</a>
-                        </li>
-                        -->
-                        <li>
-                            <a href="{{ url('/login') }}">Sign In ?</a>
                         </li>
                     </ul>
                 </div>
