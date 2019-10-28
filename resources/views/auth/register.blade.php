@@ -4,7 +4,7 @@
     <div class="hero hero-auth">
         <div class="container">
             <center>
-                <h2>Become an Epic Revenue Affiliate</h2>
+                <h2>Become a Epic Revenue Affiliate</h2>
                 <p>Start promoting some of the top products and brand in as soon as 24 hours!</p>
             </center>
         </div>
