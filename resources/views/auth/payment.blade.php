@@ -3,7 +3,11 @@
 @section('body')
 <div class="hero hero-auth">
         <div class="container">
-            <h2>Become an Affiliate</h2>
+            <center>
+                <h2>Become a Epic Revenue Affiliate</h2>
+                <p>Start promoting some of the top products and brand in as soon as 24 hours!</p>
+            </center>
+
         </div>
     </div><!-- End .hero -->
     <div class="clearfix"></div>
@@ -13,7 +17,7 @@
 
     <div class="page wide">
         <div class="container">
-
+            <!--
             <ul id='timeline'>
                 <div id='timeline2' style="width:90%"></div>
                 <li class='work'>
@@ -38,6 +42,7 @@
                     </div>
                 </li>
             </ul>
+            -->
             <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                 {!! Form::open(array('url' => '/affiliate/apply/payment', 'method' => 'post', 'class' => 'form-register')) !!}
                     {{-- Was there an error? --}}
