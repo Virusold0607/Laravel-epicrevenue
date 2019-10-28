@@ -1,10 +1,20 @@
 @extends('shared.layout')
 
 @section('body')
-<div class="hero heading notfound-page">
-    <div class="container_12">
-        <h1>404 Page not found</h1>
-        <p>The page your looking for has not been found!</p>
+    <div class="hero hero-txt">
+        <div class="container">
+            <h1 class="hero-heading">404 Page not found<</h1>
+        </div>
     </div>
-</div><!-- End .hero -->
+
+    <div class="clearfix"></div>
+
+    <div class="container">
+        <div class="page-container">
+            <p>The page your looking for has not been found!</p>
+
+        </div>
+    </div>
+    
+
 @endsection
