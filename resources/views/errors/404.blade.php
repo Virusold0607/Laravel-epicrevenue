@@ -3,7 +3,7 @@
 @section('body')
     <div class="hero hero-txt">
         <div class="container">
-            <h1 class="hero-heading">404 Page not found<</h1>
+            <h1 class="hero-heading">404 Page not found</h1>
         </div>
     </div>
 
