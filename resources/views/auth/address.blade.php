@@ -3,7 +3,11 @@
 @section('body')
     <div class="hero hero-auth">
         <div class="container">
-            <h2>Become an Affiliate</h2>
+            <center>
+                <h2>Become a Epic Revenue Affiliate</h2>
+                <p>Start promoting some of the top products and brand in as soon as 24 hours!</p>
+            </center>
+
         </div>
     </div><!-- End .hero -->
     <div class="clearfix"></div>
@@ -11,6 +15,7 @@
 
 
     <div class="container">
+        <!--
         <ul id='timeline'>
             <span id='timeline2' style="width:60%"></span>
             <li class='work'>
@@ -35,7 +40,7 @@
                 </div>
             </li>
         </ul>
-
+        -->
         {!! Form::model($user, array('url' => '/affiliate/apply/address', 'method' => 'post', 'class' => 'col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2','style' => '')) !!}
         <div class="panel panel-default networks">
             <div class="panel-heading">Address</div>
