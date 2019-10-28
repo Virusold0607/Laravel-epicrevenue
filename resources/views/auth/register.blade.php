@@ -10,6 +10,7 @@
     <div class="container" style="height:60px;"></div>
 
     <div class="container">
+        <!--
         <ul id='timeline'>
             <span id='timeline2' style="width:25%"></span>
             <li class='work'>
@@ -34,7 +35,7 @@
                 </div>
             </li>
         </ul>
-
+-->
         {!! Form::model($user, array('url' => '/affiliate/apply', 'method' => 'post', 'class' => 'col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2','style' => '')) !!}
         <div class="panel panel-default networks">
             <div class="panel-heading">Account Details</div>
