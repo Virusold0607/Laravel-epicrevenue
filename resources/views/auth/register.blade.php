@@ -3,7 +3,8 @@
 @section('body')
     <div class="hero hero-auth">
         <div class="container">
-            <h2>Apply to Epic Revenue</h2>
+            <h2>Become an Epic Revenue Affiliate</h2>
+            <p>Start promoting some of the top products and brand in as soon as 24 hours!</p>
         </div>
     </div><!-- End .hero -->
     <div class="clearfix"></div>
