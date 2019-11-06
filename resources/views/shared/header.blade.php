@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav">
                     <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a href="{{url('/dashboard')}}">Dashboard</a></li>
                     <li class="{{ request()->is('campaigns') ? 'active' : '' }}"><a href="{{ url('/campaigns') }}">Campaigns</a></li>
-                    <li class="{{ request()->is('reports') ? 'active' : '' }}"><a href="{{ url('/reports') }}">Reports</a></li>
+                    <li class="{{ request()->is('reports') ? 'active' : '' }}"><a href="{{ url('/reports') }}">Analytics</a></li>
                     <!--<li class="{{ request()->is('contests') ? 'active' : '' }}"><a href="{{ url('/contests') }}">CONTESTS</a></li>-->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ auth()->user()->firstname }} <span class="caret"></span></a>
