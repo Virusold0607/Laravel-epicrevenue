@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=8.1.6",
         "laravel/framework": "5.3.*",
         "laravelcollective/html": "5.3.*",
         "anhskohbo/no-captcha": "2.*",
