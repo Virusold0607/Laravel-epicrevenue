@@ -89,7 +89,7 @@ class CampaignController extends Controller
     {
         $campaign = new Campaign();
         $campaign_categories = CampaignsCategory::all()->lists('name', 'id');
-        $countries = Country::all()->lists('short_name', 'id');
+        $countries = Country::all()->lists('code', 'id');
         $networks = Postback::all()->lists('name', 'id');
 
         return view('admin.campaigns.create')
@@ -233,7 +233,7 @@ class CampaignController extends Controller
     {
         $campaign = Campaign::find($id);
         $campaign_categories = CampaignsCategory::all()->lists('name', 'id');
-        $countries = Country::all()->lists('short_name', 'id');
+        $countries = Country::all()->lists('code', 'id');
         $networks = Postback::all()->lists('name', 'id');
         $campaign_targets = $campaign->targets;
 
