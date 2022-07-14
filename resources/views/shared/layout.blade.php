@@ -14,7 +14,8 @@
 
         <!-- Meta Description -->
         @if(isset($meta->description))
-        <meta name="description" itemprop="description" content="{{ $meta->description }}" />@endif
+        <meta name="description" itemprop="description" content="{{ $meta->description }}" />
+        @endif
 
         <!-- Meta Tags -->
         @if(isset($meta->keywords))
