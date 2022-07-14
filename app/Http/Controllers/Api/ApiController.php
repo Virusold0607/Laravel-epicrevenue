@@ -759,7 +759,7 @@ class ApiController extends Controller
         foreach($campaign_countries as $allowed_country)
         {
             if($target_country) {
-                if($allowed_country->code === $geoIP->country)
+                if($allowed_country->name === $geoIP->country)
                     return true;
             } else {
                 return true;
