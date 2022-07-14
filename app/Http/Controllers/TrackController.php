@@ -80,7 +80,7 @@ class TrackController extends Controller
             return 'The publisher account is either inactive or does not have permission to run this campaign.';
         // Check If user is from
         if( ! $this->checkIfFromAllowedCountries($campaign->countries, $geoIP) )
-            return "Your country does not have permission to access this campaign.<br><br> COUNTRY: ".$geoIP->country." , STATE: ".$geoIP->state.", CITY: ".$geoIP->city.", ZIP: ".$geoIP->postal_code.", IP:".$geoIP->ip." ";
+            return "Your country does not have permission to access this campaign.<br><br> COUNTRY: ".$geoIP->country." , STATE: ".$geoIP->state." , CITY: ".$geoIP->city." , ZIP: ".$geoIP->postal_code." , IP: ".$geoIP->ip." ";
         // Check if cap is not set to unlimited
         if($campaign->cap !== 0)
         {
