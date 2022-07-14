@@ -26,7 +26,7 @@
                     </li>
                 <!--<li class="nav-item menu-area {{ request()->is('contests') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/contests') }}">CONTESTS</a></li>-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" aria-current="page" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">{{ auth()->user()->firstname }}</a>
+                        <a class="nav-link dropdown-toggle" aria-current="page" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">{{ auth()->user()->firstname }}</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ url('/settings') }}">Settings</a></li>
                             <li><a class="dropdown-item" href="{{ url('/invite') }}">Invite</a></li>
@@ -52,7 +52,6 @@
                     </li>
 
                 @endif
-
             </ul>
         </div>
     </nav>
