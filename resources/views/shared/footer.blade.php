@@ -4,7 +4,7 @@
             <div class="col-lg-6 col-xl-4 text-left">
                 <a href="{{ route('index') }}" class="text-black fs-24 fw-700 d-block"> 
                     <!--<img class="footer-logo" src="https://districtgurus.com/public/uploads/all/SC008HOLHmfOeB8E3SxNDONHI7nad1YJcmSl0ds9.png" data-src="https://districtgurus.com/public/uploads/all/SC008HOLHmfOeB8E3SxNDONHI7nad1YJcmSl0ds9.png" alt="District Gurus" height="20"> -->
-                    #JewelryCG
+                    #EpicRevenue
                 </a>
                 <div class="d-block mt-3 mb-5">
                     <ul class="list-inline social fw-600">
@@ -28,8 +28,8 @@
                     <ul class="list-unstyled">
                         <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="#">Cookie Policy</a></li>
                         <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="#">Return Policy</a></li>
-                        <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="#">Privacy Policy</a></li>
-                        <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="#">Terms & Conditions</a></li>
+                        <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="{{ url('/privacy') }}">Privacy Policy</a></li>
+                        <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="{{ url('/terms') }}">Terms & Conditions</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,9 +40,9 @@
                     </h4>
                     <ul class="list-unstyled">
                         <ul class="list-unstyled">
-                            <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="#">F.A.Q.s</a></li>
-                            <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="#">Guides</a></li>
-                            <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="#">Contact Us</a></li>
+                            <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="{{ url('/faqs') }}">F.A.Q.s</a></li>
+                            <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="{{ url('/about') }}">About</a></li>
+                            <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="{{ url('/contact') }}">Contact Us</a></li>
                             <li class="mb-2"><a class="opacity-50 hov-opacity-100 text-reset" href="#">Knowledge Base</a></li>
                         </ul>
                     </ul>
@@ -93,45 +93,3 @@
         </div>
     </div>
 </footer>
-
-
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-7 col-xs-12">
-                <img class="footer-logo-image" src="/images/footer-logo.png">
-            </div>
-            <div class="col-sm-5">
-                <div class="col-sm-6 col-xs-12">
-                    <ul class="border-dashed">
-                        <li class="footertitle">Navigation</li>
-                        <li>
-                            <a href="{{ url('/about') }}">About</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/faqs') }}">FAQ's</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/contact') }}">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                    <ul class="border-dashed">
-                        <li class="footertitle">Legal</li>
-                        <li>
-                            <a href="{{ url('/privacy') }} ">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/terms') }} ">Terms of Service</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-
-
