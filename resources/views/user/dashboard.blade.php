@@ -54,7 +54,7 @@
         </div>
         
 
-    <div class="clearfix"></div>
+
 
     <div class="page-container dashboard">
         <div class="container">
