@@ -149,7 +149,7 @@ class TrackController extends Controller
         if(! is_null($geoIP->postal_code))
             $report->postal      = $geoIP->postal_code;
 
-        $report->credit_hash = $user->id . $campaign->id . strtotime(\Carbon\Carbon::now()) . str_random();
+        $report->credit_hash = $user->id . $campaign->id . strtotime(\Carbon\Carbon::now()) . Str::random();
         $report->subid1      = $subid1;
         $report->subid2      = $subid2;
         $report->subid3      = $subid3;
