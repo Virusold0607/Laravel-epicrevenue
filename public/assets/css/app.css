@@ -20,4 +20,15 @@ header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link
     color: #377dff;
 }
 
-
+/* Footer */
+.footer .footer-logo {
+    height:20px;
+}
+.footer ul.social a {
+    width: auto;
+    height: auto;
+    font-size: 1.5rem !important;
+    line-height: 24px;
+    display: inline-block;
+    color: #000000;
+}
