@@ -340,7 +340,7 @@ class TrackController extends Controller
     {
         foreach($campaign_countries as $allowed_country)
         {
-            if($allowed_country->short_name == $geoIP->country)
+            if($allowed_country->code == $geoIP->country)
                 return true;
         }
         return false;
