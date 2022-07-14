@@ -6,12 +6,20 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "anhskohbo/no-captcha": "^3.4",
+        "drewm/mailchimp-api": "^2.5",
+        "facebook/graph-sdk": "^5.1",
         "fruitcake/laravel-cors": "^2.0",
+        "geoip2/geoip2": "^2.12",
+        "google/apiclient": "^2.12",
         "guzzlehttp/guzzle": "^7.0.1",
+        "jenssegers/agent": "^2.6",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
+        "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.5",
-        "laravelcollective/html": "^6.3"
+        "laravelcollective/html": "^6.3",
+        "torann/geoip": "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
