@@ -10,6 +10,9 @@ header {
 header a.navbar-brand {
     color: #ffffff;
 }
+header .navbar-brand:focus, header .navbar-brand:hover {
+    color: #377dff;
+}
 header a.nav-link, header a.nav-link.dropdown-toggle {
     color: #FFFFFF;
 }
