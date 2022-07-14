@@ -15,21 +15,16 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <div class="inner-addon left-addon">
-                        <i class="glyphicon glyphicon-user"></i>
-                        <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" />
-                    </div>
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" />
                     @if ($errors->has('email'))
                     <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
                     @endif
                 </div>
 
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label class="control-label"></label>
-                    <div class="inner-addon left-addon">
-                        <i class="glyphicon glyphicon-lock"></i>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-                    </div>
+                    <i class="glyphicon glyphicon-lock"></i>
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
                     @if ($errors->has('password'))
                     <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
                     @endif
