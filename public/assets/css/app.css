@@ -10,10 +10,7 @@ header {
 header a.navbar-brand {
     color: #ffffff;
 }
-header a.nav-link, header a.nav-link.dropdown-toggle {
-    color: #FFFFFF;
-}
-header a.nav-link.dropdown-toggle {
+header a.nav-link, header a.dropdown-toggle {
     color: #FFFFFF;
 }
 header a.nav-link:hover, header a.nav-link.dropdown-toggle:hover {
