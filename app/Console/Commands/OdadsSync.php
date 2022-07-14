@@ -71,7 +71,7 @@ class OdadsSync extends Command
                     $target->rate = ($offer->payout / 100) * 70;
                     $target->network_rate = $offer->payout;
 
-                    $country = Country::where('short_name', $target->country)->first();
+                    $country = Country::where('code', $target->country)->first();
 
                     $d = "Desktop";
                     if($target->device == 'iPhone' || $target->device == 'Android')
@@ -113,7 +113,7 @@ class OdadsSync extends Command
                                     $cc->rate             = ($offer->payout / 100) * 70;
                                     $cc->network_rate     = $offer->payout;
                                     $cc->url              = $offer->link . "&".$network->ch_slot . "={hash}";
-                                    $cc->country          = $country->short_name;
+                                    $cc->country          = $country->code;
                                     $cc->network_campaign_id = $offer->offerid;
 
                                     if($device == 'iPhone' || $device == 'Android')
