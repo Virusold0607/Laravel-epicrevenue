@@ -10,6 +10,7 @@ use App\Models\UserBalance;
 use App\Models\UserBalanceHistory;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Http\Helper;
 
 use App\Http\Requests;
