@@ -7,3 +7,9 @@
 header {
     background: #000000;
 }
+header a.nav-link {
+    color: #FFFFFF;
+}
+header a.nav-link.dropdown-toggle {
+    color: #FFFFFF;
+}
