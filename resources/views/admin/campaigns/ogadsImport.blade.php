@@ -36,8 +36,8 @@
                 <td>
                     <select name="country" class="form-control">
                         <option selected value>All</option>
-                        @foreach($countries->pluck('short_name', 'iso2') as $iso2 => $short_name)
-                            <option value="{{$iso2}}" @if(request()->input('country', null) == $iso2) selected @endif>{{$short_name}}</option>
+                        @foreach($countries->pluck('code', 'iso2') as $iso2 => $code)
+                            <option value="{{$iso2}}" @if(request()->input('country', null) == $iso2) selected @endif>{{$code}}</option>
                         @endforeach
                     </select>
                 </td>
