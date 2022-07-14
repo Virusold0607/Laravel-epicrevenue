@@ -25,8 +25,7 @@
         <!-- Icons -->
         <link rel="shortcut icon" type="image/png" href="{{ url('/assets/img/favicon.png') }}"/>
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
-        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
-        <link rel="shortcut icon" href="/images/favicon.ico">
+        <link rel="shortcut icon" href="{{url('/images/favicon.ico')}}">
         <link rel="shortcut icon" type="image/png" href="{{url('/images/favicon.png')}}"/>
 
         <!-- Google Fonts -->
@@ -38,7 +37,7 @@
         <link rel="stylesheet" href="{{ url('/assets/css/core.css') }}">
         <link rel="stylesheet" href="{{ url('/assets/css/app.css') }}">
 
-        <link rel="stylesheet" href="{{url('/assets/css/main.css')}}">
+        <!--<link rel="stylesheet" href="{{url('/assets/css/main.css')}}">-->
         @yield('styles')
     </head>
     <body @if(isset($bodyid))id="{{ $bodyid }}"@endif>
