@@ -46,7 +46,7 @@
     @include('shared/header')
 
     <!-- Page Content -->
-    <div class="content-wrap">
+    <div class="content-wrap py-3">
     @yield('body')
     </div>
 
