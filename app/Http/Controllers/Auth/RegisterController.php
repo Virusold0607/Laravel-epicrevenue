@@ -23,8 +23,8 @@ use Socialite;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
-use App\Models\InstagramAccount;
-use MetzWeb\Instagram\Instagram;
+//use App\Models\InstagramAccount;
+//use MetzWeb\Instagram\Instagram;
 
 class RegisterController extends Controller
 {
@@ -60,11 +60,13 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        /*
         $this->instagram = new Instagram(array(
             'apiKey'      => env('INSTAGRAM_KEY'),
             'apiSecret'   => env('INSTAGRAM_SECRET'),
             'apiCallback' => env('INSTAGRAM_CALLBACK')
         ));
+        */
 
 //        $this->fb = new \Facebook\Facebook([
 //            'app_id' => env('FB_ID'),
