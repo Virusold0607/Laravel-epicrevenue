@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/wyt0fsl.css">
     {{--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{{ elixir('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{url('/assets/css/main.css')}}">
     @yield('styles')
 </head>
 <body @if(isset($bodyid))id="{{ $bodyid }}"@endif>
@@ -33,7 +33,7 @@
 
 
 <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-<script type="text/javascript" src="{{ elixir('assets/js/main.js') }}"></script>
+<script type="text/javascript" src="{{ url('/assets/js/main.js') }}"></script>
 <script>
     @if($navbar_inverse)
     $(function(){
