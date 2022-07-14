@@ -56,68 +56,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
         <script type="text/javascript" src="{{ url('/assets/js/main.js') }}"></script>
-        <script>
-            @if($navbar_inverse)
-            $(function(){
-                var shrinked = false;
-                var collapsed = false;
-                var shrinkHeader = 100;
-                $(window).scroll(function() {
-                    var scroll = getCurrentScroll();
-                    if(!collapsed) {
-                        if ( scroll >= shrinkHeader ) {
-                            $('#navbar-header').removeClass('transparent-header');
-                            $('#navbar').removeClass('non-sticky');
-                            shrinked = true;
-                        }
-                        else {
-                            $('#navbar-header').addClass('transparent-header');
-                            $('#navbar').addClass('non-sticky');
-                            shrinked = false;
-                        }
-                    }
-                });
-                $('.navbar-toggle').on('click', function(){
-                    var scroll = getCurrentScroll();
-                    if(scroll <= shrinkHeader) {
-                        if ( !shrinked ) {
-                            $('#navbar-header').removeClass('transparent-header');
-                            $('#navbar').removeClass('non-sticky');
-                            shrinked = collapsed = true;
-                        } else {
-                            $('#navbar-header').addClass('transparent-header');
-                            $('#navbar').addClass('non-sticky');
-                            shrinked = collapsed = false;
-                        }
-                    }
-                });
-
-                function getCurrentScroll() {
-                    return window.pageYOffset || document.documentElement.scrollTop;
-                }
-            });
-            @endif
-            $(window).scroll(function() {
-                $('#pop-up-message').each(function(){
-                    var imagePos = $(this).offset().top;
-
-                    var topOfWindow = $(window).scrollTop();
-                    if (imagePos < topOfWindow+400) {
-                        $(this).addClass("slideRight");
-                    }
-                });
-            });
-            $(window).scroll(function() {
-                $('#pop-up-message2').each(function(){
-                    var imagePos = $(this).offset().top;
-
-                    var topOfWindow = $(window).scrollTop();
-                    if (imagePos < topOfWindow+400) {
-                        $(this).addClass("slideLeft");
-                    }
-                });
-            });
-        </script>
         @yield('scripts')
     </body>
 </html>
