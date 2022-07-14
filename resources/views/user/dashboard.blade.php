@@ -6,19 +6,19 @@
             <div class="container">
                 <div class="row hero-stats">
                 <div class="col-sm-3 col-md-3 col-xs-6">
-                    <div class="hero-stat">
+                    <div class="card">
                         <h3>{!! $today_clicks !!}</h3>
                         <h5 class="font-dark-gray">Today Clicks</h5>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3 col-xs-6">
-                    <div class="hero-stat">
+                    <div class="card">
                         <h3>{!! $today_leads !!}</h3>
                         <h5 class="font-dark-gray">Today Leads</h5>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3 col-xs-6">
-                    <div class="hero-stat">
+                    <div class="card">
                         <h3>@if($today_clicks === 0)
                                 n/a
                             @else
@@ -40,7 +40,7 @@
                 </div>
                 -->
                 <div class="col-sm-3 col-md-3 col-xs-6">
-                    <div class="hero-stat">
+                    <div class="card">
                         <h3>${!! number_format($earnings_today, 2) !!}</h3>
                         <h5 class="font-dark-gray">Today Earnings</h5>
                     </div>
