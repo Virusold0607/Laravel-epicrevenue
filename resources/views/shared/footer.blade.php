@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-xl-4 text-left">
-                <a href="{{ route('index') }}" class="text-black fs-24 fw-700 d-block"> 
+                <a href="{{ url('/') }}" class="text-black fs-24 fw-700 d-block"> 
                     <!--<img class="footer-logo" src="https://districtgurus.com/public/uploads/all/SC008HOLHmfOeB8E3SxNDONHI7nad1YJcmSl0ds9.png" data-src="https://districtgurus.com/public/uploads/all/SC008HOLHmfOeB8E3SxNDONHI7nad1YJcmSl0ds9.png" alt="District Gurus" height="20"> -->
                     #EpicRevenue
                 </a>
@@ -87,7 +87,7 @@
         <div class="row align-items-center">
             <div class="col-12">
                 <div class="text-left">
-                    &copy; Jewelry CG 2022. All Rights Reserved
+                    &copy; Epic Revenue 2022. All Rights Reserved
                 </div>
             </div>
         </div>
