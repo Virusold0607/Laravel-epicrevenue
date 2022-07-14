@@ -405,7 +405,7 @@ class RegisterController extends Controller
         $payment->send_to = $request->payment_method_detail;
         $payment->save();
 
-        $email_confirm_code = str_random(64);
+        $email_confirm_code = Str::random(64);
 
 
         $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
