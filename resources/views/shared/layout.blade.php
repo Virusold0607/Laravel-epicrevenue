@@ -46,7 +46,9 @@
     @include('shared/header')
 
     <!-- Page Content -->
+    <div class="content-wrap">
     @yield('body')
+    </div>
 
     <!-- Page Footer -->
     @include('shared/footer')
