@@ -13,10 +13,8 @@ header a.navbar-brand {
 header a.nav-link, header a.nav-link.dropdown-toggle {
     color: #FFFFFF;
 }
-header a.nav-link:hover, header a.nav-link.dropdown-toggle:hover, header .nav-link:focus {
+header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link:focus, header .navbar-nav .nav-link.active, header .navbar-nav .show>.nav-link {
     color: #377dff;
 }
-.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
-    color: #377dff;
-}
+
 
