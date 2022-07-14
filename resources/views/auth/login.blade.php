@@ -16,15 +16,17 @@
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <i class="glyphicon glyphicon-user"></i>
-                    <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" />
+                    <label class="fw-700 mb-2">Email Address</label>
+                    <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="" />
                     @if ($errors->has('email'))
-                    <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
+                    <span class="help-block "><strong>{{ $errors->first('email') }}</strong></span>
                     @endif
                 </div>
 
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <i class="glyphicon glyphicon-lock"></i>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                    <label class="fw-700 mb-2">Password</label>
+                    <input id="password" type="password" class="form-control" name="password" placeholder="">
                     @if ($errors->has('password'))
                     <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
                     @endif
