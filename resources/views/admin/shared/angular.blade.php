@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="{{ url('/assets/css/admin.css') }}">
 </head>
 <body>
-<--('admin.shared.angular-header')-->
-@include('admin.shared.header')
+@include('admin.shared.angular-header')
 <div class="container">
     @yield('body')
 
