@@ -14,10 +14,12 @@
         "google/apiclient": "^2.12",
         "guzzlehttp/guzzle": "^7.0.1",
         "jenssegers/agent": "^2.6",
+        "laravel/cashier": "^13.13",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.3",
         "torann/geoip": "^3.0"
     },
