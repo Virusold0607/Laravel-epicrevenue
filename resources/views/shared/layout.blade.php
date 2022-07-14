@@ -5,10 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <!-- Meta Title -->
+        @if(isset($meta->title))
+        <title>{{ $meta->title }} | Epic Revenue</title>
+        @else
+        <title>Epic Revenue</title>
+        @endif
+
         <!-- Meta Description -->
-        <title>@if(isset($meta->title)){{ $meta->title }} |@endif Epic Revenue</title>
-        @if(isset($meta->description))<meta name="description" itemprop="description" content="{{ $meta->description }}" />@endif
-        @if(isset($meta->keywords))<meta name="keywords" itemprop="keywords" content="{{ $meta->keywords }}" />@endif
+        @if(isset($meta->description))
+        <meta name="description" itemprop="description" content="{{ $meta->description }}" />@endif
+
+        <!-- Meta Tags -->
+        @if(isset($meta->keywords))
+        <meta name="keywords" itemprop="keywords" content="{{ $meta->keywords }}" />
+        @endif
 
         <!-- Icons -->
         <link rel="shortcut icon" type="image/png" href="{{ url('/assets/img/favicon.png') }}"/>
@@ -42,7 +53,7 @@
         @include('shared/footer')
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
         <script type="text/javascript" src="{{ url('/assets/js/main.js') }}"></script>
         <script>
             @if($navbar_inverse)
