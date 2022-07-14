@@ -310,7 +310,7 @@ class RegisterController extends Controller
         $api = new UserApi();
         $api_random = Str::random(32)
         $api->user_id = $user->id;
-        $api->key = str_random() . $user->id;
+        $api->key = $api_random . $user->id;
         $api->secret_key = $api_random . $user->id;
         $api->save();
 
