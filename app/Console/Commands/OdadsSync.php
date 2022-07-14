@@ -147,7 +147,7 @@ class OdadsSync extends Command
             {
                 if($targetsFind->where('id', $t->id)->isEmpty())
                 {
-                    $c->countries()->detach([Country::where('short_name', $t->country)->first()->id]);
+                    $c->countries()->detach([Country::where('code', $t->country)->first()->id]);
                     $t->active = 'no';
                     $t->save();
                 }
