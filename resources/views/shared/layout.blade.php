@@ -1,102 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>@if(isset($meta->title)){{ $meta->title }} |@endif Epic Revenue</title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
-    <link rel="shortcut icon" href="/images/favicon.ico">
-    <link rel="shortcut icon" type="image/png" href="{{url('/images/favicon.png')}}"/>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    @if(isset($meta->description))<meta name="description" itemprop="description" content="{{ $meta->description }}" />@endif
-    @if(isset($meta->keywords))<meta name="keywords" itemprop="keywords" content="{{ $meta->keywords }}" />@endif
+        <!-- Meta Description -->
+        <title>@if(isset($meta->title)){{ $meta->title }} |@endif Epic Revenue</title>
+        @if(isset($meta->description))<meta name="description" itemprop="description" content="{{ $meta->description }}" />@endif
+        @if(isset($meta->keywords))<meta name="keywords" itemprop="keywords" content="{{ $meta->keywords }}" />@endif
 
-    <link rel="stylesheet" href="https://use.typekit.net/wyt0fsl.css">
-    {{--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">--}}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{{url('/assets/css/main.css')}}">
-    @yield('styles')
-</head>
-<body @if(isset($bodyid))id="{{ $bodyid }}"@endif>
+        <!-- Icons -->
+        <link rel="shortcut icon" type="image/png" href="{{ url('/assets/img/favicon.png') }}"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+        <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
+        <link rel="shortcut icon" href="/images/favicon.ico">
+        <link rel="shortcut icon" type="image/png" href="{{url('/images/favicon.png')}}"/>
 
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
 
-    @include('shared/header')
+        <!-- Styles -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ url('/assets/css/core.css') }}">
+        <link rel="stylesheet" href="{{ url('/assets/css/app.css') }}">
 
+        <link rel="stylesheet" href="{{url('/assets/css/main.css')}}">
+        @yield('styles')
 
-    @yield('body')
+    </head>
+    <body @if(isset($bodyid))id="{{ $bodyid }}"@endif>
 
+        <!-- Page Heading -->
+        @include('shared/header')
 
-    @include('shared/footer')
+        <!-- Page Content -->
+        @yield('body')
 
+        <!-- Page Footer -->
+        @include('shared/footer')
 
-<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-<script type="text/javascript" src="{{ url('/assets/js/main.js') }}"></script>
-<script>
-    @if($navbar_inverse)
-    $(function(){
-        var shrinked = false;
-        var collapsed = false;
-        var shrinkHeader = 100;
-        $(window).scroll(function() {
-            var scroll = getCurrentScroll();
-            if(!collapsed) {
-                if ( scroll >= shrinkHeader ) {
-                    $('#navbar-header').removeClass('transparent-header');
-                    $('#navbar').removeClass('non-sticky');
-                    shrinked = true;
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+        <script type="text/javascript" src="{{ url('/assets/js/main.js') }}"></script>
+        <script>
+            @if($navbar_inverse)
+            $(function(){
+                var shrinked = false;
+                var collapsed = false;
+                var shrinkHeader = 100;
+                $(window).scroll(function() {
+                    var scroll = getCurrentScroll();
+                    if(!collapsed) {
+                        if ( scroll >= shrinkHeader ) {
+                            $('#navbar-header').removeClass('transparent-header');
+                            $('#navbar').removeClass('non-sticky');
+                            shrinked = true;
+                        }
+                        else {
+                            $('#navbar-header').addClass('transparent-header');
+                            $('#navbar').addClass('non-sticky');
+                            shrinked = false;
+                        }
+                    }
+                });
+                $('.navbar-toggle').on('click', function(){
+                    var scroll = getCurrentScroll();
+                    if(scroll <= shrinkHeader) {
+                        if ( !shrinked ) {
+                            $('#navbar-header').removeClass('transparent-header');
+                            $('#navbar').removeClass('non-sticky');
+                            shrinked = collapsed = true;
+                        } else {
+                            $('#navbar-header').addClass('transparent-header');
+                            $('#navbar').addClass('non-sticky');
+                            shrinked = collapsed = false;
+                        }
+                    }
+                });
+
+                function getCurrentScroll() {
+                    return window.pageYOffset || document.documentElement.scrollTop;
                 }
-                else {
-                    $('#navbar-header').addClass('transparent-header');
-                    $('#navbar').addClass('non-sticky');
-                    shrinked = false;
-                }
-            }
-        });
-        $('.navbar-toggle').on('click', function(){
-            var scroll = getCurrentScroll();
-            if(scroll <= shrinkHeader) {
-                if ( !shrinked ) {
-                    $('#navbar-header').removeClass('transparent-header');
-                    $('#navbar').removeClass('non-sticky');
-                    shrinked = collapsed = true;
-                } else {
-                    $('#navbar-header').addClass('transparent-header');
-                    $('#navbar').addClass('non-sticky');
-                    shrinked = collapsed = false;
-                }
-            }
-        });
+            });
+            @endif
+            $(window).scroll(function() {
+                $('#pop-up-message').each(function(){
+                    var imagePos = $(this).offset().top;
 
-        function getCurrentScroll() {
-            return window.pageYOffset || document.documentElement.scrollTop;
-        }
-    });
-    @endif
-    $(window).scroll(function() {
-        $('#pop-up-message').each(function(){
-            var imagePos = $(this).offset().top;
+                    var topOfWindow = $(window).scrollTop();
+                    if (imagePos < topOfWindow+400) {
+                        $(this).addClass("slideRight");
+                    }
+                });
+            });
+            $(window).scroll(function() {
+                $('#pop-up-message2').each(function(){
+                    var imagePos = $(this).offset().top;
 
-            var topOfWindow = $(window).scrollTop();
-            if (imagePos < topOfWindow+400) {
-                $(this).addClass("slideRight");
-            }
-        });
-    });
-    $(window).scroll(function() {
-        $('#pop-up-message2').each(function(){
-            var imagePos = $(this).offset().top;
-
-            var topOfWindow = $(window).scrollTop();
-            if (imagePos < topOfWindow+400) {
-                $(this).addClass("slideLeft");
-            }
-        });
-    });
-</script>
-@yield('scripts')
-
-</body>
+                    var topOfWindow = $(window).scrollTop();
+                    if (imagePos < topOfWindow+400) {
+                        $(this).addClass("slideLeft");
+                    }
+                });
+            });
+        </script>
+        @yield('scripts')
+    </body>
 </html>
