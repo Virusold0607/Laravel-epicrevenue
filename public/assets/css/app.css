@@ -7,6 +7,9 @@
 header {
     background: #000000;
 }
+header a.navbar-brand {
+    color: #ffffff;
+}
 header a.nav-link {
     color: #FFFFFF;
 }
