@@ -56,7 +56,7 @@ class Report extends Model
      */
     public function countries()
     {
-        return $this->belongsTo('App\Models\Country', 'country', 'short_name');
+        return $this->belongsTo('App\Models\Country', 'country', 'code');
     }
 
 
