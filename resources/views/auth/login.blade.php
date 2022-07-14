@@ -1,11 +1,11 @@
 @extends('shared/layout')
 @section('body')
 <div class="container">
-    <!-- Row -->
+    <!-- row -->
     <div class="row">
-        <!-- Col -->
+        <!-- col -->
         <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8 mx-auto">
-            <!-- Card -->
+            <!-- card -->
             <div class="px-4 py-3 py-lg-4 card rounded">
                 <form class="form-horizontal form-login" role="form" method="POST" action="{{ url('/login') }}">
                     {{ csrf_field() }}
@@ -30,21 +30,23 @@
                         @endif
                         <input id="password" type="password" class="form-control" name="password" placeholder="">
                     </div>
+
                     <div class="form-group">
                         <div class="checkbox">
                             <label><input type="checkbox" name="remember"> Remember Me</label>
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Login</button>
                         <a class="link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                     </div>
                 </form>
             </div>
-            <!-- !Card -->
+            <!-- !card -->
         </div>
-        <!-- !Col -->
+        <!-- !col -->
     </div>
-    <!-- !Row -->
+    <!-- !row -->
 </div>
 @endsection
