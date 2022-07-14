@@ -17,7 +17,7 @@
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <label class="fw-700 mb-2">Email Address</label>
                     @if ($errors->has('email'))
-                    <div class="text-danger fw-700 mb-2">{{ $errors->first('email') }}</div>
+                    <div class="alert alert-danger mb-2">{{ $errors->first('email') }}</div>
                     @endif
                     <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="" />
                 </div>
@@ -25,7 +25,7 @@
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <label class="fw-700 mb-2">Password</label>
                     @if ($errors->has('password'))
-                    <div class="text-danger fw-700 mb-2">{{ $errors->first('password') }}</div>
+                    <div class="alert alert-danger mb-2">{{ $errors->first('password') }}</div>
                     @endif
                     <input id="password" type="password" class="form-control" name="password" placeholder="">
                 </div>
