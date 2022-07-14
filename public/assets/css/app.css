@@ -2,3 +2,8 @@
 .container {
     max-width: 1440px;
 }
+
+/* HEADER */
+header {
+    background: #000000;
+}
