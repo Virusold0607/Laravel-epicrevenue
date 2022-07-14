@@ -306,7 +306,7 @@ class CampaignController extends Controller
         $file = $request->file('feature_image');
         $destinationPath = storage_path() . '/app/public/images/campaign/';
         $fileExt = $file->getClientOriginalExtension();
-        $filename = str_random() . "-" . strval(time()) . "." . $fileExt;
+        $filename = Str::random() . "-" . strval(time()) . "." . $fileExt;
         $file->move($destinationPath, $filename);
         $featured_img = $filename;
 
@@ -316,7 +316,7 @@ class CampaignController extends Controller
             // Store Image
             $destinationPath = storage_path() . '/app/public/images/campaign/';
             $fileExt = $file->getClientOriginalExtension();
-            $filename = "home-main-" . str_random() . "-" . strval(time()) . "." . $fileExt;
+            $filename = "home-main-" . Str::random() . "-" . strval(time()) . "." . $fileExt;
             $file->move($destinationPath, $filename);
             $homepage_featured_image = $filename;
         }
@@ -326,7 +326,7 @@ class CampaignController extends Controller
             // Store Image
             $destinationPath = storage_path() . '/app/public/images/campaign/';
             $fileExt = $file->getClientOriginalExtension();
-            $filename = "home-bg-" . str_random() . "-" . strval(time()) . "." . $fileExt;
+            $filename = "home-bg-" . Str::random() . "-" . strval(time()) . "." . $fileExt;
             $file->move($destinationPath, $filename);
             $homepage_featured_image_background = $filename;
         }
@@ -486,7 +486,7 @@ class CampaignController extends Controller
             // Store Image
             $destinationPath = storage_path() . '/app/public/images/campaign/';
             $fileExt = $file->getClientOriginalExtension();
-            $filename = str_random() . "-" . strval(time()) . "." . $fileExt;
+            $filename = Str::random() . "-" . strval(time()) . "." . $fileExt;
             $file->move($destinationPath, $filename);
             $c->featured_img = $filename;
         }
@@ -499,7 +499,7 @@ class CampaignController extends Controller
             // Store Image
             $destinationPath = storage_path() . '/app/public/images/campaign/';
             $fileExt = $file->getClientOriginalExtension();
-            $filename = "home-main-" . str_random() . "-" . strval(time()) . "." . $fileExt;
+            $filename = "home-main-" . Str::random() . "-" . strval(time()) . "." . $fileExt;
             $file->move($destinationPath, $filename);
             $c->homepage_featured_image = $filename;
         }
@@ -512,7 +512,7 @@ class CampaignController extends Controller
             // Store Image
             $destinationPath = storage_path() . '/app/public/images/campaign/';
             $fileExt = $file->getClientOriginalExtension();
-            $filename = "home-bg-" . str_random() . "-" . strval(time()) . "." . $fileExt;
+            $filename = "home-bg-" . Str::random() . "-" . strval(time()) . "." . $fileExt;
             $file->move($destinationPath, $filename);
             $c->homepage_featured_image_background = $filename;
         }
