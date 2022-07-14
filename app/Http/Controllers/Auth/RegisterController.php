@@ -23,6 +23,7 @@ use Socialite;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Str;
 //use App\Models\InstagramAccount;
 //use MetzWeb\Instagram\Instagram;
 
@@ -307,9 +308,10 @@ class RegisterController extends Controller
         $email->save();
 
         $api = new UserApi();
+        $api_random = Str::random(32)
         $api->user_id = $user->id;
         $api->key = str_random() . $user->id;
-        $api->secret_key = str_random(32) . $user->id;
+        $api->secret_key = $api_random . $user->id;
         $api->save();
 
         $this->guard()->login($user, true);
