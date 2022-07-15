@@ -95,7 +95,7 @@ $(function () {
                     if (num -1 === 1)
                 $('#btnDel').attr('disabled', true);
                 // enable the "add" button
-                $('#btnAdd').attr('disabled', false).prop('value', "add section");});
+                $('#btnAdd').attr('disabled', false).prop('value', "Add rule");});
             }
         return false; // Removes the last section you added
     });
