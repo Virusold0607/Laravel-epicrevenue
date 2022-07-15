@@ -28,7 +28,7 @@
 {!! Form::model($campaign, array('url' => '/admin/campaigns/', 'method' => 'post', 'enctype' => 'multipart/form-data', 'id' => 'addCamp')) !!}
     <div class="row">
         <div class="col-md-8">
-            <div class="card col-md-12 mb-4">
+            <div class="card p-3 mb-4">
                 {{-- Was there an error? --}}
                 @if (count($errors) > 0)
                     @foreach ($errors->all() as $error)
