@@ -78,27 +78,27 @@
                 </div>
             </div>
 
-            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="card-header-title mb-0">Featured Image</h3>
+                </div>
+                <div class="card-body">
+                    {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
+                    <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail"/>
+                    <script>
+                        var loadFile = function(event, id) {
+                            var output = document.getElementById(id);
+                            output.src = URL.createObjectURL(event.target.files[0]);
+                        };
+                    </script>
+                </div>
+            </div>
         </div>
         <!-- !col-md-4 -->
     </div>
     <!-- !row -->
             <table class="table table-striped table-bordered">
 
-
-                <tr>
-                    <td>Featured image:</td>
-                    <td>
-                        {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
-                        <img id="featured_image_output" class="img-responsive" style="max-height:300px;"/>
-                        <script>
-                            var loadFile = function(event, id) {
-                                var output = document.getElementById(id);
-                                output.src = URL.createObjectURL(event.target.files[0]);
-                            };
-                        </script>
-                    </td>
-                </tr>
 
 
                 <tr>
