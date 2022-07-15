@@ -275,7 +275,7 @@
             <div class="card-body">
                 <div class="row justify-content-center justify-content-sm-between">
                     <div class="col">
-                        <a href="{{ url('/admin/#/campaigns/') }}" class="btn btn-danger">Cancel</button>
+                        <a href="{{ url('/admin/#/campaigns/') }}" class="btn btn-danger">Cancel</a>
                     </div>
                     <!-- End Col -->
 
