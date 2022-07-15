@@ -83,7 +83,7 @@
                     <h3 class="card-header-title mb-0">Featured Image</h3>
                 </div>
                 <div class="card-body">
-                    <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail mb-2"/>
+                    <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail mb-2 w-100"/>
                     <script>
                         var loadFile = function(event, id) {
                             var output = document.getElementById(id);
