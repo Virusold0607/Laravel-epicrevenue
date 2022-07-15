@@ -43,8 +43,18 @@
                     </div>
 
                     <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Campaign Category:</label>
+                        {!! Form::select('category', $campaign_categories, null, ['placeholder' => 'Select Category', 'class' => 'form-control']) !!}
+                    </div>
+
+                    <div class="mb-2">
                         <label for="name" class="w-100 mb-2 fw-700">Campaign Description:</label>
                         {!! Form::textarea('description', null, array('cols' => '30', 'rows' => '6', 'class' => 'form-control')) !!}
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Campaign Requirements:</label>
+                        {!! Form::textarea('requirements', null, array('class' => 'form-control', 'cols' => '30', 'rows' => '6')) !!}
                     </div>
 
                 </div>
@@ -132,18 +142,8 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td valign="top">Campaign requirements:</td>
-                    <td>
-                        {!! Form::textarea('requirements', null, array('class' => 'form-control', 'cols' => '30', 'rows' => '6')) !!}
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">Campaign category:</td>
-                    <td>
-                        {!! Form::select('category', $campaign_categories, null, ['placeholder' => 'Select Category', 'class' => 'form-control']) !!}
-                    </td>
-                </tr>
+    
+
                 <tr>
                     <td valign="top">Cap:</td>
                     <td>
