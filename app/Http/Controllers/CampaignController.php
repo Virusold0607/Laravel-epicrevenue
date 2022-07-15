@@ -62,11 +62,11 @@ class CampaignController extends Controller
 
         $countries = Country::all();
         $country = new Country();
-        $country->code = 'All Countries';
+        $country->short_name = 'All Countries';
         $country->id = 0;
         $countries = $countries->push($country)
                                 ->sortBy('id')
-                                ->pluck('code', 'id');
+                                ->pluck('short_name', 'id');
         return view('user.campaigns.index')->with(compact('campaigns', 'countries', 'categories', 'category_selected'));
     }
 
