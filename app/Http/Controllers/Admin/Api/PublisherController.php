@@ -39,7 +39,7 @@ class PublisherController extends Controller
 
 
 
-        $query = $query->orderBy($request->input('order_by', 'id'), $request->input('order', 'dsc'));
+        $query = $query->orderBy($request->input('order_by', 'id'), $request->input('order', 'desc'));
 
         $publishers = $query->paginate(10);
 
