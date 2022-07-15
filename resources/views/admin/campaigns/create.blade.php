@@ -165,7 +165,7 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-2">
-                        {!! Form::checkbox('mobile', null) !!}
+                        {!! Form::checkbox('mobile', null, array('class' => 'form-check-input'))) !!}
                         <label class="form-check-label" for="flexCheckDefault">Mobile App Wall?:</label>
                         <div class="mb-2 fs-12">Shows campaign on mobile app wall if checked.</div>
                     </div>
