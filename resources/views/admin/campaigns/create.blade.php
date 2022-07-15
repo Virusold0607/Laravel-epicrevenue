@@ -10,7 +10,7 @@
 @endsection
 
 @section('body')
-blade 
+
     {!! Form::model($campaign, array('url' => '/admin/campaigns/', 'method' => 'post', 'enctype' => 'multipart/form-data', 'id' => 'addCamp')) !!}
         <div class="container">
             {{-- Was there an error? --}}
@@ -24,6 +24,7 @@ blade
                 </div>
             @endif
         </div>
+        <p>blade</p>
         <table class="table table-striped table-bordered">
             <tr>
                 <td>Campaign name:</td>
