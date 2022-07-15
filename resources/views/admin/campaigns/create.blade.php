@@ -78,61 +78,59 @@
                     <h3 class="card-header-title mb-0">Targeting</h3>
                 </div>
                 <div class="card-body">
-                    <div class="mb-2">
-                        <div id="entry1" class="clonedInput mb-4" style="display:none;">
-                            <div class="row">
-                                <div class="col-12 url mb-2">
-                                    <label for="name" class="w-100 mb-2 fw-700">URL</label>
-                                    <input class="form-control" type="text" name="tar_url[]" value="http://" />
-                                </div>
-                                <div class="col-4 mb-2"> 
-                                    <label for="name" class="w-100 mb-2 fw-700">Select Country</label>
-                                    <select class="form-control" name="tar_country[]">
-                                        <option value="">Select Country</option>
-                                        @foreach($countries as $id => $name)
-                                            <option value="{{ $name }}">{{ $name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-4 mb-2">
-                                    <label for="name" class="w-100 mb-2 fw-700">Select OS</label>
-                                    <select class="form-control" name="tar_os[]">
-                                        <option value="">Select OS</option>
-                                        <option value="AndroidOS">Android</option>
-                                        <option value="iOS">iOS</option>
-                                    </select>
-                                </div>
-                                <div class="col-4 mb-2">
-                                    <label for="name" class="w-100 mb-2 fw-700">Select Device</label>
-                                    <select name="tar_device[]" class="form-control">
-                                        <option value>Select Device</option>
-                                        <option value="Desktop">Desktop</option>
-                                        <option value="Mobile">Mobile</option>
-                                        <option value="Tablet">Tablet</option>
-                                    </select>
-                                </div>
-                                <div class="col-4">
-                                    <label for="name" class="w-100 mb-2 fw-700">Rate</label>
-                                    <input class="form-control" type="number" name="tar_rate[]" placeholder="Rate" value="" step='0.01' />
-                                </div>
-                                <div class="col-4">
-                                    <label for="name" class="w-100 mb-2 fw-700">Network Rate</label>
-                                    <input class="form-control" type="number" name="tar_network_rate[]" placeholder="Netwrok Rate" value="" step='0.01' />
-                                </div>
-                                
-                                <div class="col-auto">
-                                    <label for="name" class="w-100 mb-2 fw-700">Active ?</label>
-                                    <select name="tar_active[]" class="form-control">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select>
-                                </div>
+                    <div id="entry1" class="clonedInput mb-4" style="display:none;">
+                        <div class="row">
+                            <div class="col-12 url mb-2">
+                                <label for="name" class="w-100 mb-2 fw-700">URL</label>
+                                <input class="form-control" type="text" name="tar_url[]" value="http://" />
+                            </div>
+                            <div class="col-4 mb-2"> 
+                                <label for="name" class="w-100 mb-2 fw-700">Select Country</label>
+                                <select class="form-control" name="tar_country[]">
+                                    <option value="">Select Country</option>
+                                    @foreach($countries as $id => $name)
+                                        <option value="{{ $name }}">{{ $name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-4 mb-2">
+                                <label for="name" class="w-100 mb-2 fw-700">Select OS</label>
+                                <select class="form-control" name="tar_os[]">
+                                    <option value="">Select OS</option>
+                                    <option value="AndroidOS">Android</option>
+                                    <option value="iOS">iOS</option>
+                                </select>
+                            </div>
+                            <div class="col-4 mb-2">
+                                <label for="name" class="w-100 mb-2 fw-700">Select Device</label>
+                                <select name="tar_device[]" class="form-control">
+                                    <option value>Select Device</option>
+                                    <option value="Desktop">Desktop</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Tablet">Tablet</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <label for="name" class="w-100 mb-2 fw-700">Rate</label>
+                                <input class="form-control" type="number" name="tar_rate[]" placeholder="Rate" value="" step='0.01' />
+                            </div>
+                            <div class="col-4">
+                                <label for="name" class="w-100 mb-2 fw-700">Network Rate</label>
+                                <input class="form-control" type="number" name="tar_network_rate[]" placeholder="Netwrok Rate" value="" step='0.01' />
+                            </div>
+                            
+                            <div class="col-auto">
+                                <label for="name" class="w-100 mb-2 fw-700">Active ?</label>
+                                <select name="tar_active[]" class="form-control">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
                             </div>
                         </div>
-                        <div id="addDelButtons">
-                            <input type="button" class= "btn btn-primary" id="btnAdd" value="Add rule"> 
-                            <input type="button" class= "btn btn-danger" id="btnDel" value="Remove rule above">
-                        </div>
+                    </div>
+                    <div id="addDelButtons">
+                        <input type="button" class= "btn btn-primary" id="btnAdd" value="Add rule"> 
+                        <input type="button" class= "btn btn-danger" id="btnDel" value="Remove rule above">
                     </div>
                 </div>
             </div>
