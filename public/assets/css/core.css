@@ -93,7 +93,7 @@ a, button, input, textarea, .btn, .has-transition {
     -ms-flex-pack: justify;
     justify-content: space-between;
     position: relative;
-    padding: 12px 25px;
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
     border-bottom: 1px solid #ebedf2;
     min-height: 50px;
     border-top-left-radius: 4px;
