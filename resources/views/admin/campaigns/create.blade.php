@@ -165,11 +165,20 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-2">
+                        <div class="mb-2 fs-12">Campaign will show on mobile app wall if checked.</div>
                         {!! Form::checkbox('mobile', null) !!}
-                        <label class="form-check-label" for="flexCheckDefault">Mobile App Wall?:</label>
-                        <div class="mb-2 fs-12">Shows campaign on mobile app wall if checked.</div>
+                        <label class="form-check-label" for="flexCheckDefault">Mobile App Wall ?</label>
                     </div>
-
+                    <div class="mb-2">
+                        <div class="mb-2 fs-12">This will be an incentive campaign if checked.</div>
+                        {!! Form::checkbox('incent', null) !!}
+                        <label class="form-check-label" for="flexCheckDefault">Incentive ?</label>
+                    </div>
+                    <div class="mb-2">
+                        <div class="mb-2 fs-12">This will be a private campaign if checked.</div>
+                        {!! Form::checkbox('private', null) !!}
+                        <label class="form-check-label" for="flexCheckDefault">Private ?</label>
+                    </div>
                 </div>
             </div>
 
@@ -240,30 +249,15 @@
     </div>
     <!-- !row -->
             <table class="table table-striped table-bordered">
-                <tr>
-                    <td>Mobile App Wall?:</td>
-                    <td>
-                        {!! Form::checkbox('mobile', null) !!} <small>Check this box to upload mobile icon</small>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Incent?:</td>
-                    <td>
-                        {!! Form::checkbox('incent', null) !!} <small>Check this box to make incent</small>
-                    </td>
-                </tr>
+
+
                 <tr>
                     <td>For Snapaid?:</td>
                     <td>
                         {!! Form::checkbox('is_for_snapaid', null) !!} <small>Check this box to make it available for snapaid</small>
                     </td>
                 </tr>
-                <tr>
-                    <td valign="top">Private Campaign:</td>
-                    <td>
-                        {!! Form::checkbox('private', null) !!} <small>Automatically set campaigns as private, and only allow specific publishers to run it.</small>
-                    </td>
-                </tr>
+
 
                     <tr>
                         <td valign="top">Active ?</td>
