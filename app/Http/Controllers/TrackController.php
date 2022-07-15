@@ -10,7 +10,6 @@ use App\Models\UserBalance;
 use App\Models\UserBalanceHistory;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use App\Http\Helper;
 
 use App\Http\Requests;
@@ -146,7 +145,7 @@ class TrackController extends Controller
         if(! is_null($geoIP->state))
             $report->state       = $geoIP->state;
         if(! is_null($geoIP->country))
-            $report->country = (!is_null( $geoIP->isoCode ) ? $geoIP->isoCode : !is_null( $geoIP->country )) ? $geoIP->country : "Unknown";
+            $report->country     = !is_null( $geoIP->isoCode ) ? $geoIP->isoCode : !is_null( $geoIP->country ) ? $geoIP->country : "Unknown";
         if(! is_null($geoIP->postal_code))
             $report->postal      = $geoIP->postal_code;
 
@@ -341,7 +340,7 @@ class TrackController extends Controller
     {
         foreach($campaign_countries as $allowed_country)
         {
-            if($allowed_country->code == $geoIP->country)
+            if($allowed_country->short_name == $geoIP->country)
                 return true;
         }
         return false;
