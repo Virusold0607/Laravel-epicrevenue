@@ -79,7 +79,7 @@
                                 <div class="col-12 url mb-2">
                                     <input class="form-control" type="text" name="tar_url[]" value="http://" />
                                 </div>
-                                <div class="target-options row">
+                                <div class="target-options mb-2 row">
                                     <div class="col-4">
                                         <select class="form-control" name="tar_country[]">
                                             <option value="">Select Country</option>
@@ -107,14 +107,17 @@
                                 
                                 
                                 
-                                <div class="col-md-1 alpha">
+                                <div class="col-auto">
+                                    <label for="name" class="w-100 mb-2 fw-700">Rate:</label>
                                     <input class="form-control" type="number" name="tar_rate[]" placeholder="Rate" value="" step='0.01' />
                                 </div>
-                                <div class="col-md-1 alpha">
+                                <div class="col-auto">
+                                    <label for="name" class="w-100 mb-2 fw-700">Network Rate:</label>
                                     <input class="form-control" type="number" name="tar_network_rate[]" placeholder="Netwrok Rate" value="" step='0.01' />
                                 </div>
                                 
-                                <div class="col-md-1 alpha omega">
+                                <div class="col-auto">
+                                    <label for="name" class="w-100 mb-2 fw-700">Active ?:</label>
                                     <select name="tar_active[]" class="form-control">
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
