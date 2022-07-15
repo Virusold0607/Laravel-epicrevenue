@@ -69,6 +69,21 @@
                 </div>
             </div>
             <!-- !card -->
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-1 fw-700">Postback URL:</label>
+                        {!! Form::text('postback_url', null, array('class' => 'form-control', 'size' => '70')) !!}
+                    </div>
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-1 fw-700">Tracking Pixel:</label>
+                        {!! Form::textarea('tracking', null, array('class' => 'form-control', 'rows' => '6', 'cols' => '30')) !!}
+                    </div>
+                </div>
+            </div>
+            <!-- !card -->
+
         </div>
         <!-- !col-md-8 -->
 
@@ -204,12 +219,7 @@
                 </tr>
  
 
-                <tr>
-                    <td valign="top">Postback URL:</td>
-                    <td>
-                        {!! Form::text('postback_url', null, array('class' => 'form-control', 'size' => '70')) !!}
-                    </td>
-                </tr>
+
                 <tr>
                     <td valign="top">Targeting:</td>
                     <td>
@@ -261,12 +271,6 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td valign="top">Tracking Pixel:</td>
-                    <td>
-                        {!! Form::textarea('tracking', null, array('class' => 'form-control', 'rows' => '6', 'cols' => '30')) !!}
-                    </td>
-                </tr>
 
                     <tr>
                         <td valign="top">Active ?</td>
