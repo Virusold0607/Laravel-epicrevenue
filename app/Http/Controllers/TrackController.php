@@ -365,7 +365,7 @@ class TrackController extends Controller
     public static function checkTotalCap(Campaign $campaign) {
         //return $campaign->reports()->where('status', 2)->count() > $campaign->cap;
         // OR
-         $campaign->cap <= return $campaign->reports()->where('status', 2)->count();
+         //$campaign->cap <= return $campaign->reports()->where('status', 2)->count();
     }
 
     public static function checkDailyCap(Campaign $campaign) {
