@@ -26,19 +26,14 @@
 </div>
 
     {!! Form::model($campaign, array('url' => '/admin/campaigns/', 'method' => 'post', 'enctype' => 'multipart/form-data', 'id' => 'addCamp')) !!}
-        <div class="container">
-            {{-- Was there an error? --}}
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-        </div>
-        <p>blade</p>
+
+        {{-- Was there an error? --}}
+        @if (count($errors) > 0)
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{ $error }}</div>
+            @endforeach
+        @endif
+
         <table class="table table-striped table-bordered">
             <tr>
                 <td>Campaign name:</td>
