@@ -31,7 +31,7 @@ class CampaignController extends Controller
             $query = $query->where($request->input('search_by', 'id'), 'like', '%' . $request->input('search') . '%');
         }
 
-        $query = $query->orderBy($request->input('order_by', 'active'), $request->input('order', 'dsc'));
+        $query = $query->orderBy($request->input('order_by', 'active'), $request->input('order', 'desc'));
 
         $campaigns = $query->paginate(10);
 
