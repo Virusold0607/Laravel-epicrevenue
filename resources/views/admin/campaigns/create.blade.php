@@ -1,15 +1,29 @@
 @extends('admin.shared.layout')
 
-@section('styles')
-
-@endsection
-
-@section('scripts')
-    <script src="{{ url('/admin_assets/js/script_upload_images.js') }}"></script>
-    <script src="{{ url('/admin_assets/js/clone-form-td.js') }}"></script>
-@endsection
-
 @section('body')
+
+<div class="page-header mb-4">
+    <div class="row align-items-center">
+        <div class="col-sm mb-2 mb-sm-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-no-gutter">
+                    <li class="breadcrumb-item"><a class="breadcrumb-link" href="#">Campaigns</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Campaign</li>
+                </ol>
+            </nav>
+
+            <h1 class="page-header-title">Create Campaign</h1>
+
+            <div class="mt-2">
+                <a class="text-body" href="#">
+                    <i class="bi-eye me-1"></i> Preview
+                </a>
+            </div>
+        </div>
+        <!-- End Col -->
+    </div>
+    <!-- End Row -->
+</div>
 
     {!! Form::model($campaign, array('url' => '/admin/campaigns/', 'method' => 'post', 'enctype' => 'multipart/form-data', 'id' => 'addCamp')) !!}
         <div class="container">
@@ -245,4 +259,9 @@
         </table>
     {!! Form::close() !!}
 
+@endsection
+
+@section('scripts')
+    <script src="{{ url('/admin_assets/js/script_upload_images.js') }}"></script>
+    <script src="{{ url('/admin_assets/js/clone-form-td.js') }}"></script>
 @endsection
