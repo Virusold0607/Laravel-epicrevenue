@@ -23,7 +23,7 @@ class ReportsController extends Controller
         $search_by = $request->input('search_by', 'reports.id');
         $search    = $request->input('search', '');
         $order_by  = $request->input('search_by', 'reports.id');
-        $order     = $request->input('order', 'dsc');
+        $order     = $request->input('order', 'desc');
 
         $query = Report::with('campaign');
 
