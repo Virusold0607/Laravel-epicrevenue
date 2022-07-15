@@ -164,17 +164,17 @@
                     <h3 class="card-header-title mb-0">Options</h3>
                 </div>
                 <div class="card-body">
-                    <div class="mb-2">
+                    <div class="mb-2 pb-2 border-bottom">
                         <label for="name" class="w-100 mb-2 fw-700">Active ?</label>
                         {!! Form::radio('active', 'yes', true) !!} Yes
                         {!! Form::radio('active', 'no', false) !!} No
                     </div>
-                    <div class="mb-2">
+                    <div class="mb-2 border-bottom">
                         {!! Form::checkbox('mobile', null) !!}
                         <label class="form-check-label" for="flexCheckDefault">Mobile App Wall ?</label>
                         <div class="mb-2 fs-12">Campaign will show on mobile app wall if checked.</div>
                     </div>
-                    <div class="mb-2">
+                    <div class="mb-2 border-bottom">
                         {!! Form::checkbox('incent', null) !!}
                         <label class="form-check-label" for="flexCheckDefault">Incentive ?</label>
                         <div class="mb-2 fs-12">This will be an incentive campaign if checked.</div>
