@@ -85,7 +85,7 @@ class TrackController extends Controller
         if($campaign->cap !== 0)
         {
             // Check if total cap or daily cap reached
-            if($this->checkTotalCap($campaign) || $this->checkDailyCap($campaign))
+            if((!$this->checkTotalCap($campaign)) || (!$this->checkDailyCap($campaign)))
             {
                 $campaign->active = 'no';
                 $campaign->save();
@@ -359,11 +359,11 @@ class TrackController extends Controller
     */
 
     public static function checkTotalCap(Campaign $campaign) {
-        return $campaign->reports()->where('status', 2)->count() !>= $campaign->cap;
+        return $campaign->reports()->where('status', 2)->count() >= $campaign->cap;
     }
 
     public static function checkDailyCap(Campaign $campaign) {
-        return $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count() !>= $campaign->daily_cap;
+        return $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count() >= $campaign->daily_cap;
     }
  
 }
