@@ -363,15 +363,15 @@ class TrackController extends Controller
     */
 
     public static function checkTotalCap(Campaign $campaign) {
-        return $campaign->reports()->where('status', 2)->count() > $campaign->cap;
+        //return $campaign->reports()->where('status', 2)->count() > $campaign->cap;
         // OR
-        // $campaign->cap <= return $campaign->reports()->where('status', 2)->count();
+         $campaign->cap <= return $campaign->reports()->where('status', 2)->count();
     }
 
     public static function checkDailyCap(Campaign $campaign) {
-        return $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count() > $campaign->daily_cap;
+        //return $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count() > $campaign->daily_cap;
         // OR
-        // return $campaign->daily_cap <= $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count();
+         return $campaign->daily_cap <= $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count();
     }
  
 }
