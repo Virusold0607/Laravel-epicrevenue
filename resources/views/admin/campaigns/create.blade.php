@@ -29,6 +29,9 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="card-header-title mb-0">Campaign Details</h3>
+                </div>
                 <div class="card-body">
                     {{-- Was there an error? --}}
                     @if (count($errors) > 0)
@@ -71,9 +74,11 @@
             <!-- !card -->
 
             <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="card-header-title mb-0">Targeting</h3>
+                </div>
                 <div class="card-body">
                     <div class="mb-2">
-                        <label for="name" class="w-100 mb-2 fw-700">Targeting:</label>
                         <div id="entry1" class="clonedInput mb-4" style="display:none;">
                             <div class="row">
                                 <div class="col-12 url mb-2">
@@ -108,9 +113,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                
-                                
-                                
                                 <div class="col-auto">
                                     <label for="name" class="w-100 mb-2 fw-700">Rate</label>
                                     <input class="form-control" type="number" name="tar_rate[]" placeholder="Rate" value="" step='0.01' />
@@ -139,6 +141,9 @@
             <!-- !card -->
 
             <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="card-header-title mb-0">Tracking</h3>
+                </div>
                 <div class="card-body">
                     <div class="mb-2">
                         <label for="name" class="w-100 mb-1 fw-700">Postback URL:</label>
