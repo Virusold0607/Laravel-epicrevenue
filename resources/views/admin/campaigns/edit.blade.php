@@ -1,15 +1,7 @@
 @extends('admin.shared.layout')
 
-@section('styles')
-
-@endsection
-
-@section('scripts')
-    <script src="{{ url('/admin_assets/js/script_upload_images.js') }}"></script>
-    <script src="{{ url('/admin_assets/js/clone-form-td-2.js') }}"></script>
-@endsection
-
 @section('body')
+Glt bow
     {!! Form::model($campaign, array('url' => '/admin/campaigns/' . $campaign->id, 'method' => 'put', 'enctype' => 'multipart/form-data', 'id' => 'addCamp')) !!}
     <div class="container">
         {{-- Was there an error? --}}
@@ -305,4 +297,9 @@
     </table>
     {!! Form::close() !!}
 
+@endsection
+
+@section('scripts')
+    <script src="{{ url('/admin_assets/js/script_upload_images.js') }}"></script>
+    <script src="{{ url('/admin_assets/js/clone-form-td-2.js') }}"></script>
 @endsection
