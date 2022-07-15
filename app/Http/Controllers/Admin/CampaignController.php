@@ -10,7 +10,6 @@ use App\Models\Country;
 use App\Models\HomepageFeaturedCampaign;
 use App\Models\Postback;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Validator;
 use Storage;
 
@@ -164,7 +163,7 @@ class CampaignController extends Controller
                             $cc->rate             = ($offer->payout / 100) * 70;
                             $cc->network_rate     = $offer->payout;
                             $cc->url              = $offer->link . "&".$network->ch_slot . "={hash}";
-                            $cc->country          = $country->code;
+                            $cc->country          = $country->short_name;
                             $cc->network_campaign_id = $offer->offerid;
 
                             if($device == 'iPhone' || $device == 'Android')
@@ -189,7 +188,7 @@ class CampaignController extends Controller
         $c = collect();
         foreach ($countries as $country)
         {
-            $x = Country::where('code', $country)->first();
+            $x = Country::where('iso2', $country)->first();
             if(!is_null($x))
                 $c->push($x);
         }
@@ -254,7 +253,7 @@ class CampaignController extends Controller
     {
         $campaign = new Campaign();
         $campaign_categories = CampaignsCategory::all()->pluck('name', 'id');
-        $countries = Country::all()->pluck('code', 'id');
+        $countries = Country::all()->pluck('short_name', 'id');
         $networks = Postback::all()->pluck('name', 'id');
 
         return view('admin.campaigns.create')
@@ -426,7 +425,7 @@ class CampaignController extends Controller
     {
         $campaign = Campaign::find($id);
         $campaign_categories = CampaignsCategory::all()->pluck('name', 'id');
-        $countries = Country::all()->pluck('code', 'id');
+        $countries = Country::all()->pluck('short_name', 'id');
         $networks = Postback::all()->pluck('name', 'id');
         $campaign_targets = $campaign->targets;
 
