@@ -109,6 +109,23 @@
                     {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
                 </div>
             </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="card-header-title mb-0">Cap</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Cap:</label>
+                        {!! Form::number('cap', 10000, array('class' => 'form-control')) !!}
+                    </div>
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Daily Cap:</label>
+                        {!! Form::number('daily_cap', 1000, array('class' => 'form-control', 'min' => '1')) !!}
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- !col-md-4 -->
     </div>
@@ -168,18 +185,8 @@
 
     
 
-                <tr>
-                    <td valign="top">Cap:</td>
-                    <td>
-                        {!! Form::number('cap', 1000, array('class' => 'form-control')) !!}
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">Daily Cap:</td>
-                    <td>
-                        {!! Form::number('daily_cap', 0, array('class' => 'form-control', 'min' => '1')) !!}
-                    </td>
-                </tr>
+
+
                 <tr>
                     <td valign="top">Private Campaign:</td>
                     <td>
