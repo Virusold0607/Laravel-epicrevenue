@@ -75,7 +75,7 @@
                     <div class="mb-2">
                         <label for="name" class="w-100 mb-1 fw-700">Targeting:</label>
                         <div id="entry1" class="clonedInput" style="display:none;">
-                            <div style="margin-bottom:10px;float: left;width: 100%;">
+                            <div class="row">
                                 <div class="col-md-2 alpha">
                                     <select class="form-control" name="tar_country[]">
                                         <option value="">Select Country</option>
