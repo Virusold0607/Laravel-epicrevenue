@@ -13,7 +13,7 @@
               </a>
             </div>
 
-          <span class="dropdown-header">{{ __("Users Management") }}</span>
+          <span class="dropdown-header">{{ __("Management") }}</span>
 
           <!-- Collapse -->
           <div class="navbar-nav nav-compact">
@@ -31,9 +31,24 @@
                 <a class="nav-link " href="/admin/#/publishers">{{ __("All Publishers") }} <span class="badge bg-primary rounded-pill ms-1">5</span></a>
                 <a class="nav-link " href="/admin/#/publishers/my">{{ __("My Publishers") }}</a>
                 <a class="nav-link " href="/admin/#/socialaccounts">{{ __("Social Accounts") }} <span class="badge bg-primary rounded-pill ms-1">5</a>
+                <a class="nav-link " href="{{ url('/publishers/pendingW9') }}">{{ __("Pending W9") }}</a>
               </div>
             </div>
             <!-- End Collapse -->
+
+            <div class="nav-item">
+              <a class="nav-link " href="{{ url('/admin/payments/') }}" data-placement="left">
+                <i class="bi-folder2-open nav-icon"></i>
+                <span class="nav-link-title">Payments</span>
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link " href="{{ url('/admin/support/') }}" data-placement="left">
+                <i class="bi-folder2-open nav-icon"></i>
+                <span class="nav-link-title">Support Tickets</span>
+              </a>
+            </div>
 
             <span class="dropdown-header mt-4">{{ __("Content") }}</span>
 
@@ -48,7 +63,7 @@
                 <a class="nav-link activeee" href="/admin/#/campaigns/">{{ __("View Campaigns") }}</a>
                 <a class="nav-link activeee" href="{{ url('/admin/campaigns/create') }}">{{ __("Add Campaign") }}</a>
                 <a class="nav-link activeee" href="{{ url('/admin/campaigns/categories') }}">{{ __("Categories") }}</a>
-                <a class="nav-link activeee" href="{{ url('/admin/campaigns/featured') }}">{{ __("Homepage Featured") }}</a>
+                <a class="nav-link activeee" href="{{ url('/admin/campaigns/featured') }}">{{ __("Featured") }}</a>
                 <a class="nav-link activeee" href="{{ url('/admin/campaigns/rates') }}">{{ __("Custom rates") }}</a>
                 <a class="nav-link activeee" href="{{ url('/admin/campaigns/block/?subids') }}">{{ __("SubID's block") }}</a>
                 <a class="nav-link activeee" href="{{ url('/admin/campaigns/block/?singleBlock') }}">{{ __("Single block") }}</a>
@@ -86,33 +101,59 @@
             </div>
             <!-- End Collapse -->
 
+            <!-- Collapse -->
             <div class="nav-item">
-              <a class="nav-link nav-link-main " href="/admin/#/reports/" data-placement="left">
+              <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllContestMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllContestMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllContestMenu">
+                <i class="bi bi-receipt nav-icon"></i>
+                <span class="nav-link-title">{{ __("Contest") }}</span>
+              </a>
+              <div id="navbarVerticalMenuAllContestMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
+                <a class="nav-link activeee" href="#/contests/">{{ __("All Contest") }}</a>
+                <a class="nav-link " href="{{ url('/admin/rewards/create') }}">{{ __("Create Contest") }}</a>
+              </div>
+            </div>
+            <!-- End Collapse -->
+
+            <span class="dropdown-header mt-4">{{ __("General") }}</span>
+
+            <div class="nav-item">
+              <a class="nav-link " href="#/reports/" data-placement="left">
                 <i class="bi-folder2-open nav-icon"></i>
                 <span class="nav-link-title">Reports</span>
               </a>
             </div>
 
-
-            <span class="dropdown-header mt-4">{{ __("General") }}</span>
-
             <!-- Collapse -->
             <div class="nav-item">
-              <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllOrdersMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllOrdersMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllOrdersMenu">
+              <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllLogssMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllLogssMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllLogssMenu">
                 <i class="bi bi-receipt nav-icon"></i>
-                <span class="nav-link-title">{{ __("Reports") }}</span>
+                <span class="nav-link-title">{{ __("Postbacks") }}</span>
               </a>
-              <div id="navbarVerticalMenuAllOrdersMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
-                <a class="nav-link activeee" href="{{ url('/admin/rewards') }}">{{ __("View Rewards") }}</a>
-                <a class="nav-link " href="{{ url('/admin/rewards/create') }}">{{ __("Add Reward") }}</a>
+              <div id="navbarVerticalMenuAllLogssMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
+                <a class="nav-link activeee" href="{{ url('/admin/postbacks/') }}">{{ __("All Postbacks") }}</a>
+                <a class="nav-link " href="{{ url('/admin/tools/postbackTest') }}">{{ __("Postbacks Test") }}</a>
               </div>
             </div>
             <!-- End Collapse -->
 
+            <!-- Collapse -->
+            <div class="nav-item">
+              <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllLogssMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllLogssMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllLogssMenu">
+                <i class="bi bi-receipt nav-icon"></i>
+                <span class="nav-link-title">{{ __("Logs") }}</span>
+              </a>
+              <div id="navbarVerticalMenuAllLogssMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
+                <a class="nav-link activeee" href="{{ url('/admin/tools/postbackTest') }}">{{ __("Postback Logs") }}</a>
+                <a class="nav-link " href="{{ url('/admin/publishers/failedLogins') }}">{{ __("Failed Logins") }}</a>
+              </div>
+            </div>
+            <!-- End Collapse -->
+
+
             <div class="nav-item">
               <a class="nav-link nav-link-main " href="#" data-placement="left">
                 <i class="bi-key nav-icon"></i>
-                <span class="nav-link-title">API Keys</span>
+                <span class="nav-link-title">keys</span>
               </a>
             </div>
 
