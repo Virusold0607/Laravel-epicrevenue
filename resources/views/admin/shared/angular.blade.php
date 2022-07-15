@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" />
     @yield('styles')
-    <link rel="stylesheet" href="{{ url('/assets/css/admin.css') }}">
+    <!--<link rel="stylesheet" href="{{ url('/assets/css/admin.css') }}">-->
 </head>
 
 <body>
@@ -45,18 +45,15 @@
 </footer>
 
 <!-- JS Global Compulsory  -->
-<!--
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 
--->
 <!-- JS Front -->
-<!--
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.1.0/trumbowyg.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
--->
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 <script type="text/javascript" src="{{ url('/assets/js/admin.js') }}"></script>
 <script type="text/javascript" src="{{ url('/assets/js/admin-angular.js') }}"></script>
