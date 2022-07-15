@@ -64,7 +64,7 @@
                   <span class="nav-link-title">{{ __("Promotions") }}</span>
                 </a>
 
-                <div id="navbarVerticalMenuAllPagesMenu" class="nav-collapse collapse @if($activePage == 'pages') show @endif" data-bs-parent="#navbarVerticalMenuPagesMenu">
+                <div id="navbarVerticalMenuAllPagesMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
                   <a class="nav-link " href="{{ url('/admin/promotions/') }}">{{ __("View Promotions") }}</a>
                   <a class="nav-link " href="{{ url('/admin/promotions/create') }}">{{ __("Add Promotion") }}</a>
                   <a class="nav-link " href="{{ url('/admin/promotions/categories') }}">{{ __("Categories") }}</a>
@@ -73,69 +73,41 @@
               </div>
               <!-- End Collapse -->
 
-              <div class="nav-item">
-                <a class="nav-link nav-link-main " href="{{ route('backend.filemanager.list')}}" data-placement="left">
-                  <i class="bi-folder2-open nav-icon"></i>
-                  <span class="nav-link-title">File Manager</span>
-                </a>
-              </div>
-
-              <span class="dropdown-header mt-4">{{ __("Commerce") }}</span>
-
-              <!-- Collapse -->
-              <div class="nav-item">
-                <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllProductsMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllProductsMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllProductsMenu">
-                  <i class="bi-basket nav-icon"></i>
-                  <span class="nav-link-title">{{ __("Products") }}</span>
-                </a>
-
-                <div id="navbarVerticalMenuAllProductsMenu" class="nav-collapse collapse @if($activePage == 'products') show @endif" data-bs-parent="#navbarVerticalMenuPagesMenu">
-                  <a class="nav-link @if($navName == 'allproducts') active @endif" href="{{ route('backend.products.list') }}">{{ __("All Products") }}</a>
-                  <a class="nav-link @if($navName == 'addproduct') active @endif" href="{{ route('backend.products.create') }}">{{ __("Create Product") }}</a>
-                  <a class="nav-link @if($navName == 'attributes') active @endif " href="{{route('backend.products.attributes.list')}}">{{ __("Attributes") }}</a>
-                  <a class="nav-link @if($navName == 'productscategories') active @endif" href="{{ route('backend.products.categories.list') }}">{{ __("Categories") }}</a>
-                  <a class="nav-link @if($navName == 'productstags') active @endif" href="{{ route('backend.products.tags.list') }}">{{ __("Tags") }}</a>
-                  <a class="nav-link @if($navName == 'productstrash') active @endif" href="{{ route('backend.products.trash') }}">{{ __("Trash") }}</a>
-                </div>
-              </div>
-              <!-- End Collapse -->
-
               <!-- Collapse -->
               <div class="nav-item">
                 <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllOrdersMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllOrdersMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllOrdersMenu">
                   <i class="bi bi-receipt nav-icon"></i>
-                  <span class="nav-link-title">{{ __("Orders") }}</span>
+                  <span class="nav-link-title">{{ __("Rewards") }}</span>
                 </a>
-
-                <div id="navbarVerticalMenuAllOrdersMenu" class="nav-collapse collapse @if($activePage == 'orders') show @endif" data-bs-parent="#navbarVerticalMenuPagesMenu">
-                  <a class="nav-link @if($navName == 'orderslist') active @endif" href="{{ route('backend.orders.list') }}">{{ __("All Orders") }}</a>
-                  <a class="nav-link " href="{{ route('backend.orders.pending') }}">{{ __("Pending") }} <span class="badge bg-primary rounded-pill ms-1">5</span></a>
+                <div id="navbarVerticalMenuAllOrdersMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
+                  <a class="nav-link activeee" href="{{ url('/admin/rewards') }}">{{ __("View Rewards") }}</a>
+                  <a class="nav-link " href="{{ url('/admin/rewards/create') }}">{{ __("Add Reward") }}</a>
                 </div>
               </div>
               <!-- End Collapse -->
 
               <div class="nav-item">
-                <a class="nav-link nav-link-main " href="#" data-placement="left">
-                  <i class="bi-folder2-open nav-icon"></i>
-                  <span class="nav-link-title">Coupons</span>
-                </a>
-              </div>
-
-              <div class="nav-item">
-                <a class="nav-link nav-link-main " href="#" data-placement="left">
+                <a class="nav-link nav-link-main " href="/admin/#/reports/" data-placement="left">
                   <i class="bi-folder2-open nav-icon"></i>
                   <span class="nav-link-title">Reports</span>
                 </a>
               </div>
 
-              <span class="dropdown-header mt-4">{{ __("Configuration") }}</span>
 
+              <span class="dropdown-header mt-4">{{ __("General") }}</span>
+
+              <!-- Collapse -->
               <div class="nav-item">
-                <a class="nav-link nav-link-main " href="#" data-placement="left">
-                  <i class="bi-key nav-icon"></i>
-                  <span class="nav-link-title">General</span>
+                <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllOrdersMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllOrdersMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllOrdersMenu">
+                  <i class="bi bi-receipt nav-icon"></i>
+                  <span class="nav-link-title">{{ __("Reports") }}</span>
                 </a>
+                <div id="navbarVerticalMenuAllOrdersMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
+                  <a class="nav-link activeee" href="{{ url('/admin/rewards') }}">{{ __("View Rewards") }}</a>
+                  <a class="nav-link " href="{{ url('/admin/rewards/create') }}">{{ __("Add Reward") }}</a>
+                </div>
               </div>
+              <!-- End Collapse -->
 
               <div class="nav-item">
                 <a class="nav-link nav-link-main " href="#" data-placement="left">
