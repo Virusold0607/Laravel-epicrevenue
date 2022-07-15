@@ -11,6 +11,7 @@ use App\Models\UserBalanceHistory;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Helper;
+use Illuminate\Support\Str;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
