@@ -189,7 +189,7 @@ class CampaignController extends Controller
         $c = collect();
         foreach ($countries as $country)
         {
-            $x = Country::where('iso2', $country)->first();
+            $x = Country::where('code', $country)->first();
             if(!is_null($x))
                 $c->push($x);
         }
