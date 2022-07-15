@@ -38,7 +38,6 @@ class TrackController extends Controller
             return "Sorry, Something went wrong!!!";
         }
 
-//        if((bool) $report->is_for_snapaid)
         if($report->subid1 == 'snapaid')
         {
             $this->handleSnapaidPostback($report);
