@@ -267,14 +267,32 @@
                         </td>
                     </tr>
 
-                    <tr>
-                        <td></td>
-                        <td>
-                            {!! Form::submit('Add Campaign', array('class' => 'btn btn-primary')) !!}
-                        </td>
-                    </tr>
             </table>
         
+    <div class="position-fixed start-50 bottom-0 translate-middle-x w-100 zi-99 mb-3" style="max-width: 40rem;">
+        <!-- Card -->
+        <div class="card card-sm bg-dark border-dark mx-2">
+            <div class="card-body">
+                <div class="row justify-content-center justify-content-sm-between">
+                    <div class="col">
+                        <a href="{{ url('/admin/#/campaigns/') }}" class="btn btn-danger">Cancel</button>
+                    </div>
+                    <!-- End Col -->
+
+                    <div class="col-auto">
+                        <div class="d-flex gap-3">
+                            {!! Form::submit('Add Campaign', array('class' => 'btn btn-primary')) !!}
+                        </div>
+                    </div>
+                    <!-- End Col -->
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Card-body --> 
+        </div>
+        <!-- End Card --> 
+    </div>  
+         
 {!! Form::close() !!}
 
 @endsection
