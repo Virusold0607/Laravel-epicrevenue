@@ -100,6 +100,9 @@ a, button, input, textarea, .btn, .has-transition {
     border-top-right-radius: 4px;
     background-color: transparent;
 }
+h3.card-header-title {
+    margin-bottom: 0;
+}
 /*button element*/
 .btn.focus,
 .btn:focus:not(.btn-shadow) {
