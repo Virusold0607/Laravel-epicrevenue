@@ -183,10 +183,7 @@ class TrackController extends Controller
         if( str_contains($redirect_url, '{pubid}') )
             $redirect_url = str_replace("{pubid}", $report->user_id, $redirect_url);
 
-/*
-        if($request->getClientIp() === session('ip'))
-            return response('Unauthorized.', 401);
-*/
+
             
         session(['ip' => $request->getClientIp()]);
         if ($agent->isMobile() || $agent->isTablet())
@@ -362,11 +359,11 @@ class TrackController extends Controller
     */
 
     public static function checkTotalCap(Campaign $campaign) {
-        //return $campaign->reports()->where('status', 2)->count() > $campaign->cap;
+        return $campaign->reports()->where('status', 2)->count() <= $campaign->cap;
     }
 
     public static function checkDailyCap(Campaign $campaign) {
-        return $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count() > $campaign->daily_cap;
+        return $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count() <= $campaign->daily_cap;
     }
  
 }
