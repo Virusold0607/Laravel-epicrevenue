@@ -28,19 +28,28 @@
 {!! Form::model($campaign, array('url' => '/admin/campaigns/', 'method' => 'post', 'enctype' => 'multipart/form-data', 'id' => 'addCamp')) !!}
     <div class="row">
         <div class="col-md-8">
-            <div class="card p-3 mb-4">
-                {{-- Was there an error? --}}
-                @if (count($errors) > 0)
-                    @foreach ($errors->all() as $error)
-                        <div class="alert alert-danger">{{ $error }}</div>
-                    @endforeach
-                @endif
+            <div class="card mb-4">
+                <div class="card-body">
+                    {{-- Was there an error? --}}
+                    @if (count($errors) > 0)
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger">{{ $error }}</div>
+                        @endforeach
+                    @endif
+                </div>
             </div>
             <!-- !card -->
         </div>
         <!-- !col-md-8 -->
-        <div class="col-md-4">
 
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+
+                </div>
+            </div>
+
+            
         </div>
         <!-- !col-md-4 -->
     </div>
