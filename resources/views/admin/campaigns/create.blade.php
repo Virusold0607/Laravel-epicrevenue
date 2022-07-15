@@ -161,6 +161,20 @@
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-header">
+                    <h3 class="card-header-title mb-0">Options</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-2">
+                        {!! Form::checkbox('mobile', null) !!}
+                        <label class="form-check-label" for="flexCheckDefault">Mobile App Wall?:</label>
+                        <div class="mb-2 fs-12">Shows campaign on mobile app wall if checked.</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
                     <h3 class="card-header-title mb-0">Rates</h3>
                 </div>
                 <div class="card-body">
