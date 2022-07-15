@@ -34,7 +34,7 @@
     <div class="content-wrap">
         <div class="container">
             <div class="row">
-                //sidebar
+                @include('admin.shared.sidebar')
                 <div class="col-lg-auto col-sm-12">
                     <!-- Content -->
                     <div class="content py-3">
