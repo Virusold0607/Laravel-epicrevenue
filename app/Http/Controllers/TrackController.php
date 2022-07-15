@@ -207,16 +207,6 @@ class TrackController extends Controller
                         <div class="spinner"></div>
                         <h3>If you are not redirected,<br/><br/><a href="'.url($redirect_url).'" class="ir-redirect">Click here</a></h3>
                         <meta http-equiv="refresh" content="2; url='.url($redirect_url).'">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37796498-35"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag(\'js\', new Date());
-
-  gtag(\'config\', \'UA-37796498-35\');
-</script>
-
                     </body>
                 </html>';
         }
@@ -237,15 +227,7 @@ class TrackController extends Controller
                             <div class="spinner"></div>
                             <h3>If you are not redirected,<br/><br/><a href="'.url($redirect_url).'" class="ir-redirect">Click here</a></h3>
                             <meta http-equiv="refresh" content="2; url='.url($redirect_url).'">
-                            <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37796498-35"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag(\'js\', new Date());
-
-  gtag(\'config\', \'UA-37796498-35\');
-</script>
+                        
                         </body>
                     </html>';
         }
