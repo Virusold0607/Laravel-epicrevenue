@@ -73,8 +73,19 @@
 
         <div class="col-md-4">
             <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="card-header-title mb-0">Rates</h3>
+                </div>
                 <div class="card-body">
-
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Network Rate:</label>
+                        <small>Amount advertiser pays us per action</small>
+                        {!! Form::number('network_rate', '0.00', array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01')) !!}
+                    </div>
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Rate:</label>
+                        {!! Form::number('rate', '0.00', array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01')) !!}
+                    </div>
                 </div>
             </div>
 
@@ -170,18 +181,8 @@
                         {!! Form::checkbox('private', null) !!} <small>Automatically set campaigns as private, and only allow specific publishers to run it.</small>
                     </td>
                 </tr>
-                <tr>
-                    <td valign="top">Campaign rate:</td>
-                    <td>
-                        {!! Form::number('rate', '0.00', array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01')) !!}
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">Network rate:</td>
-                    <td>
-                        {!! Form::number('network_rate', '0.00', array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01')) !!}
-                    </td>
-                </tr>
+  
+  
                 <tr>
                     <td valign="top">Network:</td>
                     <td>
