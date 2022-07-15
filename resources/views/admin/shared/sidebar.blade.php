@@ -11,7 +11,7 @@
                 <i class="bi-house-door nav-icon"></i>
                 <span class="nav-link-title">{{ __("Dashboard") }}</span>
               </a>
-            </div>
+          </div>
 
           <span class="dropdown-header">{{ __("Management") }}</span>
 
@@ -37,14 +37,14 @@
             <!-- End Collapse -->
 
             <div class="nav-item">
-              <a class="nav-link " href="{{ url('/admin/payments/') }}" data-placement="left">
+              <a class="nav-link nav-link-main" href="{{ url('/admin/payments/') }}" data-placement="left">
                 <i class="bi-folder2-open nav-icon"></i>
                 <span class="nav-link-title">Payments</span>
               </a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link " href="{{ url('/admin/support/') }}" data-placement="left">
+              <a class="nav-link nav-link-main" href="{{ url('/admin/support/') }}" data-placement="left">
                 <i class="bi-folder2-open nav-icon"></i>
                 <span class="nav-link-title">Support Tickets</span>
               </a>
@@ -117,7 +117,7 @@
             <span class="dropdown-header mt-4">{{ __("General") }}</span>
 
             <div class="nav-item">
-              <a class="nav-link " href="#/reports/" data-placement="left">
+              <a class="nav-link nav-link-main" href="#/reports/" data-placement="left">
                 <i class="bi-folder2-open nav-icon"></i>
                 <span class="nav-link-title">Reports</span>
               </a>
