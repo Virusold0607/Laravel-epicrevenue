@@ -228,70 +228,30 @@
     </div>
     <!-- !row -->
             <table class="table table-striped table-bordered">
-
-
-
-                <tr>
-                    <td>Homepage Featured image:</td>
-                    <td>
-                        {!! Form::file('homepage_featured_image', ['onchange' => 'loadFile(event, "homepage_featured_image_output")']) !!}
-                        <img id="homepage_featured_image_output" class="img-responsive" style="max-height:300px;"/>
-                        <script>
-                            var loadFile = function(event, id) {
-                                var output = document.getElementById(id);
-                                output.src = URL.createObjectURL(event.target.files[0]);
-                            };
-                        </script>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Homepage Featured Image Background:</td>
-                    <td>
-                        {!! Form::file('homepage_featured_image_background', ['onchange' => 'loadFile(event, "homepage_featured_image_background_output")']) !!}
-                        <img id="homepage_featured_image_background_output" class="img-responsive" style="max-height:300px;"/>
-                        <script>
-                            var loadFile = function(event, id) {
-                                var output = document.getElementById(id);
-                                output.src = URL.createObjectURL(event.target.files[0]);
-                            };
-                        </script>
-                    </td>
-                </tr>
-
                 <tr>
                     <td>Mobile App Wall?:</td>
                     <td>
                         {!! Form::checkbox('mobile', null) !!} <small>Check this box to upload mobile icon</small>
                     </td>
                 </tr>
-
                 <tr>
                     <td>Incent?:</td>
                     <td>
                         {!! Form::checkbox('incent', null) !!} <small>Check this box to make incent</small>
                     </td>
                 </tr>
-
                 <tr>
                     <td>For Snapaid?:</td>
                     <td>
                         {!! Form::checkbox('is_for_snapaid', null) !!} <small>Check this box to make it available for snapaid</small>
                     </td>
                 </tr>
-
-    
-
-
-
                 <tr>
                     <td valign="top">Private Campaign:</td>
                     <td>
                         {!! Form::checkbox('private', null) !!} <small>Automatically set campaigns as private, and only allow specific publishers to run it.</small>
                     </td>
                 </tr>
- 
-
 
                     <tr>
                         <td valign="top">Active ?</td>
@@ -304,7 +264,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            {!! Form::submit('Add Campaign', array('class' => 'btn btn-default')) !!}
+                            {!! Form::submit('Add Campaign', array('class' => 'btn btn-primary')) !!}
                         </td>
                     </tr>
             </table>
