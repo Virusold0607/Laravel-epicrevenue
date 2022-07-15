@@ -7,7 +7,7 @@
         <div class="navbar-vertical-content">
           <div id="navbarVerticalMenu" class="nav nav-pills nav-vertical card-navbar-nav">
             <div class="nav-item">
-                <a class="nav-link nav-link-main " href="/backend" data-placement="left">
+                <a class="nav-link nav-link-main " href="{{ url('/admin') }}" data-placement="left">
                   <i class="bi-house-door nav-icon"></i>
                   <span class="nav-link-title">{{ __("Dashboard") }}</span>
                 </a>
@@ -24,14 +24,13 @@
               <div class="nav-item">
                 <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuPagesUsersMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuPagesUsersMenu" aria-expanded="false" aria-controls="navbarVerticalMenuPagesUsersMenu">
                   <i class="bi-people nav-icon"></i>
-                  <span class="nav-link-title">{{ __("Users") }} <span class="badge bg-primary rounded-pill ms-1">5</span></span>
+                  <span class="nav-link-title">{{ __("Publishers") }} <span class="badge bg-primary rounded-pill ms-1">5</span></span>
                 </a>
 
-                <div id="navbarVerticalMenuPagesUsersMenu" class="nav-collapse collapse @if($activePage == 'users') show @endif" data-bs-parent="#navbarVerticalMenuPagesMenu">
-                  <a class="nav-link " href="{{ route('backend.users.list') }}">{{ __("All Users") }}</a>
-                  <a class="nav-link " href="{{ route('backend.customers.list') }}">{{ __("Customers") }}</a>
-                  <a class="nav-link " href="{{ route('backend.sellers.list') }}">{{ __("Sellers") }} <span class="badge bg-primary rounded-pill ms-1">5</span></a>
-                  <a class="nav-link " href="#">{{ __("Profile") }}</a>
+                <div id="navbarVerticalMenuPagesUsersMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
+                  <a class="nav-link " href="/admin/#/publishers">{{ __("All Publishers") }} <span class="badge bg-primary rounded-pill ms-1">5</span></a>
+                  <a class="nav-link " href="/admin/#/publishers/my">{{ __("My Publishers") }}</a>
+                  <a class="nav-link " href="/admin/#/socialaccounts">{{ __("Social Accounts") }} <span class="badge bg-primary rounded-pill ms-1">5</
                 </div>
               </div>
               <!-- End Collapse -->
@@ -42,15 +41,18 @@
               <div class="nav-item">
                 <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllPostMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllPostMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllPostMenu">
                   <i class="bi bi-pin-angle-fill nav-icon"></i>
-                  <span class="nav-link-title">{{ __("Post") }}</span>
+                  <span class="nav-link-title">{{ __("Campaigns") }}</span>
                 </a>
 
                 <div id="navbarVerticalMenuAllPostMenu" class="nav-collapse collapse @if($activePage == 'posts') show @endif" data-bs-parent="#navbarVerticalMenuPagesMenu">
-                  <a class="nav-link @if($navName == 'allpost') active @endif" href="{{ route('backend.posts.list') }}">{{ __("All Post") }}</a>
-                  <a class="nav-link @if($navName == 'addpost') active @endif" href="{{ route('backend.posts.create') }}">{{ __("Create Post") }}</a>
-                  <a class="nav-link @if($navName == 'blogcategories') active @endif" href="{{ route('backend.blog.categories.list') }}">{{ __("Categories") }}</a>
-                  <a class="nav-link @if($navName == 'blogtags') active @endif" href="{{ route('backend.blog.tags.list') }}">{{ __("Tags") }}</a>
-                  <a class="nav-link @if($navName == 'blogtrash') active @endif" href="{{ route('backend.posts.trash') }}">{{ __("Trash") }}</a>
+                  <a class="nav-link activeee" href="/admin/#/campaigns/">{{ __("View Campaigns") }}</a>
+                  <a class="nav-link activeee" href="{{ url('/admin/campaigns/create') }}">{{ __("Add Campaign") }}</a>
+                  <a class="nav-link activeee" href="{{ url('/admin/campaigns/categories') }}">{{ __("Categories") }}</a>
+                  <a class="nav-link activeee" href="{{ url('/admin/campaigns/featured') }}">{{ __("Homepage Featured") }}</a>
+                  <a class="nav-link activeee" href="{{ url('/admin/campaigns/rates') }}">{{ __("Custom rates") }}</a>
+                  <a class="nav-link activeee" href="{{ url('/admin/campaigns/block/?subids') }}">{{ __("SubID's block") }}</a>
+                  <a class="nav-link activeee" href="{{ url('/admin/campaigns/block/?singleBlock') }}">{{ __("Single block") }}</a>
+                  <a class="nav-link activeee" href="{{ url('/admin/campaigns/block/?networkBlock') }}">{{ __("Network block") }}</a>
                 </div>
               </div>
               <!-- End Collapse -->
