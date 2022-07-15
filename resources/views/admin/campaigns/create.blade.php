@@ -60,11 +60,13 @@
                     <div class="mb-2">
                         <label for="name" class="w-100 mb-2 fw-700">Campaign URL:</label>
                         {!! Form::text('url', null, array('class' => 'form-control', 'size' => '70')) !!} 
-                        <div class="col-6">
-                            <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{hash}'; return false;">Add Credit Hash</a> | <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{pubid}'; return false;">Add PubID</a>
-                        </div>
-                        <div class="col-6">
-                            <small>({hash} = credit hash, {pubid} = publisher id), {email} = email for prepop</small>
+                        <div class="row">
+                            <div class="col-6 ">
+                                <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{hash}'; return false;">Add Credit Hash</a> | <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{pubid}'; return false;">Add PubID</a>
+                            </div>
+                            <div class="col-6">
+                                <small>({hash} = credit hash, {pubid} = publisher id), {email} = email for prepop</small>
+                            </div>
                         </div>
                     </div>
 
