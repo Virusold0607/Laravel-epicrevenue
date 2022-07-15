@@ -58,7 +58,8 @@
                     </div>
 
                     <div class="mb-2">
-                        <label for="name" class="w-100 mb-2 fw-700">Campaign URL: <small>({hash} = credit hash, {pubid} = publisher id), {email} = email for prepop</small></label>
+                        <label for="name" class="w-100 mb-2 fw-700">Campaign URL:</label>
+                        <small class="mb-2">({hash} = credit hash, {pubid} = publisher id), {email} = email for prepop</small>
                         {!! Form::text('url', null, array('class' => 'form-control mb-2', 'size' => '70')) !!} 
                         <div class="mb-2">
                             <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{hash}'; return false;">Add Credit Hash</a> | <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{pubid}'; return false;">Add PubID</a>
@@ -78,13 +79,13 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-2">
-                        <label for="name" class="w-100 mb-2 fw-700">Network Rate:</label>
-                        <small>Amount advertiser pays us per action</small>
-                        {!! Form::number('network_rate', '0.00', array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01')) !!}
-                    </div>
-                    <div class="mb-2">
                         <label for="name" class="w-100 mb-2 fw-700">Rate:</label>
                         {!! Form::number('rate', '0.00', array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01')) !!}
+                    </div>
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Network Rate:</label>
+                        <small class="mb-2">Amount advertiser pays us per action</small>
+                        {!! Form::number('network_rate', '0.00', array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01')) !!}
                     </div>
                 </div>
             </div>
