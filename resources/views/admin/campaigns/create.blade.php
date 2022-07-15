@@ -165,6 +165,11 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Active ?</label>
+                        {!! Form::radio('active', 'yes', true) !!} Yes
+                        {!! Form::radio('active', 'no', false) !!} No
+                    </div>
+                    <div class="mb-2">
                         <div class="mb-2 fs-12">Campaign will show on mobile app wall if checked.</div>
                         {!! Form::checkbox('mobile', null) !!}
                         <label class="form-check-label" for="flexCheckDefault">Mobile App Wall ?</label>
@@ -248,26 +253,6 @@
         <!-- !col-md-4 -->
     </div>
     <!-- !row -->
-            <table class="table table-striped table-bordered">
-
-
-                <tr>
-                    <td>For Snapaid?:</td>
-                    <td>
-                        {!! Form::checkbox('is_for_snapaid', null) !!} <small>Check this box to make it available for snapaid</small>
-                    </td>
-                </tr>
-
-
-                    <tr>
-                        <td valign="top">Active ?</td>
-                        <td>
-                            {!! Form::radio('active', 'yes', true) !!} Yes
-                            {!! Form::radio('active', 'no', false) !!} No
-                        </td>
-                    </tr>
-
-            </table>
         
     <div class="position-fixed start-50 bottom-0 translate-middle-x w-100 zi-99 mb-3" style="max-width: 40rem;">
         <!-- Card -->
