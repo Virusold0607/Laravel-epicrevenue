@@ -10,40 +10,13 @@
 
         </div>
     </div><!-- End .hero -->
-    <div class="clearfix"></div>
-    <div class="container" style="height:60px;"></div>
-
-
-
-    <div class="page wide">
-        <div class="container">
-            <!--
-            <ul id='timeline'>
-                <div id='timeline2' style="width:90%"></div>
-                <li class='work'>
-                    <input class='radio' id='work5' name='works' type='radio' checked>
-                    <div class="relative">
-                        <span class='date checked'>Account Details</span>
-                        <span class='circle checked'>1</span>
-                    </div>
-                </li>
-                <li class='work'>
-                    <input class='radio' id='work4' name='works' type='radio'>
-                    <div class="relative">
-                        <span class='date checked'>Address</span>
-                        <span class='circle checked'>2</span>
-                    </div>
-                </li>
-                <li class='work'>
-                    <input class='radio' id='work3' name='works' type='radio'>
-                    <div class="relative">
-                        <span class='date checked'>Payment Method</span>
-                        <span class='circle checked'>3</span>
-                    </div>
-                </li>
-            </ul>
-            -->
-            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+<div class="container">
+    <!-- row -->
+    <div class="row">
+        <!-- col -->
+        <div class="col-lg-4 col-md-4 col-12 mx-auto">
+            <!-- card -->
+            <div class="px-4 py-3 py-lg-4 card rounded">
                 {!! Form::open(array('url' => '/affiliate/apply/payment', 'method' => 'post', 'class' => 'form-register')) !!}
                     {{-- Was there an error? --}}
                     @if (count($errors) > 0)
@@ -92,8 +65,12 @@
                     </div>
                 {!! Form::close() !!}
             </div>
+            <!-- !card -->
         </div>
+        <!-- !col -->
     </div>
+    <!-- !row -->
+</div>
 @endsection
 
 @section('scripts')
