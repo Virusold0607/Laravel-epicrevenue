@@ -149,14 +149,21 @@
             </div>
             <!-- End Collapse -->
 
-
             <div class="nav-item">
               <a class="nav-link nav-link-main " href="#" data-placement="left">
                 <i class="bi-key nav-icon"></i>
                 <span class="nav-link-title">keys</span>
               </a>
             </div>
-
+            
+            @if(auth()->check())
+            <div class="nav-item">
+              <a class="nav-link nav-link-main " href="{{ url('/logout') }}" data-placement="left">
+                <i class="bi-key nav-icon"></i>
+                <span class="nav-link-title">Logout</span>
+              </a>
+            </div>
+            @endif
 
       </div>
       <!-- End Content -->
