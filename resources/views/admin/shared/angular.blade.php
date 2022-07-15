@@ -26,23 +26,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" />
     @yield('styles')
-    <!--<link rel="stylesheet" href="{{ url('/assets/css/admin.css') }}">-->
+    <link rel="stylesheet" href="{{ url('/assets/css/admin.css') }}">
 </head>
 
 <body>
-@include('admin.shared.angular-header')
-<div class="container">
-    @yield('body')
-
-    @include('admin.shared.footer')
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">Your IP Address (<i>{{ $_SERVER['REMOTE_ADDR'] }}</i>) has been logged.</p>
-        <p class="text-muted">Copyright &copy; 2015 influencersreach.com All Rights Reserved.</p>
+    @include('admin.shared.angular-header')
+    <div class="content-wrap">
+        <div class="container">
+            <div class="row">
+                //sidebar
+                <div class="col-lg-auto col-sm-12">
+                    <!-- Content -->
+                    <div class="content py-3">
+                        @yield('body')
+                    </div>
+                    @include('admin.shared.footer')
+                </div>
+            </div>
+        </div>
     </div>
-</footer>
 
 <!-- JS Global Compulsory  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
