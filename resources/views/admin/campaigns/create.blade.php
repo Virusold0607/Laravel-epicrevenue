@@ -76,38 +76,44 @@
                         <label for="name" class="w-100 mb-1 fw-700">Targeting:</label>
                         <div id="entry1" class="clonedInput" style="display:none;">
                             <div class="row">
-                                <div class="col-md-2 alpha">
-                                    <select class="form-control" name="tar_country[]">
-                                        <option value="">Select Country</option>
-                                        @foreach($countries as $id => $name)
-                                            <option value="{{ $name }}">{{ $name }}</option>
-                                        @endforeach
-                                    </select>
+                                <div class="col-12 url mb-2">
+                                    <input class="form-control" type="text" name="tar_url[]" value="http://" />
                                 </div>
-                                <div class="col-md-2 alpha">
-                                    <select class="form-control" name="tar_os[]">
-                                        <option value="">Select OS</option>
-                                        <option value="AndroidOS">Android</option>
-                                        <option value="iOS">iOS</option>
-                                    </select>
+                                <div class="target-options row">
+                                    <div class="col-4">
+                                        <select class="form-control" name="tar_country[]">
+                                            <option value="">Select Country</option>
+                                            @foreach($countries as $id => $name)
+                                                <option value="{{ $name }}">{{ $name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <select class="form-control" name="tar_os[]">
+                                            <option value="">Select OS</option>
+                                            <option value="AndroidOS">Android</option>
+                                            <option value="iOS">iOS</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <select name="tar_device[]" class="form-control">
+                                            <option value>Select Device</option>
+                                            <option value="Desktop">Desktop</option>
+                                            <option value="Mobile">Mobile</option>
+                                            <option value="Tablet">Tablet</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 alpha">
-                                    <select name="tar_device[]" class="form-control">
-                                        <option value>Select Device</option>
-                                        <option value="Desktop">Desktop</option>
-                                        <option value="Mobile">Mobile</option>
-                                        <option value="Tablet">Tablet</option>
-                                    </select>
-                                </div>
+                                
+                                
+                                
                                 <div class="col-md-1 alpha">
                                     <input class="form-control" type="number" name="tar_rate[]" placeholder="Rate" value="" step='0.01' />
                                 </div>
                                 <div class="col-md-1 alpha">
                                     <input class="form-control" type="number" name="tar_network_rate[]" placeholder="Netwrok Rate" value="" step='0.01' />
                                 </div>
-                                <div class="col-md-3 alpha">
-                                    <input class="form-control" type="text" name="tar_url[]" value="http://" />
-                                </div>
+                                
                                 <div class="col-md-1 alpha omega">
                                     <select name="tar_active[]" class="form-control">
                                         <option value="yes">Yes</option>
