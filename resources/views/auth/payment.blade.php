@@ -38,26 +38,24 @@
                     <div class="panel panel-default networks">
                         <div class="panel-heading">How do you want to be paid?</div>
                         <div class="panel-body">
-                            <div class="">
-                                <div id="pay_option_panel">
-                                    <div class="pay_option_div">
-                                        {!! Form::radio('payment_method', 'paypal') !!}
-                                        <img src="{{ url('/images/register/paypal.png') }}" alt="Paypal" class="pay_option_img"> Paypal
-                                    </div>
-                                    <div class="pay_option_div">
-                                        {!! Form::radio('payment_method', 'check') !!}
-                                        <img src="{{ url('/images/register/cheque-icon.png') }}" alt="Cheque" class="pay_option_img"> Check
-                                    </div>
-                                    <div class="pay_option_div">
-                                        {!! Form::radio('payment_method', 'gift_card') !!}
-                                        <img src="{{ url('/images/register/gift-card.jpg') }}" alt="Gift Card" class="pay_option_img"> Gift Card
-                                    </div>
+                            <div class="pay_option_panel row">
+                                <div class="pay_option_div col-3">
+                                    {!! Form::radio('payment_method', 'paypal') !!}
+                                    <img src="{{ url('/images/register/paypal.png') }}" alt="Paypal" class="pay_option_img w-100"> Paypal
                                 </div>
-                                <span id="description_txt">Details</span><span style="color: red">*</span>
-                                <br />
-                                {!! Form::text('payment_method_detail', null, array('class' => 'form-control', 'maxlength' => '255')) !!}
-                                <br />
+                                <div class="pay_option_div col-3">
+                                    {!! Form::radio('payment_method', 'check') !!}
+                                    <img src="{{ url('/images/register/cheque-icon.png') }}" alt="Cheque" class="pay_option_img w-100"> Check
+                                </div>
+                                <div class="pay_option_div col-3">
+                                    {!! Form::radio('payment_method', 'gift_card') !!}
+                                    <img src="{{ url('/images/register/gift-card.jpg') }}" alt="Gift Card" class="pay_option_img w-100"> Gift Card
+                                </div>
                             </div>
+                            <span id="description_txt">Details</span><span style="color: red">*</span>
+                            <br />
+                            {!! Form::text('payment_method_detail', null, array('class' => 'form-control', 'maxlength' => '255')) !!}
+                            <br />
                         </div>
                     </div>
                     <div class="grid_12">
