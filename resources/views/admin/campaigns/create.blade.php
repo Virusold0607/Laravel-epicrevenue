@@ -96,22 +96,6 @@
 
             <div class="card mb-4">
                 <div class="card-header">
-                    <h3 class="card-header-title mb-0">Featured Image</h3>
-                </div>
-                <div class="card-body">
-                    <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail mb-2 w-100"/>
-                    <script>
-                        var loadFile = function(event, id) {
-                            var output = document.getElementById(id);
-                            output.src = URL.createObjectURL(event.target.files[0]);
-                        };
-                    </script>
-                    {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
-                </div>
-            </div>
-
-            <div class="card mb-4">
-                <div class="card-header">
                     <h3 class="card-header-title mb-0">Cap</h3>
                 </div>
                 <div class="card-body">
@@ -123,6 +107,31 @@
                         <label for="name" class="w-100 mb-2 fw-700">Daily Cap:</label>
                         {!! Form::number('daily_cap', 1000, array('class' => 'form-control', 'min' => '1')) !!}
                     </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="card-header-title mb-0">Allowed countries:</h3>
+                </div>
+                <div class="card-body">
+                    {!! Form::select('countries[]', $countries, null, array('id' => 'country', 'class' => 'form-control', 'multiple' => 'multiple')) !!}
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="card-header-title mb-0">Featured Image</h3>
+                </div>
+                <div class="card-body">
+                    <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail mb-2 w-100"/>
+                    <script>
+                        var loadFile = function(event, id) {
+                            var output = document.getElementById(id);
+                            output.src = URL.createObjectURL(event.target.files[0]);
+                        };
+                    </script>
+                    {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
                 </div>
             </div>
 
