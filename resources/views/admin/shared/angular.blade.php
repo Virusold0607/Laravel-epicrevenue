@@ -45,10 +45,6 @@
     </div>
 </footer>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-<script type="text/javascript" src="{{ url('/assets/js/admin.js') }}"></script>
-<script type="text/javascript" src="{{ url('/assets/js/admin-angular.js') }}"></script>
-
 <!-- JS Global Compulsory  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
@@ -59,6 +55,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.1.0/trumbowyg.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="{{ url('/assets/js/admin.js') }}"></script>
+<script type="text/javascript" src="{{ url('/assets/js/admin-angular.js') }}"></script>
 
 @yield('scripts')
 
