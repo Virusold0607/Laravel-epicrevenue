@@ -29,6 +29,10 @@ header .nav-link {
         width: 100%;
     }
 }
+.clonedInput {
+    border-bottom: 1px solid #ebedf2;
+    padding-bottom: 20px;
+}
 /* SIDEBAR */
 .sidebar {
     background: #000000;
