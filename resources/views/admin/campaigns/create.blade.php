@@ -57,6 +57,17 @@
                         {!! Form::textarea('requirements', null, array('class' => 'form-control', 'cols' => '30', 'rows' => '6')) !!}
                     </div>
 
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Campaign URL:</label>
+                        {!! Form::text('url', null, array('class' => 'form-control', 'size' => '70')) !!} 
+                        <div class="col-6">
+                            <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{hash}'; return false;">Add Credit Hash</a> | <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{pubid}'; return false;">Add PubID</a>
+                        </div>
+                        <div class="col-6">
+                            <small>({hash} = credit hash, {pubid} = publisher id), {email} = email for prepop</small>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <!-- !card -->
@@ -180,14 +191,7 @@
                         {!! Form::select('network_id', $networks, null, array('placeholder' => 'Select Network', 'class' => 'form-control')) !!}
                     </td>
                 </tr>
-                <tr>
-                    <td valign="top">Campaign URL:</td>
-                    <td>
-                        {!! Form::text('url', null, array('class' => 'form-control', 'size' => '70')) !!} <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{hash}'; return false;">Add Credit Hash</a> | <a href="#" onclick="addCamp.url.value=addCamp.url.value + '{pubid}'; return false;">Add PubID</a>
 
-                        <small>({hash} = credit hash, {pubid} = publisher id), {email} = email for prepop</small>
-                    </td>
-                </tr>
                 <tr>
                     <td valign="top">Postback URL:</td>
                     <td>
