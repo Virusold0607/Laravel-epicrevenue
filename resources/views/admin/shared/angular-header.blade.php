@@ -16,16 +16,6 @@
                 <li class="nav-item dropdown menu-area">
                     <a class="nav-link" href="https://jewelrycadfiles.com/3d-models">3D Models</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" aria-current="page" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Learn</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="https://jewelrycadfiles.com/blog">Blog</a></li>
-                        <li><a class="dropdown-item" href="https://jewelrycadfiles.com/blog/category/list/all">Categories</a></li>
-                        <li><a class="dropdown-item" href="https://jewelrycadfiles.com/blog/tag/list/all">Tags</a></li>
-                        <li><a class="dropdown-item" href="#">Comments</a></li>
-                    </ul>
-                </li>
-                
             </ul>
         </div>
     </nav>
