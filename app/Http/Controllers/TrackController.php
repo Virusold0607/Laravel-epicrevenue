@@ -338,7 +338,7 @@ class TrackController extends Controller
             $total_cap = $total_cap + $report->count();
         }
 
-        if($campaign->cap >= $total_cap)
+        if($campaign->cap <= $total_cap)
             return true;
 
         return false;
@@ -355,7 +355,7 @@ class TrackController extends Controller
             }
         }
 
-        if($campaign->daily_cap >= $daily_cap)
+        if($campaign->daily_cap <= $daily_cap)
             return true;
 
         return false;
