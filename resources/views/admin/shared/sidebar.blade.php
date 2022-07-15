@@ -30,7 +30,7 @@
               <div id="navbarVerticalMenuPagesUsersMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
                 <a class="nav-link " href="/admin/#/publishers">{{ __("All Publishers") }} <span class="badge bg-primary rounded-pill ms-1">5</span></a>
                 <a class="nav-link " href="/admin/#/publishers/my">{{ __("My Publishers") }}</a>
-                <a class="nav-link " href="/admin/#/socialaccounts">{{ __("Social Accounts") }} <span class="badge bg-primary rounded-pill ms-1">5</
+                <a class="nav-link " href="/admin/#/socialaccounts">{{ __("Social Accounts") }} <span class="badge bg-primary rounded-pill ms-1">5</a>
               </div>
             </div>
             <!-- End Collapse -->
