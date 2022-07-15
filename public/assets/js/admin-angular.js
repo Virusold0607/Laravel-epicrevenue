@@ -132,7 +132,7 @@ adminControllers.controller('CampaignListController', ['$scope', '$http', '$rout
         $scope.searchRecords = function(query, search_by, order_by, order) {
             $scope.search = typeof query !== 'undefined' ? query : '';
             $scope.search_by = typeof search_by !== 'undefined' ? search_by : 'id';
-            $scope.order = typeof order !== 'undefined' ? order : 'dsc';
+            $scope.order = typeof order !== 'undefined' ? order : 'desc';
             $scope.order_by = typeof order_by !== 'undefined' ? order_by : 'id';
 
             $scope.getRecords($scope.page, $scope.search, $scope.search_by, $scope.order_by, $scope.order);
@@ -408,7 +408,7 @@ adminControllers.controller('PublisherListController', ['$scope', '$http', '$rou
             $scope.page = typeof page !== 'undefined' ? page : $scope.page;
             $scope.search = typeof search !== 'undefined' ? search : '';
             $scope.search_by = typeof search_by !== 'undefined' ? search_by : 'id';
-            $scope.order = typeof order !== 'undefined' ? order : 'dsc';
+            $scope.order = typeof order !== 'undefined' ? order : 'desc';
             $scope.order_by = typeof order_by !== 'undefined' ? order_by : 'id';
 
             if($routeParams.page == 'my'){
@@ -441,7 +441,7 @@ adminControllers.controller('PublisherListController', ['$scope', '$http', '$rou
         $scope.searchRecords = function(query, search_by, order_by, order) {
             $scope.search = typeof query !== 'undefined' ? query : '';
             $scope.search_by = typeof search_by !== 'undefined' ? search_by : 'id';
-            $scope.order = typeof order !== 'undefined' ? order : 'dsc';
+            $scope.order = typeof order !== 'undefined' ? order : 'desc';
             $scope.order_by = typeof order_by !== 'undefined' ? order_by : 'id';
 
             $scope.getRecords($scope.page, $scope.search, $scope.search_by, $scope.order_by, $scope.order);
@@ -498,7 +498,7 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
             $scope.page = typeof page !== 'undefined' ? page : $scope.page;
             $scope.search = typeof search !== 'undefined' ? search : '';
             $scope.search_by = typeof search_by !== 'undefined' ? search_by : 'reports.id';
-            $scope.order = typeof order !== 'undefined' ? order : 'dsc';
+            $scope.order = typeof order !== 'undefined' ? order : 'desc';
             $scope.order_by = typeof order_by !== 'undefined' ? order_by : 'reports.id';
 
             $http.get('/api/admin/reports/?page=' + $scope.page + '&search=' + $scope.search + '&search_by=' + $scope.search_by + '&order_by=' + $scope.order_by + '&order=' + $scope.order).success(function(data) {
@@ -521,7 +521,7 @@ adminControllers.controller('ReportListController', ['$scope', '$http', '$routeP
         $scope.searchRecords = function(query, search_by, order_by, order) {
             $scope.search = typeof query !== 'undefined' ? query : '';
             $scope.search_by = typeof search_by !== 'undefined' ? search_by : 'id';
-            $scope.order = typeof order !== 'undefined' ? order : 'dsc';
+            $scope.order = typeof order !== 'undefined' ? order : 'desc';
             $scope.order_by = typeof order_by !== 'undefined' ? order_by : 'id';
 
             $scope.getRecords($scope.page, $scope.search, $scope.search_by, $scope.order_by, $scope.order);
