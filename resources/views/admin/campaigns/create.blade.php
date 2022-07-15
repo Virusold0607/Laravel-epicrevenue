@@ -73,8 +73,8 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="mb-2">
-                        <label for="name" class="w-100 mb-1 fw-700">Targeting:</label>
-                        <div id="entry1" class="clonedInput" style="display:none;">
+                        <label for="name" class="w-100 mb-2 fw-700">Targeting:</label>
+                        <div id="entry1" class="clonedInput mb-4" style="display:none;">
                             <div class="row">
                                 <div class="col-12 url mb-2">
                                     <input class="form-control" type="text" name="tar_url[]" value="http://" />
