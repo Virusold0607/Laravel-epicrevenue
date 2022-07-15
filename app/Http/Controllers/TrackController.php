@@ -349,7 +349,8 @@ class TrackController extends Controller
         $daily_cap = 0;
         foreach($campaign->reports as $report)
         {
-            if($report->created_at->isToday())
+            // Check for reports today where status is 2
+            if(($report->created_at->isToday()) && $report->status == "2")
             {
                 $daily_cap = $daily_cap + $report->rate;
             }
