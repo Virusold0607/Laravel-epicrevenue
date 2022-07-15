@@ -83,9 +83,13 @@
                         {!! Form::number('rate', '0.00', array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01')) !!}
                     </div>
                     <div class="mb-2">
-                        <label for="name" class="w-100 mb-2 fw-700">Network Rate:</label>
-                        <small class="mb-2">Amount advertiser pays us per action</small>
+                        <label for="name" class="w-100 mb-1 fw-700">Network Rate:</label>
+                        <div class="mb-2 fs-12">Amount advertiser pays us per action</div>
                         {!! Form::number('network_rate', '0.00', array('class' => 'form-control', 'min' => '0.01', 'step' => '0.01')) !!}
+                    </div>
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Network:</label>
+                        {!! Form::select('network_id', $networks, null, array('placeholder' => 'Select Network', 'class' => 'form-control')) !!}
                     </div>
                 </div>
             </div>
@@ -182,14 +186,7 @@
                         {!! Form::checkbox('private', null) !!} <small>Automatically set campaigns as private, and only allow specific publishers to run it.</small>
                     </td>
                 </tr>
-  
-  
-                <tr>
-                    <td valign="top">Network:</td>
-                    <td>
-                        {!! Form::select('network_id', $networks, null, array('placeholder' => 'Select Network', 'class' => 'form-control')) !!}
-                    </td>
-                </tr>
+ 
 
                 <tr>
                     <td valign="top">Postback URL:</td>
