@@ -170,19 +170,19 @@
                         {!! Form::radio('active', 'no', false) !!} No
                     </div>
                     <div class="mb-2">
-                        <div class="mb-2 fs-12">Campaign will show on mobile app wall if checked.</div>
                         {!! Form::checkbox('mobile', null) !!}
                         <label class="form-check-label" for="flexCheckDefault">Mobile App Wall ?</label>
+                        <div class="mb-2 fs-12">Campaign will show on mobile app wall if checked.</div>
                     </div>
                     <div class="mb-2">
-                        <div class="mb-2 fs-12">This will be an incentive campaign if checked.</div>
                         {!! Form::checkbox('incent', null) !!}
                         <label class="form-check-label" for="flexCheckDefault">Incentive ?</label>
+                        <div class="mb-2 fs-12">This will be an incentive campaign if checked.</div>
                     </div>
                     <div class="mb-2">
-                        <div class="mb-2 fs-12">This will be a private campaign if checked.</div>
                         {!! Form::checkbox('private', null) !!}
                         <label class="form-check-label" for="flexCheckDefault">Private ?</label>
+                        <div class="mb-2 fs-12">This will be a private campaign if checked.</div>
                     </div>
                 </div>
             </div>
