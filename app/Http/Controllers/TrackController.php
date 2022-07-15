@@ -85,7 +85,7 @@ class TrackController extends Controller
         if($campaign->cap !== 0)
         {
             // Check if total cap or daily cap reached
-            if((!$this->checkTotalCap($campaign)) || (!$this->checkDailyCap($campaign)))
+            if($this->checkTotalCap($campaign) || $this->checkDailyCap($campaign))
             {
                 $campaign->active = 'no';
                 $campaign->save();
