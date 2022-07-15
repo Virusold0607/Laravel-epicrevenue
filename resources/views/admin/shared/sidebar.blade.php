@@ -125,11 +125,11 @@
 
             <!-- Collapse -->
             <div class="nav-item">
-              <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllLogssMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllLogssMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllLogssMenu">
+              <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllPostbackMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllPostbackMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllPostbackMenu">
                 <i class="bi bi-receipt nav-icon"></i>
                 <span class="nav-link-title">{{ __("Postbacks") }}</span>
               </a>
-              <div id="navbarVerticalMenuAllLogssMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
+              <div id="navbarVerticalMenuAllPostbackMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
                 <a class="nav-link activeee" href="{{ url('/admin/postbacks/') }}">{{ __("All Postbacks") }}</a>
                 <a class="nav-link " href="{{ url('/admin/tools/postbackTest') }}">{{ __("Postbacks Test") }}</a>
               </div>
@@ -138,11 +138,11 @@
 
             <!-- Collapse -->
             <div class="nav-item">
-              <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllLogssMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllLogssMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllLogssMenu">
+              <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllLogsMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllLogsMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllLogssMenu">
                 <i class="bi bi-receipt nav-icon"></i>
                 <span class="nav-link-title">{{ __("Logs") }}</span>
               </a>
-              <div id="navbarVerticalMenuAllLogssMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
+              <div id="navbarVerticalMenuAllLogsMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
                 <a class="nav-link activeee" href="{{ url('/admin/tools/postbackTest') }}">{{ __("Postback Logs") }}</a>
                 <a class="nav-link " href="{{ url('/admin/publishers/failedLogins') }}">{{ __("Failed Logins") }}</a>
               </div>
