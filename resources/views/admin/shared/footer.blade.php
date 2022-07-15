@@ -2,9 +2,7 @@
 <div class="footer">
       <div class="row justify-content-between align-items-center">
         <div class="col">
-          <p class="fs-6 mb-0">© 2022 G.G.M & Co.</p>
-          <p class="text-muted">Your IP Address (<i>{{ $_SERVER['REMOTE_ADDR'] }}</i>) has been logged.</p>
-            <p class="text-muted">Copyright &copy; 2015 influencersreach.com All Rights Reserved.</p>
+          <p class="fs-6 mb-0">© 2022 G.G.M & Co. All Rights Reserved. Your IP Address (<i>{{ $_SERVER['REMOTE_ADDR'] }}</i>) has been logged.</p>
         </div>
         <!-- End Col -->
 
