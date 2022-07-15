@@ -112,10 +112,10 @@
 
             <div class="card mb-4">
                 <div class="card-header">
-                    <h3 class="card-header-title mb-0">Allowed countries:</h3>
+                    <h3 class="card-header-title mb-0">Allowed countries</h3>
                 </div>
                 <div class="card-body">
-                    {!! Form::select('countries[]', $countries, null, array('id' => 'country', 'class' => 'form-control', 'multiple' => 'multiple')) !!}
+                    {!! Form::select('countries[]', $countries, null, array('id' => 'country', 'class' => 'form-control h-200px', 'multiple' => 'multiple')) !!}
                 </div>
             </div>
 
@@ -267,12 +267,7 @@
                         {!! Form::textarea('tracking', null, array('class' => 'form-control', 'rows' => '6', 'cols' => '30')) !!}
                     </td>
                 </tr>
-                    <tr>
-                        <td valign="top">Allowed countries:</td>
-                        <td>
-                            {!! Form::select('countries[]', $countries, null, array('id' => 'country', 'class' => 'form-control', 'multiple' => 'multiple')) !!}
-                        </td>
-                    </tr>
+
                     <tr>
                         <td valign="top">Active ?</td>
                         <td>
