@@ -103,6 +103,9 @@ a, button, input, textarea, .btn, .has-transition {
 h3.card-header-title {
     margin-bottom: 0;
 }
+.zi-99 {
+z-index: 99!important;
+}
 /*button element*/
 .btn.focus,
 .btn:focus:not(.btn-shadow) {
