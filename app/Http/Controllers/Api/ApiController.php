@@ -772,7 +772,7 @@ class ApiController extends Controller
     public static function checkTotalCap(Campaign $campaign)
     {
         $total_cap = 0;
-        foreach($campaign->reports as $report)
+        foreach($campaign->reports->where('status', 2) as $report)
         {
             $total_cap = $total_cap + $report->rate;
         }
@@ -786,10 +786,9 @@ class ApiController extends Controller
     public static function checkDailyCap(Campaign $campaign)
     {
         $daily_cap = 0;
-        foreach($campaign->reports as $report)
+        foreach($campaign->reports->where('status', 2) as $report)
         {
-            // Check for reports today where status is 2
-            if(($report->created_at->isToday()) && $report->status == "2")
+            if($report->created_at->isToday())
             {
                 $daily_cap = $daily_cap + $report->rate;
             }
