@@ -83,14 +83,14 @@
                     <h3 class="card-header-title mb-0">Featured Image</h3>
                 </div>
                 <div class="card-body">
-                    {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
-                    <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail"/>
+                    <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail mb-2"/>
                     <script>
                         var loadFile = function(event, id) {
                             var output = document.getElementById(id);
                             output.src = URL.createObjectURL(event.target.files[0]);
                         };
                     </script>
+                    {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
                 </div>
             </div>
         </div>
