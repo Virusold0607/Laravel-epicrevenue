@@ -22,7 +22,7 @@ header .nav-link {
     //max-width: calc(100vw);
 }
 .content {
-    width: calc(100vw - 184px);
+    width: calc(100vw - 209px);
 }
 @media (max-width: 990px) {
     .content {
@@ -33,7 +33,7 @@ header .nav-link {
 .sidebar {
     background: #000000;
     min-height: calc(100vh);
-    min-width: 160px;
+    min-width: 185px;
 }
 .sidebar.collapse.show {
     border-top: 1px solid #1a1a1a;
