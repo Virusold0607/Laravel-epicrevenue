@@ -77,7 +77,7 @@
                     <h3 class="card-header-title mb-0">Targeting</h3>
                 </div>
                 <div class="card-body">
-                    <div id="entry1" class="clonedInput" style="display:none;">
+                    <div id="entry1" class="clonedInput mb-4" style="display:none;">
                         {{--<input type="hidden" name="tar_id[]" value="0">--}}
                         <div class="row">
                             <div class="col-12 url mb-2">
@@ -129,7 +129,7 @@
                     </div>
                     <?php $a = 2; ?>
                     @foreach($campaign_targets as $c)
-                        <div id="entry{{ $a }}" class="clonedInput" style="display:block;">
+                        <div id="entry{{ $a }}" class="clonedInput mb-4" style="display:block;">
                             <div class="row">
                                 {{--<input type="hidden" name="tar_id[]" value="{{ $c->id }}">--}}
                                 <div class="col-12 url mb-2">
