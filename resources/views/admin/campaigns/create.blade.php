@@ -36,6 +36,17 @@
                             <div class="alert alert-danger">{{ $error }}</div>
                         @endforeach
                     @endif
+
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Campaign Name:</label>
+                        {!! Form::text('name', null, array('class' => 'form-control' ,'size' => '70')) !!}
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="name" class="w-100 mb-2 fw-700">Campaign Description:</label>
+                        {!! Form::textarea('description', null, array('cols' => '30', 'rows' => '6', 'class' => 'form-control')) !!}
+                    </div>
+
                 </div>
             </div>
             <!-- !card -->
@@ -55,18 +66,7 @@
     </div>
     <!-- !row -->
             <table class="table table-striped table-bordered">
-                <tr>
-                    <td>Campaign name:</td>
-                    <td>
-                        {!! Form::text('name', null, array('class' => 'form-control' ,'size' => '70')) !!}
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">Campaign description:</td>
-                    <td>
-                        {!! Form::textarea('description', null, array('cols' => '30', 'rows' => '6', 'class' => 'form-control')) !!}
-                    </td>
-                </tr>
+
 
                 <tr>
                     <td>Featured image:</td>
