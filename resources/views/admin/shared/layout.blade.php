@@ -38,7 +38,7 @@
                 @include('admin.shared.sidebar')
                 <div class="col-lg-auto col-sm-12">
                     <!-- Content -->
-                    <div class="content py-3">
+                    <div class="content card rounded-0 p-3 mt-3">
                         @yield('body')
                     </div>
                     @include('admin.shared.footer')
