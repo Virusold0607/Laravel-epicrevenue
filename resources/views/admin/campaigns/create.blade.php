@@ -130,7 +130,8 @@
                             </div>
                         </div>
                         <div id="addDelButtons">
-                            <input type="button" class= "btn btn-default" id="btnAdd" value="Add rule"> <input type="button" class= "btn btn-default" id="btnDel" value="Remove rule above">
+                            <input type="button" class= "btn btn-primary" id="btnAdd" value="Add rule"> 
+                            <input type="button" class= "btn btn-danger" id="btnDel" value="Remove rule above">
                         </div>
                     </div>
                 </div>
