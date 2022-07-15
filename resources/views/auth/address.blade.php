@@ -18,7 +18,7 @@
             <!-- card -->
             <div class="px-4 py-3 py-lg-4 card rounded">
 
-            {!! Form::model($user, array('url' => '/affiliate/apply/address', 'method' => 'post', 'class' => 'col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2','style' => '')) !!}
+            {!! Form::model($user, array('url' => '/affiliate/apply/address', 'method' => 'post', 'class' => '','style' => '')) !!}
             <div class="panel panel-default networks">
                 <div class="panel-heading">Address</div>
                 <div class="panel-body">
