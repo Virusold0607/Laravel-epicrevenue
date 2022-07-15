@@ -9,7 +9,7 @@
         <div class="col-auto">
           <div class="d-flex justify-content-end">
             <!-- List Separator -->
-            <ul class="list-inline list-separator">
+            <ul class="list-inline list-separator mb-0">
               <li class="list-inline-item">
                 <a class="list-separator-link" href="#">FAQ</a>
               </li>
