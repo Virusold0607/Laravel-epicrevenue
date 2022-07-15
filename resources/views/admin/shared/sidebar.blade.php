@@ -60,7 +60,7 @@
               </a>
 
               <div id="navbarVerticalMenuAllPostMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
-                <a class="nav-link activeee" href="/admin/#/campaigns/">{{ __("View Campaigns") }}</a>
+                <a class="nav-link activeee" href="{{ url('/admin/#/campaigns/') }}">{{ __("View Campaigns") }}</a>
                 <a class="nav-link activeee" href="{{ url('/admin/campaigns/create') }}">{{ __("Add Campaign") }}</a>
                 <a class="nav-link activeee" href="{{ url('/admin/campaigns/categories') }}">{{ __("Categories") }}</a>
                 <a class="nav-link activeee" href="{{ url('/admin/campaigns/featured') }}">{{ __("Featured") }}</a>
@@ -117,7 +117,7 @@
             <span class="dropdown-header mt-4">{{ __("General") }}</span>
 
             <div class="nav-item">
-              <a class="nav-link nav-link-main" href="#/reports/" data-placement="left">
+              <a class="nav-link nav-link-main" href="{{ url('#/reports/') }}" data-placement="left">
                 <i class="bi-folder2-open nav-icon"></i>
                 <span class="nav-link-title">Reports</span>
               </a>
