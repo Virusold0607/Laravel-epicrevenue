@@ -182,7 +182,6 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
 
