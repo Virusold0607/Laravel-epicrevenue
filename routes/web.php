@@ -46,8 +46,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/affiliate/apply/networks', 'Auth\RegisterController@postRegisterNetworks');
     Route::get('/affiliate/apply/address', 'Auth\RegisterController@getRegisterAddress');
     Route::post('/affiliate/apply/address', 'Auth\RegisterController@postRegisterAddress');
-    Route::post('/affiliate/apply/networks/instagram/{username}', 'Auth\RegisterController@handleInstagramVerification');
-    Route::get('/affiliate/apply/networks/{service}/callback', 'Auth\RegisterController@getRegisterSocialAccount');
     Route::get('/affiliate/apply/payment', 'Auth\RegisterController@getRegisterPayment');
     Route::post('/affiliate/apply/payment', 'Auth\RegisterController@postRegisterPayment');
 
@@ -73,9 +71,6 @@ Route::group(['middleware' => []], function() {
         Route::get('/reports', 'User\ReportsController@index');
         // Report for specific id
         Route::get('/report/{id}', 'User\ReportsController@show');
-//        Route::get('/reach/{id?}', 'User\ReachController@getReach');
-//        Route::get('/followers/{id?}', 'User\ReachController@getFollowers');
-//        Route::get('/engagements/{id?}/{engagements?}', 'User\ReachController@getEngagements');
         Route::get('/shoutouts', 'UserController@shoutouts');
         Route::get('/payouts', 'UserController@getPayouts');
         Route::post('/payouts', 'UserController@postPayouts');
@@ -83,7 +78,7 @@ Route::group(['middleware' => []], function() {
 
         Route::get('/campaign/{id}', 'CampaignController@show');
 
-//        Route::resource('/contests', 'ContestController');
+        // Route::resource('/contests', 'ContestController');
 
         Route::resource('/tools/snapmoney', 'User\Tools\SnapMoneyController');
 
@@ -91,8 +86,8 @@ Route::group(['middleware' => []], function() {
         Route::get('/invite', 'InviteController@index');
 
         //Promote
-//        Route::get('/promote', 'User\PromoteController@index');
-//        Route::get('/promote/{id}', 'User\PromoteController@show');
+        //Route::get('/promote', 'User\PromoteController@index');
+        //Route::get('/promote/{id}', 'User\PromoteController@show');
 
         Route::get('/networks', 'User\PromoteController@networks');
 
@@ -188,8 +183,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
 });
 
 
-
-
 Route::group(['prefix' => 'api/admin', 'middleware' => ['api', 'admin']], function () {
     Route::get('/stats', 'Admin\Api\AdminController@index');
     Route::get('/publishers/my', 'Admin\Api\PublisherController@my');
@@ -200,12 +193,6 @@ Route::group(['prefix' => 'api/admin', 'middleware' => ['api', 'admin']], functi
     Route::get('/reports/options/{id}/{status}', 'Admin\Api\ReportsController@options');
     Route::resource('/reports', 'Admin\Api\ReportsController');
 
-    //Social Account controller
-    Route::post('/socialaccounts/approval/{account_id}', 'Admin\Api\SocialAccountsController@approval');
-    Route::resource('/socialaccounts', 'Admin\Api\SocialAccountsController');
-
-    Route::resource('/socialposts', 'Admin\Api\SocialAccountsController');
-
     // Contests Controller
     Route::resource('/contests', 'Admin\Api\ContestController');
 
@@ -213,5 +200,3 @@ Route::group(['prefix' => 'api/admin', 'middleware' => ['api', 'admin']], functi
     Route::resource('/campaigns', 'Admin\Api\CampaignController');
 
 });
-
-
