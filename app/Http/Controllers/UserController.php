@@ -13,36 +13,12 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
 use Validator;
-use App\Models\InstagramAccountPost;
-use MetzWeb\Instagram\Instagram;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->instagram = new \Instagram(array(
-            'apiKey'      => '4f7e62c8d1c6465ab40487a48d1d68cd',
-            'apiSecret'   => 'f7680cd605d24a849473bfb74c90f62c',
-            'apiCallback' => 'http://funniestyikyaks.com/register/networks/'
-        ));
-    }
-
-    /*
-     * Display Shoutouts
-     *
-     * */
-    public function shoutouts()
-    {
-        return view('user.shoutouts');
-    }
 
     /*
      * Display Payouts page
