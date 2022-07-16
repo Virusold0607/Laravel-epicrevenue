@@ -349,3 +349,7 @@ small {
     padding: 10px;
     text-align: center;
 }
+
+ul.pagination li {
+    padding: 10px;
+}
