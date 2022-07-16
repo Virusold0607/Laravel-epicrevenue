@@ -47,7 +47,7 @@
 <div class="card rounded-0">
     <div class="card-body">
         <div class="table-responsive strpied-tabled-with-hover datatable-custom">
-            <table class="table table-lg table-thead-bordered table-nowrap table-align-middle card-table dataTable table-hoverborder  no-footer">
+            <table class="table table-lg table-thead-bordered table-nowrap table-align-middle card-table dataTable table-hoverborder border no-footer">
                 <tr>
                     <th>PID</th>
                     <th>Status</th>
@@ -78,8 +78,8 @@
                     <td><a href="#/publishers/show/<% publisher.id %>"><% publisher.firstname %> <% publisher.lastname %></a></td>
                     <td><a href="mailto:<% publisher.email %>"><% publisher.email %></a></td>
                     <td>
-                        <a href="#/publishers/show/<% publisher.id %>" class="btn btn-default">View App</a>
-                        <a href="#/publishers/edit/<% publisher.id %>" class="btn btn-default">View Account</a>
+                        <a href="#/publishers/show/<% publisher.id %>" class="btn btn-primary">View App</a>
+                        <a href="#/publishers/edit/<% publisher.id %>" class="btn btn-primary">View Account</a>
                         <!--<a href="mass.php?pid='.$row['id'].'" target="_blank" class="btn btn-default">Email</a>-->
                     </td>
                 </tr>
