@@ -303,9 +303,9 @@
                     {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
 
                     @if(is_null($campaign->homepage_featured_image_background))
-                        <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail mb-2 w-100" />
+                        <img id="featured_image_output" class="imagePreview mt-3 pt-2 img-thumbnail mb-2 w-100" />
                     @else
-                        <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail mb-2 w-100" src="{{ url('/storage/images/campaign/'.$campaign->featured_img) }}" alt="{{ $campaign->name }}" />
+                        <img id="featured_image_output" class="imagePreview mt-3 pt-2 img-thumbnail mb-2 w-100" src="{{ url('/storage/images/campaign/'.$campaign->featured_img) }}" alt="{{ $campaign->name }}" />
                     @endif
                     <script>
                         var loadFile = function(event, id) {
