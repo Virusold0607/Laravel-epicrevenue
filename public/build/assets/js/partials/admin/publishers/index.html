@@ -16,12 +16,14 @@
 </div>
  
  <!-- Form -->
-<div class="mb-4 w-md-50">
+<div class="mb-4 card p-3">
     <div class="row">
-        <div class="col-3">
+        <div class="col-6">
+            <label for="name" class="w-100 mb-2 fw-700">Search</label>
             <input type="text" ng-model="query" class="form-control" placeholder="Search...">
         </div>
         <div class="col-auto">
+            <label for="name" class="w-100 mb-2 fw-700">Search by</label>
             <select ng-model="search_by" class="form-select">
                 <option value="id">ID</option>
                 <option value="firstname">First Name</option>
@@ -30,6 +32,7 @@
             </select>
         </div>
         <div class="col-auto">
+            <label for="name" class="w-100 mb-2 fw-700">Sort by</label>
             <select ng-model="order_by" class="form-select">
                 <option value="id">ID</option>
                 <option value="created_at">Newest</option>
@@ -39,10 +42,13 @@
             </select>
         </div>
         <div class="col-auto">
+            <label for="name" class="w-100 mb-2 fw-700">Order by</label>
             <select ng-model="order" class="form-select">
                 <option value="asc">Ascending</option>
                 <option value="dsc">Descending</option>
             </select>
+        </div>
+        <div class="col-auto">
             <input class="btn btn-primary" type="submit" value="Search" ng-click="searchRecords(query, search_by, order_by, order)" />
         </div>
     </div>
