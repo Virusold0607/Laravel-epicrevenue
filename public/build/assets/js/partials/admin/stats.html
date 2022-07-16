@@ -34,15 +34,19 @@
             </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Today REV</h3></div>
-                <div class="panel-body"><span id="today_revenue"><% stats.earnings_today | currency %></span></div>
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today REV</h3>
+                    <h2 id="today_clicks" class="card-title text-inherit"><% stats.earnings_today | currency %></h2>
+                </div>
             </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Today EProfits</h3></div>
-                <div class="panel-body"><span id="today_profits"><% stats.profits_today | currency %></span></div>
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today EProfits</h3>
+                    <h2 id="today_clicks" class="card-title text-inherit"><span id="today_profits"><% stats.profits_today | currency %></span></h2>
+                </div>
             </div>
         </div>
     </div>
