@@ -1,30 +1,29 @@
 @extends('shared.layout')
 @section('body')
 
-    <div class="hero hero-txt">
-        <div class="container">
-            @if(auth()->check())
-                <h1 class="hero-heading">Campaigns</h1>
-                <p class="hero-p">Search this page for a campaign to promote on your account.</p>
-            @else
-                <div class="campaigns-join row">
-                    <div class="col-sm-8">
-                        <span class="title">Influencers Reach is the best way to monetize your social accounts</span>
-                        <p>Find services, products, apps and more you think will appeal to your following and make money everytime you promote.</p>
-                    </div>
-                    <div class="col-sm-1">
-                        <div style="display:block;width:1px;">&nbsp;</div>
-                    </div>
-                    <div class="col-sm-3">
-                        <a href="{{ url('/register') }}" class="btn btn-primary">Create your Free Account</a>
-                        <span class="bttn-t">and get started in minutes</span>
-                    </div>
+<div class="hero hero-txt">
+    <div class="container">
+        @if(auth()->check())
+            <h1 class="hero-heading">Campaigns</h1>
+            <p class="hero-p">Search this page for a campaign to promote on your account.</p>
+        @else
+            <div class="campaigns-join row">
+                <div class="col-sm-8">
+                    <span class="title">Influencers Reach is the best way to monetize your social accounts</span>
+                    <p>Find services, products, apps and more you think will appeal to your following and make money everytime you promote.</p>
                 </div>
-            @endif
-        </div>
+                <div class="col-sm-1">
+                    <div style="display:block;width:1px;">&nbsp;</div>
+                </div>
+                <div class="col-sm-3">
+                    <a href="{{ url('/register') }}" class="btn btn-primary">Create your Free Account</a>
+                    <span class="bttn-t">and get started in minutes</span>
+                </div>
+            </div>
+        @endif
     </div>
+</div>
 
-    <div class="clearfix"></div>
 
     <div class="page-container no-shadow no-border">
         <div class="container mobile-adjustment">
@@ -56,7 +55,7 @@
             </div>
             {!! Form::close() !!}
 
-            <div class="clearfix"></div>
+
 
             <div class="col-sm-12 row">
                 <div class="col-md-3 col-sm-4 campaign_categories_desktop">
@@ -117,7 +116,5 @@
         </div>
     </div>
 
-    <div class="container">
-        <hr>
-    </div>
+
 @endsection
