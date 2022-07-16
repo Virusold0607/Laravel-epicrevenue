@@ -10,7 +10,7 @@
         <h1 class="py-3">Monetize the reach of your following</h1>
         <div class="row">
             <div class="col-sm-8">
-                <h4 class="py-3">Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
+                <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
             </div>
         </div>
         <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn btn-primary">Become a Partner</a>
