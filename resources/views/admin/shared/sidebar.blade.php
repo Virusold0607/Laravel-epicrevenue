@@ -73,22 +73,6 @@
 
             <!-- Collapse -->
             <div class="nav-item">
-              <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllPagesMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllPagesMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllPagesMenu">
-                <i class="bi-stickies nav-icon"></i>
-                <span class="nav-link-title">{{ __("Promotions") }}</span>
-              </a>
-
-              <div id="navbarVerticalMenuAllPagesMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
-                <a class="nav-link " href="{{ url('/admin/promotions/') }}">{{ __("View Promotions") }}</a>
-                <a class="nav-link " href="{{ url('/admin/promotions/create') }}">{{ __("Add Promotion") }}</a>
-                <a class="nav-link " href="{{ url('/admin/promotions/categories') }}">{{ __("Categories") }}</a>
-                <a class="nav-link " href="{{ url('/admin/promotions/creatives') }}">{{ __("View Creatives") }}</a>
-              </div>
-            </div>
-            <!-- End Collapse -->
-
-            <!-- Collapse -->
-            <div class="nav-item">
               <a class="nav-link nav-link-main dropdown-toggle " href="#navbarVerticalMenuAllOrdersMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuAllOrdersMenu" aria-expanded="false" aria-controls="navbarVerticalMenuAllOrdersMenu">
                 <i class="bi bi-receipt nav-icon"></i>
                 <span class="nav-link-title">{{ __("Rewards") }}</span>
