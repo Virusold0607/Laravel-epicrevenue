@@ -91,7 +91,7 @@
                 <a ng-if="report.status == 1" ng-click="update(report.id, 2)" class="btn btn-success">Credit</a>
                 <a ng-if="report.status == 2" ng-click="update(report.id, 1)" class="btn btn-danger">Reverse</a>
                 <a href="#/reports/show/<% report.id %>" class="btn btn-info">Details</a>
-                <a ng-click="destroy(report.id)" class="btn btn-danger">Delete</a>
+                <a ng-click="destroy(report.id)" class="btn btn-danger"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
     </table>
