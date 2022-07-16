@@ -59,7 +59,7 @@
                 <span class="nav-link-title">{{ __("Campaigns") }}</span>
               </a>
 
-              <div id="navbarVerticalMenuAllPostMenu" class="nav-collapse collapse @if($activePage == 'campaigns') show @endif" data-bs-parent="#navbarVerticalMenuPagesMenu">
+              <div id="navbarVerticalMenuAllPostMenu" class="nav-collapse collapse @if(isset($activePage == 'campaigns')) show @endif" data-bs-parent="#navbarVerticalMenuPagesMenu">
                 <a class="nav-link " href="{{ url('/admin/#/campaigns/') }}">{{ __("View Campaigns") }}</a>
                 <a class="nav-link @if($navName == 'createampaigns') active @endif" href="{{ url('/admin/campaigns/create') }}">{{ __("Create Campaign") }}</a>
                 <a class="nav-link activeee" href="{{ url('/admin/campaigns/categories') }}">{{ __("Categories") }}</a>
