@@ -21,16 +21,16 @@
         <div class="col-3">
             <input type="text" ng-model="query" class="form-control" placeholder="Search...">
         </div>
-        <div class="col-3">
-            <select ng-model="search_by">
+        <div class="col-auto">
+            <select ng-model="search_by" class="form-select">
                 <option value="id">ID</option>
                 <option value="firstname">First Name</option>
                 <option value="lastname">Last Name</option>
                 <option value="email">Email Address</option>
             </select>
         </div>
-        <div class="col-3">
-            <select ng-model="order_by">
+        <div class="col-auto">
+            <select ng-model="order_by" class="form-select">
                 <option value="id">ID</option>
                 <option value="created_at">Newest</option>
                 <option value="firstname">First Name</option>
@@ -38,12 +38,12 @@
                 <option value="email">Email Address</option>
             </select>
         </div>
-        <div class="col-3">
-            <select ng-model="order">
+        <div class="col-auto">
+            <select ng-model="order" class="form-select">
                 <option value="asc">Ascending</option>
                 <option value="dsc">Descending</option>
             </select>
-            <input type="submit" value="Search" ng-click="searchRecords(query, search_by, order_by, order)" />
+            <input class="btn btn-primary" type="submit" value="Search" ng-click="searchRecords(query, search_by, order_by, order)" />
         </div>
     </div>
     <!-- End Row -->
