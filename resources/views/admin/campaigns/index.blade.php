@@ -70,7 +70,9 @@ Below are all campaigns added to the network.<br /><br />
                     @if($leads + $unique_clicks <= 0)
                         0
                     @else
-                        {!! number_format($leads / ($leads + $unique_clicks), 2) !!}
+                        {!! number_format($leads / ($leads + $unique_clicks), 2) !!} 
+                        <br>
+                        {!! number_format($leads / ($leads + $clicks)) * 100), 2) !!}
                     @endif
                     %
                 </td>
