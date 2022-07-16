@@ -7,7 +7,7 @@
  
 <div class="hero main-promo border-bottom py-6">
     <div class="container">
-        <h1 class="py-3">Monetize the reach of your following</h1>
+        <h1 class="pt-3">Monetize the reach of your following</h1>
         <div class="row">
             <div class="col-sm-8">
                 <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
