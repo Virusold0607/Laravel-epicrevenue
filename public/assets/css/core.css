@@ -708,3 +708,7 @@ hr { border-color: #eeeeee !important; }
 .mb-20px,.my-20px,.m-20px { margin-bottom: 20px; }
 .mb-25px,.my-25px,.m-25px { margin-bottom: 25px; }
 .mb-30px,.my-30px,.m-30px { margin-bottom: 30px; }
+
+.table>:not(caption)>*>* {
+    padding: 10px 20px;
+}
