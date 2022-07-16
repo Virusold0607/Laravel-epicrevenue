@@ -1,4 +1,4 @@
-@extends('admin.shared.layout')
+@extends('admin.shared.layout', ['activePage' => 'campaigns', 'title' => 'Edit Campaigns', 'navName' => 'editampaigns', 'activeButton' => 'blog'])
 
 @section('body')
 <div class="page-header mb-4">
