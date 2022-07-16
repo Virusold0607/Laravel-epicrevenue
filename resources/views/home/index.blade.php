@@ -13,7 +13,7 @@
                 <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
             </div>
         </div>
-        <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn ">Become a Partner</a>
+        <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn btn-primary">Become a Partner</a>
     </div>
 </div><!-- End .hero -->
 
