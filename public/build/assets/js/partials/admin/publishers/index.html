@@ -70,8 +70,6 @@
                     <th>Options</th>
                 </tr>
 
-                <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></uib-pagination>
-
                 <tr ng-repeat="publisher in publishers | filter:query">
                     <td><a href="#/publishers/show/<% publisher.id %>"><% publisher.id %></a></td>
                     <td>
@@ -95,6 +93,8 @@
                         <!--<a href="mass.php?pid='.$row['id'].'" target="_blank" class="btn btn-default">Email</a>-->
                     </td>
                 </tr>
+
+                <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></uib-pagination>
             </table>
         </div>
     </div>
