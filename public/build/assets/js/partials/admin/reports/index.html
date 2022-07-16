@@ -88,9 +88,9 @@
             <td><% report.country %></td>
             <td><% report.credit_hash %></td>
             <td>
-                <a ng-if="report.status == 1" ng-click="update(report.id, 2)" class="btn btn-success">Credit</a>
-                <a ng-if="report.status == 2" ng-click="update(report.id, 1)" class="btn btn-danger">Reverse</a>
-                <a href="#/reports/show/<% report.id %>" class="btn btn-info">Details</a>
+                <a ng-if="report.status == 1" ng-click="update(report.id, 2)" class="btn btn-success"><i class="bi bi-check-lg"></i></a>
+                <a ng-if="report.status == 2" ng-click="update(report.id, 1)" class="btn btn-danger"><i class="bi bi-repeat"></i></a>
+                <a href="#/reports/show/<% report.id %>" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
                 <a ng-click="destroy(report.id)" class="btn btn-danger"><i class="bi bi-trash"></i></a>
             </td>
         </tr>
