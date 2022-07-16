@@ -236,7 +236,6 @@ return [
         'Form'       => Collective\Html\FormFacade::class,
         'Html'       => Collective\Html\HtmlFacade::class,
         'Socialite'  => Laravel\Socialite\Facades\Socialite::class,
-        'Instagram'  => MetzWeb\Instagram\Instagram::class,
         'GeoIP'      => \Torann\GeoIP\Facades\GeoIP::class,
         'Agent'      => Jenssegers\Agent\Facades\Agent::class,
     ],
