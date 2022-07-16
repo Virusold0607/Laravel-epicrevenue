@@ -6,6 +6,7 @@ use App\Models\CampaignRate;
 use App\Models\CampaignsCategory;
 use App\Models\HomepageFeaturedCampaign;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
