@@ -95,35 +95,6 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\UserApi');
     }
 
-    public function socialAccounts(){
-        return $this->hasMany('App\Models\SocialAccount');
-    }
-
-
-    public function socialAccountFollows(){
-        return $this->hasMany('App\Models\SocialAccountFollower');
-    }
-
-
-    public function socialAccountPosts(){
-        return $this->hasMany('App\Models\SocialAccountPost');
-    }
-
-
-    public function instagramAccounts(){
-        return $this->hasMany('App\Models\InstagramAccount');
-    }
-
-
-    public function instagramAccountFollows(){
-        return $this->hasMany('App\Models\InstagramAccountFollower');
-    }
-
-
-    public function instagramAccountPosts(){
-        return $this->hasMany('App\Models\InstagramAccountPost');
-    }
-
     /**
      * Get the rates for the user.
      */
