@@ -7,7 +7,6 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-use App\Models\SocialAccount;
 use GuzzleHttp\Exception\ClientException;
 use Mockery\CountValidator\Exception;
 
