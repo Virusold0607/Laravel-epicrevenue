@@ -6,7 +6,6 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "anhskohbo/no-captcha": "^3.4",
         "drewm/mailchimp-api": "^2.5",
         "facebook/graph-sdk": "^5.1",
         "fruitcake/laravel-cors": "^2.0",
