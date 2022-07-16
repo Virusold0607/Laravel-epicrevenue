@@ -55,15 +55,6 @@
             <td><b>ZIP code:</b></td>
             <td><% user.user.zip %></td>
         </tr>
-        <tr>
-            <td colspan="2"><h2>Social Accounts Information</h2></td>
-        </tr>
-        <tr>
-            <td><b>Social Accounts:</b></td>
-            <td>
-                <span ng-repeat="social_account in user.user.social_accounts"><a href="https://instagram.com/<% social_account.username %>" traget="_blank"><% social_account.username %></a> (<% social_account.account %>), </span>
-            </td>
-        </tr>
 
         <tr>
             <td colspan="2"><h2>Earnings Stats</h2></td>
