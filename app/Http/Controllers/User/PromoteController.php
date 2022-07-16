@@ -16,19 +16,6 @@ use Response;
 
 class PromoteController extends Controller
 {
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->instagram = new Instagram(array(
-            'apiKey'      => env('INSTAGRAM_KEY'),
-            'apiSecret'   => env('INSTAGRAM_SECRET'),
-            'apiCallback' => env('INSTAGRAM_CALLBACK_ADD')
-        ));
-    }
 
 
     /**
