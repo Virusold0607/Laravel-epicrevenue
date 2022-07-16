@@ -4,19 +4,18 @@
 @endsection
 
 @section('body')
-    <div class="homepage">
-        <div class="hero main-promo">
-            <div class="container">
-                <h1>Monetize the reach of your following</h1>
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn ">Become a Partner</a>
+ 
+<div class="hero main-promo py-6">
+    <div class="container">
+        <h1>Monetize the reach of your following</h1>
+        <div class="row">
+            <div class="col-sm-8">
+                <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
             </div>
-        </div><!-- End .hero -->
+        </div>
+        <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn ">Become a Partner</a>
+    </div>
+</div><!-- End .hero -->
 
         @foreach($featured_campaigns as $campaign)
             @if(empty($campaign->campaign->homepage_featured_image_background))
@@ -72,5 +71,5 @@
                 </div>
             </div>
         </div>
-    </div>
+ 
 @endsection
