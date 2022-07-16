@@ -26,7 +26,6 @@ Route::group(['middleware' => 'guest'], function () {
     //Invite Controller
     Route::get('/invite/{id}', 'InviteController@getId');
 
-
     // Password Reset Routes...
     $this->get('password/reset/', 'Auth\ForgotPasswordController@showLinkRequestForm');
     $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
@@ -48,9 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/affiliate/apply/address', 'Auth\RegisterController@postRegisterAddress');
     Route::get('/affiliate/apply/payment', 'Auth\RegisterController@getRegisterPayment');
     Route::post('/affiliate/apply/payment', 'Auth\RegisterController@postRegisterPayment');
-
-    Route::get('/register/facebook/callback', 'Auth\RegisterController@handleFacebookCallback');
-    Route::get('/register/twitter/callback', 'Auth\RegisterController@handleTwitterCallback');
     Route::get('/register/{service}/', 'Auth\RegisterController@redirectToProvider');
 });
 
@@ -79,13 +75,10 @@ Route::group(['middleware' => []], function() {
         Route::get('/campaign/{id}', 'CampaignController@show');
 
         // Route::resource('/contests', 'ContestController');
-
         Route::resource('/tools/snapmoney', 'User\Tools\SnapMoneyController');
 
         // Invite
         Route::get('/invite', 'InviteController@index');
-
-        Route::get('/networks', 'User\PromoteController@networks');
 
         //Settings
         Route::get('/settings/', 'User\SettingsController@index');
@@ -113,8 +106,6 @@ Route::group(['middleware' => []], function() {
     // Campaign Controller
     Route::get('/campaign/gallery/image/{id}/{filename}', 'Admin\CampaignGalleryController@showImage');
     Route::get('/campaign/image/{name}', 'Admin\CampaignController@featureImage');
-
-    Route::get('/promote/image/{id}', 'User\PromoteController@featureImage');
 
 });
 
@@ -153,25 +144,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/reports/options/{id}/{status}', 'Admin\ReportsController@options');
     Route::resource('/reports', 'Admin\ReportsController');
 
-
+    // Payments
     Route::get('/payments', 'Admin\PaymentController@index');
     Route::post('/payments', 'Admin\PaymentController@generate');
 
-
-    //Promotion Controller
-    Route::get('/promotions/categories', 'Admin\CategoryController@index');
-    Route::post('/promotions/categories', 'Admin\CategoryController@store');
-    Route::get('/promotions/delete/{id}', 'Admin\CategoryController@destroy');
-
-
-    Route::get('/promotions/{id}/edit/', 'Admin\PromotionController@edit');
-    Route::put('/promotions/{id}', 'Admin\PromotionController@update');
-
-    Route::resource('/promotions/', 'Admin\PromotionController');
-
-    Route::get('/promotions/edit', 'Admin\PromotionController@edit');
-    Route::get('/promotions/creatives', 'Admin\PromotionController@creatives');
-    Route::get('/promotions/creatives/upload', 'Admin\PromotionController@creativesupload');
 
     //Rewards
     Route::resource('/rewards', 'Admin\RewardsController');
