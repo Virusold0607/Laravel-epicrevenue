@@ -1,4 +1,4 @@
-@extends('admin.shared.layout')
+@extends('backend.layouts.app', ['activePage' => 'posts', 'title' => 'All Post', 'navName' => 'allpost', 'activeButton' => 'blog'])
 
 @section('body')
 
