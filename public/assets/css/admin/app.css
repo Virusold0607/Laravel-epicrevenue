@@ -349,3 +349,6 @@ small {
     padding: 10px;
     text-align: center;
 }
+.table>:not(caption)>*>* {
+    padding: 10px 20px;
+}
