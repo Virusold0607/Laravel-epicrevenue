@@ -1,4 +1,4 @@
-@extends('admin.shared.layout')
+@extends('admin.shared.layout', ['activePage' => 'campaigns', 'title' => 'Create Campaigns', 'navName' => 'createampaigns', 'activeButton' => 'blog'])
 
 @section('body')
 
