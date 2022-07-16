@@ -12,7 +12,6 @@ use App\Models\Promotion;
 use File;
 use Auth;
 use Response;
-use MetzWeb\Instagram\Instagram;
 
 
 class PromoteController extends Controller
