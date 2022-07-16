@@ -43,7 +43,7 @@
                 </li>
             </ul>
             -->
-            {!! Form::model($user, array('url' => '/affiliate/apply', 'method' => 'post', 'class' => 'col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2','style' => '')) !!}
+            {!! Form::model($user, array('url' => '/affiliate/apply', 'method' => 'post', 'class' => '','style' => '')) !!}
             <div class="panel panel-default networks">
                 <div class="panel-heading">Account Details</div>
                 <div class="panel-body">
