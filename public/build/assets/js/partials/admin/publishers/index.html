@@ -56,51 +56,6 @@
 </div>
 <!-- End Form -->
 
-    You can search publishers using the below form.
-    <table class="table table-striped table-bordered">
-        <tr>
-            <td>Search: </td>
-            <td><input ng-model="query"></td>
-        </tr>
-        <tr>
-            <td>Search by:</td>
-            <td>
-                <select ng-model="search_by">
-                    <option value="id">ID</option>
-                    <option value="firstname">First Name</option>
-                    <option value="lastname">Last Name</option>
-                    <option value="email">Email Address</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Sort by:</td>
-            <td>
-                <select ng-model="order_by">
-                    <option value="id">ID</option>
-                    <option value="created_at">Newest</option>
-                    <option value="firstname">First Name</option>
-                    <option value="lastname">Last Name</option>
-                    <option value="email">Email Address</option>
-                </select>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Order by:</td>
-            <td>
-                <select ng-model="order">
-                    <option value="asc">Ascending</option>
-                    <option value="dsc">Descending</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Search" ng-click="searchRecords(query, search_by, order_by, order)" /></td>
-        </tr>
-    </table>
-
 <div class="card rounded-0">
     <div class="card-body">
         <div class="table-responsive strpied-tabled-with-hover datatable-custom">
