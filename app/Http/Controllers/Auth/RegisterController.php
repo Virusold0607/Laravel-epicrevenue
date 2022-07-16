@@ -24,8 +24,7 @@ use Socialite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
-//use App\Models\InstagramAccount;
-//use MetzWeb\Instagram\Instagram;
+
 
 class RegisterController extends Controller
 {
@@ -40,7 +39,7 @@ class RegisterController extends Controller
     |
     */
 
-//    use RegistersUsers;
+    //use RegistersUsers;
 
     /**
      * Where to redirect users after login / registration.
@@ -48,35 +47,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/dashboard';
-
     protected $username = 'email';
-
-    protected $instagram;
-    protected $fb;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        /*
-        $this->instagram = new Instagram(array(
-            'apiKey'      => env('INSTAGRAM_KEY'),
-            'apiSecret'   => env('INSTAGRAM_SECRET'),
-            'apiCallback' => env('INSTAGRAM_CALLBACK')
-        ));
-        */
-
-//        $this->fb = new \Facebook\Facebook([
-//            'app_id' => env('FB_ID'),
-//            'app_secret' => env('FB_SECRET'),
-//            'default_graph_version' => 'v2.7',
-//        ]);
-    }
-
-
 
     /**
      * Show the application registration form.
@@ -87,165 +58,6 @@ class RegisterController extends Controller
     {
         $user = new User();
         return view('auth.register')->with(compact('user'));
-    }
-
-    /**
-     * Show the application network registration form.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getRegisterNetworks(Request $request)
-    {
-        $data = array();
-        $data['instagram'] = $this->instagram;
-        if($request->has('middleware_error')){
-            $data['error']['middleware'] = "You have to add atleast one account.";
-        }
-
-        return view('auth.networks', $data);
-    }
-
-
-    public function getRegisterSocialAccount(Request $request, $service)
-    {
-        $data['instagram'] = $this->instagram;
-
-        if( strtolower($service) === 'instagram')
-            $this->handleInstagramCallback($request);
-
-        return view('auth.networks', $data);
-    }
-
-    public function redirectToProvider($provider)
-    {
-        if(strtolower($provider) === 'twitter')
-            return Socialite::driver('twitter')->redirect();
-        if(strtolower($provider) === 'facebook')
-            return Socialite::driver('facebook')->redirect();
-
-        return abort(404);
-    }
-
-    public function handleFacebookCallback(Request $request)
-    {
-        $user = Socialite::driver('facebook')->user();
-
-//        $social_account = SocialAccount::firstOrNew(array('account_id' => (int) $user->getId()));
-//        $social_account->user_id = auth()->user()->id;
-//        $social_account->account = 'facebook';
-//        $social_account->access_token = $user->token;
-//        $social_account->account_id = (int) $user->getId();
-//        $social_account->profile_picture = $user->getAvatar();
-//        $social_account->username = $user->getNickname();
-//        $social_account->full_name = $user->getName();
-//        $social_account->followed_by = $user->data->counts->followed_by;
-//        $social_account->follows = $user->data->counts->follows;
-//        $social_account->save();
-
-        return response()->json($user);
-    }
-
-    public function handleTwitterCallback(Request $request)
-    {
-        $user = Socialite::driver('twitter')->user();
-
-        return response()->json($user);
-    }
-
-
-    public function handleInstagramVerification(Request $request, $username)
-    {
-        $url = "https://www.instagram.com/". strtolower($username) ."/?__a=1";
-
-        try {
-            $client = new \GuzzleHttp\Client();
-            $res = $client->request('GET', $url, []);
-        } catch (ClientException $e) {
-            return response()->json('failed');
-        } catch (Exception $e) {
-            return response()->json('failed');
-        }
-
-        if($res->getStatusCode() === 200)
-        {
-            $data = json_decode(  $res->getBody() );
-
-            if(isset($data->user->external_url)) {
-                if( $data->user->external_url === 'http://reachurl.com/verify/ig/'.auth()->user()->id
-                    || $data->user->external_url === 'http://www.reachurl.com/verify/ig/'.auth()->user()->id
-                ) {
-                    $a_user = User::findOrFail((int) auth()->user()->id);
-
-                    $social_account = SocialAccount::firstOrNew(['account' => 'instagram', 'account_id' => (int) $data->user->id]);
-                    $social_account->account = "instagram";
-                    $social_account->user_id = $a_user->id;
-                    $social_account->account_id = $data->user->id;
-                    $social_account->profile_picture = $data->user->profile_pic_url;
-                    $social_account->username = $data->user->username;
-                    $social_account->bio = $data->user->biography;
-                    $social_account->website = $data->user->external_url;
-                    $social_account->name = $data->user->full_name;
-                    $social_account->followed_by = $data->user->followed_by->count;
-                    $social_account->follows = $data->user->follows->count;
-                    $social_account->save();
-
-                    $status = AccountStatus::firstOrNew(['user_id' => (int) $a_user->id]);
-                    $status->any_network_added = 'yes';
-                    $status->save();
-
-                    return response()->json('success');
-                }
-            } else {
-                return response()->json('failed');
-            }
-        } else {
-            return response()->json('failed');
-        }
-        return response()->json('failed');
-    }
-
-    private function handleInstagramCallback(Request $request)
-    {
-        $data['instagram'] = $this->instagram;
-        if ($request->get('code') && $request->user())
-        {
-            $user = $request->user();
-
-            $code = $request->get('code');
-            $instagram = $this->instagram->getOAuthToken($code);
-
-            if(isset($instagram->user)) {
-                $url = 'https://api.instagram.com/v1/users/' . $instagram->user->id . '?access_token=' . $instagram->access_token;
-                $api_response = file_get_contents($url);
-                $record = json_decode($api_response);
-
-                if ((int)$record->data->counts->followed_by >= 10) {
-                    $instagram_account = InstagramAccount::firstOrNew(array('instagram_id' => (int)$instagram->user->id));
-                    $instagram_account->user_id = $user->id;
-                    $instagram_account->access_token = $instagram->access_token;
-                    $instagram_account->instagram_id = $instagram->user->id;
-                    $instagram_account->profile_picture = $instagram->user->profile_picture;
-                    $instagram_account->username = $instagram->user->username;
-                    $instagram_account->bio = $instagram->user->bio;
-                    $instagram_account->website = $instagram->user->website;
-                    $instagram_account->full_name = $instagram->user->full_name;
-                    $instagram_account->followed_by = $record->data->counts->followed_by;
-                    $instagram_account->follows = $record->data->counts->follows;
-                    $instagram_account->save();
-
-
-                    $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);
-                    $status->any_payment_method_added = 'yes';
-                    $status->save();
-
-                    return redirect('/register/networks');
-                } else {
-                    $data['error']['lessThan1k'] = "Sorry at this time we are only accepting users with atleast 1000 or more followers.";
-                }
-            } else {
-                $data['error']['someProblem'] = "Sorry we cannot add this account. Something goes wrong. Try to add again.";
-            }
-        }
     }
 
 
