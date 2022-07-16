@@ -353,3 +353,8 @@ small {
 ul.pagination li {
     padding: 10px;
 }
+
+li.pagination-page.ng-scope.active {
+    font-weight: bold;
+    border: 2px solid #000000;
+}
