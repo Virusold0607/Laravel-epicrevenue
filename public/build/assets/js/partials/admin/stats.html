@@ -155,43 +155,51 @@
 
     <div class="row">
         <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Total Clicks</h3></div>
-                <div class="panel-body"><span id="total_clicks"><% stats.total_clicks %></span></div>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Total Leads</h3></div>
-                <div class="panel-body"><span id="total_leads"><% stats.total_leads %></span></div>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Total CR</h3></div>
-                <div class="panel-body">
-                    <span id="total_cr"><% (stats.total_leads / stats.total_clicks) * 100 | number : fractionSize %>%</span>
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Total Clicks</h3>
+                    <h2 class="card-title text-inherit"><span id="total_clicks"><% stats.total_clicks %></span></h2>
                 </div>
             </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Total EPC</h3></div>
-                <div class="panel-body">
-                    <span id="total_epc"><% stats.earnings_total / stats.total_clicks | number : fractionSize %></span>
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Total Leads</h3>
+                    <h2 class="card-title text-inherit"><span id="total_leads"><% stats.total_leads %></span></h2>
                 </div>
             </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Total REV</h3></div>
-                <div class="panel-body"><span id="total_revenue"><% stats.earnings_total | currency %></span></div>
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Total CR</h3>
+                    <h2 class="card-title text-inherit"><span id="total_cr"><% (stats.total_leads / stats.total_clicks) * 100 | number : fractionSize %>%</span></h2>
+                </div>
             </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Total eProfits</h3></div>
-                <div class="panel-body"><span id="total_profits"><% stats.profits_total | currency %></span></div>
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Total EPC</h3>
+                    <h2 class="card-title text-inherit"><span id="total_epc"><% stats.earnings_total / stats.total_clicks | number : fractionSize %></span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Total REV</h3>
+                    <h2 class="card-title text-inherit"><span id="total_revenue"><% stats.earnings_total | currency %></span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Total eProfits</h3>
+                    <h2 class="card-title text-inherit"><span id="total_profits"><% stats.profits_total | currency %></span></h2>
+                </div>
             </div>
         </div>
     </div>
