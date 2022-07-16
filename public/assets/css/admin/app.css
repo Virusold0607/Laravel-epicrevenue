@@ -355,8 +355,7 @@ ul.pagination li {
 }
 
 li.pagination-page.ng-scope.active {
-    font-weight: bold;
-    border: 2px solid #000000;
+    border: 1px solid #eeeeee;
 }
 
 span.badge.bg-primary.rounded-pill {
