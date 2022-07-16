@@ -10,24 +10,26 @@
             </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3 admin-panel-stats">
-                <div class="panel-heading"><h3 class="panel-title">Today Leads</h3></div>
-                <div class="panel-body"><span id="today_leads"><% stats.today_leads %></span></div>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Today CR</h3></div>
-                <div class="panel-body">
-                    <span id="today_cr"><%(stats.today_leads / stats.today_clicks) * 100 | number : fractionSize %>%</span>
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today Leads</h3>
+                    <h2 id="today_clicks" class="card-title text-inherit"><% stats.today_leads %></h2>
                 </div>
             </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="panel panel-default card p-3">
-                <div class="panel-heading"><h3 class="panel-title">Today EPC</h3></div>
-                <div class="panel-body">
-                    <span id="today_epc"><% stats.earnings_today / stats.today_clicks | number : fractionSize %></span>
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today CR</h3>
+                    <h2 id="today_clicks" class="card-title text-inherit"><%(stats.today_leads / stats.today_clicks) * 100 | number : fractionSize %>%</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card admin-panel-stats">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today Leads</h3>
+                    <h2 id="today_clicks" class="card-title text-inherit"><% stats.earnings_today / stats.today_clicks | number : fractionSize %></h2>
                 </div>
             </div>
         </div>
