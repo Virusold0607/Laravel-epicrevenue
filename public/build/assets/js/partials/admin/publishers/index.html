@@ -20,11 +20,11 @@
     <div class="row">
         <div class="col-6">
             <label for="name" class="w-100 mb-2 fw-700">Search</label>
-            <input type="text" ng-model="query" class="form-control" placeholder="Search...">
+            <input type="text" ng-model="query" class="form-control mb-2" placeholder="Search...">
         </div>
         <div class="col-auto">
             <label for="name" class="w-100 mb-2 fw-700">Search by</label>
-            <select ng-model="search_by" class="form-select">
+            <select ng-model="search_by" class="form-select mb-2">
                 <option value="id">ID</option>
                 <option value="firstname">First Name</option>
                 <option value="lastname">Last Name</option>
@@ -33,7 +33,7 @@
         </div>
         <div class="col-auto">
             <label for="name" class="w-100 mb-2 fw-700">Sort by</label>
-            <select ng-model="order_by" class="form-select">
+            <select ng-model="order_by" class="form-select mb-2">
                 <option value="id">ID</option>
                 <option value="created_at">Newest</option>
                 <option value="firstname">First Name</option>
@@ -43,13 +43,13 @@
         </div>
         <div class="col-auto">
             <label for="name" class="w-100 mb-2 fw-700">Order by</label>
-            <select ng-model="order" class="form-select">
+            <select ng-model="order" class="form-select mb-2">
                 <option value="asc">Ascending</option>
                 <option value="dsc">Descending</option>
             </select>
         </div>
         <div class="col-auto">
-            <input class="btn btn-primary mt-2" type="submit" value="Search" ng-click="searchRecords(query, search_by, order_by, order)" />
+            <input class="btn btn-primary mt-4" type="submit" value="Search" ng-click="searchRecords(query, search_by, order_by, order)" />
         </div>
     </div>
     <!-- End Row -->
