@@ -20,6 +20,9 @@ header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link
     color: #377dff;
 }
 
+.search .btn {
+    padding: 0.45rem 1.2rem;
+}
 /* Footer */
 .footer .footer-logo {
     height:20px;
