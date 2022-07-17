@@ -49,13 +49,9 @@
                 <div class="panel-body">
                     {{-- Was there an error? --}}
                     @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger p-2 mb-2">{{ $error }}</div>
+                        @endforeach
                     @endif
 
                     <div class="form-group">
