@@ -89,24 +89,27 @@
                                 </div>
                             @endif
                             @foreach($campaigns as $campaign)
-                                <div class="camp-box row">
-                                    <div class="col-sm-3">
-                                        <img class="img-responsive w-100" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <h4 class="camp-title">
-                                            <a href="{{ url('/campaign/' . $campaign->id) }}">{{ $campaign->name }}</a>
-                                        </h4>
-                                        <p>{{ $campaign->description }}</p>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    @if(auth()->check())
-                                        <hr>
-                                        <div class="camp-info row">
-                                            <h5 class="col-sm-6 pull-left text-left" data-toggle="tooltip" data-placement="bottom" title="Amount you are paid for each valid conversion"><b>Payment? </b>${{ $campaign->rate }}<small>/per lead</small></h5>
-                                            <div class="col-sm-6 pull-right text-right"><a href="{{ url('/campaign/' . $campaign->id) }}" class="btn btn-primary btn-md">Promote Now</a></div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <img class="img-responsive border w-100" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <h4 class="camp-title">
+                                                    <a href="{{ url('/campaign/' . $campaign->id) }}">{{ $campaign->name }}</a>
+                                                </h4>
+                                                <p>{{ $campaign->description }}</p>
+                                            </div>
+                                            @if(auth()->check())
+                                                <hr>
+                                                <div class="camp-info row">
+                                                    <h5 class="col-sm-6 pull-left text-left" data-toggle="tooltip" data-placement="bottom" title="Amount you are paid for each valid conversion"><b>Payment? </b>${{ $campaign->rate }}<small>/per lead</small></h5>
+                                                    <div class="col-sm-6 pull-right text-right"><a href="{{ url('/campaign/' . $campaign->id) }}" class="btn btn-primary btn-md">Promote Now</a></div>
+                                                </div>
+                                            @endif
                                         </div>
-                                    @endif
+                                    </div>
                                 </div>
                             @endforeach
                         @endif
