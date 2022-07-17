@@ -83,7 +83,7 @@
                     <br />
                     {!! Form::checkbox('privacy', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/privacy') }}" target="_blank" title="Privacy Policy">Privacy Policy</a>.
                     <br /><br />
-                    {!! app('captcha')->display() !!}
+                    {-- app('captcha')->display() --}
                 </div>
             </div>
             {!! Form::submit('Next', array('class' => 'btn btn-primary btn-lg pull-right')) !!}
