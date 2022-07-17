@@ -57,7 +57,7 @@
 
 
 
-            <div class="col-sm-12 row">
+            <div class="row">
                 <div class="col-md-3 col-sm-4 campaign_categories_desktop">
                     <div class="category_panel_div">
                         @foreach($categories as $category)
@@ -70,10 +70,9 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-md-9 col-sm-8" style="padding:0;">
+                <div class="col-lg-9 col-sm-12">
                     <div class="campaigns">
                         @if(is_null($campaigns))
-                            <div class="container" style="height: 20px; clear: both"></div>
                             <div class="alert alert-danger" role="alert">
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                 <span class="sr-only">Error:</span>
@@ -81,7 +80,6 @@
                             </div>
                         @else
                             @if($campaigns->isEmpty())
-                                <div class="container" style="height: 20px; clear: both"></div>
                                 <div class="alert alert-danger" role="alert">
                                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>
