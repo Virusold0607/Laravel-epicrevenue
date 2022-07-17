@@ -4,9 +4,9 @@
     <!-- row -->
     <div class="row">
         <!-- col -->
-        <div class="col-lg-4 col-md-4 col-12 mx-auto">
+        <div class="col-lg-4 col-md-4 col-12 py-6 mx-auto">
             <!-- card -->
-            <div class="px-4 py-3 py-lg-4 card rounded">
+            <div class="px-4 py-3 py-lg-4 card mb-0 rounded">
                 <form class="form-horizontal form-login" role="form" method="POST" action="{{ url('/login') }}">
                     {{ csrf_field() }}
                     <div class="text-center pt-4 pb-4">
