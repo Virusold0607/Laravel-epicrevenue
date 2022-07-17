@@ -30,17 +30,17 @@
         {!! Form::open(array('url' => '/campaigns/', 'method' => 'get')) !!}
         <div class="row">
             <div class="col-lg-3">
-                <div class="mb-1">
+                <div class="mb-2">
                     <input type="text" class="form-control" name="search" placeholder="Search... Ex product name" value="{{ request()->input('search', '') }}">
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="mb-1">
+            <div class="col-lg-3 col-sm-6">
+                <div class="mb-2">
                     {!! Form::select('country', $countries, request()->input('country'), array('id' => 'country', 'class' => 'form-select')) !!}
                 </div>
             </div>
-            <div class="col-lg-3 campaign_categories_mobile">
-                <div class="mb-1">
+            <div class="col-lg-3 col-sm-6 campaign_categories_mobile">
+                <div class="mb-2">
                     {!! Form::select('category', $categories->pluck('name', 'id'), request()->input('category', 0), array('id' => 'category', 'class' => 'form-select')) !!}
                 </div>
             </div>
