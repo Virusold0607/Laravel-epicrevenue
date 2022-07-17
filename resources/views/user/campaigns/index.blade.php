@@ -23,39 +23,33 @@
         @endif
     </div>
 </div>
+    
+<!-- search -->
+{!! Form::open(array('url' => '/campaigns/', 'method' => 'get')) !!}
+<div class="row">
+    <div class="col-lg-3">
+        <div class="" style="margin-bottom:5px;">
+            <input type="text" class="form-control" name="search" placeholder="Search... Ex product name" value="{{ request()->input('search', '') }}">
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="">
+            {!! Form::select('country', $countries, request()->input('country'), array('id' => 'country', 'class' => 'dropdown form-control')) !!}
+        </div>
+    </div>
+    <div class="col-lg-3 campaign_categories_mobile">
+        <div class="">
+            {!! Form::select('category', $categories->pluck('name', 'id'), request()->input('category', 0), array('id' => 'category', 'class' => 'dropdown form-control')) !!}
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <input class="btn btn-primary w-100" type="submit" value="Sort" />
+    </div>
+</div>
+{!! Form::close() !!}
 
-
-    <div class="page-container no-shadow no-border">
+<div class="page-container no-shadow no-border">
         <div class="container mobile-adjustment">
-            <!-- search -->
-
-            {!! Form::open(array('url' => '/campaigns/', 'method' => 'get')) !!}
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="" style="margin-bottom:5px;">
-                        <input type="text" class="form-control" name="search" placeholder="Search... Ex product name" value="{{ request()->input('search', '') }}">
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="">
-                        {!! Form::select('country', $countries, request()->input('country'), array('id' => 'country', 'class' => 'dropdown form-control')) !!}
-                    </div>
-                </div>
-
-                <div class="col-sm-4 campaign_categories_mobile">
-                    <div class="">
-                        {!! Form::select('category', $categories->pluck('name', 'id'), request()->input('category', 0), array('id' => 'category', 'class' => 'dropdown form-control')) !!}
-                    </div>
-                </div>
-
-                <div class="col-xs-4">
-                    <input class="btn btn-primary" type="submit" value="Sort" />
-                </div>
-            </div>
-            {!! Form::close() !!}
-
-
 
             <div class="row">
                 <div class="col-md-3 col-sm-4 campaign_categories_desktop">
