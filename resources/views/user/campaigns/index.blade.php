@@ -91,7 +91,7 @@
                             @foreach($campaigns as $campaign)
                                 <div class="camp-box row">
                                     <div class="col-sm-3">
-                                        <img class="img-responsive" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
+                                        <img class="img-responsive w-100" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
                                     </div>
                                     <div class="col-sm-9">
                                         <h4 class="camp-title">
