@@ -1,7 +1,7 @@
 @extends('shared.layout')
 @section('body')
 
-<div class="hero py-4">
+<div class="hero text-center py-6">
     <div class="container">
         @if(auth()->check())
             <h1 class="hero-heading fw-700">Campaigns</h1>
