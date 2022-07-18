@@ -9,7 +9,7 @@
     </div><!-- End .hero -->
 
     <div class="container">
-        <div class="influencers-page-content text-center">
+        <div class="influencers-page-content text-center py-6">
             <div class="row text-center">
                 <div class="col-sm-4">
                     <div class="ir-icon"><img class="img-responsive" src="/images/home/icons/icon-1.png" alt="The best network"></div>
