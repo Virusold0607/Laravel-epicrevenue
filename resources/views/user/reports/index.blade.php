@@ -7,47 +7,63 @@
     <div class="container">
         <div class="row hero-stats">
             <div class="col-sm-4 col-md-3 col-xs-6">
-                <div class="hero-stat">
-                    <h3>{!! $today_clicks !!}</h3>
-                    <h5 class="font-dark-gray">Today Clicks</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-subtitle">Today Clicks</h3>
+                        <h2 class="card-title text-inherit">{!! $today_clicks !!}</h2>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-4 col-md-3 col-xs-6">
-                <div class="hero-stat">
-                    <h3>{!! $today_leads !!}</h3>
-                    <h5 class="font-dark-gray">Today Leads</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-subtitle">Today Leads</h3>
+                        <h2 class="card-title text-inherit">{!! $today_leads !!}</h2>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-4 col-md-3 col-xs-6">
-                <div class="hero-stat">
-                    <h3>@if($today_clicks === 0)
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-subtitle">Today EPC</h3>
+                        <h2 class="card-title text-inherit">
+                        @if($today_clicks === 0)
                             n/a
                         @else
                             {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
-                        @endif</h3>
-                    <h5 class="font-dark-gray">Today EPC</h5>
+                        @endif
+                        </h2>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-4 col-md-3 col-xs-6">
-                <div class="hero-stat">
-                    <h3> @if($today_leads + $today_clicks >= 0)
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-subtitle">Today CR</h3>
+                        <h2 class="card-title text-inherit">
+                        @if($today_leads + $today_clicks >= 0)
                             {!! "n/a" !!}
                         @else
                             {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
-                        @endif</h3>
-                    <h5 class="font-dark-gray">Today CR</h5>
+                        @endif
+                        </h2>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-4 col-md-3 col-xs-6">
-                <div class="hero-stat">
-                    <h3>${!! number_format($earnings_today, 2) !!}</h3>
-                    <h5 class="font-dark-gray">Today Earnings</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-subtitle">Today Earnings</h3>
+                        <h2 class="card-title text-inherit">${!! number_format($earnings_today, 2) !!}</h2>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-4 col-md-3 col-xs-6">
-                <div class="hero-stat">
-                    <h3>${!! number_format($earnings_month, 2) !!}</h3>
-                    <h5 class="font-dark-gray">Month Earnings</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-subtitle">Month Earnings</h3>
+                        <h2 class="card-title text-inherit">${!! number_format($earnings_month, 2) !!}</h2>
+                    </div>
                 </div>
             </div>
         </div>  
