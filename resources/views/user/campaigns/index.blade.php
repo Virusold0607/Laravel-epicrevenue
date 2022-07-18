@@ -75,7 +75,9 @@
             -->
                 <div class="campaigns">
                     <div class="row">
-                        @if(is_null($campaigns))
+                            @foreach($campaigns as $campaign)
+                            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
+                            @if(is_null($campaigns))
                             <div class="alert alert-danger" role="alert">
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                 <span class="sr-only">Error:</span>
@@ -89,8 +91,7 @@
                                     No Campaigns Found!
                                 </div>
                             @endif
-                            @foreach($campaigns as $campaign)
-                            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
+                            
                                 <div class="card">
                                     <div class="card-header">
                                         <a href="{{ url('/campaign/' . $campaign->id) }}" class="text-black">
