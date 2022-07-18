@@ -6,9 +6,11 @@
             <div class="container">
                 <div class="row hero-stats">
                 <div class="col-lg-2 col-md-2 col-sm-6">
-                    <div class="card p-3">
-                        <h3>{!! $today_clicks !!}</h3>
-                        <h5 class="font-dark-gray">Today Clicks</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-subtitle">Today Clicks</h3>
+                            <h2 class="card-title text-inherit">{!! $today_clicks !!}</h2>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-6">
