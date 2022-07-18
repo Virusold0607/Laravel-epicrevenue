@@ -6,24 +6,38 @@
         <div class="hero hero-dashboard">
             <div class="container">
                 <div class="hero-stats">
-                    <div class="hero-stat">
-                        <h3>{!! $active !!}</h3>
-                        <h5 class="font-dark-gray">Active Referrals</h5>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-subtitle">Active Referrals</h3>
+                                <h2 class="card-title text-inherit">{!! $active !!}</h2>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hero-stat-border"></div>
-                    <div class="hero-stat">
-                        <h3>${!! number_format( $earn , 2 ) !!}</h3>
-                        <h5 class="font-dark-gray">Earned from Referrals</h5>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-subtitle">Earned from Referrals</h3>
+                                <h2 class="card-title text-inherit">${!! number_format( $earn , 2 ) !!}</h2>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hero-stat-border"></div>
-                    <div class="hero-stat">
-                        <h3>{!! $inactive !!}</h3>
-                        <h5 class="font-dark-gray">Inactive Referrals</h5>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-subtitle">Inactive Referrals</h3>
+                                <h2 class="card-title text-inherit">{!! $inactive !!}</h2>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hero-stat-border"></div>
-                    <div class="hero-stat">
-                        <h3>{!! $inactive + $active !!}</h3>
-                        <h5 class="font-dark-gray">Total Referrals</h5>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-subtitle">Total Referrals</h3>
+                                <h2 class="card-title text-inherit">{!! $inactive + $active !!}</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
