@@ -12,9 +12,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 @if(auth()->check())
-                    <li class="nav-item menu-area">
-                        <a class="nav-link" href="{{ url('/') }}">Home</a>
-                    </li>
                     <li class="nav-item menu-area {{ request()->is('dashboard') ? 'active' : '' }}">
                         <a class="nav-link" href="{{url('/dashboard')}}">Dashboard</a>
                     </li>
