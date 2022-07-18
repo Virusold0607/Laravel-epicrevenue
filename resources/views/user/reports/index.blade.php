@@ -138,7 +138,7 @@
                 <div class="panel-heading">Reports</div>
                 <div class="panel-body">
                     @if(count($reports))
-                        <table class="table table-hover table-bordered table-striped">
+                        <table class="table table-lg table-thead-bordered table-nowrap table-align-middle card-table dataTable table-hover no-footer">
                             <thead>
                             <tr>
                                 <th>ID</th>
