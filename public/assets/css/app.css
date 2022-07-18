@@ -5,10 +5,10 @@
 
 /* HEADER */
 header {
-    background: #292961;
+    background: #FFFFFF;
 }
 header a.navbar-brand {
-    color: #ffffff;
+    color: #000000;
 }
 header a.nav-link {
     margin: 0px 10px;
