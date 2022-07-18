@@ -6,7 +6,7 @@
 <div class="hero hero-dashboard py-6">
     <div class="container">
         <div class="row hero-stats">
-            <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-subtitle">Today Clicks</h3>
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-subtitle">Today Leads</h3>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             -->
-            <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-subtitle">Today CR</h3>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-subtitle">Today Earnings</h3>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-subtitle">Month Clicks</h3>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-subtitle">Month Earnings</h3>
