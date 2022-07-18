@@ -29,6 +29,12 @@ header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link
     padding: 0.45rem 1.2rem;
 }
 
+/* Hero */
+
+.hero {
+    background: #f9f9f9;
+}
+
 /* Footer */
 .footer .footer-logo {
     height:20px;
