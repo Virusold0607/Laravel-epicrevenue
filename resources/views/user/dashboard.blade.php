@@ -2,81 +2,81 @@
 
 @section('body')
 
-    <div class="hero hero-dashboard py-6">
-            <div class="container">
-                <div class="row hero-stats">
-                <div class="col-lg-2 col-md-2 col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-subtitle">Today Clicks</h3>
-                            <h2 class="card-title text-inherit">{!! $today_clicks !!}</h2>
-                        </div>
-                    </div>
+<div class="hero hero-dashboard py-6">
+    <div class="container">
+        <div class="row hero-stats">
+        <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today Clicks</h3>
+                    <h2 class="card-title text-inherit">{!! $today_clicks !!}</h2>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-subtitle">Today Leads</h3>
-                            <h2 class="card-title text-inherit">{!! $today_leads !!}</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-subtitle">Today EPC</h3>
-                            <h2 class="card-title text-inherit">
-                            @if($today_clicks === 0)
-                                n/a
-                            @else
-                                {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
-                            @endif
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-subtitle">Today CR</h3>
-                            <h2 class="card-title text-inherit">
-                            @if($today_leads + $today_clicks >= 0)
-                                {!! "n/a" !!}
-                            @else
-                                {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
-                            @endif
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-subtitle">Today Earnings</h3>
-                            <h2 class="card-title text-inherit">${!! number_format($earnings_today, 2) !!}</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-subtitle">Month Earnings</h3>
-                            <h2 class="card-title text-inherit">${!! number_format($earnings_month, 2) !!}</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>  
             </div>
         </div>
+        <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today Leads</h3>
+                    <h2 class="card-title text-inherit">{!! $today_leads !!}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today EPC</h3>
+                    <h2 class="card-title text-inherit">
+                    @if($today_clicks === 0)
+                        n/a
+                    @else
+                        {!! "$".number_format($earnings_today / $today_clicks, 2)."" !!}
+                    @endif
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today CR</h3>
+                    <h2 class="card-title text-inherit">
+                    @if($today_leads + $today_clicks >= 0)
+                        {!! "n/a" !!}
+                    @else
+                        {!! number_format($today_leads / ($today_leads + $today_clicks) * 100, 2)."%" !!}
+                    @endif
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Today Earnings</h3>
+                    <h2 class="card-title text-inherit">${!! number_format($earnings_today, 2) !!}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle">Month Earnings</h3>
+                    <h2 class="card-title text-inherit">${!! number_format($earnings_month, 2) !!}</h2>
+                </div>
+            </div>
+        </div>
+    </div>  
+    </div>
+</div>
         
-
-
-
     <div class="page-container dashboard">
         <div class="container">
             
-            <div>
-                <canvas id="myChart" width="400" height="400"></canvas>
+            <div class="card">
+                <div class="card-header">Earnings</div>
+                <div class="card-body">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
             </div>
         </div>
 
