@@ -5,8 +5,7 @@
   
 <div class="hero hero-dashboard">
     <div class="container">
-        <div class="hero-stats">
-
+        <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
                 <div class="card">
                     <div class="card-body">
