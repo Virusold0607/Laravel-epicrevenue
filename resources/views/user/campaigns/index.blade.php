@@ -60,6 +60,7 @@
         <div class="container mobile-adjustment">
 
             <div class="row">
+            <!--
                 <div class="col-md-3 col-sm-4 campaign_categories_desktop">
                     <div class="category_panel_div">
                         @foreach($categories as $category)
@@ -72,7 +73,8 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-lg-9 col-sm-12">
+            -->
+                <div class="col-lg-12 col-sm-12">
                     <div class="campaigns row">
                         @if(is_null($campaigns))
                             <div class="alert alert-danger" role="alert">
