@@ -154,7 +154,15 @@
                                     <td>{!! $report->campaign->id !!}</td>
                                     <td>{!! $report->campaign->name !!}</td>
                                     <td>{!! $report->created_at !!}</td>
-                                    <td>{!! $report->status !!}</td>
+                                    <td>
+                                    @if($report->status == 1)
+                                        <td>Click</td>
+                                    @elseif ($report->status == 2)
+                                        <td>Lead</td>
+                                    @elseif ($report->status == 3)
+                                        <td>Reversal</td>
+                                    @endif
+                                    </td>
                                     <td><a href="{!! url('/report/' . $report->id) !!}">View</a></td>
                                 </tr>
                             @endforeach
