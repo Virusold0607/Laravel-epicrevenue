@@ -136,7 +136,7 @@
         <div class="col-xs-12 no-padding">
             <div class="panel panel-default">
                 <div class="panel-heading">Reports</div>
-                <div class="panel-body">
+                <div class="card rounded-0">
                     @if(count($reports))
                         <table class="table table-lg table-thead-bordered table-nowrap table-align-middle card-table dataTable table-hover no-footer">
                             <thead>
