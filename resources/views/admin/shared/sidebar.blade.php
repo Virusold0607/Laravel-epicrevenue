@@ -1,5 +1,5 @@
 <!-- Navbar Vertical -->
-<aside id="navbarSupportedContent" class="sidebar collapse col-lg-auto col-sm-12">
+<aside id="navbarSupportedContent" class="sidebar collapse col-lg-2 col-sm-12">
   <div class="navbar-vertical-container">
     <div class="navbar-vertical-footer-offset">
 
