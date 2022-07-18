@@ -108,8 +108,7 @@
                                             </a>
                                             </div>
                                             @if(auth()->check())
-                                                <hr>
-                                                <div class="card-body">
+                                                <div class="card-body border-top mt-3">
                                                     <div class="row">
                                                         <h5 class="col-sm-6 pull-left text-left" data-toggle="tooltip" data-placement="bottom" title="Amount you are paid for each valid conversion"><b>Payment? </b>${{ $campaign->rate }}<small>/per lead</small></h5>
                                                         <div class="col-sm-6 pull-right text-right">
