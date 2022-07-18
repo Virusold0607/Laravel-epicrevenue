@@ -18,6 +18,10 @@ header {
 header a.navbar-brand {
     color: #ffffff;
 }
+header a.nav-link {
+    margin: 0px 10px;
+    font-weight: 700;
+}
 header .navbar-brand:focus, header .navbar-brand:hover {
     color: #377dff;
 }
