@@ -2,6 +2,14 @@
 .container {
     max-width: 1440px;
 }
+.card-subtitle {
+    display: block;
+    text-transform: uppercase;
+    color: #8c98a4;
+    font-size: .71094rem;
+    margin-top: -0.125rem;
+    margin-bottom: 0.5rem;
+}
 
 /* HEADER */
 header {
