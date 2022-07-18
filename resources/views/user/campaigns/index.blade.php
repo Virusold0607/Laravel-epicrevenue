@@ -109,9 +109,13 @@
                                             </div>
                                             @if(auth()->check())
                                                 <hr>
-                                                <div class="camp-info row">
-                                                    <h5 class="col-sm-6 pull-left text-left" data-toggle="tooltip" data-placement="bottom" title="Amount you are paid for each valid conversion"><b>Payment? </b>${{ $campaign->rate }}<small>/per lead</small></h5>
-                                                    <div class="col-sm-6 pull-right text-right"><a href="{{ url('/campaign/' . $campaign->id) }}" class="btn btn-primary btn-md">Promote Now</a></div>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <h5 class="col-sm-6 pull-left text-left" data-toggle="tooltip" data-placement="bottom" title="Amount you are paid for each valid conversion"><b>Payment? </b>${{ $campaign->rate }}<small>/per lead</small></h5>
+                                                        <div class="col-sm-6 pull-right text-right">
+                                                            <a href="{{ url('/campaign/' . $campaign->id) }}" class="btn btn-primary btn-md">Promote Now</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             @endif
                                         </div>
