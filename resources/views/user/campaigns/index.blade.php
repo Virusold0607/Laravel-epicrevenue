@@ -90,7 +90,7 @@
                                 </div>
                             @endif
                             @foreach($campaigns as $campaign)
-                            <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="col-lg-2 col-md-6 col-sm-6">
                                 <div class="card">
                                     <div class="card-header">
                                         <a href="{{ url('/campaign/' . $campaign->id) }}" class="text-black">
@@ -112,7 +112,7 @@
                                             @if(auth()->check())
                                                 <div class="card-body border-top pb-0 mt-3">
                                                     <div class="row">
-                                                        <h5 class="col-12 text-left pb-2" data-toggle="tooltip" data-placement="bottom" title="Amount you are paid for each valid conversion"><b>Payment? </b>${{ $campaign->rate }}<small>/per lead</small></h5>
+                                                        <h5 class="col-12 text-left pb-2 fs-14" data-toggle="tooltip" data-placement="bottom" title="Amount you are paid for each valid conversion"><b>Payment? </b>${{ $campaign->rate }}<small>/per lead</small></h5>
                                                         <div class="col-12">
                                                             <a href="{{ url('/campaign/' . $campaign->id) }}" class="btn btn-primary btn-md w-100">Promote Now</a>
                                                         </div>
