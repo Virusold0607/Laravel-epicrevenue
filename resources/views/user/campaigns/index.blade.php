@@ -56,9 +56,8 @@
     </div>
 </div>
 
-<div class="page-container no-shadow no-border">
-        <div class="container mobile-adjustment">
-
+<div class="campaigns pb-2">
+        <div class="container">
             <div class="row">
             <!--
                 <div class="col-md-3 col-sm-4 campaign_categories_desktop">
