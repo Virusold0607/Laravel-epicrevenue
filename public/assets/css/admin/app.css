@@ -22,7 +22,7 @@ header .nav-link {
     //max-width: calc(100vw);
 }
 .content {
-    width: calc(100vw - 209px);
+    width: 100%;
 }
 @media (max-width: 990px) {
     .content {
