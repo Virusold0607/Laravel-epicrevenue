@@ -89,7 +89,7 @@
                                 </div>
                             @endif
                             @foreach($campaigns as $campaign)
-                            <div class="ol-lg-6 col-sm-12">
+                            <div class="col-lg-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <a href="{{ url('/campaign/' . $campaign->id) }}">
