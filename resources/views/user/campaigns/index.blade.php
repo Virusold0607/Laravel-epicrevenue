@@ -25,7 +25,7 @@
 </div>
     
 <!-- search -->
-<div class="search pb-4">
+<div class="search py-4">
     <div class="container">
         <div class="card rounded-0">
             <div class="card-body">
