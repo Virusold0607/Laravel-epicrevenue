@@ -2,7 +2,7 @@
 
 @section('body')
 
-    <div class="hero hero-dashboard">
+    <div class="hero hero-dashboard py-6">
             <div class="container">
                 <div class="row hero-stats">
                 <div class="col-lg-2 col-md-2 col-sm-6">
