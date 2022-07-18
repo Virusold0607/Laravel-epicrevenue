@@ -90,7 +90,7 @@
                                 </div>
                             @endif
                             @foreach($campaigns as $campaign)
-                            <div class="col-lg-6 col-sm-12">
+                            <div class="col-lg-4 col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <a href="{{ url('/campaign/' . $campaign->id) }}" class="text-black">
@@ -99,12 +99,12 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-sm-3">
+                                            <div class="col-3">
                                             <a href="{{ url('/campaign/' . $campaign->id) }}">
                                                 <img class="img-responsive border w-100" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
                                             </a>  
                                             </div>
-                                            <div class="col-sm-9">
+                                            <div class="col-9">
                                             <a href="{{ url('/campaign/' . $campaign->id) }}">
                                                 <p class="py-2 mb-0 text-black">{{ $campaign->description }}</p>
                                             </a>
