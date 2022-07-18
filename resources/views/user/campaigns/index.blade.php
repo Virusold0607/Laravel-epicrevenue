@@ -56,7 +56,7 @@
     </div>
 </div>
 
-<div class="campaigns pb-2">
+<div class="campaigns pb-4">
         <div class="container">
             <div class="row">
             <!--
