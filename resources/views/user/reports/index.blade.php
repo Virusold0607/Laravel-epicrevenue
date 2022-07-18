@@ -156,11 +156,11 @@
                                     <td>{!! $report->created_at !!}</td>
                                     <td>
                                     @if($report->status == 1)
-                                        <td>Click</td>
+                                        Click
                                     @elseif ($report->status == 2)
-                                        <td>Lead</td>
+                                        Lead
                                     @elseif ($report->status == 3)
-                                        <td>Reversal</td>
+                                        Reversal
                                     @endif
                                     </td>
                                     <td><a href="{!! url('/report/' . $report->id) !!}">View</a></td>
