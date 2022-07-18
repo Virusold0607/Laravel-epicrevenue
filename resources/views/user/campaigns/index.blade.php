@@ -106,7 +106,7 @@
                                             </div>
                                             <div class="col-sm-9">
                                             <a href="{{ url('/campaign/' . $campaign->id) }}">
-                                                <p>{{ $campaign->description }}</p>
+                                                <p class="py-2 mb-0">{{ $campaign->description }}</p>
                                             </a>
                                             </div>
                                             @if(auth()->check())
