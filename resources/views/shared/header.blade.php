@@ -1,4 +1,4 @@
-<header class="navbar navbar-expand-lg py-3">
+<header class="navbar navbar-expand-lg py-3 shadow-sm">
     <nav class="container">
         <a class="navbar-brand col-auto" href="{{ url('/') }}">
                 <!--
