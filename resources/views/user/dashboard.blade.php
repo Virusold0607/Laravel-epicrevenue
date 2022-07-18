@@ -50,15 +50,19 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-6">
-                    <div class="card p-3">
-                        <h3>${!! number_format($earnings_today, 2) !!}</h3>
-                        <h5 class="font-dark-gray">Today Earnings</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-subtitle">Today Earnings</h3>
+                            <h2 class="card-title text-inherit">${!! number_format($earnings_today, 2) !!}</h2>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-6">
-                    <div class="card p-3">
-                        <h3>${!! number_format($earnings_month, 2) !!}</h3>
-                        <h5 class="font-dark-gray">Month Earnings</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-subtitle">Month Earnings</h3>
+                            <h2 class="card-title text-inherit">${!! number_format($earnings_month, 2) !!}</h2>
+                        </div>
                     </div>
                 </div>
             </div>  
