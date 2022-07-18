@@ -1,6 +1,6 @@
 @extends('shared.layout')
 @section('body')
-    <div class="hero hero-txt">
+    <div class="hero hero-txt py-6">
         <div class="container">
             <h1 class="hero-heading">{{ $campaign->name }}</h1>
             @if( !is_null( $custom_rate ) )
@@ -10,8 +10,7 @@
             @endif
         </div>
     </div>
-    <div class="clearfix"></div>
-    <div class="page-container no-shadow no-border">
+    <div class="page-container no-shadow no-border pb-6">
         <div class="container">
             @if($daily_cap_status)
                 <div class="alert alert-danger">This campaign has reached its daily cap ({{ $campaign->daily_cap }} leads a day). It will reset at midnight.</div>
