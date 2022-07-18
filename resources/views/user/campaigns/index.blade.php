@@ -27,7 +27,7 @@
 <!-- search -->
 <div class="search pb-4">
     <div class="container">
-        <div class="card">
+        <div class="card rounded-0">
             <div class="card-body">
                 {!! Form::open(array('url' => '/campaigns/', 'method' => 'get')) !!}
                 <div class="row">
@@ -91,7 +91,7 @@
                             @endif
                             @foreach($campaigns as $campaign)
                             <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
-                                <div class="card">
+                                <div class="card rounded-0">
                                     <div class="card-header">
                                         <a href="{{ url('/campaign/' . $campaign->id) }}" class="text-black">
                                             {{ $campaign->name }}
