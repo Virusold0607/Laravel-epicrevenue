@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-sm-12">
-                    <div class="campaigns">
+                    <div class="campaigns row">
                         @if(is_null($campaigns))
                             <div class="alert alert-danger" role="alert">
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -89,6 +89,7 @@
                                 </div>
                             @endif
                             @foreach($campaigns as $campaign)
+                            <div class="ol-lg-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <a href="{{ url('/campaign/' . $campaign->id) }}">
@@ -120,7 +121,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            
+                            </div>
                             @endforeach
                         @endif
                     </div>
