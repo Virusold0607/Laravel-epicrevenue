@@ -90,7 +90,7 @@
                                 </div>
                             @endif
                             @foreach($campaigns as $campaign)
-                            <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6">
+                            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
                                 <div class="card">
                                     <div class="card-header">
                                         <a href="{{ url('/campaign/' . $campaign->id) }}" class="text-black">
