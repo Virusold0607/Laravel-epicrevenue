@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="d-none col-lg-3">
+                                            <div class="d-none d-lg-block col-lg-3">
                                             <a href="{{ url('/campaign/' . $campaign->id) }}">
                                                 <img class="img-responsive border w-100" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
                                             </a>  
