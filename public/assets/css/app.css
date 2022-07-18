@@ -51,6 +51,9 @@ header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link
     margin-top: -0.125rem;
     margin-bottom: 0.5rem;
 }
+input.form-control, .form-select {
+    border: 1px solid #eeeeee;
+}
 .dropdown-toggle::after {
     display: inline-block;
     width: 1rem;
