@@ -1,5 +1,5 @@
 <header class="navbar navbar-expand-lg py-3 shadow-sm">
-    <nav class="container-fluid">
+    <nav class="container">
         <a class="navbar-brand col-auto" href="{{ url('/') }}">
                 <!--
                 <img src="{{ asset('img/logo.png') }}" width="50" height="50" alt="logo">
