@@ -89,16 +89,17 @@
                                 </div>
                             @endif
                             @foreach($campaigns as $campaign)
+                            <a href="{{ url('/campaign/' . $campaign->id) }}">
                                 <div class="card">
+                                    <div class="card-header">
+                                        {{ $campaign->name }}
+                                    </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <img class="img-responsive border w-100" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
                                             </div>
                                             <div class="col-sm-9">
-                                                <h4 class="camp-title">
-                                                    <a href="{{ url('/campaign/' . $campaign->id) }}">{{ $campaign->name }}</a>
-                                                </h4>
                                                 <p>{{ $campaign->description }}</p>
                                             </div>
                                             @if(auth()->check())
@@ -111,6 +112,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </a>
                             @endforeach
                         @endif
                     </div>
