@@ -5,14 +5,14 @@
 
 /* HEADER */
 header {
-    background: #000000;
+    background: #292961;
 }
 header a.navbar-brand {
     color: #ffffff;
 }
 header a.nav-link {
     margin: 0px 10px;
-    font-weight: 700;
+    font-size: 16px;
 }
 header .navbar-brand:focus, header .navbar-brand:hover {
     color: #377dff;
