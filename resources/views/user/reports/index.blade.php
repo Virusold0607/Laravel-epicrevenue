@@ -134,11 +134,11 @@
         </div>
 
         <div class="col-xs-12 no-padding">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reports</div>
-                <div class="card rounded-0">
+            <div class="card rounded-0">
+                <div class="card-header">Reports</div>
+                <div class="card-body">
                     @if(count($reports))
-                        <table class="table table-lg table-thead-bordered table-align-middle card-table table-hover">
+                        <table class="table table-lg table-thead-bordered table-bordered table-align-middle card-table table-hover">
                             <thead>
                             <tr>
                                 <th>ID</th>
