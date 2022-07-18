@@ -18,7 +18,7 @@ header .navbar-brand:focus, header .navbar-brand:hover {
     color: #377dff;
 }
 header a.nav-link, header a.nav-link.dropdown-toggle {
-    color: #FFFFFF;
+    color: #000000;
 }
 header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link:focus, header .navbar-nav .nav-link.active, header .navbar-nav .show>.nav-link {
     color: #377dff;
