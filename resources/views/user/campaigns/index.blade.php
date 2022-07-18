@@ -93,7 +93,7 @@
                             <div class="col-lg-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="{{ url('/campaign/' . $campaign->id) }}">
+                                        <a href="{{ url('/campaign/' . $campaign->id) }}" class="text-black">
                                             {{ $campaign->name }}
                                         </a>    
                                     </div>
@@ -106,7 +106,7 @@
                                             </div>
                                             <div class="col-sm-9">
                                             <a href="{{ url('/campaign/' . $campaign->id) }}">
-                                                <p class="py-2 mb-0">{{ $campaign->description }}</p>
+                                                <p class="py-2 mb-0 text-black">{{ $campaign->description }}</p>
                                             </a>
                                             </div>
                                             @if(auth()->check())
