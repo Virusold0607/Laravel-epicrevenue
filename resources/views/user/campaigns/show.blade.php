@@ -10,7 +10,7 @@
             @endif
         </div>
     </div>
-    <div class="page-container no-shadow no-border pb-6">
+    <div class="page-container py-6">
         <div class="container">
             @if($daily_cap_status)
                 <div class="alert alert-danger">This campaign has reached its daily cap ({{ $campaign->daily_cap }} leads a day). It will reset at midnight.</div>
