@@ -22,6 +22,7 @@
                     </div>
                 </div>
             </div>
+            <!--
             <div class="col-sm-4 col-md-3 col-xs-6">
                 <div class="card">
                     <div class="card-body">
@@ -36,6 +37,7 @@
                     </div>
                 </div>
             </div>
+            -->
             <div class="col-sm-4 col-md-3 col-xs-6">
                 <div class="card">
                     <div class="card-body">
@@ -55,6 +57,14 @@
                     <div class="card-body">
                         <h3 class="card-subtitle">Today Earnings</h3>
                         <h2 class="card-title text-inherit">${!! number_format($earnings_today, 2) !!}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 col-xs-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-subtitle">Month Clicks</h3>
+                        <h2 class="card-title text-inherit">{!! $month_clicks !!}</h2>
                     </div>
                 </div>
             </div>
