@@ -64,7 +64,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-subtitle">Month Clicks</h3>
-                        <h2 class="card-title text-inherit">{!! $month_clicks !!}</h2>
+                        <h2 class="card-title text-inherit">{!! $today_clicks !!}</h2>
                     </div>
                 </div>
             </div>
