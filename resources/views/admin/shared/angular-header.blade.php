@@ -1,6 +1,6 @@
 <!-- ========== HEADER ========== -->
 <header class="navbar navbar-expand-lg py-3">
-    <nav class="container">
+    <nav class="container-fluid">
         <a class="navbar-brand col-auto" href="https://jewelrycadfiles.com/backend">
             #EpicRevenue
         </a>
