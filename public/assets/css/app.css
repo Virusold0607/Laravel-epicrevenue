@@ -13,7 +13,6 @@ header a.navbar-brand {
 header a.nav-link {
     margin: 0px 10px;
     font-weight: 700;
-    line-height: 5px;
 }
 header .navbar-brand:focus, header .navbar-brand:hover {
     color: #377dff;
