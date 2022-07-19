@@ -94,18 +94,19 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <a href="{{ url('/campaign/' . $campaign->id) }}" class="text-black">
-                                            {{ $campaign->name }}
+                                            ${{ $campaign->rate }}<small>/per lead</small>
                                         </a>    
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-lg-12">
+                                            <div class="col-lg-3">
                                                 <a href="{{ url('/campaign/' . $campaign->id) }}">
                                                     <img class="img-responsive border w-100" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
                                                 </a>  
                                             </div>
-                                            <div class="d-none col-sm-12">
+                                            <div class="col-lg-9">
                                             <a href="{{ url('/campaign/' . $campaign->id) }}">
+                                                <h3>{{ $campaign->name }}</h3>
                                                 <p class="py-2 mb-0 text-black">{{ $campaign->description }}</p>
                                             </a>
                                             </div>
