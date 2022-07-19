@@ -106,8 +106,8 @@
                                             </div>
                                             <div class="col-lg-9">
                                             <a href="{{ url('/campaign/' . $campaign->id) }}">
-                                                <h3>{{ $campaign->name }}</h3>
-                                                <p class="py-2 mb-0 text-black">{{ $campaign->description }}</p>
+                                                <h3 class="text-black fs-20">{{ $campaign->name }}</h3>
+                                                <p class="py-2 mb-0 text-black d-none">{{ $campaign->description }}</p>
                                             </a>
                                             </div>
                                             @if(auth()->check())
