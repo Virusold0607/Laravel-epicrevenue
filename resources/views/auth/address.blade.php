@@ -23,22 +23,14 @@
                 <div class="panel-body">
                     {{-- Was there an error? --}}
                     @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $errorr)
-                                    <li>{{ $errorr }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                        @foreach ($errors->all() as $errorr)
+                            <div class="alert alert-danger">{{ $errorr }}</div>
+                        @endforeach
                     @endif
                     @if (isset($error))
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($error as $e)
-                                    <li>{!! $e !!}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                            @foreach ($error as $e)
+                                <div class="alert alert-danger">{!! $e !!}</div>
+                            @endforeach
                     @endif
 
                     <div class="form-group">
