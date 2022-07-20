@@ -38,9 +38,12 @@ header.home {
 }
 
 /* Hero */
-
 .hero {
     background: #f9f9f9;
+}
+.hero.main-promo {
+    background: hotpink;
+    padding: 150px 0;
 }
 
 /* Footer */
