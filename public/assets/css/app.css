@@ -44,8 +44,14 @@ header.home {
     background: #f9f9f9;
 }
 .hero.main-promo {
-    background: hotpink;
+    background: #e8d7fb;
     padding: 150px 0;
+}
+.hero.main-promo.blue {
+    background: #bdebfa;
+}
+.hero.main-promo.green {
+    background: #bcfabb;
 }
 
 /* Footer */
