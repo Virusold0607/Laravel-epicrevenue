@@ -3,11 +3,9 @@
 @section('body')
 <div class="hero hero-auth py-6">
     <div class="container">
-        <div class="col-lg-4 col-md-4 col-12 mx-auto">
-            <center>
-                <h2>Become a Epic Revenue Affiliate</h2>
-                <p>Start promoting some of the top products and brand in as soon as 24 hours!</p>
-            </center>
+        <div class="col-lg-4 col-md-4 col-12 text-center mx-auto">
+            <h1>Become a Affiliate</h1>
+            <p>Start promoting some of the top products and brand in as soon as 24 hours!</p>
         </div>
     </div>
 </div><!-- End .hero -->
