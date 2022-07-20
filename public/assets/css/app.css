@@ -61,7 +61,9 @@ header.home {
 .hero.main-promo.green {
     background: #bcfabb;
 }
-
+.hero.info-promo.green {
+    background: #bcfabb;
+}
 /* Footer */
 .footer .footer-logo {
     height:20px;
