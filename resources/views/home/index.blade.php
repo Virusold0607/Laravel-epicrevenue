@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-6 col-12">
                 <h1 class="pb-2">Monetize the reach of your following</h1>
-                <h4 class="col-lg-8 pb-2">Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
+                <h4 class="col-lg-8 pb-2">Find great promotions to promote on your social media platforms.</h4>
                 <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn btn-lg btn-primary">Become an Affiliate</a>
             </div>
         </div>
