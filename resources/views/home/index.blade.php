@@ -1,8 +1,5 @@
 @extends('shared/layout')
 
-@section('styles')
-@endsection
-
 @section('body')
  
 <div class="hero main-promo border-bottom py-6">
