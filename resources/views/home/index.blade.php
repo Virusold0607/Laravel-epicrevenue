@@ -13,7 +13,7 @@
         </div>
     </div>
 </div><!-- End .hero -->
-<div class="hero info-promo py-6">
+<div class="hero info-promo py-8">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
