@@ -17,7 +17,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
-                <div class="green p-4">
+                <div class="p-4">
+                    <div class="green p-6">
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6 col-12">
