@@ -10,7 +10,7 @@ body {
 header {
     background: #FFFFFF;
 }
-header a.navbar-brand {
+header a.navbar-brand, header a.nav-link, header a.nav-link.dropdown-toggle {
     color: #000000;
 }
 header a.nav-link {
@@ -20,9 +20,6 @@ header a.nav-link {
 header .navbar-brand:focus, header .navbar-brand:hover {
     color: #377dff;
 }
-header a.nav-link, header a.nav-link.dropdown-toggle {
-    color: #000000;
-}
 header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link:focus, header .navbar-nav .nav-link.active, header .navbar-nav .show>.nav-link {
     color: #377dff;
 }
@@ -31,6 +28,9 @@ button.navbar-toggler {
 }
 .navbar-collapse.collapse.show {
     background: #fff;
+}
+.home .header a.navbar-brand, .home header a.nav-link, .home header a.nav-link.dropdown-toggle  {
+    color: #FFFFFF;
 }
 header.home {
     background: transparent;
