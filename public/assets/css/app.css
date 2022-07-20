@@ -29,7 +29,7 @@ button.navbar-toggler {
 .navbar-collapse.collapse.show {
     background: #fff;
 }
-.home.header a.navbar-brand, .home header a.nav-link, .home header a.nav-link.dropdown-toggle  {
+.home a.navbar-brand, .home header a.nav-link, .home header a.nav-link.dropdown-toggle  {
     color: #FFFFFF;
 }
 header.home {
