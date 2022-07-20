@@ -6,11 +6,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
-                <h1>Monetize the reach of your following</h1>
-                    <div class="col-sm-8">
-                        <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
-                    </div>
-                <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn btn-primary">Become a Partner</a>
+                <h1 class="pb-2">Monetize the reach of your following</h1>
+                <h4 class="col-lg-8 pb-2">Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
+                <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn btn-lg btn-primary">Become a Partner</a>
             </div>
         </div>
     </div>
