@@ -46,10 +46,6 @@ header.home {
 .hero {
     background: #f9f9f9;
 }
-.hero h1 {
-    font-size: 60px;
-    font-weight: 800;
-}
 .hero.main-promo {
     font-family: 'Rubik', sans-serif;
     background: #e8d7fb;
