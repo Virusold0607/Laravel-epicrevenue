@@ -40,7 +40,7 @@
         <!--<link rel="stylesheet" href="{{url('/assets/css/main.css')}}">-->
         @yield('styles')
     </head>
-    <body @if(isset($bodyid))id="{{ $bodyid }}"@endif>
+    <body @if(isset($ActivePage)) class="{{ $ActivePage }}" @endif @if(isset($bodyid))id="{{ $bodyid }}"@endif>
 
     <!-- Page Heading -->
     @include('shared/header')
