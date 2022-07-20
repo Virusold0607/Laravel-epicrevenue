@@ -8,7 +8,7 @@
             <div class="col-lg-6 col-12">
                 <h1 class="pb-2">Monetize the reach of your following</h1>
                 <h4 class="col-lg-8 pb-2">Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
-                <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn btn-lg btn-primary">Become a Partner</a>
+                <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn btn-lg btn-primary">Become an Affiliate</a>
             </div>
         </div>
     </div>
