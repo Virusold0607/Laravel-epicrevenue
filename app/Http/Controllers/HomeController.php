@@ -28,6 +28,7 @@ class HomeController extends Controller
         return view('home.index')->with(
             [
                 'bodyid' => 'sticky',
+                'activePage' => 'home',
                 'meta' => $meta,
                 'featured_campaigns' => HomepageFeaturedCampaign::all()
             ]);
