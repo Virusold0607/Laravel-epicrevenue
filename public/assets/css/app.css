@@ -48,6 +48,10 @@ header.home {
     background: #e8d7fb;
     padding: 150px 0;
 }
+.hero.main-promo h1 {
+    font-size: 60px;
+    font-weight: 800;
+}
 .hero.main-promo.blue {
     background: #bdebfa;
 }
