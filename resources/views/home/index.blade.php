@@ -4,13 +4,15 @@
  
 <div class="hero main-promo border-bottom">
     <div class="container">
-        <h1 class="pt-3">Monetize the reach of your following</h1>
         <div class="row">
-            <div class="col-sm-8">
-                <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
+            <div class="col-lg-6 col-12">
+                <h1>Monetize the reach of your following</h1>
+                    <div class="col-sm-8">
+                        <h4>Monetize, track, manage, and optimize your reach and promotions all in one place.</h4>
+                    </div>
+                <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn btn-primary">Become a Partner</a>
             </div>
         </div>
-        <a href="{{ url('/affiliate/apply') }}" class="hero-apply-bttn btn btn-primary">Become a Partner</a>
     </div>
 </div><!-- End .hero -->
 
