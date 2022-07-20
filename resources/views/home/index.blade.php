@@ -1,4 +1,5 @@
-@extends('shared/layout')
+@extends('shared/layout', 'activePage' = 'home'])
+
 @section('body')
  
 <div class="hero main-promo border-bottom py-6">
