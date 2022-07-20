@@ -86,6 +86,9 @@ header.home {
 }
 
 /* MISC */
+.form-control {
+    padding: 10px 0.75rem;
+}
 .card-subtitle {
     display: block;
     text-transform: uppercase;
