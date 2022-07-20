@@ -1,15 +1,15 @@
 @extends('shared/layout')
 
 @section('body')
-    <div class="hero hero-auth">
-        <div class="container">
-            <center>
-                <h2>Become a Epic Revenue Affiliate</h2>
-                <p>Start promoting some of the top products and brand in as soon as 24 hours!</p>
-            </center>
-
+<div class="hero hero-auth py-6">
+    <div class="container">
+        <div class="col-lg-4 col-md-4 col-12 text-center mx-auto">
+            <h1 class="fw-800">Address</h1>
+            <p>This will be used to send payments or information about your account.</p>
         </div>
-    </div><!-- End .hero -->
+    </div>
+</div><!-- End .hero -->
+
 <div class="container">
     <!-- row -->
     <div class="row">
