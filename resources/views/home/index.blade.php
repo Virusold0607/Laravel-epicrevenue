@@ -21,8 +21,10 @@
                 </div>
             </div>
             <div class="col-lg-6 col-12">
-                <h3 class="fw-700 fs-20 mb-2">Popular fashion and beauty brands are experiencing explosive growth online with influencers.</h3>
-                <p>The global fashion influencer marketing market was warth over S1 billion in 2019. according to Grand Vien Research, Scaling up an influencer and affiliate campalans is e8su with Refersions tracking capabilities, See how these fashion brands achieve growth with affiliate campaigns.</p>
+                <div class="p-6">
+                    <h3 class="fw-700 fs-20 mb-2">Popular fashion and beauty brands are experiencing explosive growth online with influencers.</h3>
+                    <p>The global fashion influencer marketing market was warth over S1 billion in 2019. according to Grand Vien Research, Scaling up an influencer and affiliate campalans is e8su with Refersions tracking capabilities, See how these fashion brands achieve growth with affiliate campaigns.</p>
+                </div>
             </div>
         </div>
     </div>
