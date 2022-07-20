@@ -20,7 +20,6 @@
 
             {!! Form::model($user, array('url' => '/affiliate/apply/address', 'method' => 'post', 'class' => '','style' => '')) !!}
             <div class="panel panel-default networks">
-                <div class="panel-heading">Address</div>
                 <div class="panel-body">
                     {{-- Was there an error? --}}
                     @if (count($errors) > 0)
