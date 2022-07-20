@@ -26,6 +26,12 @@ header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link
 button.navbar-toggler {
     border: none;
 }
+
+header.home {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+}
 /* Search */
 .search .btn {
     padding: 0.45rem 1.2rem;
