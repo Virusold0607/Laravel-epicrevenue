@@ -45,7 +45,6 @@
             -->
             {!! Form::model($user, array('url' => '/affiliate/apply', 'method' => 'post', 'class' => '','style' => '')) !!}
             <div class="panel panel-default networks">
-                <div class="panel-heading">Account Details</div>
                 <div class="panel-body">
                     {{-- Was there an error? --}}
                     @if (count($errors) > 0)
