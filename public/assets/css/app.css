@@ -44,6 +44,7 @@ header.home {
     background: #f9f9f9;
 }
 .hero.main-promo {
+    font-family: 'Rubik', sans-serif;
     background: #e8d7fb;
     padding: 150px 0;
 }
