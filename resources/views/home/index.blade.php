@@ -13,19 +13,19 @@
         </div>
     </div>
 </div><!-- End .hero -->
-<div class="hero info-promo">
+<div class="hero info-promo py-6">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
-                <div class="p-4">
+                <div class="w-100">
                     <div class="green rounded p-6">
                         <img src="https://images.pexels.com/photos/7261084/pexels-photo-7261084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-100 rounded" />
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-12">
-                <div class="p-6">
-                    <h3 class="fw-700 fs-20 mb-2">Popular fashion and beauty brands are experiencing explosive growth online with influencers.</h3>
+                <div class="p-8">
+                    <h3 class="fw-700 fs-30 mb-4">Popular fashion and beauty brands are experiencing explosive growth online with influencers.</h3>
                     <p>The global fashion influencer marketing market was warth over S1 billion in 2019. according to Grand Vien Research, Scaling up an influencer and affiliate campalans is e8su with Refersions tracking capabilities, See how these fashion brands achieve growth with affiliate campaigns.</p>
                 </div>
             </div>
