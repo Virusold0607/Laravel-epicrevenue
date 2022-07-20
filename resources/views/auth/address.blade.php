@@ -14,7 +14,7 @@
     <!-- row -->
     <div class="row">
         <!-- col -->
-        <div class="col-lg-4 col-md-4 col-12 mx-auto">
+        <div class="col-lg-4 col-md-4 py-6 col-12 mx-auto">
             <!-- card -->
             <div class="px-4 py-3 py-lg-4 card rounded">
 
