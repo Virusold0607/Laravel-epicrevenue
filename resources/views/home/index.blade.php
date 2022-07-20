@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-lg-6 col-12">
                 <div class="p-2">
-                    <div class="green rounded p-6">
+                    <div class="blue rounded p-6">
                         <img src="https://images.pexels.com/photos/7261084/pexels-photo-7261084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-100 rounded" />
                     </div>
                 </div>
