@@ -45,7 +45,7 @@
                         <a class="nav-link" href="{{ url('/login') }}">Login</a>  
                     </li>
                     <li class="nav-item {{ request()->is('affiliate/apply') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/affiliate/apply') }}">Register</a>  
+                        <a class="nav-link btn btn-primary register text-white px-4" href="{{ url('/affiliate/apply') }}">Register</a>  
                     </li>
 
                 @endif
