@@ -26,7 +26,9 @@ header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link
 button.navbar-toggler {
     border: none;
 }
-
+.navbar-collapse.collapse.show {
+    background: #fff;
+}
 header.home {
     background: transparent;
     position: absolute;
