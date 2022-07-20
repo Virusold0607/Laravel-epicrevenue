@@ -3,7 +3,7 @@
 @section('body')
     <div class="hero text-center py-6">
         <div class="container">
-            <h1>Are you ready to maximize your revenue?</h1>
+            <h1 class="fw-800">Are you ready to maximize your revenue?</h1>
             <h4>Trusted by more than <span class="green">< Total Publishers ></span> accounts</h4>
         </div>
     </div><!-- End .hero -->
