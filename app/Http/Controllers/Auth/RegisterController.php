@@ -146,7 +146,7 @@ class RegisterController extends Controller
     {
         $data['user'] = Auth::user();
         if($request->has('middleware_error')){
-            $data['error']['middleware'] = "You have to complete this step.";
+            $data['error']['middleware'] = "Please enter the information below in order to continue.";
         }
         return view('auth.address', $data);
     }
