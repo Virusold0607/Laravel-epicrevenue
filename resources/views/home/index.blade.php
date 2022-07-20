@@ -1,4 +1,4 @@
-@extends('shared/layout')
+@extends('shared/layout', 'activePage' => 'home'])
 
 @section('body')
  
