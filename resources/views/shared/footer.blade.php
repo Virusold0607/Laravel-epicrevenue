@@ -4,7 +4,7 @@
             <div class="col-lg-6 col-xl-4 text-left">
                 <a href="{{ url('/') }}" class="text-black fs-24 fw-700 d-block"> 
                     <!--<img class="footer-logo" src="https://districtgurus.com/public/uploads/all/SC008HOLHmfOeB8E3SxNDONHI7nad1YJcmSl0ds9.png" data-src="https://districtgurus.com/public/uploads/all/SC008HOLHmfOeB8E3SxNDONHI7nad1YJcmSl0ds9.png" alt="District Gurus" height="20"> -->
-                    #EpicRevenue
+                    #EPICREVENUE
                 </a>
                 <div class="d-block mt-3 mb-5">
                     <ul class="list-inline social fw-600">
