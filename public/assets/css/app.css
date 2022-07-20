@@ -61,7 +61,7 @@ header.home {
 .hero.main-promo.green {
     background: #bcfabb;
 }
-.hero.info-promo.green {
+.hero .info-promo .green {
     background: #bcfabb;
 }
 /* Footer */
