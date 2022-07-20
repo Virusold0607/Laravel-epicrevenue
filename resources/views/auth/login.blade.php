@@ -18,11 +18,6 @@
             <div class="px-4 py-3 py-lg-4 card mb-0 rounded">
                 <form class="form-horizontal form-login" role="form" method="POST" action="{{ url('/login') }}">
                     {{ csrf_field() }}
-                    <div class="text-center pt-4 pb-4">
-                        <h1 class="h4 fw-600">
-                            Login
-                        </h1>
-                    </div>
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                         <label class="fw-700 mb-2">Email Address</label>
