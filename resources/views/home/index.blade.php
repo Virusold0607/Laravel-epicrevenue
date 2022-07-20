@@ -2,7 +2,7 @@
 
 @section('body')
  
-<div class="hero main-promo border-bottom py-6">
+<div class="hero main-promo border-bottom">
     <div class="container">
         <h1 class="pt-3">Monetize the reach of your following</h1>
         <div class="row">
