@@ -1,5 +1,14 @@
 @extends('shared/layout')
 @section('body')
+<div class="hero hero-auth py-6">
+    <div class="container">
+        <div class="col-lg-4 col-md-4 col-12 text-center mx-auto">
+            <h1 class="fw-800">Welcome back!</h1>
+            <p>Login to start promoting some of the top products and brands.</p>
+        </div>
+    </div>
+</div><!-- End .hero -->
+
 <div class="container">
     <!-- row -->
     <div class="row">
