@@ -1,4 +1,4 @@
-<header class="navbar navbar-expand-lg py-3 shadow-sm">
+<header class="navbar navbar-expand-lg py-3 shadow-sm @if(isset($activePage)) {{ $activePage }} @endif">
     <nav class="container">
         <a class="navbar-brand fw-700 col-auto" href="{{ url('/') }}">
                 <!--
