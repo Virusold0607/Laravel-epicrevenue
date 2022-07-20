@@ -48,7 +48,8 @@ header.home {
 }
 .hero.main-promo {
     font-family: 'Rubik', sans-serif;
-    background: #e8d7fb;
+    background: #ffffff url(https://images.pexels.com/photos/6954174/pexels-photo-6954174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
     padding: 150px 0;
 }
 .hero.main-promo h1 {
