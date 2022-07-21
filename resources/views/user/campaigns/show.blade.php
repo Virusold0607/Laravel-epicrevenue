@@ -94,8 +94,8 @@
     }
 
     if (succeed) {
-        document.getElementById("copiedText").classList.remove('bi-clipboard');
-        document.getElementById("copiedText").classList.add('bi-clipboard-check-fill');
+        $('#copiedText').removeClass('bi-clipboard');
+        $('#copiedText').addClass('bi-clipboard-check-fill');
     }
 
     return succeed;
