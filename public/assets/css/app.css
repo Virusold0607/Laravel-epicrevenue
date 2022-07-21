@@ -129,3 +129,33 @@ input.form-control, .form-select {
     border: 0;
     vertical-align: -2px;
 }
+.linkname {
+  display: none;
+}
+
+#copyButton {
+  cursor: pointer;
+  background: #f1bb3a;
+}
+
+#copyTarget {
+  border-left: none;
+}
+
+.copied {
+  opacity: 1;
+  position: absolute;
+  left: 55px;
+}
+
+@media (min-width: 768px) {
+  .copied {
+    left: 135px;
+  }
+
+  .linkname {
+    display: block;
+    background: #3b3e45;
+    color: #fff;
+  }
+}
