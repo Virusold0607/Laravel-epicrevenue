@@ -41,12 +41,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/login/check', 'Auth\LoginController@checkpoint');
 
     // Registration
-    Route::get('/affiliate/apply/networks', 'Auth\RegisterController@getRegisterNetworks');
-    Route::post('/affiliate/apply/networks', 'Auth\RegisterController@postRegisterNetworks');
-    Route::get('/affiliate/apply/address', 'Auth\RegisterController@getRegisterAddress');
-    Route::post('/affiliate/apply/address', 'Auth\RegisterController@postRegisterAddress');
-    Route::get('/affiliate/apply/payment', 'Auth\RegisterController@getRegisterPayment');
-    Route::post('/affiliate/apply/payment', 'Auth\RegisterController@postRegisterPayment');
+    Route::get('/account/apply/networks', 'Auth\RegisterController@getRegisterNetworks');
+    Route::post('/account/apply/networks', 'Auth\RegisterController@postRegisterNetworks');
+    Route::get('/account/apply/address', 'Auth\RegisterController@getRegisterAddress');
+    Route::post('/account/apply/address', 'Auth\RegisterController@postRegisterAddress');
+    Route::get('/account/apply/payment', 'Auth\RegisterController@getRegisterPayment');
+    Route::post('/account/apply/payment', 'Auth\RegisterController@postRegisterPayment');
     Route::get('/register/{service}/', 'Auth\RegisterController@redirectToProvider');
 });
 
