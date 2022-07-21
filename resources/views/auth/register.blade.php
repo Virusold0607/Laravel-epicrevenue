@@ -54,30 +54,31 @@
                     @endif
 
                     <div class="form-group">
-                        {!! Form::label('firstname', 'Firstname', array()) !!}
-                        {!! Form::text('firstname', null, array('class' => 'form-control', 'placeholder' => 'form-control')) !!}
+                        <!-- {!! Form::label('firstname', 'Firstname', array()) !!} -->
+                        {!! Form::text('firstname', null, array('class' => 'form-control', 'placeholder' => 'First name')) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('lastname', 'Lastname', array()) !!}
-                        {!! Form::text('lastname', null, array('class' => 'form-control')) !!}
+                        <!-- {!! Form::label('lastname', 'Lastname', array()) !!} -->
+                        {!! Form::text('lastname', null, array('class' => 'form-control', 'placeholder' => 'Last name')) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('email', 'Email', array()) !!}
-                        {!! Form::text('email', null, array('class' => 'form-control')) !!}
+                        <!-- {!! Form::label('email', 'Email', array()) !!} -->
+                        {!! Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'Email address')) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('password', 'Password', array()) !!}
-                        {!! Form::password('password', array('class' => 'form-control')) !!}
+                        <!-- {!! Form::label('password', 'Password', array()) !!} -->
+                        {!! Form::password('password', array('class' => 'form-control', 'placeholder' => 'Pasword')) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('password_confirmation', 'Confirm Password', array()) !!}
-                        {!! Form::password('password_confirmation', array('class' => 'form-control')) !!}
+                        <!-- {!! Form::label('password_confirmation', 'Confirm Password', array()) !!} -->
+                        {!! Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Confirm Password')) !!}
                     </div>
-
+                    <div class="form-group">
                     {!! Form::checkbox('terms', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/terms') }}" target="_blank" title="Terms of Service">Terms of Service</a>.
-                    <br />
+                    </div>
+                    <div class="form-group">
                     {!! Form::checkbox('privacy', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/privacy') }}" target="_blank" title="Privacy Policy">Privacy Policy</a>.
-                    <br /><br />
+                    </div>
                     {-- app('captcha')->display() --}
                 </div>
             </div>
