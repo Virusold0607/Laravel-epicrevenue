@@ -25,6 +25,9 @@ header .nav-link:hover, header .nav-link.dropdown-toggle:hover, header .nav-link
 }
 button.navbar-toggler {
     border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
 }
 .navbar-collapse.collapse.show {
     background: #fff;
