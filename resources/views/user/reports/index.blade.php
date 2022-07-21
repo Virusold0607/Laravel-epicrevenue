@@ -81,7 +81,7 @@
 </div>
 
 
-<div class="page-container dashboard no-border">
+<div class="page-container dashboard py-6">
     <div class="container">
         <h2>Earning Activity</h2>
 
