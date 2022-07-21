@@ -56,7 +56,7 @@ class RegisterController extends Controller
     public function getRegister()
     {
         $user = new User();
-        return view('auth.register')->with(compact('user'));
+        return view('auth.create')->with(compact('user'));
     }
 
 
