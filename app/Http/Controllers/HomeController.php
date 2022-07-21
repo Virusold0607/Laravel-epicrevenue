@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HomepageFeaturedCampaign;
 use Illuminate\Http\Request;
 
 use Validator;
@@ -29,8 +28,7 @@ class HomeController extends Controller
             [
                 'bodyid' => 'sticky',
                 'activePage' => 'home',
-                'meta' => $meta,
-                'featured_campaigns' => HomepageFeaturedCampaign::all()
+                'meta' => $meta
             ]);
     }
 
