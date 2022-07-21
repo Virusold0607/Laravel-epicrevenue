@@ -7,7 +7,7 @@
             <p class="hero-p">Make changes to your account information.</p>
             </div>
 </div>
-<div class="page-container no-shadow no-border">
+<div class="page-container py-6">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8">
