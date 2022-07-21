@@ -46,7 +46,7 @@
     <div class="container">
         <p>For every user you refer you earn 5% off every lead they get, this is a real great way to get your friends or others invloved while earning money when they join. Below you can find your referral link and a list of all the users you refered.</p>
 
-        <div class="form-custom mb-2">
+        <div class="form-custom mb-4">
             <h3>Your referral link: </h3>
             <input class="form-control" value="{!! url('/invite/' . auth()->user()->id) !!}"  />
         </div>
