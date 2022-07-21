@@ -474,9 +474,6 @@ class ApiController extends Controller
                 $campaign->featured_img = url('/campaign/image/' . $campaign->id);
             }
 
-            if($request->input('snapaid', 0))
-                $campaigns = $campaigns->where('is_for_snapaid', true);
-
             if($request->input('mobile', 0)) {
                 $campaigns = $campaigns->where('mobile', 'yes');
             } else {
