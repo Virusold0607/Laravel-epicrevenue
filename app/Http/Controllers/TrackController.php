@@ -38,27 +38,10 @@ class TrackController extends Controller
             return "Sorry, Something went wrong!!!";
         }
 
-        if($report->subid1 == 'snapaid')
-        {
-            $this->handleSnapaidPostback($report);
-        }
-
         $report->status = 2;
         $report->save();
 
         return $report->credit_hash;
-    }
-
-
-    private function handleSnapaidPostback($report)
-    {
-        $url = "https://snapaid.org/track/postback/". $report->credit_hash;
-
-        $client = new \GuzzleHttp\Client();
-        $res = $client->request('GET', $url);
-        $data = $res->getBody();
-
-        return $data;
     }
 
     public function track(Request $request, $campaign_id, $user_id, $subid1 = null, $subid2 = null, $subid3 = null, $subid4 = null, $subid5 = null)
@@ -156,9 +139,6 @@ class TrackController extends Controller
         $report->subid3      = $subid3;
         $report->subid4      = $subid4;
         $report->subid5      = $subid5;
-
-        if($report->subid1 == 'snapaid')
-            $report->postback_url = "http://snapaid.org/api/postback";
 
         $report->save();
 
