@@ -95,7 +95,7 @@ Route::group(['middleware' => []], function() {
     Route::get('/', 'HomeController@index');
     //Route::get('/contact', 'HomeController@getContact');
     //Route::post('/contact', 'HomeController@postContact');
-    Route::get('/affiliates', 'HomeController@affiliates');
+    Route::get('/earn', 'HomeController@affiliates');
     Route::get('/advertisers', 'HomeController@advertisers');
     Route::get('/about', 'HomeController@about');
     Route::get('/rewards', 'HomeController@rewards');
