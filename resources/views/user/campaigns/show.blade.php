@@ -25,16 +25,26 @@
 
             <div class="container" style="height: 20px;"></div>
             @if(auth()->check())
-            @unless($daily_cap_status)
-                <div id="promotionalLink">
-                    <hr>
-                    <div class="input-group">
-                        <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
-                        <input type="text" class="form-control" id="exampleInputAmount" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
-                    </div>
-                    <hr>
+                @unless($daily_cap_status)
+                <div class="input-group">
+                    <span class="input-group-addon hidden-xs linkname">
+                    <strong>Promotion Link</strong>
+                    </span>
+                    <span id="copyButton" class="input-group-addon btn" title="Click to copy">
+                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                    </span>
+                    <input type="text" id="copyTarget" class="form-control" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
+                    <span class="copied">Copied !</span>
                 </div>
-            @endunless
+                    <div id="promotionalLink">
+                        <hr>
+                        <div class="input-group">
+                            <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
+                            <input type="text" class="form-control" id="exampleInputAmount" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
+                        </div>
+                        <hr>
+                    </div>
+                @endunless
             @endif
  
 
@@ -61,10 +71,94 @@
 
 
 @endsection
+<style>
+.input-group {
+  margin-top: 30px;
+  position: relative;
+}
 
+.input-group {
+  position: relative;
+}
+
+.input-group-addon {
+  border: none;
+}
+
+.linkname {
+  display: none;
+}
+
+#copyButton {
+  cursor: pointer;
+  background: #f1bb3a;
+}
+
+#copyTarget {
+  border-left: none;
+}
+
+.copied {
+  opacity: 1;
+  position: absolute;
+  left: 55px;
+}
+
+@media (min-width: 768px) {
+  .copied {
+    left: 135px;
+  }
+
+  .linkname {
+    display: block;
+    background: #3b3e45;
+    color: #fff;
+  }
+}
+</style>
 
 @section('scripts')
+<script>
+(function() {
+  "use strict";
 
-    
+  function copyToClipboard(elem) {
+    var target = elem;
 
+    // select the content
+    var currentFocus = document.activeElement;
+
+    target.focus();
+    target.setSelectionRange(0, target.value.length);
+
+    // copy the selection
+    var succeed;
+
+    try {
+      succeed = document.execCommand("copy");
+    } catch (e) {
+      console.warn(e);
+
+      succeed = false;
+    }
+
+    // Restore original focus
+    if (currentFocus && typeof currentFocus.focus === "function") {
+      currentFocus.focus();
+    }
+
+    if (succeed) {
+      $(".copied").animate({ top: -25, opacity: 0 }, 700, function() {
+        $(this).css({ top: 0, opacity: 1 });
+      });
+    }
+
+    return succeed;
+  }
+
+  $("#copyButton, #copyTarget").on("click", function() {
+    copyToClipboard(document.getElementById("copyTarget"));
+  });
+})();
+</script>
 @endsection
