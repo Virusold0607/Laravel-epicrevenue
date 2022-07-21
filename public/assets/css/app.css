@@ -137,16 +137,7 @@ input.form-control, .form-select {
   border-left: none;
 }
 
-.copied {
-  opacity: 1;
-  position: absolute;
-  left: 55px;
-}
-
 @media (min-width: 768px) {
-  .copied {
-    left: 135px;
-  }
 
   .linkname {
     display: block;
