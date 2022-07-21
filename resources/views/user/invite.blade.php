@@ -48,11 +48,11 @@
 
         <div class="form-custom mb-2">
             <h3>Your referral link: </h3>
-            <input class="form-control" value="{!! url('/invite/' . auth()->user()->id) !!}" style="width: 600px; " />
+            <input class="form-control" value="{!! url('/invite/' . auth()->user()->id) !!}"  />
         </div>
         <div class="card">
             <div class="card-body">
-                <table class="table table-striped table-bordered table-hover table-responsive">
+                <table class="table table-striped table-bordered table-hover table-responsive mb-0">
                     <thead>
                     <tr>
                         <th>ID</th>
