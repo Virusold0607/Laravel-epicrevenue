@@ -94,11 +94,8 @@
     }
 
     if (succeed) {
-      $(".copied").animate({ top: -25, opacity: 0 }, 700, function() {
-          document.getElementById("copiedText").classList.remove('bi-clipboard');
-          document.getElementById("copiedText").classList.add('bi-clipboard-check-fill');
-        $(this).css({ top: 0, opacity: 1 });
-      });
+        document.getElementById("copiedText").classList.remove('bi-clipboard');
+        document.getElementById("copiedText").classList.add('bi-clipboard-check-fill');
     }
 
     return succeed;
