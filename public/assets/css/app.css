@@ -33,7 +33,8 @@ button.navbar-toggler {
     color: #FFFFFF;
 }
 .navbar-collapse.collapse.show {
-    background: #fff;
+    background: #ffffff;
+    border: 1px solid #000000;
 }
 .home a.navbar-brand, .home header a.nav-link, .home header a.nav-link.dropdown-toggle  {
     color: #FFFFFF;
