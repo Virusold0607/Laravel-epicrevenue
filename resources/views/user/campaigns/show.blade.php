@@ -71,51 +71,6 @@
 
 
 @endsection
-<style>
-.input-group {
-  margin-top: 30px;
-  position: relative;
-}
-
-.input-group {
-  position: relative;
-}
-
-.input-group-addon {
-  border: none;
-}
-
-.linkname {
-  display: none;
-}
-
-#copyButton {
-  cursor: pointer;
-  background: #f1bb3a;
-}
-
-#copyTarget {
-  border-left: none;
-}
-
-.copied {
-  opacity: 1;
-  position: absolute;
-  left: 55px;
-}
-
-@media (min-width: 768px) {
-  .copied {
-    left: 135px;
-  }
-
-  .linkname {
-    display: block;
-    background: #3b3e45;
-    color: #fff;
-  }
-}
-</style>
 
 @section('scripts')
 <script>
