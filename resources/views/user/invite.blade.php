@@ -79,14 +79,13 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="2">You have no referrals.</td>
+                            <td colspan="3">You have no referrals.</td>
                         </tr>
                     @endif
                     </tbody>
                 </table>
             </div>
         </div><!-- end .card -->
-
     </div>
 </div>
 @endsection
