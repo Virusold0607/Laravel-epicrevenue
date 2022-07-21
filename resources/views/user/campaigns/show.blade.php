@@ -96,6 +96,8 @@
     if (succeed) {
         $('#copiedText').removeClass('bi-clipboard');
         $('#copiedText').addClass('bi-clipboard-check-fill');
+        $('#copyButton').removeClass('btn-primary');
+        $('#copyButton').addClass('btn-success');
     }
 
     return succeed;
