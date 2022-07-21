@@ -30,9 +30,7 @@
             @unless($daily_cap_status)
 
             <div class="input-group">
-                <span id="copyButton" class="input-group-addon btn btn-primary" title="Click to copy">
-                    <i id="copiedText" class="bi bi-clipboard"></i>
-                </span>
+                
                 <input type="text" id="copyTarget" class="form-control" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
                 <span id="copyButton" class="input-group-addon btn btn-primary" title="Click to copy">
                     <i id="copiedText" class="bi bi-clipboard"></i>
