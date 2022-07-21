@@ -20,19 +20,19 @@
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label class="fw-700 mb-2">Email Address</label>
+                        <!-- <label class="fw-700 mb-2">Email Address</label> -->
                         @if ($errors->has('email'))
                         <div class="alert alert-danger p-2 mb-2">{{ $errors->first('email') }}</div>
                         @endif
-                        <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="" />
+                        <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email address" />
                     </div>
 
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label class="fw-700 mb-2">Password</label>
+                        <!-- <label class="fw-700 mb-2">Password</label> -->
                         @if ($errors->has('password'))
                         <div class="alert alert-danger p-2 mb-2">{{ $errors->first('password') }}</div>
                         @endif
-                        <input id="password" type="password" class="form-control" name="password" placeholder="">
+                        <input id="password" type="password" class="form-control" name="password" placeholder="PAssword">
                     </div>
 
                     <div class="form-group">
