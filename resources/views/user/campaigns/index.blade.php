@@ -108,6 +108,7 @@
                                             <a href="{{ url('/campaign/' . $campaign->id) }}">
                                                 <h3 class="text-black py-2 mb-0 fs-18">{{ $campaign->name }}</h3>
                                                 <span class="text-black opacity-50">Category: {{ $campaign->category->name }}</span>
+                                                <span class="text-black opacity-50">AVG. EPC: $0.44</span>
                                                 <p class="py-2 mb-0 text-black d-none">{{ $campaign->description }}</p>
                                             </a>
                                             </div>
