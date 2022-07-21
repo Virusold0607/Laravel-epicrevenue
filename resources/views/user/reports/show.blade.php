@@ -58,8 +58,6 @@
             </tr>
         </table><br />
 
-        <hr>
-
         <div>
             <a class="btn btn-primary btn-lg" href="{!! url('/reports')  !!}">Go Back</a>
         </div>
