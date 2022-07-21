@@ -90,7 +90,6 @@ class CampaignController extends Controller
             $o->network_campaign_id = $offer->offerid;
             $o->cap = 0;
             $o->daily_cap = 1000;
-            $o->is_for_snapaid = true;
             $o->mobile = 'yes';
             $o->incent = 'yes';
             $o->active = 'yes';
@@ -350,8 +349,6 @@ class CampaignController extends Controller
             $c->incent       = 'yes';
         else
             $c->incent      = 'no';
-        if($request->has('is_for_snapaid'))
-            $c->is_for_snapaid      = true;
 
         $c->name             = $request->name;
         $c->description      = $request->description;
