@@ -134,7 +134,7 @@
         </div>
 
         <div class="col-xs-12 no-padding">
-            <div class="card rounded-0">
+            <div class="card">
                 <div class="card-header">Reports</div>
                 <div class="card-body">
                     @if(count($reports))
