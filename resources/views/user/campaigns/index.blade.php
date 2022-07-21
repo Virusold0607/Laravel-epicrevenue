@@ -25,7 +25,7 @@
 </div>
     
 <!-- search -->
-<div class="search py-6">
+<div class="search pt-6 pb-4">
     <div class="container">
         <div class="card">
             <div class="card-body">
