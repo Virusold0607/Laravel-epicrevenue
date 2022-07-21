@@ -42,50 +42,42 @@
     </div>
 </div>
 
-    <div class="clearfix"></div>
-    <div class="page-container no-shadow no-border">
-        <div class="container">
-            <div class="text">For every user you refer you earn 5% off every lead they get, this is a real great way to get your friends or others invloved while earning money when they join. Below you can find your referral link and a list of all the users you refered.</div>
-            <hr>
-            <div class="container" style="height: 15px;"></div>
-
-            <div class="form-custom">
-                <h3>Your referral link: </h3>
-                <input class="form-control" value="{!! url('/invite/' . auth()->user()->id) !!}" style="width: 600px; " />
-            </div>
-            <br /><br />
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <!--<th>Email</th>-->
-                        <th>Date Joined</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @if(count($referrals) >0)
-                        @foreach($referrals as $r)
-                            <tr>
-                                <td>{!! $r->id !!} </td>
-                                <!--<td>'.$row->email_address.'</td>-->
-                                <td>{!! $r->created_at !!}</td>
-                            </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td colspan="2">You have no referrals.</td>
-                        </tr>
-                    @endif
-                    </tbody>
-                </table>
-            </div><!-- end .table-responsive -->
-
-        </div>
-    </div>
-
+<div class="page-container no-shadow py-6">
     <div class="container">
-        <hr>
+        <p>For every user you refer you earn 5% off every lead they get, this is a real great way to get your friends or others invloved while earning money when they join. Below you can find your referral link and a list of all the users you refered.</p>
+
+        <div class="form-custom mb-2">
+            <h3>Your referral link: </h3>
+            <input class="form-control" value="{!! url('/invite/' . auth()->user()->id) !!}" style="width: 600px; " />
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <!--<th>Email</th>-->
+                    <th>Date Joined</th>
+                </tr>
+                </thead>
+                <tbody>
+                @if(count($referrals) >0)
+                    @foreach($referrals as $r)
+                        <tr>
+                            <td>{!! $r->id !!} </td>
+                            <!--<td>'.$row->email_address.'</td>-->
+                            <td>{!! $r->created_at !!}</td>
+                        </tr>
+                    @endforeach
+                @else
+                    <tr>
+                        <td colspan="2">You have no referrals.</td>
+                    </tr>
+                @endif
+                </tbody>
+            </table>
+        </div><!-- end .table-responsive -->
+
     </div>
+</div>
 
 @endsection
