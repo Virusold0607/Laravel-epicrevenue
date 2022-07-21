@@ -68,9 +68,9 @@
 			</div><!--end grid_4-->
 
 			<div class="col-sm-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">Email Notifications</div>
-					<div class="panel-body">
+				<div class="card">
+					<div class="card-header">Email Notifications</div>
+					<div class="card-body">
 						{!! Form::open(array('url' => '/settings/updateNotifications', 'method' => 'post'))!!}
 						<div class="form-group">
 							<div class="checkbox">
