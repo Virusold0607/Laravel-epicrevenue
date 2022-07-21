@@ -13,7 +13,7 @@
 			<div class="col-lg-8 mx-auto">
 				<div class="row">
 					<div class="col-sm-8">
-						<div class="card panel-default">
+						<div class="card">
 							<div class="card-header">Account Information</div>
 							<div class="card-body">
 								@if (count($errors) > 0)
@@ -62,7 +62,7 @@
 
 								<div class="form-group">
 									<label for="name" class="col-sm-2 control-label"></label>
-									{!! Form::submit('Update Info', array('class' => 'btn btn-default')) !!}
+									{!! Form::submit('Update Info', array('class' => 'btn btn-primary')) !!}
 								</div>
 								{!! Form::close() !!}
 							</div>
@@ -86,16 +86,16 @@
 										</label>
 									</div>
 								</div>
-								{!! Form::submit('Update Notifications', array('class' => 'btn btn-default')) !!}
+								{!! Form::submit('Update Notifications', array('class' => 'btn btn-primary')) !!}
 								{!! Form::close() !!}
 							</div>
 						</div>
-						<div class="panel panel-default">
+						<div class="mb-2">
 							<div class="panel-body">
 								<a href="{!! url('/settings/password') !!}">Click here to change password</a>
 							</div>
 						</div>
-						<div class="panel panel-default">
+						<div class="panel">
 							<div class="panel-body">
 								<a href="{!! url('/taxdetails') !!}">Click here to submit or update tax information</a>
 							</div>
