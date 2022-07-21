@@ -133,10 +133,6 @@ input.form-control, .form-select {
   display: none;
 }
 
-#copyTarget {
-  border-left: none;
-}
-
 @media (min-width: 768px) {
 
   .linkname {
