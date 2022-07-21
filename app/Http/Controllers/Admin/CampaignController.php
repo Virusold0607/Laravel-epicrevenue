@@ -7,7 +7,6 @@ use App\Models\CampaignRate;
 use App\Models\CampaignsCategory;
 use App\Models\CampaignTarget;
 use App\Models\Country;
-use App\Models\HomepageFeaturedCampaign;
 use App\Models\Postback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -291,8 +290,6 @@ class CampaignController extends Controller
             'network_rate'   => 'required|max:1000000|min:0.1',
             'countries'      => 'required|array',
             'feature_image'                       => 'mimes:jpeg,jpg,png',
-            'homepage_featured_image'             => 'mimes:jpeg,jpg,png',
-            'homepage_featured_image_background'  => 'mimes:jpeg,jpg,png',
         ]);
 
         if ($validator->fails()) {
@@ -309,27 +306,6 @@ class CampaignController extends Controller
         $filename = Str::random() . "-" . strval(time()) . "." . $fileExt;
         $file->move($destinationPath, $filename);
         $featured_img = $filename;
-
-
-        $file = $request->file('homepage_featured_image');
-        if(! is_null($file)) {
-            // Store Image
-            $destinationPath = storage_path() . '/app/public/images/campaign/';
-            $fileExt = $file->getClientOriginalExtension();
-            $filename = "home-main-" . Str::random() . "-" . strval(time()) . "." . $fileExt;
-            $file->move($destinationPath, $filename);
-            $homepage_featured_image = $filename;
-        }
-
-        $file = $request->file('homepage_featured_image_background');
-        if(! is_null($file)) {
-            // Store Image
-            $destinationPath = storage_path() . '/app/public/images/campaign/';
-            $fileExt = $file->getClientOriginalExtension();
-            $filename = "home-bg-" . Str::random() . "-" . strval(time()) . "." . $fileExt;
-            $file->move($destinationPath, $filename);
-            $homepage_featured_image_background = $filename;
-        }
 
         // Create Campaign
         $c = new Campaign();
@@ -359,8 +335,6 @@ class CampaignController extends Controller
         $c->url              = $request->url;
         $c->network_id       = $request->network_id;
         $c->featured_img     = $featured_img;
-        $c->homepage_featured_image            = isset($homepage_featured_image)            ? $homepage_featured_image            : null;
-        $c->homepage_featured_image_background = isset($homepage_featured_image_background) ? $homepage_featured_image_background : null;
         $c->active           = $request->active;
         $c->save();
 
@@ -465,8 +439,6 @@ class CampaignController extends Controller
             'network_rate'   => 'required|max:1000000|min:0.1',
             'countries'      => 'required|array',
             'feature_image'                       => 'mimes:jpeg,jpg,png',
-            'homepage_featured_image'             => 'mimes:jpeg,jpg,png',
-            'homepage_featured_image_background'  => 'mimes:jpeg,jpg,png',
         ]);
 
         if ($validator->fails()) {
@@ -487,32 +459,6 @@ class CampaignController extends Controller
             $filename = Str::random() . "-" . strval(time()) . "." . $fileExt;
             $file->move($destinationPath, $filename);
             $c->featured_img = $filename;
-        }
-
-        $file = $request->file('homepage_featured_image');
-        if(! is_null($file)) {
-            if( Storage::exists('app/public/images/campaign/' . $c->homepage_featured_image) )
-                Storage::delete('app/public/images/campaign/' . $c->homepage_featured_image);
-
-            // Store Image
-            $destinationPath = storage_path() . '/app/public/images/campaign/';
-            $fileExt = $file->getClientOriginalExtension();
-            $filename = "home-main-" . Str::random() . "-" . strval(time()) . "." . $fileExt;
-            $file->move($destinationPath, $filename);
-            $c->homepage_featured_image = $filename;
-        }
-
-        $file = $request->file('homepage_featured_image_background');
-        if(! is_null($file)) {
-            if( Storage::exists('app/public/images/campaign/' . $c->homepage_featured_image_background) )
-                Storage::delete('app/public/images/campaign/' . $c->homepage_featured_image_background);
-
-            // Store Image
-            $destinationPath = storage_path() . '/app/public/images/campaign/';
-            $fileExt = $file->getClientOriginalExtension();
-            $filename = "home-bg-" . Str::random() . "-" . strval(time()) . "." . $fileExt;
-            $file->move($destinationPath, $filename);
-            $c->homepage_featured_image_background = $filename;
         }
 
         // Update Campaign
@@ -624,43 +570,5 @@ class CampaignController extends Controller
         }
     }
 
-
-
-    public function getFeatured()
-    {
-        $data['campaigns'] = Campaign::all()->pluck('name', 'id');
-        $data['selected'] = HomepageFeaturedCampaign::all()->pluck('campaign_id');
-
-        return view('admin.campaigns.featured', $data);
-    }
-
-    public function postFeatured(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'campaigns'   => 'array|max:10',
-            'campaigns.*' => 'integer|exists:campaigns,id',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect('/admin/campaigns/featured')
-                ->withErrors($validator)
-                ->withInput();
-        }
-
-        $featuredCampaigns = HomepageFeaturedCampaign::all();
-
-        foreach ($request->input('campaigns', []) as $campaign) {
-            if(is_null($featuredCampaigns->where('campaign_id', $campaign)->first()))
-            {
-                HomepageFeaturedCampaign::create(['campaign_id' => (int) $campaign]);
-            }
-        }
-
-        HomepageFeaturedCampaign::whereNotIn('campaign_id', $request->input('campaigns', []))->delete();
-
-        return redirect('/admin/campaigns/featured')
-            ->withInput();
-
-    }
 
 }
