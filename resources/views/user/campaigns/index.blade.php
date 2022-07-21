@@ -25,7 +25,7 @@
 </div>
     
 <!-- search -->
-<div class="search py-4">
+<div class="search py-6">
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -56,7 +56,7 @@
     </div>
 </div>
 
-<div class="campaigns pb-4">
+<div class="campaigns pb-6">
         <div class="container">
             <div class="row">
             <!--
