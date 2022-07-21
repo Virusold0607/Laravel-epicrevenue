@@ -20,8 +20,8 @@ Route::get('/track/{campaign_id}/{user_id}/{subid1?}/{subid2?}/{subid3?}/{subid4
 // Routes for guest users
 Route::group(['middleware' => 'guest'], function () {
     // Registration routes...
-    Route::get('/affiliate/apply', 'Auth\RegisterController@getRegister');
-    Route::post('/affiliate/apply', 'Auth\RegisterController@postRegister');
+    Route::get('/account/create', 'Auth\RegisterController@getRegister');
+    Route::post('/account/create', 'Auth\RegisterController@postRegister');
 
     //Invite Controller
     Route::get('/invite/{id}', 'InviteController@getId');
@@ -34,19 +34,19 @@ Route::group(['middleware' => 'guest'], function () {
 
 });
 
-Route::get('/affiliate/apply/complete', 'Auth\RegisterController@getRegisterComplete');
+Route::get('/account/create/complete', 'Auth\RegisterController@getRegisterComplete');
 Route::get('/emailconfirm/{id}/{email_confirm_code}', 'Auth\RegisterController@confirmEmail');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/login/check', 'Auth\LoginController@checkpoint');
 
     // Registration
-    Route::get('/account/apply/networks', 'Auth\RegisterController@getRegisterNetworks');
-    Route::post('/account/apply/networks', 'Auth\RegisterController@postRegisterNetworks');
-    Route::get('/account/apply/address', 'Auth\RegisterController@getRegisterAddress');
-    Route::post('/account/apply/address', 'Auth\RegisterController@postRegisterAddress');
-    Route::get('/account/apply/payment', 'Auth\RegisterController@getRegisterPayment');
-    Route::post('/account/apply/payment', 'Auth\RegisterController@postRegisterPayment');
+    Route::get('/account/create/networks', 'Auth\RegisterController@getRegisterNetworks');
+    Route::post('/account/create/networks', 'Auth\RegisterController@postRegisterNetworks');
+    Route::get('/account/create/address', 'Auth\RegisterController@getRegisterAddress');
+    Route::post('/account/create/address', 'Auth\RegisterController@postRegisterAddress');
+    Route::get('/account/create/payment', 'Auth\RegisterController@getRegisterPayment');
+    Route::post('/account/create/payment', 'Auth\RegisterController@postRegisterPayment');
     Route::get('/register/{service}/', 'Auth\RegisterController@redirectToProvider');
 });
 
