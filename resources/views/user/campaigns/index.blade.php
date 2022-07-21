@@ -107,6 +107,7 @@
                                             <div class="col-lg-9">
                                             <a href="{{ url('/campaign/' . $campaign->id) }}">
                                                 <h3 class="text-black py-2 mb-0 fs-18">{{ $campaign->name }}</h3>
+                                                <span>{{ $campaign->category->name }}</span>
                                                 <p class="py-2 mb-0 text-black d-none">{{ $campaign->description }}</p>
                                             </a>
                                             </div>
