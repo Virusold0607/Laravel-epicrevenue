@@ -72,6 +72,9 @@ header.home {
 .hero.info-promo .blue {
     background: #bdebfa;
 }
+.hero.info-promo h3 {
+    line-height: 40px;
+}
 /* Footer */
 .footer .footer-logo {
     height:20px;
