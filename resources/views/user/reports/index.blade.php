@@ -89,13 +89,10 @@
             <canvas id="myChart" width="400" height="400"></canvas>
         </div>
 
-        <div class="clearfix"></div>
-        <div class="container" style="height: 50px;"></div>
-
-        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 no-padding">
-            <div class="panel panel-default">
-                <div class="panel-heading">Sort Reports</div>
-                <div class="panel-body">
+        <div class="col-auto col-lg-4">
+            <div class="card">
+                <div class="card-header">Sort Reports</div>
+                <div class="card-body">
                     {!! Form::open(array('url' => 'reports', 'method' => 'get')) !!}
                     <b>Start date:</b>
                     <?php $start_month = array(1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'August', 9 => 'September', 10 => 'October', 11 => 'November', 12 => 'December'); ?>
