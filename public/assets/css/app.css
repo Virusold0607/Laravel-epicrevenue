@@ -54,7 +54,8 @@ header.home {
 
 /* Hero */
 .hero {
-    background: #f9f9f9;
+    background: #000000;
+    color: #ffffff;
 }
 .hero.main-promo {
     font-family: 'Rubik', sans-serif;
