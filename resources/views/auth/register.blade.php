@@ -55,7 +55,7 @@
 
                     <div class="form-group">
                         {!! Form::label('firstname', 'Firstname', array()) !!}
-                        {!! Form::text('firstname', null, array('class' => 'form-control')) !!}
+                        {!! Form::text('firstname', null, array('class' => 'form-control', 'placeholder' => 'form-control')) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('lastname', 'Lastname', array()) !!}
