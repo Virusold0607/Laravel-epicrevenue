@@ -69,45 +69,45 @@
     </div>
 </div>
         
-    <div class="page-container dashboard">
-        <div class="container">
-            
-            <div class="card">
-                <div class="card-header">Earnings</div>
-                <div class="card-body">
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                </div>
+<div class="page-container py-6 dashboard">
+    <div class="container">
+        
+        <div class="card">
+            <div class="card-header">Earnings</div>
+            <div class="card-body">
+                <canvas id="myChart" width="400" height="400"></canvas>
             </div>
         </div>
+    </div>
 
-        <div class="clearfix"></div>
+    <div class="clearfix"></div>
 
-        @if($is_mobile)
-            <div class="container" style="height: 50px;">
+    @if($is_mobile)
+        <div class="container" style="height: 50px;">
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Top campaigns</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        @foreach($top_campaigns as $campaign)
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <div class="caption">
-                                    <a href="/campaign/{!! $campaign->id !!}"><h4>{{ $campaign->name }}</h4></a>
-                                    <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
-                                </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Top campaigns</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    @foreach($top_campaigns as $campaign)
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <a href="/campaign/{!! $campaign->id !!}"><h4>{{ $campaign->name }}</h4></a>
+                                <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
                             </div>
                         </div>
-                        @endforeach
                     </div>
-
+                    @endforeach
                 </div>
+
             </div>
-            </div>
-        @endif
-    </div>
+        </div>
+        </div>
+    @endif
+</div>
 
 @endsection
 
