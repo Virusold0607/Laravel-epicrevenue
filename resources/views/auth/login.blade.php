@@ -32,7 +32,7 @@
                         @if ($errors->has('password'))
                         <div class="alert alert-danger p-2 mb-2">{{ $errors->first('password') }}</div>
                         @endif
-                        <input id="password" type="password" class="form-control" name="password" placeholder="PAssword">
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
                     </div>
 
                     <div class="form-group">
