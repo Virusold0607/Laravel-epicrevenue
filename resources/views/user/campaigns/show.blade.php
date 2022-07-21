@@ -29,8 +29,8 @@
         @if(auth()->check())
             @unless($daily_cap_status)
 
-            <div class="input-group">
-                <span class="input-group-text">Promotional Link</span>
+            <div class="input-group promotional-link">
+                <span class="input-group-text d-none d-lg-flex">Promotional Link</span>
                 <input type="text" id="copyTarget" class="form-control" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
                 <span id="copyButton" class="input-group-addon btn btn-primary" title="Click to copy">
                     <i id="copiedText" class="bi bi-clipboard"></i>
