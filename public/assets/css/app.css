@@ -133,11 +133,6 @@ input.form-control, .form-select {
   display: none;
 }
 
-#copyButton {
-  cursor: pointer;
-  background: #f1bb3a;
-}
-
 #copyTarget {
   border-left: none;
 }
