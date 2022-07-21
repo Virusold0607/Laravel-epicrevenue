@@ -30,11 +30,10 @@
             @unless($daily_cap_status)
 
             <div class="input-group">
-                <span id="copyButton" class="input-group-addon btn" title="Click to copy">
-                    <i class="bi bi-clipboard"></i>
+                <span class="input-group-addon btn btn-primary" title="Click to copy">
+                    <i id="copiedText" class="bi bi-clipboard"></i>
                 </span>
                 <input type="text" id="copyTarget" class="form-control" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
-                <span class="copied">Copied !</span>
             </div>
             @endunless
         @endif
@@ -96,6 +95,8 @@
 
     if (succeed) {
       $(".copied").animate({ top: -25, opacity: 0 }, 700, function() {
+          document.getElementById("copiedText").classList.remove('bi-clipboard');
+          document.getElementById("copiedText").classList.add('bi-clipboard-check-fill');
         $(this).css({ top: 0, opacity: 1 });
       });
     }
