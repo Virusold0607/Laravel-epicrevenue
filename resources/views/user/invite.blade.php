@@ -48,7 +48,13 @@
 
         <div class="form-custom mb-4">
             <h3>Your referral link: </h3>
-            <input class="form-control" value="{!! url('/invite/' . auth()->user()->id) !!}"  />
+            <div class="input-group promotional-link">
+                <span class="input-group-text d-none d-lg-flex">Link</span>
+                <input type="text" id="copyTarget" class="form-control" value="{!! url('/invite/' . auth()->user()->id) !!}">
+                <span id="copyButton" class="input-group-addon btn btn-primary" title="Click to copy">
+                    <i id="copiedText" class="bi bi-clipboard"></i>
+                </span>
+            </div>
         </div>
         <div class="card">
             <div class="card-body">
@@ -81,5 +87,51 @@
 
     </div>
 </div>
+@endsection
 
+@section('scripts')
+<script>
+(function() {
+  "use strict";
+
+  function copyToClipboard(elem) {
+    var target = elem;
+
+    // select the content
+    var currentFocus = document.activeElement;
+
+    target.focus();
+    target.setSelectionRange(0, target.value.length);
+
+    // copy the selection
+    var succeed;
+
+    try {
+      succeed = document.execCommand("copy");
+    } catch (e) {
+      console.warn(e);
+
+      succeed = false;
+    }
+
+    // Restore original focus
+    if (currentFocus && typeof currentFocus.focus === "function") {
+      currentFocus.focus();
+    }
+
+    if (succeed) {
+        $('#copiedText').removeClass('bi-clipboard');
+        $('#copiedText').addClass('bi-clipboard-check-fill');
+        $('#copyButton').removeClass('btn-primary');
+        $('#copyButton').addClass('btn-success');
+    }
+
+    return succeed;
+  }
+
+  $("#copyButton, #copyTarget").on("click", function() {
+    copyToClipboard(document.getElementById("copyTarget"));
+  });
+})();
+</script>
 @endsection
