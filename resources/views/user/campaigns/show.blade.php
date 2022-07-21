@@ -28,22 +28,14 @@
                 @unless($daily_cap_status)
                 <div class="input-group">
                     <span class="input-group-addon hidden-xs linkname">
-                    <strong>Promotion Link</strong>
+                        <strong>Promotion Link</strong>
                     </span>
                     <span id="copyButton" class="input-group-addon btn" title="Click to copy">
-                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                        <i class="bi bi-clipboard"></i>
                     </span>
                     <input type="text" id="copyTarget" class="form-control" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
                     <span class="copied">Copied !</span>
                 </div>
-                    <div id="promotionalLink">
-                        <hr>
-                        <div class="input-group">
-                            <label class="input-group-addon" for="exampleInputAmount">Promotion Link</label>
-                            <input type="text" class="form-control" id="exampleInputAmount" value="{{ url('/track/'. $campaign->id . '/' . auth()->user()->id) }}">
-                        </div>
-                        <hr>
-                    </div>
                 @endunless
             @endif
  
