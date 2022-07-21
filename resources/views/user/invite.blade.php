@@ -63,6 +63,7 @@
                     <tr>
                         <th>ID</th>
                         <!--<th>Email</th>-->
+                        <th>Name</th>
                         <th>Date Joined</th>
                     </tr>
                     </thead>
@@ -72,6 +73,7 @@
                             <tr>
                                 <td>{!! $r->id !!} </td>
                                 <!--<td>'.$row->email_address.'</td>-->
+                                <td>{!! $r->firstname !!} {!! $r->lastname !!}</td>
                                 <td>{!! $r->created_at !!}</td>
                             </tr>
                         @endforeach
