@@ -61,7 +61,6 @@
 								</div>
 
 								<div class="form-group">
-									<label for="name" class="col-sm-2 control-label"></label>
 									{!! Form::submit('Update Info', array('class' => 'btn btn-primary')) !!}
 								</div>
 								{!! Form::close() !!}
