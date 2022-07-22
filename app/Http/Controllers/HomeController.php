@@ -95,18 +95,18 @@ class HomeController extends Controller
     }
 
     /**
-     * Display Advertisers Page
+     * Display Business Page
      *
      * @return Response
      */
-    public function advertisers()
+    public function business()
     {
         $meta = [
-            'title' => 'Advertisers',
+            'title' => 'Business',
             'description' => 'Advertisers',
             'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
         ];
-        return view('home.advertisers')->with(['bodyid' => 'sticky', 'meta' => $meta]);
+        return view('home.business')->with(['bodyid' => 'sticky', 'meta' => $meta]);
     }
 
     /**
