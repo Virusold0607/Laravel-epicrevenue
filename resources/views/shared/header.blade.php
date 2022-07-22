@@ -39,7 +39,7 @@
                         <a class="nav-link" href="{{ url('/earn') }}">Earn</a>
                     </li>
                     <li class="nav-item menu-area {{ request()->is('advertisers') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/advertisers') }}">Advertisers</a>
+                        <a class="nav-link" href="{{ url('/advertisers') }}">Business Solutions</a>
                     </li>
                     <li class="nav-item {{ request()->is('login') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/login') }}">Login</a>  
