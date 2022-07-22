@@ -84,14 +84,14 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function affiliates()
+    public function earn()
     {
         $meta = [
-            'title' => 'Affiliates',
+            'title' => 'Earn',
             'description' => 'Influencers',
             'keywords'    => 'influencers reach,influencersreach, monetize,instagram, make money, influencersreach.com, payment proof, youtube,leads,apps'
         ];
-        return view('home.affiliates')->with(['bodyid' => 'sticky', 'meta' => $meta]);
+        return view('home.earn')->with(['bodyid' => 'sticky', 'meta' => $meta]);
     }
 
     /**
