@@ -20,6 +20,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.3",
+        "signifly/laravel-shopify": "^1.2",
         "torann/geoip": "^3.0"
     },
     "require-dev": {
