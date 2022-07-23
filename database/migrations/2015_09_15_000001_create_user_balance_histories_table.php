@@ -18,7 +18,7 @@ class CreateUserBalanceHistoriesTable extends Migration
             $table->integer('referrer_id')->nullable()->default(null);
             $table->enum('type', ['cash', 'referral', 'points']);
             $table->enum('operation', ['add', 'withdraw']);
-            $table->decimal('amount',15,4)->default(0.0000);
+            $table->decimal('amount')->default(0);
             $table->string('method')->nullable()->default(null);
             $table->string('pay_to')->nullable()->default(null);
             $table->timestamps();
