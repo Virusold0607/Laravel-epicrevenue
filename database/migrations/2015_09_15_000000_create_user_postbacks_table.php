@@ -15,7 +15,6 @@ class CreatePostbacksTable extends Migration
         Schema::create('user_postbacks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('campaign_id');
             $table->string('name');
             $table->string('url');
             $table->timestamps();
