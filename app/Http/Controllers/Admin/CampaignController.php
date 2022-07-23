@@ -41,11 +41,11 @@ class CampaignController extends Controller
         foreach ($offers as $offer)
         {
 //            if($network->campaigns()->where('network_campaign_id','%like%', $offer->offerid)->get()->isEmpty())
-                $o->push($offer);
+            $o->push($offer);
         }
 
         $countries = Country::all();
-        return view('admin.campaigns.ogadsImport', ['offers' => $o, 'countries' => $countries]);
+        return view('admin.campaigns.ogads', ['offers' => $o, 'countries' => $countries]);
     }
 
     /**
