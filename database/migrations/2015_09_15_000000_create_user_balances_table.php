@@ -15,8 +15,8 @@ class CreateUserBalancesTable extends Migration
         Schema::create('user_balances', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
-            $table->decimal('cash',15,4)->default(0.0000);
-            $table->decimal('referral',15,4)->default(0.0000);
+            $table->integer('cash')->default(0);
+            $table->integer('referral')->default(0);
             $table->bigInteger('points')->default(0);
             $table->timestamps();
 
