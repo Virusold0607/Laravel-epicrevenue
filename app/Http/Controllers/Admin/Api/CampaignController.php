@@ -163,16 +163,17 @@ class CampaignController extends Controller
             $c->incent       = 'yes';
         else
             $c->incent      = 'no';
-        $c->name             = $request->name;
-        $c->description      = $request->description;
-        $c->requirements     = $request->requirements;
-        $c->rate             = floatval($request->rate);
-        $c->network_rate     = floatval($request->network_rate);
-        $c->tracking         = $request->tracking;
-        $c->url              = $request->url;
-        $c->network_id       = $request->network_id;
-        $c->featured_img     = $featured_img;
-        $c->active           = $request->active;
+        $c->name                = $request->name;
+        $c->description         = $request->description;
+        $c->requirements        = $request->requirements;
+        $c->rate                = floatval($request->rate);
+        $c->network_rate        = floatval($request->network_rate);
+        $c->network_rate_type   = $request->network_rate_type;
+        $c->tracking            = $request->tracking;
+        $c->url                 = $request->url;
+        $c->network_id          = $request->network_id;
+        $c->featured_img        = $featured_img;
+        $c->active              = $request->active;
         $c->save();
 
         // Attach countries to campaign
@@ -181,12 +182,13 @@ class CampaignController extends Controller
         // Add campaign targets
         for($i=1;$i<count($request->tar_country);$i++){
             $cc = new CampaignTarget();
-            $cc->campaign_id      = $c->id;
-            $cc->operating_system = $request->tar_os[$i];
-            $cc->rate             = $request->tar_rate[$i];
-            $cc->network_rate     = $request->tar_network_rate[$i];
-            $cc->url              = $request->tar_url[$i];
-            $cc->country          = $request->tar_country[$i];
+            $cc->campaign_id           = $c->id;
+            $cc->operating_system      = $request->tar_os[$i];
+            $cc->rate                  = $request->tar_rate[$i];
+            $cc->network_rate          = $request->tar_network_rate[$i];
+            $cc->network_rate_type     = $request->tar_network_rate_type[$i];
+            $cc->url                   = $request->tar_url[$i];
+            $cc->country               = $request->tar_country[$i];
 
             switch (strtolower($request->tar_device[$i])) {
                 case 'tablet':
@@ -265,17 +267,18 @@ class CampaignController extends Controller
             $cap_rule = "";
 
         $validator = Validator::make($request->all(), [
-            'name'           => 'required|string|max:255',
-            'description'    => 'required|string|max:500',
-            'requirements'   => 'required|string|max:500',
-            'cap'            => 'required|integer|max:100000000',
-            'cap_daily'      => 'required|integer'.$cap_rule,
-            'category'       => 'required|exists:campaigns_categories,id',
-            'rate'           => 'required|max:1000000|min:0.1',
-            'network_id'     => 'required',
-            'network_rate'   => 'required|max:1000000|min:0.1',
-            'countries'      => 'required|array',
-            'feature_image'  => 'mimes:jpeg,jpg,png'
+            'name'                => 'required|string|max:255',
+            'description'         => 'required|string|max:500',
+            'requirements'        => 'required|string|max:500',
+            'cap'                 => 'required|integer|max:100000000',
+            'cap_daily'           => 'required|integer'.$cap_rule,
+            'category'            => 'required|exists:campaigns_categories,id',
+            'rate'                => 'required|max:1000000|min:0.1',
+            'network_id'          => 'required',
+            'network_rate'        => 'required|max:1000000|min:0.1',
+            'network_rate_type'   => 'required',
+            'countries'           => 'required|array',
+            'feature_image'       => 'mimes:jpeg,jpg,png'
         ]);
 
         if ($validator->fails()) {
@@ -316,15 +319,16 @@ class CampaignController extends Controller
             $c->incent       = 'yes';
         else
             $c->incent      = 'no';
-        $c->name             = $request->name;
-        $c->description      = $request->description;
-        $c->requirements     = $request->requirements;
-        $c->rate             = floatval($request->rate);
-        $c->network_rate     = floatval($request->network_rate);
-        $c->tracking         = $request->tracking;
-        $c->url              = $request->url;
-        $c->network_id       = $request->network_id;
-        $c->active           = $request->active;
+        $c->name                = $request->name;
+        $c->description         = $request->description;
+        $c->requirements        = $request->requirements;
+        $c->rate                = floatval($request->rate);
+        $c->network_rate        = floatval($request->network_rate);
+        $c->network_rate_type   = $request->network_rate_type;
+        $c->tracking            = $request->tracking;
+        $c->url                 = $request->url;
+        $c->network_id          = $request->network_id;
+        $c->active              = $request->active;
         $c->save();
 
         // Delete all old targets
@@ -332,12 +336,13 @@ class CampaignController extends Controller
         // Add campaign targets
         for($i=1;$i<count($request->tar_country);$i++){
             $cc = new CampaignTarget();
-            $cc->campaign_id      = $c->id;
-            $cc->operating_system = $request->tar_os[$i];
-            $cc->network_rate     = $request->tar_network_rate[$i];
-            $cc->rate             = $request->tar_rate[$i];
-            $cc->url              = $request->tar_url[$i];
-            $cc->country          = $request->tar_country[$i];
+            $cc->campaign_id           = $c->id;
+            $cc->operating_system      = $request->tar_os[$i];
+            $cc->network_rate_type     = $request->tar_network_rate_type[$i];
+            $cc->network_rate          = $request->tar_network_rate[$i];
+            $cc->rate                  = $request->tar_rate[$i];
+            $cc->url                   = $request->tar_url[$i];
+            $cc->country               = $request->tar_country[$i];
 
             switch (strtolower($request->tar_device[$i])) {
                 case 'tablet':
