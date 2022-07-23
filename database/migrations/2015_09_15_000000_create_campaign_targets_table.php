@@ -15,8 +15,8 @@ class CreateCampaignTargetsTable extends Migration
         Schema::create('campaign_targets', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('campaign_id')->unsigned();
-            $table->decimal('rate',14,2);
-            $table->decimal('network_rate',14,2)->nullable()->default(null);
+            $table->integer('rate');
+            $table->integer('network_rate')->nullable()->default(null);
             $table->enum('active', ['yes', 'no'])->default('no');
             $table->enum('device', ['Mobile', 'Tablet', 'Desktop'])->default('Desktop');
             $table->string('operating_system')->nullable();
