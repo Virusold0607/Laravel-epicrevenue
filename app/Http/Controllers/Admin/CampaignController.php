@@ -134,6 +134,7 @@ class CampaignController extends Controller
                 $o->url = $offer->link . "&".$network->ch_slot . "={hash}";
                 $o->rate = ($offer->payout / 100) * 70;
                 $o->network_rate = $offer->payout;
+                $o->network_rate_type = "1";
                 $o->save();
                 $o->countries()->attach($allowedCountries->pluck('id')->toArray());
                 $offers->push($o);
@@ -161,6 +162,7 @@ class CampaignController extends Controller
 
                             $cc->rate             = ($offer->payout / 100) * 70;
                             $cc->network_rate     = $offer->payout;
+                            $cc->network_rate_type     = "1";
                             $cc->url              = $offer->link . "&".$network->ch_slot . "={hash}";
                             $cc->country          = $country->name;
                             $cc->network_campaign_id = $offer->offerid;
@@ -288,6 +290,7 @@ class CampaignController extends Controller
             'rate'           => 'required|max:1000000|min:0.1',
             'network_id'     => 'required',
             'network_rate'   => 'required|max:1000000|min:0.1',
+            'network_rate_type'   => 'required',
             'countries'      => 'required|array',
             'feature_image'                       => 'mimes:jpeg,jpg,png',
         ]);
@@ -331,6 +334,7 @@ class CampaignController extends Controller
         $c->requirements     = $request->requirements;
         $c->rate             = floatval($request->rate);
         $c->network_rate     = floatval($request->network_rate);
+        $c->network_rate_type     = $request->network_rate_type;
         $c->tracking         = $request->tracking;
         $c->url              = $request->url;
         $c->network_id       = $request->network_id;
@@ -348,6 +352,7 @@ class CampaignController extends Controller
             $cc->operating_system = $request->tar_os[$i];
             $cc->rate             = $request->tar_rate[$i];
             $cc->network_rate     = $request->tar_network_rate[$i];
+            $cc->network_rate_type     = $request->tar_network_rate_type[$i];
             $cc->url              = $request->tar_url[$i];
             $cc->country          = $request->tar_country[$i];
 
@@ -437,6 +442,7 @@ class CampaignController extends Controller
             'rate'           => 'required|max:1000000|min:0.1',
             'network_id'     => 'required',
             'network_rate'   => 'required|max:1000000|min:0.1',
+            'network_rate_type'   => 'required',
             'countries'      => 'required|array',
             'feature_image'                       => 'mimes:jpeg,jpg,png',
         ]);
@@ -483,6 +489,7 @@ class CampaignController extends Controller
         $c->requirements     = $request->requirements;
         $c->rate             = floatval($request->rate);
         $c->network_rate     = floatval($request->network_rate);
+        $c->network_rate_type     = $request->network_rate_type;
         $c->tracking         = $request->tracking;
         $c->url              = $request->url;
         $c->network_id       = $request->network_id;
@@ -497,6 +504,7 @@ class CampaignController extends Controller
             $cc->campaign_id      = $c->id;
             $cc->operating_system = $request->tar_os[$i];
             $cc->network_rate     = $request->tar_network_rate[$i];
+            $cc->network_rate_type     = $request->tar_network_rate_type[$i];
             $cc->rate             = $request->tar_rate[$i];
             $cc->url              = $request->tar_url[$i];
             $cc->country          = $request->tar_country[$i];
