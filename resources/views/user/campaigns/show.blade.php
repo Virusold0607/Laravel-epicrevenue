@@ -24,7 +24,6 @@
         <div class="mb-2">
             <h5><strong>Requirements:</strong></h5>
             <p>{{ $campaign->requirements }}</p>
-            <p>{{ $campaign->reports }}</p>
         </div>
 
         @if(auth()->check())
