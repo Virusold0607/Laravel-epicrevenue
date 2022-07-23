@@ -217,7 +217,7 @@
                     </div>
                     <div class="mb-2">
                         <label for="name" class="w-100 mb-2 fw-700">Daily Cap:</label>
-                        {!! Form::number('daily_cap', 1000, array('class' => 'form-control', 'min' => '1')) !!}
+                        {!! Form::number('cap_daily', 1000, array('class' => 'form-control', 'min' => '1')) !!}
                     </div>
                 </div>
             </div>
