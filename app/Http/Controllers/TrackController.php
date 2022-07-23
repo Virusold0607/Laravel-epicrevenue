@@ -328,13 +328,13 @@ class TrackController extends Controller
         $cap_daily = 0;
         foreach($campaign->reports->where('status', 2) as $report)
         {
-            if($report->created_at->isToday())
+            if($report->created_at->isToday() && )
             {
                 $cap_daily = $cap_daily + $report->count();
             }
         }
 
-        if($campaign->cap_daily >= $cap_daily)
+        if($cap_daily >= $campaign->cap_daily)
         {
             return true;
         }
