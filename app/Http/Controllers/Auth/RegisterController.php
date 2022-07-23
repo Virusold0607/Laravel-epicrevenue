@@ -127,7 +127,7 @@ class RegisterController extends Controller
 
         $this->guard()->login($user, true);
 
-        return redirect('/affiliate/apply/address');
+        return redirect('/account/create/address');
     }
 
     /**
@@ -167,7 +167,7 @@ class RegisterController extends Controller
         ));
 
         if ($validator->fails()) {
-            return redirect('/affiliate/apply/address')
+            return redirect('/account/create/address')
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -185,7 +185,7 @@ class RegisterController extends Controller
         $status->is_contact_info_added = 'yes';
         $status->save();
 
-        return redirect('/affiliate/apply/payment');
+        return redirect('/account/create/payment');
     }
 
 
@@ -205,7 +205,7 @@ class RegisterController extends Controller
         ));
 
         if ($validator->fails()) {
-            return redirect('/affiliate/apply/payment')
+            return redirect('/account/create/payment')
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -245,7 +245,7 @@ class RegisterController extends Controller
         auth()->logout();
 
         $request->session()->flash('complete', 'yes');
-        return redirect('/affiliate/apply/complete');
+        return redirect('/account/create/complete');
     }
 
 
