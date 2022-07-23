@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostbacksTable extends Migration
+class CreateUserPostbacksRulesTable extends Migration
 {
     /**
      * Run the migrations.
