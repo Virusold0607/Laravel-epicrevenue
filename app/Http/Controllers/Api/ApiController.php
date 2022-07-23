@@ -782,16 +782,16 @@ class ApiController extends Controller
 
     public static function checkDailyCap(Campaign $campaign)
     {
-        $daily_cap = 0;
+        $cap_daily = 0;
         foreach($campaign->reports->where('status', 2) as $report)
         {
             if($report->created_at->isToday())
             {
-                $daily_cap = $daily_cap + $report->rate;
+                $cap_daily = $cap_daily + $report->rate;
             }
         }
 
-        if($campaign->daily_cap <= $daily_cap)
+        if($campaign->cap_daily <= $cap_daily)
             return true;
 
         return false;
@@ -802,6 +802,6 @@ class ApiController extends Controller
     }
 
     public static function checkDailyCap(Campaign $campaign) {
-    return $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count() <= $campaign->daily_cap;
+    return $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count() <= $campaign->cap_daily;
     }
 }
