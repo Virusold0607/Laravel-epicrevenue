@@ -307,43 +307,9 @@ class TrackController extends Controller
     }
 
 
-    public static function checkTotalCap(Campaign $campaign)
-    {
-        /*
-        $total_cap = 0;
-        foreach($campaign->reports->where('status', 2) as $report)
-        {
-            $total_cap = $total_cap + $report->count();
-        }
-
-        if($campaign->cap <= $total_cap)
-            return true;
-
-        return false;
-        */
-    }
-
-/*
-    public static function checkDailyCap(Campaign $campaign)
-    {
-
-        $reports = Report::whereDate('created_at', '=', date('Y-m-d'))->where('campaign_id', $campaign->id)->where('status', 2)->count();
-        if($reports >= $campaign->cap_daily)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    */
-
-    /*
     public static function checkTotalCap(Campaign $campaign) {
-        return $campaign->reports()->where('status', 2)->count() >= $campaign->cap;
+        return Report::where('campaign_id', $campaign->id)->where('status', 2)->count() >= $campaign->cap;
     }
-*/
 
     public static function checkDailyCap(Campaign $campaign) {
         return Report::whereDate('created_at', '=', date('Y-m-d'))->where('campaign_id', $campaign->id)->where('status', 2)->count() >= $campaign->cap_daily;
