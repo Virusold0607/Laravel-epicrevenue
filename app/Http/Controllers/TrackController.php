@@ -305,9 +305,11 @@ class TrackController extends Controller
         }
         return false;
     }
-/*
+
+
     public static function checkTotalCap(Campaign $campaign)
     {
+        /*
         $total_cap = 0;
         foreach($campaign->reports->where('status', 2) as $report)
         {
@@ -318,6 +320,7 @@ class TrackController extends Controller
             return true;
 
         return false;
+        */
     }
 
     public static function checkDailyCap(Campaign $campaign)
@@ -332,18 +335,22 @@ class TrackController extends Controller
         }
 
         if($campaign->cap_daily <= $cap_daily)
+        {
             return true;
-
-        return false;
+        }
+        else
+        {
+            return false;
+        }
     }
-    */
-
+    
+    /*
     public static function checkTotalCap(Campaign $campaign) {
         return $campaign->reports()->where('status', 2)->count() >= $campaign->cap;
     }
 
     public static function checkDailyCap(Campaign $campaign) {
         return $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count() >= $campaign->cap_daily;
-    }
+    */
  
 }
