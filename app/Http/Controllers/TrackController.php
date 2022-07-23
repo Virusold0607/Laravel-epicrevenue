@@ -334,13 +334,13 @@ class TrackController extends Controller
             }
         }
 
-        if($campaign->cap_daily <= $cap_daily)
+        if($campaign->cap_daily >= $cap_daily)
         {
-            return false;
+            return true;
         }
         else
         {
-            return true;
+            return flase;
         }
     }
     
