@@ -122,7 +122,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
 
     // Campaigns
     Route::get('/campaigns/create', 'Admin\CampaignController@create');
-    Route::get('/campaigns/ogads/import/', 'Admin\CampaignController@getOgadsImport');
+    Route::get('/campaigns/ogads/import', 'Admin\CampaignController@getOgadsImport');
     Route::post('/campaigns/ogads/import/', 'Admin\CampaignController@postOgadsImportSelected');
     Route::get('/campaigns/categories', 'Admin\CampaignController@categories');
     Route::get('/campaigns/rates', 'Admin\CampaignController@getRates');
