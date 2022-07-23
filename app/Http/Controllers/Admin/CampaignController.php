@@ -45,7 +45,8 @@ class CampaignController extends Controller
         }
 
         $countries = Country::all();
-        return view('admin.campaigns.ogads', ['offers' => $o, 'countries' => $countries]);
+        //return view('admin.campaigns.ogads', ['offers' => $o, 'countries' => $countries]);
+        return view('admin.campaigns.ogads');
     }
 
     /**
