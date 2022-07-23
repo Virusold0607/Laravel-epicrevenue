@@ -138,7 +138,7 @@
                         <table class="table table-lg table-thead-bordered table-bordered table-align-middle card-table table-hover">
                             <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Report ID</th>
                                 <th>Campaign</th>
                                 <th>Date</th>
                                 <th>Status</th>
@@ -148,7 +148,7 @@
                             <tbody>
                             @foreach($reports as $report)
                                 <tr>
-                                    <td>{!! $report->campaign->id !!}</td>
+                                    <td>#{!! $report->campaign->id !!}</td>
                                     <td>{!! $report->campaign->name !!}</td>
                                     <td>{!! $report->created_at !!}</td>
                                     <td>
@@ -172,9 +172,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <hr>
     </div>
 </div><!--end page-->
 
