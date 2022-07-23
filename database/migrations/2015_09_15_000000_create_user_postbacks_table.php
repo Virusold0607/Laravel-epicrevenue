@@ -14,9 +14,9 @@ class CreatePostbacksTable extends Migration
     {
         Schema::create('user_postbacks', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->integer('campaign_id');
             $table->string('name');
-            $table->string('ips')->nullable();
             $table->string('url');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreatePostbacksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('postbacks');
+        Schema::drop('user_postbacks');
     }
 }
