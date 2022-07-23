@@ -348,7 +348,7 @@ class TrackController extends Controller
             return false;
         }
     }
-    */
+    
 
     /*
     public static function checkTotalCap(Campaign $campaign) {
