@@ -32,9 +32,8 @@ class CreateReportsTable extends Migration
             $table->string('subid3')->nullable();
             $table->string('subid4')->nullable();
             $table->string('subid5')->nullable();
-            $table->string('postback_url')->nullable();
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
