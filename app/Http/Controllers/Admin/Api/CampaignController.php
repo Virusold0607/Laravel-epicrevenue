@@ -116,17 +116,18 @@ class CampaignController extends Controller
             $cap_rule = "";
 
         $validator = Validator::make($request->all(), [
-            'name'           => 'required|string|max:255',
-            'description'    => 'required|string|max:500',
-            'requirements'   => 'required|string|max:500',
-            'cap'            => 'required|integer|max:100000000',
-            'cap_daily'      => 'required|integer'.$cap_rule,
-            'category'       => 'required|exists:campaigns_categories,id',
-            'rate'           => 'required|max:1000000|min:0.1',
-            'network_id'     => 'required',
-            'network_rate'   => 'required|max:1000000|min:0.1',
-            'countries'      => 'required|array',
-            'feature_image'  => 'mimes:jpeg,jpg,png'
+            'name'                => 'required|string|max:255',
+            'description'         => 'required|string|max:500',
+            'requirements'        => 'required|string|max:500',
+            'cap'                 => 'required|integer|max:100000000',
+            'cap_daily'           => 'required|integer'.$cap_rule,
+            'category'            => 'required|exists:campaigns_categories,id',
+            'rate'                => 'required|max:1000000|min:0.1',
+            'network_id'          => 'required',
+            'network_rate'        => 'required|max:1000000|min:0.1',
+            'network_rate_type'   => 'required',
+            'countries'           => 'required|array',
+            'feature_image'       => 'mimes:jpeg,jpg,png'
         ]);
 
         if ($validator->fails()) {
