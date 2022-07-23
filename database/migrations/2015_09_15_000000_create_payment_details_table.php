@@ -17,7 +17,7 @@ class CreatePaymentDetailsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('send_to');
             $table->string('method');
-            $table->decimal('threshold', 14, 2)->default(50.00);
+            $table->integer('threshold')->default(5000);
             $table->timestamps();
 
             $table->foreign('user_id')
