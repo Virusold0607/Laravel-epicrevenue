@@ -346,7 +346,7 @@ class TrackController extends Controller
 */
 
     public static function checkDailyCap(Campaign $campaign) {
-        return Report::whereDate('created_at', '=', date('Y-m-d'))->where('campaign_id', $campaign->id)->where('status', 2)->count() <= $campaign->cap_daily;
+        return Report::whereDate('created_at', '=', date('Y-m-d'))->where('campaign_id', $campaign->id)->where('status', 2)->count() >= $campaign->cap_daily;
     }
     
 }
