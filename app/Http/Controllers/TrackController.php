@@ -336,10 +336,12 @@ class TrackController extends Controller
         }
         */
 
-        $reports = $campaign->reports()->where('created_at', Carbon::today())->where('status', 2)->count();
+        $reports = Report::where('created_at', Carbon::today())->where('status', 2)->where('status', 2)->count();
+        $report = Report::where('id', $id)->firstOrFail();
+        $report = TrackController::checkDailyCap($campaign)
         $cap_daily = $cap_daily + $reports;
 
-        if($cap_daily <= $campaign->cap_daily)
+        if($cap_daily = $campaign->cap_daily)
         {
             return true;
         }
