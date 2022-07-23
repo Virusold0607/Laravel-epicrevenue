@@ -12,8 +12,8 @@
 </div>
 <div class="page-container py-6">
     <div class="container">
-        @if($daily_cap_status)
-            <div class="alert alert-danger">This campaign has reached its daily cap ({{ $campaign->daily_cap }} leads a day). It will reset at midnight.</div>
+        @if($cap_daily_status)
+            <div class="alert alert-danger">This campaign has reached its daily cap ({{ $campaign->cap_daily }} leads a day). It will reset at midnight.</div>
         @endif
         <div class="mb-2">
             <h2>Category: {{ $campaign->category->name }}</h2>
@@ -27,7 +27,7 @@
         </div>
 
         @if(auth()->check())
-            @unless($daily_cap_status)
+            @unless($cap_daily_status)
 
             <div class="input-group promotional-link">
                 <span class="input-group-text d-none d-lg-flex">Promotional Link</span>
