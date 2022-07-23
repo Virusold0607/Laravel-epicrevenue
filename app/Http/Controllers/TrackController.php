@@ -339,7 +339,7 @@ class TrackController extends Controller
 
         $reports = Report::where('campaign_id', $campaign->id)->where('status', 2)->count();
         //$cap_daily = $cap_daily + $reports;
-        if($campaign->cap_daily >= $reports)
+        if($campaign->cap_daily <= $reports)
         {
             return true;
         }
