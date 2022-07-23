@@ -14,12 +14,10 @@ class CreatePostbacksTable extends Migration
     {
         Schema::create('user_postbacks', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('campaign_id');
             $table->string('name');
             $table->string('ips')->nullable();
-            $table->string('credit_var');
-            $table->string('reverse_var')->nullable();
-            $table->integer('reverse_key')->nullable();
-            $table->string('veri_slot');
+            $table->string('url');
             $table->timestamps();
         });
     }
