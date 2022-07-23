@@ -31,8 +31,8 @@ class CreateUsersTable extends Migration
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
             $table->rememberToken();
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
