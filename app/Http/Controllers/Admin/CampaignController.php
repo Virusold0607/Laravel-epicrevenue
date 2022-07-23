@@ -88,7 +88,7 @@ class CampaignController extends Controller
             $o->tracking = "";
             $o->network_campaign_id = $offer->offerid;
             $o->cap = 0;
-            $o->daily_cap = 1000;
+            $o->cap_daily = 1000;
             $o->mobile = 'yes';
             $o->incent = 'yes';
             $o->active = 'yes';
@@ -283,7 +283,7 @@ class CampaignController extends Controller
             'description'    => 'required|string|max:1000',
             'requirements'   => 'required|string|max:500',
             'cap'            => 'required|integer|max:100000000',
-            'daily_cap'      => 'required|integer'.$cap_rule,
+            'cap_daily'      => 'required|integer'.$cap_rule,
             'category'       => 'required|exists:campaigns_categories,id',
             'rate'           => 'required|max:1000000|min:0.1',
             'network_id'     => 'required',
@@ -312,7 +312,7 @@ class CampaignController extends Controller
         $c->user_id          = auth()->user()->id;
         $c->category_id      = $request->category;
         $c->cap              = (int) $request->cap;
-        $c->daily_cap        = (int) $request->daily_cap;
+        $c->cap_daily        = (int) $request->cap_daily;
         if($request->has('private'))
             $c->private      = 'yes';
         else
@@ -432,7 +432,7 @@ class CampaignController extends Controller
             'description'    => 'required|string|max:1000',
             'requirements'   => 'required|string|max:500',
             'cap'            => 'required|integer|max:100000000',
-            'daily_cap'      => 'required|integer'.$cap_rule,
+            'cap_daily'      => 'required|integer'.$cap_rule,
             'category'       => 'required|exists:campaigns_categories,id',
             'rate'           => 'required|max:1000000|min:0.1',
             'network_id'     => 'required',
@@ -464,7 +464,7 @@ class CampaignController extends Controller
         // Update Campaign
         $c->category_id      = $request->category;
         $c->cap              = (int) $request->cap;
-        $c->daily_cap        = (int) $request->daily_cap;
+        $c->cap_daily        = (int) $request->cap_daily;
 
         if($request->has('private'))
             $c->private      = 'yes';
