@@ -340,7 +340,7 @@ class TrackController extends Controller
         }
         else
         {
-            return flase;
+            return false;
         }
     }
     
