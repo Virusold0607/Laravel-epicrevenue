@@ -18,7 +18,7 @@
             <!-- card -->
             <div class="px-4 py-3 py-lg-4 card mb-0 rounded">
 
-            {!! Form::model($user, array('url' => '/affiliate/apply/address', 'method' => 'post', 'class' => '','style' => '')) !!}
+            {!! Form::model($user, array('url' => '/account/create/address', 'method' => 'post', 'class' => '','style' => '')) !!}
             <div class="panel panel-default networks">
                 <div class="panel-body">
                     {{-- Was there an error? --}}
