@@ -20,7 +20,6 @@ class CreateCampaignStatsTable extends Migration
             $table->integer('unique_clicks');
             $table->integer('leads');
             $table->integer('profit');
-            $table->integer('profit');
             $table->timestamps();
         });
     }
