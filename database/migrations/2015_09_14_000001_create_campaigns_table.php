@@ -19,8 +19,8 @@ class CreateCampaignsTable extends Migration
             $table->longText('description');
             $table->longText('requirements');
             $table->string('url');
-            $table->integer('rate');
-            $table->integer('network_rate');
+            $table->decimal('rate',14,2);
+            $table->decimal('network_rate',14,2);
             $table->integer('network_rate_type')->default('1');
             $table->integer('cap')->nullable();
             $table->integer('cap_daily');
