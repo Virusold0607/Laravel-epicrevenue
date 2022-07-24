@@ -25,15 +25,16 @@ class CreateReportsTable extends Migration
             $table->string('country')->default('unknown');
             $table->string('postal')->default('unknown');
             $table->string('credit_hash');
-            $table->integer('rate');
-            $table->integer('network_rate')->nullable();
+            $table->decimal('rate',14,2);
+            $table->decimal('network_rate',14,2)->nullable();
             $table->string('subid1')->nullable();
             $table->string('subid2')->nullable();
             $table->string('subid3')->nullable();
             $table->string('subid4')->nullable();
             $table->string('subid5')->nullable();
-            $table->timestamps();
+            $table->string('postback_url')->nullable();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -47,3 +48,4 @@ class CreateReportsTable extends Migration
         Schema::drop('reports');
     }
 }
+
