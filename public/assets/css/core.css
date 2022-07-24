@@ -712,3 +712,20 @@ hr { border-color: #eeeeee !important; }
 .table>:not(caption)>*>* {
     padding: 10px 20px;
 }
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    margin-right: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border: 1px solid #ced4da
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 1px solid #ced4da;
+}
