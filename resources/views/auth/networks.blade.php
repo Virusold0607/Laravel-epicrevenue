@@ -33,7 +33,7 @@
                 </li>
             </ul>
 
-            <form action="/affiliate/apply/networks" method="post" class="form-register networks col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <form action="/account/create/networks" method="post" class="form-register networks col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                 <div class="">
 
                     {{-- Was there an error? --}}
@@ -139,7 +139,7 @@
             <div class="clearfix"></div>
 
             <div id="next" class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" style="display: none;">
-                <a class="btn btn-primary btn-lg pull-right" href="/affiliate/apply/payment">Next</a>
+                <a class="btn btn-primary btn-lg pull-right" href="/account/create/payment">Next</a>
             </div>
 
             <div class="clearfix"></div>
@@ -157,30 +157,9 @@
                 }
             });
 
-            $('#instagram_btn').click(function () {
-                console.log('click');
-                $('#igPanel').slideDown('slow');
-            });
 
-            $('#instagram_verify').click(function(){
-                $( "#ig_result" ).html( "Verifying..." );
 
-                var username = $('#ig_username').val();
-                console.log('username: '+username);
-                $.post( "/affiliate/apply/networks/instagram/" + username , function( data )  {
-                    if(data == 'success') {
-                        $( "#ig_result" ).removeClass("alert alert-danger");
-                        $( "#ig_result" ).addClass("alert alert-success");
-                        $( "#ig_result" ).html( "Your instagram account("+ username +") is added and verified successfully." );
-                        $('#next').slideDown('slow');
-                    } else {
-                        $( "#ig_result" ).removeClass("alert alert-success");
-                        $( "#ig_result" ).addClass("alert alert-danger");
-                        $( "#ig_result" ).html( "We are unable to verify your account " + username + "." );
-                    }
-                });
 
-            });
         });
     </script>
 @endsection
