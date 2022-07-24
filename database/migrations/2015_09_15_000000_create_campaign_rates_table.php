@@ -16,7 +16,7 @@ class CreateCampaignRatesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->index();
             $table->integer('campaign_id')->index();
-            $table->integer('rate');
+            $table->decimal('rate',14,2);
             $table->enum('active', ['yes', 'no'])->nullable()->default(null);
             $table->string('reason')->nullable();
             $table->timestamps();
