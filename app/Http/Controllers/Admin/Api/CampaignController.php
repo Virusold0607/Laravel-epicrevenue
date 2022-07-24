@@ -125,7 +125,7 @@ class CampaignController extends Controller
             'rate'                => 'required|max:1000000|min:0.1',
             'network_id'          => 'required',
             'network_rate'        => 'required|max:1000000|min:0.1',
-            'network_rate_type'   => 'required',
+            //'network_rate_type'   => 'required',
             'countries'           => 'required|array',
             'feature_image'       => 'mimes:jpeg,jpg,png'
         ]);
@@ -276,7 +276,7 @@ class CampaignController extends Controller
             'rate'                => 'required|max:1000000|min:0.1',
             'network_id'          => 'required',
             'network_rate'        => 'required|max:1000000|min:0.1',
-            'network_rate_type'   => 'required',
+            //'network_rate_type'   => 'required',
             'countries'           => 'required|array',
             'feature_image'       => 'mimes:jpeg,jpg,png'
         ]);
