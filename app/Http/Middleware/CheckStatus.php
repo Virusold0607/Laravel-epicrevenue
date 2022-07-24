@@ -53,7 +53,7 @@ class CheckStatus
                 return redirect('/login/check/?middleware_error=You have not confirmed your email. Confirm Your email now to confirm your account!');
             } elseif( $this->auth->user()->approved !== 'yes') {
                 $middleware_error = 'Your account is not approved by administration. Be back soon!';
-                return redirect('/login/check/?middleware_error="Your account is not approved by administration. Be back soon!"');
+                return redirect('/login/check/?middleware_error=Your account is currently pending approval. Check back soon!');
             }
         } else {
             return redirect()->guest('/login');
