@@ -17,7 +17,7 @@
         <div class="col-lg-4 col-md-4 col-12 mx-auto">
             <!-- card -->
             <div class="px-4 py-3 py-lg-4 card rounded">
-                {!! Form::open(array('url' => '/affiliate/apply/payment', 'method' => 'post', 'class' => 'form-register')) !!}
+                {!! Form::open(array('url' => '/account/create/payment', 'method' => 'post', 'class' => 'form-register')) !!}
                     {{-- Was there an error? --}}
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
