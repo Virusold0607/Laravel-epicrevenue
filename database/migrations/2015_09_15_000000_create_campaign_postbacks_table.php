@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCampaignRatesTable extends Migration
+class CreateCampaignPostbacksTable extends Migration
 {
     /**
      * Run the migrations.
