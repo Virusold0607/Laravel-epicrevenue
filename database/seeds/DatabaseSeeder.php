@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CampaignsCategoriesTableSeeder::class);
         $this->call(PostbacksTableSeeder::class);
+        $this->call(CountrySeeder::class);
 
         Model::reguard();
     }
