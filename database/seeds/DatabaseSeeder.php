@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             CountrySeeder::class,
         ]);
     }
-
+}
 /*
 
 use Illuminate\Database\Seeder;
