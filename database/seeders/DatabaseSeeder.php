@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            CampaignsCategoriesTableSeeder::class,
-            PostbacksTableSeeder::class,
+            //CampaignsCategoriesTableSeeder::class,
+            //PostbacksTableSeeder::class,
             CountrySeeder::class,
         ]);
     }
