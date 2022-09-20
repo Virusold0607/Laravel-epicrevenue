@@ -27,6 +27,7 @@ class CreateReportsTable extends Migration
             $table->string('credit_hash');
             $table->decimal('rate',14,2);
             $table->decimal('network_rate',14,2)->nullable();
+            $table->string('network_rate_type')->nullable(); //1 = CPL/CPS/CPA/CPI (lead/Sale), 2 = Percentage {10% of sale} , 3 = CPC (Cost per click)
             $table->string('subid1')->nullable();
             $table->string('subid2')->nullable();
             $table->string('subid3')->nullable();
