@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CountrySeeder extends Seeder
+class CampaignsCategoriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,9 +22,9 @@ class CountrySeeder extends Seeder
 
 <?php
 
-use Illuminate\Database\Seeder;
-use App\Models\CampaignsCategory;
-use App\Models\PromotionCategory;
+//use Illuminate\Database\Seeder;
+//use App\Models\CampaignsCategory;
+//use App\Models\PromotionCategory;
 
 class CampaignsCategoriesTableSeeder extends Seeder
 {
