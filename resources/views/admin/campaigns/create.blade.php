@@ -236,14 +236,14 @@
                     <h3 class="card-header-title mb-0">Featured Image</h3>
                 </div>
                 <div class="card-body">
-                    <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail mb-2 w-100"/>
-                    <script>
-                        var loadFile = function(event, id) {
-                            var output = document.getElementById(id);
-                            output.src = URL.createObjectURL(event.target.files[0]);
-                        };
-                    </script>
-                    {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
+                    <div class="imagePreview img-thumbnail p-2">
+                        <img id="fileManagerPreview" src="" style="width: 100%">
+                    </div>
+                    <div class="d-flex mt-3">
+                        <span class="btn btn-primary btn-sm me-auto" id="getFileManager">Browse</span>
+                        <span class="btn btn-danger btn-sm" id="clearSelectedFile">Clear</span>
+                    </div>
+                    <input type="hidden" id="fileManagerId" name="feature_image">
                 </div>
             </div>
 
@@ -277,10 +277,37 @@
     </div>  
          
 {!! Form::close() !!}
+<div id="fileManagerContainer"></div>
 
 @endsection
 
 @section('scripts')
     <script src="{{ url('/admin_assets/js/script_upload_images.js') }}"></script>
     <script src="{{ url('/admin_assets/js/clone-form-td.js') }}"></script>
+    <script>
+        $('#clearSelectedFile').click(function () {
+            clearSelected();
+            $('#fileManagerPreview').attr('src', null);
+            $('#fileManagerId').val(null);
+        });
+        $('#getFileManager').click(function () {
+            $.ajax({
+                url: "{{ url('/file/show') }}",
+                success: function (data) {
+                    if (!$.trim($('#fileManagerContainer').html()))
+                        $('#fileManagerContainer').html(data);
+
+                    $('#fileManagerModal').modal('show');
+                    $('#fileManagerModal #file_upload_type').val("campaigns")
+
+                    const getSelectedItem = function (selectedId, filePath) {
+                        $('#fileManagerId').val(selectedId);
+                        $('#fileManagerPreview').attr('src', filePath);
+                    }
+
+                    setSelectedItemsCB(getSelectedItem, $('#fileManagerId').val() == '' ? [] : [$('#fileManagerId').val()], false);
+                }
+            })
+        });
+    </script>
 @endsection

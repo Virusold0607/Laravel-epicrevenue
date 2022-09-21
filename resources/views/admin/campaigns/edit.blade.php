@@ -300,19 +300,21 @@
                     <h3 class="card-header-title mb-0">Featured Image</h3>
                 </div>
                 <div class="card-body">
-                    {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
-
-                    @if(is_null($campaign->homepage_featured_image_background))
-                        <img id="featured_image_output" class="imagePreview mt-3 pt-2 img-thumbnail mb-2 w-100" />
-                    @else
-                        <img id="featured_image_output" class="imagePreview mt-3 pt-2 img-thumbnail mb-2 w-100" src="{{ url('/storage/images/campaign/'.$campaign->featured_img) }}" alt="{{ $campaign->name }}" />
-                    @endif
-                    <script>
-                        var loadFile = function(event, id) {
-                            var output = document.getElementById(id);
-                            output.src = URL.createObjectURL(event.target.files[0]);
-                        };
-                    </script>
+                    <div class="imagePreview img-thumbnail p-2">
+                        @php
+                            $featured_img = $campaign->featured_img ? App\Models\Upload::find($campaign->featured_img) : null;
+                        @endphp
+                        <img 
+                            id="fileManagerPreview" 
+                            src="{{$featured_img ? $featured_img->getImageOptimizedFullName() : null}}" 
+                            style="width: 100%"
+                        >
+                    </div>
+                    <div class="d-flex mt-3">
+                        <span class="btn btn-primary btn-sm me-auto" id="getFileManager">Browse</span>
+                        <span class="btn btn-danger btn-sm" id="clearSelectedFile">Clear</span>
+                    </div>
+                    <input type="hidden" id="fileManagerId" name="feature_image" value="{{$featured_img ? $featured_img->id : null}}">
                 </div>
             </div>
 
@@ -346,10 +348,36 @@
     </div>
             
     {!! Form::close() !!}
-
+    <div id="fileManagerContainer"></div>
 @endsection
 
 @section('scripts')
     <script src="{{ url('/admin_assets/js/script_upload_images.js') }}"></script>
     <script src="{{ url('/admin_assets/js/clone-form-td-2.js') }}"></script>
+    <script>
+        $('#clearSelectedFile').click(function () {
+            clearSelected();
+            $('#fileManagerPreview').attr('src', null);
+            $('#fileManagerId').val(null);
+        });
+        $('#getFileManager').click(function () {
+            $.ajax({
+                url: "{{ url('/file/show') }}",
+                success: function (data) {
+                    if (!$.trim($('#fileManagerContainer').html()))
+                        $('#fileManagerContainer').html(data);
+
+                    $('#fileManagerModal').modal('show');
+                    $('#fileManagerModal #file_upload_type').val("campaigns")
+
+                    const getSelectedItem = function (selectedId, filePath) {
+                        $('#fileManagerId').val(selectedId);
+                        $('#fileManagerPreview').attr('src', filePath);
+                    }
+
+                    setSelectedItemsCB(getSelectedItem, $('#fileManagerId').val() == '' ? [] : [$('#fileManagerId').val()], false);
+                }
+            })
+        });
+    </script>
 @endsection

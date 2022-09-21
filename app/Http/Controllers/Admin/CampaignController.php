@@ -291,9 +291,8 @@ class CampaignController extends Controller
             'rate'           => 'required|max:1000000|min:0.1',
             'network_id'     => 'required',
             'network_rate'   => 'required|max:1000000|min:0.1',
-            //'network_rate_type'   => 'required',
             'countries'      => 'required|array',
-            'feature_image'                       => 'mimes:jpeg,jpg,png',
+            'feature_image'  => 'integer|min:0',
         ]);
 
         if ($validator->fails()) {
@@ -301,15 +300,6 @@ class CampaignController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-
-        // Store Images
-
-        $file = $request->file('feature_image');
-        $destinationPath = storage_path() . '/app/public/images/campaign/';
-        $fileExt = $file->getClientOriginalExtension();
-        $filename = Str::random() . "-" . strval(time()) . "." . $fileExt;
-        $file->move($destinationPath, $filename);
-        $featured_img = $filename;
 
         // Create Campaign
         $c = new Campaign();
@@ -335,11 +325,11 @@ class CampaignController extends Controller
         $c->requirements     = $request->requirements;
         $c->rate             = floatval($request->rate);
         $c->network_rate     = floatval($request->network_rate);
-        $c->network_rate_type     = $request->network_rate_type;
+        $c->network_rate_type     = $request->network_rate_type ?? 0;
         $c->tracking         = $request->tracking;
         $c->url              = $request->url;
         $c->network_id       = $request->network_id;
-        $c->featured_img     = $featured_img;
+        $c->featured_img     = $request->feature_image;
         $c->active           = $request->active;
         $c->save();
 
@@ -445,27 +435,13 @@ class CampaignController extends Controller
             'network_rate'   => 'required|max:1000000|min:0.1',
             //'network_rate_type'   => 'required',
             'countries'      => 'required|array',
-            'feature_image'                       => 'mimes:jpeg,jpg,png',
+            'feature_image'  => 'integer|min:0',
         ]);
 
         if ($validator->fails()) {
             return redirect('/admin/campaigns/'.$id.'/edit')
                 ->withErrors($validator)
                 ->withInput();
-        }
-
-
-        $file = $request->file('feature_image');
-        if(! is_null($file)) {
-            if( Storage::exists('app/public/images/campaign/' . $c->featured_img) )
-                Storage::delete('app/public/images/campaign/' . $c->featured_img);
-
-            // Store Image
-            $destinationPath = storage_path() . '/app/public/images/campaign/';
-            $fileExt = $file->getClientOriginalExtension();
-            $filename = Str::random() . "-" . strval(time()) . "." . $fileExt;
-            $file->move($destinationPath, $filename);
-            $c->featured_img = $filename;
         }
 
         // Update Campaign
@@ -493,6 +469,7 @@ class CampaignController extends Controller
         $c->network_rate_type     = $request->network_rate_type;
         $c->tracking         = $request->tracking;
         $c->url              = $request->url;
+        $c->featured_img     = $request->feature_image;
         $c->network_id       = $request->network_id;
         $c->active           = $request->active;
         $c->save();
