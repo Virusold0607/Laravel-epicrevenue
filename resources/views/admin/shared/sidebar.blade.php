@@ -30,7 +30,7 @@
               <div id="navbarVerticalMenuPagesUsersMenu" class="nav-collapse collapse showwww" data-bs-parent="#navbarVerticalMenuPagesMenu">
                 <a class="nav-link " href="/admin/#/publishers">{{ __("All Publishers") }} <span class="badge bg-primary rounded-pill ms-1">5</span></a>
                 <a class="nav-link " href="/admin/#/publishers/my">{{ __("My Publishers") }}</a>
-                <a class="nav-link " href="{{ url('/publishers/pendingW9') }}">{{ __("Pending W9") }}</a>
+                <a class="nav-link " href="{{ url('/admin/#/publishers/pendingW9') }}">{{ __("Pending W9") }}</a>
               </div>
             </div>
             <!-- End Collapse -->
@@ -139,7 +139,7 @@
               </a>
             </div>
             
-            @if(auth()->check())
+            @if(auth()->user()->role == 1)
             <div class="nav-item">
               <a class="nav-link nav-link-main " href="{{ url('/logout') }}" data-placement="left">
                 <i class="bi-key nav-icon"></i>

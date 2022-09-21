@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class AuthenticateAdmin
+class AuthenticateUser
 {
     /**
      * The Guard implementation.
@@ -43,7 +43,7 @@ class AuthenticateAdmin
             }
         }
 
-        if( $this->auth->user()->role == 1 ) // In case of admin
+        if( $this->auth->user()->role == 2 || $this->auth->user()->role == 1 ) // In case of user or admin
             return $next($request);
 
         return response(view('errors.401'), 401);

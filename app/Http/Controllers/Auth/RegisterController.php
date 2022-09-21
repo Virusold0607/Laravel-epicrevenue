@@ -97,7 +97,7 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         $user =  $this->create( $request->all() );
-
+        $user->role == 2;
         if(! is_null($request->cookie('refer'))
             && $user->id !== (int) $request->cookie('refer')
             && ! is_null(User::find((int) $request->cookie('refer'))))

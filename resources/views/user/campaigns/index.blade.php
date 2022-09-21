@@ -3,7 +3,7 @@
 
 <div class="hero text-center py-6">
     <div class="container">
-        @if(auth()->check())
+        @if(auth()->user()->role == 1 || auth()->user()->role == 2)
             <h1 class="hero-heading fw-700">Campaigns</h1>
             <p class="hero-p">Search this page for a campaign to promote on your account.</p>
         @else
@@ -112,7 +112,7 @@
                                                 <p class="py-2 mb-0 text-black d-none">{{ $campaign->description }}</p>
                                             </a>
                                             </div>
-                                            @if(auth()->check())
+                                            @if(auth()->user()->role == 1 || auth()->user()->role ==2)
                                                 <div class="card-body border-top pb-0 mt-3">
                                                     <div class="row">
                                                         <h5 class="col-12 text-left pb-2 fs-14 d-none" data-toggle="tooltip" data-placement="bottom" title="Amount you are paid for each valid conversion"><!--<b>Payment? </b>-->${{ $campaign->rate }}<small>/per lead</small></h5>

@@ -26,7 +26,7 @@
             <p>{{ $campaign->requirements }}</p>
         </div>
 
-        @if(auth()->check())
+        @if(auth()->user()->role == 1 || auth()->user()->role ==2)
             @unless($cap_daily_status)
 
             <div class="input-group promotional-link">

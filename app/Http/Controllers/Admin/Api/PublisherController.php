@@ -95,6 +95,7 @@ class PublisherController extends Controller
     public function edit($id)
     {
         $data['user'] = User::where('id', $id)->with('status')->firstOrFail();
+        $data['user']->role = $data['user']->role . "";
         $data['rates'] = CampaignRate::where('user_id', $id)->with('campaign')->get();
 
         $data['today_clicks']           = $data['user']->reports()->today()->click()->count();
@@ -130,6 +131,7 @@ class PublisherController extends Controller
         $user->update(array(
             'firstname' => Helper::requestInput($request, 'user', 'firstname'),
             'lastname'  => Helper::requestInput($request, 'user', 'lastname'),
+            'role'  => Helper::requestInput($request, 'user', 'role'),
             'email'     => Helper::requestInput($request, 'user', 'email'),
             'phone'     => Helper::requestInput($request, 'user', 'phone'),
             'address1'  => Helper::requestInput($request, 'user', 'address1'),
