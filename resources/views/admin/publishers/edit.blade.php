@@ -72,6 +72,12 @@
                 </td>
             </tr>
             <tr>
+                <td><b>Role:</b></td>
+                <td>
+                    {!! Form::select('role', ['1' => 'admin', '2' => 'user', '3' => 'business'], $user->role) !!}
+                </td>
+            </tr>
+            <tr>
                 <td colspan="2"><h2>Website Information</h2></td>
             </tr>
             <tr>

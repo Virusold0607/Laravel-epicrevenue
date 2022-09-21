@@ -56,5 +56,6 @@ class Kernel extends HttpKernel
         'status'     => \App\Http\Middleware\CheckStatus::class,
         'api.admin'      => \App\Http\Middleware\ApiAuthenticateAdmin::class,
         'admin'      => \App\Http\Middleware\AuthenticateAdmin::class,
+        'user'      => \App\Http\Middleware\AuthenticateUser::class,
     ];
 }

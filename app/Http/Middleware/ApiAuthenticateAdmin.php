@@ -39,7 +39,8 @@ class ApiAuthenticateAdmin
             return response('Unauthorized.', 401);
         }
 
-        if( $this->auth->user()->email === 'abdullahnaseer999@gmail.com' || $this->auth->user()->email === 'tevarjohnson@gmail.com' )
+        // if( $this->auth->user()->email === 'abdullahnaseer999@gmail.com' || $this->auth->user()->email === 'tevarjohnson@gmail.com' )
+        if( $this->auth->user()->role === 1 ) // In case of admin
             return $next($request);
 
         return response('Unauthorized.', 401);

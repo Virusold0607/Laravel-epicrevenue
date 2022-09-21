@@ -21,7 +21,6 @@
                     <li class="nav-item menu-area {{ request()->is('reports') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/reports') }}">Analytics</a>
                     </li>
-                <!--<li class="nav-item menu-area {{ request()->is('contests') ? 'active' : '' }}"><a class="nav-link" href="{{ url('/contests') }}">CONTESTS</a></li>-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" aria-current="page" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">{{ auth()->user()->firstname }}</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

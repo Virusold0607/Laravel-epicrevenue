@@ -11,11 +11,19 @@
 |
 */
 
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm');
+Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout');
+
 // Track Controller
 Route::get('/track/postback/{veri_slot}', 'TrackController@postback');
 Route::get('/track/{campaign_id}/{user_id}/{subid1?}/{subid2?}/{subid3?}/{subid4?}/{subid5?}', 'TrackController@track')
     ->where(['campaign_id' => '[0-9]+', 'user_id' => '[0-9]+']);
 
+// Account Routes
+Route::get('/account/create/complete', 'Auth\RegisterController@getRegisterComplete');
+Route::get('/emailconfirm/{id}/{email_confirm_code}', 'Auth\RegisterController@confirmEmail');
 
 // Routes for guest users
 Route::group(['middleware' => 'guest'], function () {
@@ -34,9 +42,6 @@ Route::group(['middleware' => 'guest'], function () {
 
 });
 
-Route::get('/account/create/complete', 'Auth\RegisterController@getRegisterComplete');
-Route::get('/emailconfirm/{id}/{email_confirm_code}', 'Auth\RegisterController@confirmEmail');
-
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/login/check', 'Auth\LoginController@checkpoint');
 
@@ -50,17 +55,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/register/{service}/', 'Auth\RegisterController@redirectToProvider');
 });
 
-// Authentication Routes...
-Route::get('login', 'Auth\LoginController@showLoginForm');
-Route::post('login', 'Auth\LoginController@login');
-Route::get('logout', 'Auth\LoginController@logout');
-
-//Auth::routes();
-
 Route::group(['middleware' => []], function() {
 
     // Routes for authenticated users
-    Route::group(['middleware' => 'status'], function () {
+    Route::group(['middleware' => ['status', 'user']], function () {
         // Dashboard
         Route::get('/dashboard', 'User\DashboardController@index');
         // Reports
@@ -109,9 +107,6 @@ Route::group(['middleware' => []], function() {
 
 });
 
-
-
-
 // Only admin and owner has access
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     // Admin
@@ -139,7 +134,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/campaigns/{network_id?}', 'Admin\CampaignController@index');
     Route::resource('/campaigns', 'Admin\CampaignController');
 
-	
     // Campaign Reports
     Route::get('/reports/options/{id}/{status}', 'Admin\ReportsController@options');
     Route::resource('/reports', 'Admin\ReportsController');
@@ -147,7 +141,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     // Payments
     Route::get('/payments', 'Admin\PaymentController@index');
     Route::post('/payments', 'Admin\PaymentController@generate');
-
 
     //Rewards
     Route::resource('/rewards', 'Admin\RewardsController');
@@ -167,7 +160,6 @@ Route::group(['prefix' => 'api/admin', 'middleware' => ['api', 'admin']], functi
 
     // Contests Controller
     Route::resource('/contests', 'Admin\Api\ContestController');
-
 
     Route::resource('/campaigns', 'Admin\Api\CampaignController');
 

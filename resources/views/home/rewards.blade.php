@@ -4,7 +4,7 @@
     <div class="hero hero-txt">
         <div class="container">
             <h1 class="hero-heading">Get Rewards When You Monetize With Us!</h1>
-            @unless(auth()->check())
+            @unless(auth()->user()->role == 1 || auth()->user()->role == 2)
                 <h4>Along with our weekly and monthly contest, Our influencers have the ability to use points earned from getting leads, inviting people, coupon codes we randomly give out and more to earn points which they can then use to redeem rewards below.</h4>
             @endunless
         </div>
@@ -21,7 +21,7 @@
                             <div class="panel-body">
                                 <div class="reward-img">{!! Html::image('/images/rewards/'. $r->image, 'picture', ['class' => 'img-responsive']) !!} <br /></div>
                                 <p>{!! $r->description !!}</p>
-                                @if(auth()->check())
+                                @if(auth()->user()->role == 1 || auth()->user()->role == 2)
                                     <p><strong>Points Required: </strong>{!! $r->points !!}</p>
                                 @endif
                             </div>
