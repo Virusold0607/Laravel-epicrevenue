@@ -13,7 +13,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "geoip2/geoip2": "^2.12",
         "google/apiclient": "^2.12",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.5",
         "intervention/image": "^2.7",
         "intervention/imagecache": "^2.5",
         "jenssegers/agent": "^2.6",

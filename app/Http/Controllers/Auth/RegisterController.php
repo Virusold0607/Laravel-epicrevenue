@@ -23,6 +23,7 @@ use Socialite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
 
 
 class RegisterController extends Controller
@@ -100,10 +101,6 @@ class RegisterController extends Controller
         // $recaptcha_response = $request['g-recaptcha-response'];
         // $verifyResponse = file_get_contents('https://hcaptcha.com/siteverify?secret='.$secret.'&response='.$recaptcha_response);
         // $responseData = json_decode($verifyResponse);
-        
-        // if(!$responseData->success){
-        //     return redirect()->back()->with('errors',collect(['Recaptcha check failed!']));
-        // }
 
         $secret = \config('recaptcha.api_secret_key');
 
@@ -112,7 +109,9 @@ class RegisterController extends Controller
             'response' => $request['g-recaptcha-response'],
         ]);
 
-        dd($response);
+        if(!json_decode($response->body())->success){
+            return redirect()->back()->with('errors',collect(['Recaptcha check failed!']));
+        }
 
         $user =  $this->create( $request->all() );
         $user->role = 2;
