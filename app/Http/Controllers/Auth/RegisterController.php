@@ -96,6 +96,15 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
+        $secret = env('CAPTCHA_SECRET', 'secret_key');
+        $recaptcha_response = $request['g-recaptcha-response'];
+        $verifyResponse = file_get_contents('https://hcaptcha.com/siteverify?secret='.$secret.'&response='.$recaptcha_response);
+        $responseData = json_decode($verifyResponse);
+        
+        if(!$responseData->success){
+            return redirect()->back()->with('errors',collect(['Recaptcha check failed!']));
+        }
+
         $user =  $this->create( $request->all() );
         $user->role = 2;
         if(! is_null($request->cookie('refer'))
