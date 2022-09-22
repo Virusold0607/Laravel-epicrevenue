@@ -19,7 +19,7 @@
             <div class="col-lg-6 col-12">
                 <div class="p-2">
                     <div class="black rounded p-6">
-                        <img src="https://images.pexels.com/photos/7261084/pexels-photo-7261084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-100 rounded" />
+                        <img src="https://epicrevenue.com/assets/img/influencers.jpg" class="w-100 rounded" />
                     </div>
                 </div>
             </div>
