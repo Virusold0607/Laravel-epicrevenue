@@ -101,7 +101,14 @@
                                         <div class="row">
                                             <div class="col-lg-3">
                                                 <a href="{{ url('/campaign/' . $campaign->id) }}">
-                                                    <img class="img-responsive border w-100" src="{{ url('/campaign/image/'. $campaign->id) }}" alt="{{ $campaign->name }}" />
+                                                    @php
+                                                        $featured_img = $campaign->featured_img ? App\Models\Upload::find($campaign->featured_img) : null;
+                                                    @endphp
+                                                    <img 
+                                                        class="img-responsive border w-100" 
+                                                        src="{{$featured_img ? $featured_img->getImageOptimizedFullPath(200, 200) : asset('images/image.png')}}" 
+                                                        alt="{{ $campaign->name }}" 
+                                                    />
                                                 </a>  
                                             </div>
                                             <div class="col-lg-9">
