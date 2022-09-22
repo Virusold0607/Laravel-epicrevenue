@@ -300,14 +300,14 @@
                     <h3 class="card-header-title mb-0">Featured Image</h3>
                 </div>
                 <div class="card-body">
-                    <div class="imagePreview img-thumbnail p-2">
+                    <div class="imagePreview img-thumbnail p-2 text-center">
                         @php
                             $featured_img = $campaign->featured_img ? App\Models\Upload::find($campaign->featured_img) : null;
                         @endphp
                         <img 
                             id="fileManagerPreview" 
-                            src="{{$featured_img ? $featured_img->getImageOptimizedFullName() : null}}" 
-                            style="width: 100%"
+                            src="{{$featured_img ? $featured_img->getImageOptimizedFullPath(400) : null}}" 
+                            style="max-width: 100%;"
                         >
                     </div>
                     <div class="d-flex mt-3">

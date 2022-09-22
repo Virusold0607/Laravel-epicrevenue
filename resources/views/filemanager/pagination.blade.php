@@ -5,11 +5,11 @@
             onclick="checkFileItem(this)"
             id="item{{ $file->id }}"
             data-id="{{ $file->id }}"
-            data-file-path="{{$file->getImageOptimizedFullName()}}"
+            data-file-path="{{$file->getImageOptimizedFullPath(400)}}"
         >
             <div class="check-option d-none">✔</div>
             <span class="file-created-at mb-3">{{ $file->created_at->format('M d, Y, h:i:s A') }}</span>
-            <img src="{{ $file->getImageOptimizedFullName() }}" class="card-img-top img-thumbnail" alt="{{ $file->file_name }}">
+            <img src="{{ $file->getImageOptimizedFullPath() }}" class="card-img-top img-thumbnail" alt="{{ $file->file_name }}">
             <div class="card-body">
                 <h5 class="card-title text-center">{{ $file->getOriginalFileFullName() }}</h5>
                 <span class="file-size">{{ number_format($file->file_size/1024/1024, 2, ".", ",") }} MB</span>

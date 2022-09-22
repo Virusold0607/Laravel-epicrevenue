@@ -236,8 +236,8 @@
                     <h3 class="card-header-title mb-0">Featured Image</h3>
                 </div>
                 <div class="card-body">
-                    <div class="imagePreview img-thumbnail p-2">
-                        <img id="fileManagerPreview" src="" style="width: 100%">
+                    <div class="imagePreview p-2 text-center img-thumbnail">
+                        <img id="fileManagerPreview" src="" style="max-width: 100%;">
                     </div>
                     <div class="d-flex mt-3">
                         <span class="btn btn-primary btn-sm me-auto" id="getFileManager">Browse</span>
