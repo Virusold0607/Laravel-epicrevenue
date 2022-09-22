@@ -43,7 +43,13 @@
                 </li>
             </ul>
             -->
-            {!! Form::model($user, array('url' => '/account/create', 'method' => 'post', 'class' => '','style' => '')) !!}
+            {!! Form::model($user, array(
+                'url' => '/account/create', 
+                'method' => 'post', 
+                'class' => '',
+                'style' => '',
+                'id' => 'registerForm'
+            )) !!}
             <div class="panel panel-default networks">
                 <div class="panel-body">
                     {{-- Was there an error? --}}
@@ -73,7 +79,15 @@
                         <!-- {!! Form::label('password_confirmation', 'Confirm Password', array()) !!} -->
                         {!! Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Confirm Password')) !!}
                     </div>
-                    <div class="h-captcha mb-2" data-sitekey="{{env('CAPTCHA_KEY','secret_key')}}"></div>
+                    
+                    {{-- <div class="h-captcha mb-2" data-sitekey="{{env('CAPTCHA_KEY','secret_key')}}"></div> --}}
+                    <div class="g-recaptcha" data-sitekey="{{env('RECAPTCHA_SITE_KEY','site_key')}}"></div>
+                    @if(Session::has('payload'))
+                        <div class="mt-3 alert alert-primary" role="alert">
+                            <h5>{{ Session::get('payload')}}</h5>
+                        </div>
+                        {{ Session::forget('payload') }}
+                    @endif
                     <div class="form-group">
                     {!! Form::checkbox('terms', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/terms') }}" target="_blank" title="Terms of Service">Terms of Service</a>.
                     </div>
@@ -96,5 +110,6 @@
 @endsection
 
 @section('scripts')
-<script src='https://www.hCaptcha.com/1/api.js' async defer></script>
+{{-- <script src='https://www.hCaptcha.com/1/api.js' async defer></script> --}}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 @endsection

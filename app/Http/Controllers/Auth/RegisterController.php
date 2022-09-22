@@ -96,14 +96,23 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
-        $secret = env('CAPTCHA_SECRET', 'secret_key');
-        $recaptcha_response = $request['g-recaptcha-response'];
-        $verifyResponse = file_get_contents('https://hcaptcha.com/siteverify?secret='.$secret.'&response='.$recaptcha_response);
-        $responseData = json_decode($verifyResponse);
+        // $secret = env('CAPTCHA_SECRET', 'secret_key');
+        // $recaptcha_response = $request['g-recaptcha-response'];
+        // $verifyResponse = file_get_contents('https://hcaptcha.com/siteverify?secret='.$secret.'&response='.$recaptcha_response);
+        // $responseData = json_decode($verifyResponse);
         
-        if(!$responseData->success){
-            return redirect()->back()->with('errors',collect(['Recaptcha check failed!']));
-        }
+        // if(!$responseData->success){
+        //     return redirect()->back()->with('errors',collect(['Recaptcha check failed!']));
+        // }
+
+        $secret = \config('recaptcha.api_secret_key');
+
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => $secret,
+            'response' => $request['g-recaptcha-response'],
+        ]);
+
+        dd($response);
 
         $user =  $this->create( $request->all() );
         $user->role = 2;
@@ -171,8 +180,6 @@ class RegisterController extends Controller
             'state' => 'required|min:3|max:50',
             'zip' => 'required|min:3|max:10',
             'phone' => 'min:7|max:50',
-            'whatsapp' => 'min:7|max:50',
-            'skype' => 'min:7|max:50',
         ));
 
         if ($validator->fails()) {
@@ -186,8 +193,6 @@ class RegisterController extends Controller
         $user->city = $request->input('city');
         $user->state = $request->input('state');
         $user->zip = $request->input('zip');
-        $user->whatsapp = $request->input('whatsapp');
-        $user->skype = $request->input('skype');
         $user->save();
 
         $status = AccountStatus::firstOrNew(['user_id' => (int) $user->id]);

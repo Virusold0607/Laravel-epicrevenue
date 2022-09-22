@@ -184,7 +184,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
-
+        Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
     ],
 
     /*
@@ -237,6 +237,7 @@ return [
         'Socialite'  => Laravel\Socialite\Facades\Socialite::class,
         'GeoIP'      => \Torann\GeoIP\Facades\GeoIP::class,
         'Agent'      => Jenssegers\Agent\Facades\Agent::class,
+        'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
     ],
 
 ];

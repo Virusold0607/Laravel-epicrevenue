@@ -60,15 +60,6 @@
                         {!! Form::label('phone', 'Phone Number', array()) !!}
                         {!! Form::text('phone', null, array('class' => 'form-control')) !!}
                     </div>
-                    <div class="form-group">
-                        {!! Form::label('whatsapp', 'Whatsapp Number', array()) !!}
-                        {!! Form::text('whatsapp', null, array('class' => 'form-control')) !!}
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('skype', 'Skype Id', array()) !!}
-                        {!! Form::text('skype', null, array('class' => 'form-control')) !!}
-                    </div>
-
                     <br /><br />
                 </div>
             </div>
