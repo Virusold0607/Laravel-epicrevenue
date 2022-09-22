@@ -24,8 +24,6 @@ class CreateUsersTable extends Migration
             $table->integer('approved_by')->nullable();
             $table->integer('referral_id')->nullable();
             $table->string('phone')->nullable();
-            $table->string('whatsapp')->nullable();
-            $table->string('skype')->nullable();
             $table->string('address1')->nullable();
             $table->string('address2')->nullable();
             $table->string('city')->nullable();
