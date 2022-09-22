@@ -87,6 +87,10 @@ Route::group(['middleware' => []], function() {
         Route::post('/settings/updatePassword', 'User\SettingsController@updatePassword');
         Route::get('/taxdetails', 'UserController@getTaxDetails');
         Route::post('/taxdetails', 'UserController@postTaxDetails');
+
+        // Upload file
+        Route::get('/file/show', 'FileManagerController@show');
+        Route::post('/file/store', 'FileManagerController@store');
     });
 
     // No middlewares. Anyone can access

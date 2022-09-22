@@ -152,6 +152,24 @@
                 </div>
             </div>
             <!-- !card -->
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <div class="card-header-title d-flex w-100">
+                        <h3 class="mr-auto mb-0">Creatives</h3>
+                        <a href="javascript:;" class="text-primary" id="getCreativesManger">Select images</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <input type="hidden" name="creatives_list" id="creatives_list" />
+                    <div class="no-creatives">
+                        No Creatives
+                    </div>
+                    <div class="creatives-list d-flex" style="flex-flow: wrap;">
+                    </div>
+                </div>
+            </div>
+            <!-- !card -->
             
         </div>
         <!-- !col-md-8 -->
@@ -236,14 +254,14 @@
                     <h3 class="card-header-title mb-0">Featured Image</h3>
                 </div>
                 <div class="card-body">
-                    <img id="featured_image_output" class="imagePreview pt-2 img-thumbnail mb-2 w-100"/>
-                    <script>
-                        var loadFile = function(event, id) {
-                            var output = document.getElementById(id);
-                            output.src = URL.createObjectURL(event.target.files[0]);
-                        };
-                    </script>
-                    {!! Form::file('feature_image', ['onchange' => 'loadFile(event, "featured_image_output")']) !!}
+                    <div class="imagePreview p-2 text-center img-thumbnail">
+                        <img id="fileManagerPreview" src="" style="max-width: 100%;">
+                    </div>
+                    <div class="d-flex mt-3">
+                        <span class="btn btn-primary btn-sm me-auto" id="getFileManager">Browse</span>
+                        <span class="btn btn-danger btn-sm" id="clearSelectedFile">Clear</span>
+                    </div>
+                    <input type="hidden" id="fileManagerId" name="feature_image">
                 </div>
             </div>
 
@@ -274,13 +292,93 @@
             <!-- End Card-body --> 
         </div>
         <!-- End Card --> 
-    </div>  
+    </div>
          
 {!! Form::close() !!}
-
+<div id="fileManagerContainer"></div>
+<div id="creativesManagerContainer"></div>
 @endsection
 
 @section('scripts')
     <script src="{{ url('/admin_assets/js/script_upload_images.js') }}"></script>
     <script src="{{ url('/admin_assets/js/clone-form-td.js') }}"></script>
+    <script>
+        var getSelectedItem = function (selectedId, filePath) {
+            $('#fileManagerId').val(selectedId);
+            $('#fileManagerPreview').attr('src', filePath);
+        }
+
+        var getSelectedCreatives = function (selectedId, filePath, originPath) {
+            $('#creatives_list').val(selectedId);
+            var creatives_html = "";
+            if(filePath.length == 0) {
+                $('.no-creatives').removeClass('d-none');
+                $('.creatives-list').html('');
+            } else {
+                $('.no-creatives').addClass('d-none');
+                filePath.forEach((item, index) => {
+                    creatives_html += `
+                        <div class="text-center creatives-item" creative-id="${selectedId[index]}" style="width:150px;margin:10px;box-shadow: 2px 2px 8px #6c6969;">
+                            <img 
+                                src="${item}"
+                                alt="creatives-image"
+                                style="width:150px;height:150px;margin:auto;"
+                            >
+                            <div class="px-3 d-flex">
+                                <a class="btn btn-sm mr-auto" href="${originPath[index]}" target="_blank"><i class="fa fa-eye"></i></a>
+                                <a href="javascript:;" class="btn btn-sm text-danger" onclick="removeCreatives(${selectedId[index]})"><i class="fa fa-trash"></i></a>
+                            </div>
+                        </div>
+                    `;
+                });
+                $('.creatives-list').html(creatives_html);
+            }
+        }
+
+        var removeCreatives = function (index) {
+            var creatives = $('#creatives_list').val() == '' ? [] : $('#creatives_list').val().split(',');
+            var new_creatives = creatives.filter(item => item * 1 !== index);
+            $('#creatives_list').val(new_creatives);
+            $(`.creatives-item[creative-id='${index}']`).remove();
+            if(new_creatives.length == 0){
+                $('.no-creatives').removeClass('d-none');
+                $('.creatives-list').html('');
+            }
+        }
+
+        $('#clearSelectedFile').click(function () {
+            clearSelected();
+            $('#fileManagerPreview').attr('src', null);
+            $('#fileManagerId').val(null);
+        });
+        $('#getFileManager').click(function () {
+            $.ajax({
+                url: "{{ url('/file/show') }}",
+                success: function (data) {
+                    if (!$.trim($('#fileManagerContainer').html()))
+                        $('#fileManagerContainer').html(data);
+
+                    $('#fileManagerContainer #fileManagerModal').modal('show');
+                    $('#fileManagerContainer #fileManagerModal #file_upload_type').val("campaigns")
+
+                    setSelectedItemsCB(getSelectedItem, $('#fileManagerId').val() == '' ? [] : [$('#fileManagerId').val()], false);
+                }
+            })
+        });
+        $('#getCreativesManger').click(function() {
+            $.ajax({
+                url: "{{ url('/file/show') }}",
+                success: function (data) {
+                    if (!$.trim($('#creativesManagerContainer').html()))
+                        $('#creativesManagerContainer').html(data);
+
+                    $('#creativesManagerContainer #fileManagerModal').modal('show');
+                    $('#creativesManagerContainer #fileManagerModal #file_upload_type').val("campaigns")
+
+                    setSelectedItemsCB(getSelectedCreatives, $('#creatives_list').val() == '' ? [] : $('#creatives_list').val().split(','), true);
+                }
+            })
+        });
+
+    </script>
 @endsection

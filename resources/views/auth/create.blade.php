@@ -14,7 +14,7 @@
     <!-- row -->
     <div class="row">
         <!-- col -->
-        <div class="col-lg-4 col-md-4 py-6 col-12 mx-auto">
+        <div class="col-lg-5 col-md-6 py-6 col-12 mx-auto">
             <!-- card -->
             <div class="px-4 py-3 py-lg-4 mb-0 card rounded">
             <!--
@@ -73,16 +73,16 @@
                         <!-- {!! Form::label('password_confirmation', 'Confirm Password', array()) !!} -->
                         {!! Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Confirm Password')) !!}
                     </div>
+                    <div class="h-captcha mb-2" data-sitekey="{{env('CAPTCHA_KEY','secret_key')}}"></div>
                     <div class="form-group">
                     {!! Form::checkbox('terms', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/terms') }}" target="_blank" title="Terms of Service">Terms of Service</a>.
                     </div>
                     <div class="form-group">
                     {!! Form::checkbox('privacy', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/privacy') }}" target="_blank" title="Privacy Policy">Privacy Policy</a>.
                     </div>
-                    {-- app('captcha')->display() --}
                 </div>
             </div>
-            {!! Form::submit('Next', array('class' => 'btn btn-primary btn-lg pull-right')) !!}
+            {!! Form::submit('Next', array('class' => 'btn btn-primary pull-right')) !!}
             {!! Form::close() !!}
 
             </div>
@@ -92,4 +92,9 @@
     </div>
     <!-- !row -->
 </div>
+
+@endsection
+
+@section('scripts')
+<script src='https://www.hCaptcha.com/1/api.js' async defer></script>
 @endsection

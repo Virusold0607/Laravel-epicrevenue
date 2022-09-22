@@ -32,6 +32,14 @@ class Campaign extends Model
     }
 
     /**
+     * The upload file that belong to the campaign.
+     */
+    public function featured_img()
+    {
+        return $this->belongsTo('App\Models\Upload', 'featured_img');
+    }
+
+    /**
      * The countries that belong to the campaign.
      */
     public function countries()

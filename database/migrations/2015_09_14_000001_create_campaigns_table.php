@@ -33,6 +33,7 @@ class CreateCampaignsTable extends Migration
             $table->integer('category_id');
             $table->integer('network_id');
             $table->string('featured_img')->nullable();
+            $table->string('creatives')->nullable();
             $table->timestamps();
         });
     }

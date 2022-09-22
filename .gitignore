@@ -7,3 +7,5 @@ Homestead.json
 Homestead.yaml
 .env
 composer.lock
+/public/uploads
+/public/images/rewards

@@ -79,9 +79,11 @@ Below are all campaigns added to the network.<br /><br />
                 </td>
                 <td>{{ $c->network->name }}</td>
                 <td>
-                    <a href="{{ url('/admin/campaigns/'. $c->id . '/edit' ) }}" class="btn btn-default">Edit</a>
+                    {{-- <a href="{{ url('/admin/campaigns/'. $c->id . '/edit' ) }}" class="btn btn-default">Edit</a>
                     <a href="{{ url('/admin/campaigns/'. $c->id . '/creatives' ) }}" class="btn btn-info">Creatives</a>
-                    <a href="{{ url('/admin/campaigns/'. $c->id . '/private' ) }}" class="btn btn-default">Privates</a>
+                    <a href="{{ url('/admin/campaigns/'. $c->id . '/private' ) }}" class="btn btn-default">Privates</a> --}}
+                    <a href="{{ url('/admin/campaigns/'. $c->id . '/edit' ) }}" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="{{ url('/admin/campaigns/galllery/'. $c->id . '/edit' ) }}" class="btn btn-sm btn-secondary">Gallery</a>
                 </td>
             </tr>
         @endforeach
