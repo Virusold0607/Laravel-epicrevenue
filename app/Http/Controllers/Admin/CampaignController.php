@@ -283,8 +283,8 @@ class CampaignController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name'           => 'required|string|max:255',
-            'description'    => 'required|string|max:1000',
-            'requirements'   => 'required|string|max:500',
+            'description'    => 'string|max:1000',
+            'requirements'   => 'string|max:500',
             'creatives_list' => 'string',
             'cap'            => 'required|integer|max:100000000',
             'cap_daily'      => 'required|integer'.$cap_rule,
@@ -427,8 +427,8 @@ class CampaignController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name'           => 'required|string|max:255',
-            'description'    => 'required|string|max:1000',
-            'requirements'   => 'required|string|max:500',
+            'description'    => 'string|max:1000',
+            'requirements'   => 'string|max:500',
             'cap'            => 'required|integer|max:100000000',
             'creatives_list' => 'string',
             'cap_daily'      => 'required|integer'.$cap_rule,
