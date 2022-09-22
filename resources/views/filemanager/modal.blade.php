@@ -245,23 +245,25 @@
         });
     });
 
-    const getSelectedItems = function() {
+    var getSelectedItems = function() {
         if (getSelectedItemsCB) {
             var filePath = selected.map(function(item) {
                 return $(`#item${item}`).attr('data-file-path');
             });
-
-            getSelectedItemsCB(selected, filePath);
+            var originPath = selected.map(function(item) {
+                return $(`#item${item}`).attr('data-origin-path');
+            });
+            getSelectedItemsCB(selected, filePath, originPath);
         }
     }
 
-    const clearSelected = function(){
+    var clearSelected = function(){
         $('#files_container').find('div').find('div').find('.file-manager-item').each(function(nIndex,item) {
             $(this).removeClass('file-manager-item-checked');
         });
         selected = [];
     }
-    const checkFileItem = function(item) {
+    var checkFileItem = function(item) {
         var id = $(item).attr('data-id');
         if (isRadio) {
             $('#files_container').find('div').find('div').find('.file-manager-item').each(function(nIndex,item) {
@@ -282,7 +284,7 @@
 
         getSelectedItems();
     };
-    const setSelectedItemsCB = function(cb, selectedId = [], isCheck = true) {
+    var setSelectedItemsCB = function(cb, selectedId = [], isCheck = true) {
         getSelectedItemsCB = cb;
         selected = selectedId;
         isRadio = !isCheck;

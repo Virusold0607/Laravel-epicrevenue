@@ -6,6 +6,7 @@
             id="item{{ $file->id }}"
             data-id="{{ $file->id }}"
             data-file-path="{{$file->getImageOptimizedFullPath(400)}}"
+            data-origin-path="{{$file->getImageOriginFullPath()}}"
         >
             <div class="check-option d-none">✔</div>
             <span class="file-created-at mb-3">{{ $file->created_at->format('M d, Y, h:i:s A') }}</span>

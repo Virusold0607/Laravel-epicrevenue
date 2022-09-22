@@ -285,6 +285,7 @@ class CampaignController extends Controller
             'name'           => 'required|string|max:255',
             'description'    => 'required|string|max:1000',
             'requirements'   => 'required|string|max:500',
+            'creatives_list' => 'string',
             'cap'            => 'required|integer|max:100000000',
             'cap_daily'      => 'required|integer'.$cap_rule,
             'category'       => 'required|exists:campaigns_categories,id',
@@ -330,6 +331,7 @@ class CampaignController extends Controller
         $c->url              = $request->url;
         $c->network_id       = $request->network_id;
         $c->featured_img     = $request->feature_image;
+        $c->creatives        = $request->creatives_list;
         $c->active           = $request->active;
         $c->save();
 
@@ -428,6 +430,7 @@ class CampaignController extends Controller
             'description'    => 'required|string|max:1000',
             'requirements'   => 'required|string|max:500',
             'cap'            => 'required|integer|max:100000000',
+            'creatives_list' => 'string',
             'cap_daily'      => 'required|integer'.$cap_rule,
             'category'       => 'required|exists:campaigns_categories,id',
             'rate'           => 'required|max:1000000|min:0.1',
@@ -470,6 +473,7 @@ class CampaignController extends Controller
         $c->tracking         = $request->tracking;
         $c->url              = $request->url;
         $c->featured_img     = $request->feature_image;
+        $c->creatives        = $request->creatives_list;
         $c->network_id       = $request->network_id;
         $c->active           = $request->active;
         $c->save();
