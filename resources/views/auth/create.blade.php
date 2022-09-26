@@ -80,7 +80,6 @@
                         {!! Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Confirm Password')) !!}
                     </div>
                     
-                    {{-- <div class="h-captcha mb-2" data-sitekey="{{env('CAPTCHA_KEY','secret_key')}}"></div> --}}
                     <div class="g-recaptcha" data-sitekey="{{env('RECAPTCHA_SITE_KEY','site_key')}}"></div>
                     
                     <div class="form-group">
@@ -105,6 +104,5 @@
 @endsection
 
 @section('scripts')
-{{-- <script src='https://www.hCaptcha.com/1/api.js' async defer></script> --}}
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 @endsection

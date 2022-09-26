@@ -97,11 +97,6 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
-        // $secret = env('CAPTCHA_SECRET', 'secret_key');
-        // $recaptcha_response = $request['g-recaptcha-response'];
-        // $verifyResponse = file_get_contents('https://hcaptcha.com/siteverify?secret='.$secret.'&response='.$recaptcha_response);
-        // $responseData = json_decode($verifyResponse);
-
         $secret = \config('recaptcha.api_secret_key');
 
         $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
