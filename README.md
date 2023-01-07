@@ -1,6 +1,4 @@
-# Epic Revenue
 
-Affiliate marketing network
 
 ## License
 
