@@ -20,7 +20,7 @@ return [
      * get site key @ www.google.com/recaptcha/admin
      *
      */
-    'api_site_key'                 => env('RECAPTCHA_SITE_KEY', ''),
+    'api_site_key'                 => env('NOCAPTCHA_SITEKEY', ''),
 
     /**
      *
@@ -28,7 +28,7 @@ return [
      * get secret key @ www.google.com/recaptcha/admin
      *
      */
-    'api_secret_key'               => env('RECAPTCHA_SECRET_KEY', ''),
+    'api_secret_key'               => env('NOCAPTCHA_SECRET', ''),
 
     /**
      *
