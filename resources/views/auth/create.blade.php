@@ -80,7 +80,7 @@
                         {!! Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Confirm Password')) !!}
                     </div>
                     
-                    <div class="g-recaptcha" data-sitekey="{{env('RECAPTCHA_SITE_KEY','site_key')}}"></div>
+                    <div class="g-recaptcha" data-sitekey="{{config('recaptcha.api_site_key','site_key')}}"></div>
                     
                     <div class="form-group">
                     {!! Form::checkbox('terms', null, false) !!}&nbsp; I have <b>read</b> and <b>agree</b> to the <a href="{{ url('/terms') }}" target="_blank" title="Terms of Service">Terms of Service</a>.
